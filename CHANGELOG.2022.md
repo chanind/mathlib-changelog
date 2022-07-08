@@ -1,3 +1,25 @@
+### [2022-07-08T13:36:19+00:00](https://github.com/leanprover-community/mathlib/commit/1937dff0d2f92b6158854d1d2cb061219a1e618d)
+feat(analysis/normed_space/lp_space): normed_algebra structure ([#15086](https://github.com/leanprover-community/mathlib/pull/#15086))
+
+This also golfs the `normed_ring` instance to go via `subring.to_ring`, as this saves us from having to build the power, nat_cast, and int_cast structures manually.
+
+We also rename `lp.lp_submodule` to `lp_submodule` to avoid unhelpful repetition.
+
+### [2022-07-08T11:29:27+00:00](https://github.com/leanprover-community/mathlib/commit/e74e53496fc8c9f27d620dbb601006b025fcf61c)
+doc(tactic/wlog): use markdown lists rather than indentation ([#15113](https://github.com/leanprover-community/mathlib/pull/#15113))
+
+The indentation used in this docstring was lost in the web docs.
+
+### [2022-07-08T11:29:26+00:00](https://github.com/leanprover-community/mathlib/commit/0bc51f02ec7a3e8507e1001f5a88ef0d932f2e06)
+feat(topology/metric_space/hausdorff_distance): Thickening a compact inside an open ([#14926](https://github.com/leanprover-community/mathlib/pull/#14926))
+
+If a compact set is contained in an open set, then we can find a (closed) thickening of it still contained in the open.
+
+### [2022-07-08T11:29:25+00:00](https://github.com/leanprover-community/mathlib/commit/93be74b16dc88f11fdc1942e5b03a9e56c5bbc93)
+feat(combinatorics/simple_graph/prod): Box product ([#14867](https://github.com/leanprover-community/mathlib/pull/#14867))
+
+Define `simple_graph.box_prod`, the box product of simple graphs. Show that it's commutative and associative, and prove its connectivity properties.
+
 ### [2022-07-08T09:53:26+00:00](https://github.com/leanprover-community/mathlib/commit/7c070c4d46f03c4398bda237e5cebdfffd2cfb60)
 feat(data/finset/basic): Coercion of a product of finsets ([#15011](https://github.com/leanprover-community/mathlib/pull/#15011))
 
