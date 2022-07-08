@@ -22,3 +22,4 @@ jobs:
         with:
           commit_message: "Updating CHANGELOG"
           file_pattern: "markdown/*.md *.txt"
+          commit_author: github-actions[bot] <actions@github.com> 
