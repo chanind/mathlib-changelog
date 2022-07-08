@@ -1,3 +1,6 @@
+### [2022-07-08 14:49:24](https://github.com/leanprover-community/mathlib/commit/5a5d290)
+fix(data/fintype/basic): move card_subtype_mono into the fintype namespace ([#15185](https://github.com/leanprover-community/mathlib/pull/15185))
+
 ### [2022-07-08 13:36:19](https://github.com/leanprover-community/mathlib/commit/1937dff)
 feat(analysis/normed_space/lp_space): normed_algebra structure ([#15086](https://github.com/leanprover-community/mathlib/pull/15086))
 This also golfs the `normed_ring` instance to go via `subring.to_ring`, as this saves us from having to build the power, nat_cast, and int_cast structures manually.
