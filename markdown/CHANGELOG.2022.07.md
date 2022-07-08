@@ -1,3 +1,6 @@
+### [2022-07-08 17:45:40](https://github.com/leanprover-community/mathlib/commit/feb34df)
+chore(data/nat/squarefree): fix a tactic doc typo for norm num extension ([#15189](https://github.com/leanprover-community/mathlib/pull/15189))
+
 ### [2022-07-08 14:49:24](https://github.com/leanprover-community/mathlib/commit/5a5d290)
 fix(data/fintype/basic): move card_subtype_mono into the fintype namespace ([#15185](https://github.com/leanprover-community/mathlib/pull/15185))
 
