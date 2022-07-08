@@ -1,4 +1,4 @@
-name: cron
+name: crawl
 on:
   schedule:
     - cron: '45 * * * *'
