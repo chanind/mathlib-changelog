@@ -127,3 +127,9 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# mathlib
+crawler/mathlib
+
+# misc
+.vscode
