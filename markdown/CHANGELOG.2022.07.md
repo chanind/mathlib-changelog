@@ -1,3 +1,80 @@
+## [2022-07-08 22:50:34](https://github.com/leanprover-community/mathlib/commit/fefd449)
+feat(set_theory/ordinal/arithmetic): tweak `type_add` and `type_mul` ([#15193](https://github.com/leanprover-community/mathlib/pull/15193))
+This renames `type_mul` to the more accurate `type_prod_lex`, and renames `type_add` to `type_sum_lex` and reverses the order of the equality so that the two lemmas match.
+#### Estimated changes
+modified src/set_theory/ordinal/arithmetic.lean
+- \+ *theorem* type_prod_lex
+- \- *theorem* type_mul
+
+modified src/set_theory/ordinal/basic.lean
+- \+ *theorem* type_sum_lex
+- \- *theorem* type_add
+
+
+
+## [2022-07-08 20:54:25](https://github.com/leanprover-community/mathlib/commit/f39bd5f)
+feat(analysis/normed_space/star/basic): make starₗᵢ apply to normed star groups ([#15173](https://github.com/leanprover-community/mathlib/pull/15173))
+#### Estimated changes
+modified src/analysis/normed_space/star/basic.lean
+
+
+
+## [2022-07-08 20:54:25](https://github.com/leanprover-community/mathlib/commit/8a38a69)
+feat(combinatorics/simple_graph/hasse): The Hasse diagram of `α × β` ([#14978](https://github.com/leanprover-community/mathlib/pull/14978))
+... is the box product of the Hasse diagrams of `α` and `β`.
+#### Estimated changes
+modified src/combinatorics/simple_graph/hasse.lean
+- \+ *lemma* hasse_prod
+
+modified src/combinatorics/simple_graph/prod.lean
+- \+/\- *lemma* box_prod_adj
+- \+/\- *lemma* box_prod_adj
+
+
+
+## [2022-07-08 20:54:24](https://github.com/leanprover-community/mathlib/commit/1a54e4d)
+feat(combinatorics/additive/ruzsa_covering): The Ruzsa covering lemma ([#14697](https://github.com/leanprover-community/mathlib/pull/14697))
+Prove the Ruzsa covering lemma, which says that a finset `s` can be covered using at most $\frac{|s + t|}{|t|}$ copies of `t - t`.
+#### Estimated changes
+created src/combinatorics/additive/ruzsa_covering.lean
+- \+ *lemma* exists_subset_mul_div
+
+
+
+## [2022-07-08 18:50:17](https://github.com/leanprover-community/mathlib/commit/2d5b45c)
+chore(data/zmod/defs): shuffle files around ([#15142](https://github.com/leanprover-community/mathlib/pull/15142))
+This is to prepare to fix `char_p` related diamonds. No new lemmas were added, stuff was just moved around.
+#### Estimated changes
+modified src/algebra/char_p/basic.lean
+
+modified src/algebra/ne_zero.lean
+
+modified src/data/zmod/basic.lean
+- \- *lemma* card
+- \- *def* zmod
+
+created src/data/zmod/defs.lean
+- \+ *lemma* card
+- \+ *def* zmod
+
+modified src/data/zmod/quotient.lean
+
+modified src/ring_theory/roots_of_unity.lean
+
+
+
+## [2022-07-08 18:50:16](https://github.com/leanprover-community/mathlib/commit/11cdccb)
+feat(data/rat/defs): add denominator as pnat ([#15101](https://github.com/leanprover-community/mathlib/pull/15101))
+Option to bundle `x.denom` and `x.pos` into a pnat, which can be useful in defining functions using the denominator.
+#### Estimated changes
+modified src/data/rat/defs.lean
+- \+ *lemma* coe_pnat_denom
+- \+ *lemma* mk_pnat_pnat_denom_eq
+- \+ *lemma* pnat_denom_eq_iff_denom_eq
+- \+ *def* pnat_denom
+
+
+
 ## [2022-07-08 17:45:40](https://github.com/leanprover-community/mathlib/commit/feb34df)
 chore(data/nat/squarefree): fix a tactic doc typo for norm num extension ([#15189](https://github.com/leanprover-community/mathlib/pull/15189))
 #### Estimated changes
