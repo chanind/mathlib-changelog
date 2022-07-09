@@ -1,7 +1,7 @@
 ## [2019-03-31 21:33:03+02:00](https://github.com/leanprover-community/mathlib/commit/c91e6c2)
 fix(ring_theory/algebra): remove duplicate theorems to fix build
 #### Estimated changes
-modified src/ring_theory/algebra.lean
+Modified src/ring_theory/algebra.lean
 - \- *lemma* smul_re:
 - \- *lemma* smul_im:
 
@@ -10,14 +10,14 @@ modified src/ring_theory/algebra.lean
 ## [2019-03-31 08:35:59-04:00](https://github.com/leanprover-community/mathlib/commit/9480df5)
 refactor(computability): unpack fixed_point proof
 #### Estimated changes
-modified src/computability/partrec_code.lean
+Modified src/computability/partrec_code.lean
 
 
 
 ## [2019-03-31 08:35:21-04:00](https://github.com/leanprover-community/mathlib/commit/359cac1)
 feat(computability): computable_iff_re_compl_re
 #### Estimated changes
-modified src/computability/halting.lean
+Modified src/computability/halting.lean
 - \+ *theorem* computable_iff
 - \+ *theorem* to_re
 - \+ *theorem* computable_iff_re_compl_re
@@ -27,10 +27,10 @@ modified src/computability/halting.lean
 ## [2019-03-31 08:32:21-04:00](https://github.com/leanprover-community/mathlib/commit/514de77)
 feat(data/finset): to_finset_eq_empty
 #### Estimated changes
-modified src/data/finset.lean
+Modified src/data/finset.lean
 - \+ *theorem* to_finset_eq_empty
 
-modified src/data/multiset.lean
+Modified src/data/multiset.lean
 - \+ *theorem* erase_dup_eq_zero
 
 
@@ -38,7 +38,7 @@ modified src/data/multiset.lean
 ## [2019-03-31 08:31:39-04:00](https://github.com/leanprover-community/mathlib/commit/72634d2)
 feat(data/complex/basic): smul_re,im
 #### Estimated changes
-modified src/data/complex/basic.lean
+Modified src/data/complex/basic.lean
 - \+ *lemma* smul_re
 - \+ *lemma* smul_im
 
@@ -47,7 +47,7 @@ modified src/data/complex/basic.lean
 ## [2019-03-31 00:48:41](https://github.com/leanprover-community/mathlib/commit/e1c035d)
 feat(data/polynomial): eval₂_neg
 #### Estimated changes
-modified src/data/polynomial.lean
+Modified src/data/polynomial.lean
 - \+ *lemma* eval₂_neg
 - \+ *lemma* eval₂_sub
 
@@ -56,7 +56,7 @@ modified src/data/polynomial.lean
 ## [2019-03-29 23:56:28](https://github.com/leanprover-community/mathlib/commit/c2bb4c5)
 refactor(data/zsqrtd/basic): move zsqrtd out of pell and into data ([#861](https://github.com/leanprover-community/mathlib/pull/861))
 #### Estimated changes
-created src/data/zsqrtd/basic.lean
+Created src/data/zsqrtd/basic.lean
 - \+ *lemma* norm_zero
 - \+ *lemma* norm_one
 - \+ *lemma* norm_int_cast
@@ -67,9 +67,9 @@ created src/data/zsqrtd/basic.lean
 - \+ *lemma* norm_eq_one_iff
 - \+ *def* norm
 
-renamed src/data/gaussian_int.lean to src/data/zsqrtd/gaussian_int.lean
+Renamed src/data/gaussian_int.lean to src/data/zsqrtd/gaussian_int.lean
 
-modified src/number_theory/pell.lean
+Modified src/number_theory/pell.lean
 - \- *lemma* norm_zero
 - \- *lemma* norm_one
 - \- *lemma* norm_int_cast
@@ -80,19 +80,19 @@ modified src/number_theory/pell.lean
 - \- *lemma* norm_eq_one_iff
 - \- *def* norm
 
-modified src/number_theory/sum_two_squares.lean
+Modified src/number_theory/sum_two_squares.lean
 
 
 
 ## [2019-03-29 15:03:34-05:00](https://github.com/leanprover-community/mathlib/commit/dc7de46)
 feat(analysis/convex): convex sets and functions ([#834](https://github.com/leanprover-community/mathlib/pull/834))
 #### Estimated changes
-modified src/algebra/module.lean
+Modified src/algebra/module.lean
 - \+ *lemma* is_linear_map_neg
 - \+ *lemma* is_linear_map_smul
 - \+ *lemma* is_linear_map_smul'
 
-created src/analysis/convex.lean
+Created src/analysis/convex.lean
 - \+ *lemma* convex_iff:
 - \+ *lemma* convex_iff_div:
 - \+ *lemma* left_mem_segment
@@ -163,15 +163,15 @@ created src/analysis/convex.lean
 - \+ *def* segment
 - \+ *def* convex_on
 
-modified src/data/set/intervals.lean
+Modified src/data/set/intervals.lean
 - \+ *lemma* image_neg_Iio
 - \+ *lemma* image_neg_Iic
 
-modified src/linear_algebra/basic.lean
+Modified src/linear_algebra/basic.lean
 - \+ *lemma* is_linear_map_add
 - \+ *lemma* is_linear_map_sub
 
-modified src/ring_theory/algebra.lean
+Modified src/ring_theory/algebra.lean
 - \+ *lemma* smul_re:
 - \+ *lemma* smul_im:
 
@@ -180,60 +180,60 @@ modified src/ring_theory/algebra.lean
 ## [2019-03-29 13:08:29-04:00](https://github.com/leanprover-community/mathlib/commit/171e913)
 fix(scripts/remote-install-update-mathlib): add GitPython dependency ([#860](https://github.com/leanprover-community/mathlib/pull/860))
 #### Estimated changes
-modified scripts/remote-install-update-mathlib.sh
+Modified scripts/remote-install-update-mathlib.sh
 
 
 
 ## [2019-03-28 22:56:01-04:00](https://github.com/leanprover-community/mathlib/commit/2e7f009)
 fix(scripts/deploy_nightly): pushing to the `lean-3.4.2` branch is sometimes blocked ([#859](https://github.com/leanprover-community/mathlib/pull/859))
 #### Estimated changes
-modified scripts/deploy_nightly.sh
+Modified scripts/deploy_nightly.sh
 
 
 
 ## [2019-03-28 22:11:15-04:00](https://github.com/leanprover-community/mathlib/commit/a4fd55c)
 feat(library_search): a simple library_search function ([#839](https://github.com/leanprover-community/mathlib/pull/839))
 #### Estimated changes
-modified docs/tactics.md
+Modified docs/tactics.md
 
-modified src/tactic/basic.lean
+Modified src/tactic/basic.lean
 
-modified src/tactic/interactive.lean
+Modified src/tactic/interactive.lean
 
-created src/tactic/library_search.lean
+Created src/tactic/library_search.lean
 - \+ *def* head_symbol_match.to_string
 
-created test/library_search/basic.lean
+Created test/library_search/basic.lean
 
-created test/library_search/ring_theory.lean
+Created test/library_search/ring_theory.lean
 
 
 
 ## [2019-03-28 20:04:39-04:00](https://github.com/leanprover-community/mathlib/commit/59caf11)
 fix(scripts/update-mathlib): fix imports of python files
 #### Estimated changes
-modified scripts/update-mathlib.py
+Modified scripts/update-mathlib.py
 
 
 
 ## [2019-03-28 19:11:34-04:00](https://github.com/leanprover-community/mathlib/commit/6cd336c)
 fix(scripts/update-mathlib): github authentication
 #### Estimated changes
-modified scripts/update-mathlib.py
+Modified scripts/update-mathlib.py
 
 
 
 ## [2019-03-28 16:32:00-04:00](https://github.com/leanprover-community/mathlib/commit/1c04a32)
 fix(scripts/update-mathlib): update-mathlib shouldn't need github authentication
 #### Estimated changes
-modified scripts/update-mathlib.py
+Modified scripts/update-mathlib.py
 
 
 
 ## [2019-03-28 14:01:35-04:00](https://github.com/leanprover-community/mathlib/commit/48df321)
 feat(category_theory/instances): category of groups ([#749](https://github.com/leanprover-community/mathlib/pull/749))
 #### Estimated changes
-created src/category_theory/instances/groups.lean
+Created src/category_theory/instances/groups.lean
 - \+ *def* Group
 - \+ *def* AddCommGroup
 - \+ *def* is_add_comm_group_hom
@@ -255,42 +255,42 @@ refactor(*): unify group/monoid_action, make semimodule extend action ([#850](ht
 * Rename mul_action_add to distrib_mul_action
 * Bump up the type class search depth in some places
 #### Estimated changes
-modified src/algebra/module.lean
+Modified src/algebra/module.lean
 - \- *theorem* smul_add
 - \- *theorem* mul_smul
 - \- *theorem* smul_zero
 - \- *theorem* one_smul
 
-modified src/algebra/pi_instances.lean
+Modified src/algebra/pi_instances.lean
 
-modified src/analysis/asymptotics.lean
+Modified src/analysis/asymptotics.lean
 
-modified src/analysis/normed_space/basic.lean
+Modified src/analysis/normed_space/basic.lean
 
-modified src/analysis/normed_space/bounded_linear_maps.lean
+Modified src/analysis/normed_space/bounded_linear_maps.lean
 
-modified src/analysis/normed_space/deriv.lean
+Modified src/analysis/normed_space/deriv.lean
 
-modified src/analysis/normed_space/operator_norm.lean
+Modified src/analysis/normed_space/operator_norm.lean
 
-modified src/field_theory/mv_polynomial.lean
+Modified src/field_theory/mv_polynomial.lean
 
-modified src/group_theory/group_action.lean
+Modified src/group_theory/group_action.lean
 - \+ *theorem* mul_smul
 - \+ *theorem* one_smul
 - \+ *theorem* smul_add
 - \+ *theorem* smul_zero
 - \- *def* comp_hom
 
-modified src/group_theory/sylow.lean
+Modified src/group_theory/sylow.lean
 
-modified src/linear_algebra/basic.lean
+Modified src/linear_algebra/basic.lean
 
-modified src/linear_algebra/basis.lean
+Modified src/linear_algebra/basis.lean
 
-modified src/linear_algebra/finsupp.lean
+Modified src/linear_algebra/finsupp.lean
 
-modified src/ring_theory/algebra.lean
+Modified src/ring_theory/algebra.lean
 
 
 
@@ -303,31 +303,31 @@ feat(scripts/cache_olean): cache and fetch olean binaries ([#766](https://github
 * add confirmation message to setup-dev-scripts
 * adding --build-all option
 #### Estimated changes
-modified .gitignore
+Modified .gitignore
 
-modified README.md
+Modified README.md
 
-modified docs/howto-contribute.md
+Modified docs/howto-contribute.md
 
-created scripts/cache-olean.py
+Created scripts/cache-olean.py
 - \+ *def* auth_github():
 - \+ *def* make_cache(fn):
 - \+ *def* mathlib_asset(repo,
 - \+ *def* fetch_mathlib(asset):
 
-created scripts/post-checkout
+Created scripts/post-checkout
 
-created scripts/post-commit
+Created scripts/post-commit
 
-modified scripts/remote-install-update-mathlib.sh
+Modified scripts/remote-install-update-mathlib.sh
 
-created scripts/setup-dev-scripts.sh
+Created scripts/setup-dev-scripts.sh
 
-created scripts/setup-lean-git-hooks.sh
+Created scripts/setup-lean-git-hooks.sh
 
-deleted scripts/setup-update-mathlib.sh
+Deleted scripts/setup-update-mathlib.sh
 
-modified scripts/update-mathlib.py
+Modified scripts/update-mathlib.py
 - \+ *def* auth_github():
 
 
@@ -335,13 +335,13 @@ modified scripts/update-mathlib.py
 ## [2019-03-27 21:47:02+01:00](https://github.com/leanprover-community/mathlib/commit/8838ff3)
 feat(algebra/field_power): add fpow_one, one_fpow, fpow_mul, mul_fpow (closes [#855](https://github.com/leanprover-community/mathlib/pull/855))
 #### Estimated changes
-modified src/algebra/field.lean
+Modified src/algebra/field.lean
 - \+ *lemma* mk0_coe
 - \+/\- *lemma* inv_eq_zero
 - \+ *lemma* neg_inv'
 - \+/\- *lemma* inv_eq_zero
 
-modified src/algebra/field_power.lean
+Modified src/algebra/field_power.lean
 - \+ *lemma* one_fpow
 - \+ *lemma* fpow_one
 - \+ *lemma* fpow_mul
@@ -352,7 +352,7 @@ modified src/algebra/field_power.lean
 ## [2019-03-27 20:15:04+01:00](https://github.com/leanprover-community/mathlib/commit/8429354)
 feat(analysis): add real.rpow_le_one
 #### Estimated changes
-modified src/analysis/exponential.lean
+Modified src/analysis/exponential.lean
 - \+ *lemma* rpow_le_one
 
 
@@ -360,7 +360,7 @@ modified src/analysis/exponential.lean
 ## [2019-03-27 20:15:04+01:00](https://github.com/leanprover-community/mathlib/commit/4305ad6)
 feat(analysis): add rpow_pos_of_pos
 #### Estimated changes
-modified src/analysis/exponential.lean
+Modified src/analysis/exponential.lean
 - \+ *lemma* rpow_pos_of_pos
 
 
@@ -368,9 +368,9 @@ modified src/analysis/exponential.lean
 ## [2019-03-27 09:57:35-05:00](https://github.com/leanprover-community/mathlib/commit/02ca494)
 Remove outparam in normed space ([#844](https://github.com/leanprover-community/mathlib/pull/844))
 #### Estimated changes
-modified src/analysis/normed_space/basic.lean
+Modified src/analysis/normed_space/basic.lean
 
-modified src/analysis/normed_space/bounded_linear_maps.lean
+Modified src/analysis/normed_space/bounded_linear_maps.lean
 - \+/\- *lemma* zero
 - \+/\- *lemma* id
 - \+/\- *lemma* smul
@@ -396,7 +396,7 @@ modified src/analysis/normed_space/bounded_linear_maps.lean
 - \+/\- *def* to_linear_map
 - \+/\- *def* to_linear_map
 
-modified src/analysis/normed_space/deriv.lean
+Modified src/analysis/normed_space/deriv.lean
 - \+/\- *theorem* has_fderiv_at.is_o
 - \+/\- *theorem* has_fderiv_at_filter_id
 - \+/\- *theorem* has_fderiv_at_within_id
@@ -406,14 +406,14 @@ modified src/analysis/normed_space/deriv.lean
 - \+/\- *theorem* has_fderiv_at_within_id
 - \+/\- *theorem* has_fderiv_at_id
 
-modified src/analysis/normed_space/operator_norm.lean
+Modified src/analysis/normed_space/operator_norm.lean
 
 
 
 ## [2019-03-27 08:20:35-04:00](https://github.com/leanprover-community/mathlib/commit/52fddda)
 feat(algebra/archimedean): lemmas about powers of elements ([#802](https://github.com/leanprover-community/mathlib/pull/802))
 #### Estimated changes
-modified src/algebra/archimedean.lean
+Modified src/algebra/archimedean.lean
 - \+ *lemma* exists_nat_pow_near
 - \+ *lemma* exists_int_pow_near
 
@@ -422,16 +422,16 @@ modified src/algebra/archimedean.lean
 ## [2019-03-26 16:35:47-05:00](https://github.com/leanprover-community/mathlib/commit/17e40bb)
 feat(tactic/congr): apply to `iff` propositions ([#833](https://github.com/leanprover-community/mathlib/pull/833))
 #### Estimated changes
-modified src/tactic/interactive.lean
+Modified src/tactic/interactive.lean
 
-modified test/tactics.lean
+Modified test/tactics.lean
 
 
 
 ## [2019-03-26 21:53:30+01:00](https://github.com/leanprover-community/mathlib/commit/c3a9028)
 fix(data/polynomial): (nat_)degree_map' assumed a comm_ring instead of a comm_semiring
 #### Estimated changes
-modified src/data/polynomial.lean
+Modified src/data/polynomial.lean
 - \+/\- *lemma* degree_map'
 - \+/\- *lemma* nat_degree_map'
 - \+/\- *lemma* degree_map'
@@ -442,7 +442,7 @@ modified src/data/polynomial.lean
 ## [2019-03-26 19:07:18+01:00](https://github.com/leanprover-community/mathlib/commit/a016652)
 feat(data/finset): add range_add_one'
 #### Estimated changes
-modified src/data/finset.lean
+Modified src/data/finset.lean
 - \+ *lemma* range_add_one'
 
 
@@ -450,7 +450,7 @@ modified src/data/finset.lean
 ## [2019-03-26 19:07:18+01:00](https://github.com/leanprover-community/mathlib/commit/0ea37e9)
 feat(algebra/big_operators): add prod_map, sum_map
 #### Estimated changes
-modified src/algebra/big_operators.lean
+Modified src/algebra/big_operators.lean
 - \+ *lemma* prod_map
 
 
@@ -458,7 +458,7 @@ modified src/algebra/big_operators.lean
 ## [2019-03-26 19:07:18+01:00](https://github.com/leanprover-community/mathlib/commit/d3c68fc)
 feat(analysis/normed_space): tendsto_zero_iff_norm_tendsto_zero
 #### Estimated changes
-modified src/analysis/normed_space/basic.lean
+Modified src/analysis/normed_space/basic.lean
 - \+ *lemma* tendsto_zero_iff_norm_tendsto_zero
 - \+/\- *lemma* lim_norm
 - \+/\- *lemma* lim_norm_zero
@@ -472,9 +472,9 @@ modified src/analysis/normed_space/basic.lean
 ## [2019-03-26 19:07:18+01:00](https://github.com/leanprover-community/mathlib/commit/df08058)
 refactor(analysis/normed_space): rename norm_mul -> norm_mul_le; use norm_mul for the equality in normed fields; and norm_mul_le for the inequality in normed_rings
 #### Estimated changes
-modified src/analysis/asymptotics.lean
+Modified src/analysis/asymptotics.lean
 
-modified src/analysis/normed_space/basic.lean
+Modified src/analysis/normed_space/basic.lean
 - \+ *lemma* norm_mul_le
 - \+ *lemma* norm_pow_le
 - \+/\- *lemma* norm_mul
@@ -484,17 +484,17 @@ modified src/analysis/normed_space/basic.lean
 - \+/\- *lemma* norm_pow
 - \- *lemma* normed_field.norm_pow
 
-modified src/data/complex/basic.lean
+Modified src/data/complex/basic.lean
 - \+ *lemma* abs_of_nat
 
-modified src/data/padics/padic_integers.lean
+Modified src/data/padics/padic_integers.lean
 
 
 
 ## [2019-03-26 18:22:00+01:00](https://github.com/leanprover-community/mathlib/commit/bd21b0e)
 feat(analyis/normed_space): add normed_field instance for ℂ
 #### Estimated changes
-modified src/analysis/normed_space/basic.lean
+Modified src/analysis/normed_space/basic.lean
 - \+ *lemma* norm_real
 - \+ *lemma* norm_rat
 - \+ *lemma* norm_nat
@@ -506,16 +506,16 @@ modified src/analysis/normed_space/basic.lean
 ## [2019-03-26 18:22:00+01:00](https://github.com/leanprover-community/mathlib/commit/a01cf86)
 feat(data/multiset,data/finset): add multiset./finset.le_sum_of_additive
 #### Estimated changes
-modified src/algebra/big_operators.lean
+Modified src/algebra/big_operators.lean
 - \+ *lemma* le_sum_of_subadditive
 - \+/\- *lemma* abs_sum_le_sum_abs
 - \+/\- *lemma* abs_sum_le_sum_abs
 
-modified src/analysis/normed_space/basic.lean
+Modified src/analysis/normed_space/basic.lean
 - \+/\- *lemma* norm_triangle_sum
 - \+/\- *lemma* norm_triangle_sum
 
-modified src/data/multiset.lean
+Modified src/data/multiset.lean
 - \+ *lemma* le_sum_of_subadditive
 - \+ *lemma* abs_sum_le_sum_abs
 
@@ -524,7 +524,7 @@ modified src/data/multiset.lean
 ## [2019-03-26 18:22:00+01:00](https://github.com/leanprover-community/mathlib/commit/c912253)
 feat(algebra/group_power): add lt_of_pow_lt_pow
 #### Estimated changes
-modified src/algebra/group_power.lean
+Modified src/algebra/group_power.lean
 - \+/\- *lemma* pow_le_pow_of_le_left
 - \+ *lemma* lt_of_pow_lt_pow
 - \+/\- *lemma* pow_le_pow_of_le_left
@@ -534,7 +534,7 @@ modified src/algebra/group_power.lean
 ## [2019-03-26 18:22:00+01:00](https://github.com/leanprover-community/mathlib/commit/fd37f96)
 feat(data/fin): add injective_cast_le
 #### Estimated changes
-modified src/data/fin.lean
+Modified src/data/fin.lean
 - \+ *lemma* injective_cast_le
 
 
@@ -542,7 +542,7 @@ modified src/data/fin.lean
 ## [2019-03-26 18:22:00+01:00](https://github.com/leanprover-community/mathlib/commit/c0c2edb)
 feat(algebra/big_operators): add Gauss' summation formula
 #### Estimated changes
-modified src/algebra/big_operators.lean
+Modified src/algebra/big_operators.lean
 - \+ *lemma* sum_range_id_mul_two
 - \+ *lemma* sum_range_id
 
@@ -551,7 +551,7 @@ modified src/algebra/big_operators.lean
 ## [2019-03-26 18:22:00+01:00](https://github.com/leanprover-community/mathlib/commit/cfeb887)
 feat(data/polynomial): degree_map', nat_degree_map' semiring variant of degree_map, nat_degree_map
 #### Estimated changes
-modified src/data/polynomial.lean
+Modified src/data/polynomial.lean
 - \+ *lemma* degree_map'
 - \+ *lemma* nat_degree_map'
 
@@ -560,7 +560,7 @@ modified src/data/polynomial.lean
 ## [2019-03-26 18:22:00+01:00](https://github.com/leanprover-community/mathlib/commit/aa2c6e2)
 feat(data/mv_polynomial): more about renaming
 #### Estimated changes
-modified src/data/mv_polynomial.lean
+Modified src/data/mv_polynomial.lean
 - \+ *lemma* rename_monomial
 - \+ *lemma* rename_eq
 - \+ *lemma* injective_rename
@@ -571,22 +571,22 @@ modified src/data/mv_polynomial.lean
 ## [2019-03-26 18:22:00+01:00](https://github.com/leanprover-community/mathlib/commit/5b73f46)
 chore(data/mv_polynomial): use type name as filename
 #### Estimated changes
-modified src/category_theory/instances/rings.lean
+Modified src/category_theory/instances/rings.lean
 
-renamed src/data/multivariate_polynomial.lean to src/data/mv_polynomial.lean
+Renamed src/data/multivariate_polynomial.lean to src/data/mv_polynomial.lean
 
-modified src/linear_algebra/finsupp.lean
+Modified src/linear_algebra/finsupp.lean
 
-modified src/ring_theory/algebra.lean
+Modified src/ring_theory/algebra.lean
 
-modified src/ring_theory/polynomial.lean
+Modified src/ring_theory/polynomial.lean
 
 
 
 ## [2019-03-26 18:22:00+01:00](https://github.com/leanprover-community/mathlib/commit/8ccca3f)
 feat(data/finsupp): add emb_domain
 #### Estimated changes
-modified src/data/finsupp.lean
+Modified src/data/finsupp.lean
 - \+ *lemma* support_emb_domain
 - \+ *lemma* emb_domain_zero
 - \+ *lemma* emb_domain_apply
@@ -601,7 +601,7 @@ modified src/data/finsupp.lean
 ## [2019-03-26 18:22:00+01:00](https://github.com/leanprover-community/mathlib/commit/d7bd41f)
 feat(linear_algebra/dimension): add exists_mem_ne_zero_of_dim_pos
 #### Estimated changes
-modified src/linear_algebra/dimension.lean
+Modified src/linear_algebra/dimension.lean
 - \+ *lemma* exists_mem_ne_zero_of_ne_bot
 - \+ *lemma* exists_mem_ne_zero_of_dim_pos
 
@@ -610,7 +610,7 @@ modified src/linear_algebra/dimension.lean
 ## [2019-03-26 18:22:00+01:00](https://github.com/leanprover-community/mathlib/commit/22352ff)
 feat(linear_algebra/dimension): add dim_span_le; add rank_finset_sum_le
 #### Estimated changes
-modified src/linear_algebra/dimension.lean
+Modified src/linear_algebra/dimension.lean
 - \+ *lemma* dim_span_le
 - \+ *lemma* dim_span_of_finset
 - \+ *lemma* rank_zero
@@ -621,7 +621,7 @@ modified src/linear_algebra/dimension.lean
 ## [2019-03-26 17:46:31+01:00](https://github.com/leanprover-community/mathlib/commit/f882b8b)
 feat(data/polynomial): rec_on_horner ([#739](https://github.com/leanprover-community/mathlib/pull/739))
 #### Estimated changes
-modified src/data/polynomial.lean
+Modified src/data/polynomial.lean
 - \+ *lemma* coeff_mk
 - \+ *lemma* degree_le_zero_iff
 - \+ *lemma* div_X_mul_X_add
@@ -643,10 +643,10 @@ feat(group_theory/subgroup): add inv_iff_ker' and related ([#790](https://github
 * correcting spacing and adding to_additive attribute
 * changing name to ker-mk
 #### Estimated changes
-modified src/group_theory/quotient_group.lean
+Modified src/group_theory/quotient_group.lean
 - \+ *lemma* ker_mk
 
-modified src/group_theory/subgroup.lean
+Modified src/group_theory/subgroup.lean
 - \+ *lemma* one_ker_inv'
 - \+ *lemma* inv_ker_one'
 - \+ *lemma* one_iff_ker_inv'
@@ -657,13 +657,13 @@ modified src/group_theory/subgroup.lean
 ## [2019-03-25 16:03:35-04:00](https://github.com/leanprover-community/mathlib/commit/0bb64a2)
 feat(tactic/solve_by_elim): working with multiple goals ([#838](https://github.com/leanprover-community/mathlib/pull/838))
 #### Estimated changes
-modified docs/tactics.md
+Modified docs/tactics.md
 
-modified src/tactic/basic.lean
+Modified src/tactic/basic.lean
 
-modified src/tactic/interactive.lean
+Modified src/tactic/interactive.lean
 
-modified test/solve_by_elim.lean
+Modified test/solve_by_elim.lean
 
 
 
@@ -673,9 +673,9 @@ refactor(algebra/group_action): use notation for monoid/group actions ([#846](ht
 * fix(linear_algebra/determinant): fix the coercion issue using a local notation
 * fix(linear_algebra/dimension): fix build
 #### Estimated changes
-modified src/algebra/module.lean
+Modified src/algebra/module.lean
 
-modified src/group_theory/group_action.lean
+Modified src/group_theory/group_action.lean
 - \+/\- *lemma* mem_orbit_iff
 - \+/\- *lemma* mem_orbit
 - \+/\- *lemma* mem_orbit_self
@@ -703,76 +703,76 @@ modified src/group_theory/group_action.lean
 - \+/\- *def* stabilizer
 - \+/\- *def* fixed_points
 
-modified src/group_theory/sylow.lean
+Modified src/group_theory/sylow.lean
 - \+/\- *lemma* mem_fixed_points_iff_card_orbit_eq_one
 - \+/\- *lemma* card_modeq_card_fixed_points
 - \+/\- *lemma* mem_fixed_points_iff_card_orbit_eq_one
 - \+/\- *lemma* card_modeq_card_fixed_points
 
-modified src/linear_algebra/determinant.lean
+Modified src/linear_algebra/determinant.lean
 
-modified src/linear_algebra/dimension.lean
+Modified src/linear_algebra/dimension.lean
 
 
 
 ## [2019-03-25 18:24:08](https://github.com/leanprover-community/mathlib/commit/a1158d8)
 feat(algebra/module): every abelian group is a Z-module ([#848](https://github.com/leanprover-community/mathlib/pull/848))
 #### Estimated changes
-modified src/algebra/module.lean
+Modified src/algebra/module.lean
 
 
 
 ## [2019-03-25 16:59:27+01:00](https://github.com/leanprover-community/mathlib/commit/cb5e185)
 refactor(data/equiv): equiv_injective_surjective ([#849](https://github.com/leanprover-community/mathlib/pull/849))
 #### Estimated changes
-modified src/data/equiv/basic.lean
+Modified src/data/equiv/basic.lean
 
-modified src/data/fintype.lean
+Modified src/data/fintype.lean
 
-modified src/group_theory/perm/cycles.lean
+Modified src/group_theory/perm/cycles.lean
 
-modified src/group_theory/perm/sign.lean
+Modified src/group_theory/perm/sign.lean
 
-modified src/linear_algebra/basic.lean
+Modified src/linear_algebra/basic.lean
 
-modified src/linear_algebra/determinant.lean
+Modified src/linear_algebra/determinant.lean
 
-modified src/linear_algebra/dimension.lean
+Modified src/linear_algebra/dimension.lean
 
-modified src/logic/embedding.lean
+Modified src/logic/embedding.lean
 
-modified src/order/order_iso.lean
+Modified src/order/order_iso.lean
 
-modified src/ring_theory/localization.lean
+Modified src/ring_theory/localization.lean
 
-modified src/ring_theory/noetherian.lean
+Modified src/ring_theory/noetherian.lean
 
-modified src/set_theory/cofinality.lean
+Modified src/set_theory/cofinality.lean
 
-modified src/topology/constructions.lean
+Modified src/topology/constructions.lean
 
 
 
 ## [2019-03-23 21:28:16+01:00](https://github.com/leanprover-community/mathlib/commit/cd7402d)
 Minor clarification to simpa doc ([#842](https://github.com/leanprover-community/mathlib/pull/842))
 #### Estimated changes
-modified docs/tactics.md
+Modified docs/tactics.md
 
 
 
 ## [2019-03-23 12:56:54-04:00](https://github.com/leanprover-community/mathlib/commit/b0b33ab)
 fix(import): remove relative imports
 #### Estimated changes
-modified src/analysis/normed_space/bounded_linear_maps.lean
+Modified src/analysis/normed_space/bounded_linear_maps.lean
 
-modified src/analysis/normed_space/deriv.lean
+Modified src/analysis/normed_space/deriv.lean
 
 
 
 ## [2019-03-22 16:02:14](https://github.com/leanprover-community/mathlib/commit/c29769f)
 fix(ring_theory/multiplicity): correct spelling mistake in docstring
 #### Estimated changes
-modified src/ring_theory/multiplicity.lean
+Modified src/ring_theory/multiplicity.lean
 
 
 
@@ -781,7 +781,7 @@ fix(doc/extra/tactic_writing): fix a minor error ([#841](https://github.com/lean
 * fix(doc/extra/tactic_writing): fix a minor error
 * comma splice
 #### Estimated changes
-modified docs/extras/tactic_writing.md
+Modified docs/extras/tactic_writing.md
 
 
 
@@ -799,7 +799,7 @@ feat(data/equiv/algebra): add add_equiv and mul_equiv ([#789](https://github.com
 * Making is_mul_hom and is_add_hom classes
 * adding more to_additive
 #### Estimated changes
-modified src/algebra/group.lean
+Modified src/algebra/group.lean
 - \+ *lemma* id
 - \+ *lemma* comp
 - \+ *lemma* comp'
@@ -807,7 +807,7 @@ modified src/algebra/group.lean
 - \+ *lemma* map_comp
 - \+ *lemma* map_comp'
 
-modified src/data/equiv/algebra.lean
+Modified src/data/equiv/algebra.lean
 - \+ *lemma* one
 - \+ *def* refl
 - \+ *def* symm
@@ -824,7 +824,7 @@ feat(group_theory/submonoid): add closure_singleton ([#810](https://github.com/l
 * feat(group_theory/submonoid): add closure_singleton
 * adding some to_additive
 #### Estimated changes
-modified src/group_theory/submonoid.lean
+Modified src/group_theory/submonoid.lean
 - \+ *lemma* powers.one_mem
 - \+ *lemma* multiples.zero_mem
 - \+ *lemma* powers.self_mem
@@ -837,26 +837,26 @@ modified src/group_theory/submonoid.lean
 ## [2019-03-20 10:16:08-04:00](https://github.com/leanprover-community/mathlib/commit/098c2cb)
 feat(tactic/wlog): `discharger` defaults to classical `tauto` ([#836](https://github.com/leanprover-community/mathlib/pull/836))
 #### Estimated changes
-modified src/tactic/wlog.lean
+Modified src/tactic/wlog.lean
 
 
 
 ## [2019-03-18 00:04:29](https://github.com/leanprover-community/mathlib/commit/d60d161)
 feat(linear_algebra/basic): add ring instance ([#823](https://github.com/leanprover-community/mathlib/pull/823))
 #### Estimated changes
-modified src/linear_algebra/basic.lean
+Modified src/linear_algebra/basic.lean
 - \+/\- *def* general_linear_group
 - \- *def* endomorphism_ring
 - \+/\- *def* general_linear_group
 
-modified src/ring_theory/algebra.lean
+Modified src/ring_theory/algebra.lean
 
 
 
 ## [2019-03-17 21:08:06](https://github.com/leanprover-community/mathlib/commit/9ff5e8d)
 feat(algebra/punit_instances): punit instances ([#828](https://github.com/leanprover-community/mathlib/pull/828))
 #### Estimated changes
-created src/algebra/punit_instances.lean
+Created src/algebra/punit_instances.lean
 - \+ *lemma* zero_eq
 - \+ *lemma* one_eq
 - \+ *lemma* add_eq
@@ -877,7 +877,7 @@ created src/algebra/punit_instances.lean
 ## [2019-03-17 21:07:14](https://github.com/leanprover-community/mathlib/commit/df996be)
 fix(topology/algebra/group): fix binders for top group extensionality ([#826](https://github.com/leanprover-community/mathlib/pull/826))
 #### Estimated changes
-modified src/topology/algebra/group.lean
+Modified src/topology/algebra/group.lean
 
 
 
@@ -885,10 +885,10 @@ modified src/topology/algebra/group.lean
 feat(order/filter/filter_product): build hyperreals ([#801](https://github.com/leanprover-community/mathlib/pull/801))
 Construction of filter products, ultraproducts, some instances, hyperreal numbers.
 #### Estimated changes
-modified src/algebra/field.lean
+Modified src/algebra/field.lean
 - \+ *lemma* inv_eq_zero
 
-created src/data/real/hyperreal.lean
+Created src/data/real/hyperreal.lean
 - \+ *lemma* epsilon_pos
 - \+ *lemma* epsilon_ne_zero
 - \+ *lemma* omega_pos
@@ -907,13 +907,13 @@ created src/data/real/hyperreal.lean
 - \+ *def* is_st
 - \+ *def* infinitesimal
 
-modified src/data/real/nnreal.lean
+Modified src/data/real/nnreal.lean
 - \- *lemma* inv_eq_zero
 
-modified src/data/set/basic.lean
+Modified src/data/set/basic.lean
 - \+ *lemma* set_of_eq_eq_singleton
 
-modified src/order/filter/basic.lean
+Modified src/order/filter/basic.lean
 - \+ *lemma* cofinite_ne_bot
 - \+ *lemma* hyperfilter_le_cofinite
 - \+ *lemma* is_ultrafilter_hyperfilter
@@ -921,7 +921,7 @@ modified src/order/filter/basic.lean
 - \+ *theorem* compl_mem_hyperfilter_of_finite
 - \+ *theorem* mem_hyperfilter_of_finite_compl
 
-created src/order/filter/filter_product.lean
+Created src/order/filter/filter_product.lean
 - \+ *lemma* of_seq_zero
 - \+ *lemma* of_seq_add
 - \+ *lemma* of_seq_neg
@@ -967,7 +967,7 @@ created src/order/filter/filter_product.lean
 ## [2019-03-16 09:30:48-05:00](https://github.com/leanprover-community/mathlib/commit/0c2c2bd)
 feat(group_theory/perm/cycles): cycle_factors ([#815](https://github.com/leanprover-community/mathlib/pull/815))
 #### Estimated changes
-created src/group_theory/perm/cycles.lean
+Created src/group_theory/perm/cycles.lean
 - \+ *lemma* same_cycle.refl
 - \+ *lemma* same_cycle.symm
 - \+ *lemma* same_cycle.trans
@@ -992,7 +992,7 @@ created src/group_theory/perm/cycles.lean
 - \+ *def* cycle_factors_aux
 - \+ *def* cycle_factors
 
-renamed src/group_theory/perm.lean to src/group_theory/perm/sign.lean
+Renamed src/group_theory/perm.lean to src/group_theory/perm/sign.lean
 - \+ *lemma* subtype_perm_one
 - \+ *lemma* of_subtype_one
 - \+ *lemma* disjoint.symm
@@ -1024,9 +1024,9 @@ renamed src/group_theory/perm.lean to src/group_theory/perm/sign.lean
 - \+/\- *def* is_cycle
 - \+/\- *def* is_cycle
 
-modified src/linear_algebra/determinant.lean
+Modified src/linear_algebra/determinant.lean
 
-modified test/fin_cases.lean
+Modified test/fin_cases.lean
 
 
 
@@ -1034,7 +1034,7 @@ modified test/fin_cases.lean
 feat(data/set/intervals): add missing intervals + some lemmas ([#805](https://github.com/leanprover-community/mathlib/pull/805))
 The lemmas about Icc ⊆ I** are important for convexity
 #### Estimated changes
-modified src/data/set/intervals.lean
+Modified src/data/set/intervals.lean
 - \+/\- *lemma* mem_Icc
 - \+ *lemma* mem_Iic
 - \+ *lemma* mem_Ioc
@@ -1065,20 +1065,20 @@ modified src/data/set/intervals.lean
 ## [2019-03-14 10:32:41+01:00](https://github.com/leanprover-community/mathlib/commit/2bf44d3)
 refactor(*): rename metric_space_subtype to subtype.metric_space ([#817](https://github.com/leanprover-community/mathlib/pull/817))
 #### Estimated changes
-modified src/data/padics/padic_integers.lean
+Modified src/data/padics/padic_integers.lean
 
-modified src/topology/metric_space/basic.lean
+Modified src/topology/metric_space/basic.lean
 
 
 
 ## [2019-03-14 10:31:53+01:00](https://github.com/leanprover-community/mathlib/commit/c5afc52)
 feat(topology/metric_space/baire): Baire theorem ([#816](https://github.com/leanprover-community/mathlib/pull/816))
 #### Estimated changes
-modified src/data/set/countable.lean
+Modified src/data/set/countable.lean
 - \+ *lemma* exists_surjective_of_countable
 - \+ *lemma* countable_prod
 
-modified src/data/set/lattice.lean
+Modified src/data/set/lattice.lean
 - \+ *lemma* sInter_union_sInter
 - \+ *lemma* sUnion_inter_sUnion
 - \+ *lemma* sInter_bUnion
@@ -1090,21 +1090,21 @@ modified src/data/set/lattice.lean
 - \+ *theorem* sUnion_range
 - \+ *theorem* sInter_range
 
-modified src/order/complete_boolean_algebra.lean
+Modified src/order/complete_boolean_algebra.lean
 - \+ *theorem* Inf_sup_eq
 - \+ *theorem* Sup_inf_eq
 - \+ *theorem* Inf_sup_Inf
 - \+ *theorem* Sup_inf_Sup
 
-modified src/order/complete_lattice.lean
+Modified src/order/complete_lattice.lean
 - \+ *theorem* infi_le_infi_of_subset
 - \+ *theorem* supr_le_supr_of_subset
 
-modified src/topology/basic.lean
+Modified src/topology/basic.lean
 - \+ *lemma* is_closed_frontier
 - \+ *lemma* interior_frontier
 
-created src/topology/metric_space/baire.lean
+Created src/topology/metric_space/baire.lean
 - \+ *lemma* is_open.is_Gδ
 - \+ *lemma* is_Gδ_bInter_of_open
 - \+ *lemma* is_Gδ_Inter_of_open
@@ -1123,7 +1123,7 @@ created src/topology/metric_space/baire.lean
 - \+ *theorem* nonempty_interior_of_Union_of_closed
 - \+ *def* is_Gδ
 
-modified src/topology/metric_space/basic.lean
+Modified src/topology/metric_space/basic.lean
 - \+ *theorem* mem_closed_ball_self
 
 
@@ -1131,18 +1131,18 @@ modified src/topology/metric_space/basic.lean
 ## [2019-03-13 23:45:07-04:00](https://github.com/leanprover-community/mathlib/commit/72100bd)
 feat(tactic/squeeze,hole): remove needless qualifications in names
 #### Estimated changes
-modified src/meta/rb_map.lean
+Modified src/meta/rb_map.lean
 
-modified src/tactic/basic.lean
+Modified src/tactic/basic.lean
 
-modified src/tactic/squeeze.lean
+Modified src/tactic/squeeze.lean
 
 
 
 ## [2019-03-12 13:37:46-04:00](https://github.com/leanprover-community/mathlib/commit/82f79a5)
 feat(data/list|multiset|finset): lemmas about intervals in nat ([#795](https://github.com/leanprover-community/mathlib/pull/795))
 #### Estimated changes
-modified src/data/finset.lean
+Modified src/data/finset.lean
 - \+ *lemma* inter_consecutive
 - \+ *theorem* image_add
 - \+ *theorem* image_sub
@@ -1151,7 +1151,7 @@ modified src/data/finset.lean
 - \- *theorem* map_add
 - \+/\- *theorem* pred_singleton
 
-modified src/data/list/basic.lean
+Modified src/data/list/basic.lean
 - \+ *lemma* inter_consecutive
 - \+ *lemma* bag_inter_consecutive
 - \+ *theorem* map_sub_range'
@@ -1161,7 +1161,7 @@ modified src/data/list/basic.lean
 - \+/\- *theorem* map_add
 - \+/\- *theorem* pred_singleton
 
-modified src/data/multiset.lean
+Modified src/data/multiset.lean
 - \+ *lemma* inter_consecutive
 - \+ *theorem* map_sub
 - \+/\- *theorem* pred_singleton
@@ -1173,9 +1173,9 @@ modified src/data/multiset.lean
 chore(topology/*): @uniformity α _ becomes 𝓤 α ([#814](https://github.com/leanprover-community/mathlib/pull/814))
 This is a binder type change and a local notation
 #### Estimated changes
-modified src/topology/algebra/infinite_sum.lean
+Modified src/topology/algebra/infinite_sum.lean
 
-modified src/topology/algebra/uniform_group.lean
+Modified src/topology/algebra/uniform_group.lean
 - \+/\- *lemma* uniformity_translate
 - \+/\- *lemma* uniformity_eq_comap_nhds_zero
 - \+/\- *lemma* uniformity_eq_comap_nhds_zero'
@@ -1183,7 +1183,7 @@ modified src/topology/algebra/uniform_group.lean
 - \+/\- *lemma* uniformity_eq_comap_nhds_zero
 - \+/\- *lemma* uniformity_eq_comap_nhds_zero'
 
-modified src/topology/metric_space/basic.lean
+Modified src/topology/metric_space/basic.lean
 - \+/\- *theorem* uniformity_dist
 - \+/\- *theorem* uniformity_dist'
 - \+/\- *theorem* uniformity_edist
@@ -1191,15 +1191,15 @@ modified src/topology/metric_space/basic.lean
 - \+/\- *theorem* uniformity_dist'
 - \+/\- *theorem* uniformity_edist
 
-modified src/topology/metric_space/cau_seq_filter.lean
+Modified src/topology/metric_space/cau_seq_filter.lean
 
-modified src/topology/metric_space/emetric_space.lean
+Modified src/topology/metric_space/emetric_space.lean
 - \+/\- *theorem* uniformity_edist'
 - \+/\- *theorem* uniformity_edist''
 - \+/\- *theorem* uniformity_edist'
 - \+/\- *theorem* uniformity_edist''
 
-modified src/topology/uniform_space/basic.lean
+Modified src/topology/uniform_space/basic.lean
 - \+/\- *lemma* refl_le_uniformity
 - \+/\- *lemma* refl_mem_uniformity
 - \+/\- *lemma* symm_le_uniformity
@@ -1247,7 +1247,7 @@ modified src/topology/uniform_space/basic.lean
 - \+/\- *def* uniformity
 - \+/\- *def* uniformity
 
-modified src/topology/uniform_space/cauchy.lean
+Modified src/topology/uniform_space/cauchy.lean
 - \+/\- *lemma* cauchy_iff
 - \+/\- *lemma* cauchy_map_iff
 - \+/\- *lemma* cauchy_iff
@@ -1255,25 +1255,25 @@ modified src/topology/uniform_space/cauchy.lean
 - \+/\- *def* cauchy
 - \+/\- *def* cauchy
 
-modified src/topology/uniform_space/completion.lean
+Modified src/topology/uniform_space/completion.lean
 
-modified src/topology/uniform_space/separation.lean
+Modified src/topology/uniform_space/separation.lean
 
-modified src/topology/uniform_space/uniform_embedding.lean
+Modified src/topology/uniform_space/uniform_embedding.lean
 
 
 
 ## [2019-03-12 01:04:54-04:00](https://github.com/leanprover-community/mathlib/commit/3360267)
 feat(tactic/basic): folding over the environment, to get all declarations ([#798](https://github.com/leanprover-community/mathlib/pull/798))
 #### Estimated changes
-modified src/tactic/basic.lean
+Modified src/tactic/basic.lean
 
 
 
 ## [2019-03-11 16:11:52-04:00](https://github.com/leanprover-community/mathlib/commit/bde8690)
 feat(data/alist,data/finmap): union ([#750](https://github.com/leanprover-community/mathlib/pull/750))
 #### Estimated changes
-modified src/data/finmap.lean
+Modified src/data/finmap.lean
 - \+ *theorem* induction_on₂
 - \+ *theorem* induction_on₃
 - \+ *theorem* ext_iff
@@ -1289,7 +1289,7 @@ modified src/data/finmap.lean
 - \+/\- *theorem* mem_insert
 - \+ *def* union
 
-modified src/data/list/alist.lean
+Modified src/data/list/alist.lean
 - \+ *theorem* empty_entries
 - \+ *theorem* singleton_entries
 - \+ *theorem* lookup_empty
@@ -1308,7 +1308,7 @@ modified src/data/list/alist.lean
 - \+/\- *theorem* lookup_insert_ne
 - \+ *def* union
 
-modified src/data/list/sigma.lean
+Modified src/data/list/sigma.lean
 - \+ *theorem* kerase_append_left
 - \+ *theorem* kerase_append_right
 - \+ *theorem* kerase_comm
@@ -1336,7 +1336,7 @@ modified src/data/list/sigma.lean
 ## [2019-03-11 17:09:10+01:00](https://github.com/leanprover-community/mathlib/commit/eb96a25)
 feat(topology/algebra/group): extensionality for top group structure
 #### Estimated changes
-modified src/topology/algebra/group.lean
+Modified src/topology/algebra/group.lean
 - \+ *lemma* topological_group.ext
 
 
@@ -1344,7 +1344,7 @@ modified src/topology/algebra/group.lean
 ## [2019-03-11 14:06:20](https://github.com/leanprover-community/mathlib/commit/69249d8)
 feat(topology/algebra/monoid): add is_submonoid.mem_nhds_one ([#809](https://github.com/leanprover-community/mathlib/pull/809))
 #### Estimated changes
-modified src/topology/algebra/monoid.lean
+Modified src/topology/algebra/monoid.lean
 - \+ *lemma* is_submonoid.mem_nhds_one
 
 
@@ -1352,19 +1352,19 @@ modified src/topology/algebra/monoid.lean
 ## [2019-03-09 17:49:20-05:00](https://github.com/leanprover-community/mathlib/commit/51c31ce)
 refactor(data/list): rm redundant eq_nil_of_forall_not_mem ([#804](https://github.com/leanprover-community/mathlib/pull/804))
 #### Estimated changes
-modified src/data/hash_map.lean
+Modified src/data/hash_map.lean
 
-modified src/data/list/basic.lean
+Modified src/data/list/basic.lean
 - \- *theorem* eq_nil_of_forall_not_mem
 
-modified src/data/multiset.lean
+Modified src/data/multiset.lean
 
 
 
 ## [2019-03-09 11:34:38](https://github.com/leanprover-community/mathlib/commit/e8818fa)
 feat(data/set/finite): add finite_lt_nat ([#807](https://github.com/leanprover-community/mathlib/pull/807))
 #### Estimated changes
-modified src/data/set/finite.lean
+Modified src/data/set/finite.lean
 - \+ *lemma* finite_lt_nat
 
 
@@ -1375,10 +1375,10 @@ feat(ring_theory/noetherian): Nakayama's Lemma ([#778](https://github.com/leanpr
 * Update src/ring_theory/noetherian.lean
 Co-Authored-By: kckennylau <kc_kennylau@yahoo.com.hk>
 #### Estimated changes
-modified src/ring_theory/ideal_operations.lean
+Modified src/ring_theory/ideal_operations.lean
 - \+ *theorem* mem_smul_span_singleton
 
-modified src/ring_theory/noetherian.lean
+Modified src/ring_theory/noetherian.lean
 - \+ *theorem* exists_sub_one_mem_and_smul_eq_zero_of_fg_of_le_smul
 
 
@@ -1386,9 +1386,9 @@ modified src/ring_theory/noetherian.lean
 ## [2019-03-08 15:01:45+01:00](https://github.com/leanprover-community/mathlib/commit/1159fa9)
 refactot(data/equiv/basic): rename apply_inverse_apply to apply_symm_apply ([#800](https://github.com/leanprover-community/mathlib/pull/800))
 #### Estimated changes
-modified src/category_theory/adjunction.lean
+Modified src/category_theory/adjunction.lean
 
-modified src/data/equiv/basic.lean
+Modified src/data/equiv/basic.lean
 - \+ *lemma* symm_trans_apply
 - \- *lemma* inverse_trans_apply
 - \+ *theorem* apply_symm_apply
@@ -1396,59 +1396,59 @@ modified src/data/equiv/basic.lean
 - \- *theorem* apply_inverse_apply
 - \- *theorem* inverse_apply_apply
 
-modified src/data/equiv/denumerable.lean
+Modified src/data/equiv/denumerable.lean
 
-modified src/data/finsupp.lean
+Modified src/data/finsupp.lean
 
-modified src/data/multivariate_polynomial.lean
+Modified src/data/multivariate_polynomial.lean
 
-modified src/field_theory/perfect_closure.lean
+Modified src/field_theory/perfect_closure.lean
 
-modified src/order/order_iso.lean
+Modified src/order/order_iso.lean
 - \+ *theorem* apply_symm_apply
 - \+ *theorem* symm_apply_apply
 - \- *theorem* apply_inverse_apply
 - \- *theorem* inverse_apply_apply
 
-modified src/ring_theory/localization.lean
+Modified src/ring_theory/localization.lean
 
-modified src/set_theory/ordinal.lean
+Modified src/set_theory/ordinal.lean
 
 
 
 ## [2019-03-08 13:42:54+01:00](https://github.com/leanprover-community/mathlib/commit/b1af140)
 style(data/list/basic): clean up count_bag_inter
 #### Estimated changes
-modified src/data/list/basic.lean
+Modified src/data/list/basic.lean
 
 
 
 ## [2019-03-08 08:46:58+01:00](https://github.com/leanprover-community/mathlib/commit/ffa6d69)
 feat(*): has_mem (set α) (filter α) ([#799](https://github.com/leanprover-community/mathlib/pull/799))
 #### Estimated changes
-modified src/analysis/asymptotics.lean
+Modified src/analysis/asymptotics.lean
 
-modified src/analysis/normed_space/basic.lean
+Modified src/analysis/normed_space/basic.lean
 
-modified src/analysis/normed_space/deriv.lean
+Modified src/analysis/normed_space/deriv.lean
 
-modified src/analysis/specific_limits.lean
+Modified src/analysis/specific_limits.lean
 
-modified src/data/analysis/filter.lean
+Modified src/data/analysis/filter.lean
 - \+/\- *theorem* mem_sets
 - \+/\- *theorem* mem_sets
 
-modified src/data/analysis/topology.lean
+Modified src/data/analysis/topology.lean
 
-modified src/measure_theory/integration.lean
+Modified src/measure_theory/integration.lean
 - \+/\- *lemma* integral_congr
 - \+/\- *lemma* integral_congr
 
-modified src/measure_theory/measure_space.lean
+Modified src/measure_theory/measure_space.lean
 - \+/\- *def* all_ae
 - \+/\- *def* all_ae
 
-modified src/order/filter/basic.lean
+Modified src/order/filter/basic.lean
 - \+/\- *lemma* univ_mem_sets
 - \+/\- *lemma* mem_sets_of_superset
 - \+/\- *lemma* inter_mem_sets
@@ -1534,13 +1534,13 @@ modified src/order/filter/basic.lean
 - \+/\- *theorem* le_map_comap_of_surjective'
 - \+/\- *theorem* map_comap_of_surjective'
 
-modified src/order/filter/partial.lean
+Modified src/order/filter/partial.lean
 - \+/\- *theorem* ptendsto'_of_ptendsto
 - \+/\- *theorem* ptendsto'_of_ptendsto
 - \+/\- *def* mem_pmap
 - \+/\- *def* mem_pmap
 
-modified src/topology/algebra/group.lean
+Modified src/topology/algebra/group.lean
 - \+/\- *lemma* exists_nhds_split
 - \+/\- *lemma* exists_nhds_split_inv
 - \+/\- *lemma* exists_nhds_split4
@@ -1550,9 +1550,9 @@ modified src/topology/algebra/group.lean
 - \+/\- *lemma* exists_nhds_split4
 - \+/\- *lemma* exists_Z_half
 
-modified src/topology/algebra/infinite_sum.lean
+Modified src/topology/algebra/infinite_sum.lean
 
-modified src/topology/algebra/ordered.lean
+Modified src/topology/algebra/ordered.lean
 - \+/\- *lemma* lt_mem_nhds
 - \+/\- *lemma* le_mem_nhds
 - \+/\- *lemma* gt_mem_nhds
@@ -1564,11 +1564,11 @@ modified src/topology/algebra/ordered.lean
 - \+/\- *lemma* ge_mem_nhds
 - \+/\- *lemma* mem_nhds_orderable_dest
 
-modified src/topology/algebra/uniform_group.lean
+Modified src/topology/algebra/uniform_group.lean
 
-modified src/topology/bases.lean
+Modified src/topology/bases.lean
 
-modified src/topology/basic.lean
+Modified src/topology/basic.lean
 - \+/\- *lemma* mem_of_nhds
 - \+/\- *lemma* is_open_iff_mem_nhds
 - \+/\- *lemma* mem_of_nhds
@@ -1576,53 +1576,53 @@ modified src/topology/basic.lean
 - \+/\- *theorem* mem_closure_iff_nhds
 - \+/\- *theorem* mem_closure_iff_nhds
 
-modified src/topology/bounded_continuous_function.lean
+Modified src/topology/bounded_continuous_function.lean
 
-modified src/topology/compact_open.lean
+Modified src/topology/compact_open.lean
 
-modified src/topology/constructions.lean
+Modified src/topology/constructions.lean
 - \+/\- *lemma* map_nhds_subtype_val_eq
 - \+/\- *lemma* map_nhds_subtype_val_eq
 
-modified src/topology/instances/ennreal.lean
+Modified src/topology/instances/ennreal.lean
 - \+/\- *lemma* coe_range_mem_nhds
 - \+/\- *lemma* coe_range_mem_nhds
 
-modified src/topology/maps.lean
+Modified src/topology/maps.lean
 
-modified src/topology/metric_space/basic.lean
+Modified src/topology/metric_space/basic.lean
 - \+/\- *theorem* mem_nhds_iff
 - \+/\- *theorem* ball_mem_nhds
 - \+/\- *theorem* mem_nhds_iff
 - \+/\- *theorem* ball_mem_nhds
 
-modified src/topology/metric_space/cau_seq_filter.lean
+Modified src/topology/metric_space/cau_seq_filter.lean
 - \+/\- *lemma* set_seq_of_cau_filter_mem_sets
 - \+/\- *lemma* set_seq_of_cau_filter_mem_sets
 
-modified src/topology/metric_space/emetric_space.lean
+Modified src/topology/metric_space/emetric_space.lean
 - \+/\- *theorem* mem_nhds_iff
 - \+/\- *theorem* ball_mem_nhds
 - \+/\- *theorem* mem_nhds_iff
 - \+/\- *theorem* ball_mem_nhds
 
-modified src/topology/order.lean
+Modified src/topology/order.lean
 - \+/\- *lemma* map_nhds_induced_eq
 - \+/\- *lemma* map_nhds_induced_eq
 
-modified src/topology/separation.lean
+Modified src/topology/separation.lean
 - \+/\- *lemma* compl_singleton_mem_nhds
 - \+/\- *lemma* nhds_is_closed
 - \+/\- *lemma* compl_singleton_mem_nhds
 - \+/\- *lemma* nhds_is_closed
 
-modified src/topology/sequences.lean
+Modified src/topology/sequences.lean
 
-modified src/topology/stone_cech.lean
+Modified src/topology/stone_cech.lean
 
-modified src/topology/subset_properties.lean
+Modified src/topology/subset_properties.lean
 
-modified src/topology/uniform_space/basic.lean
+Modified src/topology/uniform_space/basic.lean
 - \+/\- *lemma* refl_mem_uniformity
 - \+/\- *lemma* comp_mem_uniformity_sets
 - \+/\- *lemma* symm_of_uniformity
@@ -1639,11 +1639,11 @@ modified src/topology/uniform_space/basic.lean
 - \+/\- *lemma* interior_mem_uniformity
 - \+/\- *lemma* mem_uniformity_is_closed
 
-modified src/topology/uniform_space/completion.lean
+Modified src/topology/uniform_space/completion.lean
 
-modified src/topology/uniform_space/separation.lean
+Modified src/topology/uniform_space/separation.lean
 
-modified src/topology/uniform_space/uniform_embedding.lean
+Modified src/topology/uniform_space/uniform_embedding.lean
 
 
 
@@ -1653,11 +1653,11 @@ refactor(localization): shorten proofs ([#796](https://github.com/leanprover-com
 * refactor(localization): shorten proofs
 *  swap order of equality in ring_equiv.symm_to_equiv
 #### Estimated changes
-modified src/data/equiv/algebra.lean
+Modified src/data/equiv/algebra.lean
 - \+ *lemma* to_equiv_symm
 - \+ *lemma* to_equiv_symm_apply
 
-modified src/ring_theory/localization.lean
+Modified src/ring_theory/localization.lean
 - \+ *lemma* lift'_mk
 - \+/\- *lemma* lift'_apply_coe
 - \+ *lemma* map_id
@@ -1670,10 +1670,10 @@ modified src/ring_theory/localization.lean
 ## [2019-03-07 10:17:21-05:00](https://github.com/leanprover-community/mathlib/commit/26bd400)
 feat(data/list): lemmas about count and bag_inter ([#797](https://github.com/leanprover-community/mathlib/pull/797))
 #### Estimated changes
-modified src/data/finset.lean
+Modified src/data/finset.lean
 - \+ *lemma* to_finset_inter
 
-modified src/data/list/basic.lean
+Modified src/data/list/basic.lean
 - \+ *theorem* count_erase_self
 - \+ *theorem* count_erase_of_ne
 - \+/\- *theorem* mem_bag_inter
@@ -1681,7 +1681,7 @@ modified src/data/list/basic.lean
 - \+ *theorem* bag_inter_nil_iff_inter_nil
 - \+/\- *theorem* mem_bag_inter
 
-modified src/data/multiset.lean
+Modified src/data/multiset.lean
 - \+ *theorem* coe_inter
 
 
@@ -1689,14 +1689,14 @@ modified src/data/multiset.lean
 ## [2019-03-06 20:07:22-05:00](https://github.com/leanprover-community/mathlib/commit/181647b)
 feat(tactic/basic): utility functions for names ([#791](https://github.com/leanprover-community/mathlib/pull/791))
 #### Estimated changes
-modified src/tactic/basic.lean
+Modified src/tactic/basic.lean
 
 
 
 ## [2019-03-06 23:01:10](https://github.com/leanprover-community/mathlib/commit/48eaf05)
 feat(algebra/group): units.coe_map
 #### Estimated changes
-modified src/algebra/group.lean
+Modified src/algebra/group.lean
 - \+ *lemma* coe_map
 
 
@@ -1706,7 +1706,7 @@ feat(data/nat/basic): some lemmas ([#792](https://github.com/leanprover-communit
 * feat(data/nat/basic): some lemmas
 * fixing namespace, moving lemma
 #### Estimated changes
-modified src/data/nat/basic.lean
+Modified src/data/nat/basic.lean
 - \+ *lemma* one_le_of_lt
 - \+ *lemma* le_pred_of_lt
 - \+ *lemma* pred_one_add
@@ -1717,7 +1717,7 @@ modified src/data/nat/basic.lean
 ## [2019-03-06 10:16:34-05:00](https://github.com/leanprover-community/mathlib/commit/61e02dd)
 feat(data/finset): missing fold_map lemma ([#794](https://github.com/leanprover-community/mathlib/pull/794))
 #### Estimated changes
-modified src/data/finset.lean
+Modified src/data/finset.lean
 - \+ *theorem* fold_map
 
 
@@ -1732,7 +1732,7 @@ feat(ring_theory/localization): adds induced ring hom between fraction rings ([#
 * Improve simp-lemmas, add docstrings
 * Rename circ to comp in lemma names
 #### Estimated changes
-modified src/ring_theory/localization.lean
+Modified src/ring_theory/localization.lean
 - \+ *lemma* to_units_coe
 - \+/\- *lemma* of_zero
 - \+/\- *lemma* of_one
@@ -1817,29 +1817,29 @@ modified src/ring_theory/localization.lean
 ## [2019-03-05 21:55:19+01:00](https://github.com/leanprover-community/mathlib/commit/1ec0a1f)
 fix(tactic/linarith): correctly parse 0*0
 #### Estimated changes
-modified src/tactic/linarith.lean
+Modified src/tactic/linarith.lean
 
-modified test/linarith.lean
+Modified test/linarith.lean
 
 
 
 ## [2019-03-05 14:15:40-05:00](https://github.com/leanprover-community/mathlib/commit/581cf19)
 feat(topology): split uniform_space and topological_structure
 #### Estimated changes
-modified src/algebra/module.lean
+Modified src/algebra/module.lean
 
-modified src/analysis/exponential.lean
+Modified src/analysis/exponential.lean
 
-modified src/analysis/normed_space/operator_norm.lean
+Modified src/analysis/normed_space/operator_norm.lean
 
-modified src/data/equiv/basic.lean
+Modified src/data/equiv/basic.lean
 
-modified src/data/quot.lean
+Modified src/data/quot.lean
 
-modified src/logic/basic.lean
+Modified src/logic/basic.lean
 - \+ *lemma* {u}
 
-modified src/topology/algebra/group.lean
+Modified src/topology/algebra/group.lean
 - \+ *lemma* continuous_inv'
 - \+ *lemma* continuous_inv
 - \+ *lemma* tendsto_inv
@@ -1861,7 +1861,7 @@ modified src/topology/algebra/group.lean
 - \- *lemma* to_uniform_space_eq
 - \- *def* topological_add_group.to_uniform_space
 
-created src/topology/algebra/group_completion.lean
+Created src/topology/algebra/group_completion.lean
 - \+ *lemma* coe_zero
 - \+ *lemma* coe_neg
 - \+ *lemma* coe_add
@@ -1869,9 +1869,9 @@ created src/topology/algebra/group_completion.lean
 - \+ *lemma* is_add_group_hom_map
 - \+ *lemma* is_add_group_hom_prod
 
-modified src/topology/algebra/infinite_sum.lean
+Modified src/topology/algebra/infinite_sum.lean
 
-created src/topology/algebra/monoid.lean
+Created src/topology/algebra/monoid.lean
 - \+ *lemma* continuous_mul'
 - \+ *lemma* continuous_mul
 - \+ *lemma* continuous_pow
@@ -1884,7 +1884,7 @@ created src/topology/algebra/monoid.lean
 - \+ *lemma* continuous_multiset_prod
 - \+ *lemma* continuous_finset_prod
 
-renamed src/topology/algebra/topological_structures.lean to src/topology/algebra/ordered.lean
+Renamed src/topology/algebra/topological_structures.lean to src/topology/algebra/ordered.lean
 - \- *lemma* continuous_mul'
 - \- *lemma* continuous_mul
 - \- *lemma* continuous_pow
@@ -1926,7 +1926,7 @@ renamed src/topology/algebra/topological_structures.lean to src/topology/algebra
 - \- *theorem* uniform_add_group.mk'
 - \- *def* ideal.closure
 
-deleted src/topology/algebra/quotient.lean
+Deleted src/topology/algebra/quotient.lean
 - \- *lemma* {u}
 - \- *lemma* quotient_group_saturate
 - \- *lemma* quotient_group.open_coe
@@ -1938,14 +1938,14 @@ deleted src/topology/algebra/quotient.lean
 - \- *def* comm_ring_congr
 - \- *def* sep_quot_equiv_ring_quot
 
-created src/topology/algebra/ring.lean
+Created src/topology/algebra/ring.lean
 - \+ *lemma* ideal.coe_closure
 - \+ *lemma* quotient_ring_saturate
 - \+ *lemma* quotient_ring.is_open_map_coe
 - \+ *lemma* quotient_ring.quotient_map_coe_coe
 - \+ *def* ideal.closure
 
-created src/topology/algebra/uniform_group.lean
+Created src/topology/algebra/uniform_group.lean
 - \+ *lemma* uniform_continuous_sub'
 - \+ *lemma* uniform_continuous_sub
 - \+ *lemma* uniform_continuous_neg
@@ -1976,7 +1976,7 @@ created src/topology/algebra/uniform_group.lean
 - \+ *theorem* extend_Z_bilin
 - \+ *def* topological_add_group.to_uniform_space
 
-created src/topology/algebra/uniform_ring.lean
+Created src/topology/algebra/uniform_ring.lean
 - \+ *lemma* coe_one
 - \+ *lemma* continuous_mul'
 - \+ *lemma* coe_mul
@@ -1985,17 +1985,17 @@ created src/topology/algebra/uniform_ring.lean
 - \+ *lemma* ring_sep_quot
 - \+ *def* sep_quot_equiv_ring_quot
 
-modified src/topology/bounded_continuous_function.lean
+Modified src/topology/bounded_continuous_function.lean
 
-modified src/topology/instances/polynomial.lean
+Modified src/topology/instances/polynomial.lean
 
-modified src/topology/instances/real.lean
+Modified src/topology/instances/real.lean
 
-modified src/topology/metric_space/basic.lean
+Modified src/topology/metric_space/basic.lean
 
-modified src/topology/metric_space/emetric_space.lean
+Modified src/topology/metric_space/emetric_space.lean
 
-modified src/topology/uniform_space/basic.lean
+Modified src/topology/uniform_space/basic.lean
 - \- *lemma* uniform_embedding.uniform_continuous
 - \- *lemma* uniform_embedding.uniform_continuous_iff
 - \- *lemma* uniform_embedding.embedding
@@ -2054,7 +2054,7 @@ modified src/topology/uniform_space/basic.lean
 - \- *def* totally_bounded
 - \- *def* cauchy_seq
 
-created src/topology/uniform_space/cauchy.lean
+Created src/topology/uniform_space/cauchy.lean
 - \+ *lemma* cauchy_iff
 - \+ *lemma* cauchy_map_iff
 - \+ *lemma* cauchy_downwards
@@ -2088,10 +2088,10 @@ created src/topology/uniform_space/cauchy.lean
 - \+ *def* cauchy_seq
 - \+ *def* totally_bounded
 
-created src/topology/uniform_space/complete_separated.lean
+Created src/topology/uniform_space/complete_separated.lean
 - \+ *lemma* is_closed_of_is_complete
 
-modified src/topology/uniform_space/completion.lean
+Modified src/topology/uniform_space/completion.lean
 - \- *lemma* uniformity_quotient
 - \- *lemma* uniform_continuous_quotient_mk
 - \- *lemma* uniform_continuous_quotient
@@ -2135,7 +2135,7 @@ modified src/topology/uniform_space/completion.lean
 - \- *def* lift
 - \- *def* map
 
-created src/topology/uniform_space/separation.lean
+Created src/topology/uniform_space/separation.lean
 - \+ *lemma* separated_equiv
 - \+ *lemma* uniformity_quotient
 - \+ *lemma* uniform_continuous_quotient_mk
@@ -2162,7 +2162,7 @@ created src/topology/uniform_space/separation.lean
 - \+ *def* lift
 - \+ *def* map
 
-created src/topology/uniform_space/uniform_embedding.lean
+Created src/topology/uniform_space/uniform_embedding.lean
 - \+ *lemma* uniform_embedding.uniform_continuous
 - \+ *lemma* uniform_embedding.uniform_continuous_iff
 - \+ *lemma* uniform_embedding.embedding
@@ -2188,14 +2188,14 @@ created src/topology/uniform_space/uniform_embedding.lean
 ## [2019-03-05 09:50:45+01:00](https://github.com/leanprover-community/mathlib/commit/708c0cf)
 feat(data/multiset): add monad instance ([#744](https://github.com/leanprover-community/mathlib/pull/744))
 #### Estimated changes
-modified src/data/multiset.lean
+Modified src/data/multiset.lean
 
 
 
 ## [2019-03-05 09:44:51+01:00](https://github.com/leanprover-community/mathlib/commit/3525d21)
 refactor(topology/metric_space/lipschitz): Simplify proof in banach contraction ([#788](https://github.com/leanprover-community/mathlib/pull/788))
 #### Estimated changes
-modified src/topology/metric_space/lipschitz.lean
+Modified src/topology/metric_space/lipschitz.lean
 - \- *lemma* dist_bound_of_contraction
 
 
@@ -2203,19 +2203,19 @@ modified src/topology/metric_space/lipschitz.lean
 ## [2019-03-05 09:21:46+01:00](https://github.com/leanprover-community/mathlib/commit/b9f88d1)
 feat(data/finset): add card_sdiff
 #### Estimated changes
-modified src/data/finset.lean
+Modified src/data/finset.lean
 - \+/\- *theorem* card_disjoint_union
 - \+ *theorem* card_sdiff
 - \+/\- *theorem* card_disjoint_union
 
-modified src/data/fintype.lean
+Modified src/data/fintype.lean
 
 
 
 ## [2019-03-05 09:21:46+01:00](https://github.com/leanprover-community/mathlib/commit/682f4b5)
 feat(linear_algebra): module (vector space) structure for finsupp, matrix, and mv polynomials
 #### Estimated changes
-modified src/data/finsupp.lean
+Modified src/data/finsupp.lean
 - \+ *lemma* ext_iff
 - \+ *lemma* injective_single
 - \+ *lemma* single_eq_single_iff
@@ -2230,11 +2230,11 @@ modified src/data/finsupp.lean
 - \+ *def* equiv_fun_on_fintype
 - \+ *def* restrict_support_equiv
 
-modified src/data/multivariate_polynomial.lean
+Modified src/data/multivariate_polynomial.lean
 - \+ *lemma* smul_eq_C_mul
 - \+ *lemma* smul_eval
 
-modified src/field_theory/finite.lean
+Modified src/field_theory/finite.lean
 - \+/\- *lemma* card_nth_roots_subgroup_units
 - \+/\- *lemma* card_units
 - \+/\- *lemma* prod_univ_units_id_eq_neg_one
@@ -2245,7 +2245,7 @@ modified src/field_theory/finite.lean
 - \+/\- *def* field_of_integral_domain
 - \+/\- *def* field_of_integral_domain
 
-created src/field_theory/mv_polynomial.lean
+Created src/field_theory/mv_polynomial.lean
 - \+ *lemma* eval_indicator_apply_eq_one
 - \+ *lemma* eval_indicator_apply_eq_zero
 - \+ *lemma* degrees_indicator
@@ -2261,7 +2261,7 @@ created src/field_theory/mv_polynomial.lean
 - \+ *def* R
 - \+ *def* evalᵢ
 
-created src/linear_algebra/finsupp.lean
+Created src/linear_algebra/finsupp.lean
 - \+ *lemma* lmap_domain_apply
 - \+ *lemma* lsubtype_domain_apply
 - \+ *lemma* lsingle_apply
@@ -2296,7 +2296,7 @@ created src/linear_algebra/finsupp.lean
 - \+ *def* restrict_total_degree
 - \+ *def* restrict_degree
 
-created src/linear_algebra/matrix.lean
+Created src/linear_algebra/matrix.lean
 - \+ *lemma* to_lin_add
 - \+ *lemma* to_lin_zero
 - \+ *lemma* to_lin_apply
@@ -2316,7 +2316,7 @@ created src/linear_algebra/matrix.lean
 ## [2019-03-05 09:21:46+01:00](https://github.com/leanprover-community/mathlib/commit/738778a)
 feat(data/matrix): basic definitions: transpose; row & column matrix; vector/matrix multiplication
 #### Estimated changes
-modified src/data/matrix.lean
+Modified src/data/matrix.lean
 - \+ *lemma* mul_vec_diagonal
 - \+ *lemma* vec_mul_vec_eq
 - \+ *def* transpose
@@ -2331,29 +2331,29 @@ modified src/data/matrix.lean
 ## [2019-03-05 09:21:46+01:00](https://github.com/leanprover-community/mathlib/commit/528ff93)
 refactor(linear_algebra): move multivariate_polynomial to data
 #### Estimated changes
-modified src/category_theory/instances/rings.lean
+Modified src/category_theory/instances/rings.lean
 
-renamed src/linear_algebra/multivariate_polynomial.lean to src/data/multivariate_polynomial.lean
+Renamed src/linear_algebra/multivariate_polynomial.lean to src/data/multivariate_polynomial.lean
 
-modified src/ring_theory/algebra.lean
+Modified src/ring_theory/algebra.lean
 
-modified src/ring_theory/polynomial.lean
+Modified src/ring_theory/polynomial.lean
 
 
 
 ## [2019-03-05 09:21:46+01:00](https://github.com/leanprover-community/mathlib/commit/891a192)
 refactor(ring_theory): move matrix to data and determinant to linear_algebra
 #### Estimated changes
-modified src/data/matrix.lean
+Modified src/data/matrix.lean
 
-modified src/linear_algebra/determinant.lean
+Modified src/linear_algebra/determinant.lean
 
 
 
 ## [2019-03-05 09:21:46+01:00](https://github.com/leanprover-community/mathlib/commit/10a586b)
 feat(linear_algebra): add module (vector_space) structure for function spaces
 #### Estimated changes
-modified src/linear_algebra/basic.lean
+Modified src/linear_algebra/basic.lean
 - \+ *lemma* comp_cod_restrict
 - \+ *lemma* subtype_comp_cod_restrict
 - \+ *lemma* eq_zero_of_bot_submodule
@@ -2391,13 +2391,13 @@ modified src/linear_algebra/basic.lean
 - \+ *def* diag
 - \+ *def* std_basis
 
-modified src/linear_algebra/basis.lean
+Modified src/linear_algebra/basis.lean
 - \+ *lemma* linear_independent_Union_finite
 - \+ *lemma* linear_independent_std_basis
 - \+ *lemma* is_basis_std_basis
 - \+ *lemma* is_basis_fun
 
-modified src/linear_algebra/dimension.lean
+Modified src/linear_algebra/dimension.lean
 - \+ *lemma* dim_pi
 - \+ *lemma* dim_fun
 - \+ *lemma* dim_fun'
@@ -2407,7 +2407,7 @@ modified src/linear_algebra/dimension.lean
 ## [2019-03-05 09:21:46+01:00](https://github.com/leanprover-community/mathlib/commit/332121d)
 feat(data/fintype): card_univ and card_univ_diff
 #### Estimated changes
-modified src/data/fintype.lean
+Modified src/data/fintype.lean
 - \+ *lemma* finset.card_univ
 - \+ *lemma* finset.card_univ_diff
 
@@ -2416,19 +2416,19 @@ modified src/data/fintype.lean
 ## [2019-03-05 09:21:45+01:00](https://github.com/leanprover-community/mathlib/commit/c0b1eb1)
 refactor(data/finset): correct name sdiff_disjoint -> disjoint_sdiff; add sdiff_disjoint
 #### Estimated changes
-modified src/data/finset.lean
+Modified src/data/finset.lean
 - \+ *lemma* sdiff_disjoint
 - \+/\- *lemma* disjoint_sdiff
 - \+/\- *lemma* disjoint_sdiff
 
-modified src/topology/algebra/infinite_sum.lean
+Modified src/topology/algebra/infinite_sum.lean
 
 
 
 ## [2019-03-05 09:21:45+01:00](https://github.com/leanprover-community/mathlib/commit/b3c749b)
 remove superflous parameter from bot_eq_zero
 #### Estimated changes
-modified src/algebra/ordered_group.lean
+Modified src/algebra/ordered_group.lean
 - \+/\- *lemma* bot_eq_zero
 - \+/\- *lemma* bot_eq_zero
 
@@ -2437,10 +2437,10 @@ modified src/algebra/ordered_group.lean
 ## [2019-03-05 09:21:45+01:00](https://github.com/leanprover-community/mathlib/commit/73f1a08)
 feat(data/finset): add filter_empty, filter_subset_filter, prod_filter
 #### Estimated changes
-modified src/algebra/big_operators.lean
+Modified src/algebra/big_operators.lean
 - \+ *lemma* prod_filter
 
-modified src/data/finset.lean
+Modified src/data/finset.lean
 - \+ *lemma* filter_empty
 - \+ *lemma* filter_subset_filter
 
@@ -2449,7 +2449,7 @@ modified src/data/finset.lean
 ## [2019-03-05 09:21:45+01:00](https://github.com/leanprover-community/mathlib/commit/b9ead4d)
 feat(data/finset): add disjoint_bind_left/right
 #### Estimated changes
-modified src/data/finset.lean
+Modified src/data/finset.lean
 - \+ *lemma* disjoint_bind_left
 - \+ *lemma* disjoint_bind_right
 
@@ -2458,25 +2458,25 @@ modified src/data/finset.lean
 ## [2019-03-05 09:21:45+01:00](https://github.com/leanprover-community/mathlib/commit/f82f5f2)
 refactor(algebra): canonically_ordered_monoid extends order_bot
 #### Estimated changes
-modified src/algebra/ordered_group.lean
+Modified src/algebra/ordered_group.lean
 - \+ *lemma* bot_eq_zero
 
-modified src/algebra/ordered_ring.lean
+Modified src/algebra/ordered_ring.lean
 
-modified src/data/multiset.lean
+Modified src/data/multiset.lean
 
-modified src/data/nat/enat.lean
+Modified src/data/nat/enat.lean
 
-modified src/data/real/nnreal.lean
+Modified src/data/real/nnreal.lean
 
-modified src/set_theory/cardinal.lean
+Modified src/set_theory/cardinal.lean
 
 
 
 ## [2019-03-05 09:21:45+01:00](https://github.com/leanprover-community/mathlib/commit/f07a558)
 feat(data/equiv): add subtype_pi_equiv_pi
 #### Estimated changes
-modified src/data/equiv/basic.lean
+Modified src/data/equiv/basic.lean
 - \+ *def* subtype_pi_equiv_pi
 
 
@@ -2484,7 +2484,7 @@ modified src/data/equiv/basic.lean
 ## [2019-03-05 09:21:45+01:00](https://github.com/leanprover-community/mathlib/commit/8070c05)
 feat(data/set/lattice): more rules for disjoint sets
 #### Estimated changes
-modified src/data/set/lattice.lean
+Modified src/data/set/lattice.lean
 - \+ *theorem* disjoint_diff
 - \+ *theorem* disjoint_compl
 - \+ *theorem* disjoint_singleton_left
@@ -2497,7 +2497,7 @@ modified src/data/set/lattice.lean
 ## [2019-03-05 09:21:45+01:00](https://github.com/leanprover-community/mathlib/commit/c53ac41)
 feat(data/set): relate range and image to Union
 #### Estimated changes
-modified src/data/set/lattice.lean
+Modified src/data/set/lattice.lean
 - \+ *lemma* range_eq_Union
 - \+ *lemma* image_eq_Union
 
@@ -2506,7 +2506,7 @@ modified src/data/set/lattice.lean
 ## [2019-03-05 09:21:45+01:00](https://github.com/leanprover-community/mathlib/commit/41038ba)
 feat(data/set): add exists_maximal_wrt
 #### Estimated changes
-modified src/data/set/finite.lean
+Modified src/data/set/finite.lean
 - \+ *lemma* finite.exists_maximal_wrt
 
 
@@ -2514,7 +2514,7 @@ modified src/data/set/finite.lean
 ## [2019-03-05 09:21:45+01:00](https://github.com/leanprover-community/mathlib/commit/146d73c)
 feat(data/set): add finite_image_iff_on
 #### Estimated changes
-modified src/data/set/finite.lean
+Modified src/data/set/finite.lean
 - \+ *theorem* finite_of_finite_image_on
 - \+ *theorem* finite_image_iff_on
 - \+/\- *theorem* finite_of_finite_image
@@ -2525,7 +2525,7 @@ modified src/data/set/finite.lean
 ## [2019-03-05 09:21:45+01:00](https://github.com/leanprover-community/mathlib/commit/84a5f4d)
 feat(data/set): add subset_image_iff and subset_range_iff
 #### Estimated changes
-modified src/data/set/function.lean
+Modified src/data/set/function.lean
 - \+ *lemma* subset_image_iff
 - \+ *lemma* subset_range_iff
 
@@ -2534,7 +2534,7 @@ modified src/data/set/function.lean
 ## [2019-03-05 09:21:45+01:00](https://github.com/leanprover-community/mathlib/commit/cbe2f61)
 feat(logic/function): add inv_fun_neg
 #### Estimated changes
-modified src/logic/function.lean
+Modified src/logic/function.lean
 - \+ *lemma* inv_fun_neg
 
 
@@ -2542,7 +2542,7 @@ modified src/logic/function.lean
 ## [2019-03-05 09:21:45+01:00](https://github.com/leanprover-community/mathlib/commit/73db4c7)
 feat(logic/function): add injective.ne
 #### Estimated changes
-modified src/logic/function.lean
+Modified src/logic/function.lean
 - \+ *lemma* injective.ne
 
 
@@ -2550,7 +2550,7 @@ modified src/logic/function.lean
 ## [2019-03-05 09:21:45+01:00](https://github.com/leanprover-community/mathlib/commit/c819617)
 feat(logic): add plift.down_inj
 #### Estimated changes
-modified src/logic/basic.lean
+Modified src/logic/basic.lean
 - \+ *lemma* plift.down_inj
 
 
@@ -2558,7 +2558,7 @@ modified src/logic/basic.lean
 ## [2019-03-05 09:21:45+01:00](https://github.com/leanprover-community/mathlib/commit/985445f)
 feat(linear_algebra/multivariate_polynomial): relate total_degree to degrees, add, zero, mul
 #### Estimated changes
-modified src/linear_algebra/multivariate_polynomial.lean
+Modified src/linear_algebra/multivariate_polynomial.lean
 - \+ *lemma* total_degree_eq
 - \+ *lemma* total_degree_le_degrees_card
 - \+ *lemma* total_degree_C
@@ -2575,7 +2575,7 @@ modified src/linear_algebra/multivariate_polynomial.lean
 ## [2019-03-05 09:21:45+01:00](https://github.com/leanprover-community/mathlib/commit/78fd58d)
 feat(linear_algebra/multivariate_polynomial): add degrees
 #### Estimated changes
-modified src/linear_algebra/multivariate_polynomial.lean
+Modified src/linear_algebra/multivariate_polynomial.lean
 - \+ *lemma* degrees_monomial
 - \+ *lemma* degrees_monomial_eq
 - \+ *lemma* degrees_C
@@ -2600,7 +2600,7 @@ modified src/linear_algebra/multivariate_polynomial.lean
 ## [2019-03-05 09:21:45+01:00](https://github.com/leanprover-community/mathlib/commit/c2d8bc2)
 feat(data/finsupp): relatie to_multiset to 0, +, single, card, map, prod, and to_finset
 #### Estimated changes
-modified src/data/finsupp.lean
+Modified src/data/finsupp.lean
 - \+ *lemma* to_multiset_zero
 - \+ *lemma* to_multiset_add
 - \+ *lemma* to_multiset_single
@@ -2614,7 +2614,7 @@ modified src/data/finsupp.lean
 ## [2019-03-05 09:21:45+01:00](https://github.com/leanprover-community/mathlib/commit/857842d)
 feat(data/finsupp): add support_mul
 #### Estimated changes
-modified src/data/finsupp.lean
+Modified src/data/finsupp.lean
 - \+ *lemma* support_mul
 
 
@@ -2622,7 +2622,7 @@ modified src/data/finsupp.lean
 ## [2019-03-05 09:21:45+01:00](https://github.com/leanprover-community/mathlib/commit/a77797f)
 feat(data/multiset): add prod_smul
 #### Estimated changes
-modified src/data/multiset.lean
+Modified src/data/multiset.lean
 - \+ *lemma* prod_smul
 
 
@@ -2630,7 +2630,7 @@ modified src/data/multiset.lean
 ## [2019-03-05 09:21:45+01:00](https://github.com/leanprover-community/mathlib/commit/e924745)
 feat(data/finset): add multiset.count_sup
 #### Estimated changes
-modified src/data/finset.lean
+Modified src/data/finset.lean
 - \+ *lemma* count_sup
 
 
@@ -2638,7 +2638,7 @@ modified src/data/finset.lean
 ## [2019-03-05 09:21:45+01:00](https://github.com/leanprover-community/mathlib/commit/e07cac5)
 feat(data/finset): add to_finset_smul
 #### Estimated changes
-modified src/data/finset.lean
+Modified src/data/finset.lean
 - \+ *lemma* to_finset_smul
 
 
@@ -2646,7 +2646,7 @@ modified src/data/finset.lean
 ## [2019-03-05 09:21:45+01:00](https://github.com/leanprover-community/mathlib/commit/f24b01b)
 feat(algebra/group_power): smul and pow are monoid homs
 #### Estimated changes
-modified src/algebra/group_power.lean
+Modified src/algebra/group_power.lean
 - \+ *theorem* map_pow
 - \+ *theorem* map_smul
 
@@ -2655,11 +2655,11 @@ modified src/algebra/group_power.lean
 ## [2019-03-05 09:21:45+01:00](https://github.com/leanprover-community/mathlib/commit/32642e1)
 feat(linear_algebra): add dim_sup_add_dim_inf_eq
 #### Estimated changes
-modified src/linear_algebra/basic.lean
+Modified src/linear_algebra/basic.lean
 - \+ *lemma* subtype_comp_of_le
 - \+ *lemma* range_of_le
 
-modified src/linear_algebra/dimension.lean
+Modified src/linear_algebra/dimension.lean
 - \+ *lemma* dim_add_dim_split
 - \+ *lemma* dim_sup_add_dim_inf_eq
 
@@ -2668,26 +2668,26 @@ modified src/linear_algebra/dimension.lean
 ## [2019-03-04 16:26:09+01:00](https://github.com/leanprover-community/mathlib/commit/f46f0a6)
 feat(tactic/fin_cases): case bashing on finset, list, and fintype hypotheses. ([#775](https://github.com/leanprover-community/mathlib/pull/775))
 #### Estimated changes
-modified docs/tactics.md
+Modified docs/tactics.md
 
-modified src/data/int/basic.lean
+Modified src/data/int/basic.lean
 - \+ *theorem* add_def
 - \+ *theorem* mul_def
 
-modified src/data/nat/basic.lean
+Modified src/data/nat/basic.lean
 - \+ *theorem* add_def
 - \+ *theorem* mul_def
 
-modified src/tactic/fin_cases.lean
+Modified src/tactic/fin_cases.lean
 
-modified test/fin_cases.lean
+Modified test/fin_cases.lean
 
 
 
 ## [2019-03-04 12:37:27+01:00](https://github.com/leanprover-community/mathlib/commit/6cd0341)
 docs(extras/tactic_writing): add ``%%(reflect n)`` to the tactic writing guide ([#786](https://github.com/leanprover-community/mathlib/pull/786))
 #### Estimated changes
-modified docs/extras/tactic_writing.md
+Modified docs/extras/tactic_writing.md
 
 
 
@@ -2695,13 +2695,13 @@ modified docs/extras/tactic_writing.md
 chore(topology): Splits topology.basic and topology.continuity ([#785](https://github.com/leanprover-community/mathlib/pull/785))
 Also, the most basic aspects of continuity are now in topology.basic
 #### Estimated changes
-modified src/category_theory/instances/topological_spaces.lean
+Modified src/category_theory/instances/topological_spaces.lean
 
-modified src/data/analysis/topology.lean
+Modified src/data/analysis/topology.lean
 
-modified src/topology/algebra/topological_structures.lean
+Modified src/topology/algebra/topological_structures.lean
 
-created src/topology/bases.lean
+Created src/topology/bases.lean
 - \+ *lemma* is_topological_basis_of_subbasis
 - \+ *lemma* is_topological_basis_of_open_of_nhds
 - \+ *lemma* mem_nhds_of_is_topological_basis
@@ -2715,7 +2715,7 @@ created src/topology/bases.lean
 - \+ *lemma* is_open_sUnion_countable
 - \+ *def* is_topological_basis
 
-modified src/topology/basic.lean
+Modified src/topology/basic.lean
 - \+/\- *lemma* lim_spec
 - \+ *lemma* continuous_id
 - \+ *lemma* continuous.comp
@@ -2894,9 +2894,9 @@ modified src/topology/basic.lean
 - \- *def* gi
 - \- *def* is_basis
 
-modified src/topology/compact_open.lean
+Modified src/topology/compact_open.lean
 
-renamed src/topology/continuity.lean to src/topology/constructions.lean
+Renamed src/topology/continuity.lean to src/topology/constructions.lean
 - \+/\- *lemma* compact_iff_compact_image_of_embedding
 - \- *lemma* continuous_id
 - \- *lemma* continuous.comp
@@ -2991,7 +2991,7 @@ renamed src/topology/continuity.lean to src/topology/constructions.lean
 - \- *def* nonempty_compacts.to_closeds
 - \- *def* extend
 
-created src/topology/maps.lean
+Created src/topology/maps.lean
 - \+ *lemma* embedding_id
 - \+ *lemma* embedding_compose
 - \+ *lemma* embedding_prod_mk
@@ -3024,9 +3024,9 @@ created src/topology/maps.lean
 - \+ *def* quotient_map
 - \+ *def* is_open_map
 
-modified src/topology/metric_space/closeds.lean
+Modified src/topology/metric_space/closeds.lean
 
-created src/topology/opens.lean
+Created src/topology/opens.lean
 - \+ *lemma* ext
 - \+ *lemma* gi_choice_val
 - \+ *lemma* inter_eq
@@ -3044,7 +3044,7 @@ created src/topology/opens.lean
 - \+ *def* gi
 - \+ *def* is_basis
 
-created src/topology/order.lean
+Created src/topology/order.lean
 - \+ *lemma* nhds_generate_from
 - \+ *lemma* tendsto_nhds_generate_from
 - \+ *lemma* nhds_mk_of_nhds
@@ -3140,7 +3140,7 @@ created src/topology/order.lean
 - \+ *def* topological_space.induced
 - \+ *def* topological_space.coinduced
 
-created src/topology/separation.lean
+Created src/topology/separation.lean
 - \+ *lemma* is_closed_singleton
 - \+ *lemma* compl_singleton_mem_nhds
 - \+ *lemma* closure_singleton
@@ -3158,11 +3158,11 @@ created src/topology/separation.lean
 - \+ *theorem* exists_open_singleton_of_fintype
 - \+ *theorem* normal_separation
 
-modified src/topology/sequences.lean
+Modified src/topology/sequences.lean
 
-modified src/topology/stone_cech.lean
+Modified src/topology/stone_cech.lean
 
-created src/topology/subset_properties.lean
+Created src/topology/subset_properties.lean
 - \+ *lemma* compact_inter
 - \+ *lemma* compact_diff
 - \+ *lemma* compact_of_is_closed_subset
@@ -3225,17 +3225,17 @@ created src/topology/subset_properties.lean
 - \+ *def* is_totally_disconnected
 - \+ *def* is_totally_separated
 
-modified src/topology/uniform_space/basic.lean
+Modified src/topology/uniform_space/basic.lean
 
 
 
 ## [2019-03-03 11:01:43-05:00](https://github.com/leanprover-community/mathlib/commit/1084868)
 feat(analysis/{specific_limits,infinite_sum}): Cauchy of geometric bound ([#753](https://github.com/leanprover-community/mathlib/pull/753))
 #### Estimated changes
-modified src/analysis/specific_limits.lean
+Modified src/analysis/specific_limits.lean
 - \+ *lemma* cauchy_seq_of_le_geometric
 
-modified src/topology/algebra/infinite_sum.lean
+Modified src/topology/algebra/infinite_sum.lean
 - \+ *lemma* cauchy_seq_of_has_sum_dist
 
 
@@ -3243,7 +3243,7 @@ modified src/topology/algebra/infinite_sum.lean
 ## [2019-03-03 13:19:35](https://github.com/leanprover-community/mathlib/commit/1f90e18)
 feat(ring_theory/ideal_operations): Chinese Remainder Theorem ([#774](https://github.com/leanprover-community/mathlib/pull/774))
 #### Estimated changes
-modified src/ring_theory/ideal_operations.lean
+Modified src/ring_theory/ideal_operations.lean
 - \+ *theorem* exists_sub_one_mem_and_mem
 - \+ *theorem* exists_sub_mem
 - \+ *theorem* is_ring_hom_quotient_inf_to_pi_quotient
@@ -3255,14 +3255,14 @@ modified src/ring_theory/ideal_operations.lean
 ## [2019-03-02 17:42:14-05:00](https://github.com/leanprover-community/mathlib/commit/fb8001d)
 hopefully fixed for good this time
 #### Estimated changes
-modified src/number_theory/sum_two_squares.lean
+Modified src/number_theory/sum_two_squares.lean
 
 
 
 ## [2019-03-02 17:42:14-05:00](https://github.com/leanprover-community/mathlib/commit/182b2a3)
 fix properly
 #### Estimated changes
-modified src/data/int/basic.lean
+Modified src/data/int/basic.lean
 - \+ *lemma* nat_abs_mul_self'
 
 
@@ -3270,24 +3270,24 @@ modified src/data/int/basic.lean
 ## [2019-03-02 17:42:14-05:00](https://github.com/leanprover-community/mathlib/commit/a4cc8b7)
 fix build
 #### Estimated changes
-modified src/data/gaussian_int.lean
+Modified src/data/gaussian_int.lean
 - \+ *lemma* nat_abs_norm_eq
 
-modified src/number_theory/sum_two_squares.lean
+Modified src/number_theory/sum_two_squares.lean
 
 
 
 ## [2019-03-02 17:42:14-05:00](https://github.com/leanprover-community/mathlib/commit/a75d57c)
 fix build
 #### Estimated changes
-modified src/number_theory/sum_two_squares.lean
+Modified src/number_theory/sum_two_squares.lean
 
 
 
 ## [2019-03-02 17:42:14-05:00](https://github.com/leanprover-community/mathlib/commit/8dcd071)
 generalize norm to zsqrtd
 #### Estimated changes
-modified src/data/gaussian_int.lean
+Modified src/data/gaussian_int.lean
 - \+ *lemma* norm_nonneg
 - \+ *lemma* coe_nat_abs_norm
 - \+ *lemma* nat_cast_nat_abs_norm
@@ -3300,7 +3300,7 @@ modified src/data/gaussian_int.lean
 - \- *lemma* norm_eq_one_iff
 - \- *def* norm
 
-modified src/number_theory/pell.lean
+Modified src/number_theory/pell.lean
 - \+ *lemma* norm_zero
 - \+ *lemma* norm_one
 - \+ *lemma* norm_int_cast
@@ -3311,21 +3311,21 @@ modified src/number_theory/pell.lean
 - \+ *lemma* norm_eq_one_iff
 - \+ *def* norm
 
-modified src/number_theory/sum_two_squares.lean
+Modified src/number_theory/sum_two_squares.lean
 
 
 
 ## [2019-03-02 17:42:14-05:00](https://github.com/leanprover-community/mathlib/commit/d98cae7)
 fix build
 #### Estimated changes
-modified src/number_theory/sum_two_squares.lean
+Modified src/number_theory/sum_two_squares.lean
 
 
 
 ## [2019-03-02 17:42:14-05:00](https://github.com/leanprover-community/mathlib/commit/5cbd7fa)
 changing names
 #### Estimated changes
-modified src/data/gaussian_int.lean
+Modified src/data/gaussian_int.lean
 - \+ *lemma* to_real_re
 - \+ *lemma* to_real_im
 - \+ *lemma* to_complex_re
@@ -3335,7 +3335,7 @@ modified src/data/gaussian_int.lean
 - \- *lemma* to_complex_re'
 - \- *lemma* to_complex_im'
 
-modified src/data/zmod/quadratic_reciprocity.lean
+Modified src/data/zmod/quadratic_reciprocity.lean
 - \+ *lemma* exists_pow_two_eq_neg_one_iff_mod_four_ne_three
 - \+ *lemma* exists_pow_two_eq_prime_iff_of_mod_four_eq_one
 - \+ *lemma* exists_pow_two_eq_prime_iff_of_mod_four_eq_three
@@ -3348,23 +3348,23 @@ modified src/data/zmod/quadratic_reciprocity.lean
 ## [2019-03-02 17:42:14-05:00](https://github.com/leanprover-community/mathlib/commit/a9dfaba)
 The year is 2019
 #### Estimated changes
-modified src/data/gaussian_int.lean
+Modified src/data/gaussian_int.lean
 
-modified src/number_theory/sum_two_squares.lean
+Modified src/number_theory/sum_two_squares.lean
 
 
 
 ## [2019-03-02 17:42:14-05:00](https://github.com/leanprover-community/mathlib/commit/c36470f)
 put sum_two_squares in nat.prime namespace
 #### Estimated changes
-modified src/number_theory/sum_two_squares.lean
+Modified src/number_theory/sum_two_squares.lean
 
 
 
 ## [2019-03-02 17:42:14-05:00](https://github.com/leanprover-community/mathlib/commit/d8f0921)
 move lemmas to correct places
 #### Estimated changes
-created src/data/gaussian_int.lean
+Created src/data/gaussian_int.lean
 - \+ *lemma* to_complex_def
 - \+ *lemma* to_complex_def'
 - \+ *lemma* to_complex_def₂
@@ -3400,7 +3400,7 @@ created src/data/gaussian_int.lean
 - \+ *def* norm
 - \+ *def* to_complex
 
-modified src/number_theory/sum_two_squares.lean
+Modified src/number_theory/sum_two_squares.lean
 - \- *lemma* to_complex_def
 - \- *lemma* to_complex_def'
 - \- *lemma* to_complex_def₂
@@ -3441,7 +3441,7 @@ modified src/number_theory/sum_two_squares.lean
 ## [2019-03-02 17:42:14-05:00](https://github.com/leanprover-community/mathlib/commit/4e48324)
 fix build
 #### Estimated changes
-modified src/data/nat/basic.lean
+Modified src/data/nat/basic.lean
 - \+ *lemma* add_eq_one_iff
 - \+ *lemma* mul_eq_one_iff
 - \+ *lemma* mul_right_eq_self_iff
@@ -3449,23 +3449,23 @@ modified src/data/nat/basic.lean
 - \+/\- *lemma* le_induction
 - \+/\- *lemma* le_induction
 
-modified src/data/nat/prime.lean
+Modified src/data/nat/prime.lean
 - \+ *lemma* prime.mul_eq_prime_pow_two_iff
 - \- *lemma* prime.mul_eq_prime_pow_two
 
-modified src/number_theory/sum_two_squares.lean
+Modified src/number_theory/sum_two_squares.lean
 
 
 
 ## [2019-03-02 17:42:14-05:00](https://github.com/leanprover-community/mathlib/commit/9c9aee4)
 finish proof of sum two squares
 #### Estimated changes
-modified src/data/nat/prime.lean
+Modified src/data/nat/prime.lean
 - \+ *lemma* prime.mul_eq_prime_pow_two
 
-modified src/data/zmod/quadratic_reciprocity.lean
+Modified src/data/zmod/quadratic_reciprocity.lean
 
-modified src/number_theory/sum_two_squares.lean
+Modified src/number_theory/sum_two_squares.lean
 - \+ *lemma* norm_nat_cast
 - \+ *lemma* norm_one
 - \+ *lemma* norm_zero
@@ -3478,24 +3478,24 @@ modified src/number_theory/sum_two_squares.lean
 ## [2019-03-02 17:42:14-05:00](https://github.com/leanprover-community/mathlib/commit/bd86c0d)
 commit properly
 #### Estimated changes
-modified src/data/zmod/quadratic_reciprocity.lean
+Modified src/data/zmod/quadratic_reciprocity.lean
 - \+ *lemma* neg_one_is_square_iff_mod_four_ne_three
 
-modified src/number_theory/pell.lean
+Modified src/number_theory/pell.lean
 
-modified src/number_theory/sum_two_squares.lean
+Modified src/number_theory/sum_two_squares.lean
 
 
 
 ## [2019-03-02 17:42:14-05:00](https://github.com/leanprover-community/mathlib/commit/49a85f4)
 prove Z[i] is a euclidean_domain
 #### Estimated changes
-modified src/algebra/archimedean.lean
+Modified src/algebra/archimedean.lean
 - \+ *lemma* abs_sub_round
 - \+ *theorem* rat.cast_round
 - \+ *def* round
 
-created src/number_theory/sum_two_squares.lean
+Created src/number_theory/sum_two_squares.lean
 - \+ *lemma* to_complex_def
 - \+ *lemma* to_complex_def'
 - \+ *lemma* to_complex_def₂
@@ -3531,23 +3531,23 @@ created src/number_theory/sum_two_squares.lean
 ## [2019-03-02 19:55:17](https://github.com/leanprover-community/mathlib/commit/1f4f2e4)
 refactor(*): move matrix.lean to data/ and determinant.lean to linear_algebra/ ([#779](https://github.com/leanprover-community/mathlib/pull/779))
 #### Estimated changes
-renamed src/ring_theory/matrix.lean to src/data/matrix.lean
+Renamed src/ring_theory/matrix.lean to src/data/matrix.lean
 
-renamed src/ring_theory/determinant.lean to src/linear_algebra/determinant.lean
+Renamed src/ring_theory/determinant.lean to src/linear_algebra/determinant.lean
 
 
 
 ## [2019-03-01 22:25:45-05:00](https://github.com/leanprover-community/mathlib/commit/8fbf296)
 feat(topology/metric_space/hausdorff_distance): Hausdorff distance
 #### Estimated changes
-modified src/topology/basic.lean
+Modified src/topology/basic.lean
 - \+ *def* closeds
 - \+ *def* nonempty_compacts
 
-modified src/topology/continuity.lean
+Modified src/topology/continuity.lean
 - \+ *def* nonempty_compacts.to_closeds
 
-modified src/topology/metric_space/cau_seq_filter.lean
+Modified src/topology/metric_space/cau_seq_filter.lean
 - \+ *lemma* half_pow_pos
 - \+ *lemma* half_pow_tendsto_zero
 - \+ *lemma* half_pow_add_succ
@@ -3561,7 +3561,7 @@ modified src/topology/metric_space/cau_seq_filter.lean
 - \- *lemma* FB_pos
 - \- *lemma* FB_lim
 
-created src/topology/metric_space/closeds.lean
+Created src/topology/metric_space/closeds.lean
 - \+ *lemma* continuous_inf_edist_Hausdorff_edist
 - \+ *lemma* is_closed_subsets_of_is_closed
 - \+ *lemma* closeds.edist_eq
@@ -3570,7 +3570,7 @@ created src/topology/metric_space/closeds.lean
 - \+ *lemma* nonempty_compacts.dist_eq
 - \+ *lemma* uniform_continuous_inf_dist_Hausdorff_dist
 
-created src/topology/metric_space/hausdorff_distance.lean
+Created src/topology/metric_space/hausdorff_distance.lean
 - \+ *lemma* inf_edist_empty
 - \+ *lemma* inf_edist_union
 - \+ *lemma* inf_edist_singleton
@@ -3649,7 +3649,7 @@ created src/topology/metric_space/hausdorff_distance.lean
 ## [2019-03-01 21:24:00-05:00](https://github.com/leanprover-community/mathlib/commit/be88cec)
 feat(analysis/exponential): added inequality lemmas
 #### Estimated changes
-modified src/analysis/exponential.lean
+Modified src/analysis/exponential.lean
 - \+/\- *lemma* tendsto_exp_zero_one
 - \+/\- *lemma* continuous_exp
 - \+/\- *lemma* continuous_sin
@@ -4081,7 +4081,7 @@ modified src/analysis/exponential.lean
 - \+/\- *def* angle
 - \+/\- *def* angle
 
-modified src/data/complex/exponential.lean
+Modified src/data/complex/exponential.lean
 - \+/\- *lemma* exp_le_exp
 - \+/\- *lemma* exp_le_exp
 
@@ -4090,7 +4090,7 @@ modified src/data/complex/exponential.lean
 ## [2019-03-01 21:15:38](https://github.com/leanprover-community/mathlib/commit/0bb0cec)
 feat(group_theory): free_group and free_abelian_group are lawful monads ([#737](https://github.com/leanprover-community/mathlib/pull/737))
 #### Estimated changes
-modified src/group_theory/free_abelian_group.lean
+Modified src/group_theory/free_abelian_group.lean
 - \+ *lemma* map_pure
 - \+ *lemma* map_zero
 - \+ *lemma* map_add
@@ -4111,7 +4111,7 @@ modified src/group_theory/free_abelian_group.lean
 - \+ *lemma* seq_neg
 - \+ *lemma* seq_sub
 
-modified src/group_theory/free_group.lean
+Modified src/group_theory/free_group.lean
 - \+/\- *lemma* quot_lift_mk
 - \+/\- *lemma* quot_lift_on_mk
 - \+ *lemma* map_pure
@@ -4138,7 +4138,7 @@ feat(data/zmod/basic): cast_mod_nat' and cast_mod_int' ([#783](https://github.co
 * cast_mod_int'
 * cast_val_int'
 #### Estimated changes
-modified src/data/zmod/basic.lean
+Modified src/data/zmod/basic.lean
 - \+ *lemma* cast_mod_nat'
 - \+ *lemma* cast_mod_int'
 - \+ *lemma* eq_iff_modeq_nat'
@@ -4149,7 +4149,7 @@ modified src/data/zmod/basic.lean
 ## [2019-03-01 10:20:26-05:00](https://github.com/leanprover-community/mathlib/commit/04b5f88)
 refactor(analysis/asymptotics): minor formatting changes
 #### Estimated changes
-modified src/analysis/asymptotics.lean
+Modified src/analysis/asymptotics.lean
 - \+/\- *theorem* is_O_refl
 - \+/\- *theorem* is_o.to_is_O
 - \+/\- *theorem* is_O.add
@@ -4180,7 +4180,7 @@ modified src/analysis/asymptotics.lean
 ## [2019-03-01 10:20:26-05:00](https://github.com/leanprover-community/mathlib/commit/6363212)
 feat(analysis/normed_space/deriv): generalize to spaces over any normed field
 #### Estimated changes
-modified src/analysis/normed_space/deriv.lean
+Modified src/analysis/normed_space/deriv.lean
 - \+ *theorem* has_fderiv_at_filter_real_equiv
 - \- *theorem* has_fderiv_at_filter_equiv_aux
 
@@ -4189,14 +4189,14 @@ modified src/analysis/normed_space/deriv.lean
 ## [2019-03-01 10:20:26-05:00](https://github.com/leanprover-community/mathlib/commit/89b8915)
 feat(analysis/normed_space/deriv): add readable proof of chain rule
 #### Estimated changes
-modified src/analysis/normed_space/deriv.lean
+Modified src/analysis/normed_space/deriv.lean
 
 
 
 ## [2019-03-01 10:20:26-05:00](https://github.com/leanprover-community/mathlib/commit/5dd1ba5)
 feat(analysis/*): is_bigo -> is_O, is_littleo -> is_o
 #### Estimated changes
-modified src/analysis/asymptotics.lean
+Modified src/analysis/asymptotics.lean
 - \+ *theorem* is_O_refl
 - \+ *theorem* is_O.comp
 - \+ *theorem* is_o.comp
@@ -4356,7 +4356,7 @@ modified src/analysis/asymptotics.lean
 - \- *def* is_bigo
 - \- *def* is_littleo
 
-modified src/analysis/normed_space/bounded_linear_maps.lean
+Modified src/analysis/normed_space/bounded_linear_maps.lean
 - \+ *theorem* is_O_id
 - \+ *theorem* is_O_comp
 - \+ *theorem* is_O_sub
@@ -4364,7 +4364,7 @@ modified src/analysis/normed_space/bounded_linear_maps.lean
 - \- *theorem* is_bigo_comp
 - \- *theorem* is_bigo_sub
 
-modified src/analysis/normed_space/deriv.lean
+Modified src/analysis/normed_space/deriv.lean
 - \+ *theorem* has_fderiv_at_filter.is_o
 - \+ *theorem* has_fderiv_at.is_o
 - \+ *theorem* has_fderiv_at_filter.is_O_sub
@@ -4377,26 +4377,26 @@ modified src/analysis/normed_space/deriv.lean
 ## [2019-03-01 10:20:26-05:00](https://github.com/leanprover-community/mathlib/commit/49ecc7b)
 fix(*): fix things from change tendsto_congr -> tendsto.congr'
 #### Estimated changes
-modified src/analysis/normed_space/deriv.lean
+Modified src/analysis/normed_space/deriv.lean
 
-modified src/analysis/specific_limits.lean
+Modified src/analysis/specific_limits.lean
 
-modified src/data/padics/hensel.lean
+Modified src/data/padics/hensel.lean
 
-modified src/order/filter/basic.lean
+Modified src/order/filter/basic.lean
 - \+ *theorem* tendsto.congr'r
 - \- *theorem* tendsto_congr
 
-modified src/topology/algebra/infinite_sum.lean
+Modified src/topology/algebra/infinite_sum.lean
 
-modified src/topology/instances/ennreal.lean
+Modified src/topology/instances/ennreal.lean
 
 
 
 ## [2019-03-01 10:20:26-05:00](https://github.com/leanprover-community/mathlib/commit/d74804b)
 add has_fderiv_at_filter
 #### Estimated changes
-modified src/analysis/asymptotics.lean
+Modified src/analysis/asymptotics.lean
 - \+ *theorem* is_bigo_congr
 - \+ *theorem* is_littleo_congr
 - \+ *theorem* is_bigo.congr
@@ -4426,10 +4426,10 @@ modified src/analysis/asymptotics.lean
 - \+/\- *theorem* is_bigo_neg_left
 - \+/\- *theorem* is_littleo_neg_left
 
-modified src/analysis/normed_space/bounded_linear_maps.lean
+Modified src/analysis/normed_space/bounded_linear_maps.lean
 - \+ *theorem* is_bigo_comp
 
-modified src/analysis/normed_space/deriv.lean
+Modified src/analysis/normed_space/deriv.lean
 - \+ *theorem* has_fderiv_at_filter.is_littleo
 - \+ *theorem* has_fderiv_at_filter_equiv_aux
 - \+ *theorem* has_fderiv_at_filter_iff_tendsto
@@ -4482,13 +4482,13 @@ modified src/analysis/normed_space/deriv.lean
 - \+/\- *def* has_fderiv_at_within
 - \+/\- *def* has_fderiv_at_within
 
-modified src/order/filter/basic.lean
+Modified src/order/filter/basic.lean
 - \+ *lemma* congr_sets
 - \+ *lemma* tendsto.congr'
 - \- *lemma* tendsto_cong
 - \+ *theorem* tendsto_congr
 
-modified src/topology/continuity.lean
+Modified src/topology/continuity.lean
 - \+ *theorem* continuous_at_within.tendsto_nhds_within_image
 
 
@@ -4496,16 +4496,16 @@ modified src/topology/continuity.lean
 ## [2019-03-01 10:20:26-05:00](https://github.com/leanprover-community/mathlib/commit/21b1fcc)
 fix(asymptotics, deriv): minor formatting fixes
 #### Estimated changes
-modified src/analysis/asymptotics.lean
+Modified src/analysis/asymptotics.lean
 
-modified src/analysis/normed_space/deriv.lean
+Modified src/analysis/normed_space/deriv.lean
 
 
 
 ## [2019-03-01 10:20:26-05:00](https://github.com/leanprover-community/mathlib/commit/16033bb)
 feat(analysis/asymptotics,analysis/normed_space/deriv): improvements and additions
 #### Estimated changes
-modified src/analysis/asymptotics.lean
+Modified src/analysis/asymptotics.lean
 - \+ *theorem* is_bigo_refl
 - \+ *theorem* is_bigo.trans
 - \+ *theorem* is_littleo.trans_is_bigo
@@ -4567,11 +4567,11 @@ modified src/analysis/asymptotics.lean
 - \+/\- *theorem* tendsto_nhds_zero_of_is_littleo
 - \- *theorem* is_littleo_of_tendsto
 
-modified src/analysis/normed_space/bounded_linear_maps.lean
+Modified src/analysis/normed_space/bounded_linear_maps.lean
 - \+/\- *def* to_linear_map
 - \+/\- *def* to_linear_map
 
-modified src/analysis/normed_space/deriv.lean
+Modified src/analysis/normed_space/deriv.lean
 - \+ *theorem* has_fderiv_at.is_littleo
 - \+ *theorem* has_fderiv_at_within_equiv_aux
 - \+ *theorem* has_fderiv_at_within_iff_tendsto
@@ -4609,19 +4609,19 @@ modified src/analysis/normed_space/deriv.lean
 - \+/\- *theorem* chain_rule
 - \- *def* has_fderiv_at_within_mono
 
-modified src/topology/basic.lean
+Modified src/topology/basic.lean
 
 
 
 ## [2019-03-01 10:20:26-05:00](https://github.com/leanprover-community/mathlib/commit/6265d26)
 feat(analysis/normed_space/deriv): start on derivative
 #### Estimated changes
-modified src/analysis/normed_space/bounded_linear_maps.lean
+Modified src/analysis/normed_space/bounded_linear_maps.lean
 - \+ *theorem* is_bigo_id
 - \+ *theorem* is_bigo_sub
 - \+ *def* to_linear_map
 
-created src/analysis/normed_space/deriv.lean
+Created src/analysis/normed_space/deriv.lean
 - \+ *theorem* has_fderiv_equiv_aux
 - \+ *theorem* has_fderiv_iff_littleo
 - \+ *theorem* has_fderiv_at_within.congr
@@ -4642,7 +4642,7 @@ created src/analysis/normed_space/deriv.lean
 ## [2019-03-01 10:20:26-05:00](https://github.com/leanprover-community/mathlib/commit/92a5e0b)
 feat(analysis/asymptotics): start on bigo and littlo
 #### Estimated changes
-created src/analysis/asymptotics.lean
+Created src/analysis/asymptotics.lean
 - \+ *theorem* is_bigo.comp
 - \+ *theorem* is_littleo.comp
 - \+ *theorem* is_bigo.mono
@@ -4686,23 +4686,23 @@ created src/analysis/asymptotics.lean
 ## [2019-03-01 10:20:26-05:00](https://github.com/leanprover-community/mathlib/commit/206a7a1)
 feat(*): add various small lemmas
 #### Estimated changes
-modified src/analysis/normed_space/basic.lean
+Modified src/analysis/normed_space/basic.lean
 - \+ *lemma* norm_norm
 - \+ *lemma* tendsto_smul_const
 - \+ *theorem* normed_space.tendsto_nhds_zero
 
-modified src/order/filter/basic.lean
+Modified src/order/filter/basic.lean
 - \+ *lemma* le_comap_top
 - \+ *theorem* tendsto.congr
 
-modified src/topology/basic.lean
+Modified src/topology/basic.lean
 - \+ *theorem* tendsto_nhds_within_mono_left
 - \+ *theorem* tendsto_nhds_within_mono_right
 - \+ *theorem* tendsto_nhds_within_of_tendsto_nhds
 - \+ *theorem* tendsto_nhds_within_iff_subtype
 - \- *theorem* tendsto_at_within_iff_subtype
 
-modified src/topology/continuity.lean
+Modified src/topology/continuity.lean
 - \+ *theorem* nhds_within_le_comap
 
 
@@ -4710,6 +4710,6 @@ modified src/topology/continuity.lean
 ## [2019-03-01 13:10:17](https://github.com/leanprover-community/mathlib/commit/4f7853a)
 feat(data/list/basic): mem_rotate
 #### Estimated changes
-modified src/data/list/basic.lean
+Modified src/data/list/basic.lean
 - \+ *lemma* mem_rotate
 

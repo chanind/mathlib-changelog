@@ -51,9 +51,9 @@ def extract_diff_changes(diff_str: str) -> Changes:
 def extract_diff_file_info(diff: Diff) -> str:
     path = diff.a_path or diff.b_path
     if diff.renamed:
-        return f"renamed {diff.rename_from} to {diff.rename_to}"
+        return f"Renamed {diff.rename_from} to {diff.rename_to}"
     elif diff.new_file:
-        return f"created {path}"
+        return f"Created {path}"
     elif diff.deleted_file:
-        return f"deleted {path}"
-    return f"modified {path}"
+        return f"Deleted {path}"
+    return f"Modified {path}"

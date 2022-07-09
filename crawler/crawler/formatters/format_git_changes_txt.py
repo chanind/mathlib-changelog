@@ -1,10 +1,11 @@
+from typing import cast
 from crawler.extract_diff_info import extract_diff_changes, extract_diff_file_info
 from git import Diff
 
 
 def get_change_prefix(
     changed_item: str, added_items: list[str], deleted_items: list[str]
-):
+) -> str:
     prefixes = []
     if changed_item in added_items:
         prefixes.append("+")
@@ -17,7 +18,7 @@ def format_git_changes_txt(diffs: list[Diff]) -> str:
     outputs: list[str] = []
     for diff in diffs:
         diff_output = extract_diff_file_info(diff) + "\n"
-        changes = extract_diff_changes(diff.diff.decode("utf-8"))
+        changes = extract_diff_changes(cast(bytes, diff.diff).decode("utf-8"))
         lemmas = changes.added_lemmas + changes.deleted_lemmas
         theorems = changes.added_theorems + changes.deleted_theorems
         defs = changes.added_defs + changes.deleted_defs

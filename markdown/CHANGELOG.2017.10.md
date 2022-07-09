@@ -2,16 +2,16 @@
 fix(analysis/real): remove import for old file
 note: exists_subtype is now subtype.exists in logic/basic
 #### Estimated changes
-modified analysis/real.lean
+Modified analysis/real.lean
 
 
 
 ## [2017-10-25 21:55:10-04:00](https://github.com/leanprover-community/mathlib/commit/3cd6229)
 refactor(analysis/real): use more coe instead of of_rat
 #### Estimated changes
-modified analysis/ennreal.lean
+Modified analysis/ennreal.lean
 
-modified analysis/measure_theory/borel_space.lean
+Modified analysis/measure_theory/borel_space.lean
 - \+ *lemma* is_topological_basis_Ioo_rat
 - \+ *lemma* borel_eq_generate_from_Ioo_rat
 - \+ *lemma* borel_eq_generate_from_Iio_rat
@@ -19,29 +19,29 @@ modified analysis/measure_theory/borel_space.lean
 - \- *lemma* borel_eq_generate_from_Ioo_of_rat_of_rat
 - \- *lemma* borel_eq_generate_from_Iio_of_rat
 
-modified analysis/measure_theory/lebesgue_measure.lean
+Modified analysis/measure_theory/lebesgue_measure.lean
 
-modified analysis/real.lean
+Modified analysis/real.lean
 - \+ *lemma* exists_rat_btwn
 - \+ *lemma* exists_lt_rat
 - \+ *lemma* exists_rat_lt
 - \- *lemma* exists_lt_of_rat_of_rat_gt
 
-modified data/int/basic.lean
+Modified data/int/basic.lean
 - \+ *theorem* cast_min
 - \+ *theorem* cast_max
 - \+ *theorem* cast_abs
 
-modified data/nat/cast.lean
+Modified data/nat/cast.lean
 - \+ *theorem* cast_min
 - \+ *theorem* cast_max
 
-modified data/rat.lean
+Modified data/rat.lean
 - \+ *theorem* cast_min
 - \+ *theorem* cast_max
 - \+ *theorem* cast_abs
 
-deleted data/subtype.lean
+Deleted data/subtype.lean
 - \- *lemma* forall_subtype
 - \- *theorem* exists_subtype
 
@@ -50,9 +50,9 @@ deleted data/subtype.lean
 ## [2017-10-24 22:57:22-04:00](https://github.com/leanprover-community/mathlib/commit/2dd035a)
 Merge remote-tracking branch 'cipher1024/master'
 #### Estimated changes
-created meta/expr.lean
+Created meta/expr.lean
 
-created tactic/norm_num.lean
+Created tactic/norm_num.lean
 - \+ *lemma* pow_bit0
 - \+ *lemma* pow_bit0_helper
 - \+ *lemma* pow_bit1
@@ -88,35 +88,35 @@ created tactic/norm_num.lean
 - \+ *def* znum.to_pos
 - \+ *def* znum.to_neg
 
-created tests/norm_num.lean
+Created tests/norm_num.lean
 
 
 
 ## [2017-10-24 22:31:12-04:00](https://github.com/leanprover-community/mathlib/commit/dd9f766)
 feat(data/num,data/nat/cast,...): nat,num,int,rat.cast, list stuff
 #### Estimated changes
-modified algebra/field.lean
+Modified algebra/field.lean
 - \+ *lemma* inv_comm_of_comm
 
-modified algebra/group.lean
+Modified algebra/group.lean
 
-modified algebra/group_power.lean
+Modified algebra/group_power.lean
 - \+ *theorem* nat.pow_eq_pow_nat
 
-modified algebra/ordered_ring.lean
+Modified algebra/ordered_ring.lean
 - \+ *theorem* mul_nonneg_iff_right_nonneg_of_pos
 
-modified analysis/limits.lean
+Modified analysis/limits.lean
 - \+/\- *lemma* mul_add_one_le_pow
 - \+/\- *lemma* mul_add_one_le_pow
 
-modified analysis/measure_theory/lebesgue_measure.lean
+Modified analysis/measure_theory/lebesgue_measure.lean
 - \+/\- *lemma* tendsto_of_nat_at_top_at_top
 - \+/\- *lemma* tendsto_of_nat_at_top_at_top
 
-modified analysis/metric_space.lean
+Modified analysis/metric_space.lean
 
-deleted analysis/of_nat.lean
+Deleted analysis/of_nat.lean
 - \- *lemma* of_nat_add
 - \- *lemma* of_nat_one
 - \- *lemma* of_nat_mul
@@ -134,7 +134,7 @@ deleted analysis/of_nat.lean
 - \- *lemma* exists_lt_of_nat
 - \- *def* of_nat
 
-modified analysis/real.lean
+Modified analysis/real.lean
 - \+ *lemma* exists_lt_nat
 - \+ *theorem* coe_rat_eq_of_rat
 - \+/\- *def* lift_rat_fun
@@ -142,13 +142,13 @@ modified analysis/real.lean
 - \+/\- *def* lift_rat_fun
 - \+/\- *def* lift_rat_op
 
-modified data/encodable.lean
+Modified data/encodable.lean
 - \+/\- *def* encodable_of_left_injection
 - \+/\- *def* encodable_of_equiv
 - \+/\- *def* encodable_of_left_injection
 - \+/\- *def* encodable_of_equiv
 
-modified data/equiv.lean
+Modified data/equiv.lean
 - \+ *lemma* apply_inverse_apply
 - \+ *def* psum_equiv_sum
 - \+ *def* psigma_equiv_sigma
@@ -159,9 +159,9 @@ modified data/equiv.lean
 - \+ *def* int_equiv_nat_sum_nat
 - \+ *def* int_equiv_nat
 
-modified data/finset/basic.lean
+Modified data/finset/basic.lean
 
-modified data/int/basic.lean
+Modified data/int/basic.lean
 - \+ *theorem* coe_nat_le
 - \+ *theorem* coe_nat_lt
 - \+ *theorem* coe_nat_inj'
@@ -202,13 +202,13 @@ modified data/int/basic.lean
 - \- *theorem* coe_nat_dvd_left
 - \- *theorem* coe_nat_dvd_right
 
-modified data/list/basic.lean
+Modified data/list/basic.lean
 - \+ *theorem* erase_comm
 - \+ *theorem* diff_nil
 - \+ *theorem* diff_cons
 - \+ *theorem* diff_eq_foldl
 
-modified data/list/perm.lean
+Modified data/list/perm.lean
 - \+ *theorem* perm_subset
 - \+/\- *theorem* mem_of_perm
 - \+ *theorem* perm.subperm_left
@@ -238,9 +238,9 @@ modified data/list/perm.lean
 - \- *theorem* exists_sublist_perm_of_subset_nodup
 - \+ *def* subperm
 
-modified data/list/sort.lean
+Modified data/list/sort.lean
 
-created data/nat/cast.lean
+Created data/nat/cast.lean
 - \+ *theorem* cast_zero
 - \+ *theorem* cast_add_one
 - \+ *theorem* cast_succ
@@ -261,13 +261,13 @@ created data/nat/cast.lean
 - \+ *theorem* cast_ne_zero
 - \+ *theorem* cast_id
 
-modified data/num/basic.lean
+Modified data/num/basic.lean
 
-modified data/num/bitwise.lean
+Modified data/num/bitwise.lean
 
-modified data/num/lemmas.lean
+Modified data/num/lemmas.lean
 
-deleted data/num/norm_num.lean
+Deleted data/num/norm_num.lean
 - \- *lemma* pow_bit0
 - \- *lemma* pow_bit0_helper
 - \- *lemma* pow_bit1
@@ -303,7 +303,7 @@ deleted data/num/norm_num.lean
 - \- *def* znum.to_pos
 - \- *def* znum.to_neg
 
-modified data/option.lean
+Modified data/option.lean
 - \+/\- *lemma* mem_def
 - \+/\- *lemma* some_inj
 - \+ *lemma* none_ne_some
@@ -326,7 +326,7 @@ modified data/option.lean
 - \+/\- *def* guard
 - \+/\- *def* filter
 
-modified data/rat.lean
+Modified data/rat.lean
 - \+ *theorem* num_dvd
 - \+ *theorem* denom_dvd
 - \+ *theorem* of_int_eq_mk
@@ -376,20 +376,20 @@ modified data/rat.lean
 - \- *theorem* coe_int_lt
 - \- *def* linear_order_cases_on
 
-modified data/set/enumerate.lean
+Modified data/set/enumerate.lean
 
-deleted meta/expr.lean
+Deleted meta/expr.lean
 
 
 
 ## [2017-10-17 00:02:03-04:00](https://github.com/leanprover-community/mathlib/commit/2e7651a)
 feat(data/num): add tactics for evaluating arithmetic expressions made of literals, including `x \le y` and `x ^ y`
 #### Estimated changes
-modified data/num/basic.lean
+Modified data/num/basic.lean
 
-modified data/num/lemmas.lean
+Modified data/num/lemmas.lean
 
-created data/num/norm_num.lean
+Created data/num/norm_num.lean
 - \+ *lemma* pow_bit0
 - \+ *lemma* pow_bit0_helper
 - \+ *lemma* pow_bit1
@@ -425,22 +425,22 @@ created data/num/norm_num.lean
 - \+ *def* znum.to_pos
 - \+ *def* znum.to_neg
 
-created meta/expr.lean
+Created meta/expr.lean
 
 
 
 ## [2017-10-15 02:26:24-04:00](https://github.com/leanprover-community/mathlib/commit/5ad8020)
 Merge remote-tracking branch 'minchaowu/master'
 #### Estimated changes
-modified analysis/real.lean
+Modified analysis/real.lean
 
-modified analysis/topology/continuity.lean
+Modified analysis/topology/continuity.lean
 
-modified analysis/topology/infinite_sum.lean
+Modified analysis/topology/infinite_sum.lean
 
-modified analysis/topology/uniform_space.lean
+Modified analysis/topology/uniform_space.lean
 
-modified data/set/basic.lean
+Modified data/set/basic.lean
 - \+ *theorem* preimage_diff
 - \+ *theorem* image_subset_iff
 - \+ *theorem* inter_preimage_subset
@@ -448,7 +448,7 @@ modified data/set/basic.lean
 - \+ *theorem* subset_image_union
 - \- *theorem* image_subset_iff_subset_preimage
 
-created data/set/function.lean
+Created data/set/function.lean
 - \+ *lemma* injective_iff_inj_on_univ
 - \+ *lemma* surjective_iff_surj_on_univ
 - \+ *lemma* image_eq_of_maps_to_of_surj_on
@@ -491,40 +491,40 @@ created data/set/function.lean
 - \+ *def* right_inv_on
 - \+ *def* inv_on
 
-modified order/filter.lean
+Modified order/filter.lean
 
-modified order/galois_connection.lean
+Modified order/galois_connection.lean
 
 
 
 ## [2017-10-15 01:58:58-04:00](https://github.com/leanprover-community/mathlib/commit/8f4327a)
 feat(*): working on list/basic, robusting simp proofs
 #### Estimated changes
-modified algebra/big_operators.lean
+Modified algebra/big_operators.lean
 - \+ *theorem* prod_repeat
 - \- *theorem* prod_replicate
 
-modified algebra/field.lean
+Modified algebra/field.lean
 - \+ *lemma* division_ring.neg_inv
 
-modified algebra/functions.lean
+Modified algebra/functions.lean
 - \+ *lemma* lt_max_iff
 
-modified analysis/ennreal.lean
+Modified analysis/ennreal.lean
 
-modified analysis/limits.lean
+Modified analysis/limits.lean
 
-modified analysis/measure_theory/borel_space.lean
+Modified analysis/measure_theory/borel_space.lean
 
-modified analysis/measure_theory/measure_space.lean
+Modified analysis/measure_theory/measure_space.lean
 
-modified analysis/measure_theory/outer_measure.lean
+Modified analysis/measure_theory/outer_measure.lean
 
-modified analysis/metric_space.lean
+Modified analysis/metric_space.lean
 
-modified analysis/of_nat.lean
+Modified analysis/of_nat.lean
 
-modified analysis/real.lean
+Modified analysis/real.lean
 - \+ *lemma* of_rat_injective
 - \+ *lemma* of_rat_inj
 - \+/\- *lemma* uniform_embedding_of_rat
@@ -532,17 +532,17 @@ modified analysis/real.lean
 - \+/\- *lemma* uniform_embedding_of_rat
 - \- *lemma* of_rat_lt_of_rat
 
-modified analysis/topology/continuity.lean
+Modified analysis/topology/continuity.lean
 
-modified analysis/topology/infinite_sum.lean
+Modified analysis/topology/infinite_sum.lean
 
-modified analysis/topology/topological_space.lean
+Modified analysis/topology/topological_space.lean
 
-modified analysis/topology/topological_structures.lean
+Modified analysis/topology/topological_structures.lean
 
-modified analysis/topology/uniform_space.lean
+Modified analysis/topology/uniform_space.lean
 
-modified data/bool.lean
+Modified data/bool.lean
 - \+ *theorem* coe_sort_tt
 - \+ *theorem* coe_sort_ff
 - \+ *theorem* to_bool_true
@@ -579,15 +579,15 @@ modified data/bool.lean
 - \- *theorem* tt_bxor
 - \- *def* bxor
 
-modified data/encodable.lean
+Modified data/encodable.lean
 - \+ *theorem* encode_injective
 
-modified data/equiv.lean
+Modified data/equiv.lean
 - \+ *def* list_equiv_of_equiv
 - \+ *def* list_nat_equiv_nat
 - \+ *def* list_equiv_self_of_equiv_nat
 
-modified data/finset/basic.lean
+Modified data/finset/basic.lean
 - \- *lemma* lt_max_iff
 - \+/\- *theorem* mem_of_mem_list
 - \+/\- *theorem* mem_list_of_mem
@@ -642,10 +642,10 @@ modified data/finset/basic.lean
 - \+ *def* range
 - \- *def* upto
 
-modified data/finset/fold.lean
+Modified data/finset/fold.lean
 - \- *lemma* heq_iff_eq
 
-modified data/hash_map.lean
+Modified data/hash_map.lean
 - \+/\- *theorem* mem_as_list
 - \+/\- *theorem* find_aux_iff
 - \+/\- *theorem* contains_aux_iff
@@ -653,7 +653,7 @@ modified data/hash_map.lean
 - \+/\- *theorem* find_aux_iff
 - \+/\- *theorem* contains_aux_iff
 
-modified data/list/basic.lean
+Modified data/list/basic.lean
 - \- *lemma* concat_eq_append
 - \- *lemma* length_concat
 - \- *lemma* map_concat
@@ -1123,7 +1123,7 @@ modified data/list/basic.lean
 - \+/\- *def* inits
 - \+/\- *def* tails
 
-deleted data/list/comb.lean
+Deleted data/list/comb.lean
 - \- *theorem* foldl_nil
 - \- *theorem* foldl_cons
 - \- *theorem* foldr_nil
@@ -1195,9 +1195,9 @@ deleted data/list/comb.lean
 - \- *def* list_nat_equiv_nat
 - \- *def* list_equiv_self_of_equiv_nat
 
-modified data/list/default.lean
+Modified data/list/default.lean
 
-modified data/list/perm.lean
+Modified data/list/perm.lean
 - \+ *theorem* perm.eqv
 - \+/\- *theorem* perm_app_left
 - \+/\- *theorem* perm_app_right
@@ -1298,7 +1298,7 @@ modified data/list/perm.lean
 - \- *def* decidable_perm_aux
 - \- *def* decidable_perm
 
-deleted data/list/set.lean
+Deleted data/list/set.lean
 - \- *theorem* insert_nil
 - \- *theorem* insert.def
 - \- *theorem* insert_of_mem
@@ -1408,7 +1408,7 @@ deleted data/list/set.lean
 - \- *def* upto
 - \- *def* erase_dup
 
-modified data/list/sort.lean
+Modified data/list/sort.lean
 - \- *lemma* eq_of_sorted_of_perm
 - \+/\- *theorem* sorted_nil
 - \+/\- *theorem* sorted_singleton
@@ -1430,10 +1430,10 @@ modified data/list/sort.lean
 - \+/\- *def* ordered_insert
 - \+/\- *def* insertion_sort
 
-modified data/nat/pairing.lean
+Modified data/nat/pairing.lean
 - \+ *theorem* mkpair_unpair'
 
-modified data/option.lean
+Modified data/option.lean
 - \+ *lemma* mem_def
 - \+ *lemma* some_inj
 - \+ *lemma* guard_eq_some
@@ -1443,15 +1443,15 @@ modified data/option.lean
 - \+/\- *def* iget
 - \+/\- *def* filter
 
-modified data/prod.lean
+Modified data/prod.lean
 - \+ *lemma* prod.swap_left_inverse
 - \+ *lemma* prod.swap_right_inverse
 
-modified data/rat.lean
+Modified data/rat.lean
 
-modified data/seq/wseq.lean
+Modified data/seq/wseq.lean
 
-modified data/set/basic.lean
+Modified data/set/basic.lean
 - \+/\- *lemma* compl_image_set_of
 - \+/\- *lemma* univ_eq_true_false
 - \+/\- *lemma* forall_range_iff
@@ -1517,14 +1517,14 @@ modified data/set/basic.lean
 - \+/\- *def* preimage
 - \+/\- *def* pairwise_on
 
-modified data/set/countable.lean
+Modified data/set/countable.lean
 - \+/\- *def* countable
 - \- *def* encodable_of_inj
 - \+/\- *def* countable
 
-modified data/set/enumerate.lean
+Modified data/set/enumerate.lean
 
-deleted data/set/function.lean
+Deleted data/set/function.lean
 - \- *lemma* injective_iff_inj_on_univ
 - \- *lemma* surjective_iff_surj_on_univ
 - \- *lemma* image_eq_of_maps_to_of_surj_on
@@ -1567,12 +1567,12 @@ deleted data/set/function.lean
 - \- *def* right_inv_on
 - \- *def* inv_on
 
-modified data/set/prod.lean
+Modified data/set/prod.lean
 - \+/\- *lemma* mem_prod_eq
 - \+ *lemma* mem_prod
 - \+/\- *lemma* mem_prod_eq
 
-modified logic/basic.lean
+Modified logic/basic.lean
 - \+ *lemma* and_iff_left_of_imp
 - \+ *lemma* and_iff_right_of_imp
 - \+ *lemma* heq_iff_eq
@@ -1583,7 +1583,7 @@ modified logic/basic.lean
 - \+ *theorem* subtype.exists
 - \+ *theorem* exists_and_distrib_right
 
-renamed logic/function_inverse.lean to logic/function.lean
+Renamed logic/function_inverse.lean to logic/function.lean
 - \+ *lemma* injective.has_left_inverse
 - \+/\- *lemma* surj_inv_eq
 - \+ *lemma* surjective.has_right_inverse
@@ -1597,18 +1597,18 @@ renamed logic/function_inverse.lean to logic/function.lean
 - \- *def* inv_fun
 - \- *def* surj_inv
 
-modified order/filter.lean
+Modified order/filter.lean
 
-modified tactic/interactive.lean
+Modified tactic/interactive.lean
 
-modified tactic/rcases.lean
+Modified tactic/rcases.lean
 
 
 
 ## [2017-10-02 00:06:27-05:00](https://github.com/leanprover-community/mathlib/commit/e951a75)
 Merge branch 'master' into master
 #### Estimated changes
-modified data/set/basic.lean
+Modified data/set/basic.lean
 - \+ *lemma* image_subset_eq
 - \+ *theorem* preimage_diff
 - \+ *theorem* image_preimage_subset
@@ -1617,7 +1617,7 @@ modified data/set/basic.lean
 - \+ *theorem* union_preimage_subset
 - \+ *theorem* image_union_supset
 
-created data/set/function.lean
+Created data/set/function.lean
 - \+ *lemma* injective_iff_inj_on_univ
 - \+ *lemma* surjective_iff_surj_on_univ
 - \+ *lemma* image_eq_of_maps_to_of_surj_on

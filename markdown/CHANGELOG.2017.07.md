@@ -2,7 +2,7 @@
 feat(data/fp): first pass at a floating point model
 Hopefully this will be eventually moved to init so it can get a native representation.
 #### Estimated changes
-created data/fp/basic.lean
+Created data/fp/basic.lean
 - \+ *theorem* float.zero.valid
 - \+ *def* prec
 - \+ *def* emax
@@ -21,9 +21,9 @@ created data/fp/basic.lean
 feat(data/rat): new rat representation using canonical elements
 This yields better performance in long rational computations provided the numbers can be simplified.
 #### Estimated changes
-modified algebra/group.lean
+Modified algebra/group.lean
 
-modified data/int/basic.lean
+Modified data/int/basic.lean
 - \+ *theorem* coe_nat_dvd_left
 - \+ *theorem* coe_nat_dvd_right
 - \+ *theorem* div_sign
@@ -52,17 +52,17 @@ modified data/int/basic.lean
 - \- *def* nat_succ_eq_int_succ
 - \- *def* rec_nat_on
 
-modified data/nat/basic.lean
+Modified data/nat/basic.lean
 
-modified data/nat/gcd.lean
+Modified data/nat/gcd.lean
 - \+ *theorem* coprime_one_left
 - \+ *theorem* coprime_one_right
 - \- *theorem* comprime_one_left
 - \- *theorem* comprime_one_right
 
-modified data/num/lemmas.lean
+Modified data/num/lemmas.lean
 
-modified data/rat.lean
+Modified data/rat.lean
 - \+/\- *theorem* linear_order_cases_on_eq
 - \+/\- *theorem* linear_order_cases_on_lt
 - \+/\- *theorem* linear_order_cases_on_gt
@@ -98,13 +98,13 @@ modified data/rat.lean
 - \+ *def* ceil
 - \- *def* rat
 
-modified data/seq/computation.lean
+Modified data/seq/computation.lean
 
-modified data/seq/seq.lean
+Modified data/seq/seq.lean
 
-modified pending/default.lean
+Modified pending/default.lean
 
-modified tactic/converter/binders.lean
+Modified tactic/converter/binders.lean
 - \+/\- *theorem* mem_image
 - \+/\- *theorem* mem_image
 
@@ -113,36 +113,36 @@ modified tactic/converter/binders.lean
 ## [2017-07-28 16:56:17+01:00](https://github.com/leanprover-community/mathlib/commit/bfe2db7)
 fix(*): adapt to lean
 #### Estimated changes
-modified algebra/group.lean
+Modified algebra/group.lean
 
-modified data/list/basic.lean
+Modified data/list/basic.lean
 - \- *def* filter_map
 
-modified data/rat.lean
+Modified data/rat.lean
 
-modified pending/default.lean
+Modified pending/default.lean
 
-modified tactic/converter/binders.lean
+Modified tactic/converter/binders.lean
 
 
 
 ## [2017-07-27 14:02:57+01:00](https://github.com/leanprover-community/mathlib/commit/b37966e)
 chore(.travis.yml): add Travis CI support
 #### Estimated changes
-created .travis.yml
+Created .travis.yml
 
-modified README.md
+Modified README.md
 
 
 
 ## [2017-07-26 14:25:09+01:00](https://github.com/leanprover-community/mathlib/commit/b8ea20f)
 fix(data): bitvec and vector are in the main repo
 #### Estimated changes
-deleted data/bitvec.lean
+Deleted data/bitvec.lean
 - \- *def* bitvec
 - \- *def* append
 
-modified data/list/basic.lean
+Modified data/list/basic.lean
 - \- *theorem* eq_nil_of_length_eq_zero
 - \- *theorem* ne_nil_of_length_eq_succ
 - \- *theorem* length_take
@@ -154,13 +154,13 @@ modified data/list/basic.lean
 - \- *def* update_nth
 - \- *def* remove_nth
 
-modified data/list/comb.lean
+Modified data/list/comb.lean
 - \- *theorem* length_map_accumr
 - \- *theorem* length_map_accumr₂
 - \- *def* map_accumr
 - \- *def* map_accumr₂
 
-modified data/nat/basic.lean
+Modified data/nat/basic.lean
 - \- *lemma* bodd_bit
 - \- *lemma* div2_bit
 - \- *lemma* shiftl'_add
@@ -265,9 +265,9 @@ modified data/nat/basic.lean
 - \- *def* iterate
 - \- *def* one_pos
 
-modified data/num/basic.lean
+Modified data/num/basic.lean
 
-deleted data/vector.lean
+Deleted data/vector.lean
 - \- *theorem* head_cons
 - \- *theorem* tail_cons
 - \- *theorem* cons_head_tail
@@ -303,11 +303,11 @@ deleted data/vector.lean
 ## [2017-07-25 13:51:39+01:00](https://github.com/leanprover-community/mathlib/commit/9451087)
 refactor(*): move in list lemmas, adapt to change in list.union
 #### Estimated changes
-modified data/hash_map.lean
+Modified data/hash_map.lean
 - \+ *theorem* insert_lemma
 - \- *theorem* insert_theorem
 
-modified data/list/basic.lean
+Modified data/list/basic.lean
 - \+ *lemma* concat_eq_append
 - \+ *lemma* length_concat
 - \+ *lemma* map_concat
@@ -372,15 +372,15 @@ modified data/list/basic.lean
 - \+ *def* transpose_aux
 - \+ *def* transpose
 
-modified data/list/comb.lean
+Modified data/list/comb.lean
 
-modified data/list/perm.lean
+Modified data/list/perm.lean
 - \+/\- *theorem* perm_insert
 - \+/\- *theorem* perm_insert_insert
 - \+/\- *theorem* perm_insert_insert
 - \+/\- *theorem* perm_insert
 
-modified data/list/set.lean
+Modified data/list/set.lean
 - \+/\- *theorem* insert.def
 - \+/\- *theorem* insert_of_not_mem
 - \+/\- *theorem* mem_insert_iff
@@ -421,7 +421,7 @@ modified data/list/set.lean
 - \+/\- *theorem* erase_dup_eq_of_nodup
 - \- *theorem* nodup_union_of_nodup_of_nodup
 
-modified data/set/basic.lean
+Modified data/set/basic.lean
 - \+/\- *theorem* mem_empty_eq
 - \+/\- *theorem* mem_sep_eq
 - \+/\- *theorem* mem_image_eq
@@ -429,11 +429,11 @@ modified data/set/basic.lean
 - \+/\- *theorem* mem_sep_eq
 - \+/\- *theorem* mem_image_eq
 
-modified logic/basic.lean
+Modified logic/basic.lean
 - \+/\- *theorem* set_of_subset_set_of
 - \+/\- *theorem* set_of_subset_set_of
 
-modified tactic/finish.lean
+Modified tactic/finish.lean
 
 
 
@@ -441,7 +441,7 @@ modified tactic/finish.lean
 refactor(*): move in some nat lemmas
 and other lemmas from init
 #### Estimated changes
-created data/array/lemmas.lean
+Created data/array/lemmas.lean
 - \+ *lemma* read_write
 - \+ *lemma* read_write_eq
 - \+ *lemma* read_write_ne
@@ -466,14 +466,14 @@ created data/array/lemmas.lean
 - \+ *def* read_map
 - \+ *def* read_map₂
 
-modified data/bitvec.lean
+Modified data/bitvec.lean
 
-modified data/fin.lean
+Modified data/fin.lean
 - \- *theorem* lt_succ_of_lt
 
-modified data/hash_map.lean
+Modified data/hash_map.lean
 
-modified data/int/basic.lean
+Modified data/int/basic.lean
 - \+ *lemma* bodd_zero
 - \+ *lemma* bodd_one
 - \+ *lemma* bodd_two
@@ -583,11 +583,11 @@ modified data/int/basic.lean
 - \+ *theorem* bitwise_xor
 - \+ *def* {u}
 
-modified data/int/order.lean
+Modified data/int/order.lean
 - \+ *theorem* exists_least_of_bdd
 - \+ *theorem* exists_greatest_of_bdd
 
-modified data/list/basic.lean
+Modified data/list/basic.lean
 - \+ *lemma* mem_bind_iff
 - \+ *lemma* exists_of_mem_bind
 - \+ *lemma* mem_bind
@@ -732,9 +732,9 @@ modified data/list/basic.lean
 - \+/\- *def* inth
 - \- *def* ith
 
-modified data/list/perm.lean
+Modified data/list/perm.lean
 
-modified data/nat/basic.lean
+Modified data/nat/basic.lean
 - \+ *lemma* bodd_bit
 - \+ *lemma* div2_bit
 - \+ *lemma* shiftl'_add
@@ -834,25 +834,25 @@ modified data/nat/basic.lean
 - \+ *def* one_pos
 - \+/\- *def* iterate
 
-modified data/nat/gcd.lean
+Modified data/nat/gcd.lean
 
-modified data/nat/sub.lean
+Modified data/nat/sub.lean
 
-created data/option.lean
+Created data/option.lean
 - \+ *def* iget
 
-modified data/seq/computation.lean
+Modified data/seq/computation.lean
 
-modified data/seq/wseq.lean
+Modified data/seq/wseq.lean
 
-modified data/stream.lean
+Modified data/stream.lean
 
 
 
 ## [2017-07-23 19:02:57+01:00](https://github.com/leanprover-community/mathlib/commit/1b6322f)
 chore(*): rfl-lemmas on same line
 #### Estimated changes
-modified algebra/group.lean
+Modified algebra/group.lean
 - \+/\- *theorem* bit0_add_one
 - \+/\- *theorem* bit1_add_one
 - \+/\- *theorem* add1_bit0
@@ -864,7 +864,7 @@ modified algebra/group.lean
 - \+/\- *theorem* add1_one
 - \+/\- *theorem* one_add_one
 
-modified algebra/lattice/filter.lean
+Modified algebra/lattice/filter.lean
 - \+/\- *theorem* fmap_eq_image
 - \+/\- *theorem* set_of_mem_eq
 - \+/\- *theorem* mem_join_sets
@@ -880,9 +880,9 @@ modified algebra/lattice/filter.lean
 - \+/\- *theorem* principal_univ
 - \+/\- *theorem* principal_empty
 
-modified algebra/order.lean
+Modified algebra/order.lean
 
-modified data/bool.lean
+Modified data/bool.lean
 - \+/\- *theorem* cond_ff
 - \+/\- *theorem* cond_tt
 - \+/\- *theorem* bnot_false
@@ -892,7 +892,7 @@ modified data/bool.lean
 - \+/\- *theorem* bnot_false
 - \+/\- *theorem* bnot_true
 
-modified data/list/basic.lean
+Modified data/list/basic.lean
 - \+/\- *theorem* last_singleton
 - \+/\- *theorem* head_cons
 - \+/\- *theorem* tail_nil
@@ -914,7 +914,7 @@ modified data/list/basic.lean
 - \+/\- *theorem* ith_zero
 - \+/\- *theorem* count_nil
 
-modified data/stream.lean
+Modified data/stream.lean
 - \+/\- *theorem* nth_zero_cons
 - \+/\- *theorem* head_cons
 - \+/\- *theorem* tail_cons
@@ -992,14 +992,14 @@ modified data/stream.lean
 - \+/\- *theorem* map_eq_apply
 - \+/\- *theorem* nth_nats
 
-modified topology/continuity.lean
+Modified topology/continuity.lean
 
 
 
 ## [2017-07-23 18:59:39+01:00](https://github.com/leanprover-community/mathlib/commit/4a28535)
 refactor(*): attributes on same line
 #### Estimated changes
-modified algebra/lattice/boolean_algebra.lean
+Modified algebra/lattice/boolean_algebra.lean
 - \+/\- *theorem* inf_neg_eq_bot
 - \+/\- *theorem* neg_inf_eq_bot
 - \+/\- *theorem* sup_neg_eq_top
@@ -1021,7 +1021,7 @@ modified algebra/lattice/boolean_algebra.lean
 - \+/\- *theorem* neg_inf
 - \+/\- *theorem* neg_sup
 
-modified algebra/lattice/complete_lattice.lean
+Modified algebra/lattice/complete_lattice.lean
 - \+/\- *theorem* le_Sup
 - \+/\- *theorem* Inf_le
 - \+/\- *theorem* le_Sup_iff
@@ -1127,7 +1127,7 @@ modified algebra/lattice/complete_lattice.lean
 - \+/\- *theorem* Sup_eq_bot
 - \+/\- *theorem* supr_eq_top
 
-modified algebra/lattice/filter.lean
+Modified algebra/lattice/filter.lean
 - \+/\- *theorem* prod.swap_swap
 - \+/\- *theorem* prod.fst_swap
 - \+/\- *theorem* prod.snd_swap
@@ -1209,7 +1209,7 @@ modified algebra/lattice/filter.lean
 - \+/\- *theorem* mem_top_sets_iff
 - \+/\- *theorem* infi_sets_induct
 
-modified data/bool.lean
+Modified data/bool.lean
 - \+ *theorem* coe_tt
 - \+ *theorem* band_tt
 - \+ *theorem* tt_band
@@ -1261,7 +1261,7 @@ modified data/bool.lean
 - \+ *theorem* bxor_left_comm
 - \+ *def* bxor
 
-modified data/list/basic.lean
+Modified data/list/basic.lean
 - \+/\- *theorem* cons_ne_nil
 - \+/\- *theorem* append.assoc
 - \+/\- *theorem* concat_ne_nil
@@ -1309,7 +1309,7 @@ modified data/list/basic.lean
 - \+/\- *theorem* count_concat
 - \+/\- *theorem* count_eq_zero_of_not_mem
 
-modified data/list/comb.lean
+Modified data/list/comb.lean
 - \+/\- *theorem* length_map_accumr
 - \+/\- *theorem* length_map_accumr₂
 - \+/\- *theorem* foldl_nil
@@ -1353,7 +1353,7 @@ modified data/list/comb.lean
 - \- *def* decidable_forall_mem
 - \- *def* decidable_exists_mem
 
-modified data/list/perm.lean
+Modified data/list/perm.lean
 - \+/\- *theorem* perm_cons_app_simp
 - \+/\- *theorem* perm_app_comm
 - \+/\- *theorem* perm_rev_simp
@@ -1365,7 +1365,7 @@ modified data/list/perm.lean
 - \+/\- *theorem* perm_induction_on
 - \+/\- *theorem* perm_map
 
-modified data/list/set.lean
+Modified data/list/set.lean
 - \+/\- *theorem* insert_nil
 - \+/\- *theorem* insert_of_mem
 - \+/\- *theorem* insert_of_not_mem
@@ -1415,26 +1415,26 @@ modified data/list/set.lean
 - \+/\- *theorem* mem_inter_iff
 - \+/\- *theorem* mem_erase_dup_iff
 
-modified data/list/sort.lean
+Modified data/list/sort.lean
 - \- *theorem* ordered_insert_nil
 - \- *theorem* ordered_insert_nil
 - \- *theorem* ordered_insert_cons
 - \- *theorem* ordered_insert_cons
 
-modified data/nat/basic.lean
+Modified data/nat/basic.lean
 - \+/\- *theorem* succ_add_eq_succ_add
 - \+/\- *theorem* succ_add_eq_succ_add
 
-modified data/nat/sub.lean
+Modified data/nat/sub.lean
 - \+/\- *theorem* dist_comm
 - \+/\- *theorem* dist_self
 - \+/\- *theorem* dist_comm
 - \+/\- *theorem* dist_self
 
-modified data/rat.lean
+Modified data/rat.lean
 - \- *def* decidable_nonneg
 
-modified data/set/basic.lean
+Modified data/set/basic.lean
 - \+/\- *theorem* mem_insert_iff
 - \+/\- *theorem* insert_eq_of_mem
 - \+/\- *theorem* mem_sep_eq
@@ -1442,13 +1442,13 @@ modified data/set/basic.lean
 - \+/\- *theorem* insert_eq_of_mem
 - \+/\- *theorem* mem_sep_eq
 
-modified data/set/finite.lean
+Modified data/set/finite.lean
 - \+/\- *theorem* finite_insert
 - \+/\- *theorem* finite_singleton
 - \+/\- *theorem* finite_insert
 - \+/\- *theorem* finite_singleton
 
-modified data/set/lattice.lean
+Modified data/set/lattice.lean
 - \+/\- *theorem* mem_Union_eq
 - \+/\- *theorem* mem_Inter_eq
 - \+/\- *theorem* bInter_empty
@@ -1502,7 +1502,7 @@ modified data/set/lattice.lean
 - \+/\- *def* Inter
 - \+/\- *def* sInter
 
-modified logic/basic.lean
+Modified logic/basic.lean
 - \+/\- *theorem* prod.mk.inj_iff
 - \+/\- *theorem* prod.forall
 - \+/\- *theorem* prod.exists
@@ -1512,21 +1512,21 @@ modified logic/basic.lean
 - \+/\- *theorem* prod.exists
 - \+/\- *theorem* set_of_subset_set_of
 
-modified tactic/converter/binders.lean
+Modified tactic/converter/binders.lean
 - \+/\- *theorem* mem_image
 - \+/\- *theorem* mem_image
 
-modified tests/examples.lean
+Modified tests/examples.lean
 - \+/\- *theorem* mem_set_of
 - \+/\- *theorem* mem_set_of
 
-modified topology/continuity.lean
+Modified topology/continuity.lean
 - \+/\- *theorem* false_neq_true
 - \+/\- *theorem* open_singleton_true
 - \+/\- *theorem* false_neq_true
 - \+/\- *theorem* open_singleton_true
 
-modified topology/topological_space.lean
+Modified topology/topological_space.lean
 - \+/\- *theorem* open_univ
 - \+/\- *theorem* open_empty
 - \+/\- *theorem* closed_empty
@@ -1571,7 +1571,7 @@ modified topology/topological_space.lean
 ## [2017-07-23 18:39:51+01:00](https://github.com/leanprover-community/mathlib/commit/a4b157b)
 chore(data/nat): remove addl
 #### Estimated changes
-modified data/nat/basic.lean
+Modified data/nat/basic.lean
 - \- *theorem* addl_zero_left
 - \- *theorem* addl_succ_left
 - \- *theorem* zero_has_zero
@@ -1585,7 +1585,7 @@ modified data/nat/basic.lean
 ## [2017-07-23 18:29:16+01:00](https://github.com/leanprover-community/mathlib/commit/5816424)
 refactor(*): use 'lemma' iff statement is private
 #### Estimated changes
-modified algebra/lattice/basic.lean
+Modified algebra/lattice/basic.lean
 - \- *lemma* le_top
 - \- *lemma* top_unique
 - \- *lemma* eq_top_iff
@@ -1693,7 +1693,7 @@ modified algebra/lattice/basic.lean
 - \+ *theorem* inf_sup_self
 - \+ *theorem* sup_inf_self
 
-modified algebra/lattice/boolean_algebra.lean
+Modified algebra/lattice/boolean_algebra.lean
 - \- *lemma* le_sup_inf
 - \- *lemma* sup_inf_left
 - \- *lemma* sup_inf_right
@@ -1745,13 +1745,13 @@ modified algebra/lattice/boolean_algebra.lean
 - \+ *theorem* sup_sub_same
 - \+ *theorem* sub_eq_left
 
-modified algebra/lattice/bounded_lattice.lean
+Modified algebra/lattice/bounded_lattice.lean
 - \- *lemma* monotone_and
 - \- *lemma* monotone_or
 - \+ *theorem* monotone_and
 - \+ *theorem* monotone_or
 
-modified algebra/lattice/complete_boolean_algebra.lean
+Modified algebra/lattice/complete_boolean_algebra.lean
 - \- *lemma* sup_Inf_eq
 - \- *lemma* inf_Sup_eq
 - \- *lemma* neg_infi
@@ -1765,7 +1765,7 @@ modified algebra/lattice/complete_boolean_algebra.lean
 - \+ *theorem* neg_Inf
 - \+ *theorem* neg_Sup
 
-modified algebra/lattice/complete_lattice.lean
+Modified algebra/lattice/complete_lattice.lean
 - \- *lemma* le_Sup
 - \- *lemma* Sup_le
 - \- *lemma* Inf_le
@@ -1961,7 +1961,7 @@ modified algebra/lattice/complete_lattice.lean
 - \+ *theorem* Sup_eq_bot
 - \+ *theorem* supr_eq_top
 
-modified algebra/lattice/filter.lean
+Modified algebra/lattice/filter.lean
 - \- *lemma* pure_seq_eq_map
 - \- *lemma* prod.mk.eta
 - \- *lemma* prod.swap_swap
@@ -2353,7 +2353,7 @@ modified algebra/lattice/filter.lean
 - \+ *theorem* ultrafilter_ultrafilter_of
 - \+ *theorem* ultrafilter_of_ultrafilter
 
-modified algebra/lattice/fixed_points.lean
+Modified algebra/lattice/fixed_points.lean
 - \- *lemma* ge_of_eq
 - \- *lemma* lfp_le
 - \- *lemma* le_lfp
@@ -2385,7 +2385,7 @@ modified algebra/lattice/fixed_points.lean
 - \+ *theorem* lfp_lfp
 - \+ *theorem* gfp_gfp
 
-modified algebra/lattice/zorn.lean
+Modified algebra/lattice/zorn.lean
 - \- *lemma* chain_insert
 - \- *lemma* succ_spec
 - \- *lemma* chain_succ
@@ -2415,7 +2415,7 @@ modified algebra/lattice/zorn.lean
 - \+ *theorem* zorn
 - \+ *theorem* zorn_weak_order
 
-modified algebra/order.lean
+Modified algebra/order.lean
 - \- *lemma* monotone_id
 - \- *lemma* monotone_const
 - \- *lemma* monotone_comp
@@ -2431,28 +2431,28 @@ modified algebra/order.lean
 - \+ *theorem* monotone_lam
 - \+ *theorem* monotone_app
 
-modified data/bitvec.lean
+Modified data/bitvec.lean
 
-modified data/bool.lean
+Modified data/bool.lean
 
-modified data/fin.lean
+Modified data/fin.lean
 - \- *lemma* lt_succ_of_lt
 - \- *lemma* eq_of_lt_succ_of_not_lt
 - \+ *theorem* lt_succ_of_lt
 - \+ *theorem* eq_of_lt_succ_of_not_lt
 
-modified data/hash_map.lean
+Modified data/hash_map.lean
 - \- *lemma* foldl_eq_lem
 - \- *lemma* insert_lemma
 - \+ *theorem* foldl_eq_lem
 - \+ *theorem* insert_theorem
 - \- *theorem* valid_aux.insert_lemma1
 
-modified data/int/basic.lean
+Modified data/int/basic.lean
 - \- *lemma* neg_add_neg
 - \+ *theorem* neg_add_neg
 
-modified data/list/basic.lean
+Modified data/list/basic.lean
 - \- *lemma* cons_ne_nil
 - \- *lemma* head_eq_of_cons_eq
 - \- *lemma* tail_eq_of_cons_eq
@@ -2520,7 +2520,7 @@ modified data/list/basic.lean
 - \+ *theorem* count_eq_zero_of_not_mem
 - \+ *theorem* not_mem_of_count_eq_zero
 
-modified data/list/comb.lean
+Modified data/list/comb.lean
 - \- *lemma* dmap_nil
 - \- *lemma* dmap_cons_of_pos
 - \- *lemma* dmap_cons_of_neg
@@ -2538,13 +2538,13 @@ modified data/list/comb.lean
 - \+ *theorem* mem_of_dinj_of_mem_dmap
 - \+ *theorem* not_mem_dmap_of_dinj_of_not_mem
 
-modified data/list/perm.lean
+Modified data/list/perm.lean
 - \- *lemma* perm_of_qeq
 - \- *lemma* perm_insert_insert
 - \+ *theorem* perm_of_qeq
 - \+ *theorem* perm_insert_insert
 
-modified data/list/set.lean
+Modified data/list/set.lean
 - \- *lemma* erase_nil
 - \- *lemma* erase_cons
 - \- *lemma* erase_cons_head
@@ -2600,13 +2600,13 @@ modified data/list/set.lean
 - \+ *theorem* upto_step
 - \+ *theorem* dmap_nodup_of_dinj
 
-modified data/list/sort.lean
+Modified data/list/sort.lean
 - \- *lemma* succ_le_succ_iff
 - \- *lemma* lt_succ_iff_le
 - \+ *theorem* succ_le_succ_iff
 - \+ *theorem* lt_succ_iff_le
 
-modified data/nat/basic.lean
+Modified data/nat/basic.lean
 - \- *lemma* addl_zero_left
 - \- *lemma* addl_succ_left
 - \- *lemma* zero_has_zero
@@ -2616,11 +2616,11 @@ modified data/nat/basic.lean
 - \+ *theorem* zero_has_zero
 - \+ *theorem* one_succ_zero
 
-modified data/nat/gcd.lean
+Modified data/nat/gcd.lean
 - \- *lemma* gcd_eq_one_of_coprime
 - \+ *theorem* gcd_eq_one_of_coprime
 
-modified data/nat/sub.lean
+Modified data/nat/sub.lean
 - \- *lemma* dist_eq_max_sub_min
 - \- *lemma* dist_succ_succ
 - \- *lemma* dist_pos_of_ne
@@ -2628,9 +2628,9 @@ modified data/nat/sub.lean
 - \+ *theorem* dist_pos_of_ne
 - \- *theorem* dist_eq_max_sub_min
 
-modified data/num/lemmas.lean
+Modified data/num/lemmas.lean
 
-modified data/rat.lean
+Modified data/rat.lean
 - \- *lemma* linear_order_cases_on_eq
 - \- *lemma* linear_order_cases_on_lt
 - \- *lemma* linear_order_cases_on_gt
@@ -2642,7 +2642,7 @@ modified data/rat.lean
 - \+ *theorem* mul_nonneg_iff_right_nonneg_of_pos
 - \+ *theorem* not_antimono
 
-modified data/seq/computation.lean
+Modified data/seq/computation.lean
 - \- *lemma* map_ret
 - \- *lemma* map_think
 - \- *lemma* destruct_map
@@ -2664,7 +2664,7 @@ modified data/seq/computation.lean
 - \+ *theorem* map_think'
 - \+ *theorem* lift_rel_rec.lem
 
-modified data/seq/parallel.lean
+Modified data/seq/parallel.lean
 - \- *lemma* terminates_parallel.aux
 - \- *lemma* map_parallel
 - \- *lemma* parallel_congr_lem
@@ -2672,7 +2672,7 @@ modified data/seq/parallel.lean
 - \+ *theorem* map_parallel
 - \+ *theorem* parallel_congr_lem
 
-modified data/seq/seq.lean
+Modified data/seq/seq.lean
 - \- *lemma* mem_cons
 - \- *lemma* mem_cons_of_mem
 - \- *lemma* eq_or_mem_of_mem_cons
@@ -2722,7 +2722,7 @@ modified data/seq/seq.lean
 - \+ *theorem* join_nil
 - \+ *theorem* join_cons
 
-modified data/seq/wseq.lean
+Modified data/seq/wseq.lean
 - \- *lemma* nil_append
 - \- *lemma* cons_append
 - \- *lemma* think_append
@@ -2752,11 +2752,11 @@ modified data/seq/wseq.lean
 - \+ *theorem* destruct_join
 - \+ *theorem* join_append
 
-modified data/set/basic.lean
+Modified data/set/basic.lean
 - \- *lemma* set_of_false
 - \+ *theorem* set_of_false
 
-modified data/set/finite.lean
+Modified data/set/finite.lean
 - \- *lemma* finite_insert
 - \- *lemma* finite_singleton
 - \- *lemma* finite_union
@@ -2770,7 +2770,7 @@ modified data/set/finite.lean
 - \+ *theorem* finite_image
 - \+ *theorem* finite_sUnion
 
-modified data/stream.lean
+Modified data/stream.lean
 - \- *lemma* nth_zero_cons
 - \- *lemma* head_cons
 - \- *lemma* tail_cons
@@ -2982,7 +2982,7 @@ modified data/stream.lean
 - \+ *theorem* nth_nats
 - \+ *theorem* nats_eq
 
-modified data/vector.lean
+Modified data/vector.lean
 - \- *lemma* map_nil
 - \- *lemma* map_cons
 - \- *lemma* to_list_mk
@@ -3002,7 +3002,7 @@ modified data/vector.lean
 - \+ *theorem* to_list_drop
 - \+ *theorem* to_list_take
 
-modified logic/basic.lean
+Modified logic/basic.lean
 - \- *lemma* eq_iff_le_and_le
 - \- *lemma* prod.mk.inj_iff
 - \- *lemma* prod.forall
@@ -3024,7 +3024,7 @@ modified logic/basic.lean
 - \+ *theorem* or_imp_iff_and_imp
 - \+ *theorem* forall_eq
 
-modified tactic/converter/binders.lean
+Modified tactic/converter/binders.lean
 - \- *lemma* {u
 - \- *lemma* {u
 - \- *lemma* {u
@@ -3044,15 +3044,15 @@ modified tactic/converter/binders.lean
 - \+ *theorem* Inf_image
 - \+ *theorem* Sup_image
 
-modified tests/examples.lean
+Modified tests/examples.lean
 - \- *lemma* mem_set_of
 - \+ *theorem* mem_set_of
 
-modified tests/finish2.lean
+Modified tests/finish2.lean
 - \- *lemma* NoMember
 - \+ *theorem* NoMember
 
-modified topology/continuity.lean
+Modified topology/continuity.lean
 - \- *lemma* univ_eq_true_false
 - \- *lemma* false_neq_true
 - \- *lemma* subtype.val_image
@@ -3146,7 +3146,7 @@ modified topology/continuity.lean
 - \+ *theorem* nhds_pi
 - \+ *theorem* compact_pi_infinite
 
-modified topology/topological_space.lean
+Modified topology/topological_space.lean
 - \- *lemma* topological_space_eq
 - \- *lemma* open_univ
 - \- *lemma* open_inter
@@ -3278,7 +3278,7 @@ modified topology/topological_space.lean
 - \+ *theorem* nhds_mono
 - \+ *theorem* nhds_supr
 
-modified topology/uniform_space.lean
+Modified topology/uniform_space.lean
 - \- *lemma* swap_id_rel
 - \- *lemma* monotone_comp_rel
 - \- *lemma* prod_mk_mem_comp_rel
@@ -3413,17 +3413,17 @@ modified topology/uniform_space.lean
 ## [2017-07-23 18:13:37+01:00](https://github.com/leanprover-community/mathlib/commit/b9f1d64)
 refactor(*): use . instead of ^.
 #### Estimated changes
-modified algebra/group.lean
+Modified algebra/group.lean
 
-modified algebra/lattice/basic.lean
+Modified algebra/lattice/basic.lean
 
-modified algebra/lattice/boolean_algebra.lean
+Modified algebra/lattice/boolean_algebra.lean
 
-modified algebra/lattice/complete_boolean_algebra.lean
+Modified algebra/lattice/complete_boolean_algebra.lean
 
-modified algebra/lattice/complete_lattice.lean
+Modified algebra/lattice/complete_lattice.lean
 
-modified algebra/lattice/filter.lean
+Modified algebra/lattice/filter.lean
 - \+/\- *lemma* filter_eq
 - \+/\- *lemma* univ_mem_sets'
 - \+/\- *lemma* univ_mem_sets
@@ -3481,50 +3481,50 @@ modified algebra/lattice/filter.lean
 - \+/\- *lemma* lift'_neq_bot_iff
 - \+/\- *lemma* prod_same_eq
 
-modified algebra/lattice/fixed_points.lean
+Modified algebra/lattice/fixed_points.lean
 
-modified algebra/ring.lean
+Modified algebra/ring.lean
 
-modified data/list/basic.lean
+Modified data/list/basic.lean
 
-modified data/list/comb.lean
+Modified data/list/comb.lean
 
-modified data/list/set.lean
+Modified data/list/set.lean
 
-modified data/list/sort.lean
+Modified data/list/sort.lean
 
-modified data/rat.lean
+Modified data/rat.lean
 
-modified data/set/basic.lean
+Modified data/set/basic.lean
 
-modified data/set/finite.lean
+Modified data/set/finite.lean
 
-modified data/set/lattice.lean
+Modified data/set/lattice.lean
 
-modified logic/basic.lean
+Modified logic/basic.lean
 
-modified tactic/finish.lean
+Modified tactic/finish.lean
 
-modified topology/continuity.lean
+Modified topology/continuity.lean
 - \+/\- *lemma* map_nhds_induced_eq
 - \+/\- *lemma* map_nhds_subtype_val_eq
 - \+/\- *lemma* map_nhds_induced_eq
 - \+/\- *lemma* map_nhds_subtype_val_eq
 
-modified topology/topological_space.lean
+Modified topology/topological_space.lean
 - \+/\- *lemma* topological_space_eq
 - \+/\- *lemma* nhds_sets
 - \+/\- *lemma* topological_space_eq
 - \+/\- *lemma* nhds_sets
 
-modified topology/uniform_space.lean
+Modified topology/uniform_space.lean
 
 
 
 ## [2017-07-23 18:07:49+01:00](https://github.com/leanprover-community/mathlib/commit/9d01cb8)
 refactor(algebra/lattice): use *experiment files, move set.lattice to .basic
 #### Estimated changes
-modified algebra/lattice/basic.lean
+Modified algebra/lattice/basic.lean
 - \+/\- *lemma* le_top
 - \+ *lemma* top_le_iff
 - \+/\- *lemma* bot_le
@@ -3566,7 +3566,7 @@ modified algebra/lattice/basic.lean
 - \+/\- *lemma* bot_inf_eq
 - \+/\- *lemma* inf_bot_eq
 
-deleted algebra/lattice/basic_experiment.lean
+Deleted algebra/lattice/basic_experiment.lean
 - \- *lemma* le_top
 - \- *lemma* top_unique
 - \- *lemma* eq_top_iff
@@ -3622,15 +3622,15 @@ deleted algebra/lattice/basic_experiment.lean
 - \- *lemma* sup_inf_self
 - \- *def* imp
 
-modified algebra/lattice/bounded_lattice.lean
+Modified algebra/lattice/bounded_lattice.lean
 
-deleted algebra/lattice/bounded_lattice_experiment.lean
+Deleted algebra/lattice/bounded_lattice_experiment.lean
 - \- *lemma* monotone_and
 - \- *lemma* monotone_or
 
-modified algebra/lattice/complete_boolean_algebra.lean
+Modified algebra/lattice/complete_boolean_algebra.lean
 
-modified algebra/lattice/complete_lattice.lean
+Modified algebra/lattice/complete_lattice.lean
 - \+ *lemma* le_supr'
 - \+ *lemma* le_supr'
 - \+ *lemma* infi_le'
@@ -3640,7 +3640,7 @@ modified algebra/lattice/complete_lattice.lean
 - \- *theorem* subset_union_left
 - \- *theorem* subset_union_right
 
-deleted algebra/lattice/complete_lattice_experiment.lean
+Deleted algebra/lattice/complete_lattice_experiment.lean
 - \- *lemma* mem_set_of
 - \- *lemma* mem_set_of_eq
 - \- *lemma* nmem_set_of_eq
@@ -3767,9 +3767,9 @@ deleted algebra/lattice/complete_lattice_experiment.lean
 - \- *def* supr
 - \- *def* infi
 
-modified data/seq/wseq.lean
+Modified data/seq/wseq.lean
 
-modified data/set/basic.lean
+Modified data/set/basic.lean
 - \+ *lemma* set_of_false
 - \- *lemma* ext
 - \- *lemma* subset.refl
@@ -3967,7 +3967,7 @@ modified data/set/basic.lean
 - \+ *def* vimage
 - \+ *def* pairwise_on
 
-modified data/set/lattice.lean
+Modified data/set/lattice.lean
 - \- *lemma* mem_set_of
 - \- *lemma* mem_set_of_eq
 - \- *lemma* nmem_set_of_eq
@@ -4141,7 +4141,7 @@ modified data/set/lattice.lean
 - \- *def* vimage
 - \- *def* pairwise_on
 
-deleted tests/finish_set_basic.lean
+Deleted tests/finish_set_basic.lean
 - \- *lemma* mem_set_of
 - \- *lemma* bounded_forall_empty_iff
 - \- *lemma* bounded_forall_empty_iff
@@ -4329,44 +4329,44 @@ deleted tests/finish_set_basic.lean
 - \- *def* mem_image_elim
 - \- *def* mem_image_elim_on
 
-modified theories/set_theory.lean
+Modified theories/set_theory.lean
 
-modified topology/continuity.lean
+Modified topology/continuity.lean
 
-modified topology/topological_space.lean
+Modified topology/topological_space.lean
 
 
 
 ## [2017-07-23 15:39:35+01:00](https://github.com/leanprover-community/mathlib/commit/32beb92)
 refactor(*): tools -> tactic, remove experimental stuff
 #### Estimated changes
-modified algebra/group_power.lean
+Modified algebra/group_power.lean
 
-modified algebra/lattice/basic_experiment.lean
+Modified algebra/lattice/basic_experiment.lean
 
-modified data/int/basic.lean
+Modified data/int/basic.lean
 
-modified data/set/lattice.lean
+Modified data/set/lattice.lean
 
-renamed tools/converter/binders.lean to tactic/converter/binders.lean
+Renamed tools/converter/binders.lean to tactic/converter/binders.lean
 
-renamed tools/converter/interactive.lean to tactic/converter/interactive.lean
+Renamed tools/converter/interactive.lean to tactic/converter/interactive.lean
 
-renamed tools/converter/old_conv.lean to tactic/converter/old_conv.lean
+Renamed tools/converter/old_conv.lean to tactic/converter/old_conv.lean
 
-renamed tools/auto/finish.lean to tactic/finish.lean
+Renamed tools/auto/finish.lean to tactic/finish.lean
 
-modified tests/finish1.lean
+Modified tests/finish1.lean
 
-modified tests/finish2.lean
+Modified tests/finish2.lean
 
-modified tests/finish3.lean
+Modified tests/finish3.lean
 
-modified tests/finish_set_basic.lean
+Modified tests/finish_set_basic.lean
 
-deleted tools/auto/mk_inhabitant.lean
+Deleted tools/auto/mk_inhabitant.lean
 
-deleted tools/parser/modal.lean
+Deleted tools/parser/modal.lean
 - \- *def* varname
 - \- *def* size
 - \- *def* num_atoms
@@ -4380,7 +4380,7 @@ deleted tools/parser/modal.lean
 - \- *def* form
 - \- *def* form_of_string
 
-deleted tools/parser/parser.lean
+Deleted tools/parser/parser.lean
 - \- *lemma* {u
 - \- *lemma* {u}
 - \- *lemma* {u
@@ -4416,92 +4416,92 @@ deleted tools/parser/parser.lean
 - \- *def* symb
 - \- *def* apply
 
-deleted tools/tactic/tactic.lean
+Deleted tools/tactic/tactic.lean
 
 
 
 ## [2017-07-23 15:31:56+01:00](https://github.com/leanprover-community/mathlib/commit/bb8b8f8)
 refactor(tests): consolidate tests
 #### Estimated changes
-renamed tools/tactic/examples.lean to tests/examples.lean
+Renamed tools/tactic/examples.lean to tests/examples.lean
 
-renamed tools/auto/experiments/test1.lean to tests/finish1.lean
+Renamed tools/auto/experiments/test1.lean to tests/finish1.lean
 
-renamed tools/auto/experiments/test2.lean to tests/finish2.lean
+Renamed tools/auto/experiments/test2.lean to tests/finish2.lean
 
-renamed tools/auto/experiments/test3.lean to tests/finish3.lean
+Renamed tools/auto/experiments/test3.lean to tests/finish3.lean
 
-renamed tools/auto/experiments/set_basic.lean to tests/finish_set_basic.lean
+Renamed tools/auto/experiments/set_basic.lean to tests/finish_set_basic.lean
 
-modified tools/parser/modal.lean
+Modified tools/parser/modal.lean
 
 
 
 ## [2017-07-23 15:24:21+01:00](https://github.com/leanprover-community/mathlib/commit/ae65643)
 refactor(*): use absolute paths
 #### Estimated changes
-modified algebra/group_power.lean
+Modified algebra/group_power.lean
 
-modified algebra/lattice/basic.lean
+Modified algebra/lattice/basic.lean
 
-modified algebra/lattice/basic_experiment.lean
+Modified algebra/lattice/basic_experiment.lean
 
-modified algebra/lattice/boolean_algebra.lean
+Modified algebra/lattice/boolean_algebra.lean
 
-modified algebra/lattice/bounded_lattice.lean
+Modified algebra/lattice/bounded_lattice.lean
 
-modified algebra/lattice/bounded_lattice_experiment.lean
+Modified algebra/lattice/bounded_lattice_experiment.lean
 
-modified algebra/lattice/complete_boolean_algebra.lean
+Modified algebra/lattice/complete_boolean_algebra.lean
 
-modified algebra/lattice/complete_lattice.lean
+Modified algebra/lattice/complete_lattice.lean
 
-modified algebra/lattice/complete_lattice_experiment.lean
+Modified algebra/lattice/complete_lattice_experiment.lean
 
-modified algebra/lattice/default.lean
+Modified algebra/lattice/default.lean
 
-modified algebra/lattice/filter.lean
+Modified algebra/lattice/filter.lean
 
-modified algebra/lattice/fixed_points.lean
+Modified algebra/lattice/fixed_points.lean
 
-modified data/int/basic.lean
+Modified data/int/basic.lean
 
-modified data/int/order.lean
+Modified data/int/order.lean
 
-modified data/list/default.lean
+Modified data/list/default.lean
 
-modified data/list/perm.lean
+Modified data/list/perm.lean
 
-modified data/list/set.lean
+Modified data/list/set.lean
 
-modified data/list/sort.lean
+Modified data/list/sort.lean
 
-modified data/nat/bquant.lean
+Modified data/nat/bquant.lean
 
-modified data/num/bitwise.lean
+Modified data/num/bitwise.lean
 
-modified data/num/lemmas.lean
+Modified data/num/lemmas.lean
 
-modified data/pfun.lean
+Modified data/pfun.lean
 
-modified data/set/default.lean
+Modified data/set/default.lean
 
-modified data/set/finite.lean
+Modified data/set/finite.lean
 
-modified tools/parser/modal.lean
+Modified tools/parser/modal.lean
 
-modified topology/continuity.lean
+Modified topology/continuity.lean
 
-modified topology/uniform_space.lean
+Modified topology/uniform_space.lean
 
 
 
 ## [2017-07-23 15:16:51+01:00](https://github.com/leanprover-community/mathlib/commit/deb1681)
 refactor(*): import content from lean/library/data and library_dev
 #### Estimated changes
-created .gitignore
+Created .gitignore
 
-created algebra/group.lean
+Created algebra/group.lean
 - \+ *theorem* add_comm_four
 - \+ *theorem* add_comm_middle
 - \+ *theorem* bit0_add_bit0
@@ -4530,7 +4530,7 @@ created algebra/group.lean
 - \+ *theorem* neg_zero_helper
 - \+ *def* add1
 
-created algebra/group_power.lean
+Created algebra/group_power.lean
 - \+ *theorem* pow_zero
 - \+ *theorem* pow_succ
 - \+ *theorem* pow_one
@@ -4552,9 +4552,9 @@ created algebra/group_power.lean
 - \+ *def* monoid.pow
 - \+ *def* gpow
 
-created algebra/lattice/README.md
+Created algebra/lattice/README.md
 
-created algebra/lattice/basic.lean
+Created algebra/lattice/basic.lean
 - \+ *lemma* le_top
 - \+ *lemma* top_unique
 - \+ *lemma* eq_top_iff
@@ -4603,7 +4603,7 @@ created algebra/lattice/basic.lean
 - \+ *lemma* inf_sup_self
 - \+ *lemma* sup_inf_self
 
-created algebra/lattice/basic_experiment.lean
+Created algebra/lattice/basic_experiment.lean
 - \+ *lemma* le_top
 - \+ *lemma* top_unique
 - \+ *lemma* eq_top_iff
@@ -4659,7 +4659,7 @@ created algebra/lattice/basic_experiment.lean
 - \+ *lemma* sup_inf_self
 - \+ *def* imp
 
-created algebra/lattice/boolean_algebra.lean
+Created algebra/lattice/boolean_algebra.lean
 - \+ *lemma* le_sup_inf
 - \+ *lemma* sup_inf_left
 - \+ *lemma* sup_inf_right
@@ -4686,15 +4686,15 @@ created algebra/lattice/boolean_algebra.lean
 - \+ *lemma* sup_sub_same
 - \+ *lemma* sub_eq_left
 
-created algebra/lattice/bounded_lattice.lean
+Created algebra/lattice/bounded_lattice.lean
 - \+ *lemma* monotone_and
 - \+ *lemma* monotone_or
 
-created algebra/lattice/bounded_lattice_experiment.lean
+Created algebra/lattice/bounded_lattice_experiment.lean
 - \+ *lemma* monotone_and
 - \+ *lemma* monotone_or
 
-created algebra/lattice/complete_boolean_algebra.lean
+Created algebra/lattice/complete_boolean_algebra.lean
 - \+ *lemma* sup_Inf_eq
 - \+ *lemma* inf_Sup_eq
 - \+ *lemma* neg_infi
@@ -4702,7 +4702,7 @@ created algebra/lattice/complete_boolean_algebra.lean
 - \+ *lemma* neg_Inf
 - \+ *lemma* neg_Sup
 
-created algebra/lattice/complete_lattice.lean
+Created algebra/lattice/complete_lattice.lean
 - \+ *lemma* le_Sup
 - \+ *lemma* Sup_le
 - \+ *lemma* Inf_le
@@ -4802,7 +4802,7 @@ created algebra/lattice/complete_lattice.lean
 - \+ *def* supr
 - \+ *def* infi
 
-created algebra/lattice/complete_lattice_experiment.lean
+Created algebra/lattice/complete_lattice_experiment.lean
 - \+ *lemma* mem_set_of
 - \+ *lemma* mem_set_of_eq
 - \+ *lemma* nmem_set_of_eq
@@ -4929,9 +4929,9 @@ created algebra/lattice/complete_lattice_experiment.lean
 - \+ *def* supr
 - \+ *def* infi
 
-created algebra/lattice/default.lean
+Created algebra/lattice/default.lean
 
-created algebra/lattice/filter.lean
+Created algebra/lattice/filter.lean
 - \+ *lemma* pure_seq_eq_map
 - \+ *lemma* prod.mk.eta
 - \+ *lemma* prod.swap_swap
@@ -5149,7 +5149,7 @@ created algebra/lattice/filter.lean
 - \+ *def* towards
 - \+ *def* ultrafilter
 
-created algebra/lattice/fixed_points.lean
+Created algebra/lattice/fixed_points.lean
 - \+ *lemma* ge_of_eq
 - \+ *lemma* lfp_le
 - \+ *lemma* le_lfp
@@ -5168,7 +5168,7 @@ created algebra/lattice/fixed_points.lean
 - \+ *def* lfp
 - \+ *def* gfp
 
-created algebra/lattice/zorn.lean
+Created algebra/lattice/zorn.lean
 - \+ *lemma* chain_insert
 - \+ *lemma* succ_spec
 - \+ *lemma* chain_succ
@@ -5189,7 +5189,7 @@ created algebra/lattice/zorn.lean
 - \+ *def* succ_chain
 - \+ *def* max_chain
 
-created algebra/order.lean
+Created algebra/order.lean
 - \+ *lemma* monotone_id
 - \+ *lemma* monotone_const
 - \+ *lemma* monotone_comp
@@ -5200,7 +5200,7 @@ created algebra/order.lean
 - \+ *def* monotone
 - \+ *def* weak_order_dual
 
-created algebra/ring.lean
+Created algebra/ring.lean
 - \+ *theorem* mul_zero
 - \+ *theorem* zero_mul
 - \+ *theorem* mul_one
@@ -5224,18 +5224,18 @@ created algebra/ring.lean
 - \+ *theorem* neg_mul_pos_helper
 - \+ *theorem* pos_mul_neg_helper
 
-created data/bitvec.lean
+Created data/bitvec.lean
 - \+ *def* bitvec
 - \+ *def* append
 
-created data/bool.lean
+Created data/bool.lean
 
-created data/fin.lean
+Created data/fin.lean
 - \+ *lemma* lt_succ_of_lt
 - \+ *lemma* eq_of_lt_succ_of_not_lt
 - \+ *def* raise_fin
 
-created data/hash_map.lean
+Created data/hash_map.lean
 - \+ *lemma* foldl_eq_lem
 - \+ *lemma* insert_lemma
 - \+ *theorem* mem_as_list
@@ -5298,7 +5298,7 @@ created data/hash_map.lean
 - \+ *def* of_list
 - \+ *def* erase
 
-created data/int/basic.lean
+Created data/int/basic.lean
 - \+ *lemma* neg_add_neg
 - \+ *theorem* of_nat_add_neg_succ_of_nat_of_lt
 - \+ *theorem* of_nat_add_neg_succ_of_nat_of_ge
@@ -5322,7 +5322,7 @@ created data/int/basic.lean
 - \+ *def* nat_succ_eq_int_succ
 - \+ *def* rec_nat_on
 
-created data/int/order.lean
+Created data/int/order.lean
 - \+ *theorem* coe_nat_nonneg
 - \+ *theorem* coe_nat_pos
 - \+ *theorem* coe_nat_succ_pos
@@ -5350,7 +5350,7 @@ created data/int/order.lean
 - \+ *theorem* exists_least_of_bdd
 - \+ *theorem* exists_greatest_of_bdd
 
-created data/lazy_list.lean
+Created data/lazy_list.lean
 - \+ *def* singleton
 - \+ *def* of_list
 - \+ *def* to_list
@@ -5366,7 +5366,7 @@ created data/lazy_list.lean
 - \+ *def* filter
 - \+ *def* nth
 
-created data/list/basic.lean
+Created data/list/basic.lean
 - \+ *lemma* cons_ne_nil
 - \+ *lemma* head_eq_of_cons_eq
 - \+ *lemma* tail_eq_of_cons_eq
@@ -5430,7 +5430,7 @@ created data/list/basic.lean
 - \+ *def* permutations_aux.eqn_1
 - \+ *def* permutations_aux.eqn_2
 
-created data/list/comb.lean
+Created data/list/comb.lean
 - \+ *lemma* dmap_nil
 - \+ *lemma* dmap_cons_of_pos
 - \+ *lemma* dmap_cons_of_neg
@@ -5508,9 +5508,9 @@ created data/list/comb.lean
 - \+ *def* list_equiv_self_of_equiv_nat
 - \- *def* map₂
 
-created data/list/default.lean
+Created data/list/default.lean
 
-created data/list/perm.lean
+Created data/list/perm.lean
 - \+ *lemma* perm_of_qeq
 - \+ *lemma* perm_insert_insert
 - \+ *theorem* eqv
@@ -5575,7 +5575,7 @@ created data/list/perm.lean
 - \+ *def* decidable_perm_aux
 - \+ *def* decidable_perm
 
-created data/list/set.lean
+Created data/list/set.lean
 - \+ *lemma* erase_nil
 - \+ *lemma* erase_cons
 - \+ *lemma* erase_cons_head
@@ -5683,7 +5683,7 @@ created data/list/set.lean
 - \+ *def* upto
 - \+ *def* erase_dup
 
-created data/list/sort.lean
+Created data/list/sort.lean
 - \+ *lemma* succ_le_succ_iff
 - \+ *lemma* lt_succ_iff_le
 - \+ *theorem* add_pos_left
@@ -5716,7 +5716,7 @@ created data/list/sort.lean
 - \+ *def* merge
 - \+ *def* merge_sort
 
-created data/nat/basic.lean
+Created data/nat/basic.lean
 - \+ *lemma* addl_zero_left
 - \+ *lemma* addl_succ_left
 - \+ *lemma* zero_has_zero
@@ -5738,10 +5738,10 @@ created data/nat/basic.lean
 - \+ *def* addl
 - \+ *def* iterate
 
-created data/nat/bquant.lean
+Created data/nat/bquant.lean
 - \+ *def* ball
 
-created data/nat/gcd.lean
+Created data/nat/gcd.lean
 - \+ *lemma* gcd_eq_one_of_coprime
 - \+ *theorem* gcd_dvd
 - \+ *theorem* gcd_dvd_left
@@ -5801,7 +5801,7 @@ created data/nat/gcd.lean
 - \+ *theorem* coprime_pow
 - \+ *theorem* exists_eq_prod_and_dvd_and_dvd
 
-created data/nat/sub.lean
+Created data/nat/sub.lean
 - \+ *lemma* dist_succ_succ
 - \+ *lemma* dist_pos_of_ne
 - \- *lemma* dist_eq_max_sub_min
@@ -5822,13 +5822,13 @@ created data/nat/sub.lean
 - \+ *theorem* dist_mul_left
 - \+ *def* dist
 
-created data/num/basic.lean
+Created data/num/basic.lean
 
-created data/num/bitwise.lean
+Created data/num/bitwise.lean
 
-created data/num/lemmas.lean
+Created data/num/lemmas.lean
 
-created data/pfun.lean
+Created data/pfun.lean
 - \+ *theorem* to_of_option
 - \+ *theorem* of_to_option
 - \+ *theorem* dom_iff_mem
@@ -5860,10 +5860,10 @@ created data/pfun.lean
 - \+ *def* ran
 - \+ *def* restrict
 
-created data/pnat.lean
+Created data/pnat.lean
 - \+ *def* pnat
 
-created data/rat.lean
+Created data/rat.lean
 - \+ *lemma* linear_order_cases_on_eq
 - \+ *lemma* linear_order_cases_on_lt
 - \+ *lemma* linear_order_cases_on_gt
@@ -5873,7 +5873,7 @@ created data/rat.lean
 - \+ *def* rat
 - \+ *def* decidable_nonneg
 
-created data/seq/computation.lean
+Created data/seq/computation.lean
 - \+ *lemma* map_ret
 - \+ *lemma* map_think
 - \+ *lemma* destruct_map
@@ -6032,7 +6032,7 @@ created data/seq/computation.lean
 - \+ *def* lift_rel_aux.ret_left
 - \+ *def* lift_rel_aux.ret_right
 
-created data/seq/parallel.lean
+Created data/seq/parallel.lean
 - \+ *lemma* terminates_parallel.aux
 - \+ *lemma* map_parallel
 - \+ *lemma* parallel_congr_lem
@@ -6048,7 +6048,7 @@ created data/seq/parallel.lean
 - \+ *def* parallel
 - \+ *def* parallel_rec
 
-created data/seq/seq.lean
+Created data/seq/seq.lean
 - \+ *lemma* mem_cons
 - \+ *lemma* mem_cons_of_mem
 - \+ *lemma* eq_or_mem_of_mem_cons
@@ -6141,7 +6141,7 @@ created data/seq/seq.lean
 - \+ *def* ret
 - \+ *def* bind
 
-created data/seq/wseq.lean
+Created data/seq/wseq.lean
 - \+ *lemma* nil_append
 - \+ *lemma* cons_append
 - \+ *lemma* think_append
@@ -6337,7 +6337,7 @@ created data/seq/wseq.lean
 - \+ *def* destruct_append.aux
 - \+ *def* destruct_join.aux
 
-created data/set/basic.lean
+Created data/set/basic.lean
 - \+ *lemma* ext
 - \+ *lemma* subset.refl
 - \+ *lemma* subset.trans
@@ -6361,9 +6361,9 @@ created data/set/basic.lean
 - \+ *lemma* inter_empty
 - \+ *lemma* empty_inter
 
-created data/set/default.lean
+Created data/set/default.lean
 
-created data/set/finite.lean
+Created data/set/finite.lean
 - \+ *lemma* finite_insert
 - \+ *lemma* finite_singleton
 - \+ *lemma* finite_union
@@ -6371,7 +6371,7 @@ created data/set/finite.lean
 - \+ *lemma* finite_image
 - \+ *lemma* finite_sUnion
 
-created data/set/lattice.lean
+Created data/set/lattice.lean
 - \+ *lemma* mem_set_of
 - \+ *lemma* mem_set_of_eq
 - \+ *lemma* nmem_set_of_eq
@@ -6596,7 +6596,7 @@ created data/set/lattice.lean
 - \+ *def* pairwise_on
 - \+ *def* disjoint
 
-created data/stream.lean
+Created data/stream.lean
 - \+ *lemma* nth_zero_cons
 - \+ *lemma* head_cons
 - \+ *lemma* tail_cons
@@ -6731,7 +6731,7 @@ created data/stream.lean
 - \+ *def* apply
 - \+ *def* nats
 
-created data/vector.lean
+Created data/vector.lean
 - \+ *lemma* map_nil
 - \+ *lemma* map_cons
 - \+ *lemma* to_list_mk
@@ -6762,9 +6762,9 @@ created data/vector.lean
 - \+ *def* remove_nth
 - \+ *def* of_fn
 
-created leanpkg.toml
+Created leanpkg.toml
 
-created logic/basic.lean
+Created logic/basic.lean
 - \+ *lemma* eq_iff_le_and_le
 - \+ *lemma* prod.mk.inj_iff
 - \+ *lemma* prod.forall
@@ -6873,14 +6873,14 @@ created logic/basic.lean
 - \+ *theorem* not_bforall_iff_bexists_not
 - \- *theorem* forall_not_of_not_exists
 
-created pending/default.lean
+Created pending/default.lean
 
-created theories/set_theory.lean
+Created theories/set_theory.lean
 - \+ *def* arity
 - \+ *def* Set
 - \+ *def* Class
 
-created tools/auto/experiments/set_basic.lean
+Created tools/auto/experiments/set_basic.lean
 - \+ *lemma* mem_set_of
 - \+ *lemma* bounded_forall_empty_iff
 - \+ *lemma* bounded_forall_empty_iff
@@ -7068,15 +7068,15 @@ created tools/auto/experiments/set_basic.lean
 - \+ *def* mem_image_elim
 - \+ *def* mem_image_elim_on
 
-created tools/auto/experiments/test1.lean
+Created tools/auto/experiments/test1.lean
 
-created tools/auto/experiments/test2.lean
+Created tools/auto/experiments/test2.lean
 - \+ *lemma* NoMember
 
-created tools/auto/experiments/test3.lean
+Created tools/auto/experiments/test3.lean
 - \+ *theorem* foo:
 
-created tools/auto/finish.lean
+Created tools/auto/finish.lean
 - \+ *theorem* implies_and_iff
 - \+ *theorem* curry_iff
 - \+ *theorem* iff_def
@@ -7092,9 +7092,9 @@ created tools/auto/finish.lean
 - \+ *def* common_normalize_lemma_names
 - \+ *def* classical_normalize_lemma_names
 
-created tools/auto/mk_inhabitant.lean
+Created tools/auto/mk_inhabitant.lean
 
-created tools/converter/binders.lean
+Created tools/converter/binders.lean
 - \+ *lemma* {u
 - \+ *lemma* {u
 - \+ *lemma* {u
@@ -7105,11 +7105,11 @@ created tools/converter/binders.lean
 - \+ *lemma* Inf_image
 - \+ *lemma* Sup_image
 
-created tools/converter/interactive.lean
+Created tools/converter/interactive.lean
 
-created tools/converter/old_conv.lean
+Created tools/converter/old_conv.lean
 
-created tools/parser/modal.lean
+Created tools/parser/modal.lean
 - \+ *def* varname
 - \+ *def* size
 - \+ *def* num_atoms
@@ -7123,7 +7123,7 @@ created tools/parser/modal.lean
 - \+ *def* form
 - \+ *def* form_of_string
 
-created tools/parser/parser.lean
+Created tools/parser/parser.lean
 - \+ *lemma* {u
 - \+ *lemma* {u}
 - \+ *lemma* {u
@@ -7159,7 +7159,7 @@ created tools/parser/parser.lean
 - \+ *def* symb
 - \+ *def* apply
 
-created tools/tactic/examples.lean
+Created tools/tactic/examples.lean
 - \+ *lemma* mem_set_of
 - \+ *theorem* subset_def
 - \+ *theorem* union_def
@@ -7169,9 +7169,9 @@ created tools/tactic/examples.lean
 - \+ *def* my_id
 - \+ *def* my_id_def
 
-created tools/tactic/tactic.lean
+Created tools/tactic/tactic.lean
 
-created topology/continuity.lean
+Created topology/continuity.lean
 - \+ *lemma* univ_eq_true_false
 - \+ *lemma* false_neq_true
 - \+ *lemma* subtype.val_image
@@ -7221,7 +7221,7 @@ created topology/continuity.lean
 - \+ *theorem* classical.cases
 - \+ *def* continuous
 
-created topology/topological_space.lean
+Created topology/topological_space.lean
 - \+ *lemma* topological_space_eq
 - \+ *lemma* open_univ
 - \+ *lemma* open_inter
@@ -7299,7 +7299,7 @@ created topology/topological_space.lean
 - \+ *def* topological_space.induced
 - \+ *def* topological_space.coinduced
 
-created topology/uniform_space.lean
+Created topology/uniform_space.lean
 - \+ *lemma* swap_id_rel
 - \+ *lemma* monotone_comp_rel
 - \+ *lemma* prod_mk_mem_comp_rel

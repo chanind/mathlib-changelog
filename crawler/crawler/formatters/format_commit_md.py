@@ -1,6 +1,8 @@
 import re
+from typing import cast
 from crawler.formatters.format_git_changes_md import format_git_changes_md
-from git import Commit, Diff
+from git import Diff
+from git.objects import Commit
 
 from .clean_commit_msg import clean_commit_msg
 from .format_datetime import format_datetime
@@ -22,6 +24,6 @@ def format_commit_md(commit: Commit, diffs: list[Diff]) -> str:
         f"## [{format_datetime(commit.committed_datetime)}](https://github.com/leanprover-community/mathlib/commit/{short_sha})"
         + "\n"
     )
-    commit_str += process_commit_msg(commit.message) + "\n"
+    commit_str += process_commit_msg(cast(str, commit.message)) + "\n"
     commit_str += "#### Estimated changes\n" + format_git_changes_md(diffs) + "\n"
     return commit_str

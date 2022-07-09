@@ -230,7 +230,7 @@ SAMPLE_MIXED_DIFF = """
 """
 
 
-def test_extract_diff_changes_finds_added_lemmas():
+def test_extract_diff_changes_finds_added_lemmas() -> None:
     changes = extract_diff_changes(SAMPLE_ADD_LEMMAS_DIFF)
     assert changes.added_lemmas == [
         "_root_.function.semiconj.finset_map",
@@ -245,7 +245,7 @@ def test_extract_diff_changes_finds_added_lemmas():
     assert changes.deleted_defs == []
 
 
-def test_extract_diff_changes_finds_modified_lemmas_with_decorators():
+def test_extract_diff_changes_finds_modified_lemmas_with_decorators() -> None:
     changes = extract_diff_changes(SAMPLE_MODIFY_LEMMAS_DIFF_COMPLEX)
     assert changes.added_lemmas == ["map_inv'"]
     assert changes.deleted_lemmas == ["map_inv'"]
@@ -255,7 +255,7 @@ def test_extract_diff_changes_finds_modified_lemmas_with_decorators():
     assert changes.deleted_defs == []
 
 
-def test_extract_diff_changes_finds_mixed_lemmas_and_defs():
+def test_extract_diff_changes_finds_mixed_lemmas_and_defs() -> None:
     changes = extract_diff_changes(SAMPLE_MIXED_DIFF)
     assert changes.added_lemmas == [
         "_root_.mem_ℓp.infty_pow",

@@ -1,13 +1,13 @@
 ## [2018-06-30 23:04:40-04:00](https://github.com/leanprover-community/mathlib/commit/7b0c150)
 refactor(data/equiv): reorganize data.equiv deps
 #### Estimated changes
-modified computability/primrec.lean
+Modified computability/primrec.lean
 
-modified data/array/lemmas.lean
+Modified data/array/lemmas.lean
 - \+ *def* d_array_equiv_fin
 - \+ *def* array_equiv_fin
 
-renamed data/equiv.lean to data/equiv/basic.lean
+Renamed data/equiv.lean to data/equiv/basic.lean
 - \- *theorem* left_inverse.f_g_eq_id
 - \- *theorem* right_inverse.g_f_eq_id
 - \- *theorem* left_inverse.comp
@@ -23,7 +23,7 @@ renamed data/equiv.lean to data/equiv/basic.lean
 - \- *def* array_equiv_fin
 - \- *def* vector_equiv_array
 
-created data/equiv/denumerable.lean
+Created data/equiv/denumerable.lean
 - \+ *theorem* decode_is_some
 - \+ *theorem* decode_eq_of_nat
 - \+ *theorem* of_nat_of_decode
@@ -41,7 +41,7 @@ created data/equiv/denumerable.lean
 - \+ *def* equiv₂
 - \+ *def* pair
 
-renamed data/encodable.lean to data/equiv/encodable.lean
+Renamed data/encodable.lean to data/equiv/encodable.lean
 - \- *theorem* encode_list_nil
 - \- *theorem* encode_list_cons
 - \- *theorem* decode_list_zero
@@ -54,7 +54,7 @@ renamed data/encodable.lean to data/equiv/encodable.lean
 - \- *def* encodable_of_list
 - \- *def* trunc_encodable_of_fintype
 
-renamed data/denumerable.lean to data/equiv/list.lean
+Renamed data/denumerable.lean to data/equiv/list.lean
 - \+ *theorem* encode_list_nil
 - \+ *theorem* encode_list_cons
 - \+ *theorem* decode_list_zero
@@ -83,61 +83,61 @@ renamed data/denumerable.lean to data/equiv/list.lean
 - \- *def* equiv₂
 - \- *def* pair
 
-created data/equiv/nat.lean
+Created data/equiv/nat.lean
 - \+ *def* nat_prod_nat_equiv_nat
 - \+ *def* bool_prod_nat_equiv_nat
 - \+ *def* nat_sum_nat_equiv_nat
 - \+ *def* int_equiv_nat
 - \+ *def* prod_equiv_of_equiv_nat
 
-modified data/erased.lean
+Modified data/erased.lean
 
-modified data/fintype.lean
+Modified data/fintype.lean
 
-modified data/rat.lean
+Modified data/rat.lean
 
-modified data/real/cau_seq.lean
+Modified data/real/cau_seq.lean
 
-modified data/set/basic.lean
+Modified data/set/basic.lean
 - \+ *lemma* image_congr
 - \+ *lemma* subtype_val_image
 - \+ *lemma* subtype_val_range
 
-modified data/set/countable.lean
+Modified data/set/countable.lean
 
-modified data/set/enumerate.lean
+Modified data/set/enumerate.lean
 
-modified data/set/lattice.lean
+Modified data/set/lattice.lean
 - \- *lemma* image_congr
 - \- *lemma* subtype_val_image
 - \- *lemma* subtype_val_range
 
-modified data/vector2.lean
+Modified data/vector2.lean
 - \+ *def* vector_equiv_fin
 - \+ *def* vector_equiv_array
 
-modified group_theory/coset.lean
+Modified group_theory/coset.lean
 
-modified group_theory/free_group.lean
+Modified group_theory/free_group.lean
 
-modified logic/embedding.lean
+Modified logic/embedding.lean
 
-modified logic/function.lean
+Modified logic/function.lean
 - \+ *theorem* left_inverse.comp_eq_id
 - \+ *theorem* right_inverse.comp_eq_id
 - \+ *theorem* left_inverse.comp
 - \+ *theorem* right_inverse.comp
 
-modified order/order_iso.lean
+Modified order/order_iso.lean
 
 
 
 ## [2018-06-30 00:43:36-04:00](https://github.com/leanprover-community/mathlib/commit/913f702)
 feat(computability/turing_machine): rework proofs, simplify TM lang
 #### Estimated changes
-modified algebra/group_power.lean
+Modified algebra/group_power.lean
 
-modified computability/turing_machine.lean
+Modified computability/turing_machine.lean
 - \+ *theorem* reaches₁_eq
 - \+ *theorem* reaches_total
 - \+ *theorem* mem_eval
@@ -232,12 +232,12 @@ modified computability/turing_machine.lean
 - \- *def* at_stack
 - \+/\- *def* tr
 
-modified data/fintype.lean
+Modified data/fintype.lean
 - \+ *theorem* finset.mem_insert_none
 - \+ *theorem* finset.some_mem_insert_none
 - \+ *def* finset.insert_none
 
-modified data/list/basic.lean
+Modified data/list/basic.lean
 - \+/\- *theorem* join_append
 - \+ *theorem* repeat_succ
 - \+/\- *theorem* repeat_add
@@ -249,15 +249,15 @@ modified data/list/basic.lean
 - \+/\- *theorem* join_append
 - \+/\- *theorem* repeat_add
 
-modified data/option.lean
+Modified data/option.lean
 - \+ *theorem* mem_unique
 - \+ *theorem* eq_none_iff_forall_not_mem
 
-modified data/pfun.lean
+Modified data/pfun.lean
 - \+/\- *theorem* fix_induction
 - \+/\- *theorem* fix_induction
 
-modified logic/relation.lean
+Modified logic/relation.lean
 - \+ *lemma* total_of_right_unique
 
 
@@ -265,20 +265,20 @@ modified logic/relation.lean
 ## [2018-06-30 00:36:55-04:00](https://github.com/leanprover-community/mathlib/commit/cfb5dfd)
 refactor(data/finset): use partial_order to define lattice structure
 #### Estimated changes
-modified data/finset.lean
+Modified data/finset.lean
 
 
 
 ## [2018-06-30 00:36:27-04:00](https://github.com/leanprover-community/mathlib/commit/ddbb813)
 feat(data/fintype): finite choices, computably
 #### Estimated changes
-modified data/fintype.lean
+Modified data/fintype.lean
 - \+ *theorem* quotient.fin_choice_aux_eq
 - \+ *theorem* quotient.fin_choice_eq
 - \+ *def* quotient.fin_choice_aux
 - \+ *def* quotient.fin_choice
 
-modified data/quot.lean
+Modified data/quot.lean
 - \+ *theorem* quotient.choice_eq
 
 
@@ -286,16 +286,16 @@ modified data/quot.lean
 ## [2018-06-25 20:05:43-04:00](https://github.com/leanprover-community/mathlib/commit/a7b749f)
 fix(order/boolean_algebra): neg_unique: replace rsimp proof, speed up build
 #### Estimated changes
-modified order/boolean_algebra.lean
+Modified order/boolean_algebra.lean
 
 
 
 ## [2018-06-25 05:45:48-04:00](https://github.com/leanprover-community/mathlib/commit/97a1d1b)
 feat(data/fintype): more fintype instances ([#145](https://github.com/leanprover-community/mathlib/pull/145))
 #### Estimated changes
-modified data/fintype.lean
+Modified data/fintype.lean
 
-modified data/set/finite.lean
+Modified data/set/finite.lean
 - \+/\- *lemma* coe_image
 - \+/\- *lemma* coe_bind
 - \+/\- *lemma* coe_filter
@@ -323,16 +323,16 @@ modified data/set/finite.lean
 feat(tactic/solve_by_elim): writing a symm_apply tactic for solve_by_elim ([#164](https://github.com/leanprover-community/mathlib/pull/164))
 writing a symm_apply tactic, and have solve_by_elim use it, per discussion with @SimonHudon
 #### Estimated changes
-modified tactic/interactive.lean
+Modified tactic/interactive.lean
 
-modified tests/tactics.lean
+Modified tests/tactics.lean
 
 
 
 ## [2018-06-25 05:42:30-04:00](https://github.com/leanprover-community/mathlib/commit/a39c5ca)
 correcting comment
 #### Estimated changes
-modified algebra/euclidean_domain.lean
+Modified algebra/euclidean_domain.lean
 
 
 
@@ -340,7 +340,7 @@ modified algebra/euclidean_domain.lean
 feat(list/basic): map_subset
 from [#166](https://github.com/leanprover-community/mathlib/pull/166)
 #### Estimated changes
-modified data/list/basic.lean
+Modified data/list/basic.lean
 - \+ *theorem* map_subset
 
 
@@ -348,16 +348,16 @@ modified data/list/basic.lean
 ## [2018-06-25 05:35:22-04:00](https://github.com/leanprover-community/mathlib/commit/4ec65f5)
 fix(data/list/basic): simplify last_append, speed up build
 #### Estimated changes
-modified data/list/basic.lean
+Modified data/list/basic.lean
 
 
 
 ## [2018-06-25 05:29:11-04:00](https://github.com/leanprover-community/mathlib/commit/516b254)
 feat(tactic/ring2): alternative ring tactic
 #### Estimated changes
-modified data/num/lemmas.lean
+Modified data/num/lemmas.lean
 
-created tactic/ring2.lean
+Created tactic/ring2.lean
 - \+ *theorem* cseval_atom
 - \+ *theorem* cseval_add_const
 - \+ *theorem* cseval_horner'
@@ -392,9 +392,9 @@ created tactic/ring2.lean
 ## [2018-06-21 08:06:52-04:00](https://github.com/leanprover-community/mathlib/commit/4082136)
 feat(tactic/refine_struct): match `{ .. }` in subexpressions ([#162](https://github.com/leanprover-community/mathlib/pull/162))
 #### Estimated changes
-modified tactic/interactive.lean
+Modified tactic/interactive.lean
 
-modified tests/tactics.lean
+Modified tests/tactics.lean
 - \+ *def* my_foo
 - \+ *def* my_bar
 
@@ -403,27 +403,27 @@ modified tests/tactics.lean
 ## [2018-06-21 08:05:27-04:00](https://github.com/leanprover-community/mathlib/commit/aa55cba)
 fix(order/lattice): typo
 #### Estimated changes
-modified order/lattice.lean
+Modified order/lattice.lean
 
 
 
 ## [2018-06-20 22:42:18-04:00](https://github.com/leanprover-community/mathlib/commit/905345a)
 fix(data/array/lemmas,...): fix build
 #### Estimated changes
-modified data/array/lemmas.lean
+Modified data/array/lemmas.lean
 
-modified set_theory/cofinality.lean
+Modified set_theory/cofinality.lean
 
 
 
 ## [2018-06-20 21:42:57-04:00](https://github.com/leanprover-community/mathlib/commit/a30b7c7)
 feat(data/string): fix string_lt, add repr for multiset, pnat
 #### Estimated changes
-created data/char.lean
+Created data/char.lean
 
-modified data/finset.lean
+Modified data/finset.lean
 
-modified data/list/basic.lean
+Modified data/list/basic.lean
 - \+/\- *theorem* reverse_cons
 - \+/\- *theorem* reverse_cons'
 - \+ *theorem* cons_iff
@@ -441,19 +441,19 @@ modified data/list/basic.lean
 - \- *theorem* ne_of_lex_ne
 - \- *theorem* lex_ne_iff
 
-modified data/list/perm.lean
+Modified data/list/perm.lean
 
-modified data/multiset.lean
+Modified data/multiset.lean
 
-modified data/pnat.lean
+Modified data/pnat.lean
 
-created data/string.lean
+Created data/string.lean
 - \+ *theorem* lt_iff_to_list_lt
 - \+ *theorem* le_iff_to_list_le
 - \+ *theorem* to_list_inj
 - \+ *def* ltb
 
-modified order/basic.lean
+Modified order/basic.lean
 - \+/\- *theorem* is_order_connected.neg_trans
 - \+/\- *theorem* is_strict_weak_order_of_is_order_connected
 - \+/\- *theorem* is_order_connected.neg_trans
@@ -464,32 +464,32 @@ modified order/basic.lean
 ## [2018-06-19 14:32:22-04:00](https://github.com/leanprover-community/mathlib/commit/fbe1047)
 feat(tactic/refine_struct): add `refine_struct` to use goal tags ([#147](https://github.com/leanprover-community/mathlib/pull/147))
 #### Estimated changes
-modified algebra/pi_instances.lean
+Modified algebra/pi_instances.lean
 
-modified category/basic.lean
+Modified category/basic.lean
 - \+ *def* mmap₂
 
-created data/dlist/basic.lean
+Created data/dlist/basic.lean
 - \+ *def* dlist.join
 
-modified data/multiset.lean
+Modified data/multiset.lean
 
-modified docs/tactics.md
+Modified docs/tactics.md
 
-modified tactic/basic.lean
+Modified tactic/basic.lean
 
-modified tactic/interactive.lean
+Modified tactic/interactive.lean
 
 
 
 ## [2018-06-19 09:53:45-04:00](https://github.com/leanprover-community/mathlib/commit/2216460)
 Merge branch 'master' of github.com:leanprover/mathlib
 #### Estimated changes
-modified analysis/topology/continuity.lean
+Modified analysis/topology/continuity.lean
 
-modified analysis/topology/uniform_space.lean
+Modified analysis/topology/uniform_space.lean
 
-modified category/basic.lean
+Modified category/basic.lean
 - \+ *lemma* is_comm_applicative.commutative_map
 - \+ *theorem* map_map
 - \+ *theorem* id_map'
@@ -497,7 +497,7 @@ modified category/basic.lean
 - \+ *theorem* seq_map_assoc
 - \+ *theorem* map_seq
 
-modified computability/partrec.lean
+Modified computability/partrec.lean
 - \+/\- *theorem* comp
 - \+/\- *theorem* comp
 
@@ -506,7 +506,7 @@ modified computability/partrec.lean
 ## [2018-06-19 08:25:55-04:00](https://github.com/leanprover-community/mathlib/commit/f22285c)
 feat(algebra/pi_instances): add apply lemmas ([#149](https://github.com/leanprover-community/mathlib/pull/149))
 #### Estimated changes
-modified algebra/pi_instances.lean
+Modified algebra/pi_instances.lean
 - \+ *lemma* mul_apply
 - \+ *lemma* one_apply
 - \+ *lemma* inv_apply
@@ -520,22 +520,22 @@ modified algebra/pi_instances.lean
 ## [2018-06-19 08:19:49-04:00](https://github.com/leanprover-community/mathlib/commit/0a0e8a5)
 feat(tactic/ext): `ext` now applies to `prod`; fix `ext` on function types ([#158](https://github.com/leanprover-community/mathlib/pull/158))
 #### Estimated changes
-modified analysis/metric_space.lean
+Modified analysis/metric_space.lean
 
-modified analysis/topology/topological_space.lean
+Modified analysis/topology/topological_space.lean
 
-modified data/prod.lean
+Modified data/prod.lean
 - \+ *lemma* ext_iff
 - \+/\- *lemma* ext
 - \+/\- *lemma* ext
 
-modified docs/tactics.md
+Modified docs/tactics.md
 
-modified tactic/basic.lean
+Modified tactic/basic.lean
 
-modified tactic/interactive.lean
+Modified tactic/interactive.lean
 
-modified tests/tactics.lean
+Modified tests/tactics.lean
 
 
 
@@ -546,7 +546,7 @@ feat(analysis/topology): quotient spaces and quotient maps ([#155](https://githu
 * feat(analysis/topology/topological_space): add more galois connection lemmas
 * feat(analysis/topology): quotient spaces and quotient maps
 #### Estimated changes
-modified analysis/topology/continuity.lean
+Modified analysis/topology/continuity.lean
 - \+ *lemma* coinduced_id
 - \+ *lemma* coinduced_compose
 - \+ *lemma* quotient_map_id
@@ -563,7 +563,7 @@ modified analysis/topology/continuity.lean
 - \- *lemma* induced_sup
 - \+ *def* quotient_map
 
-modified analysis/topology/topological_space.lean
+Modified analysis/topology/topological_space.lean
 - \+/\- *lemma* is_closed_induced_iff
 - \+ *lemma* gc_induced_coinduced
 - \+ *lemma* induced_mono
@@ -587,32 +587,32 @@ modified analysis/topology/topological_space.lean
 ## [2018-06-19 08:13:31-04:00](https://github.com/leanprover-community/mathlib/commit/5e0b137)
 feat (group_theory/coset): quotient by normal subgroup is a group
 #### Estimated changes
-modified group_theory/coset.lean
+Modified group_theory/coset.lean
 
 
 
 ## [2018-06-19 08:12:39-04:00](https://github.com/leanprover-community/mathlib/commit/8609a3d)
 feat(split_ifs): fail if no progress ([#153](https://github.com/leanprover-community/mathlib/pull/153))
 #### Estimated changes
-modified tactic/split_ifs.lean
+Modified tactic/split_ifs.lean
 
-modified tests/split_ifs.lean
+Modified tests/split_ifs.lean
 
 
 
 ## [2018-06-19 08:11:25-04:00](https://github.com/leanprover-community/mathlib/commit/f8e3965)
 blah
 #### Estimated changes
-modified algebra/ring.lean
+Modified algebra/ring.lean
 
 
 
 ## [2018-06-19 08:09:27-04:00](https://github.com/leanprover-community/mathlib/commit/4e2aea5)
 feat(data/option): is_some and is_none simp theorems
 #### Estimated changes
-modified data/hash_map.lean
+Modified data/hash_map.lean
 
-modified data/option.lean
+Modified data/option.lean
 - \+ *theorem* is_some_none
 - \+ *theorem* is_some_some
 - \+ *theorem* is_none_none
@@ -623,11 +623,11 @@ modified data/option.lean
 ## [2018-06-19 08:08:36-04:00](https://github.com/leanprover-community/mathlib/commit/e1f795d)
 chore(data/list/basic): minor cleanup of find variables ([#137](https://github.com/leanprover-community/mathlib/pull/137))
 #### Estimated changes
-modified analysis/topology/continuity.lean
+Modified analysis/topology/continuity.lean
 
-modified analysis/topology/uniform_space.lean
+Modified analysis/topology/uniform_space.lean
 
-modified category/basic.lean
+Modified category/basic.lean
 - \- *lemma* is_comm_applicative.commutative_map
 - \- *theorem* map_map
 - \- *theorem* id_map'
@@ -635,11 +635,11 @@ modified category/basic.lean
 - \- *theorem* seq_map_assoc
 - \- *theorem* map_seq
 
-modified computability/partrec.lean
+Modified computability/partrec.lean
 - \+/\- *theorem* comp
 - \+/\- *theorem* comp
 
-modified data/list/basic.lean
+Modified data/list/basic.lean
 - \+/\- *theorem* find_nil
 - \+/\- *theorem* find_cons_of_pos
 - \+/\- *theorem* find_cons_of_neg
@@ -660,11 +660,11 @@ modified data/list/basic.lean
 ## [2018-06-17 10:20:07-04:00](https://github.com/leanprover-community/mathlib/commit/896455c)
 feat(category): add functor_norm simp_attr, and class is_comm_applicative
 #### Estimated changes
-modified analysis/topology/continuity.lean
+Modified analysis/topology/continuity.lean
 
-modified analysis/topology/uniform_space.lean
+Modified analysis/topology/uniform_space.lean
 
-modified category/basic.lean
+Modified category/basic.lean
 - \+ *lemma* is_comm_applicative.commutative_map
 - \+ *theorem* map_map
 - \+ *theorem* id_map'
@@ -672,7 +672,7 @@ modified category/basic.lean
 - \+ *theorem* seq_map_assoc
 - \+ *theorem* map_seq
 
-modified computability/partrec.lean
+Modified computability/partrec.lean
 - \+/\- *theorem* comp
 - \+/\- *theorem* comp
 
@@ -681,9 +681,9 @@ modified computability/partrec.lean
 ## [2018-06-16 17:39:03-04:00](https://github.com/leanprover-community/mathlib/commit/85bc56a)
 feat(computability/turing_machine): finish stack machine proof
 #### Estimated changes
-modified algebra/group_power.lean
+Modified algebra/group_power.lean
 
-modified computability/turing_machine.lean
+Modified computability/turing_machine.lean
 - \+ *theorem* tape.nth_zero
 - \+/\- *theorem* tape.move_left_nth
 - \+/\- *theorem* tape.move_right_nth
@@ -723,13 +723,13 @@ modified computability/turing_machine.lean
 - \- *def* pop
 - \- *def* tr_tape
 
-modified data/list/basic.lean
+Modified data/list/basic.lean
 - \+ *theorem* map_eq_append_split
 - \+ *theorem* repeat_add
 
-modified group_theory/free_group.lean
+Modified group_theory/free_group.lean
 
-modified logic/relation.lean
+Modified logic/relation.lean
 - \+ *lemma* to_refl
 - \+ *lemma* trans_left
 - \+ *lemma* trans
@@ -746,7 +746,7 @@ modified logic/relation.lean
 ## [2018-06-15 05:11:08+07:00](https://github.com/leanprover-community/mathlib/commit/fba4d89)
 fix(analysis/topology/continuity): remove unused code
 #### Estimated changes
-modified analysis/topology/continuity.lean
+Modified analysis/topology/continuity.lean
 - \+/\- *lemma* continuous_apply
 - \+/\- *lemma* continuous_apply
 
@@ -755,26 +755,26 @@ modified analysis/topology/continuity.lean
 ## [2018-06-13 01:28:56+07:00](https://github.com/leanprover-community/mathlib/commit/fe590ca)
 fix(data/num/lemmas): fix formatting
 #### Estimated changes
-modified data/num/lemmas.lean
+Modified data/num/lemmas.lean
 
 
 
 ## [2018-06-13 00:32:23+07:00](https://github.com/leanprover-community/mathlib/commit/4f32a4b)
 feat(data/num/basic): to_nat' function for efficient nat -> num in VM
 #### Estimated changes
-modified data/num/basic.lean
+Modified data/num/basic.lean
 
-modified data/num/lemmas.lean
+Modified data/num/lemmas.lean
 
 
 
 ## [2018-06-12 22:37:08+07:00](https://github.com/leanprover-community/mathlib/commit/99101ea)
 feat(data/num/basic): add div,mod,gcd for num,znum
 #### Estimated changes
-modified algebra/ordered_ring.lean
+Modified algebra/ordered_ring.lean
 - \+ *lemma* mul_lt_mul''
 
-modified data/int/basic.lean
+Modified data/int/basic.lean
 - \+/\- *theorem* of_nat_div
 - \+ *theorem* coe_nat_div
 - \+/\- *theorem* neg_succ_of_nat_div
@@ -783,18 +783,18 @@ modified data/int/basic.lean
 - \+/\- *theorem* neg_succ_of_nat_div
 - \+ *def* to_nat'
 
-modified data/num/basic.lean
+Modified data/num/basic.lean
 - \+ *def* sqrt_aux
 - \+ *def* sqrt
 
-modified data/num/lemmas.lean
+Modified data/num/lemmas.lean
 
 
 
 ## [2018-06-12 22:37:08+07:00](https://github.com/leanprover-community/mathlib/commit/3c554a3)
 refactor(data/equiv): move subtype.map
 #### Estimated changes
-modified data/equiv.lean
+Modified data/equiv.lean
 - \- *theorem* map_comp
 - \- *theorem* map_id
 - \+/\- *def* decidable_eq_of_equiv
@@ -803,7 +803,7 @@ modified data/equiv.lean
 - \+/\- *def* decidable_eq_of_equiv
 - \+/\- *def* inhabited_of_equiv
 
-modified data/sigma/basic.lean
+Modified data/sigma/basic.lean
 - \+ *theorem* map_comp
 - \+ *theorem* map_id
 - \+ *def* map
@@ -814,7 +814,7 @@ modified data/sigma/basic.lean
 fix(tactic/ring): fix normalization bugs
 fixes [#84](https://github.com/leanprover-community/mathlib/pull/84)
 #### Estimated changes
-modified tactic/ring.lean
+Modified tactic/ring.lean
 - \+/\- *theorem* horner_add_horner_lt
 - \+/\- *theorem* horner_add_horner_gt
 - \+/\- *theorem* horner_add_horner_lt
@@ -825,7 +825,7 @@ modified tactic/ring.lean
 ## [2018-06-11 14:05:37+07:00](https://github.com/leanprover-community/mathlib/commit/90fc912)
 feat(data/list): add parametricity for perm
 #### Estimated changes
-modified data/list/perm.lean
+Modified data/list/perm.lean
 - \+ *lemma* perm_comp_perm
 - \+ *lemma* perm_comp_forall₂
 - \+ *lemma* forall₂_comp_perm_eq_perm_comp_forall₂
@@ -837,7 +837,7 @@ modified data/list/perm.lean
 ## [2018-06-11 14:05:37+07:00](https://github.com/leanprover-community/mathlib/commit/9546e62)
 feat(data/list): add parametricity rules for list operations
 #### Estimated changes
-modified data/list/basic.lean
+Modified data/list/basic.lean
 - \+ *lemma* forall₂_flip
 - \+ *lemma* forall₂_same
 - \+ *lemma* forall₂_refl
@@ -872,14 +872,14 @@ modified data/list/basic.lean
 ## [2018-06-11 14:05:09+07:00](https://github.com/leanprover-community/mathlib/commit/1416ebb)
 feat(data/option): add relator option.rel
 #### Estimated changes
-modified data/option.lean
+Modified data/option.lean
 
 
 
 ## [2018-06-11 14:04:44+07:00](https://github.com/leanprover-community/mathlib/commit/205e3b4)
 feat(logic/relation): add relation composition, map, and bi_unique
 #### Estimated changes
-modified logic/relation.lean
+Modified logic/relation.lean
 - \+ *lemma* comp_eq
 - \+ *lemma* eq_comp
 - \+ *lemma* iff_comp
@@ -888,7 +888,7 @@ modified logic/relation.lean
 - \+ *lemma* flip_comp
 - \+ *def* comp
 
-created logic/relator.lean
+Created logic/relator.lean
 - \+ *lemma* left_unique_flip
 - \+ *lemma* rel_and
 - \+ *lemma* rel_or
@@ -901,22 +901,22 @@ created logic/relator.lean
 ## [2018-06-02 10:36:21-04:00](https://github.com/leanprover-community/mathlib/commit/344192a)
 refactor(computability): move out of data directory
 #### Estimated changes
-renamed data/computability/halting.lean to computability/halting.lean
+Renamed data/computability/halting.lean to computability/halting.lean
 
-renamed data/computability/partrec.lean to computability/partrec.lean
+Renamed data/computability/partrec.lean to computability/partrec.lean
 
-renamed data/computability/partrec_code.lean to computability/partrec_code.lean
+Renamed data/computability/partrec_code.lean to computability/partrec_code.lean
 
-renamed data/computability/primrec.lean to computability/primrec.lean
+Renamed data/computability/primrec.lean to computability/primrec.lean
 
-renamed data/computability/turing_machine.lean to computability/turing_machine.lean
+Renamed data/computability/turing_machine.lean to computability/turing_machine.lean
 
 
 
 ## [2018-06-02 10:36:16-04:00](https://github.com/leanprover-community/mathlib/commit/5603595)
 feat(computability/turing_machine): proving the TM reductions
 #### Estimated changes
-modified data/computability/turing_machine.lean
+Modified data/computability/turing_machine.lean
 - \+ *theorem* tape.move_left_nth
 - \+ *theorem* tape.move_right_nth
 - \+ *theorem* tape.write_self
@@ -1006,27 +1006,27 @@ modified data/computability/turing_machine.lean
 - \+/\- *def* step
 - \- *def* translate
 
-modified data/equiv.lean
+Modified data/equiv.lean
 - \+/\- *def* d_array_equiv_fin
 - \+/\- *def* d_array_equiv_fin
 
-modified data/finset.lean
+Modified data/finset.lean
 - \+/\- *lemma* pi_insert
 - \+/\- *lemma* pi_insert
 
-modified data/fintype.lean
+Modified data/fintype.lean
 - \+ *theorem* fintype.card_option
 
-modified data/multiset.lean
+Modified data/multiset.lean
 
-modified logic/basic.lean
+Modified logic/basic.lean
 - \+/\- *theorem* exists_eq
 - \+ *theorem* exists_eq_left
 - \+ *theorem* exists_eq_left'
 - \+/\- *theorem* exists_eq
 - \- *theorem* exists_eq'
 
-modified logic/relation.lean
+Modified logic/relation.lean
 - \+ *lemma* refl_trans_gen_eq_self
 - \+ *lemma* refl_trans_gen_idem
 - \+ *lemma* refl_trans_gen_lift'
@@ -1038,14 +1038,14 @@ modified logic/relation.lean
 ## [2018-06-01 22:49:29-04:00](https://github.com/leanprover-community/mathlib/commit/dd1c558)
 feat(algebra/ordered_group): with_bot as an ordered monoid
 #### Estimated changes
-modified algebra/ordered_group.lean
+Modified algebra/ordered_group.lean
 
 
 
 ## [2018-06-01 22:48:49-04:00](https://github.com/leanprover-community/mathlib/commit/372bdab)
 feat(algebra/archimedean): some more floor thms
 #### Estimated changes
-modified algebra/archimedean.lean
+Modified algebra/archimedean.lean
 - \+ *theorem* floor_zero
 - \+ *theorem* floor_one
 - \+ *theorem* rat.cast_floor
