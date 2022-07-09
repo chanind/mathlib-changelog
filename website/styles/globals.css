@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+@layer base {
+  ul {
+    @apply list-disc list-outside pl-4;
+  }
+  code {
+    font-family: monospace;
+    @apply bg-gray-100 rounded-sm px-1;
+  }
+  a {
+    @apply text-blue-600;
+  }
+  p {
+    @apply my-2;
+  }
+}
