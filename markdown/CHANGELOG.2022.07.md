@@ -1,3 +1,22 @@
+## [2022-07-09 14:09:58](https://github.com/leanprover-community/mathlib/commit/6d245b2)
+feat(set_theory/ordinal/basic): order type of naturals is `ω` ([#15178](https://github.com/leanprover-community/mathlib/pull/15178))
+#### Estimated changes
+Modified src/set_theory/ordinal/basic.lean
+- \+ *theorem* type_nat_lt
+
+
+
+## [2022-07-09 13:17:49](https://github.com/leanprover-community/mathlib/commit/7cf0ae6)
+feat(combinatorics/simple_graph/subgraph): add `subgraph.comap` and subgraph of subgraph coercion ([#14877](https://github.com/leanprover-community/mathlib/pull/14877))
+#### Estimated changes
+Modified src/combinatorics/simple_graph/subgraph.lean
+- \+ *lemma* comap_monotone
+- \+ *lemma* map_le_iff_le_comap
+- \+ *lemma* restrict_coe_subgraph
+- \+ *lemma* coe_subgraph_injective
+
+
+
 ## [2022-07-09 07:26:23](https://github.com/leanprover-community/mathlib/commit/d3d3539)
 Removed unnecessary assumption in `map_injective_of_injective` ([#15184](https://github.com/leanprover-community/mathlib/pull/15184))
 Removed assumption in `map_injective_of_injective`
