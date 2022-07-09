@@ -7,6 +7,7 @@ from git import Diff
 @dataclass
 class DiffJson:
     pathChange: str
+    path: str
     changes: list[tuple[str, str, str]]
 
 
@@ -47,6 +48,7 @@ def format_git_changes_json(diffs: list[Diff]) -> list[DiffJson]:
         changes.append(
             DiffJson(
                 pathChange=path_change,
+                path=cast(str, diff.a_path or diff.b_path),
                 changes=json_changes,
             )
         )
