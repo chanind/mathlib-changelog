@@ -1,3 +1,43 @@
+## [2022-07-09 04:08:50](https://github.com/leanprover-community/mathlib/commit/f26a0a3)
+feat(logic/equiv/set): define `equiv.set.pi` ([#15176](https://github.com/leanprover-community/mathlib/pull/15176))
+#### Estimated changes
+modified src/logic/equiv/set.lean
+
+
+
+## [2022-07-09 01:15:44](https://github.com/leanprover-community/mathlib/commit/c5b6fe5)
+feat(analysis/locally_convex/basic): a few lemmas about balanced sets ([#14876](https://github.com/leanprover-community/mathlib/pull/14876))
+Add new lemmas about unions and intersection and membership of balanced sets.
+#### Estimated changes
+modified src/analysis/locally_convex/basic.lean
+- \+/\- *lemma* absorbs_Union_finset
+- \+/\- *lemma* set.finite.absorbs_Union
+- \+ *lemma* balanced_empty
+- \+/\- *lemma* balanced_univ
+- \+ *lemma* balanced_Union
+- \+ *lemma* balanced_Union₂
+- \+ *lemma* balanced_Inter
+- \+ *lemma* balanced_Inter₂
+- \+/\- *lemma* balanced.smul
+- \+ *lemma* absorbs.neg
+- \+ *lemma* balanced.neg
+- \+/\- *lemma* absorbs.add
+- \+/\- *lemma* balanced.add
+- \+ *lemma* absorbs.sub
+- \+ *lemma* balanced.sub
+- \+/\- *lemma* balanced_zero
+- \+ *lemma* balanced.mem_smul_iff
+- \+ *lemma* balanced.neg_mem_iff
+- \+/\- *lemma* absorbs_Union_finset
+- \+/\- *lemma* set.finite.absorbs_Union
+- \+/\- *lemma* balanced_univ
+- \+/\- *lemma* absorbs.add
+- \+/\- *lemma* balanced.add
+- \+/\- *lemma* balanced_zero
+- \+/\- *lemma* balanced.smul
+
+
+
 ## [2022-07-08 22:50:34](https://github.com/leanprover-community/mathlib/commit/fefd449)
 feat(set_theory/ordinal/arithmetic): tweak `type_add` and `type_mul` ([#15193](https://github.com/leanprover-community/mathlib/pull/15193))
 This renames `type_mul` to the more accurate `type_prod_lex`, and renames `type_add` to `type_sum_lex` and reverses the order of the equality so that the two lemmas match.
