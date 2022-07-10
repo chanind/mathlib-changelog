@@ -131,5 +131,8 @@ dmypy.json
 # mathlib
 crawler/mathlib
 
+# asset generation
+website/public/searchItems.json
+
 # misc
 .vscode
