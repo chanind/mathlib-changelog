@@ -1,3 +1,57 @@
+## [2022-07-09 19:44:03](https://github.com/leanprover-community/mathlib/commit/861589f)
+feat(linear_algebra/unitary_group): better constructor ([#15209](https://github.com/leanprover-community/mathlib/pull/15209))
+`A ∈ matrix.unitary_group n α` means by definition (for reasons of agreement with something more general) that `A * star A = 1` and `star A * A = 1`.  But either condition implies the other, so we provide a lemma to reduce to the first.
+#### Estimated changes
+Modified src/linear_algebra/unitary_group.lean
+- \+ *lemma* mem_unitary_group_iff
+- \+ *lemma* mem_orthogonal_group_iff
+
+
+
+## [2022-07-09 16:05:22](https://github.com/leanprover-community/mathlib/commit/983fdd6)
+chore(set_theory/ordinal/arithmetic): review cast API ([#14757](https://github.com/leanprover-community/mathlib/pull/14757))
+This PR does the following:
+- swap the direction of `nat_cast_succ` to match `nat.cast_succ`.
+- make various arguments explicit.
+- remove `lift_type_fin`, as it's a trivial consequence of `type_fin` and `lift_nat_cast`.
+- tag various theorems as `norm_cast`.
+- golf or otherwise cleanup various proofs.
+#### Estimated changes
+Modified src/set_theory/cardinal/cofinality.lean
+
+Modified src/set_theory/ordinal/arithmetic.lean
+- \+/\- *theorem* nat_cast_succ
+- \+/\- *theorem* add_le_add_iff_right
+- \+/\- *theorem* nat_cast_mul
+- \+/\- *theorem* nat_cast_opow
+- \+/\- *theorem* nat_cast_le
+- \+/\- *theorem* nat_cast_lt
+- \+/\- *theorem* nat_cast_inj
+- \+/\- *theorem* nat_cast_eq_zero
+- \+/\- *theorem* nat_cast_pos
+- \+/\- *theorem* nat_cast_sub
+- \+/\- *theorem* nat_cast_div
+- \+/\- *theorem* nat_cast_mod
+- \+/\- *theorem* lift_nat_cast
+- \+/\- *theorem* nat_cast_succ
+- \+/\- *theorem* add_le_add_iff_right
+- \+/\- *theorem* nat_cast_mul
+- \+/\- *theorem* nat_cast_opow
+- \+/\- *theorem* nat_cast_le
+- \+/\- *theorem* nat_cast_lt
+- \+/\- *theorem* nat_cast_inj
+- \+/\- *theorem* nat_cast_eq_zero
+- \+/\- *theorem* nat_cast_pos
+- \+/\- *theorem* nat_cast_sub
+- \+/\- *theorem* nat_cast_div
+- \+/\- *theorem* nat_cast_mod
+- \+/\- *theorem* lift_nat_cast
+- \- *theorem* lift_type_fin
+
+Modified src/set_theory/ordinal/notation.lean
+
+
+
 ## [2022-07-09 14:09:58](https://github.com/leanprover-community/mathlib/commit/6d245b2)
 feat(set_theory/ordinal/basic): order type of naturals is `ω` ([#15178](https://github.com/leanprover-community/mathlib/pull/15178))
 #### Estimated changes
