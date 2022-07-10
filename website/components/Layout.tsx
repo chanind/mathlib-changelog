@@ -1,6 +1,6 @@
-import Head from 'next/head';
-import { FC, ReactNode } from 'react';
-import HeaderNav from '../components/HeaderNav';
+import Head from "next/head";
+import { FC, ReactNode } from "react";
+import HeaderNav from "../components/HeaderNav";
 
 interface LayoutProps {
   children: ReactNode;

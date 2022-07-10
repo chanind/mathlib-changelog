@@ -1,8 +1,21 @@
-import '../styles/globals.css'
-import type { AppProps } from 'next/app'
+import "../styles/globals.css";
+import type { AppProps } from "next/app";
+import { QueryClient, QueryClientProvider } from "react-query";
+import { loadAndPopulateSearch } from "../data/search";
 
-function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+const queryClient = new QueryClient();
+
+if (typeof window !== "undefined") {
+  // start loading search data early, so it's ready faster
+  loadAndPopulateSearch();
 }
 
-export default MyApp
+function MyApp({ Component, pageProps }: AppProps) {
+  return (
+    <QueryClientProvider client={queryClient}>
+      <Component {...pageProps} />
+    </QueryClientProvider>
+  );
+}
+
+export default MyApp;

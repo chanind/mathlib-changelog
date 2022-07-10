@@ -14,6 +14,7 @@ import { CommitData } from "./types";
  * NOTE: These should only be called during static site generation!
  */
 
+export const getItems = memoize(() => extractItemsData(loadCommitData()));
 export const getLemmas = memoize(() => extractLemmasData(loadCommitData()));
 export const getTheorems = memoize(() => extractTheoremsData(loadCommitData()));
 export const getDefs = memoize(() => extractDefsData(loadCommitData()));

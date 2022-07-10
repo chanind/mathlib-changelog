@@ -1,9 +1,15 @@
 import { get, set } from "lodash";
-import { ChangelogData, ChangeType, CommitData, DiffData } from "./types";
+import {
+  ChangelogData,
+  ChangeType,
+  CommitData,
+  DiffData,
+  ItemType,
+} from "./types";
 
 export interface ChangelogItemData {
   name: string;
-  type: string;
+  type: ItemType;
   history: ChangelogItemEvent[];
 }
 
@@ -40,7 +46,7 @@ export const extractItemsData = (
     for (const [itemName, history] of Object.entries(itemNamesMapping)) {
       itemsData.push({
         name: itemName,
-        type: itemType,
+        type: itemType as ItemType,
         history,
       });
     }
