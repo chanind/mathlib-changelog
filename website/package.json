@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "build:search": "ts-node scripts/buildSearchIndex.ts"
+    "build:search": "ts-node scripts/buildSearchItems.ts"
   },
   "dependencies": {
     "@heroicons/react": "^1.0.6",
