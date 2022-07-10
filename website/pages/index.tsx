@@ -1,13 +1,18 @@
 import type { NextPage } from "next";
 import { useState } from "react";
 import { useRouter } from "next/router";
-import classNames from "class-names";
+import classNames from "classnames";
 import Autosuggest from "react-autosuggest";
 import { useQuery } from "react-query";
 import Layout from "../components/Layout";
 import Spinner from "../components/Spinner";
-import { searchForQuery } from "../data/search";
+import { loadAndPopulateSearch, searchForQuery } from "../data/search";
 import Link from "next/link";
+
+if (typeof window !== "undefined") {
+  // start loading search data early, so it's ready faster
+  loadAndPopulateSearch();
+}
 
 const Home: NextPage = () => {
   const [query, setQuery] = useState("");

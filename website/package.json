@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "@heroicons/react": "^1.0.6",
-    "class-names": "^1.0.0",
+    "classnames": "^2.3.1",
     "lodash": "^4.17.21",
     "minisearch": "^5.0.0",
     "next": "12.2.2",

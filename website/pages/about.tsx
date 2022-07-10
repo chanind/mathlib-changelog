@@ -14,11 +14,11 @@ const Home: NextPage = () => {
           >
             Mathlib library
           </a>
-          . Mathlib is a powerful repository of math proofs in Lean, but there's
-          no versioning of the library, and breaking changes can occur at any
-          time without notice. This project exists as a way to make it easier to
-          track down what happened to a theorem or lemma that you might be
-          using, but suddenly discover is no longer available.
+          . Mathlib is a powerful repository of math proofs in Lean, but
+          there&apos;s no versioning of the library, and breaking changes can
+          occur at any time without notice. This project exists as a way to make
+          it easier to track down what happened to a theorem or lemma that you
+          might be using, but suddenly discover is no longer available.
         </p>
         <p className="mt-4 text-base leading-relaxed text-gray-800">
           This project is far from perfect. While it catches a lot of the

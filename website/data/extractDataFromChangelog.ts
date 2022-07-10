@@ -1,11 +1,5 @@
 import { get, set } from "lodash";
-import {
-  ChangelogData,
-  ChangeType,
-  CommitData,
-  DiffData,
-  ItemType,
-} from "./types";
+import { ChangelogData, ChangeType, ItemType } from "./types";
 
 export interface ChangelogItemData {
   name: string;
@@ -14,8 +8,10 @@ export interface ChangelogItemData {
 }
 
 export interface ChangelogItemEvent {
-  commit: CommitData;
-  diff: DiffData;
+  commitHeadline: string;
+  commitTimestamp: number;
+  commitSha: String;
+  diffPath: string;
   type: ChangeType;
 }
 
@@ -31,11 +27,14 @@ export const extractItemsData = (
       for (const change of diff.changes) {
         const [changeType, itemType, itemName] = change;
         const history = get(itemsHistoryMapping, [itemType, itemName], []);
-        set(
-          itemsHistoryMapping,
-          [itemType, itemName],
-          [...history, { commit, diff, type: changeType }]
-        );
+        const item: ChangelogItemEvent = {
+          commitHeadline: commit.message.split(/\n/)[0].trim(),
+          commitTimestamp: commit.timestamp,
+          commitSha: commit.sha,
+          diffPath: diff.path,
+          type: changeType,
+        };
+        set(itemsHistoryMapping, [itemType, itemName], [...history, item]);
       }
     }
   }
