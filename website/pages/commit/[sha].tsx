@@ -3,18 +3,13 @@ import { GetStaticPaths, GetStaticProps, NextPage } from "next";
 import Link from "next/link";
 import Layout from "../../components/Layout";
 import MathlibGithubMarkdown from "../../components/MathlibGithubMarkdown";
-import { getCommit, getCommits } from "../../data/database";
+import { getCommit } from "../../data/database";
 import { ChangeType, CommitData } from "../../data/types";
 
-export const getStaticPaths: GetStaticPaths = () => {
-  const commits = getCommits();
-  return {
-    paths: commits.map(({ sha }) => ({
-      params: { sha },
-    })),
-    fallback: false,
-  };
-};
+export const getStaticPaths: GetStaticPaths = () => ({
+  paths: [],
+  fallback: "blocking",
+});
 
 interface CommitProps {
   commit: CommitData;

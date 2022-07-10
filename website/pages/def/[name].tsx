@@ -1,18 +1,13 @@
 import { GetStaticPaths, GetStaticProps, NextPage } from "next";
 import { ItemChangeHistory } from "../../components/ItemChangeHistory";
 import Layout from "../../components/Layout";
-import { getDef, getDefs } from "../../data/database";
+import { getDef } from "../../data/database";
 import { ChangelogItemData } from "../../data/extractDataFromChangelog";
 
-export const getStaticPaths: GetStaticPaths = () => {
-  const defs = getDefs();
-  return {
-    paths: defs.map(({ name }) => ({
-      params: { name },
-    })),
-    fallback: false,
-  };
-};
+export const getStaticPaths: GetStaticPaths = () => ({
+  paths: [],
+  fallback: "blocking",
+});
 
 interface DefProps {
   def: ChangelogItemData;

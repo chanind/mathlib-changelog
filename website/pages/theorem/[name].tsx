@@ -1,18 +1,13 @@
 import { GetStaticPaths, GetStaticProps, NextPage } from "next";
 import { ItemChangeHistory } from "../../components/ItemChangeHistory";
 import Layout from "../../components/Layout";
-import { getTheorem, getTheorems } from "../../data/database";
+import { getTheorem } from "../../data/database";
 import { ChangelogItemData } from "../../data/extractDataFromChangelog";
 
-export const getStaticPaths: GetStaticPaths = () => {
-  const theorems = getTheorems();
-  return {
-    paths: theorems.map(({ name }) => ({
-      params: { name },
-    })),
-    fallback: false,
-  };
-};
+export const getStaticPaths: GetStaticPaths = () => ({
+  paths: [],
+  fallback: "blocking",
+});
 
 interface TheoremProps {
   theorem: ChangelogItemData;
