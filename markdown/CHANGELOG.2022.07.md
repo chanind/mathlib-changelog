@@ -1,3 +1,25 @@
+## [2022-07-10 14:02:39](https://github.com/leanprover-community/mathlib/commit/37c2777)
+feat(order/filter/ultrafilter): `pure`, `map`, and `comap` lemmas ([#15187](https://github.com/leanprover-community/mathlib/pull/15187))
+A handful of simple lemmas.
+#### Estimated changes
+Modified src/order/filter/ultrafilter.lean
+- \+ *lemma* map_id
+- \+ *lemma* map_id'
+- \+ *lemma* map_map
+- \+/\- *lemma* coe_comap
+- \+ *lemma* comap_id
+- \+ *lemma* comap_comap
+- \+ *lemma* coe_pure
+- \+ *lemma* map_pure
+- \+ *lemma* comap_pure
+- \+ *lemma* pure_injective
+- \+ *lemma* eq_pure_of_finite_mem
+- \+ *lemma* eq_pure_of_fintype
+- \+/\- *lemma* coe_comap
+- \- *lemma* eq_principal_of_finite_mem
+
+
+
 ## [2022-07-09 19:44:03](https://github.com/leanprover-community/mathlib/commit/861589f)
 feat(linear_algebra/unitary_group): better constructor ([#15209](https://github.com/leanprover-community/mathlib/pull/15209))
 `A ∈ matrix.unitary_group n α` means by definition (for reasons of agreement with something more general) that `A * star A = 1` and `star A * A = 1`.  But either condition implies the other, so we provide a lemma to reduce to the first.
