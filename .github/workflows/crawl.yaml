@@ -1,7 +1,7 @@
 name: crawl
 on:
   schedule:
-    - cron: "45 */8 * * *"
+    - cron: "45 */12 * * *"
 jobs:
   update_changelogs:
     runs-on: ubuntu-latest
