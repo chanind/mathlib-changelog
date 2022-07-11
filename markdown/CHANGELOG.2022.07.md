@@ -1,3 +1,108 @@
+## [2022-07-10 19:29:29](https://github.com/leanprover-community/mathlib/commit/ad08001)
+feat(category_theory/limits): opposites of limit pullback cones ([#14526](https://github.com/leanprover-community/mathlib/pull/14526))
+Among other similar statements, this PR associates a `pullback_cone f g` to a `pushout_cocone f.op g.op`, and it is a limit pullback cone if the original cocone is a colimit cocone.
+#### Estimated changes
+Modified src/category_theory/limits/opposites.lean
+- \+ *lemma* unop_fst
+- \+ *lemma* unop_snd
+- \+ *lemma* op_fst
+- \+ *lemma* op_snd
+- \+ *lemma* unop_inl
+- \+ *lemma* unop_inr
+- \+ *lemma* op_inl
+- \+ *lemma* op_inr
+- \+ *def* span_op
+- \+ *def* op_cospan
+- \+ *def* cospan_op
+- \+ *def* op_span
+- \+ *def* unop
+- \+ *def* op
+- \+ *def* unop
+- \+ *def* op
+- \+ *def* op_unop
+- \+ *def* unop_op
+- \+ *def* op_unop
+- \+ *def* unop_op
+- \+ *def* is_colimit_equiv_is_limit_op
+- \+ *def* is_colimit_equiv_is_limit_unop
+- \+ *def* is_limit_equiv_is_colimit_op
+- \+ *def* is_limit_equiv_is_colimit_unop
+
+Modified src/category_theory/limits/shapes/pullbacks.lean
+
+
+
+## [2022-07-10 17:43:04](https://github.com/leanprover-community/mathlib/commit/f4f0f67)
+feat(set_theory/zfc): simp lemmas for `arity` and `const` ([#15214](https://github.com/leanprover-community/mathlib/pull/15214))
+#### Estimated changes
+Modified src/set_theory/zfc.lean
+- \+ *theorem* arity_zero
+- \+ *theorem* arity_succ
+- \+ *theorem* const_zero
+- \+ *theorem* const_succ
+- \+ *theorem* const_succ_apply
+
+
+
+## [2022-07-10 17:43:03](https://github.com/leanprover-community/mathlib/commit/cf4783f)
+feat(set_theory/zfc): basic lemmas on `pSet.equiv` ([#15211](https://github.com/leanprover-community/mathlib/pull/15211))
+We unfold the complex definition into something easier to use.
+#### Estimated changes
+Modified src/set_theory/zfc.lean
+- \+ *theorem* exists_equiv_left
+- \+ *theorem* exists_equiv_right
+
+
+
+## [2022-07-10 17:43:01](https://github.com/leanprover-community/mathlib/commit/4b6ec60)
+lint(topology/algebra/order/basic): use `finite` instead of `fintype` ([#15203](https://github.com/leanprover-community/mathlib/pull/15203))
+#### Estimated changes
+Modified src/topology/algebra/order/basic.lean
+
+
+
+## [2022-07-10 15:28:36](https://github.com/leanprover-community/mathlib/commit/f51aaab)
+feat(algebra/order/monoid) Add zero_le_three and zero_le_four ([#15219](https://github.com/leanprover-community/mathlib/pull/15219))
+#### Estimated changes
+Modified src/algebra/order/monoid.lean
+- \+ *lemma* zero_le_three
+- \+ *lemma* zero_le_four
+
+
+
+## [2022-07-10 15:28:35](https://github.com/leanprover-community/mathlib/commit/e5b8d09)
+feat(data/finset/lattice): add three*2 lemmas about `finset.max/min` ([#15212](https://github.com/leanprover-community/mathlib/pull/15212))
+The three lemmas are
+* `mem_le_max: ↑a ≤ s.max`,
+* `max_mono : s.max ≤ t.max`,
+* `max_le : s.max ≤ M`,
+and
+* `min_le_coe_of_mem : s.min`,
+* `min_mono : t.min ≤ s.min`,
+* `le_min : m ≤ s.min`.
+~~I feel that I did not get the hang of `finset.max`: probably a lot of golfing is possible, at least for `max_mono`!~~
+Luckily, Eric looked at the PR and now the proofs have been shortened!
+I also golfed `le_max_of_mem` and `min_le_of_mem`.
+#### Estimated changes
+Modified src/data/finset/lattice.lean
+- \+ *lemma* coe_le_max_of_mem
+- \+ *lemma* max_mono
+- \+ *lemma* max_le
+- \+ *lemma* min_le_coe_of_mem
+- \+ *lemma* min_mono
+- \+ *lemma* le_min
+
+
+
+## [2022-07-10 15:28:34](https://github.com/leanprover-community/mathlib/commit/5305d39)
+feat(data/pnat/basic): `succ` as an order isomorphism between `ℕ` and `ℕ+` ([#15183](https://github.com/leanprover-community/mathlib/pull/15183))
+Couldn't find this in the library. Asked on [Zulip](https://leanprover.zulipchat.com/#narrow/stream/217875-Is-there-code-for-X.3F/topic/order.20isomorphism.20between.20.E2.84.95.20and.20.E2.84.95.2B/near/288891689) in case anyone knew of this already.
+#### Estimated changes
+Modified src/data/pnat/basic.lean
+- \+ *def* succ_order_iso
+
+
+
 ## [2022-07-10 14:02:39](https://github.com/leanprover-community/mathlib/commit/37c2777)
 feat(order/filter/ultrafilter): `pure`, `map`, and `comap` lemmas ([#15187](https://github.com/leanprover-community/mathlib/pull/15187))
 A handful of simple lemmas.
