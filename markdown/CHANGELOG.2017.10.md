@@ -6,10 +6,12 @@ Modified analysis/real.lean
 
 
 
+
 ## [2017-10-25 21:55:10-04:00](https://github.com/leanprover-community/mathlib/commit/3cd6229)
 refactor(analysis/real): use more coe instead of of_rat
 #### Estimated changes
 Modified analysis/ennreal.lean
+
 
 Modified analysis/measure_theory/borel_space.lean
 - \+ *lemma* is_topological_basis_Ioo_rat
@@ -20,6 +22,7 @@ Modified analysis/measure_theory/borel_space.lean
 - \- *lemma* borel_eq_generate_from_Iio_of_rat
 
 Modified analysis/measure_theory/lebesgue_measure.lean
+
 
 Modified analysis/real.lean
 - \+ *lemma* exists_rat_btwn
@@ -51,6 +54,7 @@ Deleted data/subtype.lean
 Merge remote-tracking branch 'cipher1024/master'
 #### Estimated changes
 Created meta/expr.lean
+
 
 Created tactic/norm_num.lean
 - \+ *lemma* pow_bit0
@@ -92,6 +96,7 @@ Created tests/norm_num.lean
 
 
 
+
 ## [2017-10-24 22:31:12-04:00](https://github.com/leanprover-community/mathlib/commit/dd9f766)
 feat(data/num,data/nat/cast,...): nat,num,int,rat.cast, list stuff
 #### Estimated changes
@@ -99,6 +104,7 @@ Modified algebra/field.lean
 - \+ *lemma* inv_comm_of_comm
 
 Modified algebra/group.lean
+
 
 Modified algebra/group_power.lean
 - \+ *theorem* nat.pow_eq_pow_nat
@@ -108,13 +114,12 @@ Modified algebra/ordered_ring.lean
 
 Modified analysis/limits.lean
 - \+/\- *lemma* mul_add_one_le_pow
-- \+/\- *lemma* mul_add_one_le_pow
 
 Modified analysis/measure_theory/lebesgue_measure.lean
 - \+/\- *lemma* tendsto_of_nat_at_top_at_top
-- \+/\- *lemma* tendsto_of_nat_at_top_at_top
 
 Modified analysis/metric_space.lean
+
 
 Deleted analysis/of_nat.lean
 - \- *lemma* of_nat_add
@@ -139,12 +144,8 @@ Modified analysis/real.lean
 - \+ *theorem* coe_rat_eq_of_rat
 - \+/\- *def* lift_rat_fun
 - \+/\- *def* lift_rat_op
-- \+/\- *def* lift_rat_fun
-- \+/\- *def* lift_rat_op
 
 Modified data/encodable.lean
-- \+/\- *def* encodable_of_left_injection
-- \+/\- *def* encodable_of_equiv
 - \+/\- *def* encodable_of_left_injection
 - \+/\- *def* encodable_of_equiv
 
@@ -160,6 +161,7 @@ Modified data/equiv.lean
 - \+ *def* int_equiv_nat
 
 Modified data/finset/basic.lean
+
 
 Modified data/int/basic.lean
 - \+ *theorem* coe_nat_le
@@ -232,13 +234,13 @@ Modified data/list/perm.lean
 - \+ *theorem* subperm_of_subset_nodup
 - \+ *theorem* perm_diff_left
 - \+ *theorem* perm_diff_right
-- \+/\- *theorem* mem_of_perm
 - \- *theorem* mem_iff_mem_of_perm
 - \- *theorem* perm_app_inv_right
 - \- *theorem* exists_sublist_perm_of_subset_nodup
 - \+ *def* subperm
 
 Modified data/list/sort.lean
+
 
 Created data/nat/cast.lean
 - \+ *theorem* cast_zero
@@ -263,9 +265,12 @@ Created data/nat/cast.lean
 
 Modified data/num/basic.lean
 
+
 Modified data/num/bitwise.lean
 
+
 Modified data/num/lemmas.lean
+
 
 Deleted data/num/norm_num.lean
 - \- *lemma* pow_bit0
@@ -315,13 +320,6 @@ Modified data/option.lean
 - \+ *lemma* map_eq_some
 - \+ *lemma* is_some_iff_exists
 - \+/\- *lemma* guard_eq_some
-- \+/\- *lemma* mem_def
-- \+/\- *lemma* some_inj
-- \+/\- *lemma* bind_some
-- \+/\- *lemma* guard_eq_some
-- \+/\- *def* iget
-- \+/\- *def* guard
-- \+/\- *def* filter
 - \+/\- *def* iget
 - \+/\- *def* guard
 - \+/\- *def* filter
@@ -364,7 +362,6 @@ Modified data/rat.lean
 - \- *theorem* linear_order_cases_on_lt
 - \- *theorem* linear_order_cases_on_gt
 - \- *theorem* mul_nonneg_iff_right_nonneg_of_pos
-- \+/\- *theorem* coe_int_eq_mk
 - \- *theorem* coe_nat_rat_eq_mk
 - \- *theorem* coe_int_inj
 - \- *theorem* coe_int_add
@@ -378,7 +375,9 @@ Modified data/rat.lean
 
 Modified data/set/enumerate.lean
 
+
 Deleted meta/expr.lean
+
 
 
 
@@ -387,7 +386,9 @@ feat(data/num): add tactics for evaluating arithmetic expressions made of litera
 #### Estimated changes
 Modified data/num/basic.lean
 
+
 Modified data/num/lemmas.lean
+
 
 Created data/num/norm_num.lean
 - \+ *lemma* pow_bit0
@@ -429,16 +430,21 @@ Created meta/expr.lean
 
 
 
+
 ## [2017-10-15 02:26:24-04:00](https://github.com/leanprover-community/mathlib/commit/5ad8020)
 Merge remote-tracking branch 'minchaowu/master'
 #### Estimated changes
 Modified analysis/real.lean
 
+
 Modified analysis/topology/continuity.lean
+
 
 Modified analysis/topology/infinite_sum.lean
 
+
 Modified analysis/topology/uniform_space.lean
+
 
 Modified data/set/basic.lean
 - \+ *theorem* preimage_diff
@@ -493,7 +499,9 @@ Created data/set/function.lean
 
 Modified order/filter.lean
 
+
 Modified order/galois_connection.lean
+
 
 
 
@@ -512,35 +520,46 @@ Modified algebra/functions.lean
 
 Modified analysis/ennreal.lean
 
+
 Modified analysis/limits.lean
+
 
 Modified analysis/measure_theory/borel_space.lean
 
+
 Modified analysis/measure_theory/measure_space.lean
+
 
 Modified analysis/measure_theory/outer_measure.lean
 
+
 Modified analysis/metric_space.lean
 
+
 Modified analysis/of_nat.lean
+
 
 Modified analysis/real.lean
 - \+ *lemma* of_rat_injective
 - \+ *lemma* of_rat_inj
 - \+/\- *lemma* uniform_embedding_of_rat
 - \+ *lemma* of_rat_lt
-- \+/\- *lemma* uniform_embedding_of_rat
 - \- *lemma* of_rat_lt_of_rat
 
 Modified analysis/topology/continuity.lean
 
+
 Modified analysis/topology/infinite_sum.lean
+
 
 Modified analysis/topology/topological_space.lean
 
+
 Modified analysis/topology/topological_structures.lean
 
+
 Modified analysis/topology/uniform_space.lean
+
 
 Modified data/bool.lean
 - \+ *theorem* coe_sort_tt
@@ -564,8 +583,6 @@ Modified data/bool.lean
 - \- *theorem* bor_eq_tt
 - \- *theorem* bor_eq_ff
 - \- *theorem* or_of_bor_eq
-- \+/\- *theorem* bor_inl
-- \+/\- *theorem* bor_inr
 - \- *theorem* band_self
 - \- *theorem* bnot_bnot
 - \- *theorem* ff_bxor_ff
@@ -612,21 +629,13 @@ Modified data/finset/basic.lean
 - \+ *theorem* exists_mem_insert
 - \+ *theorem* forall_mem_insert
 - \+ *theorem* card_range
-- \+/\- *theorem* mem_of_mem_list
-- \+/\- *theorem* mem_list_of_mem
-- \+/\- *theorem* mem_to_finset
 - \- *theorem* mem_to_finset_iff
-- \+/\- *theorem* not_mem_empty
 - \- *theorem* mem_empty_iff
 - \- *theorem* mem_insert_iff
-- \+/\- *theorem* mem_insert
-- \+/\- *theorem* mem_singleton_self
 - \- *theorem* mem_union_iff
 - \- *theorem* mem_inter_iff
-- \+/\- *theorem* mem_inter
 - \- *theorem* mem_erase_iff
 - \- *theorem* mem_filter_iff
-- \+/\- *theorem* mem_sdiff_iff
 - \- *theorem* lt_of_mem_upto
 - \- *theorem* mem_upto_succ_of_mem_upto
 - \- *theorem* mem_upto_of_lt
@@ -646,9 +655,6 @@ Modified data/finset/fold.lean
 - \- *lemma* heq_iff_eq
 
 Modified data/hash_map.lean
-- \+/\- *theorem* mem_as_list
-- \+/\- *theorem* find_aux_iff
-- \+/\- *theorem* contains_aux_iff
 - \+/\- *theorem* mem_as_list
 - \+/\- *theorem* find_aux_iff
 - \+/\- *theorem* contains_aux_iff
@@ -1052,47 +1058,12 @@ Modified data/list/basic.lean
 - \+ *theorem* pairwise_gt_iota
 - \+ *theorem* nodup_iota
 - \+ *theorem* mem_iota
-- \+/\- *theorem* head_eq_of_cons_eq
-- \+/\- *theorem* tail_eq_of_cons_eq
-- \+/\- *theorem* cons_inj
 - \- *theorem* append_right_inj
-- \+/\- *theorem* eq_nil_of_forall_not_mem
-- \+/\- *theorem* mem_singleton
 - \- *theorem* mem_singleton_iff
-- \+/\- *theorem* mem_of_mem_cons_of_mem
-- \+/\- *theorem* not_mem_append
-- \+/\- *theorem* length_pos_of_mem
-- \+/\- *theorem* mem_split
-- \+/\- *theorem* mem_of_ne_of_mem
-- \+/\- *theorem* ne_of_not_mem_cons
-- \+/\- *theorem* not_mem_of_not_mem_cons
-- \+/\- *theorem* not_mem_cons_of_ne_of_not_mem
-- \+/\- *theorem* ne_and_not_mem_of_not_mem_cons
-- \+/\- *theorem* mem_reverse
-- \+/\- *theorem* mem_map
-- \+/\- *theorem* exists_of_mem_map
 - \- *theorem* mem_map_iff
 - \- *theorem* mem_join_iff
-- \+/\- *theorem* exists_of_mem_join
-- \+/\- *theorem* mem_join
-- \+/\- *theorem* subset_app_of_subset_left
-- \+/\- *theorem* subset_app_of_subset_right
-- \+/\- *theorem* cons_subset_of_subset_of_mem
-- \+/\- *theorem* app_subset_of_subset_of_subset
-- \+/\- *theorem* eq_nil_of_subset_nil
-- \+/\- *theorem* sublist_app_of_sublist_left
-- \+/\- *theorem* sublist_app_of_sublist_right
-- \+/\- *theorem* eq_nil_of_map_eq_nil
 - \- *theorem* eq_of_map_const
-- \+/\- *theorem* filter_subset
-- \+/\- *theorem* of_mem_filter
-- \+/\- *theorem* mem_of_mem_filter
-- \+/\- *theorem* mem_filter_of_mem
 - \- *theorem* mem_filter_iff
-- \+/\- *theorem* count_cons_ge_count
-- \+/\- *theorem* count_append
-- \+/\- *theorem* mem_of_count_pos
-- \+/\- *theorem* count_pos_of_mem
 - \- *theorem* mem_iff_count_pos
 - \+/\- *def* concat
 - \+/\- *def* inth
@@ -1112,16 +1083,6 @@ Modified data/list/basic.lean
 - \+ *def* nodup
 - \+ *def* erase_dup
 - \+ *def* range'
-- \+/\- *def* concat
-- \+/\- *def* inth
-- \+/\- *def* find
-- \+/\- *def* find_indexes_aux
-- \+/\- *def* find_indexes
-- \+/\- *def* indexes_of
-- \+/\- *def* sum
-- \+/\- *def* count
-- \+/\- *def* inits
-- \+/\- *def* tails
 
 Deleted data/list/comb.lean
 - \- *theorem* foldl_nil
@@ -1197,6 +1158,7 @@ Deleted data/list/comb.lean
 
 Modified data/list/default.lean
 
+
 Modified data/list/perm.lean
 - \+ *theorem* perm.eqv
 - \+/\- *theorem* perm_app_left
@@ -1246,21 +1208,11 @@ Modified data/list/perm.lean
 - \+/\- *theorem* perm_product
 - \- *theorem* eqv
 - \- *theorem* not_mem_of_perm
-- \+/\- *theorem* perm_app_left
-- \+/\- *theorem* perm_app_right
-- \+/\- *theorem* perm_app
-- \+/\- *theorem* perm_app_cons
-- \+/\- *theorem* perm_cons_app
 - \- *theorem* perm_cons_app_simp
 - \- *theorem* length_eq_length_of_perm
-- \+/\- *theorem* eq_nil_of_perm_nil
-- \+/\- *theorem* not_perm_nil_cons
 - \- *theorem* perm_rev
 - \- *theorem* perm_rev_simp
-- \+/\- *theorem* perm_middle
 - \- *theorem* perm_middle_simp
-- \+/\- *theorem* perm_erase
-- \+/\- *theorem* xswap
 - \- *theorem* count_eq_count_of_perm
 - \- *theorem* perm_of_forall_count_eq
 - \- *theorem* perm_iff_forall_count_eq_count
@@ -1274,27 +1226,11 @@ Modified data/list/perm.lean
 - \- *theorem* qeq_of_mem
 - \- *theorem* qeq_split
 - \- *theorem* subset_of_mem_of_subset_of_qeq
-- \+/\- *theorem* perm_inv_core
-- \+/\- *theorem* perm_cons_inv
 - \- *theorem* perm_app_inv_left
-- \+/\- *theorem* perm_app_inv_right
 - \- *theorem* perm_app_inv
 - \- *theorem* erase_perm_erase_of_perm
-- \+/\- *theorem* perm_erase_dup_of_perm
-- \+/\- *theorem* perm_insert
 - \- *theorem* perm_insert_insert
-- \+/\- *theorem* perm_union_left
-- \+/\- *theorem* perm_union_right
-- \+/\- *theorem* perm_union
-- \+/\- *theorem* perm_inter_left
-- \+/\- *theorem* perm_inter_right
-- \+/\- *theorem* perm_inter
-- \+/\- *theorem* perm_ext
 - \- *theorem* nodup_of_perm_of_nodup
-- \+/\- *theorem* perm_product_left
-- \+/\- *theorem* perm_product_right
-- \+/\- *theorem* perm_product
-- \+/\- *theorem* perm_filter
 - \- *def* decidable_perm_aux
 - \- *def* decidable_perm
 
@@ -1416,16 +1352,9 @@ Modified data/list/sort.lean
 - \+ *theorem* rel_of_sorted_cons
 - \+/\- *theorem* sorted_cons
 - \+ *theorem* eq_of_sorted_of_perm
-- \+/\- *theorem* sorted_nil
-- \+/\- *theorem* sorted_singleton
-- \+/\- *theorem* sorted_of_sorted_cons
 - \- *theorem* forall_mem_rel_of_sorted_cons
-- \+/\- *theorem* sorted_cons
 - \- *theorem* ordered_insert_nil
 - \- *theorem* ordered_insert_cons
-- \+/\- *def* sorted
-- \+/\- *def* ordered_insert
-- \+/\- *def* insertion_sort
 - \+/\- *def* sorted
 - \+/\- *def* ordered_insert
 - \+/\- *def* insertion_sort
@@ -1440,8 +1369,6 @@ Modified data/option.lean
 - \+/\- *def* iget
 - \+ *def* guard
 - \+/\- *def* filter
-- \+/\- *def* iget
-- \+/\- *def* filter
 
 Modified data/prod.lean
 - \+ *lemma* prod.swap_left_inverse
@@ -1449,7 +1376,9 @@ Modified data/prod.lean
 
 Modified data/rat.lean
 
+
 Modified data/seq/wseq.lean
+
 
 Modified data/set/basic.lean
 - \+/\- *lemma* compl_image_set_of
@@ -1457,12 +1386,8 @@ Modified data/set/basic.lean
 - \+/\- *lemma* forall_range_iff
 - \+/\- *lemma* range_of_surjective
 - \- *lemma* mem_of_eq_of_mem
-- \+/\- *lemma* compl_image_set_of
-- \+/\- *lemma* univ_eq_true_false
 - \- *lemma* mem_image_iff_of_inverse
 - \- *lemma* image_subset_eq
-- \+/\- *lemma* forall_range_iff
-- \+/\- *lemma* range_of_surjective
 - \+/\- *theorem* subset.trans
 - \+ *theorem* mem_of_eq_of_mem
 - \+/\- *theorem* preimage_empty
@@ -1489,40 +1414,19 @@ Modified data/set/basic.lean
 - \+/\- *theorem* preimage_image_eq
 - \+ *theorem* image_preimage_eq
 - \+ *theorem* compl_image
-- \+/\- *theorem* subset.trans
-- \+/\- *theorem* mem_image
-- \+/\- *theorem* image_subset_iff_subset_preimage
-- \+/\- *theorem* ball_image_iff
-- \+/\- *theorem* preimage_empty
-- \+/\- *theorem* mem_preimage_eq
-- \+/\- *theorem* preimage_mono
-- \+/\- *theorem* preimage_image_eq
-- \+/\- *theorem* preimage_univ
-- \+/\- *theorem* preimage_inter
-- \+/\- *theorem* preimage_union
-- \+/\- *theorem* preimage_compl
 - \- *theorem* preimage_diff
-- \+/\- *theorem* preimage_set_of_eq
-- \+/\- *theorem* preimage_id
-- \+/\- *theorem* preimage_comp
-- \+/\- *theorem* image_eq_preimage_of_inverse
-- \+/\- *theorem* eq_preimage_subtype_val_iff
-- \+/\- *theorem* image_preimage_subset
-- \+/\- *theorem* subset_preimage_image
 - \- *theorem* inter_preimage_subset
 - \- *theorem* union_preimage_subset
 - \- *theorem* image_union_supset
-- \+/\- *def* preimage
-- \+/\- *def* pairwise_on
 - \+/\- *def* preimage
 - \+/\- *def* pairwise_on
 
 Modified data/set/countable.lean
 - \+/\- *def* countable
 - \- *def* encodable_of_inj
-- \+/\- *def* countable
 
 Modified data/set/enumerate.lean
+
 
 Deleted data/set/function.lean
 - \- *lemma* injective_iff_inj_on_univ
@@ -1570,7 +1474,6 @@ Deleted data/set/function.lean
 Modified data/set/prod.lean
 - \+/\- *lemma* mem_prod_eq
 - \+ *lemma* mem_prod
-- \+/\- *lemma* mem_prod_eq
 
 Modified logic/basic.lean
 - \+ *lemma* and_iff_left_of_imp
@@ -1588,7 +1491,6 @@ Renamed logic/function_inverse.lean to logic/function.lean
 - \+/\- *lemma* surj_inv_eq
 - \+ *lemma* surjective.has_right_inverse
 - \- *lemma* has_left_inverse
-- \+/\- *lemma* surj_inv_eq
 - \- *lemma* has_right_inverse
 - \+ *theorem* injective.eq_iff
 - \+ *theorem* partial_inv_eq
@@ -1599,9 +1501,12 @@ Renamed logic/function_inverse.lean to logic/function.lean
 
 Modified order/filter.lean
 
+
 Modified tactic/interactive.lean
 
+
 Modified tactic/rcases.lean
+
 
 
 

@@ -1,6 +1,7 @@
 from dataclasses import dataclass
 from typing import cast
 from crawler.extract_diff_info import extract_diff_changes, extract_diff_file_info
+from crawler.stable_dedupe import stable_dedupe
 from git import Diff
 
 
@@ -49,7 +50,7 @@ def format_git_changes_json(diffs: list[Diff]) -> list[DiffJson]:
             DiffJson(
                 pathChange=path_change,
                 path=cast(str, diff.a_path or diff.b_path),
-                changes=json_changes,
+                changes=stable_dedupe(json_changes),
             )
         )
     return changes

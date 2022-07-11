@@ -3,27 +3,22 @@ feat(computability/turing_machine): add TMs and reductions
 #### Estimated changes
 Modified data/array/lemmas.lean
 
+
 Modified data/computability/halting.lean
+
 
 Created data/computability/turing_machine.lean
 - \+ *theorem* step_supports
 - \+ *theorem* stmts₁_self
-- \+ *theorem* step_supports
 - \+ *def* rev
 - \+ *def* move_tape
 - \+ *def* step
 - \+ *def* supports
-- \+ *def* step
 - \+ *def* supports_stmt
-- \+ *def* supports
 - \+ *def* trans
 - \+ *def* translate
 - \+ *def* step_aux
-- \+ *def* step
 - \+ *def* translate'
-- \+ *def* translate
-- \+ *def* step_aux
-- \+ *def* step
 - \+ *def* stackel.is_bottom
 - \+ *def* stackel.is_top
 - \+ *def* stackel.get
@@ -31,15 +26,15 @@ Created data/computability/turing_machine.lean
 - \+ *def* at_stack
 - \+ *def* push
 - \+ *def* pop
-- \+ *def* translate
 
 Modified data/fintype.lean
 
+
 Modified data/real/basic.lean
-- \+/\- *def* real
 - \+/\- *def* real
 
 Modified data/sum.lean
+
 
 
 
@@ -85,7 +80,6 @@ Modified data/computability/partrec_code.lean
 Modified data/computability/primrec.lean
 - \+/\- *theorem* idv
 - \+ *theorem* vec_iff
-- \+/\- *theorem* idv
 - \- *theorem* primvec_iff
 - \+ *def* vec
 - \- *def* primvec
@@ -94,7 +88,6 @@ Modified data/vector2.lean
 - \+ *theorem* m_of_fn_pure
 - \+ *theorem* mmap_nil
 - \+ *theorem* mmap_cons
-- \+ *def* {u}
 - \+ *def* {u}
 
 
@@ -169,6 +162,7 @@ Modified data/computability/primrec.lean
 
 Modified data/encodable.lean
 
+
 Modified data/equiv.lean
 - \+ *def* fin_equiv_subtype
 - \+ *def* vector_equiv_fin
@@ -195,9 +189,6 @@ Modified data/list/basic.lean
 - \+ *theorem* of_fn_zero
 - \+ *theorem* of_fn_succ
 - \+ *theorem* of_fn_nth_le
-- \+/\- *theorem* head_cons
-- \+/\- *theorem* head_append
-- \+/\- *theorem* cons_head_tail
 - \+ *def* head'
 - \+ *def* of_fn_aux
 - \+ *def* of_fn
@@ -208,8 +199,6 @@ Modified data/nat/sqrt.lean
 - \+ *theorem* sqrt_succ_le_succ_sqrt
 
 Modified data/set/basic.lean
-- \+/\- *theorem* image_empty
-- \+/\- *theorem* image_id
 - \+/\- *theorem* image_empty
 - \+/\- *theorem* image_id
 
@@ -236,6 +225,7 @@ Modified logic/embedding.lean
 
 
 
+
 ## [2018-05-29 17:20:24-04:00](https://github.com/leanprover-community/mathlib/commit/5fea16e)
 feat(category/basic): $< notation for reversed application
 #### Estimated changes
@@ -243,10 +233,12 @@ Modified category/basic.lean
 
 
 
+
 ## [2018-05-29 15:48:54+02:00](https://github.com/leanprover-community/mathlib/commit/a2d2537)
 feat(analysis/probability_mass_function): add bernoulli
 #### Estimated changes
 Modified analysis/nnreal.lean
+
 
 Modified analysis/probability_mass_function.lean
 - \+ *def* of_fintype
@@ -310,7 +302,6 @@ Modified data/finset.lean
 
 Modified data/multiset.lean
 - \+/\- *theorem* count_eq_zero_of_not_mem
-- \+/\- *theorem* count_eq_zero_of_not_mem
 
 Modified order/filter.lean
 - \+ *lemma* le_of_map_le_map_inj_iff
@@ -344,9 +335,12 @@ fix(tactics/wlog): allow union instead of disjunction; assume disjunction in str
 #### Estimated changes
 Modified data/set/enumerate.lean
 
+
 Modified tactic/wlog.lean
 
+
 Modified tests/tactics.lean
+
 
 
 
@@ -375,14 +369,10 @@ Modified algebra/euclidean_domain.lean
 - \+/\- *lemma* zero_div
 - \+/\- *lemma* div_self
 - \- *lemma* gcd_decreasing
-- \+/\- *lemma* mod_zero
 - \- *lemma* dvd_mod_self
 - \- *lemma* mod_lt
 - \- *lemma* neq_zero_lt_mod_lt
 - \- *lemma* dvd_mod
-- \+/\- *lemma* zero_div
-- \+/\- *lemma* mod_self
-- \+/\- *lemma* div_self
 - \+ *theorem* div_add_mod
 - \+ *theorem* val_mod_lt
 - \+ *theorem* val_le_mul_right
@@ -391,14 +381,11 @@ Modified algebra/euclidean_domain.lean
 - \+/\- *theorem* gcd.induction
 - \+/\- *theorem* gcd_dvd
 - \+ *theorem* gcd_eq_left
-- \+/\- *theorem* gcd.induction
-- \+/\- *theorem* gcd_dvd
-- \+/\- *theorem* gcd_zero_right
 - \- *theorem* gcd_next
-- \+/\- *def* gcd
 - \+/\- *def* gcd
 
 Modified analysis/topology/infinite_sum.lean
+
 
 Modified linear_algebra/multivariate_polynomial.lean
 - \- *lemma* finsupp.single_induction_on
@@ -410,7 +397,9 @@ fix(analysis/limits): fix ambiguous import (fin)set.range
 #### Estimated changes
 Modified analysis/limits.lean
 
+
 Modified analysis/topology/infinite_sum.lean
+
 
 
 
@@ -427,28 +416,25 @@ Modified algebra/group.lean
 
 Modified algebra/ordered_group.lean
 - \+/\- *lemma* bit0_pos
-- \+/\- *lemma* bit0_pos
 - \+ *def* ordered_comm_monoid
 
 Modified algebra/ring.lean
 
+
 Modified data/option.lean
+
 
 Modified order/bounded_lattice.lean
 - \+ *theorem* coe_le_coe
 - \+/\- *theorem* some_le_some
 - \+ *theorem* coe_le
 - \+ *theorem* some_lt_some
-- \+ *theorem* coe_le_coe
-- \+/\- *theorem* some_le_some
 - \+ *theorem* le_coe
-- \+ *theorem* some_lt_some
-- \+/\- *theorem* some_le_some
 - \- *theorem* some_le
-- \+/\- *theorem* some_le_some
 - \- *theorem* le_some
 
 Modified order/lattice.lean
+
 
 
 
@@ -471,10 +457,9 @@ Modified data/set/finite.lean
 - \+/\- *theorem* empty_card
 - \+ *theorem* empty_card'
 - \+/\- *theorem* card_insert
-- \+/\- *theorem* empty_card
-- \+/\- *theorem* card_insert
 
 Modified number_theory/pell.lean
+
 
 
 
@@ -482,6 +467,7 @@ Modified number_theory/pell.lean
 chore(data/pnat): remove nat -> pnat coercion
 #### Estimated changes
 Modified analysis/real.lean
+
 
 Modified data/finset.lean
 - \+ *theorem* min_eq_inf_with_top
@@ -501,6 +487,7 @@ Modified tactic/norm_num.lean
 
 
 
+
 ## [2018-05-25 16:15:06+02:00](https://github.com/leanprover-community/mathlib/commit/6811f13)
 fix(data/list/perm): remove unused code ([#143](https://github.com/leanprover-community/mathlib/pull/143))
 #### Estimated changes
@@ -513,6 +500,7 @@ Modified data/list/perm.lean
 chore(leanpkg.toml): update version to 3.4.1
 #### Estimated changes
 Modified leanpkg.toml
+
 
 
 
@@ -540,7 +528,6 @@ Modified data/finset.lean
 - \+/\- *theorem* subset_iff
 - \+ *theorem* max_eq_sup_with_bot
 - \+ *theorem* max_eq_inf_with_top
-- \+/\- *theorem* subset_iff
 - \+ *def* sup
 - \+ *def* inf
 
@@ -548,7 +535,6 @@ Modified data/finsupp.lean
 - \+/\- *lemma* single_add_erase
 - \+ *lemma* erase_add_single
 - \+ *lemma* induction₂
-- \+/\- *lemma* single_add_erase
 
 Modified data/option.lean
 - \+ *theorem* ext
@@ -568,12 +554,12 @@ Modified linear_algebra/multivariate_polynomial.lean
 Modified order/bounded_lattice.lean
 - \+ *theorem* some_le_some
 - \+ *theorem* some_le
-- \+ *theorem* some_le_some
 - \+ *theorem* le_some
 - \+ *def* with_bot
 - \+ *def* with_top
 
 Modified order/lattice.lean
+
 
 
 
@@ -644,6 +630,7 @@ Modified order/lattice.lean
 
 
 
+
 ## [2018-05-24 15:55:26+02:00](https://github.com/leanprover-community/mathlib/commit/9303bc0)
 feat(analysis/ennreal): add further type class instances for nonnegative reals
 #### Estimated changes
@@ -658,6 +645,7 @@ Modified analysis/nnreal.lean
 - \- *lemma* le_zero_iff_eq
 
 Modified set_theory/cofinality.lean
+
 
 
 
@@ -698,13 +686,7 @@ doc(docs/extras): some notes on well founded recursion ([#127](https://github.co
 #### Estimated changes
 Created docs/extras/well_founded_recursion.md
 - \+ *lemma* prod_factors
-- \+ *lemma* prod_factors
 - \+ *lemma* strong_induction_on
-- \+ *def* gcd
-- \+ *def* gcd
-- \+ *def* gcd
-- \+ *def* gcd
-- \+ *def* gcd
 - \+ *def* gcd
 
 
@@ -716,12 +698,15 @@ Modified docs/extras/simp.md
 
 
 
+
 ## [2018-05-23 18:54:35+02:00](https://github.com/leanprover-community/mathlib/commit/add172d)
 chore(tactic/default): move split_ifs import to tactic.interactive
 #### Estimated changes
 Modified tactic/default.lean
 
+
 Modified tactic/interactive.lean
+
 
 
 
@@ -732,20 +717,27 @@ Modified tactic/split_ifs.lean
 
 
 
+
 ## [2018-05-23 18:54:35+02:00](https://github.com/leanprover-community/mathlib/commit/509934f)
 feat(tactic/split_ifs): add if-splitter
 #### Estimated changes
 Modified algebra/euclidean_domain.lean
 
+
 Modified data/equiv.lean
+
 
 Modified data/list/basic.lean
 
+
 Modified tactic/default.lean
+
 
 Created tactic/split_ifs.lean
 
+
 Created tests/split_ifs.lean
+
 
 
 
@@ -754,7 +746,9 @@ feat(analysis/topology): add tendsto and continuity rules for big operators
 #### Estimated changes
 Modified analysis/measure_theory/borel_space.lean
 
+
 Modified analysis/topology/infinite_sum.lean
+
 
 Modified analysis/topology/topological_structures.lean
 - \+ *lemma* continuous_mul'
@@ -777,13 +771,7 @@ Modified analysis/topology/topological_structures.lean
 - \+ *lemma* tendsto_finset_sum
 - \+ *lemma* continuous_multiset_sum
 - \+ *lemma* continuous_finset_sum
-- \+/\- *lemma* continuous_add'
-- \+/\- *lemma* continuous_add
-- \+/\- *lemma* tendsto_add'
-- \+/\- *lemma* tendsto_add
 - \- *lemma* tendsto_sum
-- \+/\- *lemma* continuous_mul
-- \+/\- *lemma* tendsto_mul
 
 
 
@@ -802,13 +790,6 @@ Modified analysis/topology/continuity.lean
 - \+/\- *lemma* continuous_subtype_nhds_cover
 - \+ *lemma* continuous_pi
 - \+ *lemma* continuous_apply
-- \+/\- *lemma* nhds_pi
-- \+/\- *lemma* compact_pi_infinite
-- \+/\- *lemma* continuous_Inf_rng
-- \+/\- *lemma* continuous_infi_rng
-- \+/\- *lemma* continuous_top
-- \+/\- *lemma* continuous_bot
-- \+/\- *lemma* continuous_subtype_nhds_cover
 - \+/\- *lemma* nhds_pi
 - \+/\- *lemma* compact_pi_infinite
 
@@ -845,6 +826,7 @@ Modified order/lattice.lean
 
 
 
+
 ## [2018-05-23 15:22:09+02:00](https://github.com/leanprover-community/mathlib/commit/d1ea272)
 feat(data/option): lift_or_get
 #### Estimated changes
@@ -859,7 +841,6 @@ Modified data/option.lean
 feat(computability/halting): halting problem
 #### Estimated changes
 Created data/computability/halting.lean
-- \+ *theorem* merge'
 - \+ *theorem* merge'
 - \+ *theorem* merge
 - \+ *theorem* cond
@@ -884,8 +865,6 @@ Modified data/computability/partrec.lean
 - \- *theorem* cond
 - \- *theorem* sum_cases
 - \- *theorem* fix
-- \+/\- *theorem* encode_iff
-- \+/\- *theorem* option_some
 - \+ *def* rfind_opt
 
 Modified data/computability/partrec_code.lean
@@ -903,7 +882,6 @@ Modified data/computability/primrec.lean
 - \+/\- *theorem* option_is_some
 - \+ *theorem* option_guard
 - \+ *theorem* option_orelse
-- \+/\- *theorem* option_is_some
 
 Modified data/encodable.lean
 - \+ *theorem* mem_decode2
@@ -961,13 +939,10 @@ Modified data/computability/partrec.lean
 - \+ *theorem* option_map
 - \+ *theorem* sum_cases
 - \+ *theorem* nat_strong_rec
-- \+ *theorem* option_some_iff
 - \+ *theorem* option_cases_right
 - \+ *theorem* sum_cases_right
 - \+ *theorem* sum_cases_left
 - \+ *theorem* fix
-- \+/\- *theorem* nat_elim
-- \+/\- *theorem* nat_cases
 - \- *theorem* rfind'
 - \- *theorem* exists_code
 - \- *theorem* pair_prim
@@ -1007,7 +982,6 @@ Created data/computability/partrec_code.lean
 - \+ *def* of_nat_code
 - \+ *def* eval
 - \+ *def* evaln
-- \+ *def* evaln
 
 Modified data/computability/primrec.lean
 - \+ *theorem* option_is_some
@@ -1031,7 +1005,6 @@ Modified data/pfun.lean
 - \+ *theorem* bind_dom
 - \+/\- *theorem* mem_fix_iff
 - \+ *theorem* fix_induction
-- \+/\- *theorem* mem_fix_iff
 
 
 
@@ -1040,18 +1013,24 @@ fix(tactic/interactive): fix congr bug, rename congr_n to congr'
 #### Estimated changes
 Modified data/list/basic.lean
 
+
 Modified data/real/basic.lean
 
+
 Modified docs/tactics.md
+
 
 Modified logic/basic.lean
 - \+ *theorem* proof_irrel_heq
 
 Modified set_theory/ordinal.lean
 
+
 Modified set_theory/ordinal_notation.lean
 
+
 Modified tactic/interactive.lean
+
 
 
 
@@ -1066,29 +1045,42 @@ Fixes [#56](https://github.com/leanprover-community/mathlib/pull/56).
 #### Estimated changes
 Modified analysis/topology/infinite_sum.lean
 
+
 Modified analysis/topology/topological_structures.lean
+
 
 Modified data/list/basic.lean
 
+
 Modified data/real/basic.lean
+
 
 Modified data/seq/computation.lean
 
+
 Modified data/seq/parallel.lean
+
 
 Modified data/seq/seq.lean
 
+
 Modified data/seq/wseq.lean
+
 
 Modified group_theory/free_group.lean
 
+
 Modified order/filter.lean
+
 
 Modified ring_theory/localization.lean
 
+
 Modified set_theory/cofinality.lean
 
+
 Modified set_theory/ordinal.lean
+
 
 Modified tactic/interactive.lean
 - \+ *def* rcases_patt_inverted
@@ -1098,6 +1090,7 @@ Modified tactic/rcases.lean
 - \+ *def* list_Pi
 
 Modified tests/tactics.lean
+
 
 
 
@@ -1125,32 +1118,21 @@ Modified data/computability/partrec.lean
 - \+ *theorem* primrec.to_comp
 - \+ *theorem* computable.part
 - \+ *theorem* computable₂.part
-- \+/\- *theorem* of_eq
 - \+ *theorem* const
 - \+ *theorem* of_option
 - \+ *theorem* to₂
 - \+ *theorem* fst
 - \+ *theorem* snd
 - \+ *theorem* pair
-- \+/\- *theorem* of_eq
-- \+ *theorem* of_eq_tot
-- \+ *theorem* none
 - \+ *theorem* const'
 - \+ *theorem* map
-- \+ *theorem* to₂
 - \+ *theorem* nat_elim
 - \+ *theorem* comp
 - \+ *theorem* nat_iff
 - \+ *theorem* unpaired
 - \+ *theorem* unpaired'
-- \+ *theorem* comp
 - \+ *theorem* comp₂
-- \+ *theorem* comp
-- \+ *theorem* comp₂
-- \+ *theorem* nat_elim
 - \+ *theorem* nat_cases
-- \+ *theorem* comp
-- \+ *theorem* comp₂
 - \+ *theorem* rfind
 - \+ *theorem* cond
 - \+ *theorem* sum_cases
@@ -1163,7 +1145,6 @@ Modified data/computability/partrec.lean
 - \+ *theorem* rfind_prim
 - \+ *theorem* rec_prim
 - \+ *theorem* rec_part
-- \+/\- *theorem* of_eq
 - \- *theorem* prim
 - \+ *def* rfind_x
 - \+ *def* rfind
@@ -1178,15 +1159,9 @@ Modified data/computability/partrec.lean
 
 Modified data/computability/primrec.lean
 - \+/\- *theorem* of_eq
-- \+/\- *theorem* of_eq
 - \+/\- *theorem* comp
-- \+/\- *theorem* of_eq
 - \+ *theorem* list_concat
 - \+ *theorem* nat_strong_rec
-- \+/\- *theorem* of_eq
-- \+/\- *theorem* of_eq
-- \+/\- *theorem* comp
-- \+/\- *theorem* of_eq
 
 Modified data/denumerable.lean
 - \+ *def* list_nat_equiv_nat
@@ -1231,14 +1206,10 @@ Modified data/pfun.lean
 - \+/\- *theorem* bind_defined
 - \+ *theorem* dom_of_mem_fix
 - \+ *theorem* mem_fix_iff
-- \+/\- *theorem* dom_iff_mem
 - \- *theorem* eq_some_of_mem
-- \+/\- *theorem* bind_some_eq_map
-- \+/\- *theorem* bind_defined
 - \+/\- *def* pfun
 - \+ *def* fix
 - \- *def* bind
-- \+/\- *def* pfun
 
 
 
@@ -1250,7 +1221,6 @@ Created data/computability/partrec.lean
 - \+ *theorem* prim
 
 Modified data/computability/primrec.lean
-- \+/\- *def* unpaired
 - \+/\- *def* unpaired
 
 Modified data/pfun.lean
@@ -1275,17 +1245,10 @@ Modified data/pfun.lean
 - \+ *theorem* bind_eq_bind
 - \+ *theorem* lift_eq_coe
 - \+ *theorem* coe_val
-- \+/\- *theorem* to_of_option
-- \+/\- *theorem* of_to_option
-- \+/\- *theorem* dom_iff_mem
-- \+/\- *theorem* bind_some_eq_map
 - \- *theorem* some_bind
-- \+/\- *theorem* mem_unique
-- \+/\- *theorem* mem_some
 - \- *theorem* mem_ret
 - \- *theorem* mem_ret_iff
 - \- *theorem* eq_ret_of_mem
-- \+/\- *theorem* mem_bind
 - \- *theorem* exists_of_mem_bind
 - \+ *def* ext'
 - \+ *def* ext
@@ -1294,11 +1257,6 @@ Modified data/pfun.lean
 - \+/\- *def* of_option
 - \+ *def* bind
 - \+ *def* map
-- \+ *def* ext'
-- \+ *def* ext
-- \+ *def* bind
-- \+ *def* map
-- \+/\- *def* of_option
 
 
 
@@ -1332,14 +1290,10 @@ Modified data/computability/primrec.lean
 - \+ *theorem* list_length
 - \+/\- *theorem* list_find_index
 - \+/\- *theorem* list_index_of
-- \+/\- *theorem* list_nth
 - \- *theorem* nat_elim1
 - \- *theorem* nat_cases1
 - \- *theorem* option_bind1
 - \- *theorem* option_map1
-- \+/\- *theorem* list_inth
-- \+/\- *theorem* list_find_index
-- \+/\- *theorem* list_index_of
 
 Modified data/denumerable.lean
 - \+ *theorem* list_of_nat_zero
@@ -1372,16 +1326,11 @@ Modified data/nat/pairing.lean
 - \+/\- *theorem* unpair_lt
 - \+/\- *theorem* unpair_le
 - \+ *theorem* le_mkpair_left
-- \+/\- *theorem* mkpair_unpair
-- \+/\- *theorem* unpair_mkpair
-- \+/\- *theorem* unpair_lt
-- \+/\- *theorem* unpair_le
-- \+/\- *def* mkpair
-- \+/\- *def* unpair
 - \+/\- *def* mkpair
 - \+/\- *def* unpair
 
 Modified order/order_iso.lean
+
 
 Modified set_theory/ordinal.lean
 - \+ *theorem* iterate_le_nfp
@@ -1394,7 +1343,9 @@ feat(data/computability): primrec, denumerable
 #### Estimated changes
 Modified analysis/limits.lean
 
+
 Modified analysis/topology/infinite_sum.lean
+
 
 Modified analysis/topology/topological_space.lean
 - \+ *lemma* sUnion_basis_of_is_open
@@ -1407,8 +1358,6 @@ Modified data/bool.lean
 - \+/\- *theorem* cond_ff
 - \+/\- *theorem* cond_tt
 - \+ *theorem* cond_to_bool
-- \+/\- *theorem* cond_ff
-- \+/\- *theorem* cond_tt
 
 Created data/computability/primrec.lean
 - \+ *theorem* elim_zero
@@ -1430,11 +1379,8 @@ Created data/computability/primrec.lean
 - \+ *theorem* nat_iff
 - \+ *theorem* encdec
 - \+ *theorem* option_some
-- \+ *theorem* of_eq
-- \+ *theorem* const
 - \+ *theorem* comp
 - \+ *theorem* succ
-- \+ *theorem* pred
 - \+ *theorem* encode_iff
 - \+ *theorem* of_nat_iff
 - \+ *theorem* option_some_iff
@@ -1443,16 +1389,11 @@ Created data/computability/primrec.lean
 - \+ *theorem* pair
 - \+ *theorem* unpair
 - \+ *theorem* list_nth
-- \+ *theorem* of_eq
-- \+ *theorem* const
 - \+ *theorem* left
 - \+ *theorem* right
 - \+ *theorem* mkpair
 - \+ *theorem* unpaired
 - \+ *theorem* unpaired'
-- \+ *theorem* encode_iff
-- \+ *theorem* option_some_iff
-- \+ *theorem* of_nat_iff
 - \+ *theorem* uncurry
 - \+ *theorem* curry
 - \+ *theorem* primrec.comp₂
@@ -1464,7 +1405,6 @@ Created data/computability/primrec.lean
 - \+ *theorem* primrec_pred.of_eq
 - \+ *theorem* primrec_rel.of_eq
 - \+ *theorem* swap
-- \+ *theorem* nat_iff
 - \+ *theorem* nat_iff'
 - \+ *theorem* nat_elim
 - \+ *theorem* nat_elim'
@@ -1562,7 +1502,6 @@ Modified data/encodable.lean
 - \+ *theorem* encode_sigma_val
 - \+ *theorem* decode_prod_val
 - \+ *theorem* encode_prod_val
-- \+/\- *theorem* encode_injective
 - \+ *def* decidable_eq_of_encodable
 - \+ *def* of_left_injection
 - \+ *def* of_left_inverse
@@ -1623,15 +1562,14 @@ Modified data/list/basic.lean
 Modified data/list/sort.lean
 - \+/\- *theorem* eq_of_sorted_of_perm
 - \+ *theorem* merge_sort_eq_self
-- \+/\- *theorem* eq_of_sorted_of_perm
 
 Modified data/multiset.lean
 
+
 Modified data/nat/basic.lean
 
+
 Modified data/nat/pairing.lean
-- \+/\- *theorem* mkpair_unpair
-- \+/\- *theorem* unpair_mkpair
 - \+/\- *theorem* mkpair_unpair
 - \+/\- *theorem* unpair_mkpair
 
@@ -1641,6 +1579,7 @@ Modified data/option.lean
 
 Modified data/rat.lean
 
+
 Modified data/semiquot.lean
 - \+ *theorem* pure_inj
 - \+ *theorem* is_pure_iff
@@ -1649,11 +1588,15 @@ Modified data/semiquot.lean
 
 Modified data/seq/parallel.lean
 
+
 Modified data/seq/seq.lean
+
 
 Modified data/seq/wseq.lean
 
+
 Modified data/set/countable.lean
+
 
 Modified logic/basic.lean
 - \+ *lemma* and.right_comm
@@ -1666,11 +1609,11 @@ Modified order/basic.lean
 
 
 
+
 ## [2018-05-16 10:16:22+02:00](https://github.com/leanprover-community/mathlib/commit/fe7d573)
 refactor(data/set/enumerate): proof enumeration_inj using wlog
 #### Estimated changes
 Modified data/set/enumerate.lean
-- \+/\- *lemma* enumerate_inj
 - \+/\- *lemma* enumerate_inj
 
 
@@ -1680,11 +1623,15 @@ feat(tactic): generalize wlog to support multiple variables and cases, allow to 
 #### Estimated changes
 Modified tactic/default.lean
 
+
 Modified tactic/interactive.lean
+
 
 Created tactic/wlog.lean
 
+
 Modified tests/tactics.lean
+
 
 
 
@@ -1713,8 +1660,6 @@ Modified data/multiset.lean
 - \+ *lemma* mem_sections
 - \+ *lemma* card_sections
 - \+ *lemma* prod_map_sum
-- \+/\- *lemma* map_bind
-- \+/\- *lemma* bind_bind
 - \+ *theorem* bind_zero
 - \+ *theorem* bind_add
 - \+ *theorem* bind_cons
@@ -1751,10 +1696,12 @@ Modified tests/mk_iff_of_inductive.lean
 
 
 
+
 ## [2018-05-10 12:12:25+02:00](https://github.com/leanprover-community/mathlib/commit/d10c3bb)
 fix(order/complete_boolean_algebra): replace finish proof by simp (finish was very slow)
 #### Estimated changes
 Modified order/complete_boolean_algebra.lean
+
 
 
 
@@ -1839,7 +1786,6 @@ refactor(logic/function): constructive proof of cantor_injective
 #### Estimated changes
 Modified logic/function.lean
 - \+/\- *theorem* cantor_injective
-- \+/\- *theorem* cantor_injective
 
 
 
@@ -1849,7 +1795,6 @@ feat(linear_algebra/multivariate_polynomial): change order of eval arguments; sh
 #### Estimated changes
 Modified linear_algebra/multivariate_polynomial.lean
 - \+/\- *def* eval
-- \+/\- *def* eval
 
 
 
@@ -1858,8 +1803,8 @@ fix(data/set/basic): mark subset.refl as @[refl]
 #### Estimated changes
 Modified analysis/measure_theory/outer_measure.lean
 
+
 Modified data/set/basic.lean
-- \+/\- *theorem* subset.refl
 - \+/\- *theorem* subset.refl
 
 
@@ -1869,18 +1814,20 @@ feat(tactic/mk_iff_of_inductive_prop): add tactic to represent inductives using 
 #### Estimated changes
 Modified data/list/basic.lean
 
+
 Modified logic/relation.lean
-- \+/\- *lemma* refl_gen.to_refl_trans_gen
-- \+/\- *lemma* cases_tail
 - \+/\- *lemma* refl_gen.to_refl_trans_gen
 - \+/\- *lemma* cases_tail
 - \- *lemma* cases_tail_iff
 
 Modified tactic/default.lean
 
+
 Created tactic/mk_iff_of_inductive_prop.lean
 
+
 Created tests/mk_iff_of_inductive.lean
+
 
 
 
@@ -1888,6 +1835,7 @@ Created tests/mk_iff_of_inductive.lean
 feat(tactic/solve_by_elim): make solve_by_elim easier to use correctly ([#131](https://github.com/leanprover-community/mathlib/pull/131))
 #### Estimated changes
 Modified tactic/interactive.lean
+
 
 
 
@@ -1909,4 +1857,5 @@ Modified data/list/basic.lean
 feat(analysis/topology/topological_space): t2 instances for constructions of limit type
 #### Estimated changes
 Modified analysis/topology/topological_space.lean
+
 

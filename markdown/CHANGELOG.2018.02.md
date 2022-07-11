@@ -5,10 +5,12 @@ Modified .travis.yml
 
 
 
+
 ## [2018-02-25 08:41:54-05:00](https://github.com/leanprover-community/mathlib/commit/8f680d0)
 fix(docs/tactics): update instance cache tactics doc ([#70](https://github.com/leanprover-community/mathlib/pull/70))
 #### Estimated changes
 Modified docs/tactics.md
+
 
 
 
@@ -17,33 +19,45 @@ fix(*): update to lean
 #### Estimated changes
 Modified analysis/topology/topological_space.lean
 - \+/\- *lemma* topological_space_eq
-- \+/\- *lemma* topological_space_eq
 
 Modified data/list/basic.lean
 
+
 Modified data/nat/basic.lean
+
 
 Modified data/seq/computation.lean
 
+
 Modified data/set/countable.lean
+
 
 Modified data/set/finite.lean
 
+
 Modified order/order_iso.lean
+
 
 Modified set_theory/cardinal.lean
 
+
 Modified set_theory/cofinality.lean
+
 
 Modified set_theory/ordinal.lean
 
+
 Modified set_theory/ordinal_notation.lean
+
 
 Modified tactic/basic.lean
 
+
 Modified tactic/finish.lean
 
+
 Modified tactic/interactive.lean
+
 
 
 
@@ -51,6 +65,7 @@ Modified tactic/interactive.lean
 doc(docs/tactics): Document the find command ([#67](https://github.com/leanprover-community/mathlib/pull/67))
 #### Estimated changes
 Modified docs/tactics.md
+
 
 
 
@@ -63,8 +78,6 @@ Modified data/finset.lean
 - \+/\- *theorem* insert_union
 - \+/\- *theorem* union_insert
 - \+ *theorem* insert_union_distrib
-- \+/\- *theorem* insert_union
-- \+/\- *theorem* union_insert
 
 
 
@@ -93,7 +106,9 @@ fix(tactic/find): update to lean
 #### Estimated changes
 Modified tactic/basic.lean
 
+
 Modified tactic/find.lean
+
 
 
 
@@ -104,6 +119,7 @@ Created tactic/find.lean
 
 
 
+
 ## [2018-02-20 22:14:23-05:00](https://github.com/leanprover-community/mathlib/commit/e2a562a)
 refactor(analysis/topology): simplify is_topological_basis_of_open_of_nhds
 #### Estimated changes
@@ -111,15 +127,15 @@ Modified algebra/big_operators.lean
 - \+/\- *lemma* prod_attach
 - \+/\- *lemma* prod_bij
 - \+/\- *lemma* prod_bij_ne_one
-- \+/\- *lemma* prod_attach
-- \+/\- *lemma* prod_bij
-- \+/\- *lemma* prod_bij_ne_one
 
 Modified analysis/measure_theory/borel_space.lean
 
+
 Modified analysis/topology/topological_space.lean
 
+
 Modified data/encodable.lean
+
 
 Modified data/fintype.lean
 - \+ *def* set_fintype
@@ -131,33 +147,48 @@ doc(.): MD documentation ([#58](https://github.com/leanprover-community/mathlib/
 #### Estimated changes
 Modified README.md
 
+
 Created docs/naming.md
+
 
 Renamed style.md to docs/style.md
 
+
 Created docs/tactics.md
+
 
 Created docs/theories.md
 
+
 Created docs/theories/functions.md
+
 
 Created docs/theories/groups.md
 
+
 Created docs/theories/integers.md
+
 
 Created docs/theories/naturals.md
 
+
 Created docs/theories/orders.md
+
 
 Created docs/theories/quotients.md
 
+
 Created docs/theories/relations.md
+
 
 Created docs/theories/rings_fields.md
 
+
 Created docs/theories/sets.md
 
+
 Created docs/wip.md
+
 
 
 
@@ -178,6 +209,7 @@ chore(algebra,order): cleanup min / max using the lattice theory
 #### Estimated changes
 Modified algebra/default.lean
 
+
 Renamed algebra/functions.lean to algebra/order_functions.lean
 - \+/\- *lemma* le_min_iff
 - \+/\- *lemma* max_le_iff
@@ -196,22 +228,20 @@ Renamed algebra/functions.lean to algebra/order_functions.lean
 - \+ *lemma* min_lt_iff
 - \+ *lemma* max_distrib_of_monotone
 - \+ *lemma* min_distrib_of_monotone
-- \+/\- *lemma* le_min_iff
-- \+/\- *lemma* max_le_iff
-- \+/\- *lemma* max_min_distrib_left
-- \+/\- *lemma* max_min_distrib_right
-- \+/\- *lemma* min_max_distrib_left
-- \+/\- *lemma* min_max_distrib_right
 - \- *theorem* le_max_left_iff_true
 - \- *theorem* le_max_right_iff_true
 
 Modified data/finset.lean
 
+
 Modified data/int/basic.lean
+
 
 Modified data/multiset.lean
 
+
 Modified data/set/intervals.lean
+
 
 Modified order/boolean_algebra.lean
 - \- *lemma* eq_of_sup_eq_inf_eq
@@ -275,9 +305,12 @@ Modified analysis/metric_space.lean
 
 Modified analysis/topology/continuity.lean
 
+
 Modified analysis/topology/topological_structures.lean
 
+
 Modified analysis/topology/uniform_space.lean
+
 
 Modified order/filter.lean
 - \+ *lemma* map_le_iff_le_vmap
@@ -292,7 +325,6 @@ Modified order/filter.lean
 fix(analysis/metric_space): remove unnecessary topological_space assumption from tendsto_dist
 #### Estimated changes
 Modified analysis/metric_space.lean
-- \+/\- *theorem* tendsto_dist
 - \+/\- *theorem* tendsto_dist
 
 
@@ -346,7 +378,6 @@ feat(data/equiv): generalize list_equiv_of_equiv over universes ([#52](https://g
 #### Estimated changes
 Modified data/equiv.lean
 - \+/\- *def* list_equiv_of_equiv
-- \+/\- *def* list_equiv_of_equiv
 
 
 
@@ -358,21 +389,12 @@ Modified data/real/basic.lean
 - \+/\- *theorem* mk_neg
 - \+/\- *theorem* mk_mul
 - \+/\- *theorem* exists_floor
-- \+/\- *theorem* mk_add
-- \+/\- *theorem* mk_neg
-- \+/\- *theorem* mk_mul
-- \+/\- *theorem* exists_floor
 
 Modified data/set/basic.lean
 - \+/\- *theorem* subset_union_left
 - \+/\- *theorem* subset_union_right
 - \+/\- *theorem* union_subset_iff
 - \+ *theorem* union_empty_iff
-- \+/\- *theorem* inter_univ
-- \+/\- *theorem* univ_inter
-- \+/\- *theorem* subset_union_left
-- \+/\- *theorem* subset_union_right
-- \+/\- *theorem* union_subset_iff
 - \+/\- *theorem* inter_univ
 - \+/\- *theorem* univ_inter
 
@@ -434,10 +456,6 @@ Modified order/lattice.lean
 - \+/\- *theorem* le_sup_right
 - \+/\- *theorem* inf_le_left
 - \+/\- *theorem* inf_le_right
-- \+/\- *theorem* le_sup_left
-- \+/\- *theorem* le_sup_right
-- \+/\- *theorem* inf_le_left
-- \+/\- *theorem* inf_le_right
 
 
 
@@ -460,80 +478,114 @@ Adding typeclasses to the context must now be done with `haveI`, `introsI`, etc.
 #### Estimated changes
 Modified algebra/archimedean.lean
 
+
 Modified algebra/big_operators.lean
+
 
 Modified algebra/field.lean
 
+
 Modified algebra/linear_algebra/linear_map_module.lean
+
 
 Modified algebra/linear_algebra/subtype_module.lean
 
+
 Modified algebra/module.lean
-- \+/\- *theorem* one_smul
 - \+/\- *theorem* one_smul
 
 Modified analysis/metric_space.lean
 
+
 Modified analysis/real.lean
+
 
 Modified analysis/topology/continuity.lean
 
+
 Modified analysis/topology/topological_structures.lean
+
 
 Modified analysis/topology/uniform_space.lean
 - \+ *def* uniform_space.mk'
 
 Modified data/analysis/filter.lean
 
+
 Modified data/analysis/topology.lean
+
 
 Modified data/finset.lean
 
+
 Modified data/fintype.lean
+
 
 Modified data/list/basic.lean
 
+
 Modified data/list/perm.lean
+
 
 Modified data/nat/basic.lean
 
+
 Modified data/num/lemmas.lean
+
 
 Modified data/real/cau_seq.lean
 
+
 Modified data/seq/computation.lean
+
 
 Modified data/seq/parallel.lean
 
+
 Modified data/set/countable.lean
+
 
 Modified data/set/finite.lean
 
+
 Modified data/sum.lean
+
 
 Modified logic/basic.lean
 
+
 Modified logic/embedding.lean
+
 
 Modified order/basic.lean
 
+
 Modified order/order_iso.lean
+
 
 Modified set_theory/cardinal.lean
 
+
 Modified set_theory/cofinality.lean
+
 
 Modified set_theory/ordinal.lean
 
+
 Modified set_theory/ordinal_notation.lean
+
 
 Modified set_theory/zfc.lean
 
+
 Modified tactic/basic.lean
+
 
 Modified tactic/interactive.lean
 
+
 Modified tactic/rcases.lean
+
 
 
 
@@ -541,6 +593,7 @@ Modified tactic/rcases.lean
 Fix universe parameter in permutation group
 #### Estimated changes
 Modified data/equiv.lean
+
 
 
 
@@ -571,7 +624,10 @@ fix(data/hash_map,...): update to lean
 #### Estimated changes
 Modified data/hash_map.lean
 
+
 Modified set_theory/cardinal.lean
 
+
 Modified set_theory/cofinality.lean
+
 

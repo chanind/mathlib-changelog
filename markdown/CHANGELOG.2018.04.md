@@ -5,6 +5,7 @@ Modified docs/naming.md
 
 
 
+
 ## [2018-04-26 18:29:10+02:00](https://github.com/leanprover-community/mathlib/commit/48485a2)
 refactor(logic/relation,group_theory/free_group): add theory for reflextive/transitive relations & use them for the free group reduction
 #### Estimated changes
@@ -17,6 +18,7 @@ Modified data/list/basic.lean
 - \+ *theorem* infix_cons
 
 Modified data/list/perm.lean
+
 
 Modified group_theory/free_group.lean
 - \+ *lemma* red.refl
@@ -46,7 +48,6 @@ Modified group_theory/free_group.lean
 - \- *lemma* red.cons_bnot
 - \- *lemma* red.cons_bnot_rev
 - \- *lemma* red.cons_iff
-- \+/\- *lemma* mul_mk
 - \+ *theorem* step.length
 - \+ *theorem* step.append_left
 - \+ *theorem* step.cons
@@ -87,7 +88,6 @@ Modified group_theory/free_group.lean
 - \- *theorem* red.step.church_rosser.aux
 - \- *theorem* red.step.church_rosser
 - \- *theorem* church_rosser_1
-- \+/\- *theorem* church_rosser
 - \- *theorem* red.step.inv
 - \- *theorem* red.step.eqv_gen_of_red
 - \- *theorem* red.step.exact
@@ -103,11 +103,7 @@ Modified group_theory/free_group.lean
 - \- *theorem* red.inv_of_red_of_ne.aux
 - \- *theorem* red.inv_of_red_of_ne
 - \- *theorem* red.to_group
-- \+/\- *theorem* map.comp
-- \+/\- *theorem* to_group_eq_prod_map
-- \+/\- *theorem* reduce.not
 - \+ *def* red
-- \+/\- *def* free_group
 - \+/\- *def* free_group
 - \- *def* inv
 
@@ -148,7 +144,6 @@ Created logic/relation.lean
 style(group_theory): move free_group from algebra to group_theory
 #### Estimated changes
 Renamed algebra/free_group.lean to group_theory/free_group.lean
-- \+/\- *theorem* red.inv_of_red_of_ne.aux
 - \+/\- *theorem* red.inv_of_red_of_ne.aux
 
 
@@ -272,6 +267,7 @@ Modified group_theory/subgroup.lean
 
 
 
+
 ## [2018-04-25 13:44:07+02:00](https://github.com/leanprover-community/mathlib/commit/e6264eb)
 feat(order/conditionally_complete_lattice): add instance complete_linear_order -> conditionally_complete_linear_order; add cSup/cInf_interval
 #### Estimated changes
@@ -373,16 +369,14 @@ fix(*): update to lean
 Modified data/finset.lean
 - \+ *lemma* pi_val
 - \+/\- *lemma* mem_pi
-- \+/\- *lemma* mem_pi
 - \+ *theorem* insert_val_of_not_mem
-- \+/\- *def* pi.empty
 - \+/\- *def* pi.empty
 
 Modified data/list/basic.lean
 - \+/\- *lemma* append_eq_nil
-- \+/\- *lemma* append_eq_nil
 
 Modified leanpkg.toml
+
 
 Modified set_theory/zfc.lean
 - \+ *theorem* eval_val
@@ -396,7 +390,9 @@ for removing identity junk and annotations added to terms by common tactics like
 #### Estimated changes
 Modified tactic/interactive.lean
 
+
 Modified tests/tactics.lean
+
 
 
 
@@ -419,10 +415,12 @@ Modified tests/tactics.lean
 
 
 
+
 ## [2018-04-24 17:00:19-04:00](https://github.com/leanprover-community/mathlib/commit/f87135b)
 feat(algebra/pi_instances): Adds pi instances for common algebraic structures
 #### Estimated changes
 Created algebra/pi_instances.lean
+
 
 
 
@@ -433,7 +431,9 @@ the type of the rule
 #### Estimated changes
 Modified tactic/interactive.lean
 
+
 Renamed tests/wlog.lean to tests/tactics.lean
+
 
 
 
@@ -442,7 +442,9 @@ feat(tactic/interactive): adding a discharger argument to solve_by_elim ([#108](
 #### Estimated changes
 Modified docs/tactics.md
 
+
 Modified tactic/interactive.lean
+
 
 
 
@@ -453,6 +455,7 @@ Modified docs/tactics.md
 
 
 
+
 ## [2018-04-24 14:25:48-04:00](https://github.com/leanprover-community/mathlib/commit/44391c9)
 doc(docs/elan.md): a short setup guide
 A short guide on getting started with Lean, mathlib and elan.
@@ -460,7 +463,9 @@ Adds a link to docs/elan.md in README.md
 #### Estimated changes
 Modified README.md
 
+
 Created docs/elan.md
+
 
 
 
@@ -471,7 +476,9 @@ https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/cc.20is.20s
 #### Estimated changes
 Modified docs/extras.md
 
+
 Created docs/extras/cc.md
+
 
 
 
@@ -483,18 +490,24 @@ Modified data/finset.lean
 
 Modified data/list/basic.lean
 
+
 Modified data/multiset.lean
 - \+ *theorem* ext'
 
 Modified data/set/basic.lean
 
+
 Created data/stream/basic.lean
+
 
 Modified docs/tactics.md
 
+
 Modified tactic/interactive.lean
 
+
 Modified tests/examples.lean
+
 
 
 
@@ -503,9 +516,12 @@ fix(tactic/wlog): in the proof of completeness, useful assumptions were not visi
 #### Estimated changes
 Modified tactic/basic.lean
 
+
 Modified tactic/interactive.lean
 
+
 Modified tests/wlog.lean
+
 
 
 
@@ -513,6 +529,7 @@ Modified tests/wlog.lean
 fix(ordinal): fix looping simp
 #### Estimated changes
 Modified set_theory/ordinal.lean
+
 
 
 
@@ -526,9 +543,12 @@ Modified algebra/ordered_group.lean
 
 Modified algebra/ordered_ring.lean
 
+
 Modified analysis/ennreal.lean
 
+
 Modified analysis/limits.lean
+
 
 Modified analysis/measure_theory/lebesgue_measure.lean
 - \+ *lemma* lebesgue_length_Ico'
@@ -537,19 +557,16 @@ Modified analysis/measure_theory/lebesgue_measure.lean
 - \+/\- *lemma* lebesgue_outer_Ico
 - \+/\- *lemma* lebesgue_Ico
 - \+/\- *lemma* lebesgue_Ioo
-- \+/\- *lemma* lebesgue_length_Ico
-- \+/\- *lemma* le_lebesgue_length
 - \- *lemma* lebesgue_length_Ico_le_lebesgue_length_Ico
-- \+/\- *lemma* lebesgue_outer_Ico
-- \+/\- *lemma* lebesgue_Ico
-- \+/\- *lemma* lebesgue_Ioo
 
 Modified analysis/measure_theory/outer_measure.lean
 - \+ *theorem* of_function_le
 
 Modified analysis/topology/topological_structures.lean
 
+
 Modified data/int/basic.lean
+
 
 Modified data/set/intervals.lean
 - \+ *lemma* Ico_self
@@ -568,6 +585,7 @@ feat(list/basic,...): minor modifications & additions
 based on Zulip conversations and requests
 #### Estimated changes
 Modified algebra/group.lean
+
 
 Modified algebra/ring.lean
 - \- *def* nonunits
@@ -589,16 +607,8 @@ Modified data/list/basic.lean
 - \+ *theorem* suffix_iff_eq_append
 - \+ *theorem* prefix_iff_eq_take
 - \+ *theorem* suffix_iff_eq_drop
-- \+/\- *theorem* append_inj_left
-- \+/\- *theorem* append_inj_right
-- \+/\- *theorem* append_inj_left'
-- \+/\- *theorem* append_inj_right'
-- \+/\- *theorem* append_left_cancel
-- \+/\- *theorem* append_right_cancel
 
 Modified data/set/basic.lean
-- \+/\- *theorem* preimage_image_eq
-- \+/\- *theorem* image_preimage_eq
 - \+/\- *theorem* preimage_image_eq
 - \+/\- *theorem* image_preimage_eq
 
@@ -611,11 +621,6 @@ Modified logic/basic.lean
 - \+ *theorem* exists_prop_of_true
 - \+ *theorem* forall_prop_of_false
 - \+ *theorem* exists_prop_of_false
-- \+/\- *theorem* not_imp_of_and_not
-- \+/\- *theorem* not_and_not_right
-- \+/\- *theorem* not_and_of_not_or_not
-- \+/\- *def* decidable_of_iff
-- \+/\- *def* decidable_of_iff'
 - \+/\- *def* decidable_of_iff
 - \+/\- *def* decidable_of_iff'
 
@@ -645,7 +650,6 @@ chore(group_theory): fixups
 #### Estimated changes
 Modified algebra/group.lean
 - \- *theorem* mul
-- \- *theorem* mul
 - \- *def* is_group_hom
 - \- *def* is_group_anti_hom
 
@@ -654,10 +658,8 @@ Modified group_theory/coset.lean
 
 Modified group_theory/order_of_element.lean
 
+
 Modified group_theory/subgroup.lean
-- \+/\- *lemma* trivial_eq_closure
-- \+/\- *lemma* trivial_ker_of_inj
-- \+/\- *lemma* inj_iff_trivial_ker
 - \+/\- *lemma* trivial_eq_closure
 - \+/\- *lemma* trivial_ker_of_inj
 - \+/\- *lemma* inj_iff_trivial_ker
@@ -666,13 +668,14 @@ Modified group_theory/submonoid.lean
 
 
 
+
 ## [2018-04-16 19:39:05-04:00](https://github.com/leanprover-community/mathlib/commit/4f42fbf)
 feat(data/option): more option stuff
 #### Estimated changes
 Modified algebra/big_operators.lean
 
+
 Modified algebra/group.lean
-- \+/\- *def* is_group_hom
 - \+/\- *def* is_group_hom
 
 Modified data/list/basic.lean
@@ -721,59 +724,54 @@ chore(*): trailing spaces
 #### Estimated changes
 Modified algebra/archimedean.lean
 - \+/\- *lemma* pow_unbounded_of_gt_one
-- \+/\- *lemma* pow_unbounded_of_gt_one
 
 Modified algebra/euclidean_domain.lean
 - \+/\- *lemma* mod_zero
 - \+/\- *lemma* mod_one
-- \+/\- *lemma* mod_zero
-- \+/\- *lemma* mod_one
-- \+/\- *theorem* gcd_zero_left
-- \+/\- *theorem* gcd_one_left
 - \+/\- *theorem* gcd_zero_left
 - \+/\- *theorem* gcd_one_left
 
 Modified algebra/ordered_group.lean
 
+
 Modified algebra/ring.lean
+
 
 Modified analysis/metric_space.lean
 
+
 Modified data/int/modeq.lean
-- \+/\- *theorem* modeq_neg
 - \+/\- *theorem* modeq_neg
 
 Modified data/nat/choose.lean
-- \+/\- *lemma* choose_succ_self
 - \+/\- *lemma* choose_succ_self
 
 Modified data/nat/prime.lean
 - \+/\- *lemma* prod_factors
 - \+/\- *lemma* mem_list_primes_of_dvd_prod
-- \+/\- *lemma* prod_factors
-- \+/\- *lemma* mem_list_primes_of_dvd_prod
 
 Modified data/num/basic.lean
 
+
 Modified data/real/cau_seq.lean
+
 
 Modified data/seq/wseq.lean
 
+
 Modified data/set/function.lean
 
+
 Modified logic/function.lean
-- \+/\- *lemma* hfunext
 - \+/\- *lemma* hfunext
 
 Modified order/galois_connection.lean
 
+
 Modified order/order_iso.lean
 
+
 Modified set_theory/cofinality.lean
-- \+/\- *theorem* cof_zero
-- \+/\- *theorem* cof_eq_zero
-- \+/\- *theorem* cof_succ
-- \+/\- *theorem* cof_eq_one_iff_is_succ
 - \+/\- *theorem* cof_zero
 - \+/\- *theorem* cof_eq_zero
 - \+/\- *theorem* cof_succ
@@ -781,15 +779,18 @@ Modified set_theory/cofinality.lean
 
 Modified set_theory/ordinal_notation.lean
 - \+/\- *theorem* split_eq_scale_split'
-- \+/\- *theorem* split_eq_scale_split'
 
 Modified tactic/alias.lean
 
+
 Modified tactic/norm_num.lean
+
 
 Modified tactic/ring.lean
 
+
 Modified tests/examples.lean
+
 
 
 
@@ -810,7 +811,6 @@ Modified data/bool.lean
 
 Modified data/option.lean
 - \+ *lemma* is_none_iff_eq_none
-- \+/\- *def* to_list
 - \+/\- *def* to_list
 
 Modified logic/basic.lean
@@ -843,9 +843,9 @@ Modified group_theory/coset.lean
 - \+/\- *def* left_cosets
 - \+ *def* left_cosets.left_coset
 - \+ *def* left_coset_equiv_subgroup
-- \+/\- *def* left_cosets
 
 Modified group_theory/order_of_element.lean
+
 
 
 
@@ -864,6 +864,7 @@ Created docs/theories/topological_spaces.md
 Adding some notes on calc
 #### Estimated changes
 Modified docs/extras.md
+
 
 Created docs/extras/calc.md
 - \+ *lemma* lt_of_lt_of_le
@@ -891,7 +892,9 @@ feat(algebra/big_operators): update prod_bij_ne_one ([#100](https://github.com/l
 #### Estimated changes
 Modified algebra/big_operators.lean
 
+
 Modified linear_algebra/basic.lean
+
 
 
 
@@ -936,10 +939,12 @@ Modified .travis.yml
 
 
 
+
 ## [2018-04-11 16:41:07+02:00](https://github.com/leanprover-community/mathlib/commit/b13f404)
 chore(.travis.yml): show some elan
 #### Estimated changes
 Modified .travis.yml
+
 
 
 
@@ -956,6 +961,7 @@ Modified group_theory/subgroup.lean
 - \+ *def* closure
 
 Modified group_theory/submonoid.lean
+
 
 
 
@@ -983,29 +989,11 @@ Modified group_theory/coset.lean
 - \+ *lemma* left_cosets_equiv_subgroup
 - \+ *lemma* Union_left_cosets_eq_univ
 - \+ *lemma* group_equiv_left_cosets_times_subgroup
-- \+/\- *lemma* mem_left_coset
-- \+/\- *lemma* mem_right_coset
-- \+/\- *lemma* left_coset_equiv_rel
-- \+/\- *lemma* left_coset_assoc
-- \+/\- *lemma* right_coset_assoc
-- \+/\- *lemma* left_coset_right_coset
-- \+/\- *lemma* mem_own_left_coset
-- \+/\- *lemma* mem_own_right_coset
-- \+/\- *lemma* mem_left_coset_left_coset
-- \+/\- *lemma* mem_right_coset_right_coset
-- \+/\- *lemma* mem_left_coset_iff
-- \+/\- *lemma* mem_right_coset_iff
-- \+/\- *lemma* left_coset_mem_left_coset
-- \+/\- *lemma* right_coset_mem_right_coset
-- \+/\- *theorem* normal_of_eq_cosets
 - \+/\- *theorem* normal_of_eq_cosets
 - \+/\- *def* left_coset
 - \+/\- *def* right_coset
 - \+/\- *def* left_coset_equiv
 - \+ *def* left_cosets
-- \+/\- *def* left_coset
-- \+/\- *def* right_coset
-- \+/\- *def* left_coset_equiv
 
 Created group_theory/order_of_element.lean
 - \+ *lemma* mem_range_iff_mem_finset_range_of_mod_eq
@@ -1025,7 +1013,6 @@ Created group_theory/order_of_element.lean
 Modified group_theory/subgroup.lean
 - \+/\- *lemma* injective_mul
 - \- *lemma* mem_range_iff_mem_finset_range_of_mod_eq
-- \+/\- *lemma* injective_mul
 - \- *lemma* mul_image
 - \- *lemma* subgroup_mem_cosets
 - \- *lemma* cosets_disjoint
@@ -1062,16 +1049,8 @@ Modified group_theory/coset.lean
 - \+ *lemma* mem_right_coset_iff
 - \+/\- *lemma* left_coset_mem_left_coset
 - \+/\- *lemma* right_coset_mem_right_coset
-- \+/\- *lemma* left_coset_assoc
-- \+/\- *lemma* right_coset_assoc
-- \+/\- *lemma* left_coset_right_coset
-- \+/\- *lemma* left_coset_mem_left_coset
-- \+/\- *lemma* right_coset_mem_right_coset
-- \+/\- *lemma* one_left_coset
 - \- *lemma* one_right_coset
 - \- *lemma* mem_mem_left_coset
-- \+/\- *theorem* normal_of_eq_cosets
-- \+/\- *theorem* eq_cosets_of_normal
 - \+/\- *theorem* normal_of_eq_cosets
 - \+/\- *theorem* eq_cosets_of_normal
 
@@ -1086,14 +1065,11 @@ Modified group_theory/subgroup.lean
 - \+ *lemma* inj_of_trivial_ker
 - \+ *lemma* trivial_ker_of_inj
 - \+ *lemma* inj_iff_trivial_ker
-- \+/\- *lemma* mem_norm_comm
 - \- *lemma* eq_one_of_trivial_mem
 - \- *lemma* trivial_mem_of_eq_one
 - \- *lemma* mem_ker_one
-- \+/\- *lemma* one_ker_inv
 - \- *lemma* ker_inv
 - \- *lemma* inv_ker
-- \+/\- *lemma* inv_iff_ker
 - \- *lemma* inj_of_trivial_kernel
 - \- *lemma* trivial_kernel_of_inj
 - \- *lemma* inj_iff_trivial_kernel
@@ -1121,30 +1097,9 @@ Modified group_theory/coset.lean
 - \+/\- *lemma* mem_left_coset_left_coset
 - \+/\- *lemma* mem_right_coset_right_coset
 - \+/\- *lemma* mem_mem_left_coset
-- \+/\- *lemma* mem_left_coset
-- \+/\- *lemma* mem_right_coset
-- \+/\- *lemma* left_coset_equiv_rel
-- \+/\- *lemma* left_coset_assoc
-- \+/\- *lemma* right_coset_assoc
-- \+/\- *lemma* left_coset_right_coset
-- \+/\- *lemma* left_coset_mem_left_coset
-- \+/\- *lemma* right_coset_mem_right_coset
-- \+/\- *lemma* one_left_coset
-- \+/\- *lemma* one_right_coset
-- \+/\- *lemma* mem_own_left_coset
-- \+/\- *lemma* mem_own_right_coset
-- \+/\- *lemma* mem_left_coset_left_coset
-- \+/\- *lemma* mem_right_coset_right_coset
-- \+/\- *lemma* mem_mem_left_coset
 - \+/\- *theorem* normal_of_eq_cosets
 - \+/\- *theorem* eq_cosets_of_normal
 - \+/\- *theorem* normal_iff_eq_cosets
-- \+/\- *theorem* normal_of_eq_cosets
-- \+/\- *theorem* eq_cosets_of_normal
-- \+/\- *theorem* normal_iff_eq_cosets
-- \+/\- *def* left_coset
-- \+/\- *def* right_coset
-- \+/\- *def* left_coset_equiv
 - \+/\- *def* left_coset
 - \+/\- *def* right_coset
 - \+/\- *def* left_coset_equiv
@@ -1164,24 +1119,6 @@ Modified group_theory/subgroup.lean
 - \+/\- *lemma* inj_of_trivial_kernel
 - \+/\- *lemma* trivial_kernel_of_inj
 - \+/\- *lemma* inj_iff_trivial_kernel
-- \+/\- *lemma* injective_mul
-- \+/\- *lemma* mem_norm_comm
-- \+/\- *lemma* eq_one_of_trivial_mem
-- \+/\- *lemma* trivial_mem_of_eq_one
-- \+/\- *lemma* mem_ker_one
-- \+/\- *lemma* one_ker_inv
-- \+/\- *lemma* inv_ker_one
-- \+/\- *lemma* ker_inv
-- \+/\- *lemma* inv_ker
-- \+/\- *lemma* one_iff_ker_inv
-- \+/\- *lemma* inv_iff_ker
-- \+/\- *lemma* inj_of_trivial_kernel
-- \+/\- *lemma* trivial_kernel_of_inj
-- \+/\- *lemma* inj_iff_trivial_kernel
-- \+/\- *def* cosets
-- \+/\- *def* trivial
-- \+/\- *def* center
-- \+/\- *def* kernel
 - \+/\- *def* cosets
 - \+/\- *def* trivial
 - \+/\- *def* center
@@ -1195,19 +1132,10 @@ feat(group_theory): add left/right cosets and normal subgroups
 Modified algebra/big_operators.lean
 - \+/\- *theorem* is_group_hom.prod
 - \+/\- *theorem* is_group_anti_hom.prod
-- \+/\- *theorem* is_group_hom.prod
-- \+/\- *theorem* is_group_anti_hom.prod
 
 Modified algebra/group.lean
 - \+/\- *theorem* mul
 - \+/\- *theorem* inv
-- \+/\- *theorem* mul
-- \+/\- *theorem* inv
-- \+/\- *theorem* mul
-- \+/\- *theorem* inv
-- \+/\- *theorem* mul
-- \+/\- *theorem* inv
-- \+/\- *def* is_group_hom
 - \+/\- *def* is_group_hom
 
 Created group_theory/coset.lean
@@ -1260,7 +1188,6 @@ Modified group_theory/submonoid.lean
 - \+/\- *lemma* is_submonoid.pow_mem
 - \+ *lemma* is_submonoid.power_subset
 - \+ *lemma* is_submonoid.list_prod_mem
-- \+/\- *lemma* is_submonoid.pow_mem
 - \+ *theorem* exists_list_of_mem_closure
 
 
@@ -1284,6 +1211,7 @@ feat(group_theory): add subtype instanes for group and monoid; monoid closure
 #### Estimated changes
 Modified group_theory/subgroup.lean
 
+
 Modified group_theory/submonoid.lean
 - \+ *lemma* is_submonoid_closure
 - \+ *def* closure
@@ -1295,9 +1223,6 @@ refactor(algebra): move is_submonoid to group_theory and base is_subgroup on is_
 #### Estimated changes
 Modified algebra/group.lean
 - \+/\- *theorem* inv_is_group_anti_hom
-- \+/\- *theorem* inv_is_group_anti_hom
-- \+/\- *def* is_group_hom
-- \+/\- *def* is_group_anti_hom
 - \+/\- *def* is_group_hom
 - \+/\- *def* is_group_anti_hom
 
@@ -1305,6 +1230,7 @@ Modified algebra/group_power.lean
 - \- *def* powers
 
 Modified data/list/basic.lean
+
 
 Modified group_theory/subgroup.lean
 - \+ *lemma* is_subgroup.gpow_mem
@@ -1315,15 +1241,10 @@ Modified group_theory/subgroup.lean
 - \+/\- *lemma* subgroup_mem_cosets
 - \+/\- *lemma* cosets_disjoint
 - \- *lemma* inv_mem
-- \+/\- *lemma* inv_mem_iff
 - \- *lemma* mul_mem
-- \+/\- *lemma* mul_image
-- \+/\- *lemma* subgroup_mem_cosets
-- \+/\- *lemma* cosets_disjoint
 - \- *lemma* is_subgroup_range_gpow
 - \+ *theorem* is_subgroup.of_div
 - \+ *def* gpowers
-- \+/\- *def* cosets
 - \+/\- *def* cosets
 
 Created group_theory/submonoid.lean
@@ -1334,29 +1255,15 @@ Modified ring_theory/localization.lean
 
 
 
+
 ## [2018-04-09 14:39:12-04:00](https://github.com/leanprover-community/mathlib/commit/bd0a555)
 fix(algebra/group_power): remove has_smul
 This was causing notation overload problems with module smul
 #### Estimated changes
 Modified algebra/archimedean.lean
 
+
 Modified algebra/group_power.lean
-- \+/\- *theorem* add_monoid.mul_smul'
-- \+/\- *theorem* add_monoid.smul_add
-- \+/\- *theorem* add_monoid.neg_smul
-- \+/\- *theorem* add_monoid.smul_neg_comm
-- \+/\- *theorem* gpow_coe_nat
-- \+/\- *theorem* gsmul_coe_nat
-- \+/\- *theorem* gpow_of_nat
-- \+/\- *theorem* gsmul_of_nat
-- \+/\- *theorem* gpow_neg_succ
-- \+/\- *theorem* gsmul_neg_succ
-- \+/\- *theorem* gsmul_add_comm
-- \+/\- *theorem* gsmul_eq_mul
-- \+/\- *theorem* gsmul_eq_mul'
-- \+/\- *theorem* mul_gsmul_left
-- \+/\- *theorem* mul_gsmul_assoc
-- \+/\- *theorem* add_monoid.smul_nonneg
 - \+/\- *theorem* add_monoid.mul_smul'
 - \+/\- *theorem* add_monoid.smul_add
 - \+/\- *theorem* add_monoid.neg_smul
@@ -1378,6 +1285,7 @@ Modified data/multiset.lean
 
 
 
+
 ## [2018-04-09 11:32:20+02:00](https://github.com/leanprover-community/mathlib/commit/b02733d)
 fix(data/finset): change argument order of finset.induction(_on) so that the induction tactic accepts them
 #### Estimated changes
@@ -1385,12 +1293,11 @@ Modified data/finset.lean
 
 
 
+
 ## [2018-04-09 10:30:13+02:00](https://github.com/leanprover-community/mathlib/commit/018cfdd)
 feat(linear_algebra/multivariate_polynomial): make theory computational
 #### Estimated changes
 Modified linear_algebra/multivariate_polynomial.lean
-- \+/\- *lemma* finset.bind_singleton2
-- \+/\- *lemma* finsupp.single_induction_on
 - \+/\- *lemma* finset.bind_singleton2
 - \+/\- *lemma* finsupp.single_induction_on
 
@@ -1425,15 +1332,8 @@ Modified analysis/measure_theory/lebesgue_measure.lean
 - \+/\- *lemma* lebesgue_Ico
 - \+/\- *lemma* lebesgue_Ioo
 - \+/\- *lemma* lebesgue_singleton
-- \+/\- *lemma* lebesgue_Ico
-- \+/\- *lemma* lebesgue_Ioo
-- \+/\- *lemma* lebesgue_singleton
 
 Modified analysis/measure_theory/measure_space.lean
-- \+/\- *lemma* measure_space_eq
-- \+/\- *lemma* measure_empty
-- \+/\- *lemma* measure_mono
-- \+/\- *lemma* measure_Union_le_tsum_nat
 - \+/\- *lemma* measure_space_eq
 - \+/\- *lemma* measure_empty
 - \+/\- *lemma* measure_mono
@@ -1446,11 +1346,10 @@ fix(*): update to lean
 #### Estimated changes
 Modified .travis.yml
 
+
 Modified algebra/group_power.lean
 - \+/\- *lemma* pow_abs
 - \+/\- *lemma* pow_inv
-- \+/\- *lemma* pow_abs
-- \+/\- *lemma* pow_inv
 - \+/\- *theorem* mul_pow
 - \+/\- *theorem* inv_pow
 - \+/\- *theorem* pow_inv_comm
@@ -1458,30 +1357,22 @@ Modified algebra/group_power.lean
 - \+/\- *theorem* one_div_pow
 - \+/\- *theorem* division_ring.inv_pow
 - \+/\- *theorem* div_pow
-- \+/\- *theorem* mul_pow
-- \+/\- *theorem* inv_pow
-- \+/\- *theorem* pow_inv_comm
-- \+/\- *theorem* inv_gpow
-- \+/\- *theorem* one_div_pow
-- \+/\- *theorem* division_ring.inv_pow
-- \+/\- *theorem* div_pow
-- \+/\- *def* powers
 - \+/\- *def* powers
 
 Modified analysis/limits.lean
 
+
 Modified analysis/measure_theory/outer_measure.lean
 
+
 Modified data/int/basic.lean
-- \+/\- *lemma* shiftl_eq_mul_pow
-- \+/\- *lemma* shiftr_eq_div_pow
 - \+/\- *lemma* shiftl_eq_mul_pow
 - \+/\- *lemma* shiftr_eq_div_pow
 
 Modified data/nat/sqrt.lean
 
+
 Modified data/pnat.lean
-- \+/\- *theorem* pow_coe
 - \+/\- *theorem* pow_coe
 
 Modified group_theory/subgroup.lean
@@ -1490,38 +1381,31 @@ Modified group_theory/subgroup.lean
 - \+/\- *lemma* pow_order_of_eq_one
 - \+/\- *lemma* pow_eq_mod_order_of
 - \+/\- *lemma* order_eq_card_range_gpow
-- \+/\- *lemma* is_subgroup_range_gpow
-- \+/\- *lemma* exists_pow_eq_one
-- \+/\- *lemma* pow_order_of_eq_one
-- \+/\- *lemma* pow_eq_mod_order_of
-- \+/\- *lemma* order_eq_card_range_gpow
 
 Modified leanpkg.toml
 
+
 Modified linear_algebra/multivariate_polynomial.lean
+
 
 Modified number_theory/pell.lean
 
+
 Modified set_theory/cardinal.lean
-- \+/\- *theorem* nat_cast_pow
 - \+/\- *theorem* nat_cast_pow
 
 Modified set_theory/cofinality.lean
 
+
 Modified set_theory/ordinal.lean
-- \+/\- *theorem* nat_cast_power
-- \+/\- *theorem* mul_omega_power_power
 - \+/\- *theorem* nat_cast_power
 - \+/\- *theorem* mul_omega_power_power
 
 Modified set_theory/ordinal_notation.lean
 - \+ *theorem* power_def
 - \+/\- *theorem* repr_power
-- \+/\- *theorem* repr_power
 
 Modified tactic/ring.lean
-- \+/\- *theorem* pow_add_rev
-- \+/\- *theorem* pow_add_rev_right
 - \+/\- *theorem* pow_add_rev
 - \+/\- *theorem* pow_add_rev_right
 
@@ -1546,7 +1430,6 @@ Created data/erased.lean
 
 Modified data/set/basic.lean
 - \+/\- *theorem* mem_singleton_iff
-- \+/\- *theorem* mem_singleton_iff
 
 
 
@@ -1555,7 +1438,9 @@ fix(travis.yml): fix travis setup for new nightlies
 #### Estimated changes
 Modified .travis.yml
 
+
 Modified leanpkg.toml
+
 
 
 
@@ -1567,11 +1452,11 @@ Modified leanpkg.toml
 
 
 
+
 ## [2018-04-05 00:59:52-04:00](https://github.com/leanprover-community/mathlib/commit/08f19fd)
 chore(data/nat/prime): style and minor modifications
 #### Estimated changes
 Modified data/nat/prime.lean
-- \+/\- *lemma* perm_of_prod_eq_prod
 - \+/\- *lemma* perm_of_prod_eq_prod
 - \+ *theorem* factors_lemma
 
@@ -1629,6 +1514,7 @@ Modified data/nat/basic.lean
 
 
 
+
 ## [2018-04-05 00:13:56-04:00](https://github.com/leanprover-community/mathlib/commit/47f1384)
 doc(docs/extras): Adding notes on simp
 #### Estimated changes
@@ -1646,21 +1532,25 @@ Modified docs/extras/conv.md
 
 
 
+
 ## [2018-04-05 00:07:53-04:00](https://github.com/leanprover-community/mathlib/commit/c87f1e6)
 fix(*): finish lean update
 #### Estimated changes
 Modified data/pnat.lean
 - \+ *theorem* pow_coe
 - \+/\- *def* pow
-- \+/\- *def* pow
 
 Modified leanpkg.toml
 
+
 Modified set_theory/ordinal_notation.lean
+
 
 Modified tactic/norm_num.lean
 
+
 Modified tests/norm_num.lean
+
 
 
 
@@ -1670,17 +1560,16 @@ also add mathlib nightly version to leanpkg.toml
 #### Estimated changes
 Modified algebra/archimedean.lean
 
+
 Modified algebra/big_operators.lean
 - \+/\- *lemma* prod_const_one
 - \+ *lemma* sum_const_zero
-- \+/\- *lemma* prod_const_one
 
 Modified algebra/group.lean
 - \+ *def* additive
 - \+ *def* multiplicative
 
 Modified algebra/group_power.lean
-- \+/\- *lemma* pow_abs
 - \+/\- *lemma* pow_abs
 - \+/\- *theorem* pow_zero
 - \+/\- *theorem* add_monoid.zero_smul
@@ -1742,60 +1631,31 @@ Modified algebra/group_power.lean
 - \+ *theorem* mul_gsmul_left
 - \+/\- *theorem* mul_gsmul_assoc
 - \+/\- *theorem* add_monoid.smul_nonneg
-- \+/\- *theorem* pow_zero
 - \- *theorem* smul_succ
-- \+/\- *theorem* add_monoid.smul_one
 - \- *theorem* smul_succ'
 - \- *theorem* smul_two
-- \+/\- *theorem* add_monoid.zero_smul
 - \- *theorem* add_monoid.smul_mul
-- \+/\- *theorem* add_monoid.one_smul
 - \- *theorem* smul_bit1
-- \+/\- *theorem* pow_mul_comm
-- \+/\- *theorem* list.sum_repeat
-- \+/\- *theorem* nat.pow_eq_pow
-- \+/\- *theorem* add_monoid.add_smul
-- \+/\- *theorem* add_monoid.neg_smul
-- \+/\- *theorem* gpow_coe_nat
-- \+/\- *theorem* gpow_zero
-- \+/\- *theorem* gpow_one
 - \- *theorem* gsmul_one
-- \+/\- *theorem* one_gpow
-- \+/\- *theorem* gpow_neg
 - \- *theorem* gsmul_neg
-- \+/\- *theorem* gpow_neg_one
 - \- *theorem* gsmul_neg_one
-- \+/\- *theorem* inv_gpow
-- \+/\- *theorem* gpow_add
-- \+/\- *theorem* gpow_mul_comm
-- \+/\- *theorem* gpow_mul
-- \+/\- *theorem* gsmul_mul
-- \+/\- *theorem* gpow_bit0
-- \+/\- *theorem* gpow_bit1
 - \- *theorem* gsmul_bit1
-- \+/\- *theorem* add_monoid.smul_eq_mul
-- \+/\- *theorem* add_monoid.smul_eq_mul'
-- \+/\- *theorem* add_monoid.mul_smul_assoc
 - \- *theorem* add_monoid.mul_smul_right
-- \+/\- *theorem* gsmul_eq_mul
-- \+/\- *theorem* gsmul_eq_mul'
-- \+/\- *theorem* mul_gsmul_assoc
 - \- *theorem* mul_gsmul_right
-- \+/\- *theorem* add_monoid.smul_nonneg
 - \+ *def* add_monoid.smul
 - \+/\- *def* gpow
 - \+ *def* gsmul
-- \+/\- *def* gpow
 
 Modified analysis/limits.lean
 
+
 Modified analysis/measure_theory/outer_measure.lean
+
 
 Modified analysis/topology/topological_space.lean
 
+
 Modified data/int/basic.lean
-- \+/\- *lemma* shiftl_eq_mul_pow
-- \+/\- *lemma* shiftr_eq_div_pow
 - \+/\- *lemma* shiftl_eq_mul_pow
 - \+/\- *lemma* shiftr_eq_div_pow
 
@@ -1804,12 +1664,12 @@ Modified data/multiset.lean
 - \+/\- *theorem* prod_repeat
 - \+ *theorem* sum_repeat
 - \+/\- *theorem* count_smul
-- \+/\- *theorem* prod_repeat
-- \+/\- *theorem* count_smul
 
 Modified data/nat/sqrt.lean
 
+
 Modified data/real/basic.lean
+
 
 Modified data/set/lattice.lean
 - \- *lemma* subset.antisymm_iff
@@ -1822,35 +1682,33 @@ Modified group_theory/subgroup.lean
 - \+/\- *lemma* pow_eq_mod_order_of
 - \+/\- *lemma* gpow_eq_mod_order_of
 - \+/\- *lemma* order_eq_card_range_gpow
-- \+/\- *lemma* is_subgroup_range_gpow
-- \+/\- *lemma* exists_gpow_eq_one
-- \+/\- *lemma* exists_pow_eq_one
-- \+/\- *lemma* pow_order_of_eq_one
-- \+/\- *lemma* pow_eq_mod_order_of
-- \+/\- *lemma* gpow_eq_mod_order_of
-- \+/\- *lemma* order_eq_card_range_gpow
 
 Modified leanpkg.toml
 
+
 Modified linear_algebra/multivariate_polynomial.lean
+
 
 Modified number_theory/pell.lean
 
+
 Modified ring_theory/localization.lean
 
+
 Modified set_theory/cardinal.lean
-- \+/\- *theorem* nat_cast_pow
 - \+/\- *theorem* nat_cast_pow
 
 Modified set_theory/ordinal.lean
 - \+/\- *theorem* nat_cast_power
-- \+/\- *theorem* nat_cast_power
 
 Modified tactic/norm_num.lean
 
+
 Modified tactic/ring.lean
 
+
 Modified tests/norm_num.lean
+
 
 
 
@@ -1858,6 +1716,7 @@ Modified tests/norm_num.lean
 feat(data/set/basic): add some more set lemmas
 #### Estimated changes
 Modified data/analysis/filter.lean
+
 
 Modified data/set/basic.lean
 - \+ *theorem* subset.antisymm_iff
@@ -1880,18 +1739,9 @@ Modified data/set/basic.lean
 - \+ *theorem* image_compl_subset
 - \+ *theorem* subset_image_compl
 - \+ *theorem* image_compl_eq
-- \+/\- *theorem* eq_empty_of_subset_empty
-- \+/\- *theorem* exists_mem_of_ne_empty
-- \+/\- *theorem* subset_empty_iff
-- \+/\- *theorem* mem_univ
 - \- *theorem* mem_univ_iff
 - \- *theorem* mem_univ_eq
-- \+/\- *theorem* eq_univ_of_univ_subset
-- \+/\- *theorem* union_compl_self
-- \+/\- *theorem* compl_union_self
 - \- *theorem* compl_subset_of_compl_subset
-- \+/\- *theorem* image_empty
-- \+/\- *theorem* image_inter
 - \- *theorem* mem_image_compl
 
 
