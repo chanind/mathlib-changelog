@@ -5,6 +5,7 @@ import Layout from "../../components/Layout";
 import MathlibGithubMarkdown from "../../components/MathlibGithubMarkdown";
 import { getCommit } from "../../data/database";
 import { ChangeType, CommitData } from "../../data/types";
+import formatTimestamp from "../../util/formatTimestamp";
 
 export const getStaticPaths: GetStaticPaths = () => ({
   paths: [],
@@ -50,7 +51,9 @@ const Commit: NextPage<CommitProps> = ({ commit }) => {
   return (
     <Layout>
       <h1 className="text-xl">
-        <span className="text-gray-400">Commit</span> {commit.sha}
+        <span className="text-gray-400">Commit</span>{" "}
+        {formatTimestamp(commit.timestamp)}{" "}
+        <span className="text-gray-400">{commit.sha}</span>
       </h1>
       <a
         href={`https://github.com/leanprover-community/mathlib/commit/${commit.sha}`}

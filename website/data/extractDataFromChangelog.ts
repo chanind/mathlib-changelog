@@ -1,4 +1,5 @@
 import { get, set } from "lodash";
+import summarizeHeadline from "../util/summarizeHeadline";
 import { ChangelogData, ChangeType, ItemType } from "./types";
 
 export interface ChangelogItemData {
@@ -28,7 +29,7 @@ export const extractItemsData = (
         const [changeType, itemType, itemName] = change;
         const history = get(itemsHistoryMapping, [itemType, itemName], []);
         const item: ChangelogItemEvent = {
-          commitHeadline: commit.message.split(/\n/)[0].trim(),
+          commitHeadline: summarizeHeadline(commit.message),
           commitTimestamp: commit.timestamp,
           commitSha: commit.sha,
           diffPath: diff.path,
