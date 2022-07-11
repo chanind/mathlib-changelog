@@ -1,3 +1,37 @@
+## [2022-07-11 02:42:30](https://github.com/leanprover-community/mathlib/commit/e3e4cc6)
+feat(data/nat/basic): split `exists_lt_and_lt_iff_not_dvd` into `if` and `iff` lemmas ([#15099](https://github.com/leanprover-community/mathlib/pull/15099))
+Pull out from `exists_lt_and_lt_iff_not_dvd` ("`n` is not divisible by `a` iff it is between `a * k` and `a * (k + 1)` for some `k`") a separate lemma proving the forward direction (which doesn't need the `0 < a` assumption) and use this to golf the `iff` lemma.
+Also renames the lemma to the more descriptive `not_dvd_{of,iff}_between_consec_multiples`.
+#### Estimated changes
+Modified src/data/nat/basic.lean
+- \+ *lemma* not_dvd_of_between_consec_multiples
+- \+ *lemma* not_dvd_iff_between_consec_multiples
+- \- *lemma* exists_lt_and_lt_iff_not_dvd
+
+Modified src/data/nat/multiplicity.lean
+
+
+
+## [2022-07-11 02:42:29](https://github.com/leanprover-community/mathlib/commit/67779f7)
+feat(algebra/category/BoolRing): The equivalence between Boolean rings and Boolean algebras ([#15019](https://github.com/leanprover-community/mathlib/pull/15019))
+as the categorical equivalence `BoolRing ≌ BoolAlg`.
+#### Estimated changes
+Modified src/algebra/category/BoolRing.lean
+- \+ *def* BoolRing_equiv_BoolAlg
+
+
+
+## [2022-07-11 00:36:10](https://github.com/leanprover-community/mathlib/commit/b18b71c)
+refactor(data/finset/lattice): respell `finset.max/finset.min` using `sup/inf coe` ([#15217](https://github.com/leanprover-community/mathlib/pull/15217))
+This PR simply redefines
+* `finset.max s` with the defeq `finset.sup s coe`,
+* `finset.min s` with the defeq `finset.sup/inf s coe`.
+This arose from PR [#15212](https://github.com/leanprover-community/mathlib/pull/15212).
+#### Estimated changes
+Modified src/data/finset/lattice.lean
+
+
+
 ## [2022-07-10 19:29:29](https://github.com/leanprover-community/mathlib/commit/ad08001)
 feat(category_theory/limits): opposites of limit pullback cones ([#14526](https://github.com/leanprover-community/mathlib/pull/14526))
 Among other similar statements, this PR associates a `pullback_cone f g` to a `pushout_cocone f.op g.op`, and it is a limit pullback cone if the original cocone is a colimit cocone.
