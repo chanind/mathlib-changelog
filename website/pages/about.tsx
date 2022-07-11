@@ -7,7 +7,8 @@ const Home: NextPage = () => {
       <div className="flex flex-wrap">
         <h1 className="text-xl">About</h1>
         <p className="mt-4 text-base leading-relaxed text-gray-800">
-          This poject is an auto-updating list of changes from Lean&apos;s{" "}
+          This project is an auto-updating list of changes from{" "}
+          <a href="https://leanprover.github.io/">Lean</a>&apos;s{" "}
           <a
             href="https://github.com/leanprover-community/mathlib"
             target="blank"
