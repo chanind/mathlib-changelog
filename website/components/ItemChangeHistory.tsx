@@ -43,7 +43,7 @@ export const ItemChangeHistory: FC<ChangeHistoryProps> = ({ item }) => (
               </span>
             </div>
             <div className="text-gray-400 pb-2 text-xs">{event.diffPath}</div>
-            <div className="text-gray-800 text-sm pl-2 border-l border-right italic mb-2">
+            <div className="text-gray-800 text-sm pl-2 border-l border-right italic mb-2 truncate">
               {event.commitHeadline}
             </div>
             {getLabel(event.type)} {item.name}

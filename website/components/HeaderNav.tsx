@@ -4,7 +4,7 @@ const HeaderNav = () => (
   <nav className="flex items-center justify-between flex-wrap bg-gray-800 py-4 sm:p-4">
     <Link href="/">
       <div className="flex items-center flex-no-shrink mr-6 cursor-pointer ml-2">
-        <span className="font-semibold text-xl tracking-tight text-white">
+        <span className="font-semibold text-md sm:text-xl tracking-tight text-white">
           Mathlib Changelog
         </span>
       </div>

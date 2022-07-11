@@ -112,7 +112,7 @@ const Changelog: NextPage<ChangelogProps> = ({
               </span>{" "}
               <span className="text-gray-400">{commit.sha}</span>
             </div>
-            <div className="text-gray-800 text-sm pl-2 border-l border-right italic mb-2">
+            <div className="text-gray-800 text-sm pl-2 border-l border-right italic mb-2 truncate">
               {commit.headline}
             </div>
             <div>
