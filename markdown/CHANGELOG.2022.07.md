@@ -1,3 +1,33 @@
+## [2022-07-11 22:33:23](https://github.com/leanprover-community/mathlib/commit/52d4dae)
+feat(representation_theory/monoid_algebra_basis): add some API for `k[G^n]` ([#14308](https://github.com/leanprover-community/mathlib/pull/14308))
+#### Estimated changes
+Modified src/algebra/big_operators/fin.lean
+- \+ *lemma* partial_prod_zero
+- \+ *lemma* partial_prod_succ
+- \+ *lemma* partial_prod_succ'
+- \+/\- *lemma* prod_take_of_fn
+- \+/\- *lemma* prod_of_fn
+- \+ *def* partial_prod
+
+Modified src/representation_theory/basic.lean
+- \+ *lemma* of_mul_action_def
+- \+ *lemma* of_mul_action_apply
+
+Created src/representation_theory/group_cohomology_resolution.lean
+- \+ *lemma* to_tensor_aux_single
+- \+ *lemma* to_tensor_aux_of_mul_action
+- \+ *lemma* of_tensor_aux_single
+- \+ *lemma* of_tensor_aux_comm_of_mul_action
+- \+ *lemma* to_tensor_single
+- \+ *lemma* of_tensor_single
+- \+ *lemma* of_tensor_single'
+- \+ *def* to_tensor_aux
+- \+ *def* of_tensor_aux
+- \+ *def* to_tensor
+- \+ *def* of_tensor
+
+
+
 ## [2022-07-11 16:51:25](https://github.com/leanprover-community/mathlib/commit/00dbc7b)
 fix(.github/workflows): temporarily increase timeout ([#15251](https://github.com/leanprover-community/mathlib/pull/15251))
 Quick hack to fix our olean files after https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/.22saving.20olean.22.3F.
