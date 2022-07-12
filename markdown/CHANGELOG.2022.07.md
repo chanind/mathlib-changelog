@@ -1,3 +1,151 @@
+## [2022-07-12 12:05:18](https://github.com/leanprover-community/mathlib/commit/8284c00)
+feat(algebra/order/monoid_lemmas_zero_lt): add missing lemmas ([#14770](https://github.com/leanprover-community/mathlib/pull/14770))
+#### Estimated changes
+Modified src/algebra/order/monoid_lemmas_zero_lt.lean
+- \+ *lemma* mul_lt_of_lt_one_right
+- \+ *lemma* lt_mul_of_one_lt_right
+- \+ *lemma* mul_lt_of_lt_one_left
+- \+ *lemma* lt_mul_of_one_lt_left
+
+
+
+## [2022-07-12 09:40:23](https://github.com/leanprover-community/mathlib/commit/30daa3c)
+chore(logic/is_empty): add lemmas for subtype, sigma, and psigma ([#15134](https://github.com/leanprover-community/mathlib/pull/15134))
+This reorders the nonempty lemmas to put `sigma` next to `psigma`. The resulting `is_empty` and `nonempty` lemmas are now in the same order.
+#### Estimated changes
+Modified src/logic/is_empty.lean
+- \+ *lemma* is_empty_Prop
+- \+ *lemma* is_empty_sigma
+- \+ *lemma* is_empty_psigma
+- \+ *lemma* is_empty_subtype
+- \+ *lemma* is_empty_ulift
+- \+ *lemma* is_empty_plift
+
+Modified src/logic/nonempty.lean
+- \+/\- *lemma* nonempty_psigma
+
+
+
+## [2022-07-12 08:44:51](https://github.com/leanprover-community/mathlib/commit/a8fdd99)
+feat(probability/moments): Chernoff bound on the upper/lower tail of a real random variable ([#15129](https://github.com/leanprover-community/mathlib/pull/15129))
+For `t` nonnegative such that the cgf exists, `ℙ(ε ≤ X) ≤ exp(-t*ε + cgf X ℙ t)`. We prove a similar result for the lower tail, as well as two corresponding versions using mgf instead of cgf.
+#### Estimated changes
+Modified src/analysis/special_functions/log/basic.lean
+- \+ *lemma* le_exp_log
+
+Modified src/measure_theory/integral/bochner.lean
+- \+ *lemma* mul_meas_ge_le_integral_of_nonneg
+
+Modified src/probability/moments.lean
+- \+/\- *lemma* cgf_zero_fun
+- \+/\- *lemma* mgf_const'
+- \+/\- *lemma* mgf_const
+- \+/\- *lemma* cgf_zero'
+- \+/\- *lemma* mgf_undef
+- \+/\- *lemma* cgf_undef
+- \+/\- *lemma* mgf_pos'
+- \+/\- *lemma* mgf_pos
+- \+ *lemma* mgf_neg
+- \+ *lemma* cgf_neg
+- \+ *lemma* measure_ge_le_exp_mul_mgf
+- \+ *lemma* measure_le_le_exp_mul_mgf
+- \+ *lemma* measure_ge_le_exp_cgf
+- \+ *lemma* measure_le_le_exp_cgf
+- \+/\- *def* mgf
+- \+/\- *def* cgf
+
+
+
+## [2022-07-12 07:50:38](https://github.com/leanprover-community/mathlib/commit/0039a19)
+feat(probability/independence): two tuples indexed by disjoint subsets of an independent family of r.v. are independent ([#15131](https://github.com/leanprover-community/mathlib/pull/15131))
+If `f` is a family of independent random variables and `S,T` are two disjoint finsets, then we have `indep_fun (λ a (i : S), f i a) (λ a (i : T), f i a) μ`.
+Also golf `indep_fun_iff_measure_inter_preimage_eq_mul` and add its `Indep` version: `Indep_fun_iff_measure_inter_preimage_eq_mul`.
+#### Estimated changes
+Modified src/measure_theory/pi_system.lean
+- \+ *lemma* is_pi_system.comap
+
+Modified src/probability/independence.lean
+- \+ *lemma* Indep_fun.indep_fun
+- \+ *lemma* Indep_fun_iff_measure_inter_preimage_eq_mul
+- \+ *lemma* Indep_fun.indep_fun_finset
+
+
+
+## [2022-07-12 03:56:12](https://github.com/leanprover-community/mathlib/commit/d6d3d61)
+feat(tactic/lint): add a linter for `[fintype _]` assumptions ([#15202](https://github.com/leanprover-community/mathlib/pull/15202))
+Adopted from the `decidable` linter.
+#### Estimated changes
+Modified scripts/nolints.txt
+
+
+Modified src/tactic/lint/type_classes.lean
+
+
+
+
+## [2022-07-12 03:56:11](https://github.com/leanprover-community/mathlib/commit/423a8b9)
+feat(tactic/polyrith): a tactic using Sage to solve polynomial equalities with hypotheses ([#14878](https://github.com/leanprover-community/mathlib/pull/14878))
+Created a new tactic called polyrith that solves polynomial equalities through polynomial arithmetic on the hypotheses/proof terms. Similar to how linarith solves linear equalities through linear arithmetic on the hypotheses/proof terms.
+#### Estimated changes
+Modified .github/workflows/bors.yml
+
+
+Modified .github/workflows/build.yml
+
+
+Modified .github/workflows/build.yml.in
+
+
+Modified .github/workflows/build_fork.yml
+
+
+Modified docs/references.bib
+
+
+Created scripts/polyrith_sage.py
+- \+ *def* type_str(type):
+- \+ *def* create_query(type:
+- \+ *def* evaluate_in_sage(query:
+- \+ *def* main():
+
+Created scripts/polyrith_sage_helper.py
+- \+ *def* mk_app(*args:
+- \+ *def* const_to_string(coeff:
+- \+ *def* power_to_string(var:
+- \+ *def* sum_to_string(terms:
+- \+ *def* monomial_to_string(etuple:
+- \+ *def* polynomial_to_string(p)
+
+Modified src/data/buffer/parser/numeral.lean
+
+
+Modified src/tactic/default.lean
+
+
+Created src/tactic/polyrith.lean
+
+
+Created test/polyrith.lean
+
+
+
+
+## [2022-07-12 03:14:44](https://github.com/leanprover-community/mathlib/commit/1f3c2c0)
+chore(set_theory/game/ordinal): minor golf ([#15253](https://github.com/leanprover-community/mathlib/pull/15253))
+#### Estimated changes
+Modified src/set_theory/game/ordinal.lean
+
+
+
+
+## [2022-07-12 03:14:43](https://github.com/leanprover-community/mathlib/commit/623a658)
+doc(set_theory/game/pgame): divide file into sections ([#15250](https://github.com/leanprover-community/mathlib/pull/15250))
+#### Estimated changes
+Modified src/set_theory/game/pgame.lean
+
+
+
+
 ## [2022-07-11 22:33:23](https://github.com/leanprover-community/mathlib/commit/52d4dae)
 feat(representation_theory/monoid_algebra_basis): add some API for `k[G^n]` ([#14308](https://github.com/leanprover-community/mathlib/pull/14308))
 #### Estimated changes
