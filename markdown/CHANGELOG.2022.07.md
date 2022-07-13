@@ -1,3 +1,288 @@
+## [2022-07-12 21:43:25](https://github.com/leanprover-community/mathlib/commit/834488e)
+feat(topology/maps): more `iff` lemmas ([#15165](https://github.com/leanprover-community/mathlib/pull/15165))
+* add `inducing_iff` and `inducing_iff_nhds`;
+* add `embedding_iff`;
+* add `open_embedding_iff_embedding_open` and `open_embedding_iff_continuous_injective_open`;
+* add `open_embedding.is_open_map_iff`;
+* reorder `open_embedding_iff_open_embedding_compose` and `open_embedding_of_open_embedding_compose`, golf.
+#### Estimated changes
+Modified src/topology/category/Top/basic.lean
+
+
+Modified src/topology/maps.lean
+- \+ *lemma* inducing_iff_nhds
+- \+ *lemma* open_embedding_iff_embedding_open
+- \+ *lemma* open_embedding_iff_continuous_injective_open
+- \+ *lemma* open_embedding.is_open_map_iff
+- \+ *lemma* open_embedding.of_comp_iff
+- \+ *lemma* open_embedding.of_comp
+- \- *lemma* open_embedding_of_open_embedding_compose
+- \- *lemma* open_embedding_iff_open_embedding_compose
+
+
+
+## [2022-07-12 21:43:24](https://github.com/leanprover-community/mathlib/commit/7bd4755)
+feat(analysis/special_functions/pow): drop an assumption in `is_o_log_rpow_rpow_at_top` ([#15164](https://github.com/leanprover-community/mathlib/pull/15164))
+Drop an unneeded assumption in `is_o_log_rpow_rpow_at_top`, add a few variants.
+#### Estimated changes
+Modified src/analysis/special_functions/pow.lean
+- \+/\- *lemma* is_o_log_rpow_rpow_at_top
+- \+ *lemma* is_o_abs_log_rpow_rpow_nhds_zero
+- \+ *lemma* is_o_log_rpow_nhds_zero
+- \+ *lemma* tendsto_log_div_rpow_nhds_zero
+- \+ *lemma* tensdto_log_mul_rpow_nhds_zero
+
+
+
+## [2022-07-12 21:43:23](https://github.com/leanprover-community/mathlib/commit/3543262)
+feat(ring_theory/bezout): Define Bézout rings. ([#15091](https://github.com/leanprover-community/mathlib/pull/15091))
+#### Estimated changes
+Created src/ring_theory/bezout.lean
+- \+ *lemma* iff_span_pair_is_principal
+- \+ *lemma* span_gcd
+- \+ *lemma* gcd_dvd_left
+- \+ *lemma* gcd_dvd_right
+- \+ *lemma* dvd_gcd
+- \+ *lemma* gcd_eq_sum
+- \+ *lemma* _root_.function.surjective.is_bezout
+- \+ *lemma* tfae
+- \+ *def* gcd
+- \+ *def* to_gcd_domain
+
+Modified src/ring_theory/noetherian.lean
+- \+ *lemma* fg_induction
+- \+ *lemma* is_noetherian_iff_fg_well_founded
+
+
+
+## [2022-07-12 21:43:22](https://github.com/leanprover-community/mathlib/commit/ece3044)
+feat(algebra/ring/{pi, prod, opposite}): add basic defs for non_unital_ring_hom ([#13958](https://github.com/leanprover-community/mathlib/pull/13958))
+The defs added mimic the corresponding ones for `ring_hom`, wherever possible.
+- [x] depends on: [#13956](https://github.com/leanprover-community/mathlib/pull/13956)
+#### Estimated changes
+Modified src/algebra/ring/opposite.lean
+- \+ *def* non_unital_ring_hom.to_opposite
+- \+ *def* non_unital_ring_hom.from_opposite
+- \+ *def* non_unital_ring_hom.op
+- \+ *def* non_unital_ring_hom.unop
+
+Modified src/algebra/ring/pi.lean
+- \+ *lemma* non_unital_ring_hom_injective
+- \+ *def* pi.eval_non_unital_ring_hom
+- \+ *def* pi.const_non_unital_ring_hom
+
+Modified src/algebra/ring/prod.lean
+- \+ *lemma* coe_fst
+- \+ *lemma* coe_snd
+- \+ *lemma* prod_apply
+- \+ *lemma* fst_comp_prod
+- \+ *lemma* snd_comp_prod
+- \+ *lemma* prod_unique
+- \+ *lemma* prod_map_def
+- \+ *lemma* coe_prod_map
+- \+ *lemma* prod_comp_prod_map
+- \+ *def* fst
+- \+ *def* snd
+- \+ *def* prod_map
+
+
+
+## [2022-07-12 19:18:58](https://github.com/leanprover-community/mathlib/commit/55db072)
+chore(data/set/finite): golf some proofs ([#15273](https://github.com/leanprover-community/mathlib/pull/15273))
+#### Estimated changes
+Modified src/data/set/finite.lean
+
+
+Modified src/data/set/lattice.lean
+- \+ *theorem* Union_eq_range_psigma
+
+
+
+## [2022-07-12 19:18:57](https://github.com/leanprover-community/mathlib/commit/7251bbf)
+feat(analysis/special_functions/trigonometric/angle): equality of twice angles ([#14988](https://github.com/leanprover-community/mathlib/pull/14988))
+Add lemmas about equality of twice `real.angle` values (i.e. equality
+as angles modulo π).
+#### Estimated changes
+Created src/algebra/char_zero/quotient.lean
+- \+ *lemma* zsmul_mem_zmultiples_iff_exists_sub_div
+- \+ *lemma* nsmul_mem_zmultiples_iff_exists_sub_div
+- \+ *lemma* zmultiples_zsmul_eq_zsmul_iff
+- \+ *lemma* zmultiples_nsmul_eq_nsmul_iff
+
+Modified src/analysis/special_functions/trigonometric/angle.lean
+- \+ *lemma* zsmul_eq_iff
+- \+ *lemma* nsmul_eq_iff
+- \+ *lemma* two_zsmul_eq_iff
+- \+ *lemma* two_nsmul_eq_iff
+- \+ *lemma* two_nsmul_eq_zero_iff
+- \+ *lemma* two_zsmul_eq_zero_iff
+
+
+
+## [2022-07-12 16:39:10](https://github.com/leanprover-community/mathlib/commit/89a80e6)
+feat(data/nat/parity): `nat.bit1_div_bit0` ([#15268](https://github.com/leanprover-community/mathlib/pull/15268))
+This PR adds `nat.bit1_div_bit0` and related lemmas. This came up when working with the power series of sin.
+#### Estimated changes
+Modified src/data/nat/parity.lean
+- \+ *lemma* bit0_div_two
+- \+ *lemma* bit1_div_two
+- \+ *lemma* bit0_div_bit0
+- \+ *lemma* bit1_div_bit0
+
+
+
+## [2022-07-12 16:39:09](https://github.com/leanprover-community/mathlib/commit/9c40093)
+chore(*): improve some definitional equalities ([#15083](https://github.com/leanprover-community/mathlib/pull/15083))
+* add `set.mem_diagonal_iff`, move `simp` from `set.mem_diagonal`;
+* add `@[simp]` to `set.prod_subset_compl_diagonal_iff_disjoint`;
+* redefine `sum.map` in terms of `sum.elim`, add `sum.map_inl` and `sum.map_inr`;
+* redefine `sum.swap` in terms of `sum.elim`, add `sum.swap_inl` and `sum.swap_inr`;
+* use `lift_rel_swap_iff` to prove  `swap_le_swap` and `swap_lt_swap`;
+* redefine `equiv.sum_prod_distrib` and `equiv.sigma_sum_distrib` in terms of `sum.elim` and `sum.map`;
+* add `filter.compl_diagonal_mem_prod`;
+* rename `continuous_sum_rec` to `continuous.sum_elim`, use `sum.elim` in the statement;
+* add `continuous.sum_map`;
+* golf `homeomorph.sum_congr` and `homeomorph.sum_prod_distrib`.
+#### Estimated changes
+Modified src/data/set/prod.lean
+- \+/\- *lemma* mem_diagonal
+- \+ *lemma* mem_diagonal_iff
+- \+/\- *lemma* prod_subset_compl_diagonal_iff_disjoint
+
+Modified src/data/sum/basic.lean
+- \+/\- *lemma* map_inl
+- \+/\- *lemma* map_inr
+- \+/\- *lemma* map_map
+- \+/\- *lemma* map_comp_map
+- \+/\- *lemma* map_id_id
+- \+ *lemma* swap_inl
+- \+ *lemma* swap_inr
+- \+/\- *def* swap
+
+Modified src/data/sum/order.lean
+
+
+Modified src/logic/equiv/basic.lean
+- \+ *theorem* sum_prod_distrib_symm_apply_left
+- \+ *theorem* sum_prod_distrib_symm_apply_right
+- \+ *theorem* prod_sum_distrib_symm_apply_left
+- \+ *theorem* prod_sum_distrib_symm_apply_right
+
+Modified src/order/filter/bases.lean
+- \+ *lemma* compl_diagonal_mem_prod
+
+Modified src/topology/constructions.lean
+- \+ *lemma* continuous.sum_elim
+- \+ *lemma* continuous.sum_map
+- \- *lemma* continuous_sum_rec
+
+Modified src/topology/homeomorph.lean
+
+
+
+
+## [2022-07-12 16:39:08](https://github.com/leanprover-community/mathlib/commit/eb091f8)
+feat(data/nat/basic): add `strong_sub_recursion` and `pincer_recursion` ([#15061](https://github.com/leanprover-community/mathlib/pull/15061))
+Adding two recursion principles for `P : ℕ → ℕ → Sort*`
+`strong_sub_recursion`: if for all `a b : ℕ` we can extend `P` from the rectangle strictly below `(a,b)` to `P a b`, then we have `P n m` for all `n m : ℕ`.
+`pincer_recursion`: if we have `P i 0` and `P 0 i` for all `i : ℕ`, and for any `x y : ℕ` we can extend `P` from `(x,y+1)` and `(x+1,y)` to `(x+1,y+1)` then we have `P n m` for all `n m : ℕ`.
+`strong_sub_recursion` is adapted by @vihdzp from @CBirkbeck 's [#14828](https://github.com/leanprover-community/mathlib/pull/14828)
+#### Estimated changes
+Modified src/data/nat/basic.lean
+- \+ *def* strong_sub_recursion
+- \+ *def* pincer_recursion
+
+
+
+## [2022-07-12 14:37:15](https://github.com/leanprover-community/mathlib/commit/13f04ec)
+feat(set_theory/game/pgame): strengthen `lf_or_equiv_of_le` to `lt_or_equiv_of_le` ([#15255](https://github.com/leanprover-community/mathlib/pull/15255))
+#### Estimated changes
+Modified src/set_theory/game/pgame.lean
+- \+ *theorem* lt_or_equiv_of_le
+- \- *theorem* lf_or_equiv_of_le
+
+
+
+## [2022-07-12 14:37:14](https://github.com/leanprover-community/mathlib/commit/0d659de)
+feat(algebra/module/torsion): `R/I`-module structure on `M/IM`. ([#15092](https://github.com/leanprover-community/mathlib/pull/15092))
+#### Estimated changes
+Modified src/algebra/module/torsion.lean
+
+
+
+
+## [2022-07-12 14:37:13](https://github.com/leanprover-community/mathlib/commit/fef5124)
+feat(order/order_iso_nat): generalize `well_founded.monotone_chain_condition` to preorders ([#15073](https://github.com/leanprover-community/mathlib/pull/15073))
+We also clean up the spacing throughout the file.
+#### Estimated changes
+Modified src/order/order_iso_nat.lean
+- \+/\- *lemma* nat_lt_apply
+- \+/\- *lemma* subtype.order_iso_of_nat_apply
+- \+ *lemma* well_founded.monotone_chain_condition'
+- \+/\- *lemma* well_founded.monotone_chain_condition
+- \+/\- *lemma* well_founded.supr_eq_monotonic_sequence_limit
+- \+/\- *theorem* exists_subseq_of_forall_mem_union
+- \+/\- *theorem* exists_increasing_or_nonincreasing_subseq'
+- \+/\- *theorem* exists_increasing_or_nonincreasing_subseq
+- \+/\- *def* nat_gt
+
+Modified src/order/well_founded_set.lean
+
+
+Modified src/ring_theory/artinian.lean
+
+
+
+
+## [2022-07-12 13:45:52](https://github.com/leanprover-community/mathlib/commit/119e166)
+feat(representation_theory/character): formula for the dimension of the invariants in terms of the character ([#15084](https://github.com/leanprover-community/mathlib/pull/15084))
+#### Estimated changes
+Modified src/representation_theory/character.lean
+- \+ *theorem* average_char_eq_finrank_invariants
+
+Modified src/representation_theory/invariants.lean
+- \- *lemma* average_def
+
+
+
+## [2022-07-12 12:46:38](https://github.com/leanprover-community/mathlib/commit/aadba9b)
+feat(order/well_founded_set): any relation is well-founded on `Ø` ([#15266](https://github.com/leanprover-community/mathlib/pull/15266))
+#### Estimated changes
+Modified src/order/well_founded_set.lean
+- \+ *lemma* well_founded_on_empty
+- \+ *lemma* is_wf_empty
+- \+ *theorem* partially_well_ordered_on_empty
+- \+/\- *theorem* is_pwo_empty
+
+
+
+## [2022-07-12 12:46:37](https://github.com/leanprover-community/mathlib/commit/6c5e9fe)
+feat(set_theory/game/pgame): `is_option (-x) (-y) ↔ is_option x y` ([#15256](https://github.com/leanprover-community/mathlib/pull/15256))
+#### Estimated changes
+Modified src/set_theory/game/pgame.lean
+- \+ *theorem* is_option_neg
+- \+ *theorem* is_option_neg_neg
+
+
+
+## [2022-07-12 12:46:36](https://github.com/leanprover-community/mathlib/commit/087bc1f)
+feat(set_theory/game/pgame): add `equiv.comm` ([#15254](https://github.com/leanprover-community/mathlib/pull/15254))
+#### Estimated changes
+Modified src/set_theory/game/pgame.lean
+
+
+
+
+## [2022-07-12 12:46:35](https://github.com/leanprover-community/mathlib/commit/2bca4d6)
+chore(set_theory/ordinal/cantor_normal_form): mark `CNF` as `pp_nodot` ([#15228](https://github.com/leanprover-community/mathlib/pull/15228))
+`b.CNF o` doesn't make much sense, since `b` is the base argument rather than the main argument.
+The existing lemmas all use the `CNF b o` spelling anyway.
+#### Estimated changes
+Modified src/set_theory/ordinal/cantor_normal_form.lean
+- \+/\- *def* CNF
+
+
+
 ## [2022-07-12 12:05:18](https://github.com/leanprover-community/mathlib/commit/8284c00)
 feat(algebra/order/monoid_lemmas_zero_lt): add missing lemmas ([#14770](https://github.com/leanprover-community/mathlib/pull/14770))
 #### Estimated changes
