@@ -1,3 +1,408 @@
+## [2022-07-13 09:50:47](https://github.com/leanprover-community/mathlib/commit/83092fb)
+feat(data/matrix/notation): add `!![1, 2; 3, 4]` notation ([#14991](https://github.com/leanprover-community/mathlib/pull/14991))
+This adds `!![1, 2; 3, 4]` as a matlab-like shorthand for `matrix.of ![![1, 2], ![3, 4]]`. This has special support for empty arrays, where `!![,,,]` is a matrix with 0 rows and 3 columns, and `![;;;]` is a matrix with 3 rows and zero columns.
+#### Estimated changes
+Modified src/data/fin/vec_notation.lean
+
+
+Modified src/data/matrix/notation.lean
+- \+/\- *lemma* one_fin_two
+- \+/\- *lemma* one_fin_three
+
+Modified src/tactic/core.lean
+
+
+Modified src/tactic/reserved_notation.lean
+
+
+Modified test/matrix.lean
+
+
+
+
+## [2022-07-13 09:50:45](https://github.com/leanprover-community/mathlib/commit/01a1824)
+feat(data/polynomial/unit_trinomial): An irreducibility criterion for unit trinomials ([#14914](https://github.com/leanprover-community/mathlib/pull/14914))
+This PR adds an irreducibility criterion for unit trinomials. This is building up to irreducibility of $x^n-x-1$.
+#### Estimated changes
+Created src/data/polynomial/unit_trinomial.lean
+- \+ *lemma* trinomial_def
+- \+ *lemma* trinomial_leading_coeff'
+- \+ *lemma* trinomial_middle_coeff
+- \+ *lemma* trinomial_trailing_coeff'
+- \+ *lemma* trinomial_nat_degree
+- \+ *lemma* trinomial_nat_trailing_degree
+- \+ *lemma* trinomial_leading_coeff
+- \+ *lemma* trinomial_trailing_coeff
+- \+ *lemma* trinomial_mirror
+- \+ *lemma* trinomial_support
+- \+ *lemma* not_is_unit
+- \+ *lemma* card_support_eq_three
+- \+ *lemma* ne_zero
+- \+ *lemma* coeff_is_unit
+- \+ *lemma* leading_coeff_is_unit
+- \+ *lemma* trailing_coeff_is_unit
+- \+ *lemma* is_unit_trinomial_iff
+- \+ *lemma* is_unit_trinomial_iff'
+- \+ *lemma* is_unit_trinomial_iff''
+- \+ *lemma* irreducible_aux1
+- \+ *lemma* irreducible_aux2
+- \+ *lemma* irreducible_aux3
+- \+ *lemma* irreducible_of_coprime
+- \+ *lemma* irreducible_of_is_coprime
+- \+ *def* is_unit_trinomial
+
+
+
+## [2022-07-13 09:50:44](https://github.com/leanprover-community/mathlib/commit/581b694)
+feat(data/polynomial/erase_lead): Characterization of polynomials of fixed support ([#14741](https://github.com/leanprover-community/mathlib/pull/14741))
+This PR adds a lemma characterizing polynomials of fixed support.
+#### Estimated changes
+Modified src/data/polynomial/erase_lead.lean
+- \+ *lemma* card_support_eq'
+- \+ *lemma* card_support_eq
+
+
+
+## [2022-07-13 09:09:29](https://github.com/leanprover-community/mathlib/commit/7340203)
+feat(information_theory/hamming): add Hamming distance and norm ([#14739](https://github.com/leanprover-community/mathlib/pull/14739))
+Add the Hamming distance, Hamming norm, and a `hamming` type synonym equipped with a normed group instance using the Hamming norm.
+#### Estimated changes
+Created src/information_theory/hamming.lean
+- \+ *lemma* hamming_dist_self
+- \+ *lemma* hamming_dist_nonneg
+- \+ *lemma* hamming_dist_comm
+- \+ *lemma* hamming_dist_triangle
+- \+ *lemma* hamming_dist_triangle_left
+- \+ *lemma* hamming_dist_triangle_right
+- \+ *lemma* eq_of_hamming_dist_eq_zero
+- \+ *lemma* hamming_dist_eq_zero
+- \+ *lemma* hamming_zero_eq_dist
+- \+ *lemma* hamming_dist_ne_zero
+- \+ *lemma* hamming_dist_pos
+- \+ *lemma* hamming_dist_lt_one
+- \+ *lemma* hamming_dist_le_card_fintype
+- \+ *lemma* hamming_dist_comp_le_hamming_dist
+- \+ *lemma* hamming_dist_comp
+- \+ *lemma* hamming_dist_smul_le_hamming_dist
+- \+ *lemma* hamming_dist_smul
+- \+ *lemma* hamming_dist_zero_right
+- \+ *lemma* hamming_dist_zero_left
+- \+ *lemma* hamming_norm_nonneg
+- \+ *lemma* hamming_norm_zero
+- \+ *lemma* hamming_norm_eq_zero
+- \+ *lemma* hamming_norm_ne_zero_iff
+- \+ *lemma* hamming_norm_pos_iff
+- \+ *lemma* hamming_norm_lt_one
+- \+ *lemma* hamming_norm_le_card_fintype
+- \+ *lemma* hamming_norm_comp_le_hamming_norm
+- \+ *lemma* hamming_norm_comp
+- \+ *lemma* hamming_norm_smul_le_hamming_norm
+- \+ *lemma* hamming_norm_smul
+- \+ *lemma* hamming_dist_eq_hamming_norm
+- \+ *lemma* to_hamming_symm_eq
+- \+ *lemma* of_hamming_symm_eq
+- \+ *lemma* to_hamming_of_hamming
+- \+ *lemma* of_hamming_to_hamming
+- \+ *lemma* to_hamming_inj
+- \+ *lemma* of_hamming_inj
+- \+ *lemma* to_hamming_zero
+- \+ *lemma* of_hamming_zero
+- \+ *lemma* to_hamming_neg
+- \+ *lemma* of_hamming_neg
+- \+ *lemma* to_hamming_add
+- \+ *lemma* of_hamming_add
+- \+ *lemma* to_hamming_sub
+- \+ *lemma* of_hamming_sub
+- \+ *lemma* to_hamming_smul
+- \+ *lemma* of_hamming_smul
+- \+ *lemma* dist_eq_hamming_dist
+- \+ *lemma* nndist_eq_hamming_dist
+- \+ *lemma* norm_eq_hamming_norm
+- \+ *lemma* nnnorm_eq_hamming_norm
+- \+ *theorem* swap_hamming_dist
+- \+ *def* hamming_dist
+- \+ *def* hamming_norm
+- \+ *def* hamming
+- \+ *def* to_hamming
+- \+ *def* of_hamming
+
+
+
+## [2022-07-13 06:13:44](https://github.com/leanprover-community/mathlib/commit/b06e32c)
+chore(scripts): update nolints.txt ([#15293](https://github.com/leanprover-community/mathlib/pull/15293))
+I am happy to remove some nolints for you!
+#### Estimated changes
+Modified scripts/nolints.txt
+
+
+
+
+## [2022-07-13 06:13:43](https://github.com/leanprover-community/mathlib/commit/5cb17dd)
+refactor(logic/is_empty): tag `is_empty.forall_iff` and `is_empty.exists_iff` as `simp` ([#14660](https://github.com/leanprover-community/mathlib/pull/14660))
+We tag the lemmas `forall_iff` and `exists_iff` on empty types as `simp`. We remove `forall_pempty`, `exists_pempty`, `forall_false_left`, and `exists_false_left` due to being redundant.
+#### Estimated changes
+Modified src/algebra/associated.lean
+
+
+Modified src/analysis/locally_convex/basic.lean
+
+
+Modified src/data/list/cycle.lean
+
+
+Modified src/data/nat/nth.lean
+
+
+Modified src/data/polynomial/laurent.lean
+
+
+Modified src/data/rbtree/basic.lean
+
+
+Modified src/group_theory/subgroup/basic.lean
+
+
+Modified src/logic/basic.lean
+- \+/\- *lemma* dite_eq_iff
+- \+/\- *lemma* dite_eq_left_iff
+- \+/\- *lemma* dite_eq_right_iff
+- \- *lemma* exists_false_left
+- \- *lemma* forall_false_left
+- \- *theorem* forall_pempty
+- \- *theorem* exists_pempty
+
+Modified src/logic/is_empty.lean
+- \+/\- *lemma* forall_iff
+- \+/\- *lemma* exists_iff
+
+Modified src/measure_theory/covering/besicovitch.lean
+
+
+Modified src/measure_theory/function/strongly_measurable.lean
+
+
+Modified src/measure_theory/integral/set_to_l1.lean
+
+
+Modified src/order/filter/basic.lean
+
+
+Modified src/order/partition/finpartition.lean
+
+
+Modified src/order/well_founded_set.lean
+
+
+Modified src/probability/hitting_time.lean
+
+
+
+
+## [2022-07-13 02:40:33](https://github.com/leanprover-community/mathlib/commit/ea13c1c)
+refactor(topology/subset_properties): reformulate `is_clopen_b{Union,Inter}` in terms of `set.finite` ([#15272](https://github.com/leanprover-community/mathlib/pull/15272))
+This way it mirrors `is_open_bInter`/`is_closed_bUnion`. Also add `is_clopen.prod`.
+#### Estimated changes
+Modified src/topology/category/Profinite/cofiltered_limit.lean
+
+
+Modified src/topology/separation.lean
+
+
+Modified src/topology/subset_properties.lean
+- \+ *lemma* is_clopen.prod
+- \+/\- *lemma* is_clopen_bUnion
+- \+ *lemma* is_clopen_bUnion_finset
+- \+/\- *lemma* is_clopen_bInter
+- \+ *lemma* is_clopen_bInter_finset
+
+
+
+## [2022-07-13 02:40:32](https://github.com/leanprover-community/mathlib/commit/2a32596)
+feat(data/finsupp/basic): graph of a finitely supported function ([#15197](https://github.com/leanprover-community/mathlib/pull/15197))
+We define the graph of a finitely supported function, i.e. the finset of input/output pairs, and prove basic results.
+#### Estimated changes
+Modified src/data/finsupp/basic.lean
+- \+ *lemma* mk_mem_graph_iff
+- \+ *lemma* mem_graph_iff
+- \+ *lemma* mk_mem_graph
+- \+ *lemma* apply_eq_of_mem_graph
+- \+ *lemma* not_mem_graph_snd_zero
+- \+ *lemma* image_fst_graph
+- \+ *lemma* graph_injective
+- \+ *lemma* graph_inj
+- \+ *lemma* graph_zero
+- \+ *lemma* graph_eq_empty
+- \+ *def* graph
+
+
+
+## [2022-07-13 02:40:31](https://github.com/leanprover-community/mathlib/commit/c6014bd)
+feat(algebra/parity): more general odd.pos ([#15186](https://github.com/leanprover-community/mathlib/pull/15186))
+The old version of this lemma (added in [#13040](https://github.com/leanprover-community/mathlib/pull/13040)) was only for ℕ and didn't allow dot notation. We remove this and add a version for `canonically_ordered_comm_semiring`s, and if the definition of `odd` changes, this will also work for `canononically_ordered_add_monoid`s.
+#### Estimated changes
+Modified archive/imo/imo1998_q2.lean
+
+
+Modified src/algebra/parity.lean
+- \+ *lemma* odd.pos
+
+Modified src/data/nat/parity.lean
+- \- *lemma* pos_of_odd
+
+
+
+## [2022-07-13 00:00:41](https://github.com/leanprover-community/mathlib/commit/ede73b2)
+refactor(topology/separation): rename `regular_space` to `t3_space` ([#15169](https://github.com/leanprover-community/mathlib/pull/15169))
+I'm going to add a version of `regular_space` without `t0_space` and prove, e.g., that any uniform space is a regular space in this sense. To do this, I need to rename the existing `regular_space`.
+#### Estimated changes
+Modified src/analysis/complex/upper_half_plane/topology.lean
+
+
+Modified src/analysis/locally_convex/balanced_core_hull.lean
+- \+/\- *lemma* nhds_basis_closed_balanced
+
+Modified src/analysis/locally_convex/bounded.lean
+
+
+Modified src/topology/alexandroff.lean
+
+
+Modified src/topology/algebra/group.lean
+- \+ *lemma* topological_group.t3_space
+- \- *lemma* topological_group.regular_space
+
+Modified src/topology/algebra/infinite_sum.lean
+- \+/\- *lemma* has_sum.sigma
+- \+/\- *lemma* has_sum.prod_fiberwise
+- \+/\- *lemma* summable.sigma'
+- \+/\- *lemma* has_sum.sigma_of_has_sum
+- \+/\- *lemma* tsum_sigma'
+- \+/\- *lemma* tsum_prod'
+- \+/\- *lemma* tsum_comm'
+
+Modified src/topology/algebra/module/basic.lean
+
+
+Modified src/topology/algebra/order/basic.lean
+
+
+Modified src/topology/algebra/order/extend_from.lean
+
+
+Modified src/topology/algebra/uniform_field.lean
+
+
+Modified src/topology/algebra/valued_field.lean
+
+
+Modified src/topology/algebra/with_zero_topology.lean
+
+
+Modified src/topology/dense_embedding.lean
+- \+/\- *lemma* continuous_at_extend
+- \+/\- *lemma* continuous_extend
+
+Modified src/topology/extend_from.lean
+- \+/\- *lemma* continuous_on_extend_from
+- \+/\- *lemma* continuous_extend_from
+
+Modified src/topology/homeomorph.lean
+
+
+Modified src/topology/metric_space/metrizable.lean
+- \+ *lemma* metrizable_space_of_t3_second_countable
+- \- *lemma* metrizable_space_of_regular_second_countable
+
+Modified src/topology/separation.lean
+- \+/\- *lemma* nhds_is_closed
+- \+/\- *lemma* closed_nhds_basis
+- \+/\- *lemma* topological_space.is_topological_basis.exists_closure_subset
+- \+/\- *lemma* topological_space.is_topological_basis.nhds_basis_closure
+- \+/\- *lemma* disjoint_nested_nhds
+- \+/\- *lemma* exists_compact_between
+- \+/\- *lemma* exists_open_between_and_is_compact_closure
+- \+ *lemma* normal_space_of_t3_second_countable
+- \- *lemma* normal_space_of_regular_second_countable
+
+Modified src/topology/uniform_space/compact_separated.lean
+
+
+Modified src/topology/uniform_space/completion.lean
+
+
+Modified src/topology/uniform_space/separation.lean
+
+
+
+
+## [2022-07-13 00:00:40](https://github.com/leanprover-community/mathlib/commit/6c351a8)
+refactor(data/matrix/basic): add matrix.of for type casting ([#14992](https://github.com/leanprover-community/mathlib/pull/14992))
+Without this, it is easier to get confused between matrix and pi types, which have different multiplication operators.
+With this in place, we can have a special matrix notation that actually produces terms of type `matrix`.
+#### Estimated changes
+Modified src/analysis/matrix.lean
+
+
+Modified src/data/matrix/basic.lean
+- \+ *lemma* of_apply
+- \+ *lemma* of_symm_apply
+- \+ *lemma* of_zero
+- \+ *lemma* of_add_of
+- \+ *lemma* of_sub_of
+- \+ *lemma* neg_of
+- \+ *lemma* smul_of
+- \+ *def* of
+- \+/\- *def* map
+
+Modified src/data/matrix/block.lean
+
+
+Modified src/data/matrix/notation.lean
+- \+/\- *lemma* cons_val'
+- \+/\- *lemma* head_val'
+- \+/\- *lemma* tail_val'
+- \+/\- *lemma* transpose_empty_rows
+- \+/\- *lemma* transpose_empty_cols
+- \+/\- *lemma* head_transpose
+- \+/\- *lemma* tail_transpose
+- \+/\- *lemma* cons_mul
+- \+/\- *lemma* cons_vec_mul
+- \+/\- *lemma* vec_mul_cons
+- \+/\- *lemma* smul_mat_cons
+
+Modified src/linear_algebra/matrix/basis.lean
+
+
+Modified src/linear_algebra/matrix/bilinear_form.lean
+- \+ *lemma* bilin_form.to_matrix_aux_apply
+
+Modified src/linear_algebra/matrix/determinant.lean
+- \+ *lemma* det_fin_two_of
+- \- *lemma* det_fin_two_mk
+
+Modified src/linear_algebra/matrix/to_lin.lean
+
+
+Modified src/linear_algebra/matrix/transvection.lean
+
+
+Modified src/linear_algebra/vandermonde.lean
+
+
+Modified src/logic/equiv/basic.lean
+- \+/\- *theorem* perm.coe_subsingleton
+
+Modified src/ring_theory/matrix_algebra.lean
+
+
+Modified src/ring_theory/trace.lean
+- \+/\- *lemma* trace_matrix_def
+
+Modified test/matrix.lean
+
+
+
+
 ## [2022-07-12 21:43:25](https://github.com/leanprover-community/mathlib/commit/834488e)
 feat(topology/maps): more `iff` lemmas ([#15165](https://github.com/leanprover-community/mathlib/pull/15165))
 * add `inducing_iff` and `inducing_iff_nhds`;
