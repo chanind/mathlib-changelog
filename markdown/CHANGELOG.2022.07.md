@@ -1,3 +1,70 @@
+## [2022-07-14 09:37:11](https://github.com/leanprover-community/mathlib/commit/f3ae2d0)
+feat(measure_theory/constructions/prod): The layercake integral. ([#14424](https://github.com/leanprover-community/mathlib/pull/14424))
+Prove the layercake formula, a.k.a. Cavalieri's principle, often used in measure theory and probability theory. It will in particular be a part of the proof of the portmanteau theorem.
+#### Estimated changes
+Modified src/measure_theory/function/l1_space.lean
+
+
+Modified src/measure_theory/function/strongly_measurable.lean
+- \+ *lemma* ae_strongly_measurable_zero_measure
+- \- *lemma* ae_measurable_zero_measure
+
+Created src/measure_theory/integral/layercake.lean
+- \+ *lemma* lintegral_comp_eq_lintegral_meas_le_mul_of_measurable
+- \+ *theorem* lintegral_comp_eq_lintegral_meas_le_mul
+- \+ *theorem* lintegral_eq_lintegral_meas_le
+- \+ *theorem* lintegral_rpow_eq_lintegral_meas_le_mul
+
+Modified src/measure_theory/measure/ae_measurable.lean
+- \+ *lemma* exists_measurable_nonneg
+- \+ *lemma* ae_measurable_Ioi_of_forall_Ioc
+
+Modified src/measure_theory/measure/lebesgue.lean
+- \+ *lemma* measurable_set_region_between_oc
+- \+ *lemma* measurable_set_region_between_co
+- \+ *lemma* measurable_set_region_between_cc
+- \+ *lemma* measurable_set_graph
+
+
+
+## [2022-07-14 05:43:46](https://github.com/leanprover-community/mathlib/commit/073c3ac)
+feat(ring_theory): Basic framework for classes of ring homomorphisms ([#14966](https://github.com/leanprover-community/mathlib/pull/14966))
+#### Estimated changes
+Modified src/ring_theory/local_properties.lean
+- \+ *lemma* _root_.ring_hom.property_is_local.respects_iso
+- \+ *lemma* ring_hom.localization_preserves.away
+- \+ *lemma* ring_hom.property_is_local.of_localization_span
+- \+ *lemma* localization_preserves_surjective
+- \+ *lemma* surjective_of_localization_span
+- \- *lemma* ring_hom.localization_away_of_localization_preserves
+- \+ *def* ring_hom.holds_for_localization_away
+- \+ *def* ring_hom.of_localization_span_target
+- \+ *def* ring_hom.of_localization_prime
+
+Modified src/ring_theory/localization/away.lean
+- \+ *lemma* away_of_is_unit_of_bijective
+
+Created src/ring_theory/ring_hom_properties.lean
+- \+ *lemma* respects_iso.cancel_left_is_iso
+- \+ *lemma* respects_iso.cancel_right_is_iso
+- \+ *lemma* respects_iso.is_localization_away_iff
+- \+ *lemma* stable_under_composition.respects_iso
+- \+ *lemma* stable_under_base_change.pushout_inl
+- \+ *def* respects_iso
+- \+ *def* stable_under_composition
+- \+ *def* stable_under_base_change
+
+
+
+## [2022-07-14 03:55:19](https://github.com/leanprover-community/mathlib/commit/e479bfb)
+chore(scripts): update nolints.txt ([#15332](https://github.com/leanprover-community/mathlib/pull/15332))
+I am happy to remove some nolints for you!
+#### Estimated changes
+Modified scripts/style-exceptions.txt
+
+
+
+
 ## [2022-07-13 21:11:31](https://github.com/leanprover-community/mathlib/commit/b89df0a)
 chore(set_theory/pgame): remove redundant `dsimp` ([#15312](https://github.com/leanprover-community/mathlib/pull/15312))
 Thanks to [#14660](https://github.com/leanprover-community/mathlib/pull/14660), we no longer need the `dsimp, simp` pattern to prove some results.
