@@ -1,3 +1,421 @@
+## [2022-07-13 21:11:31](https://github.com/leanprover-community/mathlib/commit/b89df0a)
+chore(set_theory/pgame): remove redundant `dsimp` ([#15312](https://github.com/leanprover-community/mathlib/pull/15312))
+Thanks to [#14660](https://github.com/leanprover-community/mathlib/pull/14660), we no longer need the `dsimp, simp` pattern to prove some results.
+#### Estimated changes
+Modified src/set_theory/game/pgame.lean
+
+
+
+
+## [2022-07-13 21:11:29](https://github.com/leanprover-community/mathlib/commit/4302cb7)
+chore(data/matrix/block): lemmas about swapping blocks of matrices ([#15298](https://github.com/leanprover-community/mathlib/pull/15298))
+Also makes `equiv.sum_comm` reduce to `equiv.sum_swap` slightly more agressively.
+#### Estimated changes
+Modified src/data/matrix/block.lean
+- \+ *lemma* from_blocks_minor_sum_swap_left
+- \+ *lemma* from_blocks_minor_sum_swap_right
+- \+ *lemma* from_blocks_minor_sum_swap_sum_swap
+
+Modified src/logic/equiv/basic.lean
+
+
+
+
+## [2022-07-13 21:11:28](https://github.com/leanprover-community/mathlib/commit/5590b0a)
+doc(set_theory/ordinal/cantor_normal_form): document most theorems ([#15227](https://github.com/leanprover-community/mathlib/pull/15227))
+The API around CNF is somewhat hard to wrap around, so we document many of the theorems.
+#### Estimated changes
+Modified src/set_theory/ordinal/cantor_normal_form.lean
+
+
+
+
+## [2022-07-13 21:11:27](https://github.com/leanprover-community/mathlib/commit/5744b50)
+chore(order/order_iso_nat): remove `decidable_pred` assumption from `subtype.order_iso_of_nat` ([#15190](https://github.com/leanprover-community/mathlib/pull/15190))
+This is a `noncomputable def` anyways, so the assumption wasn't really helping anyone.
+#### Estimated changes
+Modified src/data/nat/nth.lean
+- \+/\- *lemma* nth_eq_order_iso_of_nat
+
+Modified src/order/order_iso_nat.lean
+- \+/\- *def* order_embedding_of_set
+
+
+
+## [2022-07-13 21:11:26](https://github.com/leanprover-community/mathlib/commit/0864805)
+feat(data/finset/basic): Add `decidable_nonempty` for finsets. ([#15170](https://github.com/leanprover-community/mathlib/pull/15170))
+Also remove some redundant decidable instances in multiset and list.
+#### Estimated changes
+Modified src/algebra/big_operators/basic.lean
+
+
+Modified src/data/bool/all_any.lean
+
+
+Modified src/data/finset/basic.lean
+
+
+Modified src/data/multiset/basic.lean
+- \- *def* decidable_exists_multiset
+
+
+
+## [2022-07-13 21:11:24](https://github.com/leanprover-community/mathlib/commit/1e82f5e)
+feat(linear_algebra/projectivization/independence): defines (in)dependence of points in projective space ([#14542](https://github.com/leanprover-community/mathlib/pull/14542))
+This PR only provides definitions and basic lemmas. In an upcoming pull request we use this to prove the axioms for an abstract projective space.
+#### Estimated changes
+Modified src/linear_algebra/projective_space/basic.lean
+- \+ *lemma* mk_eq_mk_iff'
+
+Created src/linear_algebra/projective_space/independence.lean
+- \+ *lemma* independent_iff
+- \+ *lemma* independent_iff_complete_lattice_independent
+- \+ *lemma* dependent_iff
+- \+ *lemma* dependent_iff_not_independent
+- \+ *lemma* independent_iff_not_dependent
+- \+ *lemma* dependent_pair_iff_eq
+- \+ *lemma* independent_pair_iff_neq
+
+
+
+## [2022-07-13 18:30:28](https://github.com/leanprover-community/mathlib/commit/f731315)
+feat(topology/local_homeomorph): "injectivity" local_homeomorph.prod ([#15311](https://github.com/leanprover-community/mathlib/pull/15311))
+* Also some other lemmas about `local_equiv` and `local_homeomorph`
+* From the sphere eversion project
+#### Estimated changes
+Modified src/data/set/prod.lean
+- \+ *lemma* prod_eq_prod_iff_of_nonempty
+- \+ *lemma* prod_eq_prod_iff
+- \+/\- *lemma* prod_eq_iff_eq
+
+Modified src/logic/basic.lean
+- \+ *lemma* forall_forall_const
+
+Modified src/logic/equiv/local_equiv.lean
+- \+ *lemma* trans_apply
+- \+ *lemma* mem_symm_trans_source
+
+Modified src/topology/local_homeomorph.lean
+- \+ *lemma* image_source_eq_target
+- \+ *lemma* symm_image_target_eq_source
+- \+ *lemma* trans_apply
+- \+ *lemma* prod_eq_prod_of_nonempty
+- \+ *lemma* prod_eq_prod_of_nonempty'
+
+
+
+## [2022-07-13 18:30:27](https://github.com/leanprover-community/mathlib/commit/25f60b4)
+feat(analysis/calculus/cont_diff): extra lemmas about cont_diff_within_at ([#15309](https://github.com/leanprover-community/mathlib/pull/15309))
+* Also some lemmas about `fderiv_within` and `nhds_within`.
+* From the sphere eversion project
+#### Estimated changes
+Modified src/analysis/calculus/cont_diff.lean
+- \+ *lemma* cont_diff_within_at.congr_of_eventually_eq_insert
+- \+ *lemma* cont_diff_within_at.has_fderiv_within_at_nhds
+- \+ *lemma* cont_diff_within_at_succ_iff_has_fderiv_within_at_of_mem
+- \+ *lemma* cont_diff_within_at.fderiv_within'
+- \+ *lemma* cont_diff_within_at.fderiv_within
+
+Modified src/analysis/calculus/fderiv.lean
+- \+ *lemma* filter.eventually_eq.fderiv_within_eq_nhds
+- \+ *lemma* fderiv_within.comp₃
+- \+ *theorem* has_fderiv_within_at.mono_of_mem
+
+Modified src/topology/continuous_on.lean
+- \+ *lemma* nhds_within_le_iff
+
+
+
+## [2022-07-13 18:30:26](https://github.com/leanprover-community/mathlib/commit/51f76d0)
+feat(tactic/linear_combination): add parser for `h / a` ([#15284](https://github.com/leanprover-community/mathlib/pull/15284))
+As reported during LFTCM 2022.
+#### Estimated changes
+Modified src/tactic/linear_combination.lean
+
+
+Modified src/tactic/polyrith.lean
+
+
+Modified test/linear_combination.lean
+
+
+Modified test/polyrith.lean
+
+
+
+
+## [2022-07-13 18:30:25](https://github.com/leanprover-community/mathlib/commit/be53c7c)
+feat(topology/algebra/order): ⁻¹ continuous for linear ordered fields ([#15022](https://github.com/leanprover-community/mathlib/pull/15022))
+Closes [#12781](https://github.com/leanprover-community/mathlib/pull/12781).
+#### Estimated changes
+Modified src/topology/algebra/order/basic.lean
+
+
+
+
+## [2022-07-13 18:30:23](https://github.com/leanprover-community/mathlib/commit/44999a9)
+feat(combinatorics/additive/behrend): Behrend's construction ([#14070](https://github.com/leanprover-community/mathlib/pull/14070))
+Construct large Salem-Spencer sets in `ℕ` using Behrend's construction. The idea is to turn the Euclidean sphere into a discrete set of points in Euclidean space which we then squash onto `ℕ`.
+#### Estimated changes
+Modified src/algebra/group_power/order.lean
+- \+ *lemma* zero_pow_le_one
+
+Created src/combinatorics/additive/behrend.lean
+- \+ *lemma* mem_box
+- \+ *lemma* card_box
+- \+ *lemma* box_zero
+- \+ *lemma* sphere_zero_subset
+- \+ *lemma* sphere_zero_right
+- \+ *lemma* sphere_subset_box
+- \+ *lemma* norm_of_mem_sphere
+- \+ *lemma* sphere_subset_preimage_metric_sphere
+- \+ *lemma* map_zero
+- \+ *lemma* map_succ
+- \+ *lemma* map_succ'
+- \+ *lemma* map_monotone
+- \+ *lemma* map_mod
+- \+ *lemma* map_eq_iff
+- \+ *lemma* map_inj_on
+- \+ *lemma* map_le_of_mem_box
+- \+ *lemma* add_salem_spencer_sphere
+- \+ *lemma* add_salem_spencer_image_sphere
+- \+ *lemma* sum_sq_le_of_mem_box
+- \+ *lemma* sum_eq
+- \+ *lemma* sum_lt
+- \+ *lemma* card_sphere_le_roth_number_nat
+- \+ *def* box
+- \+ *def* sphere
+- \+ *def* map
+
+Modified src/data/fintype/basic.lean
+- \+ *lemma* pi_finset_empty
+- \+ *lemma* pi_finset_singleton
+- \+ *lemma* pi_finset_subsingleton
+
+
+
+## [2022-07-13 16:39:58](https://github.com/leanprover-community/mathlib/commit/2084baf)
+feat(set_theory/ordinal/basic): mark `type_fintype` as `simp` ([#15194](https://github.com/leanprover-community/mathlib/pull/15194))
+This PR does the following:
+- move `type_fintype` along with some other lemmas from `set_theory/ordinal/arithmetic.lean` to `set_theory/ordinal/basic.lean`.
+- tag `type_fintype` as `simp`.
+- untag various lemmas as `simp`, since they can now be proved by it.
+#### Estimated changes
+Modified src/set_theory/ordinal/arithmetic.lean
+- \- *theorem* nat_le_card
+- \- *theorem* nat_lt_card
+- \- *theorem* card_lt_nat
+- \- *theorem* card_le_nat
+- \- *theorem* card_eq_nat
+- \- *theorem* type_fin
+- \- *theorem* type_fintype
+
+Modified src/set_theory/ordinal/basic.lean
+- \+/\- *theorem* type_eq_zero_of_empty
+- \+/\- *theorem* type_pempty
+- \+/\- *theorem* type_eq_one_of_unique
+- \+/\- *theorem* type_punit
+- \+/\- *theorem* type_unit
+- \+ *theorem* nat_le_card
+- \+ *theorem* nat_lt_card
+- \+ *theorem* card_lt_nat
+- \+ *theorem* card_le_nat
+- \+ *theorem* card_eq_nat
+- \+ *theorem* type_fintype
+- \+ *theorem* type_fin
+
+
+
+## [2022-07-13 16:39:57](https://github.com/leanprover-community/mathlib/commit/93e164e)
+refactor(field_theory/intermediate_field): introduce `restrict_scalars` which replaces `lift2` ([#15191](https://github.com/leanprover-community/mathlib/pull/15191))
+This brings the API in line with `submodule` and `subalgebra` by removing `intermediate_field.lift2` and `intermediate_field.has_lift2`, and replacing them with `intermediate_field.restrict_scalars`. This definition is strictly more general than the previous `intermediate_field.lift2` definition was. A few downstream lemma statements have been generalized in the same way.
+The handful of API lemmas for `restrict_scalars` that this adds were already missing for `lift2`.
+`intermediate_field.lift2_alg_equiv` has been removed since we didn't appear to have anything similar for `subalgebra` or `submodule`, but it's possible I missed it. At any rate, it's only needed in one proof, and we can just use `show` or `refl` instead.
+Note that `(↑x : intermediate_field F E)` is not actually a shorter spelling than `x.restrict_scalars F`, especially when `E` is more than a single character.
+Finally this renames `lift1` to `lift` now that no ambiguity remains.
+#### Estimated changes
+Modified src/algebra/algebra/tower.lean
+
+
+Modified src/field_theory/adjoin.lean
+- \+ *lemma* restrict_scalars_bot_eq_self
+- \+ *lemma* restrict_scalars_top
+- \+/\- *lemma* adjoin_adjoin_left
+- \+/\- *lemma* adjoin_simple_adjoin_simple
+- \+/\- *lemma* adjoin_simple_comm
+- \- *lemma* coe_bot_eq_self
+- \- *lemma* coe_top_eq_top
+
+Modified src/field_theory/galois.lean
+- \+/\- *lemma* of_separable_splitting_field_aux
+
+Modified src/field_theory/intermediate_field.lean
+- \+ *lemma* coe_restrict_scalars
+- \+ *lemma* restrict_scalars_to_subalgebra
+- \+ *lemma* restrict_scalars_to_subfield
+- \+ *lemma* mem_restrict_scalars
+- \+ *lemma* restrict_scalars_injective
+- \- *lemma* mem_lift2
+- \- *lemma* lift2_algebra_map
+- \+ *def* lift
+- \+ *def* restrict_scalars
+- \- *def* lift1
+- \- *def* lift2
+- \- *def* lift2_alg_equiv
+
+Modified src/field_theory/primitive_element.lean
+
+
+
+
+## [2022-07-13 13:55:17](https://github.com/leanprover-community/mathlib/commit/ed5453c)
+chore(*/enat): rename files ([#15245](https://github.com/leanprover-community/mathlib/pull/15245))
+rename `**/enat.lean` to `**/part_enat.lean`.
+#### Estimated changes
+Modified archive/imo/imo2019_q4.lean
+
+
+Modified src/algebra/big_operators/default.lean
+
+
+Renamed src/algebra/big_operators/enat.lean to src/algebra/big_operators/part_enat.lean
+
+
+Modified src/data/nat/lattice.lean
+
+
+Renamed src/data/nat/enat.lean to src/data/nat/part_enat.lean
+
+
+Modified src/set_theory/cardinal/basic.lean
+
+
+
+
+## [2022-07-13 13:55:16](https://github.com/leanprover-community/mathlib/commit/f8488be)
+fix(algebra/group/units): splitting out `mul_one_class` for group of units ([#14923](https://github.com/leanprover-community/mathlib/pull/14923))
+Without this proposed change, the following example gives a `(deterministic) timeout`:
+```lean
+import algebra.ring.basic
+example (R : Type*) [comm_ring R] (a b : Rˣ) : a * (b / a) = b :=
+begin
+  rw mul_div_cancel'_right,
+  -- or: `simp`
+end
+```
+#### Estimated changes
+Modified src/algebra/group/units.lean
+
+
+Created test/units.lean
+
+
+
+
+## [2022-07-13 13:55:14](https://github.com/leanprover-community/mathlib/commit/632b031)
+feat(algebra/order/complete_field): `conditionally_complete_linear_ordered_field`, aka the reals ([#3292](https://github.com/leanprover-community/mathlib/pull/3292))
+Introduce a class `conditionally_complete_linear_ordered_field`, which axiomatises the real numbers. Show that there exist a unique ordered ring isomorphism from any two such.
+Additionally, show there is a unique order ring hom from any archimedean linear ordered field to such a field, giving that the ordered ring homomorphism from the rationals to the reals is unique for instance.
+#### Estimated changes
+Modified src/algebra/group_power/order.lean
+- \+ *lemma* lt_of_mul_self_lt_mul_self
+
+Created src/algebra/order/complete_field.lean
+- \+ *lemma* cut_map_mono
+- \+ *lemma* mem_cut_map_iff
+- \+ *lemma* coe_mem_cut_map_iff
+- \+ *lemma* cut_map_self
+- \+ *lemma* cut_map_coe
+- \+ *lemma* cut_map_nonempty
+- \+ *lemma* cut_map_bdd_above
+- \+ *lemma* cut_map_add
+- \+ *lemma* induced_map_mono
+- \+ *lemma* induced_map_rat
+- \+ *lemma* induced_map_zero
+- \+ *lemma* induced_map_one
+- \+ *lemma* induced_map_nonneg
+- \+ *lemma* coe_lt_induced_map_iff
+- \+ *lemma* lt_induced_map_iff
+- \+ *lemma* induced_map_self
+- \+ *lemma* induced_map_induced_map
+- \+ *lemma* induced_map_inv_self
+- \+ *lemma* induced_map_add
+- \+ *lemma* le_induced_map_mul_self_of_mem_cut_map
+- \+ *lemma* exists_mem_cut_map_mul_self_of_lt_induced_map_mul_self
+- \+ *lemma* coe_induced_order_ring_iso
+- \+ *lemma* induced_order_ring_iso_symm
+- \+ *lemma* induced_order_ring_iso_self
+- \+ *def* cut_map
+- \+ *def* induced_map
+- \+ *def* induced_add_hom
+- \+ *def* induced_order_ring_hom
+- \+ *def* induced_order_ring_iso
+
+
+
+## [2022-07-13 12:42:43](https://github.com/leanprover-community/mathlib/commit/1d048c5)
+chore(analysis/inner_product_space): move definition of self-adjointness ([#15281](https://github.com/leanprover-community/mathlib/pull/15281))
+The file `analysis/inner_product_space/basic` is way to large and since `is_self_adjoint` will be rephrased in terms of the adjoint, it should be in the `adjoint` file.
+#### Estimated changes
+Modified src/analysis/inner_product_space/adjoint.lean
+- \+ *lemma* is_self_adjoint_iff_bilin_form
+- \+ *lemma* is_self_adjoint.conj_inner_sym
+- \+ *lemma* is_self_adjoint.apply_clm
+- \+ *lemma* is_self_adjoint.continuous
+- \+ *lemma* is_self_adjoint.clm_apply
+- \+ *lemma* is_self_adjoint.coe_re_apply_inner_self_apply
+- \+ *lemma* is_self_adjoint.restrict_invariant
+- \+ *lemma* is_self_adjoint_iff_inner_map_self_real
+- \+ *def* is_self_adjoint
+- \+ *def* is_self_adjoint.clm
+
+Modified src/analysis/inner_product_space/basic.lean
+- \- *lemma* is_self_adjoint_iff_bilin_form
+- \- *lemma* is_self_adjoint.conj_inner_sym
+- \- *lemma* is_self_adjoint.apply_clm
+- \- *lemma* is_self_adjoint.continuous
+- \- *lemma* is_self_adjoint.clm_apply
+- \- *lemma* is_self_adjoint.coe_re_apply_inner_self_apply
+- \- *lemma* is_self_adjoint.restrict_invariant
+- \- *lemma* is_self_adjoint_iff_inner_map_self_real
+- \- *def* is_self_adjoint
+- \- *def* is_self_adjoint.clm
+
+Modified src/analysis/inner_product_space/rayleigh.lean
+
+
+
+
+## [2022-07-13 12:42:42](https://github.com/leanprover-community/mathlib/commit/2dfa69c)
+feat(ring_theory/rees_algebra): Define the Rees algebra of an ideal. ([#15089](https://github.com/leanprover-community/mathlib/pull/15089))
+#### Estimated changes
+Created src/ring_theory/rees_algebra.lean
+- \+ *lemma* mem_rees_algebra_iff
+- \+ *lemma* mem_rees_algebra_iff_support
+- \+ *lemma* rees_algebra.monomial_mem
+- \+ *lemma* monomial_mem_adjoin_monomial
+- \+ *lemma* adjoin_monomial_eq_rees_algebra
+- \+ *lemma* rees_algebra.fg
+- \+ *def* rees_algebra
+
+
+
+## [2022-07-13 12:42:41](https://github.com/leanprover-community/mathlib/commit/8d7f001)
+feat(measure_theory/pmf): lawful monad instance for probability mass function monad ([#15066](https://github.com/leanprover-community/mathlib/pull/15066))
+Provide `is_lawful_functor` and `is_lawful_monad` instances for `pmf`. Also switch the `seq` and `map` operations to the ones coming from the `monad` instance.
+#### Estimated changes
+Modified src/measure_theory/probability_mass_function/basic.lean
+
+
+Modified src/measure_theory/probability_mass_function/constructions.lean
+- \+ *lemma* monad_map_eq_map
+- \+ *lemma* monad_seq_eq_seq
+
+Modified src/measure_theory/probability_mass_function/monad.lean
+- \+/\- *lemma* pure_bind
+
+
+
 ## [2022-07-13 09:50:47](https://github.com/leanprover-community/mathlib/commit/83092fb)
 feat(data/matrix/notation): add `!![1, 2; 3, 4]` notation ([#14991](https://github.com/leanprover-community/mathlib/pull/14991))
 This adds `!![1, 2; 3, 4]` as a matlab-like shorthand for `matrix.of ![![1, 2], ![3, 4]]`. This has special support for empty arrays, where `!![,,,]` is a matrix with 0 rows and 3 columns, and `![;;;]` is a matrix with 3 rows and zero columns.
