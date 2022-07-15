@@ -1,3 +1,142 @@
+## [2022-07-14 22:11:08](https://github.com/leanprover-community/mathlib/commit/635b858)
+doc(logic/equiv/basic): explicitly state functions equivalences are based on ([#15354](https://github.com/leanprover-community/mathlib/pull/15354))
+This should make them more searchable. Also some trivial spacing fixes.
+#### Estimated changes
+Modified src/logic/equiv/basic.lean
+
+
+
+
+## [2022-07-14 22:11:07](https://github.com/leanprover-community/mathlib/commit/466b892)
+feat(analysis/asymptotics/asymptotics): generalize, golf ([#15010](https://github.com/leanprover-community/mathlib/pull/15010))
+* add `is_o_iff_nat_mul_le`, `is_o_iff_nat_mul_le'`, `is_o_irrefl`, `is_O.not_is_o`, `is_o.not_is_O`;
+* generalize lemmas about `1 = o(f)`, `1 = O(f)`, `f = o(1)`, `f = O(1)` to `[has_one F] [norm_one_class F]`, add some `@[simp]` attrs;
+* rename `is_O_one_of_tendsto` to `filter.tendsto.is_O_one`;
+* golf some proofs
+#### Estimated changes
+Modified src/analysis/analytic/basic.lean
+
+
+Modified src/analysis/asymptotics/asymptotics.lean
+- \+ *lemma* is_O_with_inv
+- \+ *lemma* is_o_iff_nat_mul_le_aux
+- \+ *lemma* is_o_iff_nat_mul_le
+- \+ *lemma* is_o_iff_nat_mul_le'
+- \+ *theorem* is_o_irrefl'
+- \+ *theorem* is_o_irrefl
+- \+ *theorem* is_O.not_is_o
+- \+ *theorem* is_o.not_is_O
+- \+/\- *theorem* is_O_with_const_one
+- \+/\- *theorem* is_O_const_one
+- \+/\- *theorem* is_o_one_iff
+- \+ *theorem* is_O_one_iff
+- \+ *theorem* is_o_one_left_iff
+- \+ *theorem* _root_.filter.tendsto.is_O_one
+- \+/\- *theorem* is_O.trans_tendsto_nhds
+- \+ *theorem* is_O_iff_is_bounded_under_le_div
+- \- *theorem* is_O_one_of_tendsto
+
+Modified src/analysis/calculus/fderiv.lean
+
+
+Modified src/analysis/complex/phragmen_lindelof.lean
+
+
+
+
+## [2022-07-14 17:53:30](https://github.com/leanprover-community/mathlib/commit/356f889)
+golf(data/polynomial/degree/definitions): golf three proofs ([#15236](https://github.com/leanprover-community/mathlib/pull/15236))
+Lemmas `degree_update_le`, `degree_nonneg_iff_ne_zero` and `degree_le_iff_coeff_zero` have shorter proofs.
+All three lemmas use the same axioms as they did before: 
+```lean
+propext
+quot.sound
+classical.choice
+```
+The golfing in `degree_le_iff_coeff_zero` is motivated by [#15199](https://github.com/leanprover-community/mathlib/pull/15199), where the older version no longer compiles.
+#### Estimated changes
+Modified src/data/polynomial/degree/definitions.lean
+
+
+
+
+## [2022-07-14 17:53:29](https://github.com/leanprover-community/mathlib/commit/0bea64b)
+feat(ring_theory/integrally_closed): if x is in Frac R such that x^n is in R then x is in R ([#12812](https://github.com/leanprover-community/mathlib/pull/12812))
+#### Estimated changes
+Modified src/ring_theory/integral_closure.lean
+- \+ *lemma* is_integral_of_pow
+- \+ *lemma* is_integral.pow_iff
+
+Modified src/ring_theory/integrally_closed.lean
+- \+/\- *lemma* is_integral_iff
+- \+ *lemma* exists_algebra_map_eq_of_is_integral_pow
+- \+ *lemma* exists_algebra_map_eq_of_pow_mem_subalgebra
+
+
+
+## [2022-07-14 13:52:46](https://github.com/leanprover-community/mathlib/commit/f3fac40)
+feat(data/fin/basic): add a reflected instance ([#15337](https://github.com/leanprover-community/mathlib/pull/15337))
+This helps with writing tactics to expand fixed-size matrices into their components.
+This instance is written using the same approach as the `int.has_reflect` instance.
+#### Estimated changes
+Modified src/data/fin/basic.lean
+
+
+
+
+## [2022-07-14 13:52:45](https://github.com/leanprover-community/mathlib/commit/48b7ad6)
+chore(*): upgrade to lean 3.45.0c ([#15325](https://github.com/leanprover-community/mathlib/pull/15325))
+The `decidable_eq json` instance has moved to core, since it was needed for tests there too.
+#### Estimated changes
+Modified leanpkg.toml
+
+
+Modified test/polyrith.lean
+
+
+
+
+## [2022-07-14 13:52:44](https://github.com/leanprover-community/mathlib/commit/51f5e6c)
+feat(algebra/module/linear_map): use morphisms class for lemmas about linear [pre]images of `c • S` ([#15103](https://github.com/leanprover-community/mathlib/pull/15103))
+#### Estimated changes
+Modified src/algebra/module/equiv.lean
+- \- *lemma* image_smul_setₛₗ
+- \- *lemma* preimage_smul_setₛₗ
+- \- *lemma* image_smul_set
+- \- *lemma* preimage_smul_set
+
+Modified src/algebra/module/linear_map.lean
+- \+ *lemma* _root_.image_smul_setₛₗ
+- \+ *lemma* _root_.preimage_smul_setₛₗ
+- \+ *lemma* _root_.image_smul_set
+- \+ *lemma* _root_.preimage_smul_set
+- \- *lemma* image_smul_setₛₗ
+- \- *lemma* image_smul_set
+- \- *lemma* preimage_smul_setₛₗ
+- \- *lemma* preimage_smul_set
+
+Modified src/analysis/locally_convex/bounded.lean
+
+
+Modified src/measure_theory/function/jacobian.lean
+
+
+Modified src/topology/algebra/module/basic.lean
+- \- *lemma* image_smul_setₛₗ
+- \- *lemma* image_smul_set
+- \- *lemma* preimage_smul_setₛₗ
+- \- *lemma* preimage_smul_set
+
+
+
+## [2022-07-14 12:49:30](https://github.com/leanprover-community/mathlib/commit/2570613)
+feat(measure_theory/integral/set_integral): add `set_integral_indicator` ([#15344](https://github.com/leanprover-community/mathlib/pull/15344))
+#### Estimated changes
+Modified src/measure_theory/integral/set_integral.lean
+- \+ *lemma* set_integral_indicator
+
+
+
 ## [2022-07-14 09:37:11](https://github.com/leanprover-community/mathlib/commit/f3ae2d0)
 feat(measure_theory/constructions/prod): The layercake integral. ([#14424](https://github.com/leanprover-community/mathlib/pull/14424))
 Prove the layercake formula, a.k.a. Cavalieri's principle, often used in measure theory and probability theory. It will in particular be a part of the proof of the portmanteau theorem.
