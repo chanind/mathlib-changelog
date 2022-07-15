@@ -4,7 +4,7 @@ import Link from "next/link";
 import Layout from "../../components/Layout";
 import MathlibGithubMarkdown from "../../components/MathlibGithubMarkdown";
 import { getCommit } from "../../data/database";
-import { ChangeType, CommitData } from "../../data/types";
+import { ChangeType, CommitData, DiffData } from "../../data/types";
 import formatTimestamp from "../../util/formatTimestamp";
 
 export const getStaticPaths: GetStaticPaths = () => ({
@@ -47,6 +47,38 @@ const getLabel = (changeType: ChangeType) => {
   );
 };
 
+const getFileChangeLabel = (diff: DiffData) => {
+  if (diff.oldPath && diff.newPath && diff.oldPath !== diff.newPath) {
+    return (
+      <span>
+        Renamed <span className="italic">{diff.oldPath}</span> to{" "}
+        <span className="italic">{diff.newPath}</span>
+      </span>
+    );
+  }
+  if (diff.oldPath && diff.newPath) {
+    return (
+      <span>
+        Modified <span className="italic">{diff.oldPath}</span>
+      </span>
+    );
+  }
+  if (diff.oldPath && !diff.newPath) {
+    return (
+      <span>
+        Deleted <span className="italic">{diff.oldPath}</span>
+      </span>
+    );
+  }
+  if (!diff.oldPath && diff.newPath) {
+    return (
+      <span>
+        Created <span className="italic">{diff.newPath}</span>
+      </span>
+    );
+  }
+};
+
 const Commit: NextPage<CommitProps> = ({ commit }) => {
   return (
     <Layout>
@@ -69,19 +101,24 @@ const Commit: NextPage<CommitProps> = ({ commit }) => {
       <div>
         {commit.changes.map((diff, i) => (
           <div className="my-1" key={i}>
-            <div>{diff.pathChange}</div>
+            <div>{getFileChangeLabel(diff)}</div>
             <div className="pl-2 text-sm">
-              {diff.changes.map(([changeType, itemType, itemName], j) => (
-                <div key={j}>
-                  <span className="inline-block min-w-[100px] text-right">
-                    {getLabel(changeType)}
-                  </span>{" "}
-                  <span className="font-semibold">{itemType}</span>{" "}
-                  <Link href={`/${itemType}/${itemName}`}>
-                    <a>{itemName}</a>
-                  </Link>
-                </div>
-              ))}
+              {diff.changes.map(
+                ([changeType, itemType, itemName, namespace], j) => {
+                  const fullName = [...namespace, itemName].join(".");
+                  return (
+                    <div key={j}>
+                      <span className="inline-block min-w-[100px] text-right">
+                        {getLabel(changeType)}
+                      </span>{" "}
+                      <span className="font-semibold">{itemType}</span>{" "}
+                      <Link href={`/${itemType}/${fullName}`}>
+                        <a>{fullName}</a>
+                      </Link>
+                    </div>
+                  );
+                }
+              )}
             </div>
           </div>
         ))}

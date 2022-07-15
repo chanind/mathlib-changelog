@@ -1,56 +1,33 @@
+from __future__ import annotations
 from dataclasses import dataclass
-from typing import cast
-from crawler.extract_diff_info import extract_diff_changes, extract_diff_file_info
-from crawler.stable_dedupe import stable_dedupe
-from git import Diff
+from typing import Literal
+from crawler.parser.DiffParser import ParsedDiff
+
+
+ChangeType = Literal["add", "del", "mod"]
+ItemType = Literal["lemma", "theorem", "def"]
 
 
 @dataclass
 class DiffJson:
-    pathChange: str
-    path: str
-    changes: list[tuple[str, str, str]]
+    oldPath: str | None
+    newPath: str | None
+    changes: list[tuple[ChangeType, ItemType, str, list[str]]]
 
 
-def get_change_type(
-    changed_item: str, added_items: list[str], deleted_items: list[str]
-) -> str:
-    if changed_item in added_items and changed_item in deleted_items:
-        return "mod"
-    if changed_item in deleted_items:
-        return "del"
-    return "add"
-
-
-def format_git_changes_json(diffs: list[Diff]) -> list[DiffJson]:
+def format_git_changes_json(diffs: list[ParsedDiff]) -> list[DiffJson]:
     changes: list[DiffJson] = []
     for diff in diffs:
-        path_change = extract_diff_file_info(diff)
-        diff_changes = extract_diff_changes(cast(bytes, diff.diff).decode("utf-8"))
-        json_changes: list[tuple[str, str, str]] = []
-        lemmas = diff_changes.added_lemmas + diff_changes.deleted_lemmas
-        theorems = diff_changes.added_theorems + diff_changes.deleted_theorems
-        defs = diff_changes.added_defs + diff_changes.deleted_defs
-        for lemma in lemmas:
-            change_type = get_change_type(
-                lemma, diff_changes.added_lemmas, diff_changes.deleted_lemmas
+        json_changes: list[tuple[ChangeType, ItemType, str, list[str]]] = []
+        for change in diff.changes:
+            json_changes.append(
+                (change.change_type, change.item_type, change.name, change.namespace)
             )
-            json_changes.append((change_type, "lemma", lemma))
-        for theorem in theorems:
-            change_type = get_change_type(
-                theorem, diff_changes.added_theorems, diff_changes.deleted_theorems
-            )
-            json_changes.append((change_type, "theorem", theorem))
-        for def_str in defs:
-            change_type = get_change_type(
-                def_str, diff_changes.added_defs, diff_changes.deleted_defs
-            )
-            json_changes.append((change_type, "def", def_str))
         changes.append(
             DiffJson(
-                pathChange=path_change,
-                path=cast(str, diff.a_path or diff.b_path),
-                changes=stable_dedupe(json_changes),
+                oldPath=diff.old_path,
+                newPath=diff.new_path,
+                changes=json_changes,
             )
         )
     return changes

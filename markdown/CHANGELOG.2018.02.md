@@ -75,9 +75,9 @@ feat(data/finset): insert_union_distrib ([#66](https://github.com/leanprover-com
 * feat(data/finset): insert_union_distrib
 #### Estimated changes
 Modified data/finset.lean
-- \+/\- *theorem* insert_union
-- \+/\- *theorem* union_insert
-- \+ *theorem* insert_union_distrib
+- \+/\- *theorem* finset.insert_union
+- \+ *theorem* finset.insert_union_distrib
+- \+/\- *theorem* finset.union_insert
 
 
 
@@ -85,7 +85,7 @@ Modified data/finset.lean
 feat(data/multiset): erase_lt
 #### Estimated changes
 Modified data/multiset.lean
-- \+ *theorem* erase_lt
+- \+ *theorem* multiset.erase_lt
 
 
 
@@ -93,11 +93,11 @@ Modified data/multiset.lean
 feat(set_theory/cardinal): some missing power theorems
 #### Estimated changes
 Modified set_theory/cardinal.lean
-- \+ *theorem* power_one
-- \+ *theorem* power_add
-- \+ *theorem* nat_cast_pow
-- \+ *theorem* power_lt_omega
-- \- *theorem* power_sum
+- \+ *theorem* cardinal.nat_cast_pow
+- \+ *theorem* cardinal.power_add
+- \+ *theorem* cardinal.power_lt_omega
+- \+ *theorem* cardinal.power_one
+- \- *theorem* cardinal.power_sum
 
 
 
@@ -115,7 +115,7 @@ Modified tactic/find.lean
 ## [2018-02-21 04:29:29-05:00](https://github.com/leanprover-community/mathlib/commit/8ae1cef)
 feat(tactic/find): add @Kha's #find command
 #### Estimated changes
-Created tactic/find.lean
+Added tactic/find.lean
 
 
 
@@ -124,9 +124,9 @@ Created tactic/find.lean
 refactor(analysis/topology): simplify is_topological_basis_of_open_of_nhds
 #### Estimated changes
 Modified algebra/big_operators.lean
-- \+/\- *lemma* prod_attach
-- \+/\- *lemma* prod_bij
-- \+/\- *lemma* prod_bij_ne_one
+- \+/\- *lemma* finset.prod_attach
+- \+/\- *lemma* finset.prod_bij
+- \+/\- *lemma* finset.prod_bij_ne_one
 
 Modified analysis/measure_theory/borel_space.lean
 
@@ -148,46 +148,46 @@ doc(.): MD documentation ([#58](https://github.com/leanprover-community/mathlib/
 Modified README.md
 
 
-Created docs/naming.md
+Added docs/naming.md
 
 
 Renamed style.md to docs/style.md
 
 
-Created docs/tactics.md
+Added docs/tactics.md
 
 
-Created docs/theories.md
+Added docs/theories.md
 
 
-Created docs/theories/functions.md
+Added docs/theories/functions.md
 
 
-Created docs/theories/groups.md
+Added docs/theories/groups.md
 
 
-Created docs/theories/integers.md
+Added docs/theories/integers.md
 
 
-Created docs/theories/naturals.md
+Added docs/theories/naturals.md
 
 
-Created docs/theories/orders.md
+Added docs/theories/orders.md
 
 
-Created docs/theories/quotients.md
+Added docs/theories/quotients.md
 
 
-Created docs/theories/relations.md
+Added docs/theories/relations.md
 
 
-Created docs/theories/rings_fields.md
+Added docs/theories/rings_fields.md
 
 
-Created docs/theories/sets.md
+Added docs/theories/sets.md
 
 
-Created docs/wip.md
+Added docs/wip.md
 
 
 
@@ -197,10 +197,10 @@ feat(algebra/order_functions): add abs_le_max_abs_abs; and relations between mul
 #### Estimated changes
 Modified algebra/order_functions.lean
 - \+ *lemma* abs_le_max_abs_abs
+- \+ *lemma* max_mul_mul_le_max_mul_max
 - \+ *lemma* monotone_mul_of_nonneg
 - \+ *lemma* mul_max_of_nonneg
 - \+ *lemma* mul_min_of_nonneg
-- \+ *lemma* max_mul_mul_le_max_mul_max
 
 
 
@@ -211,25 +211,25 @@ Modified algebra/default.lean
 
 
 Renamed algebra/functions.lean to algebra/order_functions.lean
+- \+ *lemma* le_max_iff
+- \- *theorem* le_max_left_iff_true
+- \+ *lemma* le_max_left_of_le
+- \- *theorem* le_max_right_iff_true
+- \+ *lemma* le_max_right_of_le
 - \+/\- *lemma* le_min_iff
+- \+ *lemma* max_distrib_of_monotone
 - \+/\- *lemma* max_le_iff
 - \+ *lemma* max_le_max
-- \+ *lemma* min_le_min
-- \+ *lemma* le_max_left_of_le
-- \+ *lemma* le_max_right_of_le
-- \+ *lemma* min_le_left_of_le
-- \+ *lemma* min_le_right_of_le
 - \+/\- *lemma* max_min_distrib_left
 - \+/\- *lemma* max_min_distrib_right
+- \+ *lemma* min_distrib_of_monotone
+- \+ *lemma* min_le_iff
+- \+ *lemma* min_le_left_of_le
+- \+ *lemma* min_le_min
+- \+ *lemma* min_le_right_of_le
+- \+ *lemma* min_lt_iff
 - \+/\- *lemma* min_max_distrib_left
 - \+/\- *lemma* min_max_distrib_right
-- \+ *lemma* min_le_iff
-- \+ *lemma* le_max_iff
-- \+ *lemma* min_lt_iff
-- \+ *lemma* max_distrib_of_monotone
-- \+ *lemma* min_distrib_of_monotone
-- \- *theorem* le_max_left_iff_true
-- \- *theorem* le_max_right_iff_true
 
 Modified data/finset.lean
 
@@ -244,24 +244,24 @@ Modified data/set/intervals.lean
 
 
 Modified order/boolean_algebra.lean
-- \- *lemma* eq_of_sup_eq_inf_eq
-- \- *lemma* inf_eq_bot_iff_le_compl
-- \- *theorem* le_sup_inf
-- \- *theorem* sup_inf_left
-- \- *theorem* sup_inf_right
-- \- *theorem* inf_sup_left
-- \- *theorem* inf_sup_right
+- \- *lemma* lattice.eq_of_sup_eq_inf_eq
+- \- *lemma* lattice.inf_eq_bot_iff_le_compl
+- \- *theorem* lattice.inf_sup_left
+- \- *theorem* lattice.inf_sup_right
+- \- *theorem* lattice.le_sup_inf
+- \- *theorem* lattice.sup_inf_left
+- \- *theorem* lattice.sup_inf_right
 
 Modified order/bounded_lattice.lean
-- \+ *lemma* inf_eq_bot_iff_le_compl
+- \+ *lemma* lattice.inf_eq_bot_iff_le_compl
 
 Modified order/lattice.lean
-- \+ *lemma* eq_of_sup_eq_inf_eq
-- \+ *theorem* le_sup_inf
-- \+ *theorem* sup_inf_left
-- \+ *theorem* sup_inf_right
-- \+ *theorem* inf_sup_left
-- \+ *theorem* inf_sup_right
+- \+ *lemma* lattice.eq_of_sup_eq_inf_eq
+- \+ *theorem* lattice.inf_sup_left
+- \+ *theorem* lattice.inf_sup_right
+- \+ *theorem* lattice.le_sup_inf
+- \+ *theorem* lattice.sup_inf_left
+- \+ *theorem* lattice.sup_inf_right
 
 
 
@@ -269,20 +269,20 @@ Modified order/lattice.lean
 Create choose.lean ([#48](https://github.com/leanprover-community/mathlib/pull/48))
 deat(data/nat): add choose function to compute the binomial coefficients
 #### Estimated changes
-Created data/nat/choose.lean
-- \+ *lemma* choose_zero_right
-- \+ *lemma* choose_zero_succ
-- \+ *lemma* choose_succ_succ
+Added data/nat/choose.lean
+- \+ *def* choose
+- \+ *theorem* choose_eq_fact_div_fact
 - \+ *lemma* choose_eq_zero_of_lt
-- \+ *lemma* choose_self
-- \+ *lemma* choose_succ_self
+- \+ *lemma* choose_mul_fact_mul_fact
 - \+ *lemma* choose_one_right
 - \+ *lemma* choose_pos
-- \+ *lemma* succ_mul_choose_eq
-- \+ *lemma* choose_mul_fact_mul_fact
-- \+ *theorem* choose_eq_fact_div_fact
+- \+ *lemma* choose_self
+- \+ *lemma* choose_succ_self
+- \+ *lemma* choose_succ_succ
+- \+ *lemma* choose_zero_right
+- \+ *lemma* choose_zero_succ
 - \+ *theorem* fact_mul_fact_dvd_fact
-- \+ *def* choose
+- \+ *lemma* succ_mul_choose_eq
 
 
 
@@ -298,10 +298,10 @@ Modified algebra/archimedean.lean
 feat(analysis/metric_space): add tendsto_iff_dist_tendsto_zero
 #### Estimated changes
 Modified analysis/metric_space.lean
-- \+ *lemma* nhds_vmap_dist
-- \+ *lemma* tendsto_iff_dist_tendsto_zero
-- \+ *theorem* real.dist_0_eq_abs
 - \+ *theorem* abs_dist
+- \+ *lemma* nhds_vmap_dist
+- \+ *theorem* real.dist_0_eq_abs
+- \+ *lemma* tendsto_iff_dist_tendsto_zero
 
 Modified analysis/topology/continuity.lean
 
@@ -313,11 +313,11 @@ Modified analysis/topology/uniform_space.lean
 
 
 Modified order/filter.lean
-- \+ *lemma* map_le_iff_le_vmap
-- \+ *lemma* tendsto_vmap_iff
-- \- *lemma* map_le_iff_vmap_le
-- \- *lemma* le_vmap_iff_map_le
-- \- *lemma* tendsto_vmap'
+- \- *lemma* filter.le_vmap_iff_map_le
+- \+ *lemma* filter.map_le_iff_le_vmap
+- \- *lemma* filter.map_le_iff_vmap_le
+- \- *lemma* filter.tendsto_vmap'
+- \+ *lemma* filter.tendsto_vmap_iff
 
 
 
@@ -333,7 +333,7 @@ Modified analysis/metric_space.lean
 feat(option.to_list)
 #### Estimated changes
 Modified data/option.lean
-- \+ *def* to_list
+- \+ *def* option.to_list
 
 
 
@@ -341,8 +341,8 @@ Modified data/option.lean
 feat(data/list): add append_eq_nil and update_nth_eq_nil
 #### Estimated changes
 Modified data/list/basic.lean
-- \+ *lemma* append_eq_nil
-- \+ *lemma* update_nth_eq_nil
+- \+ *lemma* list.append_eq_nil
+- \+ *lemma* list.update_nth_eq_nil
 
 
 
@@ -350,8 +350,8 @@ Modified data/list/basic.lean
 feat(data/multiset): add smielattie_sup_bot instance; add disjoint_union_left/_right
 #### Estimated changes
 Modified data/multiset.lean
-- \+ *theorem* disjoint_union_left
-- \+ *theorem* disjoint_union_right
+- \+ *theorem* multiset.disjoint_union_left
+- \+ *theorem* multiset.disjoint_union_right
 
 
 
@@ -368,8 +368,8 @@ Modified algebra/group_power.lean
 feat(data/multiset): disjoint_ndinsert theorems
 #### Estimated changes
 Modified data/multiset.lean
-- \+ *theorem* disjoint_ndinsert_left
-- \+ *theorem* disjoint_ndinsert_right
+- \+ *theorem* multiset.disjoint_ndinsert_left
+- \+ *theorem* multiset.disjoint_ndinsert_right
 
 
 
@@ -377,7 +377,7 @@ Modified data/multiset.lean
 feat(data/equiv): generalize list_equiv_of_equiv over universes ([#52](https://github.com/leanprover-community/mathlib/pull/52))
 #### Estimated changes
 Modified data/equiv.lean
-- \+/\- *def* list_equiv_of_equiv
+- \+/\- *def* equiv.list_equiv_of_equiv
 
 
 
@@ -385,77 +385,77 @@ Modified data/equiv.lean
 feat(order/conditionally_complete_lattice): Conditionally complete lattices
 #### Estimated changes
 Modified data/real/basic.lean
-- \+/\- *theorem* mk_add
-- \+/\- *theorem* mk_neg
-- \+/\- *theorem* mk_mul
-- \+/\- *theorem* exists_floor
+- \+/\- *theorem* real.exists_floor
+- \+/\- *theorem* real.mk_add
+- \+/\- *theorem* real.mk_mul
+- \+/\- *theorem* real.mk_neg
 
 Modified data/set/basic.lean
-- \+/\- *theorem* subset_union_left
-- \+/\- *theorem* subset_union_right
-- \+/\- *theorem* union_subset_iff
-- \+ *theorem* union_empty_iff
-- \+/\- *theorem* inter_univ
-- \+/\- *theorem* univ_inter
+- \+/\- *theorem* set.inter_univ
+- \+/\- *theorem* set.subset_union_left
+- \+/\- *theorem* set.subset_union_right
+- \+ *theorem* set.union_empty_iff
+- \+/\- *theorem* set.union_subset_iff
+- \+/\- *theorem* set.univ_inter
 
-Created order/conditionally_complete_lattice.lean
+Added order/conditionally_complete_lattice.lean
 - \+ *lemma* bdd_above.mk
-- \+ *lemma* bdd_below.mk
-- \+ *lemma* bdd_above_empty
-- \+ *lemma* bdd_below_empty
-- \+ *lemma* bdd_above_singleton
-- \+ *lemma* bdd_below_singleton
-- \+ *lemma* bdd_above_subset
-- \+ *lemma* bdd_below_subset
+- \+ *def* bdd_above
 - \+ *lemma* bdd_above_Int1
 - \+ *lemma* bdd_above_Int2
-- \+ *lemma* bdd_below_Int1
-- \+ *lemma* bdd_below_Int2
-- \+ *lemma* bdd_above_top
 - \+ *lemma* bdd_above_bot
-- \+ *lemma* bdd_above_union
-- \+ *lemma* bdd_above_insert
+- \+ *lemma* bdd_above_empty
 - \+ *lemma* bdd_above_finite
 - \+ *lemma* bdd_above_finite_union
-- \+ *lemma* bdd_below_union
-- \+ *lemma* bdd_below_insert
+- \+ *lemma* bdd_above_insert
+- \+ *lemma* bdd_above_singleton
+- \+ *lemma* bdd_above_subset
+- \+ *lemma* bdd_above_top
+- \+ *lemma* bdd_above_union
+- \+ *lemma* bdd_below.mk
+- \+ *def* bdd_below
+- \+ *lemma* bdd_below_Int1
+- \+ *lemma* bdd_below_Int2
+- \+ *lemma* bdd_below_empty
 - \+ *lemma* bdd_below_finite
 - \+ *lemma* bdd_below_finite_union
-- \+ *lemma* lt_cSup_of_lt
-- \+ *lemma* cInf_lt_of_lt
-- \+ *lemma* exists_lt_of_lt_cSup
-- \+ *lemma* exists_lt_of_cInf_lt
-- \+ *theorem* le_cSup
-- \+ *theorem* cSup_le
-- \+ *theorem* cInf_le
-- \+ *theorem* le_cInf
-- \+ *theorem* le_cSup_of_le
-- \+ *theorem* cInf_le_of_le
-- \+ *theorem* cSup_le_cSup
-- \+ *theorem* cInf_le_cInf
-- \+ *theorem* cSup_le_iff
-- \+ *theorem* le_cInf_iff
-- \+ *theorem* cSup_intro
-- \+ *theorem* cInf_intro
-- \+ *theorem* cSup_of_in_of_le
-- \+ *theorem* cInf_of_in_of_le
-- \+ *theorem* cSup_singleton
-- \+ *theorem* cInf_singleton
-- \+ *theorem* cInf_le_cSup
-- \+ *theorem* cSup_union
-- \+ *theorem* cInf_union
-- \+ *theorem* cSup_inter_le
-- \+ *theorem* le_cInf_inter
-- \+ *theorem* cSup_insert
-- \+ *theorem* cInf_insert
-- \+ *def* bdd_above
-- \+ *def* bdd_below
+- \+ *lemma* bdd_below_insert
+- \+ *lemma* bdd_below_singleton
+- \+ *lemma* bdd_below_subset
+- \+ *lemma* bdd_below_union
+- \+ *theorem* lattice.cInf_insert
+- \+ *theorem* lattice.cInf_intro
+- \+ *theorem* lattice.cInf_le
+- \+ *theorem* lattice.cInf_le_cInf
+- \+ *theorem* lattice.cInf_le_cSup
+- \+ *theorem* lattice.cInf_le_of_le
+- \+ *lemma* lattice.cInf_lt_of_lt
+- \+ *theorem* lattice.cInf_of_in_of_le
+- \+ *theorem* lattice.cInf_singleton
+- \+ *theorem* lattice.cInf_union
+- \+ *theorem* lattice.cSup_insert
+- \+ *theorem* lattice.cSup_inter_le
+- \+ *theorem* lattice.cSup_intro
+- \+ *theorem* lattice.cSup_le
+- \+ *theorem* lattice.cSup_le_cSup
+- \+ *theorem* lattice.cSup_le_iff
+- \+ *theorem* lattice.cSup_of_in_of_le
+- \+ *theorem* lattice.cSup_singleton
+- \+ *theorem* lattice.cSup_union
+- \+ *lemma* lattice.exists_lt_of_cInf_lt
+- \+ *lemma* lattice.exists_lt_of_lt_cSup
+- \+ *theorem* lattice.le_cInf
+- \+ *theorem* lattice.le_cInf_iff
+- \+ *theorem* lattice.le_cInf_inter
+- \+ *theorem* lattice.le_cSup
+- \+ *theorem* lattice.le_cSup_of_le
+- \+ *lemma* lattice.lt_cSup_of_lt
 
 Modified order/lattice.lean
-- \+/\- *theorem* le_sup_left
-- \+/\- *theorem* le_sup_right
-- \+/\- *theorem* inf_le_left
-- \+/\- *theorem* inf_le_right
+- \+/\- *theorem* lattice.inf_le_left
+- \+/\- *theorem* lattice.inf_le_right
+- \+/\- *theorem* lattice.le_sup_left
+- \+/\- *theorem* lattice.le_sup_right
 
 
 
@@ -464,8 +464,8 @@ feat(data/finset): not_mem theorems
 Adapted from [#44](https://github.com/leanprover-community/mathlib/pull/44)
 #### Estimated changes
 Modified data/finset.lean
-- \+ *theorem* not_mem_singleton
-- \+ *theorem* not_mem_union
+- \+ *theorem* finset.not_mem_singleton
+- \+ *theorem* finset.not_mem_union
 
 Modified logic/basic.lean
 - \+ *theorem* ne_of_mem_of_not_mem
@@ -601,21 +601,21 @@ Modified data/equiv.lean
 Permutation group instance for any type
 #### Estimated changes
 Modified data/equiv.lean
-- \+ *lemma* ext
+- \+ *lemma* equiv.ext
 
 
 
 ## [2018-02-01 22:14:26-05:00](https://github.com/leanprover-community/mathlib/commit/03fefd4)
 Create localization.lean
 #### Estimated changes
-Created algebra/localization.lean
-- \+ *def* loc
-- \+ *def* add_aux
-- \+ *def* add
-- \+ *def* neg_aux
-- \+ *def* neg
-- \+ *def* mul_aux
-- \+ *def* mul
+Added algebra/localization.lean
+- \+ *def* loc.add
+- \+ *def* loc.add_aux
+- \+ *def* loc.loc
+- \+ *def* loc.mul
+- \+ *def* loc.mul_aux
+- \+ *def* loc.neg
+- \+ *def* loc.neg_aux
 
 
 

@@ -1,20 +1,25 @@
 from collections import defaultdict
 from dataclasses import asdict
 import json
+import logging
+from tqdm import tqdm
 from os import mkdir
 from shutil import rmtree
 from typing import Any
-from crawler.DiffParser import DiffParser
+from crawler.parser.DiffParser import DiffParser
 from crawler.formatters.format_commit_json import format_commit_json
-from git import Diff, Repo
-from git.objects import Commit  # keep mypy happy...
+from git import Repo
 from pathlib import Path
 
 from crawler.formatters.format_commit_md import format_commit_md
 from crawler.formatters.format_commit_txt import format_commit_txt
 
+logging.basicConfig(level=logging.INFO)
+
 CUR_DIR = Path(__file__).parent.resolve()
 MARKDOWN_DIR = CUR_DIR / "../../markdown"
+
+logging.info("Cloning mathlib repo")
 
 rmtree("mathlib", ignore_errors=True)
 mathlib_repo = Repo.clone_from(
@@ -35,12 +40,14 @@ commits_info_json_full: list[dict[Any, Any]] = []
 
 diff_parser = DiffParser(mathlib_repo)
 
+logging.info("Parsing commits")
+
 commits = list(mathlib_repo.iter_commits())
-for index, commit in enumerate(commits):
+for index, commit in enumerate(tqdm(commits)):
     diffs = []
     if index + 1 < len(commits):
-        next_commit = commits[index + 1]
-        diffs = diff_parser.diff_commits(next_commit, commit)
+        older_commit = commits[index + 1]
+        diffs = diff_parser.diff_commits(older_commit, commit)
     commit_md = format_commit_md(commit, diffs)
     commit_txt = format_commit_txt(commit, diffs)
     commit_json = format_commit_json(commit, diffs)
@@ -52,6 +59,8 @@ for index, commit in enumerate(commits):
 
 rmtree(MARKDOWN_DIR, ignore_errors=True)
 mkdir(MARKDOWN_DIR)
+
+logging.info("writing outputs")
 
 for year, commits_info in commits_info_md_by_month.items():
     with open(get_md_output_file(year), "w") as f:

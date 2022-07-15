@@ -46,15 +46,15 @@ const Home: NextPage = () => {
                 onChange: (evt: any) => setQuery(evt.target.value),
               }}
               getSuggestionValue={(suggestion) =>
-                `${suggestion.type}:${suggestion.name}`
+                `${suggestion.type}:${suggestion.fullName}`
               }
               renderSuggestion={(suggestion) => (
-                <Link href={`/${suggestion.type}/${suggestion.name}`}>
+                <Link href={`/${suggestion.type}/${suggestion.fullName}`}>
                   <a className="text-gray-800">
                     <span className="text-gray-400 min-w-[70px] inline-block text-right pr-1">
                       {suggestion.type}
                     </span>{" "}
-                    {suggestion.name}
+                    {suggestion.fullName}
                   </a>
                 </Link>
               )}

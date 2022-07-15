@@ -26,16 +26,17 @@ export const extractItemsData = (
   for (const commit of changelog.commits) {
     for (const diff of commit.changes) {
       for (const change of diff.changes) {
-        const [changeType, itemType, itemName] = change;
+        const [changeType, itemType, itemName, namespace] = change;
         const history = get(itemsHistoryMapping, [itemType, itemName], []);
         const item: ChangelogItemEvent = {
           commitHeadline: summarizeHeadline(commit.message),
           commitTimestamp: commit.timestamp,
           commitSha: commit.sha,
-          diffPath: diff.path,
+          diffPath: (diff.newPath || diff.oldPath) as string,
           type: changeType,
         };
-        set(itemsHistoryMapping, [itemType, itemName], [...history, item]);
+        const fullName = [...namespace, itemName].join(".");
+        set(itemsHistoryMapping, [itemType, fullName], [...history, item]);
       }
     }
   }

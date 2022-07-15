@@ -1,12 +1,12 @@
 from typing import cast
+from crawler.parser.DiffParser import ParsedDiff
 from crawler.formatters.format_git_changes_txt import format_git_changes_txt
-from git import Diff
 from git.objects import Commit
 from .clean_commit_msg import clean_commit_msg
 from .format_datetime import format_datetime
 
 
-def format_commit_txt(commit: Commit, diffs: list[Diff]) -> str:
+def format_commit_txt(commit: Commit, diffs: list[ParsedDiff]) -> str:
     commit_str = (
         format_datetime(commit.committed_datetime) + " " + commit.hexsha[0:7] + "\n\n"
     )

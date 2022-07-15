@@ -14,24 +14,24 @@ Modified src/category_theory/monad/limits.lean
 
 
 Modified src/category_theory/opposites.lean
-- \+ *lemma* op_id
-- \+ *lemma* unop_id
-- \- *lemma* op_app
-- \- *lemma* unop_app
+- \- *lemma* category_theory.nat_trans.op_app
+- \+ *lemma* category_theory.nat_trans.op_id
+- \- *lemma* category_theory.nat_trans.unop_app
+- \+ *lemma* category_theory.nat_trans.unop_id
 
 Modified src/category_theory/whiskering.lean
-- \- *lemma* whiskering_left_obj_obj
-- \- *lemma* whiskering_left_obj_map
-- \- *lemma* whiskering_left_map_app_app
-- \- *lemma* whisker_left.app
-- \- *lemma* whiskering_right_obj_obj
-- \- *lemma* whiskering_right_obj_map
-- \- *lemma* whiskering_right_map_app_app
-- \- *lemma* whisker_right.app
-- \+/\- *def* whisker_left
-- \+/\- *def* whisker_right
-- \+/\- *def* whiskering_left
-- \+/\- *def* whiskering_right
+- \- *lemma* category_theory.whisker_left.app
+- \+/\- *def* category_theory.whisker_left
+- \- *lemma* category_theory.whisker_right.app
+- \+/\- *def* category_theory.whisker_right
+- \+/\- *def* category_theory.whiskering_left
+- \- *lemma* category_theory.whiskering_left_map_app_app
+- \- *lemma* category_theory.whiskering_left_obj_map
+- \- *lemma* category_theory.whiskering_left_obj_obj
+- \+/\- *def* category_theory.whiskering_right
+- \- *lemma* category_theory.whiskering_right_map_app_app
+- \- *lemma* category_theory.whiskering_right_obj_map
+- \- *lemma* category_theory.whiskering_right_obj_obj
 
 Modified src/topology/sheaves/stalks.lean
 
@@ -49,23 +49,23 @@ Modified src/data/finsupp.lean
 
 
 Modified src/data/fintype.lean
-- \+ *theorem* card_of_finset
-- \+ *theorem* card_of_finset'
-- \+ *theorem* mem_to_finset
-- \+ *theorem* mem_to_finset_val
-- \+ *def* of_finset
-- \+ *def* to_finset
+- \+ *theorem* fintype.card_of_finset'
+- \+ *theorem* fintype.card_of_finset
+- \+ *def* fintype.of_finset
+- \+ *theorem* set.mem_to_finset
+- \+ *theorem* set.mem_to_finset_val
+- \+ *def* set.to_finset
 
 Modified src/data/fintype/intervals.lean
 
 
 Modified src/data/set/finite.lean
-- \- *theorem* card_fintype_of_finset
-- \- *theorem* card_fintype_of_finset'
-- \- *theorem* mem_to_finset
-- \- *theorem* mem_to_finset_val
-- \- *def* fintype_of_finset
-- \- *def* to_finset
+- \- *theorem* set.card_fintype_of_finset'
+- \- *theorem* set.card_fintype_of_finset
+- \- *def* set.fintype_of_finset
+- \- *theorem* set.mem_to_finset
+- \- *theorem* set.mem_to_finset_val
+- \- *def* set.to_finset
 
 Modified src/group_theory/order_of_element.lean
 
@@ -76,16 +76,16 @@ Modified src/group_theory/order_of_element.lean
 feat(order/conditionally_complete_lattice): add complete_linear_order instance for enat ([#1633](https://github.com/leanprover-community/mathlib/pull/1633))
 #### Estimated changes
 Modified src/data/nat/enat.lean
-- \+ *lemma* with_top_equiv_top
-- \+ *lemma* with_top_equiv_coe
-- \+ *lemma* with_top_equiv_zero
-- \+ *lemma* with_top_equiv_le
-- \+ *lemma* with_top_equiv_lt
-- \+ *lemma* with_top_equiv_symm_top
-- \+ *lemma* with_top_equiv_symm_coe
-- \+ *lemma* with_top_equiv_symm_zero
-- \+ *lemma* with_top_equiv_symm_le
-- \+ *lemma* with_top_equiv_symm_lt
+- \+ *lemma* enat.with_top_equiv_coe
+- \+ *lemma* enat.with_top_equiv_le
+- \+ *lemma* enat.with_top_equiv_lt
+- \+ *lemma* enat.with_top_equiv_symm_coe
+- \+ *lemma* enat.with_top_equiv_symm_le
+- \+ *lemma* enat.with_top_equiv_symm_lt
+- \+ *lemma* enat.with_top_equiv_symm_top
+- \+ *lemma* enat.with_top_equiv_symm_zero
+- \+ *lemma* enat.with_top_equiv_top
+- \+ *lemma* enat.with_top_equiv_zero
 
 Modified src/order/conditionally_complete_lattice.lean
 
@@ -149,14 +149,14 @@ feat(number_theory/sum_four_squares): every natural number is the sum of four sq
 * add docs in correct style
 #### Estimated changes
 Modified src/algebra/big_operators.lean
-- \+ *lemma* prod_eq_multiset_prod
+- \+ *lemma* finset.prod_eq_multiset_prod
 
 Modified src/data/int/basic.lean
 - \+ *lemma* is_ring_hom.map_int_cast
 - \+ *lemma* ring_hom.map_int_cast
 
 Modified src/data/int/parity.lean
-- \+ *theorem* even_neg
+- \+ *theorem* int.even_neg
 
 Modified src/data/nat/cast.lean
 - \+ *lemma* is_semiring_hom.map_nat_cast
@@ -166,12 +166,13 @@ Modified src/data/zmod/quadratic_reciprocity.lean
 
 
 Modified src/field_theory/finite.lean
-- \+ *lemma* sum_two_squares
+- \+ *lemma* char_p.sum_two_squares
+- \+ *lemma* zmodp.sum_two_squares
 
-Created src/number_theory/sum_four_squares.lean
-- \+ *lemma* sum_two_squares_of_two_mul_sum_two_squares
-- \+ *lemma* exists_sum_two_squares_add_one_eq_k
-- \+ *lemma* sum_four_squares
+Added src/number_theory/sum_four_squares.lean
+- \+ *lemma* int.exists_sum_two_squares_add_one_eq_k
+- \+ *lemma* int.sum_two_squares_of_two_mul_sum_two_squares
+- \+ *lemma* nat.sum_four_squares
 
 
 
@@ -179,12 +180,12 @@ Created src/number_theory/sum_four_squares.lean
 chore(category_theory): speed-up monoidal.of_has_finite_products ([#1616](https://github.com/leanprover-community/mathlib/pull/1616))
 #### Estimated changes
 Modified src/category_theory/limits/shapes/binary_products.lean
-- \+ *lemma* prod.pentagon
-- \+ *lemma* prod.associator_naturality
-- \+ *lemma* prod.triangle
-- \+ *lemma* coprod.pentagon
-- \+ *lemma* coprod.associator_naturality
-- \+ *lemma* coprod.triangle
+- \+ *lemma* category_theory.limits.coprod.associator_naturality
+- \+ *lemma* category_theory.limits.coprod.pentagon
+- \+ *lemma* category_theory.limits.coprod.triangle
+- \+ *lemma* category_theory.limits.prod.associator_naturality
+- \+ *lemma* category_theory.limits.prod.pentagon
+- \+ *lemma* category_theory.limits.prod.triangle
 
 Modified src/category_theory/monoidal/of_has_finite_products.lean
 
@@ -219,12 +220,11 @@ also move around some declarations in rat.cast
 the only new declaration in that file is is_ring_hom_cast
 #### Estimated changes
 Modified src/data/rat/cast.lean
-- \+/\- *theorem* cast_add
-- \+/\- *theorem* cast_sub
-- \+/\- *theorem* cast_mul
-- \+/\- *theorem* cast_bit0
-- \+/\- *theorem* cast_bit1
-- \+/\- *theorem* cast_mk
+- \+/\- *theorem* rat.cast_add
+- \+/\- *theorem* rat.cast_bit0
+- \+/\- *theorem* rat.cast_bit1
+- \+/\- *theorem* rat.cast_mul
+- \+/\- *theorem* rat.cast_sub
 
 Modified src/ring_theory/algebra.lean
 
@@ -300,7 +300,7 @@ chore(ring_theory/algebra): add docstring to algebra.comap and remove unused ins
 * Update algebra.lean
 #### Estimated changes
 Modified src/ring_theory/algebra.lean
-- \+/\- *def* comap
+- \+/\- *def* algebra.comap
 
 
 
@@ -339,8 +339,8 @@ This apparently makes the elaborator's job a lot easier, and
 reduces the compile time of the whole module by a factor of 3.
 #### Estimated changes
 Modified src/data/mv_polynomial.lean
-- \+/\- *def* ring_equiv_congr
-- \+/\- *def* mv_polynomial_equiv_mv_polynomial
+- \+/\- *def* mv_polynomial.mv_polynomial_equiv_mv_polynomial
+- \+/\- *def* mv_polynomial.ring_equiv_congr
 
 
 
@@ -348,7 +348,7 @@ Modified src/data/mv_polynomial.lean
 chore(category_theory): remove superfluous lemma ([#1614](https://github.com/leanprover-community/mathlib/pull/1614))
 #### Estimated changes
 Modified src/category_theory/category/default.lean
-- \- *lemma* category.assoc_symm
+- \- *lemma* category_theory.category.assoc_symm
 
 Modified src/category_theory/equivalence.lean
 
@@ -390,12 +390,12 @@ feat(data/nat): a lemma about min_fac ([#1603](https://github.com/leanprover-com
 * rename per Chris' suggestions
 #### Estimated changes
 Modified src/data/nat/basic.lean
-- \+ *lemma* eq_of_dvd_of_div_eq_one
-- \+ *lemma* eq_zero_of_dvd_of_div_eq_zero
-- \- *lemma* eq_of_dvd_quot_one
+- \+ *lemma* nat.eq_of_dvd_of_div_eq_one
+- \- *lemma* nat.eq_of_dvd_quot_one
+- \+ *lemma* nat.eq_zero_of_dvd_of_div_eq_zero
 
 Modified src/data/nat/prime.lean
-
+- \+ *lemma* nat.min_fac_le_div
 
 
 
@@ -411,14 +411,14 @@ feat(data/set/intervals): fintype instances for ℕ and ℤ ([#1602](https://git
 * cleaning up
 #### Estimated changes
 Modified src/data/finset.lean
-- \+ *lemma* mem
-- \+ *def* Ico_ℤ
+- \+ *lemma* finset.Ico_ℤ.mem
+- \+ *def* finset.Ico_ℤ
 
-Created src/data/fintype/intervals.lean
+Added src/data/fintype/intervals.lean
 
 
 Modified src/data/int/basic.lean
-- \+ *lemma* to_nat_sub_of_le
+- \+ *lemma* int.to_nat_sub_of_le
 
 
 
@@ -451,7 +451,7 @@ Modified src/analysis/complex/exponential.lean
 
 
 Modified src/data/nat/basic.lean
-- \- *theorem* pos_iff_ne_zero'
+- \- *theorem* nat.pos_iff_ne_zero'
 
 Modified src/ring_theory/multiplicity.lean
 
@@ -476,7 +476,7 @@ Co-Authored-By: Reid Barton <rwbarton@gmail.com>
 Modified src/data/rat/default.lean
 
 
-Created src/data/rat/meta.lean
+Added src/data/rat/meta.lean
 
 
 Modified src/meta/expr.lean
@@ -485,7 +485,7 @@ Modified src/meta/expr.lean
 Modified src/tactic/norm_num.lean
 
 
-Created test/rat.lean
+Added test/rat.lean
 
 
 
@@ -494,14 +494,14 @@ Created test/rat.lean
 chore(category_theory): replace some @[simp] with @[simps] ([#1605](https://github.com/leanprover-community/mathlib/pull/1605))
 #### Estimated changes
 Modified src/category_theory/limits/shapes/binary_products.lean
-- \+/\- *def* prod.braiding
-- \+/\- *def* prod.associator
-- \+/\- *def* prod.left_unitor
-- \+/\- *def* prod.right_unitor
-- \+/\- *def* coprod.braiding
-- \+/\- *def* coprod.associator
-- \+/\- *def* coprod.left_unitor
-- \+/\- *def* coprod.right_unitor
+- \+/\- *def* category_theory.limits.coprod.associator
+- \+/\- *def* category_theory.limits.coprod.braiding
+- \+/\- *def* category_theory.limits.coprod.left_unitor
+- \+/\- *def* category_theory.limits.coprod.right_unitor
+- \+/\- *def* category_theory.limits.prod.associator
+- \+/\- *def* category_theory.limits.prod.braiding
+- \+/\- *def* category_theory.limits.prod.left_unitor
+- \+/\- *def* category_theory.limits.prod.right_unitor
 
 
 
@@ -512,15 +512,15 @@ chore(group_theory/free_group,order/zorn): rename zorn.zorn and sum.sum ([#1604]
 * chore(group_theory/free_group,order/zorn): remove nolint
 #### Estimated changes
 Modified src/group_theory/free_group.lean
-- \+ *lemma* sum.mul
-- \- *lemma* sum.sum
+- \+ *lemma* free_group.sum.mul
+- \- *lemma* free_group.sum.sum
 
 Modified src/order/filter/basic.lean
 
 
 Modified src/order/zorn.lean
-- \+ *theorem* exists_maximal_of_chains_bounded
-- \- *theorem* zorn
+- \+ *theorem* zorn.exists_maximal_of_chains_bounded
+- \- *theorem* zorn.zorn
 
 
 
@@ -565,29 +565,29 @@ Co-Authored-By: Reid Barton <rwbarton@gmail.com>
 * using nolint
 #### Estimated changes
 Modified src/group_theory/free_group.lean
-- \+/\- *lemma* sum.sum
+- \+/\- *lemma* free_group.sum.sum
 
 Modified src/linear_algebra/finite_dimensional.lean
-- \+ *lemma* finite_dimensional_of_finite_basis
-- \- *def* finite_dimensional_of_finite_basis
+- \+ *lemma* finite_dimensional.finite_dimensional_of_finite_basis
+- \- *def* finite_dimensional.finite_dimensional_of_finite_basis
 
 Modified src/number_theory/pell.lean
-
+- \+/\- *def* pell.pell
 
 Modified src/order/lattice.lean
-- \+ *theorem* ext
-- \- *theorem* lattice.ext
+- \+ *theorem* lattice.ext
+- \- *theorem* lattice.lattice.ext
 
 Modified src/order/zorn.lean
-- \+/\- *theorem* zorn
+- \+/\- *theorem* zorn.zorn
 
 Modified src/ring_theory/algebraic.lean
 - \+ *lemma* subalgebra.is_algebraic_iff
 - \- *def* subalgebra.is_algebraic_iff
 
 Modified src/set_theory/ordinal.lean
-- \+/\- *def* div_def
-- \+/\- *def* ord_eq_min
+- \+/\- *def* cardinal.ord_eq_min
+- \+/\- *def* ordinal.div_def
 
 Modified src/tactic/reassoc_axiom.lean
 - \+ *theorem* category_theory.reassoc_of
@@ -605,8 +605,8 @@ Modified src/algebra/big_operators.lean
 
 
 Modified src/data/multiset.lean
-- \+ *lemma* map_eq_map_of_bij_of_nodup
-- \+ *theorem* eq_zero_iff_forall_not_mem
+- \+ *theorem* multiset.eq_zero_iff_forall_not_mem
+- \+ *lemma* multiset.map_eq_map_of_bij_of_nodup
 
 
 
@@ -619,110 +619,98 @@ Also rewrite `algebra/commute` to reuse results from `algebra/semiconj`.
 * Add two more constructors
 #### Estimated changes
 Modified src/algebra/commute.lean
-- \+/\- *theorem* one_right
-- \+/\- *theorem* one_left
-- \+/\- *theorem* units_inv_right
-- \+/\- *theorem* units_inv_left
-- \+/\- *theorem* pow_right
-- \+/\- *theorem* pow_left
-- \+/\- *theorem* pow_pow
-- \+/\- *theorem* self_pow
-- \+/\- *theorem* pow_self
-- \+/\- *theorem* pow_pow_self
-- \+/\- *theorem* units_coe
-- \+ *theorem* units_of_coe
-- \+ *theorem* units_coe_iff
-- \+/\- *theorem* inv_right
-- \+/\- *theorem* inv_right_iff
-- \+/\- *theorem* inv_left
-- \+/\- *theorem* inv_left_iff
-- \+/\- *theorem* inv_inv
-- \+/\- *theorem* inv_inv_iff
-- \+/\- *theorem* gpow_right
-- \+/\- *theorem* gpow_left
-- \+/\- *theorem* gpow_gpow
-- \+/\- *theorem* self_gpow
-- \+/\- *theorem* gpow_self
-- \+/\- *theorem* gpow_gpow_self
-- \+/\- *theorem* zero_right
-- \+/\- *theorem* zero_left
-- \+/\- *theorem* add_right
-- \+/\- *theorem* add_left
-- \+/\- *theorem* smul_right
-- \+/\- *theorem* smul_left
-- \+/\- *theorem* smul_smul
-- \+/\- *theorem* self_smul
-- \+/\- *theorem* smul_self
-- \+/\- *theorem* self_smul_smul
-- \+/\- *theorem* cast_nat_right
-- \+/\- *theorem* cast_nat_left
-- \+/\- *theorem* neg_right
-- \+/\- *theorem* neg_right_iff
-- \+/\- *theorem* neg_left
-- \+/\- *theorem* neg_left_iff
-- \+/\- *theorem* neg_one_right
-- \+/\- *theorem* neg_one_left
-- \+/\- *theorem* sub_right
-- \+/\- *theorem* sub_left
-- \+/\- *theorem* gsmul_right
-- \+/\- *theorem* gsmul_left
-- \+/\- *theorem* gsmul_gsmul
-- \+/\- *theorem* self_gsmul
-- \+/\- *theorem* gsmul_self
-- \+/\- *theorem* self_gsmul_gsmul
-- \+/\- *theorem* cast_int_right
-- \+/\- *theorem* cast_int_left
-- \+/\- *theorem* mem_centralizer
-- \+ *theorem* commute.list_prod_right
-- \+ *theorem* commute.list_prod_left
-- \- *theorem* list_prod_right
-- \- *theorem* list_prod_left
+- \+/\- *theorem* commute.add_left
+- \+/\- *theorem* commute.add_right
+- \+/\- *theorem* commute.cast_nat_left
+- \+/\- *theorem* commute.cast_nat_right
+- \+/\- *theorem* commute.gpow_gpow
+- \+/\- *theorem* commute.gpow_gpow_self
+- \+/\- *theorem* commute.gpow_left
+- \+/\- *theorem* commute.gpow_right
+- \+/\- *theorem* commute.gsmul_gsmul
+- \+/\- *theorem* commute.gsmul_left
+- \+/\- *theorem* commute.gsmul_right
+- \+/\- *theorem* commute.gsmul_self
+- \+/\- *theorem* commute.inv_inv
+- \+/\- *theorem* commute.inv_inv_iff
+- \+/\- *theorem* commute.inv_left
+- \+/\- *theorem* commute.inv_left_iff
+- \+/\- *theorem* commute.inv_right
+- \+/\- *theorem* commute.inv_right_iff
+- \+/\- *theorem* commute.list_prod_left
+- \+/\- *theorem* commute.list_prod_right
+- \+/\- *theorem* commute.neg_left
+- \+/\- *theorem* commute.neg_left_iff
+- \+/\- *theorem* commute.neg_one_left
+- \+/\- *theorem* commute.neg_one_right
+- \+/\- *theorem* commute.neg_right
+- \+/\- *theorem* commute.neg_right_iff
+- \+/\- *theorem* commute.one_left
+- \+/\- *theorem* commute.one_right
+- \+/\- *theorem* commute.pow_pow
+- \+/\- *theorem* commute.pow_right
+- \+/\- *theorem* commute.self_gsmul
+- \+/\- *theorem* commute.self_gsmul_gsmul
+- \+/\- *theorem* commute.self_smul
+- \+/\- *theorem* commute.self_smul_smul
+- \+/\- *theorem* commute.smul_left
+- \+/\- *theorem* commute.smul_right
+- \+/\- *theorem* commute.smul_self
+- \+/\- *theorem* commute.smul_smul
+- \+/\- *theorem* commute.sub_left
+- \+/\- *theorem* commute.sub_right
+- \+/\- *theorem* commute.units_coe
+- \+ *theorem* commute.units_coe_iff
+- \+/\- *theorem* commute.units_inv_left
+- \+/\- *theorem* commute.units_inv_right
+- \+ *theorem* commute.units_of_coe
+- \+/\- *theorem* commute.zero_left
+- \+/\- *theorem* commute.zero_right
 - \+/\- *def* commute
-- \+/\- *def* centralizer
 
-Created src/algebra/semiconj.lean
-- \+ *lemma* mul_right
-- \+ *lemma* mul_left
-- \+ *lemma* one_right
-- \+ *lemma* one_left
-- \+ *lemma* units_inv_right
-- \+ *lemma* units_inv_right_iff
-- \+ *lemma* units_inv_symm_left
-- \+ *lemma* units_inv_symm_left_iff
-- \+ *lemma* pow_right
-- \+ *lemma* units_gpow_right
-- \+ *lemma* units_conj_mk
-- \+ *lemma* inv_right_iff
-- \+ *lemma* inv_right
-- \+ *lemma* inv_symm_left_iff
-- \+ *lemma* inv_symm_left
-- \+ *lemma* inv_inv_symm
-- \+ *lemma* inv_inv_symm_iff
-- \+ *lemma* conj_mk
-- \+ *lemma* gpow_right
-- \+ *lemma* add_right
-- \+ *lemma* add_left
-- \+ *lemma* zero_right
-- \+ *lemma* zero_left
-- \+ *lemma* smul_right
-- \+ *lemma* smul_left
-- \+ *lemma* smul_smul
-- \+ *lemma* cast_nat_right
-- \+ *lemma* cast_nat_left
-- \+ *lemma* neg_right
-- \+ *lemma* neg_right_iff
-- \+ *lemma* neg_left
-- \+ *lemma* neg_left_iff
-- \+ *lemma* neg_one_right
-- \+ *lemma* neg_one_left
-- \+ *lemma* sub_right
-- \+ *lemma* sub_left
-- \+ *lemma* gsmul_right
-- \+ *lemma* gsmul_left
-- \+ *lemma* gsmul_gsmul
-- \+ *theorem* units_coe
-- \+ *theorem* units_of_coe
-- \+ *theorem* units_coe_iff
+Added src/algebra/semiconj.lean
+- \+ *lemma* semiconj_by.add_left
+- \+ *lemma* semiconj_by.add_right
+- \+ *lemma* semiconj_by.cast_nat_left
+- \+ *lemma* semiconj_by.cast_nat_right
+- \+ *lemma* semiconj_by.conj_mk
+- \+ *lemma* semiconj_by.gpow_right
+- \+ *lemma* semiconj_by.gsmul_gsmul
+- \+ *lemma* semiconj_by.gsmul_left
+- \+ *lemma* semiconj_by.gsmul_right
+- \+ *lemma* semiconj_by.inv_inv_symm
+- \+ *lemma* semiconj_by.inv_inv_symm_iff
+- \+ *lemma* semiconj_by.inv_right
+- \+ *lemma* semiconj_by.inv_right_iff
+- \+ *lemma* semiconj_by.inv_symm_left
+- \+ *lemma* semiconj_by.inv_symm_left_iff
+- \+ *lemma* semiconj_by.mul_left
+- \+ *lemma* semiconj_by.mul_right
+- \+ *lemma* semiconj_by.neg_left
+- \+ *lemma* semiconj_by.neg_left_iff
+- \+ *lemma* semiconj_by.neg_one_left
+- \+ *lemma* semiconj_by.neg_one_right
+- \+ *lemma* semiconj_by.neg_right
+- \+ *lemma* semiconj_by.neg_right_iff
+- \+ *lemma* semiconj_by.one_left
+- \+ *lemma* semiconj_by.one_right
+- \+ *lemma* semiconj_by.pow_right
+- \+ *lemma* semiconj_by.smul_left
+- \+ *lemma* semiconj_by.smul_right
+- \+ *lemma* semiconj_by.smul_smul
+- \+ *lemma* semiconj_by.sub_left
+- \+ *lemma* semiconj_by.sub_right
+- \+ *theorem* semiconj_by.units_coe
+- \+ *theorem* semiconj_by.units_coe_iff
+- \+ *lemma* semiconj_by.units_conj_mk
+- \+ *lemma* semiconj_by.units_gpow_right
+- \+ *lemma* semiconj_by.units_inv_right
+- \+ *lemma* semiconj_by.units_inv_right_iff
+- \+ *lemma* semiconj_by.units_inv_symm_left
+- \+ *lemma* semiconj_by.units_inv_symm_left_iff
+- \+ *theorem* semiconj_by.units_of_coe
+- \+ *lemma* semiconj_by.zero_left
+- \+ *lemma* semiconj_by.zero_right
 - \+ *def* semiconj_by
 
 
@@ -737,48 +725,48 @@ feat(geometry/manifold): improvements for smooth manifolds ([#1593](https://gith
 * more comments
 #### Estimated changes
 Modified src/analysis/calculus/times_cont_diff.lean
-- \+ *lemma* times_cont_diff_on_const
-- \+ *lemma* times_cont_diff.comp_times_cont_diff_on
-- \+ *lemma* times_cont_diff_on.add
 - \+ *lemma* times_cont_diff.add
-- \+ *lemma* times_cont_diff_on.neg
+- \+ *lemma* times_cont_diff.comp_times_cont_diff_on
 - \+ *lemma* times_cont_diff.neg
-- \+ *lemma* times_cont_diff_on.sub
 - \+ *lemma* times_cont_diff.sub
+- \+ *lemma* times_cont_diff_on.add
+- \+ *lemma* times_cont_diff_on.neg
+- \+ *lemma* times_cont_diff_on.sub
+- \+ *lemma* times_cont_diff_on_const
 
 Modified src/geometry/manifold/manifold.lean
-- \+ *lemma* mem_pregroupoid_of_eq_on_source
-- \+ *lemma* has_groupoid_of_pregroupoid
-- \+ *def* pregroupoid.groupoid
 - \- *def* groupoid_of_pregroupoid
+- \+ *lemma* has_groupoid_of_pregroupoid
+- \+ *lemma* mem_pregroupoid_of_eq_on_source
+- \+ *def* pregroupoid.groupoid
 
-Created src/geometry/manifold/real_instances.lean
-- \+ *lemma* findim_euclidean_space
-- \+ *lemma* range_half_space
-- \+ *lemma* range_quadrant
-- \+ *def* euclidean_space
-- \+ *def* euclidean_half_space
-- \+ *def* euclidean_quadrant
-- \+ *def* model_with_corners_euclidean_half_space
-- \+ *def* model_with_corners_euclidean_quadrant
-- \+ *def* lt_class
+Added src/geometry/manifold/real_instances.lean
 - \+ *def* Icc_left_chart
 - \+ *def* Icc_right_chart
+- \+ *def* euclidean_half_space
+- \+ *def* euclidean_quadrant
+- \+ *def* euclidean_space
+- \+ *lemma* findim_euclidean_space
+- \+ *def* lt_class
+- \+ *def* model_with_corners_euclidean_half_space
+- \+ *def* model_with_corners_euclidean_quadrant
+- \+ *lemma* range_half_space
+- \+ *lemma* range_quadrant
 
 Modified src/geometry/manifold/smooth_manifold_with_corners.lean
+- \- *def* euclidean_half_space
+- \- *def* euclidean_space
+- \- *def* model_with_corners_euclidean_half_space
+- \+ *lemma* of_set_mem_times_cont_diff_groupoid
+- \- *lemma* range_half_space
+- \+ *lemma* symm_trans_mem_times_cont_diff_groupoid
+- \+/\- *def* times_cont_diff_groupoid
 - \+/\- *lemma* times_cont_diff_groupoid_le
 - \+/\- *lemma* times_cont_diff_groupoid_zero_eq
-- \+ *lemma* of_set_mem_times_cont_diff_groupoid
-- \+ *lemma* symm_trans_mem_times_cont_diff_groupoid
-- \- *lemma* range_half_space
-- \+/\- *def* times_cont_diff_groupoid
-- \- *def* euclidean_space
-- \- *def* euclidean_half_space
-- \- *def* model_with_corners_euclidean_half_space
 
 Modified src/linear_algebra/finite_dimensional.lean
-- \+ *lemma* findim_fintype_fun_eq_card
-- \+ *lemma* findim_fin_fun
+- \+ *lemma* finite_dimensional.findim_fin_fun
+- \+ *lemma* finite_dimensional.findim_fintype_fun_eq_card
 
 
 
@@ -790,8 +778,8 @@ rename the current `sum_ite` to `sum_ite_eq` and add a more general version
 Co-Authored-By: Johan Commelin <johan@commelin.net>
 #### Estimated changes
 Modified src/algebra/big_operators.lean
-- \+/\- *lemma* prod_ite
-- \+ *lemma* prod_ite_eq
+- \+/\- *lemma* finset.prod_ite
+- \+ *lemma* finset.prod_ite_eq
 
 
 
@@ -801,10 +789,10 @@ doc(topology/topological_fiber_bundle): documentation improvements ([#1594](http
 * minor fixes
 #### Estimated changes
 Modified src/topology/topological_fiber_bundle.lean
-- \+/\- *def* index
-- \+/\- *def* base
-- \+/\- *def* fiber
-- \+/\- *def* total_space
+- \+/\- *def* topological_fiber_bundle_core.base
+- \+/\- *def* topological_fiber_bundle_core.fiber
+- \+/\- *def* topological_fiber_bundle_core.index
+- \+/\- *def* topological_fiber_bundle_core.total_space
 
 
 
@@ -812,7 +800,7 @@ Modified src/topology/topological_fiber_bundle.lean
 feat(data/nat/modeq): div_mod_eq_mod_mul_div ([#1597](https://github.com/leanprover-community/mathlib/pull/1597))
 #### Estimated changes
 Modified src/data/nat/modeq.lean
-- \+ *lemma* div_mod_eq_mod_mul_div
+- \+ *lemma* nat.div_mod_eq_mod_mul_div
 
 
 
@@ -833,7 +821,7 @@ chore(src/data/mv_polynomial): doc comments and removing unused arguments ([#158
 * Update src/data/mv_polynomial.lean
 #### Estimated changes
 Modified src/data/mv_polynomial.lean
-- \- *def* tmp.coe
+- \- *def* mv_polynomial.tmp.coe
 
 
 
@@ -845,15 +833,15 @@ feat(analysis/normed_space): norms on ℤ and ℚ ([#1570](https://github.com/le
 Co-Authored-By: Rob Lewis <Rob.y.lewis@gmail.com>
 #### Estimated changes
 Modified src/analysis/normed_space/basic.lean
+- \+ *lemma* int.norm_cast_rat
 - \+ *lemma* int.norm_cast_real
 - \+ *lemma* rat.norm_cast_real
-- \+ *lemma* int.norm_cast_rat
 
 Modified src/topology/instances/real.lean
-- \+ *lemma* rat.dist_cast
-- \+ *theorem* int.dist_eq
-- \+ *theorem* int.dist_cast_real
 - \+ *theorem* int.dist_cast_rat
+- \+ *theorem* int.dist_cast_real
+- \+ *theorem* int.dist_eq
+- \+ *lemma* rat.dist_cast
 
 
 
@@ -864,16 +852,16 @@ Modified src/category_theory/adjunction/basic.lean
 
 
 Modified src/category_theory/adjunction/limits.lean
-- \+ *def* functoriality_right_adjoint
-- \+ *def* functoriality_unit
-- \+ *def* functoriality_counit
-- \+ *def* functoriality_left_adjoint
-- \+ *def* functoriality_unit'
-- \+ *def* functoriality_counit'
-- \+ *def* cocones_iso_component_hom
-- \+ *def* cocones_iso_component_inv
-- \+ *def* cones_iso_component_hom
-- \+ *def* cones_iso_component_inv
+- \+ *def* category_theory.adjunction.cocones_iso_component_hom
+- \+ *def* category_theory.adjunction.cocones_iso_component_inv
+- \+ *def* category_theory.adjunction.cones_iso_component_hom
+- \+ *def* category_theory.adjunction.cones_iso_component_inv
+- \+ *def* category_theory.adjunction.functoriality_counit'
+- \+ *def* category_theory.adjunction.functoriality_counit
+- \+ *def* category_theory.adjunction.functoriality_left_adjoint
+- \+ *def* category_theory.adjunction.functoriality_right_adjoint
+- \+ *def* category_theory.adjunction.functoriality_unit'
+- \+ *def* category_theory.adjunction.functoriality_unit
 
 Modified src/category_theory/limits/cones.lean
 
@@ -914,8 +902,8 @@ Co-Authored-By: Johan Commelin <johan@commelin.net>
 * Update src/algebra/category/CommRing/limits.lean
 #### Estimated changes
 Modified src/algebra/category/CommRing/limits.lean
-- \+ *def* limit
-- \+ *def* limit_is_limit
+- \+ *def* CommRing.CommRing_has_limits.limit
+- \+ *def* CommRing.CommRing_has_limits.limit_is_limit
 
 
 
@@ -948,36 +936,36 @@ this leads to loops with `subtype.fintype` under the right decidable_eq assumpti
 * undo removed whitespace
 * update header
 #### Estimated changes
-Created archive/sensitivity.lean
-- \+ *lemma* card
-- \+ *lemma* succ_n_eq
-- \+ *lemma* not_adjacent_zero
-- \+ *lemma* adj_iff_proj_eq
-- \+ *lemma* adj_iff_proj_adj
-- \+ *lemma* adjacent.symm
-- \+ *lemma* e_zero_apply
-- \+ *lemma* duality
-- \+ *lemma* epsilon_total
+Added archive/sensitivity.lean
+- \+ *lemma* Q.adj_iff_proj_adj
+- \+ *lemma* Q.adj_iff_proj_eq
+- \+ *lemma* Q.adjacent.symm
+- \+ *def* Q.adjacent
+- \+ *lemma* Q.card
+- \+ *lemma* Q.not_adjacent_zero
+- \+ *lemma* Q.succ_n_eq
+- \+ *def* V.add_comm_monoid
+- \+ *def* V.add_comm_semigroup
+- \+ *def* V.has_add
+- \+ *def* V.has_scalar
+- \+ *def* V.module
+- \+ *def* V
 - \+ *lemma* dim_V
-- \+ *lemma* findim_V
-- \+ *lemma* f_zero
-- \+ *lemma* f_succ_apply
-- \+ *lemma* f_squared
+- \+ *def* dual_pair_e_ε
+- \+ *lemma* duality
+- \+ *lemma* e_zero_apply
+- \+ *lemma* epsilon_total
+- \+ *lemma* exists_eigenvalue
+- \+ *lemma* f_image_g
 - \+ *lemma* f_matrix
+- \+ *lemma* f_squared
+- \+ *lemma* f_succ_apply
+- \+ *lemma* f_zero
+- \+ *lemma* findim_V
 - \+ *lemma* g_apply
 - \+ *lemma* g_injective
-- \+ *lemma* f_image_g
-- \+ *lemma* exists_eigenvalue
 - \+ *theorem* huang_degree_theorem
 - \+ *def* π
-- \+ *def* adjacent
-- \+ *def* V
-- \+ *def* module
-- \+ *def* add_comm_semigroup
-- \+ *def* add_comm_monoid
-- \+ *def* has_scalar
-- \+ *def* has_add
-- \+ *def* dual_pair_e_ε
 
 
 
@@ -993,10 +981,10 @@ Co-Authored-By: Scott Morrison <scott@tqft.net>
 * chore(algebra/category/*/colimits): remove unnecessary projections
 #### Estimated changes
 Modified src/algebra/category/CommRing/colimits.lean
-- \+/\- *def* cocone_fun
+- \+/\- *def* CommRing.colimits.cocone_fun
 
 Modified src/algebra/category/Mon/colimits.lean
-- \+/\- *def* cocone_fun
+- \+/\- *def* Mon.colimits.cocone_fun
 
 
 
@@ -1021,14 +1009,14 @@ Modified docs/tactics.md
 
 
 Modified src/category_theory/comma.lean
-- \+/\- *lemma* w
+- \+/\- *lemma* category_theory.over.w
 
 Modified src/category_theory/functor.lean
 
 
 Modified src/tactic/reassoc_axiom.lean
-- \+ *def* calculated_Prop
 - \+ *def* category_theory.reassoc_of
+- \+ *def* tactic.calculated_Prop
 
 Modified test/tactics.lean
 
@@ -1043,8 +1031,8 @@ feat(data/nat/basic): division inequalities ([#1579](https://github.com/leanprov
 * shorten proof
 #### Estimated changes
 Modified src/data/nat/basic.lean
-- \+ *lemma* mul_div_le_mul_div_assoc
-- \+ *lemma* div_mul_div_le_div
+- \+ *lemma* nat.div_mul_div_le_div
+- \+ *lemma* nat.mul_div_le_mul_div_assoc
 
 
 
@@ -1059,14 +1047,14 @@ Co-Authored-By: Scott Morrison <scott@tqft.net>
 * adding examples testing coercions
 #### Estimated changes
 Modified src/algebra/category/CommRing/basic.lean
-- \- *lemma* id_eq
-- \- *lemma* comp_eq
-- \- *lemma* forget_obj_eq_coe
-- \- *lemma* forget_map_eq_coe
-- \+/\- *def* SemiRing
-- \+/\- *def* Ring
-- \+/\- *def* CommSemiRing
+- \- *lemma* CommRing.comp_eq
+- \- *lemma* CommRing.forget_map_eq_coe
+- \- *lemma* CommRing.forget_obj_eq_coe
+- \- *lemma* CommRing.id_eq
 - \+/\- *def* CommRing
+- \+/\- *def* CommSemiRing
+- \+/\- *def* Ring
+- \+/\- *def* SemiRing
 
 Modified src/algebra/category/CommRing/colimits.lean
 
@@ -1075,40 +1063,41 @@ Modified src/algebra/category/CommRing/limits.lean
 
 
 Modified src/algebra/category/Group.lean
-- \+/\- *def* Group
 - \+/\- *def* CommGroup
-- \+/\- *def* of
+- \+/\- *def* Group
 
 Modified src/algebra/category/Mon/basic.lean
+- \+/\- *def* CommMon.of
 - \+/\- *def* CommMon
-- \+/\- *def* of
 
 Modified src/algebra/category/Mon/colimits.lean
 
 
 Modified src/category_theory/concrete_category/basic.lean
-- \+ *lemma* forget_obj_eq_coe
-- \+ *lemma* forget_map_eq_coe
-- \+ *lemma* coe_id
-- \+ *lemma* coe_comp
-- \+ *def* concrete_category.has_coe_to_sort
-- \+ *def* concrete_category.has_coe_to_fun
+- \+ *lemma* category_theory.coe_comp
+- \+ *lemma* category_theory.coe_id
+- \+ *def* category_theory.concrete_category.has_coe_to_fun
+- \+ *def* category_theory.concrete_category.has_coe_to_sort
+- \+ *lemma* category_theory.forget_map_eq_coe
+- \+ *lemma* category_theory.forget_obj_eq_coe
 
 Modified src/category_theory/concrete_category/bundled.lean
-- \+/\- *def* map
+- \+/\- *def* category_theory.bundled.map
 
 Modified src/category_theory/concrete_category/bundled_hom.lean
-- \- *lemma* coe_id
-- \- *lemma* coe_comp
-- \- *def* has_coe_to_fun
-- \- *def* full_subcategory_has_forget₂
+- \- *lemma* category_theory.bundled_hom.coe_comp
+- \- *lemma* category_theory.bundled_hom.coe_id
+- \- *def* category_theory.bundled_hom.full_subcategory_has_forget₂
+- \- *def* category_theory.bundled_hom.has_coe_to_fun
 
 Modified src/category_theory/full_subcategory.lean
-- \+/\- *def* induced_functor
+- \+/\- *def* category_theory.induced_functor
 
 Modified src/category_theory/limits/cones.lean
-- \+ *lemma* naturality_concrete
-- \- *lemma* naturality_bundled
+- \- *lemma* category_theory.limits.cocone.naturality_bundled
+- \+ *lemma* category_theory.limits.cocone.naturality_concrete
+- \- *lemma* category_theory.limits.cone.naturality_bundled
+- \+ *lemma* category_theory.limits.cone.naturality_concrete
 
 
 
@@ -1119,7 +1108,7 @@ feat(data/finset): inj_on_of_surj_on_of_card_le ([#1578](https://github.com/lean
 * function namespace
 #### Estimated changes
 Modified src/data/finset.lean
-- \+ *lemma* inj_on_of_surj_on_of_card_le
+- \+ *lemma* finset.inj_on_of_surj_on_of_card_le
 
 
 
@@ -1146,34 +1135,34 @@ this leads to loops with `subtype.fintype` under the right decidable_eq assumpti
 * fixing a doc comment
 #### Estimated changes
 Modified src/algebra/module.lean
-- \+ *lemma* module.smul_eq_smul
 - \+ *lemma* finset.sum_const'
+- \+ *lemma* module.smul_eq_smul
 
 Modified src/algebra/ring.lean
 - \+ *lemma* mul_ite
 
 Modified src/data/set/finite.lean
-- \+ *lemma* to_finset_card
-- \+ *lemma* to_finset_inter
 - \+ *lemma* fintype.exists_max
-- \+ *def* decidable_mem_of_fintype
+- \+ *def* set.decidable_mem_of_fintype
+- \+ *lemma* set.to_finset_card
+- \+ *lemma* set.to_finset_inter
 
 Modified src/linear_algebra/dual.lean
-- \+/\- *lemma* to_dual_to_dual
-- \+ *lemma* coeffs_apply
-- \+ *lemma* dual_lc
-- \+ *lemma* coeffs_lc
-- \+ *lemma* decomposition
-- \+ *lemma* mem_of_mem_span
-- \+ *lemma* is_basis
-- \+ *lemma* eq_dual
-- \+ *def* coeffs
-- \+ *def* lc
+- \+ *def* dual_pair.coeffs
+- \+ *lemma* dual_pair.coeffs_apply
+- \+ *lemma* dual_pair.coeffs_lc
+- \+ *lemma* dual_pair.decomposition
+- \+ *lemma* dual_pair.dual_lc
+- \+ *lemma* dual_pair.eq_dual
+- \+ *lemma* dual_pair.is_basis
+- \+ *def* dual_pair.lc
+- \+ *lemma* dual_pair.mem_of_mem_span
+- \+/\- *lemma* is_basis.to_dual_to_dual
 
 Modified src/linear_algebra/finite_dimensional.lean
-- \+ *lemma* fg_of_finite_basis
-- \+ *lemma* dim_eq_card
-- \+ *def* finite_dimensional_of_finite_basis
+- \+ *lemma* finite_dimensional.dim_eq_card
+- \+ *lemma* finite_dimensional.fg_of_finite_basis
+- \+ *def* finite_dimensional.finite_dimensional_of_finite_basis
 
 Modified src/linear_algebra/finsupp.lean
 - \+ *lemma* linear_map.map_finsupp_total
@@ -1182,7 +1171,7 @@ Modified src/ring_theory/power_series.lean
 
 
 Modified src/set_theory/cardinal.lean
-- \+/\- *theorem* nat_cast_pow
+- \+/\- *theorem* cardinal.nat_cast_pow
 
 
 
@@ -1210,23 +1199,23 @@ feat(geometric/manifold): smooth manifolds ([#1555](https://github.com/leanprove
 * update docstring
 * remove out_param
 #### Estimated changes
-Created src/geometry/manifold/smooth_manifold_with_corners.lean
-- \+ *lemma* model_with_corners_self_local_equiv
-- \+ *lemma* model_with_corners_target
-- \+ *lemma* model_with_corners_left_inv
-- \+ *lemma* model_with_corners_inv_fun_comp
-- \+ *lemma* model_with_corners_right_inv
+Added src/geometry/manifold/smooth_manifold_with_corners.lean
+- \+ *def* euclidean_half_space
+- \+ *def* euclidean_space
 - \+ *lemma* model_with_corners.image
-- \+ *lemma* times_cont_diff_groupoid_le
-- \+ *lemma* times_cont_diff_groupoid_zero_eq
-- \+ *lemma* range_half_space
-- \+ *def* model_with_corners_self
 - \+ *def* model_with_corners.prod
 - \+ *def* model_with_corners.tangent
-- \+ *def* times_cont_diff_groupoid
-- \+ *def* euclidean_space
-- \+ *def* euclidean_half_space
 - \+ *def* model_with_corners_euclidean_half_space
+- \+ *lemma* model_with_corners_inv_fun_comp
+- \+ *lemma* model_with_corners_left_inv
+- \+ *lemma* model_with_corners_right_inv
+- \+ *def* model_with_corners_self
+- \+ *lemma* model_with_corners_self_local_equiv
+- \+ *lemma* model_with_corners_target
+- \+ *lemma* range_half_space
+- \+ *def* times_cont_diff_groupoid
+- \+ *lemma* times_cont_diff_groupoid_le
+- \+ *lemma* times_cont_diff_groupoid_zero_eq
 
 
 
@@ -1234,10 +1223,10 @@ Created src/geometry/manifold/smooth_manifold_with_corners.lean
 feat(data/finset): define `finset.Ico.subset_iff` ([#1574](https://github.com/leanprover-community/mathlib/pull/1574))
 #### Estimated changes
 Modified src/data/finset.lean
-- \+ *theorem* subset_iff
+- \+ *theorem* finset.Ico.subset_iff
 
 Modified src/data/nat/basic.lean
-- \+ *lemma* le_of_pred_lt
+- \+ *lemma* nat.le_of_pred_lt
 
 
 
@@ -1246,44 +1235,44 @@ feat(topology/topological_fiber_bundle): topological fiber bundles ([#1421](http
 * feat(topology/topological_fiber_bundle): topological fiber bundles
 * better definition of fiber bundles
 #### Estimated changes
-Created src/topology/topological_fiber_bundle.lean
+Added src/topology/topological_fiber_bundle.lean
 - \+ *lemma* bundle_trivialization.continuous_at_proj
 - \+ *lemma* is_topological_fiber_bundle.continuous_proj
 - \+ *lemma* is_topological_fiber_bundle.is_open_map_proj
+- \+ *def* is_topological_fiber_bundle
 - \+ *lemma* is_topological_fiber_bundle_fst
 - \+ *lemma* is_topological_fiber_bundle_snd
-- \+ *lemma* mem_triv_change_source
-- \+ *lemma* mem_local_triv'_source
-- \+ *lemma* mem_local_triv'_target
-- \+ *lemma* local_triv'_fst
-- \+ *lemma* local_triv'_inv_fst
-- \+ *lemma* local_triv'_trans
-- \+ *lemma* open_source'
-- \+ *lemma* open_target'
-- \+ *lemma* mem_local_triv_source
-- \+ *lemma* mem_local_triv_target
-- \+ *lemma* local_triv_fst
-- \+ *lemma* local_triv_symm_fst
-- \+ *lemma* local_triv_trans
-- \+ *lemma* continuous_proj
-- \+ *lemma* is_open_map_proj
-- \+ *lemma* mem_local_triv_at_source
-- \+ *lemma* local_triv_at_fst
-- \+ *lemma* local_triv_at_symm_fst
-- \+ *lemma* local_triv_at_ext_to_local_homeomorph
-- \+ *theorem* is_topological_fiber_bundle
-- \+ *def* is_topological_fiber_bundle
-- \+ *def* index
-- \+ *def* base
-- \+ *def* fiber
-- \+ *def* total_space
-- \+ *def* proj
-- \+ *def* triv_change
-- \+ *def* local_triv'
-- \+ *def* local_triv
-- \+ *def* local_triv_ext
-- \+ *def* local_triv_at
-- \+ *def* local_triv_at_ext
+- \+ *def* topological_fiber_bundle_core.base
+- \+ *lemma* topological_fiber_bundle_core.continuous_proj
+- \+ *def* topological_fiber_bundle_core.fiber
+- \+ *def* topological_fiber_bundle_core.index
+- \+ *lemma* topological_fiber_bundle_core.is_open_map_proj
+- \+ *theorem* topological_fiber_bundle_core.is_topological_fiber_bundle
+- \+ *def* topological_fiber_bundle_core.local_triv'
+- \+ *lemma* topological_fiber_bundle_core.local_triv'_fst
+- \+ *lemma* topological_fiber_bundle_core.local_triv'_inv_fst
+- \+ *lemma* topological_fiber_bundle_core.local_triv'_trans
+- \+ *def* topological_fiber_bundle_core.local_triv
+- \+ *def* topological_fiber_bundle_core.local_triv_at
+- \+ *def* topological_fiber_bundle_core.local_triv_at_ext
+- \+ *lemma* topological_fiber_bundle_core.local_triv_at_ext_to_local_homeomorph
+- \+ *lemma* topological_fiber_bundle_core.local_triv_at_fst
+- \+ *lemma* topological_fiber_bundle_core.local_triv_at_symm_fst
+- \+ *def* topological_fiber_bundle_core.local_triv_ext
+- \+ *lemma* topological_fiber_bundle_core.local_triv_fst
+- \+ *lemma* topological_fiber_bundle_core.local_triv_symm_fst
+- \+ *lemma* topological_fiber_bundle_core.local_triv_trans
+- \+ *lemma* topological_fiber_bundle_core.mem_local_triv'_source
+- \+ *lemma* topological_fiber_bundle_core.mem_local_triv'_target
+- \+ *lemma* topological_fiber_bundle_core.mem_local_triv_at_source
+- \+ *lemma* topological_fiber_bundle_core.mem_local_triv_source
+- \+ *lemma* topological_fiber_bundle_core.mem_local_triv_target
+- \+ *lemma* topological_fiber_bundle_core.mem_triv_change_source
+- \+ *lemma* topological_fiber_bundle_core.open_source'
+- \+ *lemma* topological_fiber_bundle_core.open_target'
+- \+ *def* topological_fiber_bundle_core.proj
+- \+ *def* topological_fiber_bundle_core.total_space
+- \+ *def* topological_fiber_bundle_core.triv_change
 
 
 
@@ -1293,9 +1282,9 @@ feat(algebra/geom_sum): sum of a geom_series over an Ico ([#1573](https://github
 * Add two more versions as requested by @jcommelin
 #### Estimated changes
 Modified src/algebra/geom_sum.lean
+- \+ *theorem* geom_sum_Ico
 - \+ *theorem* geom_sum_Ico_mul
 - \+ *theorem* geom_sum_Ico_mul_neg
-- \+ *theorem* geom_sum_Ico
 
 
 
@@ -1329,8 +1318,8 @@ Modified src/topology/algebra/infinite_sum.lean
 
 Modified src/topology/metric_space/basic.lean
 - \+ *lemma* dist_le_Ico_sum_dist
-- \+ *lemma* dist_le_range_sum_dist
 - \+ *lemma* dist_le_Ico_sum_of_dist_le
+- \+ *lemma* dist_le_range_sum_dist
 - \+ *lemma* dist_le_range_sum_of_dist_le
 
 
@@ -1421,7 +1410,7 @@ Modified src/data/mllist.lean
 
 
 Modified src/data/option/basic.lean
-- \+/\- *lemma* eq_some_iff_get_eq
+- \+/\- *lemma* option.eq_some_iff_get_eq
 
 Modified src/data/option/defs.lean
 
@@ -1433,13 +1422,13 @@ Modified src/tactic/core.lean
 
 
 Deleted src/tactic/library_search.lean
-- \- *def* head_symbol_match.to_string
+- \- *def* tactic.library_search.head_symbol_match.to_string
 
 Modified src/tactic/rewrite_all/congr.lean
 
 
-Created src/tactic/suggest.lean
-- \+ *def* head_symbol_match.to_string
+Added src/tactic/suggest.lean
+- \+ *def* tactic.suggest.head_symbol_match.to_string
 
 Modified test/library_search/basic.lean
 
@@ -1453,7 +1442,7 @@ Modified test/library_search/ring_theory.lean
 Modified test/mllist.lean
 
 
-Created test/suggest.lean
+Added test/suggest.lean
 
 
 
@@ -1462,19 +1451,19 @@ Created test/suggest.lean
 feat(algebra/big_operators): products and sums over `finset.Ico` ([#1567](https://github.com/leanprover-community/mathlib/pull/1567))
 #### Estimated changes
 Modified src/algebra/big_operators.lean
-- \+ *lemma* sum_Ico_add
-- \+ *lemma* prod_Ico_add
-- \+ *lemma* prod_Ico_consecutive
-- \+ *lemma* prod_range_mul_prod_Ico
-- \+ *lemma* prod_Ico_eq_div
-- \+ *lemma* sum_Ico_eq_sub
-- \+ *lemma* prod_Ico_eq_prod_range
+- \+ *lemma* finset.prod_Ico_add
+- \+ *lemma* finset.prod_Ico_consecutive
+- \+ *lemma* finset.prod_Ico_eq_div
+- \+ *lemma* finset.prod_Ico_eq_prod_range
+- \+ *lemma* finset.prod_range_mul_prod_Ico
+- \+ *lemma* finset.sum_Ico_add
+- \+ *lemma* finset.sum_Ico_eq_sub
 
 Modified src/data/finset.lean
-- \+/\- *lemma* inter_consecutive
-- \+ *lemma* disjoint_consecutive
-- \+/\- *theorem* self_eq_empty
-- \+/\- *theorem* succ_singleton
+- \+ *lemma* finset.Ico.disjoint_consecutive
+- \+/\- *lemma* finset.Ico.inter_consecutive
+- \+/\- *theorem* finset.Ico.self_eq_empty
+- \+/\- *theorem* finset.Ico.succ_singleton
 
 
 
@@ -1504,7 +1493,7 @@ Modified docs/tactics.md
 
 
 Modified src/category/functor.lean
-- \+/\- *def* const
+- \+/\- *def* functor.const
 
 Modified src/measure_theory/l1_space.lean
 
@@ -1522,9 +1511,9 @@ Deleted src/tactic/doc_blame.lean
 
 
 Modified src/tactic/interactive.lean
-- \+/\- *lemma* {u}
+- \+/\- *lemma* tactic.interactive.{u}
 
-Created src/tactic/lint.lean
+Added src/tactic/lint.lean
 
 
 Deleted src/tactic/sanity_check.lean
@@ -1551,101 +1540,115 @@ chore(category_theory): using simps ([#1500](https://github.com/leanprover-commu
 * revertings overlapping @[simps]
 #### Estimated changes
 Modified src/category_theory/limits/cones.lean
-- \- *lemma* cones_obj
-- \- *lemma* cones_map
-- \- *lemma* cocones_obj
-- \- *lemma* cocones_map
-- \- *lemma* whisker_π_app
-- \- *lemma* whisker_ι_app
-- \- *lemma* id.hom
-- \- *lemma* comp.hom
-- \- *lemma* ext_hom_hom
-- \- *lemma* postcompose_obj_X
-- \- *lemma* postcompose_obj_π
-- \- *lemma* postcompose_map_hom
-- \- *lemma* forget_obj
-- \- *lemma* forget_map
-- \- *lemma* precompose_obj_X
-- \- *lemma* precompose_obj_ι
-- \- *lemma* precompose_map_hom
-- \+/\- *def* cones
-- \+/\- *def* cocones
-- \+/\- *def* whisker
-- \+/\- *def* ext
-- \+/\- *def* postcompose
-- \+/\- *def* forget
-- \+/\- *def* functoriality
-- \+/\- *def* precompose
+- \+/\- *def* category_theory.cocones
+- \- *lemma* category_theory.cocones_map
+- \- *lemma* category_theory.cocones_obj
+- \+/\- *def* category_theory.cones
+- \- *lemma* category_theory.cones_map
+- \- *lemma* category_theory.cones_obj
+- \+/\- *def* category_theory.limits.cocone.whisker
+- \- *lemma* category_theory.limits.cocone.whisker_ι_app
+- \- *lemma* category_theory.limits.cocones.comp.hom
+- \+/\- *def* category_theory.limits.cocones.ext
+- \- *lemma* category_theory.limits.cocones.ext_hom_hom
+- \+/\- *def* category_theory.limits.cocones.forget
+- \- *lemma* category_theory.limits.cocones.forget_map
+- \- *lemma* category_theory.limits.cocones.forget_obj
+- \+/\- *def* category_theory.limits.cocones.functoriality
+- \- *lemma* category_theory.limits.cocones.id.hom
+- \+/\- *def* category_theory.limits.cocones.precompose
+- \- *lemma* category_theory.limits.cocones.precompose_map_hom
+- \- *lemma* category_theory.limits.cocones.precompose_obj_X
+- \- *lemma* category_theory.limits.cocones.precompose_obj_ι
+- \+/\- *def* category_theory.limits.cone.whisker
+- \- *lemma* category_theory.limits.cone.whisker_π_app
+- \- *lemma* category_theory.limits.cones.comp.hom
+- \+/\- *def* category_theory.limits.cones.ext
+- \- *lemma* category_theory.limits.cones.ext_hom_hom
+- \+/\- *def* category_theory.limits.cones.forget
+- \- *lemma* category_theory.limits.cones.forget_map
+- \- *lemma* category_theory.limits.cones.forget_obj
+- \+/\- *def* category_theory.limits.cones.functoriality
+- \- *lemma* category_theory.limits.cones.id.hom
+- \+/\- *def* category_theory.limits.cones.postcompose
+- \- *lemma* category_theory.limits.cones.postcompose_map_hom
+- \- *lemma* category_theory.limits.cones.postcompose_obj_X
+- \- *lemma* category_theory.limits.cones.postcompose_obj_π
 
 Modified src/category_theory/limits/functor_category.lean
-- \+/\- *def* functor_category_limit_cone
-- \+/\- *def* functor_category_colimit_cocone
+- \+/\- *def* category_theory.limits.functor_category_colimit_cocone
+- \+/\- *def* category_theory.limits.functor_category_limit_cone
 
 Modified src/category_theory/limits/over.lean
-- \- *lemma* to_cocone_X
-- \- *lemma* to_cocone_ι
-- \- *lemma* to_cone_X
-- \- *lemma* to_cone_π
-- \- *lemma* colimit_X_hom
-- \- *lemma* colimit_ι_app
-- \- *lemma* limit_X_hom
-- \- *lemma* limit_π_app
-- \+/\- *def* to_cocone
-- \+/\- *def* to_cone
-- \+/\- *def* colimit
-- \+/\- *def* limit
+- \+/\- *def* category_theory.functor.to_cocone
+- \- *lemma* category_theory.functor.to_cocone_X
+- \- *lemma* category_theory.functor.to_cocone_ι
+- \+/\- *def* category_theory.functor.to_cone
+- \- *lemma* category_theory.functor.to_cone_X
+- \- *lemma* category_theory.functor.to_cone_π
+- \+/\- *def* category_theory.over.colimit
+- \- *lemma* category_theory.over.colimit_X_hom
+- \- *lemma* category_theory.over.colimit_ι_app
+- \+/\- *def* category_theory.under.limit
+- \- *lemma* category_theory.under.limit_X_hom
+- \- *lemma* category_theory.under.limit_π_app
 
 Modified src/category_theory/monad/adjunction.lean
 
 
 Modified src/category_theory/monad/algebra.lean
-- \- *lemma* id_f
-- \- *lemma* comp_f
-- \- *lemma* forget_map
-- \- *lemma* free_obj_a
-- \- *lemma* free_map_f
-- \+/\- *def* id
-- \+/\- *def* comp
-- \+/\- *def* forget
-- \+/\- *def* free
+- \- *lemma* category_theory.monad.algebra.comp_f
+- \+/\- *def* category_theory.monad.algebra.hom.comp
+- \- *lemma* category_theory.monad.algebra.hom.comp_f
+- \+/\- *def* category_theory.monad.algebra.hom.id
+- \- *lemma* category_theory.monad.algebra.hom.id_f
+- \- *lemma* category_theory.monad.algebra.id_f
+- \+/\- *def* category_theory.monad.forget
+- \- *lemma* category_theory.monad.forget_map
+- \+/\- *def* category_theory.monad.free
+- \- *lemma* category_theory.monad.free_map_f
+- \- *lemma* category_theory.monad.free_obj_a
 
 Modified src/category_theory/monad/limits.lean
-- \- *lemma* γ_app
-- \- *lemma* c_π
-- \- *lemma* cone_point_a
-- \+/\- *def* γ
-- \+/\- *def* c
-- \+/\- *def* cone_point
+- \+/\- *def* category_theory.monad.forget_creates_limits.c
+- \- *lemma* category_theory.monad.forget_creates_limits.c_π
+- \+/\- *def* category_theory.monad.forget_creates_limits.cone_point
+- \- *lemma* category_theory.monad.forget_creates_limits.cone_point_a
+- \+/\- *def* category_theory.monad.forget_creates_limits.γ
+- \- *lemma* category_theory.monad.forget_creates_limits.γ_app
 
 Modified src/category_theory/monoidal/functor.lean
-- \- *lemma* id_obj
-- \- *lemma* id_map
-- \- *lemma* id_ε
-- \- *lemma* id_μ
-- \- *lemma* comp_obj
-- \- *lemma* comp_map
-- \- *lemma* comp_ε
-- \- *lemma* comp_μ
-- \+/\- *def* id
-- \+/\- *def* comp
+- \+/\- *def* category_theory.lax_monoidal_functor.comp
+- \- *lemma* category_theory.lax_monoidal_functor.comp_map
+- \- *lemma* category_theory.lax_monoidal_functor.comp_obj
+- \- *lemma* category_theory.lax_monoidal_functor.comp_ε
+- \- *lemma* category_theory.lax_monoidal_functor.comp_μ
+- \+/\- *def* category_theory.monoidal_functor.id
+- \- *lemma* category_theory.monoidal_functor.id_map
+- \- *lemma* category_theory.monoidal_functor.id_obj
+- \- *lemma* category_theory.monoidal_functor.id_ε
+- \- *lemma* category_theory.monoidal_functor.id_μ
 
 Modified src/category_theory/whiskering.lean
-- \- *lemma* left_unitor_hom_app
-- \- *lemma* left_unitor_inv_app
-- \- *lemma* right_unitor_hom_app
-- \- *lemma* right_unitor_inv_app
-- \- *lemma* associator_hom_app
-- \- *lemma* associator_inv_app
-- \+/\- *def* left_unitor
-- \+/\- *def* right_unitor
-- \+/\- *def* associator
+- \+/\- *def* category_theory.functor.associator
+- \- *lemma* category_theory.functor.associator_hom_app
+- \- *lemma* category_theory.functor.associator_inv_app
+- \+/\- *def* category_theory.functor.left_unitor
+- \- *lemma* category_theory.functor.left_unitor_hom_app
+- \- *lemma* category_theory.functor.left_unitor_inv_app
+- \+/\- *def* category_theory.functor.right_unitor
+- \- *lemma* category_theory.functor.right_unitor_hom_app
+- \- *lemma* category_theory.functor.right_unitor_inv_app
 
 Modified src/category_theory/yoneda.lean
-- \- *lemma* obj_obj
-- \- *lemma* obj_map
-- \- *lemma* map_app
-- \+/\- *def* yoneda
-- \+/\- *def* coyoneda
+- \- *lemma* category_theory.coyoneda.map_app
+- \- *lemma* category_theory.coyoneda.obj_map
+- \- *lemma* category_theory.coyoneda.obj_obj
+- \+/\- *def* category_theory.coyoneda
+- \- *lemma* category_theory.yoneda.map_app
+- \- *lemma* category_theory.yoneda.obj_map
+- \- *lemma* category_theory.yoneda.obj_obj
+- \+/\- *def* category_theory.yoneda
 
 
 
@@ -1661,13 +1664,13 @@ feat(category_theory): def `is_isomorphic_setoid`, `groupoid.iso_equiv_hom` ([#1
 * Update src/category_theory/isomorphism_classes.lean
 #### Estimated changes
 Modified src/category_theory/groupoid.lean
-- \+ *def* groupoid.iso_equiv_hom
+- \+ *def* category_theory.groupoid.iso_equiv_hom
 
-Created src/category_theory/isomorphism_classes.lean
-- \+ *lemma* groupoid.is_isomorphic_iff_nonempty_hom
-- \+ *def* is_isomorphic
-- \+ *def* is_isomorphic_setoid
-- \+ *def* isomorphism_classes
+Added src/category_theory/isomorphism_classes.lean
+- \+ *lemma* category_theory.groupoid.is_isomorphic_iff_nonempty_hom
+- \+ *def* category_theory.is_isomorphic
+- \+ *def* category_theory.is_isomorphic_setoid
+- \+ *def* category_theory.isomorphism_classes
 
 
 
@@ -1680,23 +1683,22 @@ refactor(topology,calculus): change subset condition for composition ([#1549](ht
 * typo
 #### Estimated changes
 Modified src/analysis/calculus/deriv.lean
-- \+ *lemma* differentiable_within_at_inter'
-- \+ *lemma* differentiable_within_at.congr
 - \+ *lemma* differentiable_on.congr
-- \+ *lemma* has_fderiv_within_at.image_tangent_cone_subset
-- \+ *lemma* has_fderiv_within_at.unique_diff_within_at
-- \+ *theorem* has_fderiv_within_at.lim
+- \+ *lemma* differentiable_within_at.congr
+- \+ *lemma* differentiable_within_at_inter'
 - \+/\- *theorem* has_fderiv_within_at.comp
+- \+ *lemma* has_fderiv_within_at.image_tangent_cone_subset
+- \+ *theorem* has_fderiv_within_at.lim
+- \+ *lemma* has_fderiv_within_at.unique_diff_within_at
 
 Modified src/analysis/calculus/mean_value.lean
 
 
 Modified src/analysis/calculus/tangent_cone.lean
-- \+/\- *lemma* unique_diff_within_at.mono
-- \+ *lemma* unique_diff_within_at_inter'
-- \+ *lemma* unique_diff_within_at.inter'
 - \+ *lemma* unique_diff_on.inter
 - \- *lemma* unique_diff_on_inter
+- \+ *lemma* unique_diff_within_at.inter'
+- \+ *lemma* unique_diff_within_at_inter'
 
 Modified src/analysis/calculus/times_cont_diff.lean
 
@@ -1705,11 +1707,11 @@ Modified src/data/equiv/local_equiv.lean
 
 
 Modified src/data/set/basic.lean
-- \+ *lemma* prod_subset_preimage_fst
-- \+ *lemma* prod_subset_preimage_snd
-- \+ *theorem* subset_preimage_univ
-- \+ *theorem* prod_range_univ_eq
-- \+ *theorem* prod_univ_range_eq
+- \+ *theorem* set.prod_range_univ_eq
+- \+ *lemma* set.prod_subset_preimage_fst
+- \+ *lemma* set.prod_subset_preimage_snd
+- \+ *theorem* set.prod_univ_range_eq
+- \+ *theorem* set.subset_preimage_univ
 
 Modified src/geometry/manifold/manifold.lean
 
@@ -1718,25 +1720,25 @@ Modified src/topology/algebra/ordered.lean
 - \+ *lemma* is_open_Ioi
 
 Modified src/topology/continuous_on.lean
-- \+ *lemma* mem_nhds_within_of_mem_nhds
-- \+ *lemma* mem_closure_iff_nhds_within_ne_bot
-- \+ *lemma* continuous_within_at.mem_closure_image
 - \+ *lemma* continuous_on.congr
-- \+ *lemma* continuous_within_at.preimage_mem_nhds_within'
 - \+ *lemma* continuous_within_at.congr
+- \+ *lemma* continuous_within_at.mem_closure_image
+- \+ *lemma* continuous_within_at.preimage_mem_nhds_within'
+- \+ *lemma* mem_closure_iff_nhds_within_ne_bot
+- \+ *lemma* mem_nhds_within_of_mem_nhds
 
 Modified src/topology/local_homeomorph.lean
-- \+ *lemma* continuous_at_to_fun
-- \+ *lemma* continuous_at_inv_fun
-- \+ *lemma* image_open_of_open
-- \+ *lemma* continuous_within_at_iff_continuous_within_at_comp_right
-- \+ *lemma* continuous_at_iff_continuous_at_comp_right
-- \+ *lemma* continuous_within_at_iff_continuous_within_at_comp_left
-- \+ *lemma* continuous_at_iff_continuous_at_comp_left
-- \+/\- *lemma* continuous_on_iff_continuous_on_comp_left
-- \+ *lemma* to_homeomorph_to_fun
-- \+ *lemma* to_homeomorph_inv_fun
-- \+ *def* to_homeomorph_of_source_eq_univ_target_eq_univ
+- \+ *lemma* local_homeomorph.continuous_at_iff_continuous_at_comp_left
+- \+ *lemma* local_homeomorph.continuous_at_iff_continuous_at_comp_right
+- \+ *lemma* local_homeomorph.continuous_at_inv_fun
+- \+ *lemma* local_homeomorph.continuous_at_to_fun
+- \+/\- *lemma* local_homeomorph.continuous_on_iff_continuous_on_comp_left
+- \+ *lemma* local_homeomorph.continuous_within_at_iff_continuous_within_at_comp_left
+- \+ *lemma* local_homeomorph.continuous_within_at_iff_continuous_within_at_comp_right
+- \+ *lemma* local_homeomorph.image_open_of_open
+- \+ *lemma* local_homeomorph.to_homeomorph_inv_fun
+- \+ *def* local_homeomorph.to_homeomorph_of_source_eq_univ_target_eq_univ
+- \+ *lemma* local_homeomorph.to_homeomorph_to_fun
 
 
 
@@ -1756,19 +1758,17 @@ fix(topology/metric_space): fix uniform structure on Pi types ([#1551](https://g
 * use simp only instead of simp
 #### Estimated changes
 Modified src/data/finset.lean
-- \+/\- *lemma* sup_le_iff
-- \+ *lemma* sup_lt_iff
-- \- *lemma* sup_lt
+- \+/\- *lemma* finset.sup_le_iff
+- \- *lemma* finset.sup_lt
+- \+ *lemma* finset.sup_lt_iff
 
 Modified src/order/filter/basic.lean
-- \+ *lemma* Inter_mem_sets_of_fintype
-- \+ *lemma* infi_principal_finset
-- \+ *lemma* infi_principal_fintype
+- \+ *lemma* filter.Inter_mem_sets_of_fintype
+- \+ *lemma* filter.infi_principal_finset
+- \+ *lemma* filter.infi_principal_fintype
 
 Modified src/topology/metric_space/basic.lean
-- \+/\- *lemma* dist_pi_def
 - \+ *def* emetric_space.to_metric_space_of_dist
-- \+/\- *def* emetric_space.to_metric_space
 
 Modified src/topology/metric_space/emetric_space.lean
 
@@ -1815,49 +1815,36 @@ structure alg_equiv (α β γ : Type*) [comm_ring α] [ring β] [ring γ]
 * Process comments
 #### Estimated changes
 Modified src/data/polynomial.lean
-- \+/\- *lemma* map_C
-- \+/\- *lemma* map_X
-- \+/\- *lemma* map_zero
-- \+/\- *lemma* map_add
-- \+/\- *lemma* map_one
-- \+/\- *lemma* map_mul
-- \+/\- *lemma* map_pow
-- \+/\- *lemma* coeff_map
-- \+/\- *lemma* map_map
-- \+/\- *lemma* eval₂_map
-- \+/\- *lemma* eval_map
-- \+/\- *lemma* map_id
-- \+ *lemma* mem_map_range
-- \+/\- *lemma* hom_eval₂
-- \+ *lemma* monic.ne_zero_of_zero_ne_one
-- \+ *lemma* monic.ne_zero
-- \+/\- *lemma* degree_map_eq_of_injective
-- \+/\- *lemma* degree_map'
-- \+/\- *lemma* nat_degree_map'
-- \+ *lemma* map_injective
-- \+ *lemma* leading_coeff_of_injective
-- \+ *lemma* monic_of_injective
-- \+/\- *def* map
+- \+/\- *lemma* polynomial.degree_map'
+- \+/\- *lemma* polynomial.degree_map_eq_of_injective
+- \+ *lemma* polynomial.leading_coeff_of_injective
+- \+ *lemma* polynomial.map_injective
+- \+/\- *lemma* polynomial.map_pow
+- \+ *lemma* polynomial.mem_map_range
+- \+ *lemma* polynomial.monic.ne_zero
+- \+ *lemma* polynomial.monic.ne_zero_of_zero_ne_one
+- \+ *lemma* polynomial.monic_of_injective
+- \+/\- *lemma* polynomial.nat_degree_map'
 
 Modified src/field_theory/minimal_polynomial.lean
 
 
-Created src/ring_theory/algebraic.lean
-- \+ *lemma* algebra.is_algebraic_iff
-- \+ *lemma* is_integral.is_algebraic
-- \+ *lemma* is_algebraic_iff_is_integral
-- \+ *lemma* is_algebraic_trans
-- \+ *def* is_algebraic
-- \+ *def* subalgebra.is_algebraic
+Added src/ring_theory/algebraic.lean
 - \+ *def* algebra.is_algebraic
+- \+ *lemma* algebra.is_algebraic_iff
+- \+ *lemma* algebra.is_algebraic_trans
+- \+ *def* is_algebraic
+- \+ *lemma* is_algebraic_iff_is_integral
+- \+ *lemma* is_integral.is_algebraic
+- \+ *def* subalgebra.is_algebraic
 - \+ *def* subalgebra.is_algebraic_iff
 
 Modified src/ring_theory/integral_closure.lean
-- \+ *lemma* is_integral_trans_aux
-- \+ *lemma* is_integral_trans
 - \+ *lemma* algebra.is_integral_trans
-- \+/\- *theorem* is_integral_of_noetherian
 - \+/\- *theorem* is_integral_of_mem_of_fg
+- \+/\- *theorem* is_integral_of_noetherian
+- \+ *lemma* is_integral_trans
+- \+ *lemma* is_integral_trans_aux
 
 
 
@@ -1874,7 +1861,7 @@ archive(imo1988_q6): a formalization of Q6 on IMO1988 ([#1455](https://github.co
 * Oops, forgot a line
 * Improve comments in the proof
 #### Estimated changes
-Created archive/imo1988_q6.lean
+Added archive/imo1988_q6.lean
 - \+ *lemma* constant_descent_vieta_jumping
 - \+ *lemma* imo1988_q6
 
@@ -1888,19 +1875,19 @@ feat(field_theory/finite): cardinality of images of polynomials ([#1554](https:/
 * slightly shorten proof
 #### Estimated changes
 Modified src/algebra/big_operators.lean
-- \+ *theorem* card_eq_sum_card_image
-- \+ *theorem* card_le_mul_card_image
+- \+ *theorem* finset.card_eq_sum_card_image
+- \+ *theorem* finset.card_le_mul_card_image
 
 Modified src/data/polynomial.lean
-- \+ *lemma* degree_add_C
-- \+ *lemma* nat_degree_neg
-- \+ *lemma* card_roots_sub_C
-- \+ *lemma* card_roots_sub_C'
-- \+ *lemma* mem_roots_sub_C
+- \+ *lemma* polynomial.card_roots_sub_C'
+- \+ *lemma* polynomial.card_roots_sub_C
+- \+ *lemma* polynomial.degree_add_C
+- \+ *lemma* polynomial.mem_roots_sub_C
+- \+ *lemma* polynomial.nat_degree_neg
 
 Modified src/field_theory/finite.lean
-- \+ *lemma* card_image_polynomial_eval
-- \+ *lemma* exists_root_sum_quadratic
+- \+ *lemma* finite_field.card_image_polynomial_eval
+- \+ *lemma* finite_field.exists_root_sum_quadratic
 
 
 
@@ -1911,11 +1898,16 @@ feat(data/zmod/basic): val_min_abs ([#1548](https://github.com/leanprover-commun
 * docstring and fix `zmodp` versions
 #### Estimated changes
 Modified src/data/zmod/basic.lean
-- \+ *lemma* coe_val_min_abs
-- \+ *lemma* nat_abs_val_min_abs_le
-- \+ *lemma* val_min_abs_zero
-- \+ *lemma* val_min_abs_eq_zero
-- \+ *def* val_min_abs
+- \+ *lemma* zmod.coe_val_min_abs
+- \+ *lemma* zmod.nat_abs_val_min_abs_le
+- \+ *def* zmod.val_min_abs
+- \+ *lemma* zmod.val_min_abs_eq_zero
+- \+ *lemma* zmod.val_min_abs_zero
+- \+ *lemma* zmodp.coe_val_min_abs
+- \+ *lemma* zmodp.nat_abs_val_min_abs_le
+- \+ *def* zmodp.val_min_abs
+- \+ *lemma* zmodp.val_min_abs_eq_zero
+- \+ *lemma* zmodp.val_min_abs_zero
 
 
 
@@ -1923,7 +1915,7 @@ Modified src/data/zmod/basic.lean
 feat(data/polynomial): card_roots' ([#1546](https://github.com/leanprover-community/mathlib/pull/1546))
 #### Estimated changes
 Modified src/data/polynomial.lean
-- \+ *lemma* card_roots'
+- \+ *lemma* polynomial.card_roots'
 
 
 
@@ -1956,7 +1948,7 @@ feat(data/int/basic): int.nat_abs_eq_zero ([#1545](https://github.com/leanprover
 * Update basic.lean
 #### Estimated changes
 Modified src/data/int/basic.lean
-- \+ *lemma* nat_abs_eq_zero
+- \+ *lemma* int.nat_abs_eq_zero
 
 
 
@@ -2002,88 +1994,87 @@ Modified src/topology/compact_open.lean
 
 
 Modified src/topology/constructions.lean
-- \+ *lemma* quotient_dense_of_dense
-- \+/\- *lemma* is_open_prod_iff'
-- \+ *lemma* inducing.prod_mk
-- \+ *lemma* embedding.prod_mk
-- \+/\- *lemma* embedding_graph
-- \+ *lemma* subtype_val.open_embedding
-- \+ *lemma* subtype_val.closed_embedding
-- \- *lemma* dense_range_prod
-- \- *lemma* nhds_contain_boxes.symm
-- \- *lemma* nhds_contain_boxes.comm
-- \- *lemma* nhds_contain_boxes_of_singleton
-- \- *lemma* nhds_contain_boxes_of_compact
-- \- *lemma* generalized_tube_lemma
-- \- *lemma* is_closed_diagonal
-- \- *lemma* is_closed_eq
-- \- *lemma* diagonal_eq_range_diagonal_map
-- \- *lemma* prod_subset_compl_diagonal_iff_disjoint
-- \- *lemma* compact_compact_separated
 - \- *lemma* closed_of_compact
-- \- *lemma* locally_compact_of_compact_nhds
-- \- *lemma* normal_of_compact_t2
-- \- *lemma* compact_prod
+- \- *lemma* compact_compact_separated
 - \- *lemma* compact_iff_compact_image_of_embedding
 - \- *lemma* compact_iff_compact_in_subtype
-- \- *lemma* compact_iff_compact_univ
 - \- *lemma* compact_iff_compact_space
+- \- *lemma* compact_iff_compact_univ
 - \- *lemma* compact_pi_infinite
-- \- *lemma* is_closed_property
+- \- *lemma* compact_prod
+- \- *def* dense_embedding.subtype_emb
+- \- *lemma* dense_range_prod
+- \- *lemma* diagonal_eq_range_diagonal_map
+- \+ *lemma* embedding.prod_mk
+- \- *lemma* generalized_tube_lemma
+- \- *lemma* homeomorph.coe_eq_to_equiv
+- \- *lemma* homeomorph.coinduced_eq
+- \- *lemma* homeomorph.compact_image
+- \- *lemma* homeomorph.compact_preimage
+- \- *def* homeomorph.homeomorph_of_continuous_open
+- \- *lemma* homeomorph.image_symm
+- \- *lemma* homeomorph.induced_eq
+- \- *lemma* homeomorph.preimage_symm
+- \- *def* homeomorph.prod_assoc
+- \- *def* homeomorph.prod_comm
+- \- *def* homeomorph.prod_congr
+- \- *lemma* homeomorph.range_coe
+- \- *lemma* homeomorph.self_comp_symm
+- \- *def* homeomorph.sigma_prod_distrib
+- \- *lemma* homeomorph.symm_comp_self
+- \+ *lemma* inducing.prod_mk
+- \- *lemma* is_closed_diagonal
+- \- *lemma* is_closed_eq
 - \- *lemma* is_closed_property2
 - \- *lemma* is_closed_property3
-- \- *lemma* coe_eq_to_equiv
-- \- *lemma* symm_comp_self
-- \- *lemma* self_comp_symm
-- \- *lemma* range_coe
-- \- *lemma* image_symm
-- \- *lemma* preimage_symm
-- \- *lemma* induced_eq
-- \- *lemma* coinduced_eq
-- \- *lemma* compact_image
-- \- *lemma* compact_preimage
+- \- *lemma* is_closed_property
+- \+/\- *lemma* is_open_prod_iff'
+- \- *lemma* locally_compact_of_compact_nhds
 - \+ *theorem* mem_nhds_subtype
-- \+ *theorem* nhds_subtype
+- \- *lemma* nhds_contain_boxes.comm
+- \- *lemma* nhds_contain_boxes.symm
 - \- *def* nhds_contain_boxes
-- \- *def* subtype_emb
-- \- *def* homeomorph_of_continuous_open
-- \- *def* prod_congr
-- \- *def* prod_comm
-- \- *def* prod_assoc
-- \- *def* sigma_prod_distrib
+- \- *lemma* nhds_contain_boxes_of_compact
+- \- *lemma* nhds_contain_boxes_of_singleton
+- \+ *theorem* nhds_subtype
+- \- *lemma* normal_of_compact_t2
+- \- *lemma* prod_subset_compl_diagonal_iff_disjoint
+- \+ *lemma* quotient_dense_of_dense
+- \+ *lemma* subtype_val.closed_embedding
+- \+ *lemma* subtype_val.open_embedding
 
 Modified src/topology/dense_embedding.lean
+- \+ *def* dense_embedding.subtype_emb
 - \+ *lemma* dense_range_prod
-- \+ *lemma* is_closed_property
 - \+ *lemma* is_closed_property2
 - \+ *lemma* is_closed_property3
-- \+ *def* subtype_emb
+- \+ *lemma* is_closed_property
 
-Created src/topology/homeomorph.lean
-- \+ *lemma* coe_eq_to_equiv
-- \+ *lemma* symm_comp_self
-- \+ *lemma* self_comp_symm
-- \+ *lemma* range_coe
-- \+ *lemma* image_symm
-- \+ *lemma* preimage_symm
-- \+ *lemma* induced_eq
-- \+ *lemma* coinduced_eq
-- \+ *lemma* compact_image
-- \+ *lemma* compact_preimage
-- \+ *def* homeomorph_of_continuous_open
-- \+ *def* prod_congr
-- \+ *def* prod_comm
-- \+ *def* prod_assoc
-- \+ *def* sigma_prod_distrib
+Added src/topology/homeomorph.lean
+- \+ *lemma* homeomorph.coe_eq_to_equiv
+- \+ *lemma* homeomorph.coinduced_eq
+- \+ *lemma* homeomorph.compact_image
+- \+ *lemma* homeomorph.compact_preimage
+- \+ *def* homeomorph.homeomorph_of_continuous_open
+- \+ *lemma* homeomorph.image_symm
+- \+ *lemma* homeomorph.induced_eq
+- \+ *lemma* homeomorph.preimage_symm
+- \+ *def* homeomorph.prod_assoc
+- \+ *def* homeomorph.prod_comm
+- \+ *def* homeomorph.prod_congr
+- \+ *lemma* homeomorph.range_coe
+- \+ *lemma* homeomorph.self_comp_symm
+- \+ *def* homeomorph.sigma_prod_distrib
+- \+ *lemma* homeomorph.symm_comp_self
 
 Modified src/topology/local_homeomorph.lean
 
 
 Modified src/topology/maps.lean
-- \- *lemma* inducing.prod_mk
 - \- *lemma* embedding.prod_mk
-- \- *lemma* subtype_val.open_embedding
+- \- *lemma* inducing.prod_mk
 - \- *lemma* subtype_val.closed_embedding
+- \- *lemma* subtype_val.open_embedding
 
 Modified src/topology/metric_space/emetric_space.lean
 
@@ -2092,38 +2083,38 @@ Modified src/topology/opens.lean
 
 
 Modified src/topology/order.lean
-- \- *lemma* quotient_dense_of_dense
 - \- *theorem* mem_nhds_subtype
 - \- *theorem* nhds_subtype
+- \- *lemma* quotient_dense_of_dense
 
 Modified src/topology/separation.lean
+- \+ *lemma* closed_of_compact
+- \+ *lemma* compact_compact_separated
+- \+ *lemma* diagonal_eq_range_diagonal_map
 - \+ *lemma* is_closed_diagonal
 - \+ *lemma* is_closed_eq
-- \+ *lemma* diagonal_eq_range_diagonal_map
-- \+ *lemma* prod_subset_compl_diagonal_iff_disjoint
-- \+ *lemma* compact_compact_separated
-- \+ *lemma* closed_of_compact
 - \+ *lemma* locally_compact_of_compact_nhds
 - \+ *lemma* normal_of_compact_t2
+- \+ *lemma* prod_subset_compl_diagonal_iff_disjoint
 
 Modified src/topology/stone_cech.lean
 
 
 Modified src/topology/subset_properties.lean
-- \+ *lemma* nhds_contain_boxes.symm
-- \+ *lemma* nhds_contain_boxes.comm
-- \+ *lemma* nhds_contain_boxes_of_singleton
-- \+ *lemma* nhds_contain_boxes_of_compact
-- \+ *lemma* generalized_tube_lemma
-- \+/\- *lemma* compact_image
-- \+/\- *lemma* compact_range
 - \+ *lemma* compact_iff_compact_image_of_embedding
 - \+ *lemma* compact_iff_compact_in_subtype
-- \+ *lemma* compact_iff_compact_univ
 - \+ *lemma* compact_iff_compact_space
-- \+ *lemma* compact_prod
+- \+ *lemma* compact_iff_compact_univ
+- \+/\- *lemma* compact_image
 - \+ *lemma* compact_pi_infinite
+- \+ *lemma* compact_prod
+- \+/\- *lemma* compact_range
+- \+ *lemma* generalized_tube_lemma
+- \+ *lemma* nhds_contain_boxes.comm
+- \+ *lemma* nhds_contain_boxes.symm
 - \+ *def* nhds_contain_boxes
+- \+ *lemma* nhds_contain_boxes_of_compact
+- \+ *lemma* nhds_contain_boxes_of_singleton
 
 Modified src/topology/uniform_space/basic.lean
 
@@ -2149,7 +2140,7 @@ Modified src/topology/continuous_on.lean
 fix(topology/algebra/group_completion): remove redundant instance parameters ([#1543](https://github.com/leanprover-community/mathlib/pull/1543))
 #### Estimated changes
 Modified src/topology/algebra/group_completion.lean
-- \+/\- *lemma* is_add_group_hom_map
+- \+/\- *lemma* uniform_space.completion.is_add_group_hom_map
 
 
 
@@ -2185,11 +2176,11 @@ Co-Authored-By: Johan Commelin <johan@commelin.net>
 * fix build
 #### Estimated changes
 Modified src/algebra/ring.lean
-- \+ *lemma* id_apply
-- \+ *lemma* comp_apply
+- \+ *lemma* ring_hom.comp_apply
+- \+ *lemma* ring_hom.id_apply
 
 Modified src/ring_theory/algebra.lean
-- \+/\- *def* comp
+- \+/\- *def* alg_hom.comp
 
 
 
@@ -2203,8 +2194,8 @@ chore(algebra/ring): use curly brackets for ring_hom where possible ([#1525](htt
 * scott's suggestion
 #### Estimated changes
 Modified src/algebra/ring.lean
-- \+/\- *lemma* coe_monoid_hom
 - \+/\- *lemma* coe_add_monoid_hom
+- \+/\- *lemma* coe_monoid_hom
 
 
 
@@ -2285,531 +2276,537 @@ chore(linear_algebra): rename type variables ([#1521](https://github.com/leanpro
 * change bb k to K
 #### Estimated changes
 Modified src/linear_algebra/basic.lean
-- \+/\- *lemma* smul_sum
-- \+/\- *lemma* comp_cod_restrict
-- \+/\- *lemma* subtype_comp_cod_restrict
-- \+/\- *lemma* zero_apply
-- \+/\- *lemma* neg_apply
-- \+/\- *lemma* add_apply
-- \+/\- *lemma* sum_apply
-- \+/\- *lemma* sub_apply
-- \+/\- *lemma* one_app
-- \+/\- *lemma* mul_app
-- \+/\- *lemma* smul_apply
-- \+/\- *lemma* le_def
-- \+/\- *lemma* le_def'
-- \+/\- *lemma* subtype_comp_of_le
-- \+/\- *lemma* bot_coe
-- \+/\- *lemma* mem_bot
-- \+/\- *lemma* top_coe
-- \+/\- *lemma* mem_top
-- \+/\- *lemma* eq_bot_of_zero_eq_one
-- \+/\- *lemma* add_eq_sup
-- \+/\- *lemma* zero_eq_bot
-- \+/\- *lemma* eq_top_iff'
-- \+/\- *lemma* map_coe
-- \+/\- *lemma* mem_map
-- \+/\- *lemma* map_comp
-- \+/\- *lemma* map_mono
-- \+/\- *lemma* map_zero
-- \+/\- *lemma* comap_coe
-- \+/\- *lemma* mem_comap
-- \+/\- *lemma* comap_comp
-- \+/\- *lemma* comap_mono
-- \+/\- *lemma* map_le_iff_le_comap
-- \+/\- *lemma* gc_map_comap
-- \+/\- *lemma* map_bot
-- \+/\- *lemma* map_sup
-- \+/\- *lemma* map_supr
-- \+/\- *lemma* comap_top
-- \+/\- *lemma* comap_inf
-- \+/\- *lemma* comap_infi
-- \+/\- *lemma* comap_zero
-- \+/\- *lemma* map_comap_le
-- \+/\- *lemma* le_comap_map
-- \+/\- *lemma* map_inf_eq_map_inf_comap
-- \+/\- *lemma* eq_zero_of_bot_submodule
-- \+/\- *lemma* mem_span
-- \+/\- *lemma* subset_span
-- \+/\- *lemma* span_le
-- \+/\- *lemma* span_mono
-- \+/\- *lemma* span_eq_of_le
-- \+/\- *lemma* span_eq
-- \+/\- *lemma* span_induction
-- \+/\- *lemma* span_empty
-- \+/\- *lemma* span_univ
-- \+/\- *lemma* span_union
-- \+/\- *lemma* span_Union
-- \+/\- *lemma* mem_supr_of_mem
-- \+/\- *lemma* mem_span_singleton
-- \+/\- *lemma* span_singleton_eq_range
-- \+/\- *lemma* mem_span_insert
-- \+/\- *lemma* mem_span_insert'
-- \+/\- *lemma* span_insert_eq_span
-- \+/\- *lemma* span_span
-- \+/\- *lemma* span_eq_bot
-- \+/\- *lemma* span_singleton_eq_bot
-- \+/\- *lemma* span_image
-- \+/\- *lemma* linear_eq_on
-- \+/\- *lemma* mem_prod
-- \+/\- *lemma* span_prod_le
-- \+/\- *lemma* prod_top
-- \+/\- *lemma* prod_bot
-- \+/\- *lemma* prod_mono
-- \+/\- *lemma* comap_smul
-- \+/\- *lemma* map_smul
-- \+/\- *lemma* comap_smul'
-- \+/\- *lemma* map_smul'
-- \+/\- *lemma* finsupp_sum
-- \+/\- *lemma* range_le_iff_comap
-- \+/\- *lemma* map_le_range
-- \+/\- *lemma* disjoint_inl_inr
-- \+/\- *lemma* le_ker_iff_map
-- \+/\- *lemma* ker_cod_restrict
-- \+/\- *lemma* range_cod_restrict
-- \+/\- *lemma* map_comap_eq
-- \+/\- *lemma* map_comap_eq_self
-- \+/\- *lemma* comap_map_eq
-- \+/\- *lemma* comap_map_eq_self
-- \+/\- *lemma* range_le_bot_iff
-- \+/\- *lemma* span_inl_union_inr
-- \+/\- *lemma* ker_pair
-- \+/\- *lemma* ker_smul
-- \+/\- *lemma* ker_smul'
-- \+/\- *lemma* range_smul
-- \+/\- *lemma* range_smul'
-- \+/\- *lemma* is_linear_map_add
-- \+/\- *lemma* is_linear_map_sub
-- \+/\- *lemma* map_subtype_le
-- \+/\- *lemma* range_of_le
-- \+/\- *lemma* disjoint_iff_comap_eq_bot
-- \+/\- *lemma* map_subtype_embedding_eq
-- \+/\- *lemma* le_comap_mkq
-- \+/\- *lemma* comap_mkq_embedding_eq
-- \+/\- *lemma* to_equiv_injective
-- \+/\- *lemma* ext
-- \+/\- *lemma* eq_bot_of_equiv
-- \+/\- *lemma* is_linear_map_prod_iso
-- \+/\- *lemma* pi_apply
-- \+/\- *lemma* ker_pi
-- \+/\- *lemma* pi_eq_zero
-- \+/\- *lemma* pi_zero
-- \+/\- *lemma* pi_comp
-- \+/\- *lemma* proj_apply
-- \+/\- *lemma* proj_pi
-- \+/\- *lemma* infi_ker_proj
-- \+/\- *lemma* update_apply
-- \+/\- *lemma* std_basis_apply
-- \+/\- *lemma* std_basis_same
-- \+/\- *lemma* std_basis_ne
-- \+/\- *lemma* ker_std_basis
-- \+/\- *lemma* proj_comp_std_basis
-- \+/\- *lemma* proj_std_basis_same
-- \+/\- *lemma* proj_std_basis_ne
-- \+/\- *lemma* supr_range_std_basis
-- \+/\- *lemma* std_basis_eq_single
-- \+/\- *lemma* general_linear_equiv_to_linear_map
-- \+/\- *theorem* comp_assoc
-- \+/\- *theorem* cod_restrict_apply
-- \+/\- *theorem* smul_right_apply
-- \+/\- *theorem* comp_zero
-- \+/\- *theorem* zero_comp
-- \+/\- *theorem* fst_apply
-- \+/\- *theorem* snd_apply
-- \+/\- *theorem* pair_apply
-- \+/\- *theorem* fst_pair
-- \+/\- *theorem* snd_pair
-- \+/\- *theorem* pair_fst_snd
-- \+/\- *theorem* inl_apply
-- \+/\- *theorem* inr_apply
-- \+/\- *theorem* copair_apply
-- \+/\- *theorem* copair_inl
-- \+/\- *theorem* copair_inr
-- \+/\- *theorem* copair_inl_inr
-- \+/\- *theorem* fst_eq_copair
-- \+/\- *theorem* snd_eq_copair
-- \+/\- *theorem* inl_eq_pair
-- \+/\- *theorem* inr_eq_pair
-- \+/\- *theorem* smul_comp
-- \+/\- *theorem* comp_smul
-- \+/\- *theorem* of_le_apply
-- \+/\- *theorem* inf_coe
-- \+/\- *theorem* mem_inf
-- \+/\- *theorem* Inf_coe
-- \+/\- *theorem* infi_coe
-- \+/\- *theorem* mem_infi
-- \+/\- *theorem* disjoint_def
-- \+/\- *theorem* mem_map_of_mem
-- \+/\- *theorem* mem_Sup_of_directed
-- \+/\- *theorem* mk_eq_mk
-- \+/\- *theorem* mk'_eq_mk
-- \+/\- *theorem* quot_mk_eq_mk
-- \+/\- *theorem* map_cod_restrict
-- \+/\- *theorem* comap_cod_restrict
-- \+/\- *theorem* range_coe
-- \+/\- *theorem* mem_range
-- \+/\- *theorem* range_id
-- \+/\- *theorem* range_comp
-- \+/\- *theorem* range_comp_le_range
-- \+/\- *theorem* range_eq_top
-- \+/\- *theorem* mem_ker
-- \+/\- *theorem* ker_id
-- \+/\- *theorem* ker_comp
-- \+/\- *theorem* ker_le_ker_comp
-- \+/\- *theorem* sub_mem_ker_iff
-- \+/\- *theorem* disjoint_ker
-- \+/\- *theorem* disjoint_ker'
-- \+/\- *theorem* inj_of_disjoint_ker
-- \+/\- *theorem* ker_eq_bot
-- \+/\- *theorem* ker_eq_bot'
-- \+/\- *theorem* ker_zero
-- \+/\- *theorem* range_zero
-- \+/\- *theorem* ker_eq_top
-- \+/\- *theorem* map_le_map_iff
-- \+/\- *theorem* map_injective
-- \+/\- *theorem* comap_le_comap_iff
-- \+/\- *theorem* comap_injective
-- \+/\- *theorem* map_copair_prod
-- \+/\- *theorem* comap_pair_prod
-- \+/\- *theorem* prod_eq_inf_comap
-- \+/\- *theorem* prod_eq_sup_map
-- \+/\- *theorem* map_top
-- \+/\- *theorem* comap_bot
-- \+/\- *theorem* ker_of_le
-- \+/\- *theorem* map_inl
-- \+/\- *theorem* map_inr
-- \+/\- *theorem* comap_fst
-- \+/\- *theorem* comap_snd
-- \+/\- *theorem* prod_comap_inl
-- \+/\- *theorem* prod_comap_inr
-- \+/\- *theorem* prod_map_fst
-- \+/\- *theorem* prod_map_snd
-- \+/\- *theorem* ker_inl
-- \+/\- *theorem* ker_inr
-- \+/\- *theorem* range_fst
-- \+/\- *theorem* range_snd
-- \+/\- *theorem* mkq_apply
-- \+/\- *theorem* liftq_apply
-- \+/\- *theorem* liftq_mkq
-- \+/\- *theorem* mapq_apply
-- \+/\- *theorem* mapq_mkq
-- \+/\- *theorem* comap_liftq
-- \+/\- *theorem* map_liftq
-- \+/\- *theorem* ker_liftq
-- \+/\- *theorem* range_liftq
-- \+/\- *theorem* ker_liftq_eq_bot
-- \+/\- *theorem* coe_apply
-- \+/\- *theorem* apply_symm_apply
-- \+/\- *theorem* symm_apply_apply
-- \+/\- *theorem* of_bijective_apply
-- \+/\- *theorem* of_linear_apply
-- \+/\- *theorem* of_linear_symm_apply
-- \+/\- *theorem* of_top_apply
-- \+/\- *theorem* of_top_symm_apply
-- \+/\- *def* cod_restrict
-- \+/\- *def* inverse
-- \+/\- *def* smul_right
-- \+/\- *def* fst
-- \+/\- *def* snd
-- \+/\- *def* pair
-- \+/\- *def* inl
-- \+/\- *def* inr
-- \+/\- *def* copair
-- \+/\- *def* congr_right
-- \+/\- *def* of_le
-- \+/\- *def* map
-- \+/\- *def* comap
-- \+/\- *def* span
-- \+/\- *def* prod
-- \+/\- *def* quotient_rel
-- \+/\- *def* mk
-- \+/\- *def* range
-- \+/\- *def* ker
-- \+/\- *def* mkq
-- \+/\- *def* liftq
-- \+/\- *def* mapq
-- \+/\- *def* refl
-- \+/\- *def* symm
-- \+/\- *def* trans
-- \+/\- *def* of_linear
-- \+/\- *def* of_top
-- \+/\- *def* smul_of_unit
-- \+/\- *def* arrow_congr
-- \+/\- *def* conj
-- \+/\- *def* smul_of_ne_zero
-- \+/\- *def* to_linear_equiv
-- \+/\- *def* sup_quotient_to_quotient_inf
-- \+/\- *def* scalar_prod_space_iso
-- \+/\- *def* pi
-- \+/\- *def* proj
-- \+/\- *def* diag
-- \+/\- *def* std_basis
-- \+/\- *def* general_linear_group
-- \+/\- *def* of_linear_equiv
-- \+/\- *def* general_linear_equiv
+- \+/\- *def* equiv.to_linear_equiv
+- \+/\- *lemma* finset.smul_sum
+- \+/\- *lemma* finsupp.smul_sum
+- \+/\- *lemma* is_linear_map.is_linear_map_add
+- \+/\- *lemma* is_linear_map.is_linear_map_sub
+- \+/\- *theorem* linear_equiv.apply_symm_apply
+- \+/\- *def* linear_equiv.arrow_congr
+- \+/\- *theorem* linear_equiv.coe_apply
+- \+/\- *def* linear_equiv.congr_right
+- \+/\- *def* linear_equiv.conj
+- \+/\- *lemma* linear_equiv.eq_bot_of_equiv
+- \+/\- *lemma* linear_equiv.ext
+- \+/\- *theorem* linear_equiv.of_bijective_apply
+- \+/\- *def* linear_equiv.of_linear
+- \+/\- *theorem* linear_equiv.of_linear_apply
+- \+/\- *theorem* linear_equiv.of_linear_symm_apply
+- \+/\- *def* linear_equiv.of_top
+- \+/\- *theorem* linear_equiv.of_top_apply
+- \+/\- *theorem* linear_equiv.of_top_symm_apply
+- \+/\- *def* linear_equiv.refl
+- \+/\- *def* linear_equiv.smul_of_ne_zero
+- \+/\- *def* linear_equiv.smul_of_unit
+- \+/\- *def* linear_equiv.symm
+- \+/\- *theorem* linear_equiv.symm_apply_apply
+- \+/\- *lemma* linear_equiv.to_equiv_injective
+- \+/\- *def* linear_equiv.trans
+- \+/\- *lemma* linear_map.add_apply
+- \+/\- *def* linear_map.cod_restrict
+- \+/\- *theorem* linear_map.cod_restrict_apply
+- \+/\- *theorem* linear_map.comap_cod_restrict
+- \+/\- *theorem* linear_map.comap_injective
+- \+/\- *theorem* linear_map.comap_le_comap_iff
+- \+/\- *lemma* linear_map.comap_map_eq
+- \+/\- *lemma* linear_map.comap_map_eq_self
+- \+/\- *theorem* linear_map.comap_pair_prod
+- \+/\- *theorem* linear_map.comp_assoc
+- \+/\- *lemma* linear_map.comp_cod_restrict
+- \+/\- *theorem* linear_map.comp_smul
+- \+/\- *theorem* linear_map.comp_zero
+- \+/\- *def* linear_map.congr_right
+- \+/\- *def* linear_map.copair
+- \+/\- *theorem* linear_map.copair_apply
+- \+/\- *theorem* linear_map.copair_inl
+- \+/\- *theorem* linear_map.copair_inl_inr
+- \+/\- *theorem* linear_map.copair_inr
+- \+/\- *def* linear_map.diag
+- \+/\- *lemma* linear_map.disjoint_inl_inr
+- \+/\- *theorem* linear_map.disjoint_ker'
+- \+/\- *theorem* linear_map.disjoint_ker
+- \+/\- *lemma* linear_map.finsupp_sum
+- \+/\- *def* linear_map.fst
+- \+/\- *theorem* linear_map.fst_apply
+- \+/\- *theorem* linear_map.fst_eq_copair
+- \+/\- *theorem* linear_map.fst_pair
+- \+/\- *def* linear_map.general_linear_group.general_linear_equiv
+- \+/\- *lemma* linear_map.general_linear_group.general_linear_equiv_to_linear_map
+- \+/\- *def* linear_map.general_linear_group.of_linear_equiv
+- \+/\- *def* linear_map.general_linear_group.to_linear_equiv
+- \+/\- *def* linear_map.general_linear_group
+- \+/\- *lemma* linear_map.infi_ker_proj
+- \+/\- *theorem* linear_map.inj_of_disjoint_ker
+- \+/\- *def* linear_map.inl
+- \+/\- *theorem* linear_map.inl_apply
+- \+/\- *theorem* linear_map.inl_eq_pair
+- \+/\- *def* linear_map.inr
+- \+/\- *theorem* linear_map.inr_apply
+- \+/\- *theorem* linear_map.inr_eq_pair
+- \+/\- *def* linear_map.inverse
+- \+/\- *lemma* linear_map.is_linear_map_prod_iso
+- \+/\- *def* linear_map.ker
+- \+/\- *lemma* linear_map.ker_cod_restrict
+- \+/\- *theorem* linear_map.ker_comp
+- \+/\- *theorem* linear_map.ker_eq_bot'
+- \+/\- *theorem* linear_map.ker_eq_bot
+- \+/\- *theorem* linear_map.ker_eq_top
+- \+/\- *theorem* linear_map.ker_id
+- \+/\- *theorem* linear_map.ker_le_ker_comp
+- \+/\- *lemma* linear_map.ker_pair
+- \+/\- *lemma* linear_map.ker_pi
+- \+/\- *lemma* linear_map.ker_smul'
+- \+/\- *lemma* linear_map.ker_smul
+- \+/\- *lemma* linear_map.ker_std_basis
+- \+/\- *theorem* linear_map.ker_zero
+- \+/\- *lemma* linear_map.le_ker_iff_map
+- \+/\- *theorem* linear_map.map_cod_restrict
+- \+/\- *lemma* linear_map.map_comap_eq
+- \+/\- *lemma* linear_map.map_comap_eq_self
+- \+/\- *theorem* linear_map.map_copair_prod
+- \+/\- *theorem* linear_map.map_injective
+- \+/\- *theorem* linear_map.map_le_map_iff
+- \+/\- *lemma* linear_map.map_le_range
+- \+/\- *theorem* linear_map.mem_ker
+- \+/\- *theorem* linear_map.mem_range
+- \+/\- *lemma* linear_map.mul_app
+- \+/\- *lemma* linear_map.neg_apply
+- \+/\- *lemma* linear_map.one_app
+- \+/\- *def* linear_map.pair
+- \+/\- *theorem* linear_map.pair_apply
+- \+/\- *theorem* linear_map.pair_fst_snd
+- \+/\- *def* linear_map.pi
+- \+/\- *lemma* linear_map.pi_apply
+- \+/\- *lemma* linear_map.pi_comp
+- \+/\- *lemma* linear_map.pi_eq_zero
+- \+/\- *lemma* linear_map.pi_zero
+- \+/\- *def* linear_map.prod
+- \+/\- *theorem* linear_map.prod_eq_inf_comap
+- \+/\- *theorem* linear_map.prod_eq_sup_map
+- \+/\- *def* linear_map.proj
+- \+/\- *lemma* linear_map.proj_apply
+- \+/\- *lemma* linear_map.proj_comp_std_basis
+- \+/\- *lemma* linear_map.proj_pi
+- \+/\- *lemma* linear_map.proj_std_basis_ne
+- \+/\- *lemma* linear_map.proj_std_basis_same
+- \+/\- *def* linear_map.range
+- \+/\- *lemma* linear_map.range_cod_restrict
+- \+/\- *theorem* linear_map.range_coe
+- \+/\- *theorem* linear_map.range_comp
+- \+/\- *theorem* linear_map.range_comp_le_range
+- \+/\- *theorem* linear_map.range_eq_top
+- \+/\- *theorem* linear_map.range_id
+- \+/\- *lemma* linear_map.range_le_bot_iff
+- \+/\- *lemma* linear_map.range_le_iff_comap
+- \+/\- *lemma* linear_map.range_smul'
+- \+/\- *lemma* linear_map.range_smul
+- \+/\- *theorem* linear_map.range_zero
+- \+/\- *def* linear_map.scalar_prod_space_iso
+- \+/\- *lemma* linear_map.smul_apply
+- \+/\- *theorem* linear_map.smul_comp
+- \+/\- *def* linear_map.smul_right
+- \+/\- *theorem* linear_map.smul_right_apply
+- \+/\- *def* linear_map.snd
+- \+/\- *theorem* linear_map.snd_apply
+- \+/\- *theorem* linear_map.snd_eq_copair
+- \+/\- *theorem* linear_map.snd_pair
+- \+/\- *lemma* linear_map.span_inl_union_inr
+- \+/\- *def* linear_map.std_basis
+- \+/\- *lemma* linear_map.std_basis_apply
+- \+/\- *lemma* linear_map.std_basis_eq_single
+- \+/\- *lemma* linear_map.std_basis_ne
+- \+/\- *lemma* linear_map.std_basis_same
+- \+/\- *lemma* linear_map.sub_apply
+- \+/\- *theorem* linear_map.sub_mem_ker_iff
+- \+/\- *lemma* linear_map.subtype_comp_cod_restrict
+- \+/\- *lemma* linear_map.sum_apply
+- \+/\- *def* linear_map.sup_quotient_to_quotient_inf
+- \+/\- *lemma* linear_map.supr_range_std_basis
+- \+/\- *lemma* linear_map.update_apply
+- \+/\- *lemma* linear_map.zero_apply
+- \+/\- *theorem* linear_map.zero_comp
+- \+/\- *theorem* submodule.Inf_coe
+- \+/\- *lemma* submodule.add_eq_sup
+- \+/\- *lemma* submodule.bot_coe
+- \+/\- *def* submodule.comap
+- \+/\- *theorem* submodule.comap_bot
+- \+/\- *lemma* submodule.comap_coe
+- \+/\- *lemma* submodule.comap_comp
+- \+/\- *theorem* submodule.comap_fst
+- \+/\- *lemma* submodule.comap_inf
+- \+/\- *lemma* submodule.comap_infi
+- \+/\- *theorem* submodule.comap_liftq
+- \+/\- *lemma* submodule.comap_mkq_embedding_eq
+- \+/\- *lemma* submodule.comap_mono
+- \+/\- *lemma* submodule.comap_smul'
+- \+/\- *lemma* submodule.comap_smul
+- \+/\- *theorem* submodule.comap_snd
+- \+/\- *lemma* submodule.comap_top
+- \+/\- *lemma* submodule.comap_zero
+- \+/\- *theorem* submodule.disjoint_def
+- \+/\- *lemma* submodule.disjoint_iff_comap_eq_bot
+- \+/\- *lemma* submodule.eq_bot_of_zero_eq_one
+- \+/\- *lemma* submodule.eq_top_iff'
+- \+/\- *lemma* submodule.eq_zero_of_bot_submodule
+- \+/\- *lemma* submodule.gc_map_comap
+- \+/\- *theorem* submodule.inf_coe
+- \+/\- *theorem* submodule.infi_coe
+- \+/\- *theorem* submodule.ker_inl
+- \+/\- *theorem* submodule.ker_inr
+- \+/\- *theorem* submodule.ker_liftq
+- \+/\- *theorem* submodule.ker_liftq_eq_bot
+- \+/\- *theorem* submodule.ker_of_le
+- \+/\- *lemma* submodule.le_comap_map
+- \+/\- *lemma* submodule.le_comap_mkq
+- \+/\- *lemma* submodule.le_def'
+- \+/\- *lemma* submodule.le_def
+- \+/\- *def* submodule.liftq
+- \+/\- *theorem* submodule.liftq_apply
+- \+/\- *theorem* submodule.liftq_mkq
+- \+/\- *lemma* submodule.linear_eq_on
+- \+/\- *def* submodule.map
+- \+/\- *lemma* submodule.map_bot
+- \+/\- *lemma* submodule.map_coe
+- \+/\- *lemma* submodule.map_comap_le
+- \+/\- *lemma* submodule.map_comp
+- \+/\- *lemma* submodule.map_inf_eq_map_inf_comap
+- \+/\- *theorem* submodule.map_inl
+- \+/\- *theorem* submodule.map_inr
+- \+/\- *lemma* submodule.map_le_iff_le_comap
+- \+/\- *theorem* submodule.map_liftq
+- \+/\- *lemma* submodule.map_mono
+- \+/\- *lemma* submodule.map_smul'
+- \+/\- *lemma* submodule.map_smul
+- \+/\- *lemma* submodule.map_subtype_embedding_eq
+- \+/\- *lemma* submodule.map_subtype_le
+- \+/\- *lemma* submodule.map_sup
+- \+/\- *lemma* submodule.map_supr
+- \+/\- *theorem* submodule.map_top
+- \+/\- *lemma* submodule.map_zero
+- \+/\- *def* submodule.mapq
+- \+/\- *theorem* submodule.mapq_apply
+- \+/\- *theorem* submodule.mapq_mkq
+- \+/\- *theorem* submodule.mem_Sup_of_directed
+- \+/\- *lemma* submodule.mem_bot
+- \+/\- *lemma* submodule.mem_comap
+- \+/\- *theorem* submodule.mem_inf
+- \+/\- *theorem* submodule.mem_infi
+- \+/\- *lemma* submodule.mem_map
+- \+/\- *theorem* submodule.mem_map_of_mem
+- \+/\- *lemma* submodule.mem_prod
+- \+/\- *lemma* submodule.mem_span
+- \+/\- *lemma* submodule.mem_span_insert'
+- \+/\- *lemma* submodule.mem_span_insert
+- \+/\- *lemma* submodule.mem_span_singleton
+- \+/\- *lemma* submodule.mem_supr_of_mem
+- \+/\- *lemma* submodule.mem_top
+- \+/\- *def* submodule.mkq
+- \+/\- *theorem* submodule.mkq_apply
+- \+/\- *def* submodule.of_le
+- \+/\- *theorem* submodule.of_le_apply
+- \+/\- *def* submodule.prod
+- \+/\- *lemma* submodule.prod_bot
+- \+/\- *theorem* submodule.prod_comap_inl
+- \+/\- *theorem* submodule.prod_comap_inr
+- \+/\- *theorem* submodule.prod_map_fst
+- \+/\- *theorem* submodule.prod_map_snd
+- \+/\- *lemma* submodule.prod_mono
+- \+/\- *lemma* submodule.prod_top
+- \+/\- *theorem* submodule.quotient.mk'_eq_mk
+- \+/\- *def* submodule.quotient.mk
+- \+/\- *theorem* submodule.quotient.mk_eq_mk
+- \+/\- *theorem* submodule.quotient.quot_mk_eq_mk
+- \+/\- *def* submodule.quotient_rel
+- \+/\- *theorem* submodule.range_fst
+- \+/\- *theorem* submodule.range_liftq
+- \+/\- *lemma* submodule.range_of_le
+- \+/\- *theorem* submodule.range_snd
+- \+/\- *def* submodule.span
+- \+/\- *lemma* submodule.span_Union
+- \+/\- *lemma* submodule.span_empty
+- \+/\- *lemma* submodule.span_eq
+- \+/\- *lemma* submodule.span_eq_bot
+- \+/\- *lemma* submodule.span_eq_of_le
+- \+/\- *lemma* submodule.span_image
+- \+/\- *lemma* submodule.span_induction
+- \+/\- *lemma* submodule.span_insert_eq_span
+- \+/\- *lemma* submodule.span_le
+- \+/\- *lemma* submodule.span_mono
+- \+/\- *lemma* submodule.span_prod_le
+- \+/\- *lemma* submodule.span_singleton_eq_bot
+- \+/\- *lemma* submodule.span_singleton_eq_range
+- \+/\- *lemma* submodule.span_span
+- \+/\- *lemma* submodule.span_union
+- \+/\- *lemma* submodule.span_univ
+- \+/\- *lemma* submodule.subset_span
+- \+/\- *lemma* submodule.subtype_comp_of_le
+- \+/\- *lemma* submodule.top_coe
+- \+/\- *lemma* submodule.zero_eq_bot
 
 Modified src/linear_algebra/basis.lean
-- \+/\- *lemma* linear_independent_empty_type
-- \+/\- *lemma* linear_independent_of_zero_eq_one
-- \+/\- *lemma* linear_independent.unique
-- \+/\- *lemma* linear_independent.injective
-- \+/\- *lemma* linear_independent_span
-- \+/\- *lemma* linear_independent_empty
-- \+/\- *lemma* linear_independent.mono
-- \+/\- *lemma* linear_independent_union
-- \+/\- *lemma* linear_independent_of_finite
-- \+/\- *lemma* linear_independent_sUnion_of_directed
-- \+/\- *lemma* linear_independent_bUnion_of_directed
-- \+/\- *lemma* linear_independent_Union_finite_subtype
-- \+/\- *lemma* linear_independent.total_repr
-- \+/\- *lemma* linear_independent.total_comp_repr
-- \+/\- *lemma* eq_of_linear_independent_of_span_subtype
-- \+/\- *lemma* linear_independent.image
-- \+/\- *lemma* linear_independent.image_subtype
-- \+/\- *lemma* linear_independent_inl_union_inr
-- \+/\- *lemma* linear_independent_inl_union_inr'
-- \+/\- *lemma* le_of_span_le_span
-- \+/\- *lemma* span_le_span_iff
-- \+/\- *lemma* is_basis.mem_span
-- \+/\- *lemma* is_basis.comp
-- \+/\- *lemma* is_basis.injective
-- \+/\- *lemma* is_basis.total_repr
-- \+/\- *lemma* is_basis.total_comp_repr
-- \+/\- *lemma* is_basis.repr_range
-- \+/\- *lemma* is_basis.repr_total
-- \+/\- *lemma* is_basis.ext
+- \+/\- *lemma* constr_add
 - \+/\- *lemma* constr_basis
 - \+/\- *lemma* constr_eq
-- \+/\- *lemma* constr_self
-- \+/\- *lemma* constr_zero
-- \+/\- *lemma* constr_add
 - \+/\- *lemma* constr_neg
-- \+/\- *lemma* constr_sub
-- \+/\- *lemma* constr_smul
 - \+/\- *lemma* constr_range
-- \+/\- *lemma* is_basis_inl_union_inr
-- \+/\- *lemma* is_basis_singleton_one
-- \+/\- *lemma* linear_equiv.is_basis
-- \+/\- *lemma* is_basis_span
+- \+/\- *lemma* constr_self
+- \+/\- *lemma* constr_smul
+- \+/\- *lemma* constr_sub
+- \+/\- *lemma* constr_zero
+- \+/\- *lemma* disjoint_span_singleton
+- \+/\- *lemma* eq_of_linear_independent_of_span_subtype
+- \+/\- *def* equiv_fun_basis
+- \+/\- *def* equiv_of_is_basis
+- \+/\- *lemma* exists_is_basis
+- \+/\- *lemma* exists_left_inverse_linear_map_of_injective
+- \+/\- *lemma* exists_linear_independent
+- \+/\- *lemma* exists_of_linear_independent_of_finite_span
+- \+/\- *lemma* exists_right_inverse_linear_map_of_surjective
+- \+/\- *lemma* exists_subset_is_basis
+- \+/\- *lemma* is_basis.comp
+- \+/\- *def* is_basis.constr
+- \+/\- *theorem* is_basis.constr_apply
+- \+/\- *lemma* is_basis.ext
+- \+/\- *lemma* is_basis.injective
+- \+/\- *lemma* is_basis.mem_span
+- \+/\- *def* is_basis.repr
+- \+/\- *lemma* is_basis.repr_range
+- \+/\- *lemma* is_basis.repr_total
+- \+/\- *lemma* is_basis.total_comp_repr
+- \+/\- *lemma* is_basis.total_repr
+- \+/\- *def* is_basis
 - \+/\- *lemma* is_basis_empty
 - \+/\- *lemma* is_basis_empty_bot
-- \+/\- *lemma* mem_span_insert_exchange
-- \+/\- *lemma* linear_independent_iff_not_mem_span
-- \+/\- *lemma* linear_independent_unique
-- \+/\- *lemma* linear_independent_singleton
-- \+/\- *lemma* disjoint_span_singleton
+- \+/\- *lemma* is_basis_inl_union_inr
+- \+/\- *lemma* is_basis_singleton_one
+- \+/\- *lemma* is_basis_span
+- \+/\- *lemma* le_of_span_le_span
+- \+/\- *lemma* linear_equiv.is_basis
+- \+/\- *lemma* linear_independent.image
+- \+/\- *lemma* linear_independent.image_subtype
+- \+/\- *lemma* linear_independent.injective
 - \+/\- *lemma* linear_independent.insert
-- \+/\- *lemma* exists_linear_independent
-- \+/\- *lemma* exists_subset_is_basis
-- \+/\- *lemma* exists_is_basis
-- \+/\- *lemma* exists_of_linear_independent_of_finite_span
-- \+/\- *lemma* exists_left_inverse_linear_map_of_injective
-- \+/\- *lemma* exists_right_inverse_linear_map_of_surjective
-- \+/\- *lemma* is_basis_std_basis
-- \+/\- *lemma* is_basis_fun₀
-- \+/\- *lemma* is_basis_fun
+- \+/\- *lemma* linear_independent.mono
+- \+/\- *def* linear_independent.repr
+- \+/\- *lemma* linear_independent.total_comp_repr
+- \+/\- *def* linear_independent.total_equiv
+- \+/\- *lemma* linear_independent.total_repr
+- \+/\- *lemma* linear_independent.unique
+- \+/\- *def* linear_independent
+- \+/\- *lemma* linear_independent_Union_finite_subtype
+- \+/\- *lemma* linear_independent_bUnion_of_directed
+- \+/\- *lemma* linear_independent_empty
+- \+/\- *lemma* linear_independent_empty_type
 - \+/\- *theorem* linear_independent_iff
+- \+/\- *lemma* linear_independent_iff_not_mem_span
+- \+/\- *theorem* linear_independent_iff_total_on
+- \+/\- *lemma* linear_independent_inl_union_inr'
+- \+/\- *lemma* linear_independent_inl_union_inr
+- \+/\- *lemma* linear_independent_of_finite
+- \+/\- *lemma* linear_independent_of_zero_eq_one
+- \+/\- *lemma* linear_independent_sUnion_of_directed
+- \+/\- *lemma* linear_independent_singleton
+- \+/\- *lemma* linear_independent_span
 - \+/\- *theorem* linear_independent_subtype
 - \+/\- *theorem* linear_independent_subtype_disjoint
-- \+/\- *theorem* linear_independent_iff_total_on
-- \+/\- *theorem* is_basis.constr_apply
+- \+/\- *lemma* linear_independent_union
+- \+/\- *lemma* linear_independent_unique
+- \+/\- *lemma* mem_span_insert_exchange
 - \+/\- *theorem* module.card_fintype
-- \+/\- *theorem* quotient_prod_linear_equiv
-- \+/\- *theorem* vector_space.card_fintype
-- \+/\- *def* linear_independent
-- \+/\- *def* linear_independent.total_equiv
-- \+/\- *def* linear_independent.repr
-- \+/\- *def* is_basis
-- \+/\- *def* is_basis.repr
-- \+/\- *def* is_basis.constr
 - \+/\- *def* module_equiv_finsupp
-- \+/\- *def* equiv_of_is_basis
-- \+/\- *def* equiv_fun_basis
+- \+/\- *lemma* pi.is_basis_fun
+- \+/\- *lemma* pi.is_basis_fun₀
+- \+/\- *lemma* pi.is_basis_std_basis
+- \+/\- *theorem* quotient_prod_linear_equiv
+- \+/\- *lemma* span_le_span_iff
+- \+/\- *theorem* vector_space.card_fintype
 
 Modified src/linear_algebra/bilinear_form.lean
-- \+/\- *lemma* add_left
-- \+/\- *lemma* smul_left
-- \+/\- *lemma* add_right
-- \+/\- *lemma* smul_right
-- \+/\- *lemma* zero_left
-- \+/\- *lemma* zero_right
-- \+/\- *lemma* neg_left
-- \+/\- *lemma* neg_right
-- \+/\- *lemma* sub_left
-- \+/\- *lemma* sub_right
-- \+/\- *lemma* ext
-- \+/\- *lemma* ortho_zero
-- \+/\- *lemma* eq_zero
-- \+/\- *lemma* ortho_sym
-- \+/\- *lemma* sym
-- \+/\- *lemma* self_eq_zero
-- \+/\- *lemma* neg
-- \+/\- *theorem* ortho_smul_left
-- \+/\- *theorem* ortho_smul_right
+- \+/\- *def* alt_bilin_form.is_alt
+- \+/\- *lemma* alt_bilin_form.neg
+- \+/\- *lemma* alt_bilin_form.self_eq_zero
+- \+/\- *lemma* bilin_form.add_left
+- \+/\- *lemma* bilin_form.add_right
+- \+/\- *def* bilin_form.bilin_linear_map_equiv
+- \+/\- *lemma* bilin_form.ext
+- \+/\- *def* bilin_form.is_ortho
+- \+/\- *lemma* bilin_form.neg_left
+- \+/\- *lemma* bilin_form.neg_right
+- \+/\- *theorem* bilin_form.ortho_smul_left
+- \+/\- *theorem* bilin_form.ortho_smul_right
+- \+/\- *lemma* bilin_form.ortho_zero
+- \+/\- *lemma* bilin_form.smul_left
+- \+/\- *lemma* bilin_form.smul_right
+- \+/\- *lemma* bilin_form.sub_left
+- \+/\- *lemma* bilin_form.sub_right
+- \+/\- *def* bilin_form.to_linear_map
+- \+/\- *lemma* bilin_form.zero_left
+- \+/\- *lemma* bilin_form.zero_right
 - \+/\- *def* linear_map.to_bilin
-- \+/\- *def* to_linear_map
-- \+/\- *def* bilin_linear_map_equiv
-- \+/\- *def* is_ortho
-- \+/\- *def* is_refl
-- \+/\- *def* is_sym
-- \+/\- *def* is_alt
+- \+/\- *lemma* refl_bilin_form.eq_zero
+- \+/\- *def* refl_bilin_form.is_refl
+- \+/\- *lemma* refl_bilin_form.ortho_sym
+- \+/\- *def* sym_bilin_form.is_sym
+- \+/\- *lemma* sym_bilin_form.ortho_sym
+- \+/\- *lemma* sym_bilin_form.sym
 
 Modified src/linear_algebra/dimension.lean
+- \+/\- *lemma* dim_add_le_dim_add_dim
 - \+/\- *lemma* dim_bot
-- \+/\- *lemma* dim_top
-- \+/\- *lemma* dim_of_field
-- \+/\- *lemma* dim_span
-- \+/\- *lemma* dim_span_set
-- \+/\- *lemma* dim_span_le
-- \+/\- *lemma* dim_span_of_finset
-- \+/\- *lemma* dim_range_le
-- \+/\- *lemma* dim_map_le
-- \+/\- *lemma* dim_range_of_surjective
-- \+/\- *lemma* dim_eq_surjective
-- \+/\- *lemma* dim_le_surjective
 - \+/\- *lemma* dim_eq_injective
-- \+/\- *lemma* dim_submodule_le
+- \+/\- *lemma* dim_eq_surjective
+- \+/\- *lemma* dim_fin_fun
+- \+/\- *lemma* dim_fun'
+- \+/\- *lemma* dim_fun
 - \+/\- *lemma* dim_le_injective
 - \+/\- *lemma* dim_le_of_submodule
-- \+/\- *lemma* dim_sup_add_dim_inf_eq
-- \+/\- *lemma* dim_add_le_dim_add_dim
+- \+/\- *lemma* dim_le_surjective
+- \+/\- *lemma* dim_map_le
+- \+/\- *lemma* dim_of_field
 - \+/\- *lemma* dim_pi
-- \+/\- *lemma* dim_fun
-- \+/\- *lemma* dim_fun'
-- \+/\- *lemma* dim_fin_fun
-- \+/\- *lemma* exists_mem_ne_zero_of_ne_bot
-- \+/\- *lemma* exists_mem_ne_zero_of_dim_pos
-- \+/\- *lemma* exists_is_basis_fintype
-- \+/\- *lemma* rank_le_domain
-- \+/\- *lemma* rank_le_range
-- \+/\- *lemma* rank_add_le
-- \+/\- *lemma* rank_zero
-- \+/\- *lemma* rank_finset_sum_le
-- \+/\- *lemma* rank_comp_le1
-- \+/\- *lemma* rank_comp_le2
-- \+/\- *theorem* is_basis.le_span
-- \+/\- *theorem* mk_eq_mk_of_basis
-- \+/\- *theorem* is_basis.mk_range_eq_dim
-- \+/\- *theorem* is_basis.mk_eq_dim
-- \+/\- *theorem* linear_equiv.dim_eq
 - \+/\- *theorem* dim_prod
 - \+/\- *theorem* dim_quotient
 - \+/\- *theorem* dim_range_add_dim_ker
+- \+/\- *lemma* dim_range_le
+- \+/\- *lemma* dim_range_of_surjective
+- \+/\- *lemma* dim_span
+- \+/\- *lemma* dim_span_le
+- \+/\- *lemma* dim_span_of_finset
+- \+/\- *lemma* dim_span_set
+- \+/\- *lemma* dim_submodule_le
+- \+/\- *lemma* dim_sup_add_dim_inf_eq
+- \+/\- *lemma* dim_top
+- \+/\- *lemma* exists_is_basis_fintype
+- \+/\- *lemma* exists_mem_ne_zero_of_dim_pos
+- \+/\- *lemma* exists_mem_ne_zero_of_ne_bot
+- \+/\- *theorem* is_basis.le_span
+- \+/\- *theorem* is_basis.mk_eq_dim
+- \+/\- *theorem* is_basis.mk_range_eq_dim
+- \+/\- *theorem* linear_equiv.dim_eq
 - \+/\- *theorem* linear_equiv.dim_eq_lift
+- \+/\- *theorem* mk_eq_mk_of_basis
 - \+/\- *def* rank
+- \+/\- *lemma* rank_add_le
+- \+/\- *lemma* rank_comp_le1
+- \+/\- *lemma* rank_comp_le2
+- \+/\- *lemma* rank_finset_sum_le
+- \+/\- *lemma* rank_le_domain
+- \+/\- *lemma* rank_le_range
+- \+/\- *lemma* rank_zero
 
 Modified src/linear_algebra/direct_sum_module.lean
-- \+/\- *lemma* single_eq_lof
-- \+/\- *lemma* to_module_lof
-- \+/\- *lemma* lof_apply
-- \+/\- *lemma* apply_eq_component
-- \+/\- *lemma* component.lof_self
-- \+/\- *lemma* component.of
-- \+/\- *lemma* ext
-- \+/\- *lemma* ext_iff
-- \+/\- *theorem* mk_smul
-- \+/\- *theorem* of_smul
-- \+/\- *theorem* to_module.unique
-- \+/\- *theorem* to_module.ext
-- \+/\- *def* lmk
-- \+/\- *def* lof
-- \+/\- *def* to_module
-- \+/\- *def* component
+- \+/\- *lemma* direct_sum.apply_eq_component
+- \+/\- *lemma* direct_sum.component.lof_self
+- \+/\- *lemma* direct_sum.component.of
+- \+/\- *def* direct_sum.component
+- \+/\- *lemma* direct_sum.ext
+- \+/\- *lemma* direct_sum.ext_iff
+- \+/\- *def* direct_sum.lmk
+- \+/\- *def* direct_sum.lof
+- \+/\- *lemma* direct_sum.lof_apply
+- \+/\- *theorem* direct_sum.mk_smul
+- \+/\- *theorem* direct_sum.of_smul
+- \+/\- *lemma* direct_sum.single_eq_lof
+- \+/\- *theorem* direct_sum.to_module.ext
+- \+/\- *theorem* direct_sum.to_module.unique
+- \+/\- *def* direct_sum.to_module
+- \+/\- *lemma* direct_sum.to_module_lof
 
 Modified src/linear_algebra/finsupp.lean
-- \+/\- *lemma* lsubtype_domain_apply
-- \+/\- *lemma* lsingle_apply
-- \+/\- *lemma* lapply_apply
-- \+/\- *lemma* ker_lsingle
-- \+/\- *lemma* infi_ker_lapply_le_bot
-- \+/\- *lemma* supr_lsingle_range
-- \+/\- *lemma* span_single_image
-- \+/\- *lemma* mem_supported
-- \+/\- *lemma* mem_supported'
-- \+/\- *lemma* single_mem_supported
-- \+/\- *lemma* supported_eq_span_single
-- \+/\- *lemma* range_total
-- \+/\- *theorem* restrict_dom_apply
-- \+/\- *theorem* supported_empty
-- \+/\- *theorem* supported_univ
-- \+/\- *theorem* lsum_apply
-- \+/\- *theorem* lmap_domain_apply
-- \+/\- *theorem* lmap_domain_id
-- \+/\- *theorem* total_apply
-- \+/\- *theorem* total_single
-- \+/\- *theorem* total_range
-- \+/\- *theorem* lmap_domain_total
-- \+/\- *theorem* total_emb_domain
-- \+/\- *theorem* total_map_domain
-- \+/\- *theorem* mem_span_iff_total
-- \+/\- *theorem* total_on_range
-- \+/\- *def* lsingle
-- \+/\- *def* lapply
-- \+/\- *def* lsubtype_domain
-- \+/\- *def* supported
-- \+/\- *def* restrict_dom
-- \+/\- *def* lsum
-- \+/\- *def* lmap_domain
+- \+/\- *lemma* finsupp.infi_ker_lapply_le_bot
+- \+/\- *lemma* finsupp.ker_lsingle
+- \+/\- *def* finsupp.lapply
+- \+/\- *lemma* finsupp.lapply_apply
+- \+/\- *def* finsupp.lmap_domain
+- \+/\- *theorem* finsupp.lmap_domain_apply
+- \+/\- *theorem* finsupp.lmap_domain_id
+- \+/\- *theorem* finsupp.lmap_domain_total
+- \+/\- *def* finsupp.lsingle
+- \+/\- *lemma* finsupp.lsingle_apply
+- \+/\- *def* finsupp.lsubtype_domain
+- \+/\- *lemma* finsupp.lsubtype_domain_apply
+- \+/\- *def* finsupp.lsum
+- \+/\- *theorem* finsupp.lsum_apply
+- \+/\- *theorem* finsupp.mem_span_iff_total
+- \+/\- *lemma* finsupp.mem_supported'
+- \+/\- *lemma* finsupp.mem_supported
+- \+/\- *lemma* finsupp.range_total
+- \+/\- *def* finsupp.restrict_dom
+- \+/\- *theorem* finsupp.restrict_dom_apply
+- \+/\- *lemma* finsupp.single_mem_supported
+- \+/\- *lemma* finsupp.span_single_image
+- \+/\- *def* finsupp.supported
+- \+/\- *theorem* finsupp.supported_empty
+- \+/\- *lemma* finsupp.supported_eq_span_single
+- \+/\- *theorem* finsupp.supported_univ
+- \+/\- *lemma* finsupp.supr_lsingle_range
+- \+/\- *theorem* finsupp.total_apply
+- \+/\- *theorem* finsupp.total_emb_domain
+- \+/\- *theorem* finsupp.total_map_domain
+- \+/\- *theorem* finsupp.total_on_range
+- \+/\- *theorem* finsupp.total_range
+- \+/\- *theorem* finsupp.total_single
 
 Modified src/linear_algebra/finsupp_vector_space.lean
-- \+/\- *lemma* linear_independent_single
-- \+/\- *lemma* is_basis_single
-- \+/\- *lemma* dim_eq
-- \+/\- *lemma* eq_bot_iff_dim_eq_zero
-- \+/\- *lemma* injective_of_surjective
-- \+/\- *lemma* cardinal_mk_eq_cardinal_mk_field_pow_dim
 - \+/\- *lemma* cardinal_lt_omega_of_dim_lt_omega
+- \+/\- *lemma* cardinal_mk_eq_cardinal_mk_field_pow_dim
+- \+/\- *lemma* eq_bot_iff_dim_eq_zero
 - \+/\- *def* equiv_of_dim_eq_dim
+- \+/\- *lemma* finsupp.dim_eq
+- \+/\- *lemma* finsupp.is_basis_single
+- \+/\- *lemma* finsupp.linear_independent_single
+- \+/\- *lemma* injective_of_surjective
 
 Modified src/linear_algebra/matrix.lean
-- \+/\- *lemma* to_lin_add
-- \+/\- *lemma* to_lin_zero
-- \+/\- *lemma* to_lin_apply
-- \+/\- *lemma* mul_to_lin
-- \+/\- *lemma* to_matrix_to_lin
-- \+/\- *lemma* to_lin_to_matrix
-- \+/\- *lemma* proj_diagonal
-- \+/\- *lemma* diagonal_comp_std_basis
-- \+/\- *lemma* rank_vec_mul_vec
-- \+/\- *lemma* diagonal_to_lin
-- \+/\- *lemma* ker_diagonal_to_lin
-- \+/\- *lemma* range_diagonal
-- \+/\- *lemma* rank_diagonal
-- \+/\- *def* eval
-- \+/\- *def* to_lin
-- \+/\- *def* to_matrixₗ
-- \+/\- *def* to_matrix
 - \+/\- *def* lin_equiv_matrix'
 - \+/\- *def* lin_equiv_matrix
+- \+/\- *def* linear_map.to_matrix
+- \+/\- *def* linear_map.to_matrixₗ
+- \+/\- *lemma* matrix.diagonal_comp_std_basis
+- \+/\- *lemma* matrix.diagonal_to_lin
+- \+/\- *def* matrix.eval
+- \+/\- *lemma* matrix.ker_diagonal_to_lin
+- \+/\- *lemma* matrix.mul_to_lin
+- \+/\- *lemma* matrix.proj_diagonal
+- \+/\- *lemma* matrix.range_diagonal
+- \+/\- *lemma* matrix.rank_diagonal
+- \+/\- *lemma* matrix.rank_vec_mul_vec
+- \+/\- *def* matrix.to_lin
+- \+/\- *lemma* matrix.to_lin_add
+- \+/\- *lemma* matrix.to_lin_apply
+- \+/\- *lemma* matrix.to_lin_zero
+- \+/\- *lemma* to_lin_to_matrix
+- \+/\- *lemma* to_matrix_to_lin
 
 Modified src/linear_algebra/sesquilinear_form.lean
-- \+/\- *lemma* add_left
-- \+/\- *lemma* smul_left
-- \+/\- *lemma* add_right
-- \+/\- *lemma* smul_right
-- \+/\- *lemma* zero_left
-- \+/\- *lemma* zero_right
-- \+/\- *lemma* neg_left
-- \+/\- *lemma* neg_right
-- \+/\- *lemma* sub_left
-- \+/\- *lemma* sub_right
-- \+/\- *lemma* ext
-- \+/\- *lemma* ortho_zero
-- \+/\- *lemma* eq_zero
-- \+/\- *lemma* ortho_sym
-- \+/\- *lemma* sym
-- \+/\- *lemma* is_refl
-- \+/\- *lemma* self_eq_zero
-- \+/\- *lemma* neg
-- \+/\- *theorem* ortho_smul_left
-- \+/\- *theorem* ortho_smul_right
-- \+/\- *def* is_ortho
-- \+/\- *def* is_refl
-- \+/\- *def* is_sym
-- \+/\- *def* is_alt
+- \+/\- *def* alt_sesq_form.is_alt
+- \+/\- *lemma* alt_sesq_form.neg
+- \+/\- *lemma* alt_sesq_form.self_eq_zero
+- \+/\- *lemma* refl_sesq_form.eq_zero
+- \+/\- *def* refl_sesq_form.is_refl
+- \+/\- *lemma* refl_sesq_form.ortho_sym
+- \+/\- *lemma* sesq_form.add_left
+- \+/\- *lemma* sesq_form.add_right
+- \+/\- *lemma* sesq_form.ext
+- \+/\- *def* sesq_form.is_ortho
+- \+/\- *lemma* sesq_form.neg_left
+- \+/\- *lemma* sesq_form.neg_right
+- \+/\- *theorem* sesq_form.ortho_smul_left
+- \+/\- *theorem* sesq_form.ortho_smul_right
+- \+/\- *lemma* sesq_form.ortho_zero
+- \+/\- *lemma* sesq_form.smul_left
+- \+/\- *lemma* sesq_form.smul_right
+- \+/\- *lemma* sesq_form.sub_left
+- \+/\- *lemma* sesq_form.sub_right
+- \+/\- *lemma* sesq_form.zero_left
+- \+/\- *lemma* sesq_form.zero_right
+- \+/\- *lemma* sym_sesq_form.is_refl
+- \+/\- *def* sym_sesq_form.is_sym
+- \+/\- *lemma* sym_sesq_form.ortho_sym
+- \+/\- *lemma* sym_sesq_form.sym
 
 Modified src/linear_algebra/tensor_product.lean
-- \+/\- *def* direct_sum
+- \+/\- *def* tensor_product.direct_sum
 
 
 
@@ -2821,21 +2818,21 @@ feat(topology/sequences): every first-countable space is sequential ([#1528](htt
 * remove redundant type ascription
 #### Estimated changes
 Modified src/data/set/countable.lean
-- \+ *lemma* countable_iff_exists_surjective_to_subtype
+- \+ *lemma* set.countable_iff_exists_surjective_to_subtype
 
 Modified src/order/basic.lean
 - \+ *lemma* directed_of_mono
 
 Modified src/order/complete_lattice.lean
-- \+ *lemma* infi_subtype'
+- \+ *lemma* lattice.infi_subtype'
 
 Modified src/topology/bases.lean
-- \+ *lemma* has_countable_basis_of_seq
-- \+ *lemma* seq_of_has_countable_basis
-- \+ *lemma* has_countable_basis_iff_seq
-- \+ *lemma* mono_seq_of_has_countable_basis
-- \+ *lemma* has_countable_basis_iff_mono_seq
-- \+ *def* has_countable_basis
+- \+ *def* filter.has_countable_basis
+- \+ *lemma* filter.has_countable_basis_iff_mono_seq
+- \+ *lemma* filter.has_countable_basis_iff_seq
+- \+ *lemma* filter.has_countable_basis_of_seq
+- \+ *lemma* filter.mono_seq_of_has_countable_basis
+- \+ *lemma* filter.seq_of_has_countable_basis
 
 Modified src/topology/sequences.lean
 
@@ -2931,8 +2928,26 @@ Modified src/analysis/normed_space/banach.lean
 
 
 Modified src/analysis/normed_space/basic.lean
+- \+/\- *lemma* complex.norm_int_of_nonneg
+- \- *lemma* exists_norm_lt_one
+- \- *lemma* exists_one_lt_norm
+- \- *lemma* norm_div
+- \- *lemma* norm_fpow
+- \- *lemma* norm_inv
+- \- *lemma* norm_mul
+- \- *lemma* norm_one
+- \- *lemma* norm_pow
 - \+/\- *lemma* norm_pow_le
-- \+/\- *lemma* norm_int_of_nonneg
+- \- *lemma* norm_prod
+- \+ *lemma* normed_field.exists_norm_lt_one
+- \+ *lemma* normed_field.exists_one_lt_norm
+- \+ *lemma* normed_field.norm_div
+- \+ *lemma* normed_field.norm_fpow
+- \+ *lemma* normed_field.norm_inv
+- \+ *lemma* normed_field.norm_mul
+- \+ *lemma* normed_field.norm_one
+- \+ *lemma* normed_field.norm_pow
+- \+ *lemma* normed_field.norm_prod
 
 Modified src/analysis/normed_space/operator_norm.lean
 
@@ -2941,7 +2956,7 @@ Modified src/data/padics/hensel.lean
 
 
 Modified src/data/padics/padic_integers.lean
-- \+/\- *lemma* norm_one
+- \+/\- *lemma* padic_norm_z.norm_one
 
 Modified src/data/padics/padic_numbers.lean
 
@@ -2957,143 +2972,143 @@ Modified src/topology/algebra/monoid.lean
 
 
 Modified src/topology/basic.lean
-- \+ *lemma* continuous_at.preimage_mem_nhds
-- \+ *lemma* continuous_at.comp
 - \+ *lemma* continuous.continuous_at
-- \- *lemma* map_nhds_within
-- \- *theorem* nhds_within_eq
-- \- *theorem* nhds_within_univ
-- \- *theorem* mem_nhds_within
-- \- *theorem* self_mem_nhds_within
+- \+ *lemma* continuous_at.comp
+- \+ *lemma* continuous_at.preimage_mem_nhds
+- \- *def* continuous_on
+- \- *def* continuous_within_at
 - \- *theorem* inter_mem_nhds_within
+- \- *lemma* map_nhds_within
+- \- *theorem* mem_nhds_within
+- \- *def* nhds_within
+- \- *theorem* nhds_within_empty
+- \- *theorem* nhds_within_eq
+- \- *theorem* nhds_within_eq_nhds_within
+- \- *theorem* nhds_within_eq_of_open
+- \- *theorem* nhds_within_inter'
+- \- *theorem* nhds_within_inter
+- \- *theorem* nhds_within_le_of_mem
 - \- *theorem* nhds_within_mono
 - \- *theorem* nhds_within_restrict''
 - \- *theorem* nhds_within_restrict'
 - \- *theorem* nhds_within_restrict
-- \- *theorem* nhds_within_le_of_mem
-- \- *theorem* nhds_within_eq_nhds_within
-- \- *theorem* nhds_within_eq_of_open
-- \- *theorem* nhds_within_empty
 - \- *theorem* nhds_within_union
-- \- *theorem* nhds_within_inter
-- \- *theorem* nhds_within_inter'
+- \- *theorem* nhds_within_univ
+- \- *theorem* self_mem_nhds_within
 - \- *theorem* tendsto_if_nhds_within
 - \- *theorem* tendsto_nhds_within_mono_left
 - \- *theorem* tendsto_nhds_within_mono_right
 - \- *theorem* tendsto_nhds_within_of_tendsto_nhds
-- \- *def* nhds_within
-- \- *def* continuous_within_at
-- \- *def* continuous_on
 
 Modified src/topology/constructions.lean
-- \- *lemma* continuous_within_at.prod
 - \- *lemma* continuous_on.prod
+- \- *lemma* continuous_within_at.prod
 
-Created src/topology/continuous_on.lean
-- \+ *lemma* map_nhds_within
-- \+ *lemma* continuous_iff_continuous_on_univ
-- \+ *lemma* continuous_within_at.mono
-- \+ *lemma* continuous_within_at_inter'
-- \+ *lemma* continuous_within_at_inter
-- \+ *lemma* continuous_on.congr_mono
-- \+ *lemma* continuous_at.continuous_within_at
-- \+ *lemma* continuous_within_at.continuous_at
-- \+ *lemma* continuous_within_at.comp
-- \+ *lemma* continuous_on.comp
-- \+ *lemma* continuous_on.mono
-- \+ *lemma* continuous.continuous_on
+Added src/topology/continuous_on.lean
 - \+ *lemma* continuous.comp_continuous_on
-- \+ *lemma* continuous_within_at.preimage_mem_nhds_within
-- \+ *lemma* continuous_within_at.congr_of_mem_nhds_within
-- \+ *lemma* continuous_on_const
-- \+ *lemma* continuous_on_open_iff
-- \+ *lemma* continuous_on.preimage_open_of_open
+- \+ *lemma* continuous.continuous_on
+- \+ *lemma* continuous_at.continuous_within_at
+- \+ *lemma* continuous_iff_continuous_on_univ
+- \+ *lemma* continuous_on.comp
+- \+ *lemma* continuous_on.congr_mono
+- \+ *lemma* continuous_on.mono
 - \+ *lemma* continuous_on.preimage_closed_of_closed
 - \+ *lemma* continuous_on.preimage_interior_subset_interior_preimage
-- \+ *lemma* continuous_on_of_locally_continuous_on
-- \+ *lemma* continuous_on_open_of_generate_from
-- \+ *lemma* continuous_within_at.prod
+- \+ *lemma* continuous_on.preimage_open_of_open
 - \+ *lemma* continuous_on.prod
-- \+ *theorem* nhds_within_eq
-- \+ *theorem* nhds_within_univ
-- \+ *theorem* mem_nhds_within
-- \+ *theorem* self_mem_nhds_within
+- \+ *def* continuous_on
+- \+ *lemma* continuous_on_const
+- \+ *theorem* continuous_on_iff'
+- \+ *theorem* continuous_on_iff
+- \+ *theorem* continuous_on_iff_continuous_restrict
+- \+ *theorem* continuous_on_iff_is_closed
+- \+ *lemma* continuous_on_of_locally_continuous_on
+- \+ *lemma* continuous_on_open_iff
+- \+ *lemma* continuous_on_open_of_generate_from
+- \+ *lemma* continuous_within_at.comp
+- \+ *lemma* continuous_within_at.congr_of_mem_nhds_within
+- \+ *lemma* continuous_within_at.continuous_at
+- \+ *lemma* continuous_within_at.mono
+- \+ *lemma* continuous_within_at.preimage_mem_nhds_within
+- \+ *lemma* continuous_within_at.prod
+- \+ *theorem* continuous_within_at.tendsto_nhds_within_image
+- \+ *def* continuous_within_at
+- \+ *theorem* continuous_within_at_iff_continuous_at_restrict
+- \+ *theorem* continuous_within_at_iff_ptendsto_res
+- \+ *lemma* continuous_within_at_inter'
+- \+ *lemma* continuous_within_at_inter
+- \+ *theorem* continuous_within_at_univ
 - \+ *theorem* inter_mem_nhds_within
+- \+ *lemma* map_nhds_within
+- \+ *theorem* mem_nhds_within
+- \+ *theorem* mem_nhds_within_subtype
+- \+ *def* nhds_within
+- \+ *theorem* nhds_within_empty
+- \+ *theorem* nhds_within_eq
+- \+ *theorem* nhds_within_eq_map_subtype_val
+- \+ *theorem* nhds_within_eq_nhds_within
+- \+ *theorem* nhds_within_eq_of_open
+- \+ *theorem* nhds_within_inter'
+- \+ *theorem* nhds_within_inter
+- \+ *theorem* nhds_within_le_comap
+- \+ *theorem* nhds_within_le_of_mem
 - \+ *theorem* nhds_within_mono
 - \+ *theorem* nhds_within_restrict''
 - \+ *theorem* nhds_within_restrict'
 - \+ *theorem* nhds_within_restrict
-- \+ *theorem* nhds_within_le_of_mem
-- \+ *theorem* nhds_within_eq_nhds_within
-- \+ *theorem* nhds_within_eq_of_open
-- \+ *theorem* nhds_within_empty
+- \+ *theorem* nhds_within_subtype
 - \+ *theorem* nhds_within_union
-- \+ *theorem* nhds_within_inter
-- \+ *theorem* nhds_within_inter'
+- \+ *theorem* nhds_within_univ
+- \+ *theorem* principal_subtype
+- \+ *theorem* self_mem_nhds_within
 - \+ *theorem* tendsto_if_nhds_within
+- \+ *theorem* tendsto_nhds_within_iff_subtype
 - \+ *theorem* tendsto_nhds_within_mono_left
 - \+ *theorem* tendsto_nhds_within_mono_right
 - \+ *theorem* tendsto_nhds_within_of_tendsto_nhds
-- \+ *theorem* principal_subtype
-- \+ *theorem* mem_nhds_within_subtype
-- \+ *theorem* nhds_within_subtype
-- \+ *theorem* nhds_within_eq_map_subtype_val
-- \+ *theorem* tendsto_nhds_within_iff_subtype
-- \+ *theorem* continuous_within_at_univ
-- \+ *theorem* continuous_within_at_iff_continuous_at_restrict
-- \+ *theorem* continuous_within_at.tendsto_nhds_within_image
-- \+ *theorem* continuous_on_iff
-- \+ *theorem* continuous_on_iff_continuous_restrict
-- \+ *theorem* continuous_on_iff'
-- \+ *theorem* continuous_on_iff_is_closed
-- \+ *theorem* nhds_within_le_comap
-- \+ *theorem* continuous_within_at_iff_ptendsto_res
-- \+ *def* nhds_within
-- \+ *def* continuous_within_at
-- \+ *def* continuous_on
 
 Modified src/topology/local_homeomorph.lean
 
 
 Modified src/topology/order.lean
-- \- *lemma* continuous_iff_continuous_on_univ
-- \- *lemma* continuous_within_at.mono
-- \- *lemma* continuous_within_at_inter'
-- \- *lemma* continuous_within_at_inter
-- \- *lemma* continuous_on.congr_mono
-- \- *lemma* continuous_at.continuous_within_at
-- \- *lemma* continuous_within_at.continuous_at
-- \- *lemma* continuous_within_at.comp
-- \- *lemma* continuous_at.comp
-- \- *lemma* continuous_on.comp
-- \- *lemma* continuous_on.mono
-- \- *lemma* continuous.continuous_on
 - \- *lemma* continuous.comp_continuous_on
 - \- *lemma* continuous.continuous_at
+- \- *lemma* continuous.continuous_on
+- \- *lemma* continuous_at.comp
+- \- *lemma* continuous_at.continuous_within_at
 - \- *lemma* continuous_at.preimage_mem_nhds
-- \- *lemma* continuous_within_at.preimage_mem_nhds_within
-- \- *lemma* continuous_within_at.congr_of_mem_nhds_within
-- \- *lemma* continuous_on_const
-- \- *lemma* continuous_on_open_iff
-- \- *lemma* continuous_on.preimage_open_of_open
+- \- *lemma* continuous_iff_continuous_on_univ
+- \- *lemma* continuous_on.comp
+- \- *lemma* continuous_on.congr_mono
+- \- *lemma* continuous_on.mono
 - \- *lemma* continuous_on.preimage_closed_of_closed
 - \- *lemma* continuous_on.preimage_interior_subset_interior_preimage
-- \- *lemma* continuous_on_of_locally_continuous_on
-- \- *lemma* continuous_on_open_of_generate_from
-- \- *theorem* principal_subtype
-- \- *theorem* mem_nhds_within_subtype
-- \- *theorem* nhds_within_subtype
-- \- *theorem* nhds_within_eq_map_subtype_val
-- \- *theorem* tendsto_nhds_within_iff_subtype
-- \- *theorem* continuous_within_at_univ
-- \- *theorem* continuous_within_at_iff_continuous_at_restrict
-- \- *theorem* continuous_within_at.tendsto_nhds_within_image
+- \- *lemma* continuous_on.preimage_open_of_open
+- \- *lemma* continuous_on_const
+- \- *theorem* continuous_on_iff'
 - \- *theorem* continuous_on_iff
 - \- *theorem* continuous_on_iff_continuous_restrict
-- \- *theorem* continuous_on_iff'
 - \- *theorem* continuous_on_iff_is_closed
-- \- *theorem* nhds_within_le_comap
+- \- *lemma* continuous_on_of_locally_continuous_on
+- \- *lemma* continuous_on_open_iff
+- \- *lemma* continuous_on_open_of_generate_from
+- \- *lemma* continuous_within_at.comp
+- \- *lemma* continuous_within_at.congr_of_mem_nhds_within
+- \- *lemma* continuous_within_at.continuous_at
+- \- *lemma* continuous_within_at.mono
+- \- *lemma* continuous_within_at.preimage_mem_nhds_within
+- \- *theorem* continuous_within_at.tendsto_nhds_within_image
+- \- *theorem* continuous_within_at_iff_continuous_at_restrict
 - \- *theorem* continuous_within_at_iff_ptendsto_res
+- \- *lemma* continuous_within_at_inter'
+- \- *lemma* continuous_within_at_inter
+- \- *theorem* continuous_within_at_univ
+- \- *theorem* mem_nhds_within_subtype
+- \- *theorem* nhds_within_eq_map_subtype_val
+- \- *theorem* nhds_within_le_comap
+- \- *theorem* nhds_within_subtype
+- \- *theorem* principal_subtype
+- \- *theorem* tendsto_nhds_within_iff_subtype
 
 
 
@@ -3123,8 +3138,8 @@ Modified src/group_theory/quotient_group.lean
 chore(topology/algebra/group_completion): missing namespace ([#1518](https://github.com/leanprover-community/mathlib/pull/1518))
 #### Estimated changes
 Modified src/topology/algebra/group_completion.lean
-- \+ *lemma* uniform_space.completion.coe_zero
 - \- *lemma* coe_zero
+- \+ *lemma* uniform_space.completion.coe_zero
 
 
 
@@ -3134,51 +3149,51 @@ refactor(topology/dense_embedding): move dense embeddings to new file ([#1515](h
 Modified src/topology/constructions.lean
 
 
-Created src/topology/dense_embedding.lean
-- \+ *lemma* dense_range_iff_closure_eq
-- \+ *lemma* dense_range.comp
-- \+ *lemma* dense_range.nonempty
-- \+ *lemma* nhds_eq_comap
-- \+ *lemma* closure_range
-- \+ *lemma* self_sub_closure_image_preimage_of_open
-- \+ *lemma* closure_image_nhds_of_nhds
-- \+ *lemma* tendsto_comap_nhds_nhds
-- \+ *lemma* comap_nhds_neq_bot
-- \+ *lemma* extend_eq
-- \+ *lemma* extend_e_eq
-- \+ *lemma* extend_eq_of_cont
-- \+ *lemma* tendsto_extend
-- \+ *lemma* continuous_extend
-- \+ *lemma* mk'
-- \+ *lemma* inj_iff
-- \+ *lemma* to_embedding
+Added src/topology/dense_embedding.lean
+- \+ *lemma* dense_embedding.inj_iff
 - \+ *theorem* dense_embedding.mk'
-- \+ *def* dense_range
+- \+ *lemma* dense_embedding.to_embedding
+- \+ *lemma* dense_inducing.closure_image_nhds_of_nhds
+- \+ *lemma* dense_inducing.closure_range
+- \+ *lemma* dense_inducing.comap_nhds_neq_bot
+- \+ *lemma* dense_inducing.continuous_extend
+- \+ *def* dense_inducing.extend
+- \+ *lemma* dense_inducing.extend_e_eq
+- \+ *lemma* dense_inducing.extend_eq
+- \+ *lemma* dense_inducing.extend_eq_of_cont
+- \+ *lemma* dense_inducing.mk'
+- \+ *lemma* dense_inducing.nhds_eq_comap
+- \+ *lemma* dense_inducing.self_sub_closure_image_preimage_of_open
+- \+ *lemma* dense_inducing.tendsto_comap_nhds_nhds
+- \+ *lemma* dense_inducing.tendsto_extend
+- \+ *lemma* dense_range.comp
 - \+ *def* dense_range.inhabited
-- \+ *def* extend
+- \+ *lemma* dense_range.nonempty
+- \+ *def* dense_range
+- \+ *lemma* dense_range_iff_closure_eq
 
 Modified src/topology/maps.lean
-- \- *lemma* dense_range_iff_closure_eq
-- \- *lemma* dense_range.comp
-- \- *lemma* dense_range.nonempty
-- \- *lemma* nhds_eq_comap
-- \- *lemma* closure_range
-- \- *lemma* self_sub_closure_image_preimage_of_open
-- \- *lemma* closure_image_nhds_of_nhds
-- \- *lemma* tendsto_comap_nhds_nhds
-- \- *lemma* comap_nhds_neq_bot
-- \- *lemma* extend_eq
-- \- *lemma* extend_e_eq
-- \- *lemma* extend_eq_of_cont
-- \- *lemma* tendsto_extend
-- \- *lemma* continuous_extend
-- \- *lemma* mk'
-- \- *lemma* inj_iff
-- \- *lemma* to_embedding
+- \- *lemma* dense_embedding.inj_iff
 - \- *theorem* dense_embedding.mk'
-- \- *def* dense_range
+- \- *lemma* dense_embedding.to_embedding
+- \- *lemma* dense_inducing.closure_image_nhds_of_nhds
+- \- *lemma* dense_inducing.closure_range
+- \- *lemma* dense_inducing.comap_nhds_neq_bot
+- \- *lemma* dense_inducing.continuous_extend
+- \- *def* dense_inducing.extend
+- \- *lemma* dense_inducing.extend_e_eq
+- \- *lemma* dense_inducing.extend_eq
+- \- *lemma* dense_inducing.extend_eq_of_cont
+- \- *lemma* dense_inducing.mk'
+- \- *lemma* dense_inducing.nhds_eq_comap
+- \- *lemma* dense_inducing.self_sub_closure_image_preimage_of_open
+- \- *lemma* dense_inducing.tendsto_comap_nhds_nhds
+- \- *lemma* dense_inducing.tendsto_extend
+- \- *lemma* dense_range.comp
 - \- *def* dense_range.inhabited
-- \- *def* extend
+- \- *lemma* dense_range.nonempty
+- \- *def* dense_range
+- \- *lemma* dense_range_iff_closure_eq
 
 
 
@@ -3197,42 +3212,50 @@ Modified src/topology/order.lean
 refactor(topology/list): move topology of lists, vectors to new file ([#1514](https://github.com/leanprover-community/mathlib/pull/1514))
 #### Estimated changes
 Modified src/topology/constructions.lean
-- \- *lemma* tendsto_cons'
-- \- *lemma* tendsto_cons
-- \- *lemma* tendsto_cons_iff
-- \- *lemma* tendsto_nhds
-- \- *lemma* continuous_at_length
-- \- *lemma* tendsto_insert_nth'
-- \- *lemma* tendsto_insert_nth
-- \- *lemma* continuous_insert_nth
-- \- *lemma* tendsto_remove_nth
-- \- *lemma* continuous_remove_nth
-- \- *lemma* cons_val
-- \- *lemma* continuous_insert_nth'
-- \- *lemma* continuous_at_remove_nth
+- \- *lemma* list.continuous_at_length
+- \- *lemma* list.continuous_insert_nth
+- \- *lemma* list.continuous_remove_nth
+- \- *lemma* list.tendsto_cons'
+- \- *lemma* list.tendsto_cons
+- \- *lemma* list.tendsto_cons_iff
+- \- *lemma* list.tendsto_insert_nth'
+- \- *lemma* list.tendsto_insert_nth
+- \- *lemma* list.tendsto_nhds
+- \- *lemma* list.tendsto_remove_nth
+- \- *lemma* vector.cons_val
+- \- *lemma* vector.continuous_at_remove_nth
+- \- *lemma* vector.continuous_insert_nth'
+- \- *lemma* vector.continuous_insert_nth
+- \- *lemma* vector.continuous_remove_nth
+- \- *lemma* vector.tendsto_cons
+- \- *lemma* vector.tendsto_insert_nth
 
-Created src/topology/list.lean
+Added src/topology/list.lean
+- \+ *lemma* list.continuous_at_length
+- \+ *lemma* list.continuous_insert_nth
+- \+ *lemma* list.continuous_remove_nth
+- \+ *lemma* list.tendsto_cons'
+- \+ *lemma* list.tendsto_cons
+- \+ *lemma* list.tendsto_cons_iff
+- \+ *lemma* list.tendsto_insert_nth'
+- \+ *lemma* list.tendsto_insert_nth
+- \+ *lemma* list.tendsto_nhds
+- \+ *lemma* list.tendsto_remove_nth
+- \+ *lemma* nhds_cons
 - \+ *lemma* nhds_list
 - \+ *lemma* nhds_nil
-- \+ *lemma* nhds_cons
-- \+ *lemma* tendsto_cons'
-- \+ *lemma* tendsto_cons
-- \+ *lemma* tendsto_cons_iff
-- \+ *lemma* tendsto_nhds
-- \+ *lemma* continuous_at_length
-- \+ *lemma* tendsto_insert_nth'
-- \+ *lemma* tendsto_insert_nth
-- \+ *lemma* continuous_insert_nth
-- \+ *lemma* tendsto_remove_nth
-- \+ *lemma* continuous_remove_nth
-- \+ *lemma* cons_val
-- \+ *lemma* continuous_insert_nth'
-- \+ *lemma* continuous_at_remove_nth
+- \+ *lemma* vector.cons_val
+- \+ *lemma* vector.continuous_at_remove_nth
+- \+ *lemma* vector.continuous_insert_nth'
+- \+ *lemma* vector.continuous_insert_nth
+- \+ *lemma* vector.continuous_remove_nth
+- \+ *lemma* vector.tendsto_cons
+- \+ *lemma* vector.tendsto_insert_nth
 
 Modified src/topology/order.lean
+- \- *lemma* nhds_cons
 - \- *lemma* nhds_list
 - \- *lemma* nhds_nil
-- \- *lemma* nhds_cons
 
 
 
@@ -3259,9 +3282,9 @@ chore(topology): sanity_check pass ([#1510](https://github.com/leanprover-commun
 * fix(topology/metric_space): some more namespace fixes
 #### Estimated changes
 Modified src/topology/algebra/open_subgroup.lean
-- \+/\- *lemma* is_open_of_nonempty_open_subset
-- \+/\- *lemma* is_open_of_open_subgroup
-- \+/\- *lemma* is_closed
+- \+/\- *lemma* open_subgroup.is_closed
+- \+/\- *lemma* open_subgroup.is_open_of_nonempty_open_subset
+- \+/\- *lemma* open_subgroup.is_open_of_open_subgroup
 
 Modified src/topology/algebra/uniform_ring.lean
 
@@ -3273,8 +3296,13 @@ Modified src/topology/metric_space/gromov_hausdorff.lean
 
 
 Modified src/topology/metric_space/isometry.lean
-- \- *lemma* Kuratowski_embedding_isometry
-- \+/\- *def* ℓ_infty_ℝ
+- \- *def* Kuratowski_embedding.Kuratowski_embedding
+- \- *lemma* Kuratowski_embedding.Kuratowski_embedding_isometry
+- \- *def* Kuratowski_embedding.nonempty_compacts.Kuratowski_embedding
+- \- *def* Kuratowski_embedding.ℓ_infty_ℝ
+- \+ *def* Kuratowski_embedding
+- \+ *def* nonempty_compacts.Kuratowski_embedding
+- \+ *def* ℓ_infty_ℝ
 
 Modified src/topology/stone_cech.lean
 
@@ -3288,18 +3316,18 @@ Modified src/topology/uniform_space/separation.lean
 feat(algebra/opposites): add some trivial `@[simp]` lemmas ([#1508](https://github.com/leanprover-community/mathlib/pull/1508))
 #### Estimated changes
 Modified src/algebra/opposites.lean
-- \+ *lemma* op_zero
-- \+ *lemma* unop_zero
-- \+ *lemma* op_one
-- \+ *lemma* unop_one
-- \+ *lemma* op_add
-- \+ *lemma* unop_add
-- \+ *lemma* op_neg
-- \+ *lemma* unop_neg
-- \+ *lemma* op_mul
-- \+ *lemma* unop_mul
-- \+ *lemma* op_inv
-- \+ *lemma* unop_inv
+- \+ *lemma* opposite.op_add
+- \+ *lemma* opposite.op_inv
+- \+ *lemma* opposite.op_mul
+- \+ *lemma* opposite.op_neg
+- \+ *lemma* opposite.op_one
+- \+ *lemma* opposite.op_zero
+- \+ *lemma* opposite.unop_add
+- \+ *lemma* opposite.unop_inv
+- \+ *lemma* opposite.unop_mul
+- \+ *lemma* opposite.unop_neg
+- \+ *lemma* opposite.unop_one
+- \+ *lemma* opposite.unop_zero
 
 
 
@@ -3330,10 +3358,10 @@ Co-Authored-By: Johan Commelin <johan@commelin.net>
 * Update todo in src/algebra/category/Module/basic.lean
 Co-Authored-By: Scott Morrison <scott@tqft.net>
 #### Estimated changes
-Created src/algebra/category/Module/basic.lean
-- \+ *lemma* id_apply
-- \+ *lemma* coe_comp
-- \+ *def* of
+Added src/algebra/category/Module/basic.lean
+- \+ *lemma* Module.coe_comp
+- \+ *lemma* Module.id_apply
+- \+ *def* Module.of
 
 Modified src/algebra/punit_instances.lean
 
@@ -3377,100 +3405,100 @@ feat(algebra): commuting elements ([#1089](https://github.com/leanprover-communi
 * Add some `_iff` versions
 #### Estimated changes
 Modified src/algebra/big_operators.lean
-- \+ *lemma* prod_range_zero
-- \+ *lemma* prod_range_one
-- \+ *lemma* sum_range_one
-- \- *lemma* geom_sum_inv
-- \- *theorem* geom_sum_mul_add
-- \- *theorem* geom_sum_mul
+- \+ *lemma* finset.prod_range_one
+- \+ *lemma* finset.prod_range_zero
+- \+ *lemma* finset.sum_range_one
 - \- *theorem* geom_sum
+- \- *lemma* geom_sum_inv
+- \- *theorem* geom_sum_mul
+- \- *theorem* geom_sum_mul_add
 
-Created src/algebra/commute.lean
-- \+ *lemma* centralizer.inter_units_is_subgroup
-- \+ *lemma* group.centralizer_closure
+Added src/algebra/commute.lean
 - \+ *lemma* add_monoid.centralizer_closure
-- \+ *lemma* ring.centralizer_closure
-- \+ *theorem* mem_centralizer
-- \+ *theorem* mul_right
-- \+ *theorem* mul_left
-- \+ *theorem* one_right
-- \+ *theorem* one_left
-- \+ *theorem* units_inv_right
-- \+ *theorem* units_inv_right_iff
-- \+ *theorem* units_inv_left
-- \+ *theorem* units_inv_left_iff
-- \+ *theorem* units_coe
-- \+ *theorem* inv_right
-- \+ *theorem* inv_right_iff
-- \+ *theorem* inv_left
-- \+ *theorem* inv_left_iff
-- \+ *theorem* inv_inv
-- \+ *theorem* inv_inv_iff
-- \+ *theorem* zero_right
-- \+ *theorem* zero_left
-- \+ *theorem* add_right
-- \+ *theorem* add_left
-- \+ *theorem* neg_right
-- \+ *theorem* neg_right_iff
-- \+ *theorem* neg_left
-- \+ *theorem* neg_left_iff
-- \+ *theorem* neg_one_right
-- \+ *theorem* neg_one_left
-- \+ *theorem* sub_right
-- \+ *theorem* sub_left
-- \+ *theorem* monoid.centralizer_closure
-- \+ *theorem* pow_right
-- \+ *theorem* pow_left
-- \+ *theorem* pow_pow
-- \+ *theorem* list_prod_right
-- \+ *theorem* list_prod_left
-- \+ *theorem* self_pow
-- \+ *theorem* pow_self
-- \+ *theorem* pow_pow_self
-- \+ *theorem* gpow_right
-- \+ *theorem* gpow_left
-- \+ *theorem* gpow_gpow
-- \+ *theorem* self_gpow
-- \+ *theorem* gpow_self
-- \+ *theorem* gpow_gpow_self
-- \+ *theorem* smul_right
-- \+ *theorem* smul_left
-- \+ *theorem* smul_smul
-- \+ *theorem* self_smul
-- \+ *theorem* smul_self
-- \+ *theorem* self_smul_smul
-- \+ *theorem* cast_nat_right
-- \+ *theorem* cast_nat_left
-- \+ *theorem* gsmul_right
-- \+ *theorem* gsmul_left
-- \+ *theorem* gsmul_gsmul
-- \+ *theorem* self_gsmul
-- \+ *theorem* gsmul_self
-- \+ *theorem* self_gsmul_gsmul
-- \+ *theorem* cast_int_right
-- \+ *theorem* cast_int_left
-- \+ *theorem* neg_pow
-- \+ *def* commute
+- \+ *lemma* centralizer.inter_units_is_subgroup
 - \+ *def* centralizer
+- \+ *theorem* commute.add_left
+- \+ *theorem* commute.add_right
+- \+ *theorem* commute.cast_int_left
+- \+ *theorem* commute.cast_int_right
+- \+ *theorem* commute.cast_nat_left
+- \+ *theorem* commute.cast_nat_right
+- \+ *theorem* commute.gpow_gpow
+- \+ *theorem* commute.gpow_gpow_self
+- \+ *theorem* commute.gpow_left
+- \+ *theorem* commute.gpow_right
+- \+ *theorem* commute.gpow_self
+- \+ *theorem* commute.gsmul_gsmul
+- \+ *theorem* commute.gsmul_left
+- \+ *theorem* commute.gsmul_right
+- \+ *theorem* commute.gsmul_self
+- \+ *theorem* commute.inv_inv
+- \+ *theorem* commute.inv_inv_iff
+- \+ *theorem* commute.inv_left
+- \+ *theorem* commute.inv_left_iff
+- \+ *theorem* commute.inv_right
+- \+ *theorem* commute.inv_right_iff
+- \+ *theorem* commute.list_prod_left
+- \+ *theorem* commute.list_prod_right
+- \+ *theorem* commute.mul_left
+- \+ *theorem* commute.mul_right
+- \+ *theorem* commute.neg_left
+- \+ *theorem* commute.neg_left_iff
+- \+ *theorem* commute.neg_one_left
+- \+ *theorem* commute.neg_one_right
+- \+ *theorem* commute.neg_right
+- \+ *theorem* commute.neg_right_iff
+- \+ *theorem* commute.one_left
+- \+ *theorem* commute.one_right
+- \+ *theorem* commute.pow_left
+- \+ *theorem* commute.pow_pow
+- \+ *theorem* commute.pow_pow_self
+- \+ *theorem* commute.pow_right
+- \+ *theorem* commute.pow_self
+- \+ *theorem* commute.self_gpow
+- \+ *theorem* commute.self_gsmul
+- \+ *theorem* commute.self_gsmul_gsmul
+- \+ *theorem* commute.self_pow
+- \+ *theorem* commute.self_smul
+- \+ *theorem* commute.self_smul_smul
+- \+ *theorem* commute.smul_left
+- \+ *theorem* commute.smul_right
+- \+ *theorem* commute.smul_self
+- \+ *theorem* commute.smul_smul
+- \+ *theorem* commute.sub_left
+- \+ *theorem* commute.sub_right
+- \+ *theorem* commute.units_coe
+- \+ *theorem* commute.units_inv_left
+- \+ *theorem* commute.units_inv_left_iff
+- \+ *theorem* commute.units_inv_right
+- \+ *theorem* commute.units_inv_right_iff
+- \+ *theorem* commute.zero_left
+- \+ *theorem* commute.zero_right
+- \+ *def* commute
+- \+ *lemma* group.centralizer_closure
+- \+ *theorem* mem_centralizer
+- \+ *theorem* monoid.centralizer_closure
+- \+ *theorem* neg_pow
+- \+ *lemma* ring.centralizer_closure
 
-Created src/algebra/geom_sum.lean
-- \+ *lemma* geom_sum_inv
+Added src/algebra/geom_sum.lean
+- \+ *def* geom_series
 - \+ *theorem* geom_series_def
-- \+ *theorem* geom_series_zero
 - \+ *theorem* geom_series_one
+- \+ *theorem* geom_series_zero
+- \+ *def* geom_series₂
 - \+ *theorem* geom_series₂_def
-- \+ *theorem* geom_series₂_zero
 - \+ *theorem* geom_series₂_one
 - \+ *theorem* geom_series₂_with_one
-- \+ *theorem* geom_sum₂_mul_add
-- \+ *theorem* geom_sum_mul_add
-- \+ *theorem* geom_sum₂_mul_comm
-- \+ *theorem* geom_sum₂_mul
-- \+ *theorem* geom_sum_mul
-- \+ *theorem* geom_sum_mul_neg
+- \+ *theorem* geom_series₂_zero
 - \+ *theorem* geom_sum
-- \+ *def* geom_series
-- \+ *def* geom_series₂
+- \+ *lemma* geom_sum_inv
+- \+ *theorem* geom_sum_mul
+- \+ *theorem* geom_sum_mul_add
+- \+ *theorem* geom_sum_mul_neg
+- \+ *theorem* geom_sum₂_mul
+- \+ *theorem* geom_sum₂_mul_add
+- \+ *theorem* geom_sum₂_mul_comm
 
 Modified src/algebra/group_power.lean
 - \+ *theorem* gsmul_one
@@ -3482,8 +3510,8 @@ Modified src/data/complex/exponential.lean
 
 
 Modified src/data/nat/choose.lean
-- \+ *theorem* commute.add_pow
 - \+/\- *theorem* add_pow
+- \+ *theorem* commute.add_pow
 
 Modified src/data/set/lattice.lean
 
@@ -3534,43 +3562,43 @@ chore(*): fix errors in library and sanity_check ([#1499](https://github.com/lea
 * mention letI
 #### Estimated changes
 Modified src/algebra/big_operators.lean
-- \+/\- *lemma* prod_eq_one
-- \+/\- *lemma* sum_le_sum_of_ne_zero
+- \+/\- *lemma* finset.prod_eq_one
+- \+/\- *lemma* finset.sum_le_sum_of_ne_zero
 
 Modified src/algebra/order_functions.lean
 - \+ *lemma* abs_add
-- \+ *lemma* sub_abs_le_abs_sub
 - \- *def* abs_add
+- \+ *lemma* sub_abs_le_abs_sub
 - \- *def* sub_abs_le_abs_sub
 
 Modified src/analysis/complex/exponential.lean
-
+- \- *def* real.angle.angle
+- \+ *def* real.angle
 
 Modified src/category/functor.lean
-- \+/\- *def* const
+- \+/\- *def* functor.const
 
 Modified src/category_theory/isomorphism.lean
-- \+ *lemma* inv_inv
-- \- *lemma* is_iso.inv_inv
+- \+ *lemma* category_theory.is_iso.inv_inv
+- \- *lemma* category_theory.is_iso.is_iso.inv_inv
 
 Modified src/category_theory/limits/preserves.lean
 
 
 Modified src/computability/turing_machine.lean
-- \- *theorem* {l}
-- \+ *def* {l}
+- \+ *def* turing.TM2to1.{l}
+- \- *theorem* turing.TM2to1.{l}
 
 Modified src/data/finset.lean
-- \+/\- *lemma* coe_filter
-- \+/\- *lemma* image_const
-- \+/\- *lemma* subset_image_iff
-- \+/\- *lemma* card_lt_card
-- \+/\- *lemma* card_le_card_of_inj_on
-- \+/\- *theorem* subset_insert
-- \+/\- *theorem* map_empty
-- \+/\- *theorem* image_singleton
-- \+/\- *theorem* fold_map
-- \+/\- *def* pi.empty
+- \+/\- *lemma* finset.card_le_card_of_inj_on
+- \+/\- *lemma* finset.card_lt_card
+- \+/\- *theorem* finset.fold_map
+- \+/\- *lemma* finset.image_const
+- \+/\- *theorem* finset.image_singleton
+- \+/\- *theorem* finset.map_empty
+- \+/\- *def* finset.pi.empty
+- \+/\- *lemma* finset.subset_image_iff
+- \+/\- *theorem* finset.subset_insert
 
 Modified src/data/finsupp.lean
 
@@ -3582,58 +3610,60 @@ Modified src/data/list/basic.lean
 
 
 Modified src/data/list/defs.lean
-- \+/\- *def* neg
+
 
 Modified src/data/opposite.lean
-
+- \- *def* opposite.opposite
+- \+ *def* opposite
 
 Modified src/data/rat/order.lean
 
 
 Modified src/data/seq/computation.lean
-- \+ *lemma* corec_eq
-- \+ *lemma* lift_rel_aux.ret_left
-- \+ *lemma* lift_rel_aux.ret_right
-- \- *def* corec_eq
-- \- *def* lift_rel_aux.ret_left
-- \- *def* lift_rel_aux.ret_right
+- \+ *lemma* computation.corec_eq
+- \- *def* computation.corec_eq
+- \+ *lemma* computation.lift_rel_aux.ret_left
+- \- *def* computation.lift_rel_aux.ret_left
+- \+ *lemma* computation.lift_rel_aux.ret_right
+- \- *def* computation.lift_rel_aux.ret_right
 
 Modified src/data/set/finite.lean
-- \+/\- *lemma* coe_to_finset'
-- \+/\- *def* fintype_of_fintype_image
+- \+/\- *lemma* finset.coe_to_finset'
+- \+/\- *def* set.fintype_of_fintype_image
 
 Modified src/data/set/function.lean
-- \+/\- *theorem* right_inv_on_of_eq_on_left
+- \+/\- *theorem* set.right_inv_on_of_eq_on_left
 
 Modified src/logic/basic.lean
 - \+ *lemma* Exists.imp
-- \+/\- *lemma* exists_imp_exists'
 - \- *def* Exists.imp
+- \+/\- *lemma* exists_imp_exists'
 
 Modified src/meta/expr.lean
-- \+ *def* has_prefix
+- \+ *def* name.has_prefix
 
 Modified src/meta/rb_map.lean
 
 
 Modified src/set_theory/ordinal.lean
-- \+/\- *theorem* lt_le_top
-- \+/\- *theorem* equiv_lt_apply
-- \+/\- *theorem* equiv_lt_top
-- \+/\- *theorem* top_eq
-- \+/\- *theorem* of_element_top
+- \+/\- *theorem* principal_seg.equiv_lt_apply
+- \+/\- *theorem* principal_seg.equiv_lt_top
+- \+/\- *theorem* principal_seg.lt_le_top
+- \+/\- *theorem* principal_seg.of_element_top
+- \+/\- *theorem* principal_seg.top_eq
 
 Modified src/tactic/core.lean
 
 
 Modified src/tactic/interactive.lean
-- \+/\- *lemma* {u}
+- \+/\- *lemma* tactic.interactive.{u}
 
 Modified src/tactic/sanity_check.lean
 
 
 Modified src/topology/category/Top/open_nhds.lean
-
+- \- *def* topological_space.open_nhds.open_nhds
+- \+ *def* topological_space.open_nhds
 
 Modified test/sanity_check.lean
 
@@ -3691,12 +3721,15 @@ Co-Authored-By: Chris Hughes <33847686+ChrisHughes24@users.noreply.github.com>
 * Fix compile, add `add_aut.to_perm`
 #### Estimated changes
 Modified src/data/equiv/algebra.lean
-- \+ *lemma* ext
+- \+ *def* add_aut.to_perm
+- \+ *def* mul_aut.to_perm
 - \+ *def* mul_aut
-- \+ *def* to_perm
+- \+ *lemma* mul_equiv.ext
+- \+ *def* ring_aut.to_add_aut
+- \+ *def* ring_aut.to_mul_aut
+- \+ *def* ring_aut.to_perm
 - \+ *def* ring_aut
-- \+ *def* to_add_aut
-- \+ *def* to_mul_aut
+- \+ *lemma* ring_equiv.ext
 
 
 
@@ -3747,18 +3780,18 @@ Modified src/field_theory/mv_polynomial.lean
 
 
 Modified src/linear_algebra/dual.lean
-- \- *def* dual
+- \- *def* module.dual
 
 Modified src/tactic/core.lean
 
 
 Modified src/topology/uniform_space/compare_reals.lean
-- \+/\- *def* Q
+- \+/\- *def* compare_reals.Q
 
 Modified test/delta_instance.lean
+- \+ *def* S
 - \+ *def* X
 - \+ *def* id_ring
-- \+ *def* S
 
 
 
