@@ -1,3 +1,253 @@
+## [2022-07-15 12:02:33](https://github.com/leanprover-community/mathlib/commit/ca872b6)
+style(set_theory/game/nim): `O` → `o` ([#15361](https://github.com/leanprover-community/mathlib/pull/15361))
+This is the only file that uses uppercase variable names for ordinals - we standardize it to match all the others.
+#### Estimated changes
+Modified src/set_theory/game/nim.lean
+- \+/\- *lemma* nim_def
+- \+/\- *lemma* nim_birthday
+- \+/\- *lemma* left_moves_nim
+- \+/\- *lemma* right_moves_nim
+- \+/\- *lemma* move_left_nim_heq
+- \+/\- *lemma* move_right_nim_heq
+- \+/\- *lemma* move_left_nim'
+- \+/\- *lemma* move_left_nim
+- \+/\- *lemma* move_right_nim'
+- \+/\- *lemma* move_right_nim
+- \+/\- *lemma* neg_nim
+- \+/\- *lemma* exists_ordinal_move_left_eq
+- \+/\- *lemma* exists_move_left_eq
+- \+/\- *lemma* non_zero_first_wins
+- \+/\- *lemma* add_equiv_zero_iff_eq
+- \+/\- *lemma* add_fuzzy_zero_iff_ne
+- \+/\- *lemma* equiv_iff_eq
+- \+/\- *lemma* grundy_value_eq_iff_equiv_nim
+- \+/\- *lemma* nim.grundy_value
+- \+/\- *theorem* to_left_moves_nim_symm_lt
+- \+/\- *theorem* to_right_moves_nim_symm_lt
+
+
+
+## [2022-07-15 12:02:32](https://github.com/leanprover-community/mathlib/commit/ecef686)
+feat(algebra/category/Group):  The forgetful-units adjunction between `Group` and `Mon`. ([#15330](https://github.com/leanprover-community/mathlib/pull/15330))
+#### Estimated changes
+Modified src/algebra/category/Group/adjunctions.lean
+- \+ *def* Mon.units
+- \+ *def* Group.forget₂_Mon_adj
+- \+ *def* CommMon.units
+- \+ *def* CommGroup.forget₂_CommMon_adj
+
+
+
+## [2022-07-15 12:02:31](https://github.com/leanprover-community/mathlib/commit/863a30a)
+feat(category_theory/*/algebra): epi_of_epi and mono_of_mono ([#15121](https://github.com/leanprover-community/mathlib/pull/15121))
+This PR proves that a morphism whose underlying carrier part is an epi/mono, is itself an epi/mono. Migrated and generalised from #LTE.
+#### Estimated changes
+Modified src/category_theory/endofunctor/algebra.lean
+- \+ *lemma* epi_of_epi
+- \+ *lemma* mono_of_mono
+
+Modified src/category_theory/monad/algebra.lean
+- \+ *lemma* algebra_epi_of_epi
+- \+ *lemma* algebra_mono_of_mono
+
+
+
+## [2022-07-15 10:49:36](https://github.com/leanprover-community/mathlib/commit/72d7b4e)
+feat(measure_theory/measure/measure_space): generalize measure.comap ([#15343](https://github.com/leanprover-community/mathlib/pull/15343))
+Generalize comap to functions verifying `injective f ∧ ∀ s, measurable_set s → null_measurable_set (f '' s) μ`.
+#### Estimated changes
+Modified src/measure_theory/measure/measure_space.lean
+- \+ *lemma* comapₗ_apply
+- \+ *lemma* comap_apply₀
+- \+/\- *lemma* comap_apply
+- \+ *lemma* comapₗ_eq_comap
+- \+ *def* comapₗ
+- \+/\- *def* comap
+
+
+
+## [2022-07-15 10:49:35](https://github.com/leanprover-community/mathlib/commit/4f23c9b)
+feat(number_theory/slash_actions): Slash actions class for modular forms ([#15007](https://github.com/leanprover-community/mathlib/pull/15007))
+We define a new class of slash actions which are to be used in the definition of modular forms (see [#13250](https://github.com/leanprover-community/mathlib/pull/13250)).
+#### Estimated changes
+Created src/number_theory/modular_forms/slash_actions.lean
+- \+ *lemma* slash_right_action
+- \+ *lemma* slash_add
+- \+ *lemma* slash_mul_one
+- \+ *lemma* smul_slash
+- \+ *def* monoid_hom_slash_action
+- \+ *def* slash
+
+
+
+## [2022-07-15 09:35:51](https://github.com/leanprover-community/mathlib/commit/e166cce)
+chore(analysis/inner_product_space): split slow proof ([#15271](https://github.com/leanprover-community/mathlib/pull/15271))
+This proof times out in the kernel at about 90 000 out of 100 000 heartbeats, and [#14894](https://github.com/leanprover-community/mathlib/pull/14894) pushed it over the edge of timing out (except [#15251](https://github.com/leanprover-community/mathlib/pull/15251) upped the timeout limits so everything sitll builds at the moment). I don't know enough about the kernel to debug why it doesn't like this proof, but splitting it into a `rw` part and a part that uses defeq seems to fix the timeout (moving it back down to about 60 000 out of 100 000 heartbeats).
+Zulip thread: https://leanprover.zulipchat.com/#narrow/stream/113488-general/topic/Timeout.20in.20the.20kernel/near/289294804
+#### Estimated changes
+Modified src/analysis/inner_product_space/l2_space.lean
+- \+ *lemma* _root_.orthonormal.linear_isometry_equiv_symm_apply_single_one
+
+
+
+## [2022-07-15 09:35:50](https://github.com/leanprover-community/mathlib/commit/fc78e3c)
+feat(category_theory/abelian/*): functors that preserve finite limits and colimits preserve exactness ([#14581](https://github.com/leanprover-community/mathlib/pull/14581))
+If $F$ is a functor between two abelian categories which preserves limits and colimits, then it preserves exactness.
+#### Estimated changes
+Modified src/category_theory/abelian/basic.lean
+
+
+Modified src/category_theory/abelian/exact.lean
+- \+ *lemma* map_exact
+
+Created src/category_theory/limits/preserves/shapes/images.lean
+- \+ *lemma* factor_thru_image_comp_hom
+- \+ *lemma* hom_comp_map_image_ι
+- \+ *lemma* inv_comp_image_ι_map
+- \+ *def* iso
+
+Modified src/category_theory/limits/shapes/images.lean
+- \+ *lemma* image.is_image_lift
+
+
+
+## [2022-07-15 07:02:47](https://github.com/leanprover-community/mathlib/commit/5e2e804)
+feat(order/bounded_order): `subrelation r s ↔ r ≤ s` ([#15357](https://github.com/leanprover-community/mathlib/pull/15357))
+We have to place the lemma here, since comparing relations requires `has_le Prop`. I haven't made any judgement on whether either of them should be a simp-normal form.
+#### Estimated changes
+Modified src/order/bounded_order.lean
+- \+ *lemma* subrelation_iff_le
+
+
+
+## [2022-07-15 07:02:46](https://github.com/leanprover-community/mathlib/commit/2406dc5)
+feat(topology/support): tsupport of product is a subset of tsupport ([#15346](https://github.com/leanprover-community/mathlib/pull/15346))
+#### Estimated changes
+Modified src/topology/support.lean
+- \+ *lemma* tsupport_mul_subset_left
+- \+ *lemma* tsupport_mul_subset_right
+
+
+
+## [2022-07-15 07:02:44](https://github.com/leanprover-community/mathlib/commit/daf1117)
+feat(field_theory/tower): if `L / K / F` is finite, so is `K / F` ([#15303](https://github.com/leanprover-community/mathlib/pull/15303))
+This result came up in the discussion of [#15191](https://github.com/leanprover-community/mathlib/pull/15191), where I couldn't find it. (In the end we didn't up needing it.) I saw we already had finiteness of `L / K` (in fact, for any vector space instead of the field `L`) as `finite_dimensional.right`, so I made the `left` version too.
+Also use this to provide an instance where `K` is an intermediate field.
+#### Estimated changes
+Modified src/field_theory/intermediate_field.lean
+
+
+Modified src/field_theory/tower.lean
+- \+ *theorem* left
+
+
+
+## [2022-07-15 05:42:11](https://github.com/leanprover-community/mathlib/commit/2123bc3)
+feat(measure_theory/measurable_space_def): add `generate_from_induction` ([#15342](https://github.com/leanprover-community/mathlib/pull/15342))
+This lemma does (almost?) the same thing as `induction (ht : measurable_set[generate_from C] t)`, but the hypotheses in the generated subgoals are much easier to read.
+#### Estimated changes
+Modified src/measure_theory/measurable_space_def.lean
+- \+ *lemma* generate_from_induction
+
+
+
+## [2022-07-15 05:42:10](https://github.com/leanprover-community/mathlib/commit/0e72a4e)
+feat(data/polynomial/laurent): define `degree` and some API ([#15225](https://github.com/leanprover-community/mathlib/pull/15225))
+This PR introduces the `degree` for Laurent polynomials.  It takes values in `with_bot ℤ`and is defined as `f.support.max`.
+It may make sense to define a "degree" on any `add_monoid_algebra` whose value group is `linear_ordered`, but I am only defining `degree` for Laurent polynomials.
+The PR also proves some API lemmas about support and relationship between the degree of a Laurent polynomial and the degree with polynomials, seen as Laurent polynomials.
+In future PRs I intend to define also `int_degree`, analogous to `nat_degree` of polynomials.
+#### Estimated changes
+Modified src/data/polynomial/laurent.lean
+- \+ *lemma* _root_.polynomial.to_laurent_ne_zero
+- \+ *lemma* support_C_mul_T
+- \+ *lemma* support_C_mul_T_of_ne_zero
+- \+ *lemma* to_laurent_support
+- \+ *lemma* degree_zero
+- \+ *lemma* degree_eq_bot_iff
+- \+ *lemma* degree_C_mul_T
+- \+ *lemma* degree_C_mul_T_ite
+- \+ *lemma* degree_T
+- \+ *lemma* degree_C
+- \+ *lemma* degree_C_ite
+- \+ *lemma* degree_C_mul_T_le
+- \+ *lemma* degree_T_le
+- \+ *lemma* degree_C_le
+- \+ *def* degree
+
+
+
+## [2022-07-15 01:25:38](https://github.com/leanprover-community/mathlib/commit/09a7f7a)
+refactor(algebra/algebra/subalgebra/basic): Remove `'` from `subalgebra.comap'`  ([#15349](https://github.com/leanprover-community/mathlib/pull/15349))
+This PR removes `'` from `subalgebra.comap'`.
+<https://leanprover.zulipchat.com/#narrow/stream/116395-maths/topic/subalgebra.2Ecomap'>
+#### Estimated changes
+Modified src/algebra/algebra/subalgebra/basic.lean
+- \+/\- *lemma* gc_map_comap
+- \+/\- *theorem* comap_top
+- \+ *def* comap
+- \- *def* comap'
+
+Modified src/topology/algebra/algebra.lean
+- \+ *lemma* subalgebra.topological_closure_comap_homeomorph
+- \- *lemma* subalgebra.topological_closure_comap'_homeomorph
+
+Modified src/topology/continuous_function/polynomial.lean
+- \+ *lemma* polynomial_functions.comap_comp_right_alg_hom_Icc_homeo_I
+- \- *lemma* polynomial_functions.comap'_comp_right_alg_hom_Icc_homeo_I
+
+Modified src/topology/continuous_function/stone_weierstrass.lean
+
+
+Modified src/topology/continuous_function/weierstrass.lean
+
+
+
+
+## [2022-07-15 01:25:37](https://github.com/leanprover-community/mathlib/commit/8d749e6)
+refactor(field_theory/*): Replace weaker `alg_hom.fintype` with stronger `alg_hom.fintype` ([#15345](https://github.com/leanprover-community/mathlib/pull/15345))
+Mathlib has two instances of `alg_hom.fintype`. The version in `field_theory.fixed` is weaker (it assumes finite-dimensionality of the target). The version in `field_theory.primitive_element` is stronger (it does not assume finite-dimensionality of the target). So why not replace the weaker version by the stronger version?
+#### Estimated changes
+Modified src/field_theory/fixed.lean
+- \+ *lemma* aux_inj_roots_of_min_poly
+
+Modified src/field_theory/primitive_element.lean
+- \- *lemma* aux_inj_roots_of_min_poly
+
+
+
+## [2022-07-15 01:25:36](https://github.com/leanprover-community/mathlib/commit/b8b18fa)
+feat(order/complete_boolean_algebra): A frame is distributive ([#15340](https://github.com/leanprover-community/mathlib/pull/15340))
+`frame α`/`coframe α` imply `distrib_lattice α`.
+#### Estimated changes
+Modified src/order/complete_boolean_algebra.lean
+
+
+Modified src/order/lattice.lean
+- \+ *def* distrib_lattice.of_inf_sup_le
+
+
+
+## [2022-07-15 01:25:35](https://github.com/leanprover-community/mathlib/commit/11bfd9c)
+chore(logic/equiv/basic): remove `nolint` ([#15329](https://github.com/leanprover-community/mathlib/pull/15329))
+#### Estimated changes
+Modified src/logic/equiv/basic.lean
+
+
+
+
+## [2022-07-15 01:25:34](https://github.com/leanprover-community/mathlib/commit/6f48d95)
+feat(ring_theory/localization/basic): add `mk_sum` ([#15261](https://github.com/leanprover-community/mathlib/pull/15261))
+add a missing lemma stating that $\frac{\sum_i, a\_i}{b}=\sum_i\frac{a_i}b$
+#### Estimated changes
+Modified src/ring_theory/localization/basic.lean
+- \+ *lemma* mk_sum
+- \+ *lemma* mk_list_sum
+- \+ *lemma* mk_multiset_sum
+- \+ *def* mk_add_monoid_hom
+
+
+
 ## [2022-07-14 22:11:08](https://github.com/leanprover-community/mathlib/commit/635b858)
 doc(logic/equiv/basic): explicitly state functions equivalences are based on ([#15354](https://github.com/leanprover-community/mathlib/pull/15354))
 This should make them more searchable. Also some trivial spacing fixes.
