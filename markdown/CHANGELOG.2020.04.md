@@ -1499,6 +1499,7 @@ This PR
 #### Estimated changes
 Added src/meta/expr_lens.lean
 - \+ *def* expr_lens.dir.to_string
+- \+ *inductive* expr_lens.dir
 
 Modified src/tactic/doc_commands.lean
 
@@ -1743,6 +1744,7 @@ Modified src/field_theory/perfect_closure.lean
 - \+/\- *lemma* perfect_closure.one_def
 - \+/\- *lemma* perfect_closure.quot_mk_eq_mk
 - \+/\- *theorem* perfect_closure.r.sound
+- \+/\- *inductive* perfect_closure.r
 - \+/\- *lemma* perfect_closure.zero_def
 - \+/\- *def* perfect_closure
 - \+/\- *def* pth_root
@@ -2675,6 +2677,7 @@ Added src/linear_algebra/quadratic_form.lean
 - \+ *def* quadratic_form.to_matrix
 - \+ *lemma* quadratic_form.to_matrix_comp
 - \+ *lemma* quadratic_form.to_matrix_smul
+- \+ *structure* quadratic_form
 
 
 
@@ -2815,7 +2818,8 @@ Just add a pair of string comparison functions with semantics which are common t
 <br>
 #### Estimated changes
 Modified src/data/string/defs.lean
-
+- \+ *abbreviation* string.ends_with
+- \+ *abbreviation* string.starts_with
 
 
 
@@ -3917,21 +3921,47 @@ Modified src/category_theory/limits/over.lean
 Modified src/category_theory/limits/shapes/pullbacks.lean
 - \- *lemma* category_theory.limits.cocone.of_pushout_cocone_ι
 - \- *lemma* category_theory.limits.cone.of_pullback_cone_π
+- \+/\- *abbreviation* category_theory.limits.pullback_cone.fst
 - \- *lemma* category_theory.limits.pullback_cone.of_cone_π
+- \+/\- *abbreviation* category_theory.limits.pullback_cone.snd
+- \+/\- *abbreviation* category_theory.limits.pushout_cocone.inl
+- \+/\- *abbreviation* category_theory.limits.pushout_cocone.inr
 - \- *lemma* category_theory.limits.pushout_cocone.of_cocone_ι
 - \- *def* category_theory.limits.walking_cospan.hom.comp
+- \+ *abbreviation* category_theory.limits.walking_cospan.hom.id
+- \+ *abbreviation* category_theory.limits.walking_cospan.hom.inl
+- \+ *abbreviation* category_theory.limits.walking_cospan.hom.inr
+- \+ *abbreviation* category_theory.limits.walking_cospan.hom
+- \- *inductive* category_theory.limits.walking_cospan.hom
 - \- *lemma* category_theory.limits.walking_cospan.hom_id
+- \+ *abbreviation* category_theory.limits.walking_cospan.left
+- \+ *abbreviation* category_theory.limits.walking_cospan.one
+- \+ *abbreviation* category_theory.limits.walking_cospan.right
+- \+ *abbreviation* category_theory.limits.walking_cospan
+- \- *inductive* category_theory.limits.walking_cospan
 - \- *def* category_theory.limits.walking_span.hom.comp
+- \+ *abbreviation* category_theory.limits.walking_span.hom.fst
+- \+ *abbreviation* category_theory.limits.walking_span.hom.id
+- \+ *abbreviation* category_theory.limits.walking_span.hom.snd
+- \+ *abbreviation* category_theory.limits.walking_span.hom
+- \- *inductive* category_theory.limits.walking_span.hom
 - \- *lemma* category_theory.limits.walking_span.hom_id
+- \+ *abbreviation* category_theory.limits.walking_span.left
+- \+ *abbreviation* category_theory.limits.walking_span.right
+- \+ *abbreviation* category_theory.limits.walking_span.zero
+- \+ *abbreviation* category_theory.limits.walking_span
+- \- *inductive* category_theory.limits.walking_span
 
 Added src/category_theory/limits/shapes/wide_pullbacks.lean
 - \+ *def* has_finite_wide_pullbacks_of_has_finite_limits
 - \+ *def* has_finite_wide_pushouts_of_has_finite_limits
 - \+ *def* wide_pullback_shape.diagram_iso_wide_cospan
+- \+ *inductive* wide_pullback_shape.hom
 - \+ *lemma* wide_pullback_shape.hom_id
 - \+ *def* wide_pullback_shape.wide_cospan
 - \+ *def* wide_pullback_shape
 - \+ *def* wide_pushout_shape.diagram_iso_wide_span
+- \+ *inductive* wide_pushout_shape.hom
 - \+ *lemma* wide_pushout_shape.hom_id
 - \+ *def* wide_pushout_shape.wide_span
 - \+ *def* wide_pushout_shape
@@ -5737,6 +5767,7 @@ Added src/group_theory/bundled_subgroup.lean
 - \+ *lemma* add_subgroup.mem_closure_singleton
 - \+ *def* add_subgroup.of_subgroup
 - \+ *def* add_subgroup.to_subgroup
+- \+ *structure* add_subgroup
 - \+ *lemma* monoid_hom.coe_range
 - \+ *lemma* monoid_hom.comap_ker
 - \+ *def* monoid_hom.eq_locus
@@ -5827,6 +5858,7 @@ Added src/group_theory/bundled_subgroup.lean
 - \+ *def* subgroup.to_add_subgroup
 - \+ *lemma* subgroup.top_prod
 - \+ *lemma* subgroup.top_prod_top
+- \+ *structure* subgroup
 
 
 
@@ -6388,6 +6420,7 @@ Modified test/equiv_rw.lean
 
 Added test/transport/basic.lean
 - \+ *def* lie_ring.map
+- \+ *inductive* mynat
 - \+ *lemma* mynat_add_def
 - \+ *def* mynat_equiv
 - \+ *lemma* mynat_equiv_apply_succ
@@ -6518,7 +6551,8 @@ Modified src/tactic/ring.lean
 
 
 Added test/lint_coe_to_fun.lean
-
+- \+ *structure* equiv
+- \+ *structure* sparkling_equiv
 
 
 
@@ -6671,6 +6705,7 @@ This PR contains the changes I mentioned in [#2374](https://github.com/leanprove
 Modified src/category_theory/comma.lean
 - \+ *lemma* category_theory.arrow.lift.fac_left
 - \+ *lemma* category_theory.arrow.lift.fac_right
+- \+ *abbreviation* category_theory.arrow.lift
 - \+ *lemma* category_theory.arrow.lift_mk'_left
 - \+ *lemma* category_theory.arrow.lift_mk'_right
 - \+ *lemma* category_theory.arrow.w
@@ -6679,6 +6714,7 @@ Modified src/category_theory/limits/shapes/images.lean
 - \+ *lemma* category_theory.limits.image.fac_lift
 - \+ *lemma* category_theory.limits.is_image.fac_lift
 - \+ *def* category_theory.limits.strong_epi_mono_factorisation.to_mono_is_image
+- \+ *structure* category_theory.limits.strong_epi_mono_factorisation
 
 Modified src/category_theory/limits/shapes/kernels.lean
 - \+ *def* category_theory.limits.cokernel_cofork.is_colimit.desc'
@@ -6733,11 +6769,15 @@ Added src/category_theory/limits/creates.lean
 - \+ *def* category_theory.id_lifts_cone
 - \+ *def* category_theory.lift_colimit
 - \+ *def* category_theory.lift_limit
+- \+ *structure* category_theory.liftable_cocone
+- \+ *structure* category_theory.liftable_cone
 - \+ *def* category_theory.lifted_colimit_is_colimit
 - \+ *def* category_theory.lifted_colimit_maps_to_original
 - \+ *def* category_theory.lifted_limit_is_limit
 - \+ *def* category_theory.lifted_limit_maps_to_original
+- \+ *structure* category_theory.lifts_to_colimit
 - \+ *def* category_theory.lifts_to_colimit_of_creates
+- \+ *structure* category_theory.lifts_to_limit
 - \+ *def* category_theory.lifts_to_limit_of_creates
 
 Modified src/category_theory/limits/limits.lean
@@ -7250,6 +7290,7 @@ Modified src/data/num/basic.lean
 - \- *def* nzsnum.not
 - \- *def* nzsnum.sign
 - \- *def* nzsnum.tail
+- \- *inductive* nzsnum
 - \- *def* snum.bit0
 - \- *def* snum.bit1
 - \- *def* snum.bit
@@ -7267,6 +7308,7 @@ Modified src/data/num/basic.lean
 - \- *def* snum.succ
 - \- *def* snum.tail
 - \- *def* snum.test_bit
+- \- *inductive* snum
 
 Modified src/data/num/bitwise.lean
 - \+ *def* nzsnum.bit0
@@ -7276,6 +7318,7 @@ Modified src/data/num/bitwise.lean
 - \+ *def* nzsnum.not
 - \+ *def* nzsnum.sign
 - \+ *def* nzsnum.tail
+- \+ *inductive* nzsnum
 - \+ *def* snum.bit0
 - \+ *def* snum.bit1
 - \+ *def* snum.bit
@@ -7293,6 +7336,7 @@ Modified src/data/num/bitwise.lean
 - \+ *def* snum.succ
 - \+ *def* snum.tail
 - \+ *def* snum.test_bit
+- \+ *inductive* snum
 
 Modified src/data/num/lemmas.lean
 - \+ *def* int.of_snum
@@ -7539,6 +7583,7 @@ Modified src/tactic/norm_cast.lean
 - \+/\- *lemma* ite_cast
 - \- *lemma* ne_from_not_eq
 - \+ *def* norm_cast.label.of_string
+- \+ *inductive* norm_cast.label
 
 Modified src/topology/algebra/group_completion.lean
 - \+/\- *lemma* uniform_space.completion.coe_zero
@@ -7607,7 +7652,9 @@ Added test/norm_cast_coe_fn.lean
 - \+ *lemma* coe_f1
 - \+ *def* f1
 - \+ *def* f2
+- \+ *structure* hom
 - \+ *lemma* hom_plus.coe_fn
+- \+ *structure* hom_plus
 
 Added test/norm_cast_int.lean
 
@@ -7724,10 +7771,14 @@ Modified src/algebra/category/Module/basic.lean
 
 
 Modified src/category_theory/limits/shapes/binary_products.lean
+- \+ *abbreviation* category_theory.limits.binary_cofan.inl
+- \+ *abbreviation* category_theory.limits.binary_cofan.inr
 - \+ *def* category_theory.limits.binary_cofan.is_colimit.desc'
 - \+ *lemma* category_theory.limits.binary_cofan.is_colimit.hom_ext
+- \+ *abbreviation* category_theory.limits.binary_fan.fst
 - \+ *lemma* category_theory.limits.binary_fan.is_limit.hom_ext
 - \+ *def* category_theory.limits.binary_fan.is_limit.lift'
+- \+ *abbreviation* category_theory.limits.binary_fan.snd
 - \+ *def* category_theory.limits.coprod.desc'
 - \+/\- *lemma* category_theory.limits.coprod.hom_ext
 - \+/\- *lemma* category_theory.limits.coprod.inl_desc
@@ -7755,6 +7806,7 @@ Modified src/category_theory/limits/shapes/equalizers.lean
 - \+ *lemma* category_theory.limits.cofork.is_colimit.hom_ext
 - \+ *lemma* category_theory.limits.cofork.left_app_one
 - \+ *lemma* category_theory.limits.cofork.right_app_one
+- \+ *abbreviation* category_theory.limits.cofork.π
 - \- *def* category_theory.limits.cofork.π
 - \- *lemma* category_theory.limits.cone_parallel_pair_ext
 - \- *lemma* category_theory.limits.cone_parallel_pair_left
@@ -7767,8 +7819,11 @@ Modified src/category_theory/limits/shapes/equalizers.lean
 - \+ *lemma* category_theory.limits.fork.equalizer_ext
 - \+ *lemma* category_theory.limits.fork.is_limit.hom_ext
 - \+ *def* category_theory.limits.fork.is_limit.lift'
+- \+ *abbreviation* category_theory.limits.fork.ι
 - \- *def* category_theory.limits.fork.ι
 - \+/\- *lemma* category_theory.limits.mono_of_is_limit_parallel_pair
+- \+/\- *inductive* category_theory.limits.walking_parallel_pair
+- \+/\- *inductive* category_theory.limits.walking_parallel_pair_hom
 
 Modified src/category_theory/limits/shapes/kernels.lean
 - \+ *def* category_theory.limits.cokernel.desc'
@@ -7780,15 +7835,23 @@ Modified src/category_theory/limits/shapes/kernels.lean
 
 Modified src/category_theory/limits/shapes/pullbacks.lean
 - \+ *def* category_theory.limits.pullback.desc'
+- \+/\- *abbreviation* category_theory.limits.pullback.fst
 - \+ *def* category_theory.limits.pullback.lift'
 - \+ *lemma* category_theory.limits.pullback.lift_fst
 - \+ *lemma* category_theory.limits.pullback.lift_snd
+- \+/\- *abbreviation* category_theory.limits.pullback.snd
 - \+ *lemma* category_theory.limits.pullback_cone.is_limit.hom_ext
 - \+ *def* category_theory.limits.pullback_cone.is_limit.lift'
+- \+/\- *abbreviation* category_theory.limits.pushout.inl
 - \+ *lemma* category_theory.limits.pushout.inl_desc
+- \+/\- *abbreviation* category_theory.limits.pushout.inr
 - \+ *lemma* category_theory.limits.pushout.inr_desc
 - \+ *def* category_theory.limits.pushout_cocone.is_colimit.desc'
 - \+ *lemma* category_theory.limits.pushout_cocone.is_colimit.hom_ext
+- \+/\- *inductive* category_theory.limits.walking_cospan.hom
+- \+/\- *inductive* category_theory.limits.walking_cospan
+- \+/\- *inductive* category_theory.limits.walking_span.hom
+- \+/\- *inductive* category_theory.limits.walking_span
 
 
 
@@ -7877,11 +7940,13 @@ Modified src/algebra/lie_algebra.lean
 - \+ *def* lie_algebra.equiv.refl
 - \+ *def* lie_algebra.equiv.symm
 - \+ *def* lie_algebra.equiv.trans
+- \+ *structure* lie_algebra.equiv
 - \+/\- *lemma* lie_algebra.map_lie'
 - \+/\- *lemma* lie_algebra.map_lie
 - \+ *def* lie_algebra.morphism.comp
 - \+ *lemma* lie_algebra.morphism.comp_apply
 - \+ *def* lie_algebra.morphism.inverse
+- \+/\- *structure* lie_algebra.morphism
 
 
 
@@ -8050,6 +8115,7 @@ Added src/combinatorics/composition.lean
 - \+ *lemma* composition.to_composition_as_set_blocks_pnat
 - \+ *lemma* composition.to_composition_as_set_boundaries
 - \+ *lemma* composition.to_composition_as_set_length
+- \+ *structure* composition
 - \+ *def* composition_as_set.blocks
 - \+ *def* composition_as_set.blocks_fun
 - \+ *lemma* composition_as_set.blocks_fun_pos
@@ -8075,6 +8141,7 @@ Added src/combinatorics/composition.lean
 - \+ *lemma* composition_as_set.to_composition_blocks_pnat
 - \+ *lemma* composition_as_set.to_composition_boundaries
 - \+ *lemma* composition_as_set.to_composition_length
+- \+ *structure* composition_as_set
 - \+ *lemma* composition_as_set_card
 - \+ *def* composition_as_set_equiv
 - \+ *lemma* composition_card
@@ -8214,15 +8281,20 @@ Modified src/order/filter/bases.lean
 - \+ *lemma* filter.countable_binfi_eq_infi_seq'
 - \+ *lemma* filter.countable_binfi_eq_infi_seq
 - \+ *lemma* filter.countable_binfi_principal_eq_seq_infi
+- \+ *structure* filter.countable_filter_basis
 - \+ *def* filter.filter_basis.of_sets
 - \+ *lemma* filter.generate_eq_generate_inter
 - \+ *lemma* filter.has_antimono_basis.tendsto
+- \+ *structure* filter.has_antimono_basis
 - \+ *lemma* filter.has_basis.eq_generate
 - \+ *lemma* filter.has_basis.filter_eq
 - \+ *lemma* filter.has_basis.is_basis
 - \+ *lemma* filter.has_basis_generate
+- \+ *structure* filter.has_countable_basis
+- \+ *structure* filter.is_antimono_basis
 - \+ *lemma* filter.is_basis.filter_eq_generate
 - \+ *lemma* filter.is_basis.mem_filter_basis_iff
+- \+ *structure* filter.is_countable_basis
 - \+ *def* filter.is_countably_generated.countable_filter_basis
 - \+ *lemma* filter.is_countably_generated.countable_generating_set
 - \+ *lemma* filter.is_countably_generated.eq_generate
@@ -8246,6 +8318,7 @@ Modified src/order/filter/bases.lean
 - \+ *lemma* filter_basis.eq_infi_principal
 - \+ *lemma* filter_basis.mem_filter_iff
 - \+ *lemma* filter_basis.mem_filter_of_mem
+- \+ *structure* filter_basis
 
 Modified src/order/filter/basic.lean
 - \- *theorem* directed_of_chain
@@ -8311,6 +8384,7 @@ Modified src/algebra/homology/homology.lean
 - \+ *lemma* cochain_complex.cohomology_map_comp
 - \+ *lemma* cochain_complex.cohomology_map_condition
 - \+ *lemma* cochain_complex.cohomology_map_id
+- \+ *abbreviation* cochain_complex.image_map
 - \+ *lemma* cochain_complex.image_map_ι
 - \+ *lemma* cochain_complex.image_to_kernel_map_condition
 - \+ *lemma* cochain_complex.induced_maps_commute
@@ -8364,7 +8438,9 @@ Modified src/algebra/module.lean
 - \+/\- *def* linear_map.to_add_monoid_hom
 - \+/\- *lemma* linear_map.to_add_monoid_hom_coe
 - \+/\- *lemma* linear_map.to_fun_eq_coe
+- \+/\- *structure* linear_map
 - \+/\- *lemma* list.sum_smul
+- \+/\- *structure* module.core
 - \+/\- *lemma* module.gsmul_eq_smul
 - \+/\- *def* module.of_core
 - \+/\- *lemma* multiset.sum_smul
@@ -8391,7 +8467,9 @@ Modified src/algebra/module.lean
 - \+/\- *lemma* submodule.subtype_eq_val
 - \+/\- *lemma* submodule.sum_mem
 - \+/\- *lemma* submodule.zero_mem
+- \+/\- *structure* submodule
 - \+/\- *def* subspace
+- \+/\- *abbreviation* vector_space
 - \+/\- *theorem* zero_smul
 
 
@@ -8441,9 +8519,25 @@ Modified src/category_theory/limits/shapes/binary_products.lean
 Added src/category_theory/limits/shapes/biproducts.lean
 - \+ *def* category_theory.limits.bicone.to_cocone
 - \+ *def* category_theory.limits.bicone.to_cone
+- \+ *structure* category_theory.limits.bicone
 - \+ *def* category_theory.limits.binary_bicone.to_cocone
 - \+ *def* category_theory.limits.binary_bicone.to_cone
+- \+ *structure* category_theory.limits.binary_bicone
+- \+ *abbreviation* category_theory.limits.biprod.desc
+- \+ *abbreviation* category_theory.limits.biprod.fst
+- \+ *abbreviation* category_theory.limits.biprod.inl
+- \+ *abbreviation* category_theory.limits.biprod.inr
+- \+ *abbreviation* category_theory.limits.biprod.lift
+- \+ *abbreviation* category_theory.limits.biprod.map
+- \+ *abbreviation* category_theory.limits.biprod.snd
+- \+ *abbreviation* category_theory.limits.biprod
 - \+ *def* category_theory.limits.biprod_iso
+- \+ *abbreviation* category_theory.limits.biproduct.desc
+- \+ *abbreviation* category_theory.limits.biproduct.lift
+- \+ *abbreviation* category_theory.limits.biproduct.map
+- \+ *abbreviation* category_theory.limits.biproduct.ι
+- \+ *abbreviation* category_theory.limits.biproduct.π
+- \+ *abbreviation* category_theory.limits.biproduct
 - \+ *def* category_theory.limits.biproduct_iso
 
 
@@ -8513,9 +8607,11 @@ Added src/set_theory/game/short.lean
 - \+ *def* pgame.fintype_left
 - \+ *def* pgame.fintype_right
 - \+ *def* pgame.le_lt_decidable
+- \+ *inductive* pgame.list_short
 - \+ *def* pgame.move_left_short'
 - \+ *def* pgame.move_right_short'
 - \+ *def* pgame.short.mk'
+- \+ *inductive* pgame.short
 - \+ *def* pgame.short_of_equiv_empty
 - \+ *def* pgame.short_of_relabelling
 
@@ -8583,6 +8679,7 @@ Modified src/category_theory/limits/shapes/images.lean
 - \+ *def* category_theory.limits.has_image_map_id
 - \+ *def* category_theory.limits.im
 - \+ *lemma* category_theory.limits.image.factor_map
+- \+ *abbreviation* category_theory.limits.image.map
 - \+ *lemma* category_theory.limits.image.map_comp
 - \+ *lemma* category_theory.limits.image.map_hom_mk'_ι
 - \+ *lemma* category_theory.limits.image.map_id
@@ -8823,6 +8920,7 @@ Modified src/category_theory/limits/shapes/images.lean
 
 
 Modified src/category_theory/types.lean
+- \+ *abbreviation* category_theory.as_hom
 - \- *lemma* category_theory.functor_to_types.map_comp
 - \+ *lemma* category_theory.functor_to_types.map_comp_apply
 - \- *lemma* category_theory.functor_to_types.map_id
@@ -9201,7 +9299,7 @@ Modified src/data/zmod/basic.lean
 
 
 Modified src/data/zsqrtd/basic.lean
-
+- \+/\- *structure* zsqrtd
 
 Modified src/deprecated/group.lean
 
@@ -9825,6 +9923,7 @@ Modified src/field_theory/perfect_closure.lean
 - \+ *lemma* perfect_closure.one_def
 - \+ *lemma* perfect_closure.quot_mk_eq_mk
 - \+/\- *theorem* perfect_closure.r.sound
+- \+/\- *inductive* perfect_closure.r
 - \+ *lemma* perfect_closure.zero_def
 - \+/\- *def* perfect_closure
 - \+ *def* pth_root
@@ -11462,7 +11561,8 @@ Modified src/tactic/interactive.lean
 
 
 Modified test/refine_struct.lean
-
+- \+ *structure* bar
+- \+ *structure* foo
 
 
 
@@ -12122,6 +12222,7 @@ The plan is to eventually use this together with the path category to construct 
 #### Estimated changes
 Added src/category_theory/quotient.lean
 - \+ *def* category_theory.quotient.comp
+- \+ *inductive* category_theory.quotient.comp_closure
 - \+ *lemma* category_theory.quotient.comp_left
 - \+ *lemma* category_theory.quotient.comp_mk
 - \+ *lemma* category_theory.quotient.comp_right
@@ -12131,6 +12232,7 @@ Added src/category_theory/quotient.lean
 - \+ *lemma* category_theory.quotient.lift.is_lift_hom
 - \+ *lemma* category_theory.quotient.lift.is_lift_inv
 - \+ *def* category_theory.quotient.lift
+- \+ *structure* category_theory.quotient
 
 
 
@@ -12378,8 +12480,13 @@ Modified test/coinductive.lean
 
 
 Modified test/examples.lean
+- \- *inductive* either
 - \- *def* ex
 - \- *theorem* inter_def
+- \- *structure* my_struct2
+- \- *structure* my_struct
+- \- *inductive* my_tree
+- \- *inductive* rec_data3
 - \- *theorem* subset_def
 - \- *theorem* subset_inter
 - \- *theorem* union_def
@@ -12395,7 +12502,12 @@ Added test/refine_struct.lean
 - \+ *def* my_foo
 
 Added test/traversable.lean
+- \+ *inductive* either
 - \+ *def* ex
+- \+ *structure* my_struct2
+- \+ *structure* my_struct
+- \+ *inductive* my_tree
+- \+ *inductive* rec_data3
 - \+ *def* x
 
 

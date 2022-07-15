@@ -332,6 +332,8 @@ Modified src/order/filter/at_top_bot.lean
 
 Modified src/order/filter/bases.lean
 - \- *lemma* filter.exists_antitone_eq_infi_principal
+- \+/\- *structure* filter.has_antitone_basis
+- \+/\- *structure* filter.is_antitone_basis
 
 Modified src/topology/G_delta.lean
 
@@ -1000,6 +1002,7 @@ Modified src/combinatorics/simple_graph/matching.lean
 - \- *def* simple_graph.matching.is_perfect
 - \- *lemma* simple_graph.matching.is_perfect_iff
 - \- *def* simple_graph.matching.support
+- \- *structure* simple_graph.matching
 - \+ *lemma* simple_graph.subgraph.is_matching.support_eq_verts
 - \+ *def* simple_graph.subgraph.is_matching
 - \+ *def* simple_graph.subgraph.is_perfect_matching
@@ -1130,6 +1133,8 @@ Modified src/category_theory/discrete_category.lean
 - \+/\- *def* category_theory.discrete.equivalence
 
 Modified src/category_theory/fin_category.lean
+- \+ *abbreviation* category_theory.fin_category.as_type
+- \+ *abbreviation* category_theory.fin_category.obj_as_type
 - \+ *def* category_theory.fin_category.obj_as_type_equiv_as_type
 
 Modified src/category_theory/graded_object.lean
@@ -1165,10 +1170,12 @@ Modified src/category_theory/limits/has_limits.lean
 - \+/\- *lemma* category_theory.limits.colimit.pre_post
 - \+/\- *lemma* category_theory.limits.has_colimit.of_cocones_iso
 - \+ *lemma* category_theory.limits.has_colimits.has_limits_of_shape
+- \+ *abbreviation* category_theory.limits.has_colimits
 - \+/\- *lemma* category_theory.limits.has_colimits_of_shape_of_equivalence
 - \+ *lemma* category_theory.limits.has_colimits_of_size_shrink
 - \+/\- *lemma* category_theory.limits.has_limit.of_cones_iso
 - \+ *lemma* category_theory.limits.has_limits.has_limits_of_shape
+- \+ *abbreviation* category_theory.limits.has_limits
 - \+/\- *lemma* category_theory.limits.has_limits_of_shape_of_equivalence
 - \+ *lemma* category_theory.limits.has_limits_of_size_shrink
 - \+/\- *def* category_theory.limits.lim_yoneda
@@ -1225,11 +1232,14 @@ Modified src/category_theory/limits/presheaf.lean
 
 Modified src/category_theory/limits/shapes/binary_products.lean
 - \+/\- *lemma* category_theory.limits.coprod.map_comp_inl_inr_codiag
+- \+/\- *abbreviation* category_theory.limits.has_binary_coproducts
+- \+/\- *abbreviation* category_theory.limits.has_binary_products
 - \+/\- *def* category_theory.limits.pair
 - \+/\- *lemma* category_theory.limits.prod.diag_map_fst_snd_comp
 
 Modified src/category_theory/limits/shapes/equalizers.lean
-
+- \+/\- *abbreviation* category_theory.limits.has_coequalizers
+- \+/\- *abbreviation* category_theory.limits.has_equalizers
 
 Modified src/category_theory/limits/shapes/finite_limits.lean
 - \+/\- *lemma* category_theory.limits.has_finite_limits_of_has_limits
@@ -1244,13 +1254,16 @@ Modified src/category_theory/limits/shapes/products.lean
 
 
 Modified src/category_theory/limits/shapes/pullbacks.lean
-
+- \+/\- *abbreviation* category_theory.limits.has_pullbacks
+- \+/\- *abbreviation* category_theory.limits.has_pushouts
 
 Modified src/category_theory/limits/shapes/terminal.lean
-
+- \+/\- *abbreviation* category_theory.limits.has_initial
+- \+/\- *abbreviation* category_theory.limits.has_terminal
 
 Modified src/category_theory/limits/shapes/wide_equalizers.lean
-
+- \+/\- *abbreviation* category_theory.limits.has_wide_coequalizers
+- \+/\- *abbreviation* category_theory.limits.has_wide_equalizers
 
 Modified src/category_theory/limits/shapes/wide_pullbacks.lean
 
@@ -1818,17 +1831,21 @@ Modified src/topology/category/Top/limits.lean
 - \+ *lemma* Top.pi_iso_pi_hom_apply
 - \+ *lemma* Top.pi_iso_pi_inv_π
 - \+ *lemma* Top.pi_iso_pi_inv_π_apply
+- \+ *abbreviation* Top.pi_π
 - \+ *def* Top.prod_binary_fan
 - \+ *def* Top.prod_binary_fan_is_limit
+- \+ *abbreviation* Top.prod_fst
 - \+ *def* Top.prod_iso_prod
 - \+ *lemma* Top.prod_iso_prod_hom_apply
 - \+ *lemma* Top.prod_iso_prod_hom_fst
 - \+ *lemma* Top.prod_iso_prod_hom_snd
 - \+ *lemma* Top.prod_iso_prod_inv_fst
 - \+ *lemma* Top.prod_iso_prod_inv_snd
+- \+ *abbreviation* Top.prod_snd
 - \+ *lemma* Top.prod_topology
 - \+ *def* Top.pullback_cone
 - \+ *def* Top.pullback_cone_is_limit
+- \+ *abbreviation* Top.pullback_fst
 - \+ *lemma* Top.pullback_fst_range
 - \+ *def* Top.pullback_iso_prod_subtype
 - \+ *lemma* Top.pullback_iso_prod_subtype_hom_apply
@@ -1840,6 +1857,7 @@ Modified src/topology/category/Top/limits.lean
 - \+ *lemma* Top.pullback_iso_prod_subtype_inv_snd_apply
 - \+ *lemma* Top.pullback_map_embedding_of_embeddings
 - \+ *lemma* Top.pullback_map_open_embedding_of_open_embeddings
+- \+ *abbreviation* Top.pullback_snd
 - \+ *lemma* Top.pullback_snd_range
 - \+ *lemma* Top.pullback_topology
 - \+ *lemma* Top.range_prod_map
@@ -1851,6 +1869,7 @@ Modified src/topology/category/Top/limits.lean
 - \+ *lemma* Top.sigma_iso_sigma_hom_ι
 - \+ *lemma* Top.sigma_iso_sigma_hom_ι_apply
 - \+ *lemma* Top.sigma_iso_sigma_inv_apply
+- \+ *abbreviation* Top.sigma_ι
 - \+ *lemma* Top.snd_embedding_of_left_embedding
 - \+ *lemma* Top.snd_iso_of_left_embedding_range_subset
 - \+ *lemma* Top.snd_open_embedding_of_left_open_embedding
@@ -1903,11 +1922,13 @@ Added src/measure_theory/group/action.lean
 - \+ *lemma* measure_theory.smul_invariant_measure_tfae
 
 Added src/measure_theory/group/fundamental_domain.lean
+- \+ *structure* measure_theory.is_add_fundamental_domain
 - \+ *lemma* measure_theory.is_fundamental_domain.Union_smul_ae_eq
 - \+ *lemma* measure_theory.is_fundamental_domain.measurable_set_smul
 - \+ *lemma* measure_theory.is_fundamental_domain.measure_eq_tsum'
 - \+ *lemma* measure_theory.is_fundamental_domain.measure_eq_tsum
 - \+ *lemma* measure_theory.is_fundamental_domain.pairwise_ae_disjoint
+- \+ *structure* measure_theory.is_fundamental_domain
 
 Modified src/measure_theory/integral/lebesgue.lean
 
@@ -2010,6 +2031,7 @@ Modified src/category_theory/sites/cover_lifting.lean
 - \+/\- *theorem* category_theory.Ran_is_sheaf_of_cover_lifting
 - \+ *lemma* category_theory.comp_cover_lifting
 - \- *def* category_theory.comp_cover_lifting
+- \+/\- *structure* category_theory.cover_lifting
 - \+ *lemma* category_theory.id_cover_lifting
 - \- *def* category_theory.id_cover_lifting
 - \+ *def* category_theory.sites.copullback
@@ -2021,6 +2043,7 @@ Modified src/category_theory/sites/dense_subsite.lean
 
 Added src/category_theory/sites/induced_topology.lean
 - \+ *def* category_theory.cover_dense.Sheaf_equiv
+- \+ *abbreviation* category_theory.cover_dense.induced_topology
 - \+ *lemma* category_theory.cover_dense.locally_cover_dense
 - \+ *def* category_theory.locally_cover_dense.induced_topology
 - \+ *lemma* category_theory.locally_cover_dense.induced_topology_cover_lifting
@@ -2156,11 +2179,14 @@ Added src/combinatorics/hindman.lean
 - \+ *lemma* hindman.FP.mul
 - \+ *lemma* hindman.FP.mul_two
 - \+ *lemma* hindman.FP.singleton
+- \+ *inductive* hindman.FP
 - \+ *lemma* hindman.FP_drop_subset_FP
 - \+ *lemma* hindman.FP_partition_regular
+- \+ *inductive* hindman.FS
 - \+ *lemma* hindman.exists_FP_of_finite_cover
 - \+ *lemma* hindman.exists_FP_of_large
 - \+ *lemma* hindman.exists_idempotent_ultrafilter_le_FP
+- \+ *structure* on
 - \+ *lemma* ultrafilter.continuous_mul_left
 - \+ *lemma* ultrafilter.eventually_mul
 - \+ *def* ultrafilter.has_mul
@@ -2523,6 +2549,7 @@ Renamed src/order/bounded_lattice.lean to src/order/bounded_order.lean
 - \+/\- *lemma* eq_bot_of_bot_eq_top
 - \+/\- *lemma* eq_top_of_bot_eq_top
 - \+ *lemma* inf_eq_bot_iff_le_compl
+- \+/\- *structure* is_compl
 - \+/\- *lemma* is_compl_bot_top
 - \+/\- *lemma* is_compl_top_bot
 - \+/\- *theorem* order_bot.ext
@@ -2858,6 +2885,7 @@ Modified src/linear_algebra/affine_space/barycentric_coords.lean
 - \+ *lemma* affine_basis.to_matrix_mul_to_matrix
 - \+ *lemma* affine_basis.to_matrix_self
 - \+ *lemma* affine_basis.to_matrix_vec_mul_coords
+- \+ *structure* affine_basis
 - \- *lemma* affine_combination_barycentric_coord_eq_self
 - \- *lemma* barycentric_coord_apply
 - \- *lemma* barycentric_coord_apply_combination_of_mem
@@ -3070,6 +3098,7 @@ Modified src/category_theory/limits/shapes/multiequalizer.lean
 - \+ *def* category_theory.limits.multicofork.to_sigma_cofork
 - \+ *lemma* category_theory.limits.multicofork.to_sigma_cofork_ι_app_one
 - \+ *lemma* category_theory.limits.multicofork.to_sigma_cofork_ι_app_zero
+- \+ *abbreviation* category_theory.limits.multicofork
 - \- *def* category_theory.limits.multicofork
 - \+ *def* category_theory.limits.multicospan_index.fst_pi_map
 - \+ *lemma* category_theory.limits.multicospan_index.fst_pi_map_π
@@ -3089,10 +3118,12 @@ Modified src/category_theory/limits/shapes/multiequalizer.lean
 - \+ *def* category_theory.limits.multifork.to_pi_fork
 - \+ *lemma* category_theory.limits.multifork.to_pi_fork_π_app_one
 - \+ *lemma* category_theory.limits.multifork.to_pi_fork_π_app_zero
+- \+ *abbreviation* category_theory.limits.multifork
 - \- *def* category_theory.limits.multifork
 - \+ *def* category_theory.limits.multispan_index.fst_sigma_map
 - \+ *def* category_theory.limits.multispan_index.multicofork_equiv_sigma_cofork
 - \+ *def* category_theory.limits.multispan_index.of_sigma_cofork_functor
+- \+ *abbreviation* category_theory.limits.multispan_index.parallel_pair_diagram
 - \+ *def* category_theory.limits.multispan_index.snd_sigma_map
 - \+ *def* category_theory.limits.multispan_index.to_sigma_cofork_functor
 - \+ *lemma* category_theory.limits.multispan_index.ι_fst_sigma_map
@@ -3298,6 +3329,7 @@ This PR introduces a class `fun_like` for types of bundled homomorphisms, like `
 Also, `coe_fn_coe_base` now has an appropriately low priority, so it doesn't take precedence over `fun_like.has_coe_to_fun`.
 #### Estimated changes
 Added src/data/fun_like.lean
+- \+ *structure* cooler_hom
 - \+ *lemma* do_something
 - \+ *theorem* fun_like.coe_fn_eq
 - \+ *theorem* fun_like.coe_injective
@@ -3904,7 +3936,7 @@ Modified src/control/fold.lean
 - \+/\- *def* monoid.foldl
 
 Modified src/data/complex/is_R_or_C.lean
-
+- \+/\- *abbreviation* is_R_or_C.conj_to_ring_equiv
 
 Modified src/data/equiv/mul_add.lean
 
@@ -3943,7 +3975,7 @@ Modified src/linear_algebra/clifford_algebra/conjugation.lean
 
 
 Modified src/linear_algebra/sesquilinear_form.lean
-
+- \+/\- *structure* sesq_form
 
 Modified src/logic/unique.lean
 - \+/\- *def* unique.mk'
@@ -3957,6 +3989,7 @@ Modified src/number_theory/arithmetic_function.lean
 
 Modified src/ring_theory/ring_invo.lean
 - \+/\- *def* ring_invo.mk'
+- \+/\- *structure* ring_invo
 
 Modified src/topology/algebra/monoid.lean
 - \+/\- *lemma* continuous_op
@@ -6427,12 +6460,13 @@ Added src/field_theory/ratfunc.lean
 - \+ *lemma* ratfunc.of_fraction_ring_zero
 - \+ *lemma* ratfunc.to_fraction_ring_eq
 - \+ *lemma* ratfunc.to_fraction_ring_injective
+- \+ *structure* ratfunc
 
 Modified src/group_theory/group_action/defs.lean
 
 
 Modified src/number_theory/function_field.lean
-
+- \+/\- *abbreviation* function_field
 
 
 
@@ -6686,10 +6720,12 @@ Modified src/category_theory/limits/shapes/binary_products.lean
 
 
 Modified src/category_theory/limits/shapes/pullbacks.lean
-
+- \+ *abbreviation* category_theory.limits.pullback.map
+- \+ *abbreviation* category_theory.limits.pushout.map
 
 Modified src/category_theory/limits/shapes/types.lean
 - \+ *def* category_theory.limits.types.coequalizer_colimit
+- \+ *inductive* category_theory.limits.types.coequalizer_rel
 
 
 
@@ -7818,11 +7854,13 @@ See https://stacks.math.columbia.edu/tag/00W1
 Modified src/category_theory/sites/grothendieck.lean
 - \+ *def* category_theory.grothendieck_topology.cover.arrow.base
 - \+ *def* category_theory.grothendieck_topology.cover.arrow.map
+- \+ *structure* category_theory.grothendieck_topology.cover.arrow
 - \+ *lemma* category_theory.grothendieck_topology.cover.coe_fun_coe
 - \+ *lemma* category_theory.grothendieck_topology.cover.coe_pullback
 - \+ *lemma* category_theory.grothendieck_topology.cover.condition
 - \+ *lemma* category_theory.grothendieck_topology.cover.ext
 - \+ *def* category_theory.grothendieck_topology.cover.index
+- \+ *abbreviation* category_theory.grothendieck_topology.cover.multifork
 - \+ *def* category_theory.grothendieck_topology.cover.pullback
 - \+ *def* category_theory.grothendieck_topology.cover.pullback_comp
 - \+ *def* category_theory.grothendieck_topology.cover.pullback_id
@@ -7834,6 +7872,8 @@ Modified src/category_theory/sites/grothendieck.lean
 - \+ *lemma* category_theory.grothendieck_topology.cover.relation.map_fst
 - \+ *lemma* category_theory.grothendieck_topology.cover.relation.map_snd
 - \+ *def* category_theory.grothendieck_topology.cover.relation.snd
+- \+ *structure* category_theory.grothendieck_topology.cover.relation
+- \+ *abbreviation* category_theory.grothendieck_topology.cover.to_multiequalizer
 - \+ *def* category_theory.grothendieck_topology.cover
 - \+ *def* category_theory.grothendieck_topology.pullback
 - \+ *def* category_theory.grothendieck_topology.pullback_comp
@@ -8132,7 +8172,9 @@ Added src/category_theory/sites/dense_subsite.lean
 - \+ *lemma* category_theory.cover_dense.types.pushforward_family_apply
 - \+ *lemma* category_theory.cover_dense.types.pushforward_family_compatible
 - \+ *def* category_theory.cover_dense.types.sheaf_iso
+- \+ *structure* category_theory.cover_dense
 - \+ *def* category_theory.presieve.cover_by_image
+- \+ *structure* category_theory.presieve.cover_by_image_structure
 - \+ *lemma* category_theory.presieve.in_cover_by_image
 - \+ *def* category_theory.sieve.cover_by_image
 
@@ -10341,6 +10383,7 @@ Modified src/measure_theory/measurable_space.lean
 - \+ *lemma* measurable_embedding.of_measurable_inverse
 - \+ *lemma* measurable_embedding.of_measurable_inverse_on_range
 - \+ *lemma* measurable_embedding.subtype_coe
+- \+ *structure* measurable_embedding
 - \+ *theorem* measurable_equiv.image_eq_preimage
 - \+ *theorem* measurable_equiv.measurable_set_image
 - \+ *theorem* measurable_equiv.measurable_set_preimage
@@ -10638,6 +10681,7 @@ Added src/topology/algebra/continuous_affine_map.lean
 - \+ *lemma* continuous_affine_map.to_continuous_map_coe
 - \+ *lemma* continuous_affine_map.to_continuous_map_injective
 - \+ *lemma* continuous_affine_map.to_fun_eq_coe
+- \+ *structure* continuous_affine_map
 
 
 
@@ -10862,11 +10906,17 @@ This PR adds another special shape to the limits library, which directly general
 I don't know if there is a standard name for the gadgets this PR introduces. I would be happy to change the names if needed.
 #### Estimated changes
 Added src/category_theory/limits/shapes/multiequalizer.lean
+- \+ *abbreviation* category_theory.limits.has_multicoequalizer
+- \+ *abbreviation* category_theory.limits.has_multiequalizer
 - \+ *lemma* category_theory.limits.multicoequalizer.condition
+- \+ *abbreviation* category_theory.limits.multicoequalizer.desc
 - \+ *lemma* category_theory.limits.multicoequalizer.hom_ext
+- \+ *abbreviation* category_theory.limits.multicoequalizer.multicofork
 - \+ *lemma* category_theory.limits.multicoequalizer.multicofork_ι_app_right
 - \+ *lemma* category_theory.limits.multicoequalizer.multicofork_π
+- \+ *abbreviation* category_theory.limits.multicoequalizer.π
 - \+ *lemma* category_theory.limits.multicoequalizer.π_desc
+- \+ *abbreviation* category_theory.limits.multicoequalizer
 - \+ *lemma* category_theory.limits.multicofork.condition
 - \+ *lemma* category_theory.limits.multicofork.fst_app_right
 - \+ *def* category_theory.limits.multicofork.of_π
@@ -10879,11 +10929,16 @@ Added src/category_theory/limits/shapes/multiequalizer.lean
 - \+ *lemma* category_theory.limits.multicospan_index.multicospan_map_snd
 - \+ *lemma* category_theory.limits.multicospan_index.multicospan_obj_left
 - \+ *lemma* category_theory.limits.multicospan_index.multicospan_obj_right
+- \+ *structure* category_theory.limits.multicospan_index
 - \+ *lemma* category_theory.limits.multiequalizer.condition
 - \+ *lemma* category_theory.limits.multiequalizer.hom_ext
+- \+ *abbreviation* category_theory.limits.multiequalizer.lift
 - \+ *lemma* category_theory.limits.multiequalizer.lift_ι
+- \+ *abbreviation* category_theory.limits.multiequalizer.multifork
 - \+ *lemma* category_theory.limits.multiequalizer.multifork_ι
 - \+ *lemma* category_theory.limits.multiequalizer.multifork_π_app_left
+- \+ *abbreviation* category_theory.limits.multiequalizer.ι
+- \+ *abbreviation* category_theory.limits.multiequalizer
 - \+ *lemma* category_theory.limits.multifork.app_left_fst
 - \+ *lemma* category_theory.limits.multifork.app_left_snd
 - \+ *lemma* category_theory.limits.multifork.condition
@@ -10896,8 +10951,13 @@ Added src/category_theory/limits/shapes/multiequalizer.lean
 - \+ *lemma* category_theory.limits.multispan_index.multispan_map_snd
 - \+ *lemma* category_theory.limits.multispan_index.multispan_obj_left
 - \+ *lemma* category_theory.limits.multispan_index.multispan_obj_right
+- \+ *structure* category_theory.limits.multispan_index
 - \+ *def* category_theory.limits.walking_multicospan.hom.comp
+- \+ *inductive* category_theory.limits.walking_multicospan.hom
+- \+ *inductive* category_theory.limits.walking_multicospan
 - \+ *def* category_theory.limits.walking_multispan.hom.comp
+- \+ *inductive* category_theory.limits.walking_multispan.hom
+- \+ *inductive* category_theory.limits.walking_multispan
 
 
 
@@ -11327,6 +11387,7 @@ Added src/measure_theory/covering/vitali_family.lean
 - \+ *lemma* vitali_family.frequently_filter_at_iff
 - \+ *lemma* vitali_family.mem_filter_at_iff
 - \+ *def* vitali_family.mono
+- \+ *structure* vitali_family
 
 
 
@@ -11488,6 +11549,7 @@ Added src/analysis/ODE/picard_lindelof.lean
 - \+ *lemma* picard_lindelof.fun_space.uniform_inducing_to_continuous_map
 - \+ *def* picard_lindelof.fun_space.v_comp
 - \+ *lemma* picard_lindelof.fun_space.v_comp_apply_coe
+- \+ *structure* picard_lindelof.fun_space
 - \+ *lemma* picard_lindelof.norm_le
 - \+ *def* picard_lindelof.proj
 - \+ *lemma* picard_lindelof.proj_coe
@@ -11495,6 +11557,7 @@ Added src/analysis/ODE/picard_lindelof.lean
 - \+ *def* picard_lindelof.t_dist
 - \+ *lemma* picard_lindelof.t_dist_nonneg
 - \+ *lemma* picard_lindelof.t_min_le_t_max
+- \+ *structure* picard_lindelof
 
 Modified src/data/set/intervals/unordered_interval.lean
 - \+ *lemma* set.interval_subset_Icc
@@ -12045,6 +12108,7 @@ Modified src/group_theory/complement.lean
 - \+ *lemma* subgroup.is_complement'.card_mul
 - \+ *lemma* subgroup.is_complement'.disjoint
 - \+ *lemma* subgroup.is_complement'.symm
+- \+ *abbreviation* subgroup.is_complement'
 - \+ *lemma* subgroup.is_complement'_comm
 - \+ *lemma* subgroup.is_complement'_def
 - \+ *lemma* subgroup.is_complement'_iff_card_mul_and_disjoint

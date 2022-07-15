@@ -10,7 +10,10 @@ Added data/fp/basic.lean
 - \+ *def* fp.float.is_finite
 - \+ *theorem* fp.float.zero.valid
 - \+ *def* fp.float.zero
+- \+ *inductive* fp.float
+- \+ *structure* fp.nan_pl
 - \+ *def* fp.prec
+- \+ *inductive* fp.rmode
 - \+ *def* fp.shift2
 - \+ *def* fp.to_rat
 - \+ *def* fp.valid_finite
@@ -88,6 +91,7 @@ Modified data/rat.lean
 - \+ *theorem* rat.zero_mk_nat
 - \+ *theorem* rat.zero_mk_pnat
 - \+ *theorem* rat.{u}
+- \+ *structure* rat
 - \- *def* rat
 
 Modified data/seq/computation.lean
@@ -4766,6 +4770,7 @@ Added algebra/lattice/filter.lean
 - \+ *lemma* filter.vmap_neq_bot_of_surj
 - \+ *lemma* filter.vmap_principal
 - \+ *lemma* filter.vmap_vmap_comp
+- \+ *structure* filter
 - \+ *lemma* implies_implies_true_iff
 - \+ *lemma* inf_eq_bot_iff_le_compl
 - \+ *lemma* lattice.Inf_eq_finite_sets
@@ -4832,6 +4837,7 @@ Added algebra/lattice/fixed_points.lean
 Added algebra/lattice/zorn.lean
 - \+ *def* zorn.chain
 - \+ *lemma* zorn.chain_chain_closure
+- \+ *inductive* zorn.chain_closure
 - \+ *lemma* zorn.chain_closure_closure
 - \+ *lemma* zorn.chain_closure_empty
 - \+ *lemma* zorn.chain_closure_succ_fixpoint
@@ -5028,6 +5034,8 @@ Added data/hash_map.lean
 - \+ *theorem* hash_map.valid_aux.insert_lemma1
 - \+ *theorem* hash_map.valid_aux.nodup
 - \+ *theorem* hash_map.valid_aux.unfold_cons
+- \+ *inductive* hash_map.valid_aux
+- \+ *structure* hash_map
 - \+ *def* mk_hash_map
 
 Added data/int/basic.lean
@@ -5069,6 +5077,7 @@ Added data/lazy_list.lean
 - \+ *def* lazy_list.tail
 - \+ *def* lazy_list.to_list
 - \+ *def* lazy_list.zip
+- \+ *inductive* lazy_list
 
 Added data/list/basic.lean
 - \+ *theorem* list.append.assoc
@@ -5265,10 +5274,12 @@ Added data/list/perm.lean
 - \+ *theorem* list.perm.perm_union
 - \+ *theorem* list.perm.perm_union_left
 - \+ *theorem* list.perm.perm_union_right
+- \+ *inductive* list.perm.qeq
 - \+ *theorem* list.perm.qeq_app
 - \+ *theorem* list.perm.qeq_of_mem
 - \+ *theorem* list.perm.qeq_split
 - \+ *theorem* list.perm.xswap
+- \+ *inductive* list.perm
 
 Added data/list/set.lean
 - \+ *lemma* list.disjoint.comm
@@ -5344,6 +5355,7 @@ Added data/list/set.lean
 - \+ *theorem* list.mem_union_right
 - \+ *theorem* list.mem_upto_of_lt
 - \+ *theorem* list.mem_upto_succ_of_mem_upto
+- \+ *inductive* list.nodup
 - \+ *theorem* list.nodup_app_comm
 - \+ *theorem* list.nodup_append_of_nodup_of_nodup_of_disjoint
 - \+ *theorem* list.nodup_concat
@@ -5538,6 +5550,7 @@ Added data/num/basic.lean
 - \+ *def* num.succ'
 - \+ *def* num.succ
 - \+ *def* num.to_znum
+- \+ *inductive* num
 - \+ *def* nzsnum.bit0
 - \+ *def* nzsnum.bit1
 - \+ *def* nzsnum.drec'
@@ -5545,6 +5558,7 @@ Added data/num/basic.lean
 - \+ *def* nzsnum.not
 - \+ *def* nzsnum.sign
 - \+ *def* nzsnum.tail
+- \+ *inductive* nzsnum
 - \+ *def* pos_num.bit
 - \+ *def* pos_num.cmp
 - \+ *def* pos_num.is_one
@@ -5555,6 +5569,7 @@ Added data/num/basic.lean
 - \+ *def* pos_num.psub
 - \+ *def* pos_num.size
 - \+ *def* pos_num.succ
+- \+ *inductive* pos_num
 - \+ *def* snum.bit0
 - \+ *def* snum.bit1
 - \+ *def* snum.bit
@@ -5572,9 +5587,11 @@ Added data/num/basic.lean
 - \+ *def* snum.succ
 - \+ *def* snum.tail
 - \+ *def* snum.test_bit
+- \+ *inductive* snum
 - \+ *def* znum.pred
 - \+ *def* znum.succ
 - \+ *def* znum.zneg
+- \+ *inductive* znum
 
 Added data/num/bitwise.lean
 - \+ *def* num.land
@@ -5675,6 +5692,7 @@ Added data/pfun.lean
 - \+ *theorem* roption.some_bind
 - \+ *theorem* roption.to_of_option
 - \+ *def* roption.to_option
+- \+ *structure* roption
 
 Added data/pnat.lean
 - \+ *def* nat.succ_pnat
@@ -6193,6 +6211,7 @@ Added data/set/default.lean
 
 
 Added data/set/finite.lean
+- \+ *inductive* set.finite
 - \+ *lemma* set.finite_image
 - \+ *lemma* set.finite_insert
 - \+ *lemma* set.finite_sUnion
@@ -6794,6 +6813,7 @@ Added theories/set_theory.lean
 - \+ *def* pSet.definable.eq
 - \+ *def* pSet.definable.eq_mk
 - \+ *def* pSet.definable.resp
+- \+ *inductive* pSet.definable
 - \+ *def* pSet.embed
 - \+ *def* pSet.equiv.eq
 - \+ *def* pSet.equiv.euc
@@ -6830,6 +6850,7 @@ Added theories/set_theory.lean
 - \+ *def* pSet.subset.congr_right
 - \+ *def* pSet.to_set
 - \+ *def* pSet.type
+- \+ *inductive* pSet
 
 Added tools/auto/experiments/set_basic.lean
 - \+ *lemma* set.bounded_forall_empty_iff
@@ -6965,12 +6986,16 @@ Added tools/auto/experiments/test1.lean
 
 Added tools/auto/experiments/test2.lean
 - \+ *lemma* NoMember
+- \+ *inductive* and3
+- \+ *inductive* or3
 
 Added tools/auto/experiments/test3.lean
 - \+ *theorem* foo:
 
 Added tools/auto/finish.lean
+- \+ *structure* auto.auto_config
 - \+ *theorem* auto.by_contradiction_trick
+- \+ *inductive* auto.case_option
 - \+ *theorem* auto.classical.implies_iff_not_or
 - \+ *def* auto.classical_normalize_lemma_names
 - \+ *def* auto.common_normalize_lemma_names
@@ -7171,8 +7196,10 @@ Added topology/topological_space.lean
 - \+ *lemma* t2_space_top
 - \+ *def* topological_space.coinduced
 - \+ *def* topological_space.generate_from
+- \+ *inductive* topological_space.generate_open
 - \+ *def* topological_space.induced
 - \+ *lemma* topological_space.nhds_generate_from
+- \+ *structure* topological_space
 - \+ *lemma* topological_space_eq
 
 Added topology/uniform_space.lean

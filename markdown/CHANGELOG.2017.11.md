@@ -42,6 +42,7 @@ Added data/analysis/filter.lean
 - \+ *def* cfilter.of_equiv
 - \+ *theorem* cfilter.of_equiv_val
 - \+ *def* cfilter.to_filter
+- \+ *structure* cfilter
 - \+ *theorem* filter.realizer.bot_F
 - \+ *theorem* filter.realizer.bot_σ
 - \+ *theorem* filter.realizer.le_iff
@@ -59,6 +60,7 @@ Added data/analysis/filter.lean
 - \+ *theorem* filter.realizer.tendsto_iff
 - \+ *theorem* filter.realizer.top_F
 - \+ *theorem* filter.realizer.top_σ
+- \+ *structure* filter.realizer
 
 Added data/analysis/topology.lean
 - \+ *def* compact.realizer
@@ -77,8 +79,11 @@ Added data/analysis/topology.lean
 - \+ *theorem* ctop.realizer.of_equiv_F
 - \+ *theorem* ctop.realizer.of_equiv_σ
 - \+ *theorem* ctop.realizer.tendsto_nhds_iff
+- \+ *structure* ctop.realizer
 - \+ *theorem* ctop.to_topsp_is_topological_basis
+- \+ *structure* ctop
 - \+ *theorem* locally_finite.realizer.to_locally_finite
+- \+ *structure* locally_finite.realizer
 - \+ *theorem* locally_finite_iff_exists_realizer
 
 Modified data/equiv.lean
@@ -141,6 +146,7 @@ Modified data/set/basic.lean
 - \+ *theorem* set.subset_ne_empty
 
 Modified data/set/finite.lean
+- \- *inductive* set.finite'
 - \+ *theorem* set.finite_mem_finset
 
 Modified logic/basic.lean
@@ -319,9 +325,11 @@ Modified data/set/countable.lean
 - \+/\- *lemma* set.countable_finite
 
 Modified data/set/finite.lean
+- \+ *inductive* set.finite'
 - \+ *theorem* set.finite.induction_on
 - \+ *theorem* set.finite.mem_to_finset
 - \+ *def* set.finite
+- \- *inductive* set.finite
 - \+ *theorem* set.finite_Union
 - \+ *theorem* set.finite_empty
 - \+/\- *theorem* set.finite_image
@@ -709,7 +717,7 @@ Modified analysis/measure_theory/outer_measure.lean
 
 
 Modified analysis/topology/continuity.lean
-
+- \+/\- *structure* dense_embedding
 
 Modified analysis/topology/infinite_sum.lean
 
@@ -899,6 +907,7 @@ Modified data/finset/basic.lean
 - \+ *theorem* finset.val_eq_zero
 - \+ *theorem* finset.val_inj
 - \+ *theorem* finset.val_le_iff
+- \+ *structure* finset
 - \+ *def* fintype.of_list
 - \+ *def* fintype.of_multiset
 - \+ *theorem* list.mem_to_finset
@@ -1622,7 +1631,7 @@ Modified tactic/rcases.lean
 
 
 Modified theories/set_theory.lean
-
+- \+/\- *inductive* pSet.definable
 
 
 
@@ -1679,6 +1688,7 @@ Modified algebra/module.lean
 - \+/\- *def* linear_map.ker
 - \+/\- *theorem* linear_map.ker_of_map_eq_map
 - \+/\- *lemma* linear_map.mem_ker
+- \+/\- *structure* linear_map
 - \- *def* module.dual
 - \+/\- *lemma* module.mul_app
 - \+/\- *lemma* smul_smul
@@ -1794,10 +1804,12 @@ Modified data/hash_map.lean
 - \+/\- *theorem* hash_map.valid.modify
 - \- *theorem* hash_map.valid.nodup
 - \- *theorem* hash_map.valid.nodupd
+- \+ *structure* hash_map.valid
 - \- *def* hash_map.valid
 - \- *theorem* hash_map.valid_aux.eq
 - \- *theorem* hash_map.valid_aux.nodup
 - \- *theorem* hash_map.valid_aux.unfold_cons
+- \- *inductive* hash_map.valid_aux
 
 Modified data/list/basic.lean
 - \+ *theorem* list.drop_eq_nth_le_cons
@@ -1931,6 +1943,7 @@ Added data/cardinal.lean
 - \+ *def* embedding.option.Sup
 - \+ *lemma* embedding.option.Sup_le
 - \+ *lemma* embedding.option.eq_of_le_some
+- \+ *inductive* embedding.option.le
 - \+ *lemma* embedding.option.le_Sup
 - \+ *lemma* embedding.option.mem_of_Sup_eq_some
 - \+ *def* embedding.option.strict_partial_order
@@ -1940,6 +1953,7 @@ Added data/cardinal.lean
 - \+ *lemma* embedding.schroeder_bernstein
 - \+ *def* embedding.sum_congr
 - \+ *lemma* embedding.total
+- \+ *structure* embedding
 - \+ *lemma* equiv.of_bijective
 
 Modified data/equiv.lean
@@ -1981,6 +1995,7 @@ Modified algebra/module.lean
 - \+/\- *lemma* linear_map.smul_app
 - \+ *theorem* linear_map.sub_ker
 - \+/\- *lemma* linear_map.zero_app
+- \+/\- *structure* linear_map
 - \- *theorem* module.add_comp
 - \- *theorem* module.comp_add
 - \- *lemma* module.comp_app
@@ -2061,6 +2076,7 @@ Modified algebra/module.lean
 - \+ *lemma* linear_map.neg_app
 - \+ *lemma* linear_map.smul_app
 - \+ *lemma* linear_map.zero_app
+- \+ *structure* linear_map
 - \+ *theorem* module.add_comp
 - \+ *theorem* module.comp_add
 - \+ *lemma* module.comp_app
@@ -2087,6 +2103,7 @@ Modified algebra/ring.lean
 - \+ *lemma* units.mul_four
 - \+ *lemma* units.mul_val
 - \+ *lemma* units.one_val
+- \+ *structure* units
 
 Added algebra/vector_space.lean
 - \+ *def* vector_space.dual
@@ -2323,6 +2340,7 @@ Modified tactic/norm_num.lean
 - \- *def* num.pos_le
 - \- *lemma* num.zero_le_denote
 - \- *def* num.znum_le
+- \- *inductive* tactic.interactive.denotation
 - \- *def* tactic.interactive.znum.to_neg
 - \- *def* tactic.interactive.znum.to_pos
 

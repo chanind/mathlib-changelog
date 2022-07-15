@@ -3,6 +3,8 @@ refactor(category_theory): minimize the amount of universe annotations in catego
 #### Estimated changes
 Modified category_theory/category.lean
 - \+/\- *lemma* category_theory.category.assoc_symm
+- \+/\- *abbreviation* category_theory.large_category
+- \+/\- *abbreviation* category_theory.small_category
 
 Modified category_theory/comma.lean
 
@@ -17,6 +19,7 @@ Modified category_theory/eq_to_hom.lean
 
 
 Modified category_theory/equivalence.lean
+- \+/\- *structure* category_theory.equivalence
 - \+/\- *def* category_theory.functor.obj_preimage
 
 Modified category_theory/examples/topological_spaces.lean
@@ -29,16 +32,17 @@ Modified category_theory/fully_faithful.lean
 
 
 Modified category_theory/functor.lean
-
+- \+/\- *structure* category_theory.functor
 
 Modified category_theory/functor_category.lean
 
 
 Modified category_theory/groupoid.lean
-
+- \+/\- *abbreviation* category_theory.large_groupoid
+- \+/\- *abbreviation* category_theory.small_groupoid
 
 Modified category_theory/isomorphism.lean
-
+- \+/\- *structure* category_theory.iso
 
 Modified category_theory/limits/cones.lean
 
@@ -506,7 +510,7 @@ Modified ring_theory/ideal_operations.lean
 feat(data/equiv/algebra): ring_equiv ([#533](https://github.com/leanprover-community/mathlib/pull/533))
 #### Estimated changes
 Modified data/equiv/algebra.lean
-
+- \+ *structure* ring_equiv
 
 
 
@@ -836,9 +840,10 @@ Modified data/equiv/basic.lean
 
 
 Modified data/list/basic.lean
-
+- \- *inductive* list.forall₂
 
 Modified data/list/defs.lean
+- \+ *inductive* list.forall₂
 - \+ *def* list.partition_map
 
 Modified data/nat/basic.lean
@@ -853,6 +858,7 @@ Renamed data/option.lean to data/option/basic.lean
 - \- *def* option.lift_or_get
 - \- *theorem* option.mem_def
 - \- *theorem* option.mem_to_list
+- \- *inductive* option.rel
 - \- *theorem* option.some_inj
 - \- *def* option.to_list
 
@@ -865,6 +871,7 @@ Added data/option/defs.lean
 - \+ *def* option.lift_or_get
 - \+ *theorem* option.mem_def
 - \+ *theorem* option.mem_to_list
+- \+ *inductive* option.rel
 - \+ *theorem* option.some_inj
 - \+ *def* option.to_list
 
@@ -1309,6 +1316,7 @@ Added category_theory/limits/limits.lean
 - \+ *def* category_theory.limits.is_colimit.of_iso_colimit
 - \+ *lemma* category_theory.limits.is_colimit.uniq_cocone_morphism
 - \+ *def* category_theory.limits.is_colimit.unique
+- \+ *structure* category_theory.limits.is_colimit
 - \+ *lemma* category_theory.limits.is_limit.hom_ext
 - \+ *def* category_theory.limits.is_limit.hom_iso'
 - \+ *def* category_theory.limits.is_limit.hom_iso
@@ -1320,6 +1328,7 @@ Added category_theory/limits/limits.lean
 - \+ *def* category_theory.limits.is_limit.of_iso_limit
 - \+ *lemma* category_theory.limits.is_limit.uniq_cone_morphism
 - \+ *def* category_theory.limits.is_limit.unique
+- \+ *structure* category_theory.limits.is_limit
 - \+ *lemma* category_theory.limits.lim.map_π
 - \+ *def* category_theory.limits.lim
 - \+ *def* category_theory.limits.limit.cone
@@ -1389,7 +1398,9 @@ Added category_theory/limits/cones.lean
 - \+ *lemma* category_theory.limits.cocone.w
 - \+ *def* category_theory.limits.cocone.whisker
 - \+ *lemma* category_theory.limits.cocone.whisker_ι_app
+- \+ *structure* category_theory.limits.cocone
 - \+ *lemma* category_theory.limits.cocone_morphism.ext
+- \+ *structure* category_theory.limits.cocone_morphism
 - \+ *lemma* category_theory.limits.cocones.comp.hom
 - \+ *def* category_theory.limits.cocones.ext
 - \+ *def* category_theory.limits.cocones.functoriality
@@ -1400,7 +1411,9 @@ Added category_theory/limits/cones.lean
 - \+ *lemma* category_theory.limits.cone.w
 - \+ *def* category_theory.limits.cone.whisker
 - \+ *lemma* category_theory.limits.cone.whisker_π_app
+- \+ *structure* category_theory.limits.cone
 - \+ *lemma* category_theory.limits.cone_morphism.ext
+- \+ *structure* category_theory.limits.cone_morphism
 - \+ *lemma* category_theory.limits.cones.comp.hom
 - \+ *def* category_theory.limits.cones.ext
 - \+ *def* category_theory.limits.cones.functoriality

@@ -123,12 +123,14 @@ Renamed src/category_theory/instances/CommRing/basic.lean to src/algebra/CommRin
 - \+ *def* CommRing.Int.cast
 - \+ *def* CommRing.Int.hom_unique
 - \+ *lemma* CommRing.comp_val
+- \+ *abbreviation* CommRing.forget
 - \+ *def* CommRing.forget_to_CommMon
 - \+ *lemma* CommRing.id_val
 - \+ *def* CommRing.is_comm_ring_hom
 - \+ *def* CommRing.of
 - \+ *def* CommRing.to_Ring
 - \+ *def* CommRing
+- \+ *abbreviation* Ring.forget
 - \+ *def* Ring.of
 - \+ *def* Ring
 - \- *def* category_theory.instances.CommRing.Int.cast
@@ -159,11 +161,13 @@ Renamed src/category_theory/instances/CommRing/colimits.lean to src/algebra/Comm
 - \+ *def* CommRing.colimits.desc_fun_lift
 - \+ *def* CommRing.colimits.desc_morphism
 - \+ *lemma* CommRing.colimits.naturality_bundled
+- \+ *inductive* CommRing.colimits.prequotient
 - \+ *lemma* CommRing.colimits.quot_add
 - \+ *lemma* CommRing.colimits.quot_mul
 - \+ *lemma* CommRing.colimits.quot_neg
 - \+ *lemma* CommRing.colimits.quot_one
 - \+ *lemma* CommRing.colimits.quot_zero
+- \+ *inductive* CommRing.colimits.relation
 - \- *def* category_theory.instances.CommRing.colimits.cocone_fun
 - \- *def* category_theory.instances.CommRing.colimits.cocone_morphism
 - \- *lemma* category_theory.instances.CommRing.colimits.cocone_naturality
@@ -177,11 +181,13 @@ Renamed src/category_theory/instances/CommRing/colimits.lean to src/algebra/Comm
 - \- *def* category_theory.instances.CommRing.colimits.desc_fun_lift
 - \- *def* category_theory.instances.CommRing.colimits.desc_morphism
 - \- *lemma* category_theory.instances.CommRing.colimits.naturality_bundled
+- \- *inductive* category_theory.instances.CommRing.colimits.prequotient
 - \- *lemma* category_theory.instances.CommRing.colimits.quot_add
 - \- *lemma* category_theory.instances.CommRing.colimits.quot_mul
 - \- *lemma* category_theory.instances.CommRing.colimits.quot_neg
 - \- *lemma* category_theory.instances.CommRing.colimits.quot_one
 - \- *lemma* category_theory.instances.CommRing.colimits.quot_zero
+- \- *inductive* category_theory.instances.CommRing.colimits.relation
 
 Renamed src/category_theory/instances/CommRing/default.lean to src/algebra/CommRing/default.lean
 
@@ -193,10 +199,12 @@ Renamed src/category_theory/instances/CommRing/limits.lean to src/algebra/CommRi
 - \- *def* category_theory.instances.CommRing.limit_is_limit
 
 Renamed src/category_theory/instances/Mon/basic.lean to src/algebra/Mon/basic.lean
+- \+ *abbreviation* CommMon.forget
 - \+ *def* CommMon.forget_to_Mon
 - \+ *def* CommMon.is_comm_monoid_hom
 - \+ *def* CommMon.of
 - \+ *def* CommMon
+- \+ *abbreviation* Mon.forget
 - \+ *def* Mon.of
 - \+ *def* Mon
 - \- *def* category_theory.instances.CommMon.forget_to_Mon
@@ -217,8 +225,10 @@ Renamed src/category_theory/instances/Mon/colimits.lean to src/algebra/Mon/colim
 - \+ *def* Mon.colimits.desc_fun
 - \+ *def* Mon.colimits.desc_fun_lift
 - \+ *def* Mon.colimits.desc_morphism
+- \+ *inductive* Mon.colimits.prequotient
 - \+ *lemma* Mon.colimits.quot_mul
 - \+ *lemma* Mon.colimits.quot_one
+- \+ *inductive* Mon.colimits.relation
 - \- *def* category_theory.instances.Mon.colimits.cocone_fun
 - \- *def* category_theory.instances.Mon.colimits.cocone_morphism
 - \- *lemma* category_theory.instances.Mon.colimits.cocone_naturality
@@ -231,8 +241,10 @@ Renamed src/category_theory/instances/Mon/colimits.lean to src/algebra/Mon/colim
 - \- *def* category_theory.instances.Mon.colimits.desc_fun
 - \- *def* category_theory.instances.Mon.colimits.desc_fun_lift
 - \- *def* category_theory.instances.Mon.colimits.desc_morphism
+- \- *inductive* category_theory.instances.Mon.colimits.prequotient
 - \- *lemma* category_theory.instances.Mon.colimits.quot_mul
 - \- *lemma* category_theory.instances.Mon.colimits.quot_one
+- \- *inductive* category_theory.instances.Mon.colimits.relation
 
 Renamed src/category_theory/instances/Mon/default.lean to src/algebra/Mon/default.lean
 
@@ -281,10 +293,12 @@ Renamed src/category_theory/instances/Top/adjunctions.lean to src/topology/Top/a
 
 Renamed src/category_theory/instances/Top/basic.lean to src/topology/Top/basic.lean
 - \+ *def* Top.discrete
+- \+ *abbreviation* Top.forget
 - \+ *def* Top.of
 - \+ *def* Top.trivial
 - \+ *def* Top
 - \- *def* category_theory.instances.Top.discrete
+- \- *abbreviation* category_theory.instances.Top.forget
 - \- *def* category_theory.instances.Top.of
 - \- *def* category_theory.instances.Top.trivial
 - \- *def* category_theory.instances.Top
@@ -379,12 +393,14 @@ Renamed src/category_theory/instances/TopCommRing/basic.lean to src/topology/alg
 - \+ *def* TopCommRing.forget_to_Type_via_CommRing
 - \+ *def* TopCommRing.forget_to_Type_via_Top
 - \+ *def* TopCommRing.of
+- \+ *structure* TopCommRing
 - \- *def* category_theory.instances.TopCommRing.forget
 - \- *def* category_theory.instances.TopCommRing.forget_to_CommRing
 - \- *def* category_theory.instances.TopCommRing.forget_to_Top
 - \- *def* category_theory.instances.TopCommRing.forget_to_Type_via_CommRing
 - \- *def* category_theory.instances.TopCommRing.forget_to_Type_via_Top
 - \- *def* category_theory.instances.TopCommRing.of
+- \- *structure* category_theory.instances.TopCommRing
 
 Added src/topology/algebra/TopCommRing/default.lean
 
@@ -479,6 +495,7 @@ Added src/category_theory/monoidal/functor.lean
 - \+ *lemma* category_theory.lax_monoidal_functor.comp_obj
 - \+ *lemma* category_theory.lax_monoidal_functor.comp_ε
 - \+ *lemma* category_theory.lax_monoidal_functor.comp_μ
+- \+ *structure* category_theory.lax_monoidal_functor
 - \+ *def* category_theory.monoidal_functor.comp
 - \+ *def* category_theory.monoidal_functor.id
 - \+ *lemma* category_theory.monoidal_functor.id_map
@@ -488,6 +505,7 @@ Added src/category_theory/monoidal/functor.lean
 - \+ *def* category_theory.monoidal_functor.ε_iso
 - \+ *def* category_theory.monoidal_functor.μ_iso
 - \+ *def* category_theory.monoidal_functor.μ_nat_iso
+- \+ *structure* category_theory.monoidal_functor
 
 
 
@@ -700,7 +718,7 @@ Modified src/category_theory/functor_category.lean
 - \+ *lemma* category_theory.functor.flip_obj_obj
 
 Modified src/category_theory/instances/Top/basic.lean
-
+- \+ *abbreviation* category_theory.instances.Top.forget
 
 Modified src/category_theory/instances/Top/open_nhds.lean
 - \+ *lemma* topological_space.open_nhds.map_obj
@@ -1350,6 +1368,7 @@ Added src/set_theory/surreal.lean
 - \+ *def* pSurreal.ok
 - \+ *theorem* pSurreal.ok_rec
 - \+ *def* pSurreal.omega
+- \+ *inductive* pSurreal.{u}
 - \+ *def* surreal.equiv
 - \+ *def* surreal.le
 - \+ *def* surreal.lift
@@ -1358,6 +1377,7 @@ Added src/set_theory/surreal.lean
 - \+ *def* surreal.mk
 - \+ *theorem* surreal.not_le
 - \+ *def* surreal
+- \+ *inductive* {u}
 
 
 
@@ -1687,7 +1707,10 @@ Modified src/tactic/core.lean
 
 
 Added test/terminal_goal.lean
+- \+ *structure* C
 - \+ *def* f
+- \+ *structure* terminal_goal_struct'
+- \+ *structure* terminal_goal_struct
 - \+ *def* test_subsingleton_goal_1
 - \+ *def* test_subsingleton_goal_2
 - \+ *def* test_terminal_goal_1
@@ -2148,6 +2171,7 @@ Modified src/analysis/normed_space/bounded_linear_maps.lean
 - \+ *lemma* is_bounded_bilinear_map.is_bounded_linear_map_deriv
 - \+ *lemma* is_bounded_bilinear_map.map_sub_left
 - \+ *lemma* is_bounded_bilinear_map.map_sub_right
+- \+ *structure* is_bounded_bilinear_map
 - \+ *lemma* is_bounded_bilinear_map_comp
 - \+ *lemma* is_bounded_bilinear_map_mul
 - \+ *lemma* is_bounded_bilinear_map_smul
@@ -2644,6 +2668,7 @@ Added src/category_theory/instances/TopCommRing/basic.lean
 - \+ *def* category_theory.instances.TopCommRing.forget_to_Type_via_CommRing
 - \+ *def* category_theory.instances.TopCommRing.forget_to_Type_via_Top
 - \+ *def* category_theory.instances.TopCommRing.of
+- \+ *structure* category_theory.instances.TopCommRing
 
 Added src/category_theory/instances/TopCommRing/default.lean
 
@@ -3289,6 +3314,7 @@ Added test/convert.lean
 - \+ *lemma* singleton_inter_singleton_eq_empty
 
 Added test/ext.lean
+- \+ *structure* dependent_fields
 - \+ *lemma* df.ext
 - \+ *def* my_bar
 - \+ *def* my_foo
@@ -3316,6 +3342,7 @@ Modified test/solve_by_elim.lean
 
 
 Modified test/tactics.lean
+- \- *structure* dependent_fields
 - \- *lemma* df.ext
 - \- *def* my_bar
 - \- *def* my_foo
@@ -3654,6 +3681,7 @@ Added src/category/monad/writer.lean
 - \+ *def* option_t.pass_aux
 - \+ *def* swap_right
 - \+ *def* writer
+- \+ *structure* writer_t
 
 
 
@@ -3820,9 +3848,11 @@ Added src/algebraic_geometry/presheafed_space.lean
 - \+ *lemma* algebraic_geometry.PresheafedSpace.comp_f
 - \+ *lemma* algebraic_geometry.PresheafedSpace.ext
 - \+ *def* algebraic_geometry.PresheafedSpace.forget
+- \+ *structure* algebraic_geometry.PresheafedSpace.hom
 - \+ *def* algebraic_geometry.PresheafedSpace.id
 - \+ *lemma* algebraic_geometry.PresheafedSpace.id_c
 - \+ *lemma* algebraic_geometry.PresheafedSpace.id_f
+- \+ *structure* algebraic_geometry.PresheafedSpace
 - \+ *def* category_theory.functor.map_presheaf
 - \+ *lemma* category_theory.functor.map_presheaf_map_c
 - \+ *lemma* category_theory.functor.map_presheaf_map_f
@@ -3948,11 +3978,13 @@ Added src/category_theory/instances/CommRing/colimits.lean
 - \+ *def* category_theory.instances.CommRing.colimits.desc_fun_lift
 - \+ *def* category_theory.instances.CommRing.colimits.desc_morphism
 - \+ *lemma* category_theory.instances.CommRing.colimits.naturality_bundled
+- \+ *inductive* category_theory.instances.CommRing.colimits.prequotient
 - \+ *lemma* category_theory.instances.CommRing.colimits.quot_add
 - \+ *lemma* category_theory.instances.CommRing.colimits.quot_mul
 - \+ *lemma* category_theory.instances.CommRing.colimits.quot_neg
 - \+ *lemma* category_theory.instances.CommRing.colimits.quot_one
 - \+ *lemma* category_theory.instances.CommRing.colimits.quot_zero
+- \+ *inductive* category_theory.instances.CommRing.colimits.relation
 
 Modified src/category_theory/instances/CommRing/default.lean
 
@@ -3973,8 +4005,10 @@ Added src/category_theory/instances/Mon/colimits.lean
 - \+ *def* category_theory.instances.Mon.colimits.desc_fun
 - \+ *def* category_theory.instances.Mon.colimits.desc_fun_lift
 - \+ *def* category_theory.instances.Mon.colimits.desc_morphism
+- \+ *inductive* category_theory.instances.Mon.colimits.prequotient
 - \+ *lemma* category_theory.instances.Mon.colimits.quot_mul
 - \+ *lemma* category_theory.instances.Mon.colimits.quot_one
+- \+ *inductive* category_theory.instances.Mon.colimits.relation
 
 Added src/category_theory/instances/Mon/default.lean
 
@@ -4090,9 +4124,12 @@ Modified src/category_theory/instances/Top/basic.lean
 
 Added src/category_theory/limits/shapes/binary_products.lean
 - \+ *def* category_theory.limits.binary_cofan.mk
+- \+ *abbreviation* category_theory.limits.binary_cofan
 - \+ *def* category_theory.limits.binary_fan.mk
+- \+ *abbreviation* category_theory.limits.binary_fan
 - \+ *def* category_theory.limits.pair
 - \+ *def* category_theory.limits.pair_function
+- \+ *inductive* category_theory.limits.walking_pair
 
 Added src/category_theory/limits/shapes/default.lean
 
@@ -4105,6 +4142,7 @@ Added src/category_theory/limits/shapes/equalizers.lean
 - \+ *lemma* category_theory.limits.cofork.of_cocone_ι
 - \+ *def* category_theory.limits.cofork.of_π
 - \+ *def* category_theory.limits.cofork.π
+- \+ *abbreviation* category_theory.limits.cofork
 - \+ *def* category_theory.limits.cone.of_fork
 - \+ *lemma* category_theory.limits.cone.of_fork_π
 - \+ *def* category_theory.limits.fork.condition
@@ -4114,16 +4152,21 @@ Added src/category_theory/limits/shapes/equalizers.lean
 - \+ *lemma* category_theory.limits.fork.of_ι_app_one
 - \+ *lemma* category_theory.limits.fork.of_ι_app_zero
 - \+ *def* category_theory.limits.fork.ι
+- \+ *abbreviation* category_theory.limits.fork
 - \+ *def* category_theory.limits.parallel_pair
 - \+ *lemma* category_theory.limits.parallel_pair_functor_obj
 - \+ *lemma* category_theory.limits.parallel_pair_map_left
 - \+ *lemma* category_theory.limits.parallel_pair_map_right
+- \+ *inductive* category_theory.limits.walking_parallel_pair
 - \+ *def* category_theory.limits.walking_parallel_pair_hom.comp
+- \+ *inductive* category_theory.limits.walking_parallel_pair_hom
 - \+ *lemma* category_theory.limits.walking_parallel_pair_hom_id
 
 Added src/category_theory/limits/shapes/products.lean
 - \+ *def* category_theory.limits.cofan.mk
+- \+ *abbreviation* category_theory.limits.cofan
 - \+ *def* category_theory.limits.fan.mk
+- \+ *abbreviation* category_theory.limits.fan
 
 Added src/category_theory/limits/shapes/pullbacks.lean
 - \+ *def* category_theory.limits.cocone.of_pushout_cocone
@@ -4143,12 +4186,14 @@ Added src/category_theory/limits/shapes/pullbacks.lean
 - \+ *lemma* category_theory.limits.pullback_cone.of_cone_π
 - \+ *def* category_theory.limits.pullback_cone.π₁
 - \+ *def* category_theory.limits.pullback_cone.π₂
+- \+ *abbreviation* category_theory.limits.pullback_cone
 - \+ *lemma* category_theory.limits.pushout_cocone.condition
 - \+ *def* category_theory.limits.pushout_cocone.mk
 - \+ *def* category_theory.limits.pushout_cocone.of_cocone
 - \+ *lemma* category_theory.limits.pushout_cocone.of_cocone_ι
 - \+ *def* category_theory.limits.pushout_cocone.ι₁
 - \+ *def* category_theory.limits.pushout_cocone.ι₂
+- \+ *abbreviation* category_theory.limits.pushout_cocone
 - \+ *def* category_theory.limits.span
 - \+ *lemma* category_theory.limits.span_left
 - \+ *lemma* category_theory.limits.span_map_fst
@@ -4157,9 +4202,13 @@ Added src/category_theory/limits/shapes/pullbacks.lean
 - \+ *lemma* category_theory.limits.span_right
 - \+ *lemma* category_theory.limits.span_zero
 - \+ *def* category_theory.limits.walking_cospan.hom.comp
+- \+ *inductive* category_theory.limits.walking_cospan.hom
 - \+ *lemma* category_theory.limits.walking_cospan.hom_id
+- \+ *inductive* category_theory.limits.walking_cospan
 - \+ *def* category_theory.limits.walking_span.hom.comp
+- \+ *inductive* category_theory.limits.walking_span.hom
 - \+ *lemma* category_theory.limits.walking_span.hom_id
+- \+ *inductive* category_theory.limits.walking_span
 
 Added src/category_theory/sparse.lean
 - \+ *def* category_theory.sparse_category

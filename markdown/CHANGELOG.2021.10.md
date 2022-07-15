@@ -1002,6 +1002,9 @@ Added src/data/rbtree/basic.lean
 - \+ *lemma* rbnode.depth_max'
 - \+ *lemma* rbnode.depth_max
 - \+ *lemma* rbnode.depth_min
+- \+ *inductive* rbnode.is_node_of
+- \+ *inductive* rbnode.is_red_black
+- \+ *inductive* rbnode.is_searchable
 - \+ *lemma* rbnode.is_searchable_none_high_of_is_searchable_some_high
 - \+ *lemma* rbnode.is_searchable_none_low_of_is_searchable_some_low
 - \+ *lemma* rbnode.is_searchable_of_incomp_of_is_searchable
@@ -1035,6 +1038,7 @@ Added src/data/rbtree/init.lean
 - \+ *def* rbnode.balance1_node
 - \+ *def* rbnode.balance2
 - \+ *def* rbnode.balance2_node
+- \+ *inductive* rbnode.color
 - \+ *def* rbnode.depth
 - \+ *def* rbnode.find
 - \+ *def* rbnode.fold
@@ -1045,6 +1049,8 @@ Added src/data/rbtree/init.lean
 - \+ *def* rbnode.mem_exact
 - \+ *def* rbnode.mk_insert_result
 - \+ *def* rbnode.rev_fold
+- \+ *inductive* rbnode.well_formed
+- \+ *inductive* rbnode
 - \+ *def* rbtree.contains
 - \+ *def* rbtree.depth
 - \+ *def* rbtree.empty
@@ -1108,6 +1114,7 @@ Added src/data/rbtree/insert.lean
 - \+ *lemma* rbnode.insert_ne_leaf
 - \+ *lemma* rbnode.insert_rb
 - \+ *def* rbnode.insert_rb_result
+- \+ *inductive* rbnode.is_bad_red_black
 - \+ *lemma* rbnode.is_searchable_balance1
 - \+ *lemma* rbnode.is_searchable_balance1_node
 - \+ *lemma* rbnode.is_searchable_balance2
@@ -3592,6 +3599,8 @@ Modified src/group_theory/solvable.lean
 
 
 Modified src/group_theory/subgroup/basic.lean
+- \+ *structure* add_subgroup.characteristic
+- \+ *structure* subgroup.characteristic
 - \+ *lemma* subgroup.characteristic_iff_comap_eq
 - \+ *lemma* subgroup.characteristic_iff_comap_le
 - \+ *lemma* subgroup.characteristic_iff_le_comap
@@ -3894,7 +3903,9 @@ Split from [#9650](https://github.com/leanprover-community/mathlib/pull/9650)
 #### Estimated changes
 Added src/category_theory/sites/cover_preserving.lean
 - \+ *lemma* category_theory.compatible_preserving.apply_map
+- \+ *structure* category_theory.compatible_preserving
 - \+ *lemma* category_theory.cover_preserving.comp
+- \+ *structure* category_theory.cover_preserving
 - \+ *lemma* category_theory.id_cover_preserving
 - \+ *lemma* category_theory.presieve.family_of_elements.compatible.functor_pushforward
 - \+ *theorem* category_theory.pullback_is_sheaf_of_cover_preserving
@@ -3902,14 +3913,14 @@ Added src/category_theory/sites/cover_preserving.lean
 - \+ *def* category_theory.sites.pullback
 
 Modified src/category_theory/sites/sheaf.lean
-
+- \+ *abbreviation* category_theory.sheaf_over
 
 Modified src/category_theory/sites/sheaf_of_types.lean
 - \+ *lemma* category_theory.presieve.family_of_elements.comp_of_compatible
 - \+ *def* category_theory.presieve.family_of_elements.functor_pushforward
 
 Modified src/category_theory/sites/sieves.lean
-
+- \+ *structure* category_theory.presieve.functor_pushforward_structure
 
 
 
@@ -6970,6 +6981,7 @@ Modified src/data/complex/is_R_or_C.lean
 - \- *lemma* is_R_or_C.conj_involutive
 - \+/\- *lemma* is_R_or_C.conj_mul_eq_norm_sq_left
 - \+/\- *lemma* is_R_or_C.conj_to_real
+- \+ *abbreviation* is_R_or_C.conj_to_ring_equiv
 - \- *def* is_R_or_C.conj_to_ring_equiv
 - \- *lemma* is_R_or_C.ring_equiv_apply
 
@@ -7450,6 +7462,7 @@ Modified src/algebra/quaternion.lean
 Modified src/algebra/ring/basic.lean
 - \- *lemma* integral_domain.to_is_integral_domain
 - \- *theorem* is_integral_domain.to_integral_domain
+- \- *structure* is_integral_domain
 
 Modified src/data/equiv/ring.lean
 
@@ -9918,6 +9931,7 @@ Added src/analysis/box_integral/box/basic.lean
 - \+ *lemma* box_integral.box.upper_mem_Icc
 - \+ *lemma* box_integral.box.with_bot_coe_inj
 - \+ *lemma* box_integral.box.with_bot_coe_subset_iff
+- \+ *structure* box_integral.box
 
 Added src/analysis/box_integral/box/subbox_induction.lean
 - \+ *lemma* box_integral.box.Union_coe_split_center_box
@@ -9958,6 +9972,7 @@ Added src/analysis/box_integral/partition/additive.lean
 - \+ *def* box_integral.box_additive_map.to_smul
 - \+ *lemma* box_integral.box_additive_map.to_smul_apply
 - \+ *def* box_integral.box_additive_map.{u}
+- \+ *structure* box_integral.box_additive_map
 
 Added src/analysis/box_integral/partition/basic.lean
 - \+ *lemma* box_integral.prepartition.Union_bUnion
@@ -10059,6 +10074,7 @@ Added src/analysis/box_integral/partition/basic.lean
 - \+ *lemma* box_integral.prepartition.sum_of_with_bot
 - \+ *lemma* box_integral.prepartition.top_boxes
 - \+ *lemma* box_integral.prepartition.upper_le_upper
+- \+ *structure* box_integral.prepartition
 
 Added src/analysis/box_integral/partition/filter.lean
 - \+ *def* box_integral.integration_params.Henstock
@@ -10080,6 +10096,7 @@ Added src/analysis/box_integral/partition/filter.lean
 - \+ *lemma* box_integral.integration_params.mem_base_set.exists_common_compl
 - \+ *lemma* box_integral.integration_params.mem_base_set.mono'
 - \+ *lemma* box_integral.integration_params.mem_base_set.mono
+- \+ *structure* box_integral.integration_params.mem_base_set
 - \+ *lemma* box_integral.integration_params.r_cond.min
 - \+ *lemma* box_integral.integration_params.r_cond.mono
 - \+ *def* box_integral.integration_params.r_cond
@@ -10095,6 +10112,7 @@ Added src/analysis/box_integral/partition/filter.lean
 - \+ *lemma* box_integral.integration_params.to_filter_distortion_mono
 - \+ *lemma* box_integral.integration_params.to_filter_inf_Union_eq
 - \+ *lemma* box_integral.integration_params.to_filter_mono
+- \+ *structure* box_integral.integration_params
 
 Added src/analysis/box_integral/partition/measure.lean
 - \+ *lemma* box_integral.box.measurable_set_Icc
@@ -10236,6 +10254,7 @@ Added src/analysis/box_integral/partition/tagged.lean
 - \+ *lemma* box_integral.tagged_prepartition.mem_to_prepartition
 - \+ *def* box_integral.tagged_prepartition.single
 - \+ *lemma* box_integral.tagged_prepartition.subset_Union
+- \+ *structure* box_integral.tagged_prepartition
 
 Modified src/data/set/lattice.lean
 - \+ *lemma* set.bUnion_diff_bUnion_eq
@@ -10265,6 +10284,8 @@ There are then `nonneg_ring` and `linear_nonneg_ring`, similarly.
 (None of these are actually used later in mathlib at this point.)
 #### Estimated changes
 Modified src/algebra/order/group.lean
+- \+ *structure* add_comm_group.positive_cone
+- \+ *structure* add_comm_group.total_positive_cone
 - \+ *def* linear_ordered_add_comm_group.mk_of_positive_cone
 - \- *theorem* nonneg_add_comm_group.nonneg_def
 - \- *theorem* nonneg_add_comm_group.nonneg_total_iff
@@ -10281,6 +10302,8 @@ Modified src/algebra/order/ring.lean
 - \+ *def* linear_ordered_ring.mk_of_positive_cone
 - \- *def* nonneg_ring.to_linear_nonneg_ring
 - \+ *def* ordered_ring.mk_of_positive_cone
+- \+ *structure* ring.positive_cone
+- \+ *structure* ring.total_positive_cone
 
 
 
@@ -11743,6 +11766,7 @@ Modified src/algebra/lie/basic.lean
 - \+ *lemma* lie_module_equiv.injective
 - \+ *def* lie_module_equiv.to_equiv
 - \+ *def* lie_module_equiv.to_linear_equiv
+- \+/\- *structure* lie_module_equiv
 - \+/\- *lemma* lie_module_hom.coe_linear_mk
 - \+/\- *lemma* lie_module_hom.coe_mk
 - \+/\- *lemma* lie_module_hom.mk_coe
@@ -13192,6 +13216,7 @@ Modified src/combinatorics/partition.lean
 - \+ *lemma* nat.partition.of_composition_surj
 - \+ *def* nat.partition.of_multiset
 - \+ *def* nat.partition.of_sums
+- \+ *structure* nat.partition
 - \- *lemma* partition.count_of_sums_of_ne_zero
 - \- *lemma* partition.count_of_sums_zero
 - \- *def* partition.distincts
@@ -13202,6 +13227,7 @@ Modified src/combinatorics/partition.lean
 - \- *lemma* partition.of_composition_surj
 - \- *def* partition.of_multiset
 - \- *def* partition.of_sums
+- \- *structure* partition
 
 Modified src/group_theory/perm/cycle_type.lean
 - \+/\- *def* equiv.perm.partition
@@ -13392,6 +13418,7 @@ Added src/topology/homotopy/path.lean
 - \+ *lemma* path.homotopy.target
 - \+ *def* path.homotopy.trans
 - \+ *lemma* path.homotopy.trans_apply
+- \+ *abbreviation* path.homotopy
 
 Modified src/topology/path_connected.lean
 - \+ *lemma* path.coe_to_continuous_map
@@ -13575,6 +13602,7 @@ Modified src/topology/sheaves/sheaf.lean
 - \- *def* Top.presheaf.sheaf_condition_punit
 - \+/\- *def* Top.sheaf.forget
 - \+ *def* Top.sheaf
+- \- *structure* Top.sheaf
 
 Modified src/topology/sheaves/sheaf_condition/opens_le_cover.lean
 - \+ *lemma* Top.presheaf.is_sheaf_iff_is_sheaf_opens_le_cover
@@ -13806,6 +13834,7 @@ Modified src/analysis/normed/group/basic.lean
 - \+/\- *lemma* norm_zero
 - \+/\- *lemma* normed_group.cauchy_seq_iff
 - \+/\- *lemma* normed_group.core.to_semi_normed_group.core
+- \+/\- *structure* normed_group.core
 - \+/\- *def* normed_group.induced
 - \+/\- *def* normed_group.of_add_dist
 - \+/\- *lemma* normed_group.tendsto_nhds_nhds
@@ -13825,6 +13854,7 @@ Modified src/analysis/normed/group/basic.lean
 - \+/\- *lemma* semi_norm_fst_le
 - \+/\- *lemma* semi_norm_prod_le_iff
 - \+/\- *lemma* semi_norm_snd_le
+- \+/\- *structure* semi_normed_group.core
 - \+/\- *def* semi_normed_group.induced
 - \+/\- *lemma* semi_normed_group.mem_closure_iff
 - \+/\- *def* semi_normed_group.of_add_dist'
@@ -14177,6 +14207,7 @@ Added src/analysis/normed/group/basic.lean
 - \+ *lemma* norm_zero
 - \+ *lemma* normed_group.cauchy_seq_iff
 - \+ *lemma* normed_group.core.to_semi_normed_group.core
+- \+ *structure* normed_group.core
 - \+ *def* normed_group.induced
 - \+ *def* normed_group.of_add_dist
 - \+ *lemma* normed_group.tendsto_nhds_nhds
@@ -14203,6 +14234,7 @@ Added src/analysis/normed/group/basic.lean
 - \+ *lemma* semi_norm_le_pi_norm
 - \+ *lemma* semi_norm_prod_le_iff
 - \+ *lemma* semi_norm_snd_le
+- \+ *structure* semi_normed_group.core
 - \+ *def* semi_normed_group.induced
 - \+ *lemma* semi_normed_group.mem_closure_iff
 - \+ *def* semi_normed_group.of_add_dist'
@@ -14348,6 +14380,7 @@ Modified src/analysis/normed_space/basic.lean
 - \- *lemma* norm_zero
 - \- *lemma* normed_group.cauchy_seq_iff
 - \- *lemma* normed_group.core.to_semi_normed_group.core
+- \- *structure* normed_group.core
 - \- *def* normed_group.induced
 - \- *def* normed_group.of_add_dist
 - \- *lemma* normed_group.tendsto_nhds_nhds
@@ -14374,6 +14407,7 @@ Modified src/analysis/normed_space/basic.lean
 - \- *lemma* semi_norm_le_pi_norm
 - \- *lemma* semi_norm_prod_le_iff
 - \- *lemma* semi_norm_snd_le
+- \- *structure* semi_normed_group.core
 - \- *def* semi_normed_group.induced
 - \- *lemma* semi_normed_group.mem_closure_iff
 - \- *def* semi_normed_group.of_add_dist'
@@ -14754,6 +14788,7 @@ refactor(field_theory/intermediate_field): remove old_structure_cmd ([#9620](htt
 #### Estimated changes
 Modified src/field_theory/intermediate_field.lean
 - \+ *def* intermediate_field.to_subfield
+- \+/\- *structure* intermediate_field
 
 
 
@@ -15776,6 +15811,7 @@ Modified src/analysis/normed_space/linear_isometry.lean
 - \+ *lemma* linear_isometry.map_smulₛₗ
 - \+/\- *def* linear_isometry.to_continuous_linear_map
 - \+/\- *lemma* linear_isometry.to_linear_map_injective
+- \+/\- *structure* linear_isometry
 - \+/\- *lemma* linear_isometry_equiv.apply_symm_apply
 - \+/\- *lemma* linear_isometry_equiv.coe_coe''
 - \+/\- *lemma* linear_isometry_equiv.coe_coe'
@@ -15799,6 +15835,7 @@ Modified src/analysis/normed_space/linear_isometry.lean
 - \+/\- *def* linear_isometry_equiv.trans
 - \+/\- *lemma* linear_isometry_equiv.trans_assoc
 - \+/\- *lemma* linear_isometry_equiv.trans_refl
+- \+/\- *structure* linear_isometry_equiv
 
 Modified src/analysis/normed_space/multilinear.lean
 
@@ -16237,6 +16274,7 @@ Modified src/data/equiv/basic.lean
 - \- *lemma* equiv.image_subset
 - \- *lemma* equiv.image_symm_image
 - \- *theorem* equiv.of_injective_symm_apply
+- \- *abbreviation* equiv.of_left_inverse'
 - \- *lemma* equiv.of_left_inverse'_eq_of_injective
 - \- *def* equiv.of_left_inverse
 - \- *lemma* equiv.of_left_inverse_eq_of_injective
@@ -16291,6 +16329,7 @@ Added src/data/equiv/set.lean
 - \+ *lemma* equiv.image_subset
 - \+ *lemma* equiv.image_symm_image
 - \+ *theorem* equiv.of_injective_symm_apply
+- \+ *abbreviation* equiv.of_left_inverse'
 - \+ *lemma* equiv.of_left_inverse'_eq_of_injective
 - \+ *def* equiv.of_left_inverse
 - \+ *lemma* equiv.of_left_inverse_eq_of_injective
@@ -17677,6 +17716,7 @@ Deleted src/topology/homotopy.lean
 - \- *lemma* continuous_map.homotopy.to_continuous_map_apply
 - \- *def* continuous_map.homotopy.trans
 - \- *lemma* continuous_map.homotopy.trans_apply
+- \- *structure* continuous_map.homotopy
 
 Added src/topology/homotopy/basic.lean
 - \+ *lemma* continuous_map.homotopy.apply_one
@@ -17700,6 +17740,7 @@ Added src/topology/homotopy/basic.lean
 - \+ *lemma* continuous_map.homotopy.symm_trans
 - \+ *def* continuous_map.homotopy.trans
 - \+ *lemma* continuous_map.homotopy.trans_apply
+- \+ *structure* continuous_map.homotopy
 - \+ *lemma* continuous_map.homotopy_rel.eq_fst
 - \+ *lemma* continuous_map.homotopy_rel.eq_snd
 - \+ *lemma* continuous_map.homotopy_rel.fst_eq_snd
@@ -17709,6 +17750,7 @@ Added src/topology/homotopy/basic.lean
 - \+ *lemma* continuous_map.homotopy_rel.symm_trans
 - \+ *def* continuous_map.homotopy_rel.trans
 - \+ *lemma* continuous_map.homotopy_rel.trans_apply
+- \+ *abbreviation* continuous_map.homotopy_rel
 - \+ *lemma* continuous_map.homotopy_with.apply_one
 - \+ *lemma* continuous_map.homotopy_with.apply_zero
 - \+ *lemma* continuous_map.homotopy_with.coe_fn_injective
@@ -17724,6 +17766,7 @@ Added src/topology/homotopy/basic.lean
 - \+ *lemma* continuous_map.homotopy_with.symm_trans
 - \+ *def* continuous_map.homotopy_with.trans
 - \+ *lemma* continuous_map.homotopy_with.trans_apply
+- \+ *structure* continuous_map.homotopy_with
 
 
 
@@ -17920,6 +17963,7 @@ Added src/order/jordan_holder.lean
 - \+ *lemma* composition_series.top_mem
 - \+ *lemma* composition_series.top_snoc
 - \+ *lemma* composition_series.total
+- \+ *structure* composition_series
 - \+ *lemma* jordan_holder_lattice.is_maximal.iso_refl
 - \+ *lemma* jordan_holder_lattice.is_maximal_inf_right_of_is_maximal_sup
 - \+ *lemma* jordan_holder_lattice.is_maximal_of_eq_inf
@@ -17944,6 +17988,7 @@ Added src/linear_algebra/general_linear_group.lean
 - \+ *lemma* matrix.general_linear_group.ext_iff
 - \+ *def* matrix.general_linear_group.mk'
 - \+ *def* matrix.general_linear_group.to_lin
+- \+ *abbreviation* matrix.general_linear_group
 - \+ *lemma* matrix.mem_GL_pos
 - \+ *lemma* matrix.special_linear_group.coe_eq_to_GL_pos
 - \+ *def* matrix.special_linear_group.to_GL_pos
@@ -17965,6 +18010,7 @@ This is preparatory material for adic topology. It is a modernized version of co
 #### Estimated changes
 Added src/topology/algebra/nonarchimedean/bases.lean
 - \+ *def* ring_filter_basis.module_filter_basis
+- \+ *structure* ring_filter_basis.submodules_basis
 - \+ *lemma* ring_filter_basis.submodules_basis_is_basis
 - \+ *lemma* ring_subgroups_basis.has_basis_nhds
 - \+ *lemma* ring_subgroups_basis.has_basis_nhds_zero
@@ -17975,13 +18021,16 @@ Added src/topology/algebra/nonarchimedean/bases.lean
 - \+ *def* ring_subgroups_basis.open_add_subgroup
 - \+ *def* ring_subgroups_basis.to_ring_filter_basis
 - \+ *def* ring_subgroups_basis.topology
+- \+ *structure* ring_subgroups_basis
 - \+ *lemma* submodules_basis.nonarchimedean
 - \+ *def* submodules_basis.open_add_subgroup
 - \+ *def* submodules_basis.to_module_filter_basis
 - \+ *def* submodules_basis.topology
+- \+ *structure* submodules_basis
 - \+ *lemma* submodules_ring_basis.to_ring_subgroups_basis
 - \+ *lemma* submodules_ring_basis.to_submodules_basis
 - \+ *def* submodules_ring_basis.topology
+- \+ *structure* submodules_ring_basis
 
 
 
@@ -18043,6 +18092,7 @@ Added src/category_theory/sites/cover_lifting.lean
 - \+ *lemma* category_theory.Ran_is_sheaf_of_cover_lifting.pulledback_family_apply
 - \+ *theorem* category_theory.Ran_is_sheaf_of_cover_lifting
 - \+ *def* category_theory.comp_cover_lifting
+- \+ *structure* category_theory.cover_lifting
 - \+ *def* category_theory.id_cover_lifting
 
 Modified src/category_theory/sites/sheaf_of_types.lean
@@ -18061,6 +18111,7 @@ Modified src/category_theory/sites/sieves.lean
 - \+/\- *def* category_theory.sieve.functor
 - \+ *def* category_theory.sieve.functor_pullback
 - \+ *lemma* category_theory.sieve.functor_pullback_id
+- \+/\- *structure* category_theory.sieve
 
 Modified src/category_theory/structured_arrow.lean
 - \+ *def* category_theory.structured_arrow.hom_mk'
@@ -18540,6 +18591,7 @@ Modified src/topology/dense_embedding.lean
 - \+ *lemma* dense_embedding.dense_image
 - \+/\- *def* dense_embedding.subtype_emb
 - \+ *lemma* dense_inducing.dense_image
+- \+/\- *structure* dense_inducing
 
 
 
@@ -18706,9 +18758,11 @@ Modified docs/references.bib
 
 
 Added src/measure_theory/covering/besicovitch.lean
+- \+ *structure* besicovitch.ball_package
 - \+ *theorem* besicovitch.exist_disjoint_covering_families
 - \+ *lemma* besicovitch.satellite_config.hlast'
 - \+ *lemma* besicovitch.satellite_config.inter'
+- \+ *structure* besicovitch.satellite_config
 - \+ *def* besicovitch.tau_package.R
 - \+ *def* besicovitch.tau_package.Union_up_to
 - \+ *lemma* besicovitch.tau_package.color_lt
@@ -18716,6 +18770,7 @@ Added src/measure_theory/covering/besicovitch.lean
 - \+ *lemma* besicovitch.tau_package.last_step_nonempty
 - \+ *lemma* besicovitch.tau_package.mem_Union_up_to_last_step
 - \+ *lemma* besicovitch.tau_package.monotone_Union_up_to
+- \+ *structure* besicovitch.tau_package
 - \+ *def* besicovitch.unit_ball_package
 
 
@@ -18898,6 +18953,7 @@ Modified src/analysis/convex/cone.lean
 - \+/\- *lemma* convex_cone.to_ordered_smul
 - \+/\- *def* convex_cone.to_partial_order
 - \+/\- *def* convex_cone.to_preorder
+- \+/\- *structure* convex_cone
 - \+/\- *theorem* riesz_extension
 
 
@@ -19041,6 +19097,7 @@ Added src/topology/algebra/filter_basis.lean
 - \+ *lemma* module_filter_basis.smul_right
 - \+ *def* module_filter_basis.topology'
 - \+ *def* module_filter_basis.topology
+- \+ *structure* module_filter_basis
 - \+ *lemma* ring_filter_basis.mul
 - \+ *lemma* ring_filter_basis.mul_left
 - \+ *lemma* ring_filter_basis.mul_right
@@ -19910,6 +19967,7 @@ Added src/algebraic_geometry/ringed_space.lean
 - \+ *lemma* algebraic_geometry.RingedSpace.is_unit_res_basic_open
 - \+ *lemma* algebraic_geometry.RingedSpace.is_unit_res_of_is_unit_germ
 - \+ *lemma* algebraic_geometry.RingedSpace.mem_basic_open
+- \+ *abbreviation* algebraic_geometry.RingedSpace
 
 
 

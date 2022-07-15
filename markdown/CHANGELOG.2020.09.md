@@ -23,7 +23,11 @@ Renamed src/geometry/algebra/lie_group.lean to src/geometry/manifold/algebra/lie
 - \- *lemma* smooth_right_mul
 
 Added src/geometry/manifold/algebra/monoid.lean
+- \+ *structure* has_smooth_add_core
+- \+ *structure* has_smooth_mul_core
 - \+ *lemma* smooth.mul
+- \+ *structure* smooth_add_monoid_morphism
+- \+ *structure* smooth_monoid_morphism
 - \+ *lemma* smooth_mul
 - \+ *lemma* smooth_mul_left
 - \+ *lemma* smooth_mul_right
@@ -493,10 +497,13 @@ Added src/algebra/quandle.lean
 - \+ *lemma* rack.left_cancel_inv
 - \+ *lemma* rack.op_act_op_eq
 - \+ *lemma* rack.op_inv_act_op_eq
+- \+ *inductive* rack.pre_envel_group
 - \+ *lemma* rack.pre_envel_group_rel'.rel
+- \+ *inductive* rack.pre_envel_group_rel'
 - \+ *lemma* rack.pre_envel_group_rel.refl
 - \+ *lemma* rack.pre_envel_group_rel.symm
 - \+ *lemma* rack.pre_envel_group_rel.trans
+- \+ *inductive* rack.pre_envel_group_rel
 - \+ *lemma* rack.self_act_act_eq
 - \+ *lemma* rack.self_act_eq_iff_eq
 - \+ *lemma* rack.self_act_inv_act_eq
@@ -518,6 +525,7 @@ Added src/algebra/quandle.lean
 - \+ *def* shelf_hom.id
 - \+ *lemma* shelf_hom.map_act
 - \+ *lemma* shelf_hom.to_fun_eq_coe
+- \+ *structure* shelf_hom
 
 Modified src/data/equiv/mul_add.lean
 - \+ *lemma* mul_aut.conj_inv_apply
@@ -1432,6 +1440,7 @@ Added src/algebra/universal_enveloping_algebra.lean
 - \+ *lemma* universal_enveloping_algebra.lift_unique
 - \+ *lemma* universal_enveloping_algebra.lift_ι_apply
 - \+ *def* universal_enveloping_algebra.mk_alg_hom
+- \+ *inductive* universal_enveloping_algebra.rel
 - \+ *def* universal_enveloping_algebra.ι
 - \+ *lemma* universal_enveloping_algebra.ι_comp_lift
 - \+ *def* universal_enveloping_algebra
@@ -1855,6 +1864,7 @@ Added src/category_theory/sites/sieves.lean
 - \+ *lemma* category_theory.sieve.galois_connection
 - \+ *def* category_theory.sieve.galois_insertion_of_split_epi
 - \+ *def* category_theory.sieve.generate
+- \+ *inductive* category_theory.sieve.generate_sets
 - \+ *def* category_theory.sieve.gi_generate
 - \+ *lemma* category_theory.sieve.id_mem_iff_eq_top
 - \+ *lemma* category_theory.sieve.le_pushforward_pullback
@@ -1880,6 +1890,7 @@ Added src/category_theory/sites/sieves.lean
 - \+ *lemma* category_theory.sieve.pushforward_union
 - \+ *def* category_theory.sieve.set_over
 - \+ *lemma* category_theory.sieve.sets_iff_generate
+- \+ *structure* category_theory.sieve
 
 
 
@@ -2244,7 +2255,7 @@ Modified src/category_theory/over.lean
 - \+/\- *def* category_theory.under
 
 Modified src/category_theory/punit.lean
-
+- \+/\- *abbreviation* category_theory.functor.from_punit
 
 
 
@@ -2756,6 +2767,7 @@ Added src/field_theory/intermediate_field.lean
 - \+ *def* intermediate_field.val
 - \+ *lemma* intermediate_field.val_mk
 - \+ *theorem* intermediate_field.zero_mem
+- \+ *structure* intermediate_field
 - \+ *def* subalgebra.to_intermediate_field
 - \+ *def* subfield.to_intermediate_field
 
@@ -3111,7 +3123,9 @@ Modified src/algebra/category/Group/images.lean
 - \- *lemma* AddCommGroup.image_map
 
 Modified src/category_theory/abelian/basic.lean
+- \+ *abbreviation* category_theory.abelian.coimage_iso_image'
 - \- *lemma* category_theory.abelian.image_eq_image
+- \+ *abbreviation* category_theory.abelian.image_iso_image
 - \- *lemma* category_theory.abelian.image_ι_eq_image_ι
 - \+ *lemma* category_theory.abelian.images.image_ι_comp_eq_zero
 - \- *lemma* category_theory.abelian.kernel_cokernel_eq_image_ι
@@ -3130,6 +3144,8 @@ Modified src/category_theory/abelian/pseudoelements.lean
 
 Modified src/category_theory/arrow.lean
 - \+ *lemma* category_theory.arrow.has_lift.mk
+- \- *abbreviation* category_theory.arrow.lift
+- \+ *structure* category_theory.arrow.lift_struct
 
 Modified src/category_theory/limits/shapes/images.lean
 - \+ *lemma* category_theory.limits.has_image.mk
@@ -3141,9 +3157,12 @@ Modified src/category_theory/limits/shapes/images.lean
 - \- *def* category_theory.limits.has_image_map_id
 - \+ *lemma* category_theory.limits.has_strong_epi_mono_factorisations.mk
 - \+/\- *def* category_theory.limits.image.is_image
+- \+/\- *abbreviation* category_theory.limits.image.map
 - \+/\- *def* category_theory.limits.image.mono_factorisation
+- \+ *structure* category_theory.limits.image_factorisation
 - \+ *lemma* category_theory.limits.image_map.factor_map
 - \+ *def* category_theory.limits.image_map.transport
+- \+ *structure* category_theory.limits.image_map
 - \+ *def* category_theory.limits.image_map_comp
 - \+ *def* category_theory.limits.image_map_id
 - \+ *lemma* category_theory.limits.is_image.e_iso_ext_hom
@@ -3254,6 +3273,7 @@ Added src/geometry/manifold/times_cont_mdiff_map.lean
 - \+ *def* times_cont_mdiff_map.const
 - \+ *theorem* times_cont_mdiff_map.ext
 - \+ *def* times_cont_mdiff_map.id
+- \+ *structure* times_cont_mdiff_map
 
 
 
@@ -3800,7 +3820,9 @@ Added src/category_theory/category/pairwise.lean
 - \+ *def* category_theory.pairwise.diagram
 - \+ *def* category_theory.pairwise.diagram_map
 - \+ *def* category_theory.pairwise.diagram_obj
+- \+ *inductive* category_theory.pairwise.hom
 - \+ *def* category_theory.pairwise.id
+- \+ *inductive* category_theory.pairwise
 
 Modified src/category_theory/opposites.lean
 - \+ *lemma* category_theory.le_of_op_hom
@@ -4154,6 +4176,7 @@ Modified src/ring_theory/unique_factorization_domain.lean
 - \+ *theorem* unique_factorization_monoid.prime_of_factor
 - \+ *theorem* unique_factorization_monoid_iff_exists_prime_of_factor
 - \+ *theorem* unique_factorization_monoid_of_exists_prime_of_factor
+- \- *structure* unique_irreducible_factorization
 - \+ *lemma* wf_dvd_monoid_of_exists_prime_of_factor
 
 
@@ -4172,7 +4195,7 @@ chore(topology/algebra/module): make `topological_module` an abbreviation ([#420
 Also prove that a `topological_semiring` is a `topological_semimodule`.
 #### Estimated changes
 Modified src/topology/algebra/module.lean
-
+- \+ *abbreviation* topological_module
 
 
 
@@ -4613,6 +4636,8 @@ Modified src/linear_algebra/tensor_algebra.lean
 - \- *def* tensor_algebra.pre.has_one
 - \- *def* tensor_algebra.pre.has_scalar
 - \- *def* tensor_algebra.pre.has_zero
+- \- *inductive* tensor_algebra.pre
+- \+/\- *inductive* tensor_algebra.rel
 - \+ *lemma* tensor_algebra.ring_quot_mk_alg_hom_free_algebra_ι_eq_ι
 - \+/\- *def* tensor_algebra
 
@@ -4638,6 +4663,7 @@ Added src/category_theory/monoidal/CommMon_.lean
 - \+ *lemma* CommMon_.forget₂_Mon_obj_one
 - \+ *lemma* CommMon_.id_hom
 - \+ *def* CommMon_.trivial
+- \+ *structure* CommMon_
 - \+ *def* category_theory.lax_braided_functor.map_CommMon
 - \+ *def* category_theory.lax_braided_functor.map_CommMon_functor
 
@@ -4647,9 +4673,11 @@ Added src/category_theory/monoidal/Mod.lean
 - \+ *def* Mod.comp
 - \+ *lemma* Mod.comp_hom'
 - \+ *def* Mod.forget
+- \+ *structure* Mod.hom
 - \+ *def* Mod.id
 - \+ *lemma* Mod.id_hom'
 - \+ *def* Mod.regular
+- \+ *structure* Mod
 
 Renamed src/category_theory/monoidal/internal.lean to src/category_theory/monoidal/Mon_.lean
 - \- *lemma* Mod.assoc_flip
@@ -4657,9 +4685,11 @@ Renamed src/category_theory/monoidal/internal.lean to src/category_theory/monoid
 - \- *def* Mod.comp
 - \- *lemma* Mod.comp_hom'
 - \- *def* Mod.forget
+- \- *structure* Mod.hom
 - \- *def* Mod.id
 - \- *lemma* Mod.id_hom'
 - \- *def* Mod.regular
+- \- *structure* Mod
 
 Modified src/category_theory/monoidal/braided.lean
 - \+ *lemma* category_theory.braided_functor.comp_to_nat_trans
@@ -4670,6 +4700,7 @@ Modified src/category_theory/monoidal/braided.lean
 - \+ *lemma* category_theory.lax_braided_functor.comp_to_nat_trans
 - \+ *def* category_theory.lax_braided_functor.id
 - \+ *def* category_theory.lax_braided_functor.mk_iso
+- \+ *structure* category_theory.lax_braided_functor
 
 Modified src/category_theory/monoidal/discrete.lean
 
@@ -4808,6 +4839,7 @@ Added src/algebra/ring_quot.lean
 - \+ *theorem* ring_quot.rel.add_right
 - \+ *theorem* ring_quot.rel.neg
 - \+ *theorem* ring_quot.rel.smul
+- \+ *inductive* ring_quot.rel
 - \+ *def* ring_quot.ring_quot_equiv_ideal_quotient
 - \+ *lemma* ring_quot.ring_quot_ext'
 - \+ *lemma* ring_quot.ring_quot_ext
@@ -5216,6 +5248,7 @@ Modified src/field_theory/subfield.lean
 - \+ *def* subfield.to_add_subgroup
 - \+ *def* subfield.to_submonoid
 - \+ *theorem* subfield.zero_mem
+- \+ *structure* subfield
 - \+ *def* subring.to_subfield
 
 Modified src/ring_theory/subring.lean
@@ -5243,7 +5276,9 @@ Added src/algebra/free_algebra.lean
 - \+ *def* free_algebra.pre.has_one
 - \+ *def* free_algebra.pre.has_scalar
 - \+ *def* free_algebra.pre.has_zero
+- \+ *inductive* free_algebra.pre
 - \+ *lemma* free_algebra.quot_mk_eq_ι
+- \+ *inductive* free_algebra.rel
 - \+ *def* free_algebra.ι
 - \+ *theorem* free_algebra.ι_comp_lift
 - \+ *def* free_algebra
@@ -5347,8 +5382,10 @@ Modified src/tactic/simps.lean
 
 
 Modified test/simps.lean
+- \+ *structure* alg_hom
 - \+ *def* my_alg_hom
 - \+ *def* my_ring_hom
+- \+ *structure* ring_hom
 
 
 
@@ -5439,6 +5476,7 @@ Added src/category_theory/monoidal/natural_transformation.lean
 - \+ *def* category_theory.monoidal_nat_trans.hcomp
 - \+ *def* category_theory.monoidal_nat_trans.id
 - \+ *def* category_theory.monoidal_nat_trans.vcomp
+- \+ *structure* category_theory.monoidal_nat_trans
 
 Modified src/topology/instances/real_vector_space.lean
 
@@ -6198,19 +6236,26 @@ We also prove that id is computable in constant time.
 Added src/computability/tm_computable.lean
 - \+ *def* turing.evals_to.refl
 - \+ *def* turing.evals_to.trans
+- \+ *structure* turing.evals_to
 - \+ *def* turing.evals_to_in_time.refl
 - \+ *def* turing.evals_to_in_time.trans
+- \+ *structure* turing.evals_to_in_time
 - \+ *def* turing.fin_tm2.cfg
 - \+ *def* turing.fin_tm2.step
 - \+ *def* turing.fin_tm2.stmt
+- \+ *structure* turing.fin_tm2
 - \+ *def* turing.halt_list
 - \+ *def* turing.id_computable
 - \+ *def* turing.id_computable_in_poly_time
 - \+ *def* turing.id_computable_in_time
 - \+ *def* turing.id_computer
 - \+ *def* turing.init_list
+- \+ *structure* turing.tm2_computable
+- \+ *structure* turing.tm2_computable_aux
 - \+ *def* turing.tm2_computable_in_poly_time.to_tm2_computable_in_time
+- \+ *structure* turing.tm2_computable_in_poly_time
 - \+ *def* turing.tm2_computable_in_time.to_tm2_computable
+- \+ *structure* turing.tm2_computable_in_time
 - \+ *def* turing.tm2_outputs
 - \+ *def* turing.tm2_outputs_in_time.to_tm2_outputs
 - \+ *def* turing.tm2_outputs_in_time
@@ -6724,6 +6769,7 @@ Modified src/category_theory/limits/lattice.lean
 Modified src/category_theory/limits/limits.lean
 - \+/\- *def* category_theory.limits.colimit.cocone
 - \+ *lemma* category_theory.limits.colimit.cocone_X
+- \+ *structure* category_theory.limits.colimit_cocone
 - \+ *def* category_theory.limits.get_colimit_cocone
 - \+ *def* category_theory.limits.get_limit_cone
 - \+ *lemma* category_theory.limits.has_colimit.mk
@@ -6749,6 +6795,7 @@ Modified src/category_theory/limits/limits.lean
 - \+ *lemma* category_theory.limits.is_limit_map_π
 - \+/\- *def* category_theory.limits.limit.cone
 - \+ *lemma* category_theory.limits.limit.cone_X
+- \+ *structure* category_theory.limits.limit_cone
 - \+ *lemma* category_theory.limits.ι_is_colimit_map
 
 Modified src/category_theory/limits/opposites.lean
@@ -6798,16 +6845,21 @@ Modified src/category_theory/limits/shapes/biproducts.lean
 - \+ *lemma* category_theory.limits.binary_biproduct.bicone_snd
 - \+ *def* category_theory.limits.binary_biproduct.is_colimit
 - \+ *def* category_theory.limits.binary_biproduct.is_limit
+- \+ *structure* category_theory.limits.binary_biproduct_data
 - \+ *lemma* category_theory.limits.biprod.inl_desc
 - \+ *lemma* category_theory.limits.biprod.inr_desc
 - \+ *lemma* category_theory.limits.biprod.lift_fst
 - \+ *lemma* category_theory.limits.biprod.lift_snd
+- \+/\- *abbreviation* category_theory.limits.biprod
 - \+ *def* category_theory.limits.biproduct.bicone
+- \- *abbreviation* category_theory.limits.biproduct.bicone
 - \+ *lemma* category_theory.limits.biproduct.bicone_ι
 - \+ *lemma* category_theory.limits.biproduct.bicone_π
 - \- *lemma* category_theory.limits.biproduct.inl_map
 - \+ *def* category_theory.limits.biproduct.is_colimit
+- \- *abbreviation* category_theory.limits.biproduct.is_colimit
 - \+ *def* category_theory.limits.biproduct.is_limit
+- \- *abbreviation* category_theory.limits.biproduct.is_limit
 - \+ *lemma* category_theory.limits.biproduct.lift_π
 - \+ *lemma* category_theory.limits.biproduct.map_π
 - \+ *lemma* category_theory.limits.biproduct.ι_desc
@@ -6838,6 +6890,7 @@ Modified src/category_theory/limits/shapes/biproducts.lean
 - \- *def* category_theory.limits.has_finite_biproducts.of_has_finite_coproducts
 - \+ *lemma* category_theory.limits.has_finite_biproducts.of_has_finite_products
 - \- *def* category_theory.limits.has_finite_biproducts.of_has_finite_products
+- \+ *structure* category_theory.limits.limit_bicone
 
 Modified src/category_theory/limits/shapes/constructions/binary_products.lean
 - \+ *lemma* has_binary_products_of_terminal_and_pullbacks
@@ -6916,7 +6969,8 @@ Modified src/category_theory/limits/shapes/finite_products.lean
 - \- *def* category_theory.limits.has_finite_products_of_has_products
 
 Modified src/category_theory/limits/shapes/kernels.lean
-
+- \+/\- *abbreviation* category_theory.limits.has_cokernel
+- \+/\- *abbreviation* category_theory.limits.has_kernel
 
 Modified src/category_theory/limits/shapes/products.lean
 
@@ -6972,7 +7026,8 @@ Modified src/category_theory/limits/shapes/types.lean
 - \- *def* category_theory.limits.types.types_has_terminal
 
 Modified src/category_theory/limits/shapes/wide_pullbacks.lean
-
+- \+/\- *abbreviation* category_theory.limits.has_wide_pullbacks
+- \+/\- *abbreviation* category_theory.limits.has_wide_pushouts
 
 Modified src/category_theory/limits/shapes/zero.lean
 - \+ *lemma* category_theory.limits.has_zero_object.has_initial
@@ -7189,6 +7244,7 @@ Modified src/category_theory/limits/shapes/wide_pullbacks.lean
 Added src/category_theory/skeletal.lean
 - \+ *lemma* category_theory.functor.eq_of_iso
 - \+ *lemma* category_theory.functor_skeletal
+- \+ *structure* category_theory.is_skeleton_of
 - \+ *def* category_theory.skeletal
 - \+ *lemma* category_theory.thin_skeleton.comp_to_thin_skeleton
 - \+ *lemma* category_theory.thin_skeleton.equiv_of_both_ways
@@ -7458,7 +7514,9 @@ Added src/category_theory/grothendieck.lean
 - \+ *lemma* category_theory.grothendieck.ext
 - \+ *def* category_theory.grothendieck.forget
 - \+ *def* category_theory.grothendieck.grothendieck_Type_to_Cat
+- \+ *structure* category_theory.grothendieck.hom
 - \+ *def* category_theory.grothendieck.id
+- \+ *structure* category_theory.grothendieck
 
 Modified src/category_theory/isomorphism.lean
 - \+ *lemma* category_theory.is_iso.comp_inv_eq
@@ -8077,7 +8135,9 @@ Modified src/ring_theory/algebra_operations.lean
 - \+ *lemma* submodule.map_div
 
 Added src/ring_theory/dedekind_domain.lean
+- \+ *structure* is_dedekind_domain_dvr
 - \+ *lemma* is_dedekind_domain_iff
+- \+ *structure* is_dedekind_domain_inv
 - \+ *lemma* is_dedekind_domain_inv_iff
 - \+ *lemma* ring.dimension_le_one.integral_closure
 - \+ *lemma* ring.dimension_le_one.principal_ideal_ring
@@ -9328,10 +9388,12 @@ Modified scripts/nolints.txt
 feat(category_theory): definition of `diag` in `binary_products` ([#4051](https://github.com/leanprover-community/mathlib/pull/4051))
 #### Estimated changes
 Modified src/category_theory/limits/shapes/binary_products.lean
+- \+ *abbreviation* category_theory.limits.codiag
 - \+ *lemma* category_theory.limits.coprod.map_codiag
 - \+ *lemma* category_theory.limits.coprod.map_comp_codiag
 - \+ *lemma* category_theory.limits.coprod.map_comp_inl_inr_codiag
 - \+ *lemma* category_theory.limits.coprod.map_inl_inr_codiag
+- \+ *abbreviation* category_theory.limits.diag
 - \+ *lemma* category_theory.limits.prod.diag_map
 - \+ *lemma* category_theory.limits.prod.diag_map_comp
 - \+ *lemma* category_theory.limits.prod.diag_map_fst_snd
@@ -9485,8 +9547,10 @@ Added src/computability/encoding.lean
 - \+ *def* computability.encode_num
 - \+ *def* computability.encode_pos_num
 - \+ *lemma* computability.encode_pos_num_nonempty
+- \+ *structure* computability.encoding
 - \+ *def* computability.encoding_nat_bool
 - \+ *def* computability.encoding_nat_Γ'
+- \+ *structure* computability.fin_encoding
 - \+ *def* computability.fin_encoding_bool_bool
 - \+ *def* computability.fin_encoding_nat_bool
 - \+ *def* computability.fin_encoding_nat_Γ'
@@ -9498,6 +9562,7 @@ Added src/computability/encoding.lean
 - \+ *def* computability.unary_decode_nat
 - \+ *def* computability.unary_encode_nat
 - \+ *def* computability.unary_fin_encoding_nat
+- \+ *inductive* computability.Γ'
 
 
 
@@ -10021,6 +10086,7 @@ Modified src/order/rel_iso.lean
 - \+ *lemma* rel_hom.injective_of_increasing
 - \+ *theorem* rel_hom.map_rel
 - \+ *def* rel_hom.preimage
+- \+ *structure* rel_hom
 - \+/\- *theorem* rel_iso.coe_fn_mk
 - \+/\- *theorem* rel_iso.ext
 - \+ *theorem* rel_iso.ext_iff
@@ -10369,6 +10435,7 @@ Modified src/order/category/Preorder.lean
 - \- *lemma* preorder_hom.ext
 - \- *def* preorder_hom.id
 - \- *lemma* preorder_hom.id_comp
+- \- *structure* preorder_hom
 
 Added src/order/category/omega_complete_partial_order.lean
 - \+ *def* ωCPO.of
@@ -10415,6 +10482,7 @@ Added src/order/omega_complete_partial_order.lean
 - \+ *lemma* omega_complete_partial_order.continuous_hom.ωSup_bind
 - \+ *lemma* omega_complete_partial_order.continuous_hom.ωSup_def
 - \+ *lemma* omega_complete_partial_order.continuous_hom.ωSup_ωSup
+- \+ *structure* omega_complete_partial_order.continuous_hom
 - \+ *lemma* omega_complete_partial_order.continuous_id
 - \+ *lemma* omega_complete_partial_order.id_continuous'
 - \+ *lemma* omega_complete_partial_order.le_ωSup_of_le
@@ -10448,6 +10516,7 @@ Added src/order/preorder_hom.lean
 - \+ *lemma* preorder_hom.ext
 - \+ *def* preorder_hom.id
 - \+ *lemma* preorder_hom.id_comp
+- \+ *structure* preorder_hom
 
 Added test/general_recursion.lean
 - \+ *theorem* roption.examples.div.cont
@@ -10466,6 +10535,7 @@ Added test/general_recursion.lean
 - \+ *lemma* roption.examples.f91_dom
 - \+ *lemma* roption.examples.f91_spec'
 - \+ *lemma* roption.examples.f91_spec
+- \+ *inductive* roption.examples.tree
 - \+ *theorem* roption.examples.tree_map'.cont
 - \+ *theorem* roption.examples.tree_map'.equations.eqn_1
 - \+ *theorem* roption.examples.tree_map'.equations.eqn_2
@@ -10557,8 +10627,10 @@ Added src/testing/slim_check/testable.lean
 - \+ *def* slim_check.named_binder
 - \+ *def* slim_check.or_counter_example
 - \+ *def* slim_check.retry
+- \+ *structure* slim_check.slim_check_cfg
 - \+ *def* slim_check.tactic.decorations_of
 - \+ *def* slim_check.test_result.to_string
+- \+ *inductive* slim_check.test_result
 - \+ *def* slim_check.testable.check'
 - \+ *def* slim_check.testable.check
 - \+ *def* slim_check.testable.run_suite
@@ -10931,9 +11003,11 @@ Modified src/category_theory/limits/shapes/terminal.lean
 - \+ *lemma* category_theory.limits.is_initial.epi_to
 - \+ *lemma* category_theory.limits.is_initial.hom_ext
 - \+ *def* category_theory.limits.is_initial.to
+- \+ *abbreviation* category_theory.limits.is_initial
 - \+ *def* category_theory.limits.is_terminal.from
 - \+ *lemma* category_theory.limits.is_terminal.hom_ext
 - \+ *lemma* category_theory.limits.is_terminal.mono_from
+- \+ *abbreviation* category_theory.limits.is_terminal
 - \+ *def* category_theory.limits.terminal_is_terminal
 
 

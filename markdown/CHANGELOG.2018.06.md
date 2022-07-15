@@ -171,16 +171,19 @@ Modified computability/turing_machine.lean
 - \- *theorem* turing.TM2.move_until_right_reaches₁
 - \- *def* turing.TM2.reaches₁
 - \- *theorem* turing.TM2.reaches₁_step
+- \+ *inductive* turing.TM2to1.st_act
 - \+ *def* turing.TM2to1.st_run
 - \+ *def* turing.TM2to1.st_var
 - \+ *def* turing.TM2to1.st_write
 - \+ *def* turing.TM2to1.stackel.get
 - \+ *def* turing.TM2to1.stackel.is_bottom
 - \+ *def* turing.TM2to1.stackel.is_top
+- \+ *inductive* turing.TM2to1.stackel
 - \+ *def* turing.TM2to1.stackel_equiv
 - \+ *theorem* turing.TM2to1.step_run
 - \+ *theorem* turing.TM2to1.supports_run
 - \- *def* turing.TM2to1.tr'
+- \+ *inductive* turing.TM2to1.tr_cfg
 - \- *def* turing.TM2to1.tr_cfg
 - \+ *theorem* turing.TM2to1.tr_cfg_init
 - \+ *theorem* turing.TM2to1.tr_eval
@@ -199,13 +202,16 @@ Modified computability/turing_machine.lean
 - \+ *theorem* turing.TM2to1.tr_stmts₁_run
 - \+ *theorem* turing.TM2to1.{l}
 - \+ *def* turing.TM2to1.Γ'
+- \+ *inductive* turing.TM2to1.Λ'
 - \- *def* turing.TM2to1.Λ'
 - \+ *def* turing.TM2to1.Λ'_inh
+- \- *structure* turing.TM3.cfg
 - \- *def* turing.TM3.eval
 - \- *def* turing.TM3.reaches
 - \- *def* turing.TM3.step
 - \- *def* turing.TM3.step_aux
 - \- *theorem* turing.TM3.step_supports
+- \- *inductive* turing.TM3.stmt
 - \- *theorem* turing.TM3.stmts_supports_stmt
 - \- *theorem* turing.TM3.stmts_trans
 - \- *theorem* turing.TM3.stmts₁_self
@@ -217,8 +223,10 @@ Modified computability/turing_machine.lean
 - \- *def* turing.TM3to2.stackel.get
 - \- *def* turing.TM3to2.stackel.is_bottom
 - \- *def* turing.TM3to2.stackel.is_top
+- \- *inductive* turing.TM3to2.stackel
 - \- *def* turing.TM3to2.stackel_equiv
 - \- *def* turing.TM3to2.tr
+- \- *inductive* turing.TM3to2.tr_cfg
 - \- *theorem* turing.TM3to2.tr_reaches
 - \- *def* turing.TM3to2.tr_stk
 - \- *theorem* turing.TM3to2.tr_supports
@@ -360,6 +368,7 @@ Modified data/num/lemmas.lean
 Added tactic/ring2.lean
 - \+ *theorem* tactic.ring2.correctness
 - \+ *def* tactic.ring2.csring_expr.eval
+- \+ *inductive* tactic.ring2.csring_expr
 - \+ *def* tactic.ring2.horner_expr.add
 - \+ *def* tactic.ring2.horner_expr.add_aux
 - \+ *def* tactic.ring2.horner_expr.add_const
@@ -383,9 +392,11 @@ Added tactic/ring2.lean
 - \+ *def* tactic.ring2.horner_expr.of_csexpr
 - \+ *def* tactic.ring2.horner_expr.pow
 - \+ *def* tactic.ring2.horner_expr.repr
+- \+ *inductive* tactic.ring2.horner_expr
 - \+ *def* tactic.ring2.tree.get
 - \+ *def* tactic.ring2.tree.index_of
 - \+ *def* tactic.ring2.tree.of_rbnode
+- \+ *inductive* tactic.ring2.{u}
 
 
 
@@ -436,6 +447,7 @@ Modified data/list/basic.lean
 - \+/\- *theorem* list.lex.imp
 - \+ *theorem* list.lex.ne_iff
 - \+ *theorem* list.lex.to_ne
+- \+/\- *inductive* list.lex
 - \- *theorem* list.lex_append_left
 - \- *theorem* list.lex_append_right
 - \- *theorem* list.lex_ne_iff
@@ -707,12 +719,14 @@ Modified computability/turing_machine.lean
 - \+/\- *def* turing.TM3to2.stackel.get
 - \+/\- *def* turing.TM3to2.stackel.is_bottom
 - \+/\- *def* turing.TM3to2.stackel.is_top
+- \+/\- *inductive* turing.TM3to2.stackel
 - \+/\- *def* turing.TM3to2.stackel_equiv
 - \+ *theorem* turing.TM3to2.tr_reaches
 - \+ *def* turing.TM3to2.tr_stk
 - \- *def* turing.TM3to2.tr_tape
 - \- *def* turing.TM3to2.Γ'.write_stack
 - \+ *def* turing.TM3to2.Γ'
+- \- *structure* turing.TM3to2.Γ'
 - \- *def* turing.TM3to2.Γ'_equiv
 - \+ *def* turing.dwrite
 - \+ *theorem* turing.dwrite_eq
@@ -741,6 +755,7 @@ Modified logic/relation.lean
 - \+ *lemma* relation.trans_gen.trans
 - \+ *lemma* relation.trans_gen.trans_left
 - \+ *lemma* relation.trans_gen.trans_right
+- \+ *inductive* relation.trans_gen
 
 
 
@@ -932,7 +947,7 @@ Modified data/list/basic.lean
 feat(data/option): add relator option.rel
 #### Estimated changes
 Modified data/option.lean
-
+- \+ *inductive* option.rel
 
 
 
@@ -982,12 +997,17 @@ Renamed data/computability/turing_machine.lean to computability/turing_machine.l
 feat(computability/turing_machine): proving the TM reductions
 #### Estimated changes
 Modified data/computability/turing_machine.lean
+- \+ *structure* turing.TM0.cfg
 - \+ *def* turing.TM0.eval
 - \+ *def* turing.TM0.machine
+- \- *structure* turing.TM0.machine
 - \+ *def* turing.TM0.reaches
+- \- *structure* turing.TM0.state
 - \+/\- *def* turing.TM0.step
+- \+ *structure* turing.TM1.cfg
 - \+ *def* turing.TM1.eval
 - \+ *def* turing.TM1.reaches
+- \- *structure* turing.TM1.state
 - \+/\- *def* turing.TM1.step
 - \+/\- *theorem* turing.TM1.step_supports
 - \+ *theorem* turing.TM1.stmts_supports_stmt
@@ -1005,10 +1025,12 @@ Modified data/computability/turing_machine.lean
 - \- *def* turing.TM1to0.trans
 - \- *def* turing.TM1to0.translate
 - \+ *def* turing.TM1to0.Λ'
+- \+ *structure* turing.TM2.cfg
 - \+ *def* turing.TM2.eval
 - \+ *theorem* turing.TM2.move_until_left_reaches
 - \+ *theorem* turing.TM2.move_until_right_reaches
 - \+ *def* turing.TM2.reaches
+- \- *structure* turing.TM2.state
 - \+/\- *def* turing.TM2.step
 - \+/\- *def* turing.TM2.step_aux
 - \+ *theorem* turing.TM2.step_supports
@@ -1027,8 +1049,11 @@ Modified data/computability/turing_machine.lean
 - \- *def* turing.TM2to1.translate'
 - \- *def* turing.TM2to1.translate
 - \+ *def* turing.TM2to1.Λ'
+- \+ *structure* turing.TM3.cfg
 - \+ *def* turing.TM3.eval
+- \- *structure* turing.TM3.machine
 - \+ *def* turing.TM3.reaches
+- \- *structure* turing.TM3.state
 - \+/\- *def* turing.TM3.step
 - \+/\- *def* turing.TM3.step_aux
 - \+ *theorem* turing.TM3.step_supports
@@ -1039,13 +1064,16 @@ Modified data/computability/turing_machine.lean
 - \+ *theorem* turing.TM3.stmts₁_trans
 - \+ *def* turing.TM3.supports
 - \+ *def* turing.TM3.supports_stmt
+- \- *structure* turing.TM3to2.alph
 - \+ *theorem* turing.TM3to2.at_stack_supports
 - \+ *def* turing.TM3to2.stack_val
 - \+ *def* turing.TM3to2.tr
+- \+ *inductive* turing.TM3to2.tr_cfg
 - \+ *theorem* turing.TM3to2.tr_supports
 - \+ *def* turing.TM3to2.tr_tape
 - \- *def* turing.TM3to2.translate
 - \+ *def* turing.TM3to2.Γ'.write_stack
+- \+ *structure* turing.TM3to2.Γ'
 - \+ *def* turing.TM3to2.Γ'_equiv
 - \+ *def* turing.TM3to2.Λ'
 - \+ *def* turing.eval

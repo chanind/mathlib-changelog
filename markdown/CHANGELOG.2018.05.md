@@ -8,31 +8,44 @@ Modified data/computability/halting.lean
 
 
 Added data/computability/turing_machine.lean
+- \+ *structure* turing.TM0.machine
+- \+ *structure* turing.TM0.state
 - \+ *def* turing.TM0.step
 - \+ *theorem* turing.TM0.step_supports
+- \+ *inductive* turing.TM0.stmt
 - \+ *def* turing.TM0.supports
+- \+ *structure* turing.TM1.state
 - \+ *def* turing.TM1.step
 - \+ *theorem* turing.TM1.step_supports
+- \+ *inductive* turing.TM1.stmt
 - \+ *theorem* turing.TM1.stmts₁_self
 - \+ *def* turing.TM1.supports
 - \+ *def* turing.TM1.supports_stmt
 - \+ *def* turing.TM1to0.trans
 - \+ *def* turing.TM1to0.translate
+- \+ *structure* turing.TM2.state
 - \+ *def* turing.TM2.step
 - \+ *def* turing.TM2.step_aux
+- \+ *inductive* turing.TM2.stmt
 - \+ *def* turing.TM2to1.translate'
 - \+ *def* turing.TM2to1.translate
+- \+ *structure* turing.TM3.machine
+- \+ *structure* turing.TM3.state
 - \+ *def* turing.TM3.step
 - \+ *def* turing.TM3.step_aux
+- \+ *inductive* turing.TM3.stmt
+- \+ *structure* turing.TM3to2.alph
 - \+ *def* turing.TM3to2.at_stack
 - \+ *def* turing.TM3to2.pop
 - \+ *def* turing.TM3to2.push
 - \+ *def* turing.TM3to2.stackel.get
 - \+ *def* turing.TM3to2.stackel.is_bottom
 - \+ *def* turing.TM3to2.stackel.is_top
+- \+ *inductive* turing.TM3to2.stackel
 - \+ *def* turing.TM3to2.stackel_equiv
 - \+ *def* turing.TM3to2.translate
 - \+ *def* turing.dir.rev
+- \+ *inductive* turing.dir
 - \+ *def* turing.move_tape
 
 Modified data/fintype.lean
@@ -66,6 +79,7 @@ Modified data/computability/halting.lean
 - \+ *theorem* nat.partrec'.vec.prim
 - \+ *def* nat.partrec'.vec
 - \+ *theorem* nat.partrec'.vec_iff
+- \+ *inductive* nat.partrec'
 
 Modified data/computability/partrec.lean
 - \+ *theorem* computable.fin_app
@@ -138,6 +152,7 @@ Modified data/computability/primrec.lean
 - \+ *theorem* nat.primrec'.to_prim
 - \+ *theorem* nat.primrec'.unpair₁
 - \+ *theorem* nat.primrec'.unpair₂
+- \+ *inductive* nat.primrec'
 - \+ *def* primcodable.subtype
 - \+ *theorem* primrec.fin_app
 - \+ *theorem* primrec.fin_curry
@@ -952,6 +967,7 @@ Modified data/computability/partrec.lean
 - \- *theorem* nat.partrec.code.prec_prim
 - \- *theorem* nat.partrec.code.rec_prim
 - \- *theorem* nat.partrec.code.rfind_prim
+- \- *inductive* nat.partrec.code
 - \- *theorem* nat.partrec.rfind'
 - \+ *theorem* partrec.fix
 - \+ *theorem* partrec.nat_cases_right
@@ -985,6 +1001,7 @@ Added data/computability/partrec_code.lean
 - \+ *theorem* nat.partrec.code.rec_prim'
 - \+ *theorem* nat.partrec.code.rec_prim
 - \+ *theorem* nat.partrec.code.rfind_prim
+- \+ *inductive* nat.partrec.code
 - \+ *theorem* nat.partrec.rfind'
 
 Modified data/computability/primrec.lean
@@ -1133,6 +1150,7 @@ Modified data/computability/partrec.lean
 - \+ *theorem* nat.partrec.code.prec_prim
 - \+ *theorem* nat.partrec.code.rec_prim
 - \+ *theorem* nat.partrec.code.rfind_prim
+- \+ *inductive* nat.partrec.code
 - \+ *theorem* nat.partrec.none
 - \+/\- *theorem* nat.partrec.of_eq
 - \+ *theorem* nat.partrec.of_eq_tot
@@ -1222,6 +1240,8 @@ Modified data/pfun.lean
 - \+ *theorem* roption.mem_assert
 - \+ *theorem* roption.mem_assert_iff
 - \+ *theorem* roption.not_mem_none
+- \- *structure* roption
+- \+ *structure* {u}
 
 
 
@@ -1231,6 +1251,7 @@ feat(computability/partrec): starting work on partial recursive funcs
 Added data/computability/partrec.lean
 - \+ *theorem* nat.partrec.of_eq
 - \+ *theorem* nat.partrec.prim
+- \+ *inductive* nat.partrec
 
 Modified data/computability/primrec.lean
 - \+/\- *def* nat.unpaired
@@ -1388,6 +1409,7 @@ Added data/computability/primrec.lean
 - \+ *theorem* nat.primrec.pred
 - \+ *theorem* nat.primrec.sub
 - \+ *theorem* nat.primrec.swap'
+- \+ *inductive* nat.primrec
 - \+ *def* nat.unpaired
 - \+ *def* primcodable.of_equiv
 - \+ *theorem* primrec.bind_decode_iff
@@ -1701,6 +1723,7 @@ Modified data/multiset.lean
 - \+ *lemma* multiset.cons_ne_zero
 - \+ *lemma* multiset.rel.add
 - \+ *lemma* multiset.rel.mono
+- \+ *inductive* multiset.rel
 - \+ *lemma* multiset.rel_add_left
 - \+ *lemma* multiset.rel_add_right
 - \+ *lemma* multiset.rel_cons_left
@@ -1718,7 +1741,7 @@ Modified data/multiset.lean
 - \+ *lemma* multiset.zero_ne_cons
 
 Modified tests/mk_iff_of_inductive.lean
-
+- \- *inductive* multiset.rel
 
 
 
@@ -1734,6 +1757,7 @@ Modified order/complete_boolean_algebra.lean
 feat(data/list/basic): list.forall2, list.sections
 #### Estimated changes
 Modified data/list/basic.lean
+- \+ *inductive* list.forall₂
 - \+ *theorem* list.forall₂_cons
 - \+ *theorem* list.forall₂_iff_zip
 - \+ *theorem* list.forall₂_length_eq
@@ -1751,6 +1775,7 @@ feat(data/semiquot): semiquotient types
 #### Estimated changes
 Modified data/fp/basic.lean
 - \- *def* fp.float.default_nan
+- \- *structure* fp.nan_pl
 - \- *def* fp.shift2
 - \+ *def* int.shift2
 
@@ -1796,6 +1821,7 @@ Added data/semiquot.lean
 - \+ *def* semiquot.to_trunc
 - \+ *def* semiquot.univ
 - \+ *theorem* semiquot.univ_unique
+- \+ *structure* {u}
 
 Modified data/set/lattice.lean
 - \+ *theorem* set.mem_bInter_iff
@@ -1852,7 +1878,8 @@ Added tactic/mk_iff_of_inductive_prop.lean
 
 
 Added tests/mk_iff_of_inductive.lean
-
+- \+ *inductive* multiset.rel
+- \+ *inductive* test.is_true
 
 
 

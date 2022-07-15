@@ -1408,6 +1408,7 @@ Modified src/topology/subset_properties.lean
 - \+ *lemma* compact_exhaustion.subset_interior
 - \+ *lemma* compact_exhaustion.subset_interior_succ
 - \+ *lemma* compact_exhaustion.subset_succ
+- \+ *structure* compact_exhaustion
 - \+ *lemma* is_compact.elim_directed_cover
 
 
@@ -1847,6 +1848,7 @@ Modified src/algebra/lie/ideal_operations.lean
 Modified src/algebra/lie/nilpotent.lean
 - \+ *lemma* function.injective.lie_algebra_is_nilpotent
 - \+ *lemma* function.surjective.lie_algebra_is_nilpotent
+- \+ *abbreviation* lie_algebra.is_nilpotent
 - \+ *lemma* lie_algebra.nilpotent_iff_equiv_nilpotent
 - \+ *lemma* lie_ideal.lower_central_series_map_eq
 - \+ *lemma* lie_ideal.lower_central_series_map_le
@@ -1940,6 +1942,7 @@ Modified src/category_theory/skeletal.lean
 - \+ *def* category_theory.thin_skeleton.lower_adjunction
 
 Added src/category_theory/subobject.lean
+- \+ *abbreviation* category_theory.mono_over.arrow
 - \+ *lemma* category_theory.mono_over.bot_arrow
 - \+ *def* category_theory.mono_over.bot_le
 - \+ *lemma* category_theory.mono_over.bot_left
@@ -1949,6 +1952,7 @@ Added src/category_theory/subobject.lean
 - \+ *def* category_theory.mono_over.forget_image
 - \+ *lemma* category_theory.mono_over.forget_obj_hom
 - \+ *lemma* category_theory.mono_over.forget_obj_left
+- \+ *abbreviation* category_theory.mono_over.hom_mk
 - \+ *def* category_theory.mono_over.image
 - \+ *def* category_theory.mono_over.image_forget_adj
 - \+ *def* category_theory.mono_over.inf
@@ -2022,6 +2026,7 @@ Added src/category_theory/subobject.lean
 - \+ *lemma* category_theory.subobject.map_pullback
 - \+ *def* category_theory.subobject.map_pullback_adj
 - \+ *lemma* category_theory.subobject.map_top
+- \+ *abbreviation* category_theory.subobject.mk
 - \+ *lemma* category_theory.subobject.prod_eq_inf
 - \+ *def* category_theory.subobject.pullback
 - \+ *lemma* category_theory.subobject.pullback_comp
@@ -3004,6 +3009,7 @@ Added src/topology/locally_constant/basic.lean
 - \+ *lemma* locally_constant.map_id
 - \+ *lemma* locally_constant.range_finite
 - \+ *lemma* locally_constant.to_fun_eq_coe
+- \+ *structure* locally_constant
 
 
 
@@ -3150,6 +3156,7 @@ Added src/algebra/regular.lean
 - \+ *lemma* is_left_regular_zero_iff_subsingleton
 - \+ *lemma* is_regular.and_of_mul_of_mul
 - \+ *lemma* is_regular.subsingleton
+- \+ *structure* is_regular
 - \+ *lemma* is_regular_iff_subsingleton
 - \+ *lemma* is_regular_mul_and_mul_iff
 - \+ *lemma* is_regular_mul_iff
@@ -3669,6 +3676,7 @@ Added src/order/pfilter.lean
 - \+ *def* pfilter.principal
 - \+ *lemma* pfilter.principal_le_iff
 - \+ *lemma* pfilter.top_mem
+- \+ *structure* pfilter
 
 
 
@@ -3878,6 +3886,7 @@ Modified src/representation_theory/maschke.lean
 Modified src/ring_theory/simple_module.lean
 - \+ *theorem* is_semisimple_iff_top_eq_Sup_simples
 - \+ *theorem* is_semisimple_module.Sup_simples_eq_top
+- \+ *abbreviation* is_semisimple_module
 - \+ *theorem* is_semisimple_of_Sup_simples_eq_top
 - \+ *lemma* is_simple_module.is_atom
 - \+ *theorem* is_simple_module_iff_is_atom
@@ -4997,6 +5006,7 @@ Modified src/data/matrix/basic.lean
 - \+ *lemma* matrix.star_mul
 
 Added src/linear_algebra/unitary_group.lean
+- \+ *abbreviation* matrix.orthogonal_group
 - \+ *lemma* matrix.unitary_group.coe_to_GL
 - \+ *def* matrix.unitary_group.embedding_GL
 - \+ *lemma* matrix.unitary_group.ext
@@ -5131,6 +5141,7 @@ Modified src/analysis/normed_space/banach.lean
 - \+ *lemma* continuous_linear_map.exists_nonlinear_right_inverse_of_surjective
 - \+ *lemma* continuous_linear_map.nonlinear_right_inverse.bound
 - \+ *lemma* continuous_linear_map.nonlinear_right_inverse.right_inv
+- \+ *structure* continuous_linear_map.nonlinear_right_inverse
 - \+ *lemma* continuous_linear_map.nonlinear_right_inverse_of_surjective_nnnorm_pos
 
 Modified src/data/equiv/basic.lean
@@ -5309,6 +5320,8 @@ Added src/computability/epsilon_NFA.lean
 - \+ *def* ε_NFA.to_NFA
 - \+ *lemma* ε_NFA.to_NFA_correct
 - \+ *lemma* ε_NFA.to_NFA_eval_from_match
+- \+ *inductive* ε_NFA.ε_closure
+- \+ *structure* ε_NFA
 
 
 
@@ -5757,6 +5770,7 @@ Modified src/analysis/normed_space/hahn_banach.lean
 Modified src/analysis/normed_space/operator_norm.lean
 - \+ *lemma* continuous_linear_equiv.coe_to_span_nonzero_singleton_symm
 - \+ *def* continuous_linear_equiv.coord
+- \- *abbreviation* continuous_linear_equiv.coord
 - \+/\- *lemma* continuous_linear_equiv.coord_norm
 - \+/\- *lemma* continuous_linear_equiv.coord_self
 - \+ *lemma* continuous_linear_equiv.coord_to_span_nonzero_singleton
@@ -5997,6 +6011,7 @@ Modified src/topology/topological_fiber_bundle.lean
 - \+ *lemma* bundle_trivialization.proj_symm_apply'
 - \+ *lemma* bundle_trivialization.proj_symm_apply
 - \+ *lemma* bundle_trivialization.symm_apply_mk_proj
+- \+/\- *structure* bundle_trivialization
 - \+ *lemma* is_topological_fiber_bundle.comap
 - \+ *lemma* is_topological_fiber_bundle.comp_homeomorph
 - \+/\- *def* is_topological_fiber_bundle
@@ -6167,6 +6182,7 @@ Modified src/algebra/lie/basic.lean
 - \- *lemma* lie_algebra.equiv.symm_trans_apply
 - \- *def* lie_algebra.equiv.trans
 - \- *lemma* lie_algebra.equiv.trans_apply
+- \- *structure* lie_algebra.equiv
 - \- *lemma* lie_algebra.map_lie
 - \- *lemma* lie_algebra.map_zero
 - \- *lemma* lie_algebra.morphism.coe_injective
@@ -6178,6 +6194,7 @@ Modified src/algebra/lie/basic.lean
 - \- *def* lie_algebra.morphism.inverse
 - \- *lemma* lie_algebra.morphism.map_add
 - \- *lemma* lie_algebra.morphism.map_smul
+- \- *structure* lie_algebra.morphism
 - \+ *lemma* lie_equiv.apply_symm_apply
 - \+ *lemma* lie_equiv.bijective
 - \+ *lemma* lie_equiv.coe_to_lie_equiv
@@ -6193,6 +6210,7 @@ Modified src/algebra/lie/basic.lean
 - \+ *lemma* lie_equiv.symm_trans_apply
 - \+ *def* lie_equiv.trans
 - \+ *lemma* lie_equiv.trans_apply
+- \+ *structure* lie_equiv
 - \+ *lemma* lie_hom.coe_injective
 - \+ *lemma* lie_hom.coe_mk
 - \+ *lemma* lie_hom.coe_to_linear_map
@@ -6206,6 +6224,7 @@ Modified src/algebra/lie/basic.lean
 - \+ *lemma* lie_hom.map_lie
 - \+ *lemma* lie_hom.map_smul
 - \+ *lemma* lie_hom.map_zero
+- \+ *structure* lie_hom
 - \- *lemma* lie_module_hom.map_lie'
 - \+ *lemma* lie_module_hom.map_lie
 
@@ -6561,8 +6580,10 @@ Added src/algebra/lie/abelian.lean
 - \+ *lemma* commutative_ring_iff_abelian_lie_ring
 - \+ *lemma* function.injective.is_lie_abelian
 - \+ *lemma* function.surjective.is_lie_abelian
+- \+ *abbreviation* is_lie_abelian
 - \+ *lemma* lie_abelian_iff_equiv_lie_abelian
 - \+ *lemma* lie_algebra.abelian_of_le_center
+- \+ *abbreviation* lie_algebra.center
 - \+ *lemma* lie_algebra.center_eq_adjoint_kernel
 - \+ *lemma* lie_algebra.is_lie_abelian_bot
 - \+ *lemma* lie_algebra.is_lie_abelian_iff_center_eq_top
@@ -6581,6 +6602,7 @@ Modified src/algebra/lie/basic.lean
 - \- *lemma* commutative_ring_iff_abelian_lie_ring
 - \- *lemma* function.injective.is_lie_abelian
 - \- *lemma* function.surjective.is_lie_abelian
+- \- *abbreviation* is_lie_abelian
 - \- *lemma* lie_abelian_iff_equiv_lie_abelian
 - \- *lemma* lie_algebra.abelian_derived_abelian_of_ideal
 - \- *lemma* lie_algebra.abelian_iff_derived_one_eq_bot
@@ -6591,11 +6613,13 @@ Modified src/algebra/lie/basic.lean
 - \- *lemma* lie_algebra.abelian_radical_of_semisimple
 - \- *def* lie_algebra.ad
 - \- *lemma* lie_algebra.ad_apply
+- \- *abbreviation* lie_algebra.center
 - \- *lemma* lie_algebra.center_eq_adjoint_kernel
 - \- *lemma* lie_algebra.center_eq_bot_of_semisimple
 - \- *lemma* lie_algebra.center_le_radical
 - \- *lemma* lie_algebra.derived_length_eq_derived_length_of_ideal
 - \- *lemma* lie_algebra.derived_length_zero
+- \- *abbreviation* lie_algebra.derived_series
 - \- *lemma* lie_algebra.derived_series_def
 - \- *lemma* lie_algebra.derived_series_of_bot_eq_bot
 - \- *lemma* lie_algebra.derived_series_of_derived_length_succ
@@ -6695,6 +6719,7 @@ Modified src/algebra/lie/basic.lean
 - \- *lemma* lie_ideal.mem_comap
 - \- *lemma* lie_ideal.mem_map
 - \- *lemma* lie_ideal.subsingleton_of_bot
+- \- *abbreviation* lie_ideal
 - \- *def* lie_ideal_subalgebra
 - \- *lemma* lie_mem_left
 - \- *lemma* lie_mem_right
@@ -6729,6 +6754,7 @@ Modified src/algebra/lie/basic.lean
 - \- *lemma* lie_subalgebra.smul_mem
 - \- *lemma* lie_subalgebra.to_submodule_injective
 - \- *lemma* lie_subalgebra.zero_mem
+- \- *structure* lie_subalgebra
 - \- *def* lie_subalgebra_of_subalgebra
 - \- *lemma* lie_submodule.Inf_coe
 - \- *lemma* lie_submodule.Inf_coe_to_submodule
@@ -6791,7 +6817,9 @@ Modified src/algebra/lie/basic.lean
 - \- *def* lie_submodule.quotient.action_as_endo_map_bracket
 - \- *lemma* lie_submodule.quotient.is_quotient_mk
 - \- *def* lie_submodule.quotient.lie_submodule_invariant
+- \- *abbreviation* lie_submodule.quotient.mk
 - \- *lemma* lie_submodule.quotient.mk_bracket
+- \- *abbreviation* lie_submodule.quotient
 - \- *lemma* lie_submodule.submodule_span_le_lie_span
 - \- *lemma* lie_submodule.subset_lie_span
 - \- *lemma* lie_submodule.subsingleton_of_bot
@@ -6802,6 +6830,7 @@ Modified src/algebra/lie/basic.lean
 - \- *lemma* lie_submodule.trivial_lie_oper_zero
 - \- *lemma* lie_submodule.well_founded_of_noetherian
 - \- *lemma* lie_submodule.zero_mem
+- \- *structure* lie_submodule
 - \- *def* linear_equiv.lie_conj
 - \- *lemma* linear_equiv.lie_conj_apply
 - \- *lemma* linear_equiv.lie_conj_symm
@@ -6881,7 +6910,9 @@ Added src/algebra/lie/quotient.lean
 - \+ *def* lie_submodule.quotient.action_as_endo_map_bracket
 - \+ *lemma* lie_submodule.quotient.is_quotient_mk
 - \+ *def* lie_submodule.quotient.lie_submodule_invariant
+- \+ *abbreviation* lie_submodule.quotient.mk
 - \+ *lemma* lie_submodule.quotient.mk_bracket
+- \+ *abbreviation* lie_submodule.quotient
 
 Added src/algebra/lie/semisimple.lean
 - \+ *lemma* lie_algebra.abelian_radical_iff_solvable_is_abelian
@@ -6902,6 +6933,7 @@ Added src/algebra/lie/solvable.lean
 - \+ *lemma* lie_algebra.center_le_radical
 - \+ *lemma* lie_algebra.derived_length_eq_derived_length_of_ideal
 - \+ *lemma* lie_algebra.derived_length_zero
+- \+ *abbreviation* lie_algebra.derived_series
 - \+ *lemma* lie_algebra.derived_series_def
 - \+ *lemma* lie_algebra.derived_series_of_bot_eq_bot
 - \+ *lemma* lie_algebra.derived_series_of_derived_length_succ
@@ -6957,6 +6989,7 @@ Added src/algebra/lie/subalgebra.lean
 - \+ *lemma* lie_subalgebra.smul_mem
 - \+ *lemma* lie_subalgebra.to_submodule_injective
 - \+ *lemma* lie_subalgebra.zero_mem
+- \+ *structure* lie_subalgebra
 
 Added src/algebra/lie/submodule.lean
 - \+ *def* lie_algebra.morphism.ideal_range
@@ -7006,6 +7039,7 @@ Added src/algebra/lie/submodule.lean
 - \+ *lemma* lie_ideal.mem_comap
 - \+ *lemma* lie_ideal.mem_map
 - \+ *lemma* lie_ideal.subsingleton_of_bot
+- \+ *abbreviation* lie_ideal
 - \+ *def* lie_ideal_subalgebra
 - \+ *lemma* lie_mem_left
 - \+ *lemma* lie_mem_right
@@ -7058,6 +7092,7 @@ Added src/algebra/lie/submodule.lean
 - \+ *lemma* lie_submodule.top_coe_submodule
 - \+ *lemma* lie_submodule.well_founded_of_noetherian
 - \+ *lemma* lie_submodule.zero_mem
+- \+ *structure* lie_submodule
 
 Modified src/algebra/lie/universal_enveloping.lean
 
@@ -7856,7 +7891,9 @@ Modified src/category_theory/monad/adjunction.lean
 - \+/\- *def* category_theory.monad.comparison_forget
 
 Modified src/category_theory/monad/algebra.lean
+- \+/\- *structure* category_theory.comonad.coalgebra
 - \+/\- *def* category_theory.monad.adj
+- \+/\- *structure* category_theory.monad.algebra
 - \+ *def* category_theory.monad.algebra_equiv_of_iso_monads
 - \+ *lemma* category_theory.monad.algebra_equiv_of_iso_monads_comp_forget
 - \+ *def* category_theory.monad.algebra_functor_of_monad_hom
@@ -7874,6 +7911,7 @@ Modified src/category_theory/monad/basic.lean
 - \+ *def* category_theory.comonad.simps.ε'
 - \+ *def* category_theory.comonad.δ
 - \+ *def* category_theory.comonad.ε
+- \+ *structure* category_theory.comonad
 - \- *lemma* category_theory.comonad_hom.assoc
 - \- *def* category_theory.comonad_hom.comp
 - \- *lemma* category_theory.comonad_hom.comp_id
@@ -7881,6 +7919,7 @@ Modified src/category_theory/monad/basic.lean
 - \- *def* category_theory.comonad_hom.id
 - \- *lemma* category_theory.comonad_hom.id_comp
 - \+ *lemma* category_theory.comonad_hom.id_to_nat_trans
+- \+/\- *structure* category_theory.comonad_hom
 - \+ *def* category_theory.comonad_iso.to_nat_iso
 - \+ *def* category_theory.comonad_to_functor
 - \+ *lemma* category_theory.comonad_to_functor_eq_coe
@@ -7894,6 +7933,7 @@ Modified src/category_theory/monad/basic.lean
 - \+ *def* category_theory.monad.simps.μ'
 - \+ *def* category_theory.monad.η
 - \+ *def* category_theory.monad.μ
+- \+ *structure* category_theory.monad
 - \- *lemma* category_theory.monad_hom.assoc
 - \- *def* category_theory.monad_hom.comp
 - \- *lemma* category_theory.monad_hom.comp_id
@@ -7902,6 +7942,7 @@ Modified src/category_theory/monad/basic.lean
 - \- *def* category_theory.monad_hom.id
 - \- *lemma* category_theory.monad_hom.id_comp
 - \+ *lemma* category_theory.monad_hom.id_to_nat_trans
+- \+/\- *structure* category_theory.monad_hom
 - \+ *def* category_theory.monad_iso.to_nat_iso
 - \+ *def* category_theory.monad_to_functor
 - \+ *lemma* category_theory.monad_to_functor_eq_coe
@@ -7912,11 +7953,13 @@ Modified src/category_theory/monad/bundled.lean
 - \- *def* category_theory.Comonad.forget
 - \- *def* category_theory.Comonad.hom
 - \- *def* category_theory.Comonad.terminal
+- \- *structure* category_theory.Comonad
 - \- *lemma* category_theory.Monad.assoc_func_app
 - \- *lemma* category_theory.Monad.comp_to_nat_trans
 - \- *def* category_theory.Monad.forget
 - \- *def* category_theory.Monad.hom
 - \- *def* category_theory.Monad.initial
+- \- *structure* category_theory.Monad
 
 Modified src/category_theory/monad/coequalizer.lean
 - \+/\- *def* category_theory.monad.beck_cofork
@@ -8370,6 +8413,7 @@ Modified src/group_theory/perm/sign.lean
 - \+ *lemma* equiv.perm.perm_inv_maps_to_of_maps_to
 - \+ *lemma* equiv.perm.perm_inv_on_of_perm_on_finset
 - \+ *lemma* equiv.perm.perm_inv_on_of_perm_on_fintype
+- \+ *abbreviation* equiv.perm.subtype_perm_of_fintype
 - \+ *lemma* equiv.perm.subtype_perm_of_fintype_apply
 - \+ *lemma* equiv.perm.subtype_perm_of_fintype_one
 
@@ -8843,6 +8887,7 @@ Modified src/algebra/lie/basic.lean
 - \+ *lemma* lie_algebra.abelian_radical_iff_solvable_is_abelian
 - \+ *lemma* lie_algebra.abelian_radical_of_semisimple
 - \+/\- *def* lie_algebra.ad
+- \+ *abbreviation* lie_algebra.center
 - \+ *lemma* lie_algebra.center_eq_adjoint_kernel
 - \+ *lemma* lie_algebra.center_eq_bot_of_semisimple
 - \+ *lemma* lie_algebra.center_le_radical
@@ -9251,8 +9296,10 @@ Added src/category_theory/connected_components.lean
 - \+ *def* category_theory.component.ι
 - \+ *def* category_theory.component
 - \+ *def* category_theory.connected_components
+- \+ *abbreviation* category_theory.decomposed
 - \+ *def* category_theory.decomposed_equiv
 - \+ *def* category_theory.decomposed_to
+- \+ *abbreviation* category_theory.inclusion
 - \+ *lemma* category_theory.inclusion_comp_decomposed_to
 
 
@@ -10770,6 +10817,7 @@ Modified src/data/real/basic.lean
 - \+ *lemma* real.one_cauchy
 - \- *theorem* real.quotient_mk_eq_mk
 - \+ *lemma* real.zero_cauchy
+- \+ *structure* real
 - \- *def* real
 
 Modified src/data/real/cardinality.lean
@@ -12426,7 +12474,7 @@ Modified src/algebra/group/prod.lean
 - \+/\- *lemma* mul_equiv.coe_prod_comm
 
 Modified src/algebra/quandle.lean
-
+- \+/\- *inductive* rack.pre_envel_group_rel'
 
 Modified src/algebra/ring_quot.lean
 - \+/\- *lemma* ring_quot.lift_alg_hom_mk_alg_hom_apply
@@ -12456,6 +12504,7 @@ Modified src/category_theory/limits/limits.lean
 
 Modified src/category_theory/limits/shapes/binary_products.lean
 - \+/\- *lemma* category_theory.limits.coprod.associator_naturality
+- \+/\- *abbreviation* category_theory.limits.coprod.desc
 - \+/\- *lemma* category_theory.limits.coprod.desc_comp
 - \+/\- *lemma* category_theory.limits.coprod.map_codiag
 - \+/\- *lemma* category_theory.limits.coprod.map_inl_inr_codiag
@@ -12514,6 +12563,7 @@ Modified src/data/mv_polynomial/equiv.lean
 
 Modified src/order/filter/bases.lean
 - \+/\- *lemma* filter.generate_eq_generate_inter
+- \+/\- *structure* filter.has_countable_basis
 
 Modified src/order/filter/basic.lean
 

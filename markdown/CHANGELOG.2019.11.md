@@ -1278,7 +1278,7 @@ Modified src/tactic/ext.lean
 
 
 Modified test/ext.lean
-
+- \+ *structure* dumb
 
 
 
@@ -1717,6 +1717,8 @@ Modified src/data/setoid.lean
 
 
 Added src/group_theory/congruence.lean
+- \+ *structure* add_con
+- \+ *inductive* add_con_gen.rel
 - \+ *lemma* con.Inf_def
 - \+ *lemma* con.Inf_le
 - \+ *lemma* con.Inf_to_setoid
@@ -1743,6 +1745,8 @@ Added src/group_theory/congruence.lean
 - \+ *lemma* con.sup_def
 - \+ *lemma* con.sup_eq_con_gen
 - \+ *lemma* con.to_setoid_inj
+- \+ *structure* con
+- \+ *inductive* con_gen.rel
 - \+ *def* con_gen
 
 
@@ -2494,6 +2498,8 @@ Modified src/algebra/ring.lean
 Modified src/data/equiv/algebra.lean
 - \+ *def* mul_equiv.mk'
 - \+ *def* mul_equiv.to_ring_equiv
+- \+ *abbreviation* ring_equiv.to_add_monoid_hom
+- \+ *abbreviation* ring_equiv.to_monoid_hom
 
 Modified src/group_theory/coset.lean
 - \+/\- *lemma* mem_own_right_coset
@@ -2508,6 +2514,7 @@ Modified src/group_theory/submonoid.lean
 - \+ *def* add_submonoid.of_submonoid
 - \+ *lemma* add_submonoid.smul_mem
 - \+ *def* add_submonoid.to_submonoid
+- \+ *structure* add_submonoid
 - \+/\- *lemma* is_submonoid.coe_pow
 - \+ *def* monoid.closure'
 - \+ *theorem* monoid.closure'_le
@@ -2559,6 +2566,7 @@ Modified src/group_theory/submonoid.lean
 - \+ *lemma* submonoid.subtype_eq_val
 - \+ *def* submonoid.to_add_submonoid
 - \+ *def* submonoid.univ
+- \+ *structure* submonoid
 
 
 
@@ -2683,7 +2691,7 @@ Added src/algebra/lie_algebra.lean
 - \+ *lemma* zero_lie
 
 Modified src/algebra/module.lean
-
+- \+ *abbreviation* module.End
 
 Modified src/ring_theory/algebra.lean
 
@@ -3772,7 +3780,7 @@ Modified test/ext.lean
 - \+/\- *lemma* unit.ext
 
 Modified test/tactics.lean
-
+- \+ *structure* foo
 
 
 

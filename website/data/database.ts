@@ -1,9 +1,12 @@
 import { get, keyBy, memoize, set } from "lodash";
 import {
   ChangelogItemData,
+  extractAbbreviationsData,
   extractDefsData,
+  extractInductivesData,
   extractItemsData,
   extractLemmasData,
+  extractStructuresData,
   extractTheoremsData,
 } from "./extractDataFromChangelog";
 import loadCommitData from "./loadCommitData";
@@ -17,7 +20,16 @@ import { CommitData } from "./types";
 export const getItems = memoize(() => extractItemsData(loadCommitData()));
 export const getLemmas = memoize(() => extractLemmasData(loadCommitData()));
 export const getTheorems = memoize(() => extractTheoremsData(loadCommitData()));
+export const getInductives = memoize(() =>
+  extractInductivesData(loadCommitData())
+);
 export const getDefs = memoize(() => extractDefsData(loadCommitData()));
+export const getStructures = memoize(() =>
+  extractStructuresData(loadCommitData())
+);
+export const getAbbreviations = memoize(() =>
+  extractAbbreviationsData(loadCommitData())
+);
 export const getCommits = memoize(() => loadCommitData().commits);
 
 interface ItemsLookupTable {
@@ -52,5 +64,14 @@ export const getTheorem = (name: string) =>
 
 export const getDef = (name: string) =>
   get(getItemsLookupTable(), ["def", name]);
+
+export const getStructure = (name: string) =>
+  get(getItemsLookupTable(), ["structure", name]);
+
+export const getAbbreviation = (name: string) =>
+  get(getItemsLookupTable(), ["abbreviation", name]);
+
+export const getInductive = (name: string) =>
+  get(getItemsLookupTable(), ["inductive", name]);
 
 export const getCommit = (sha: string) => geCommitsLookupTable()[sha];

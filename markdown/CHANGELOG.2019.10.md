@@ -1157,6 +1157,7 @@ Modified src/linear_algebra/dual.lean
 - \+ *lemma* dual_pair.is_basis
 - \+ *def* dual_pair.lc
 - \+ *lemma* dual_pair.mem_of_mem_span
+- \+ *structure* dual_pair
 - \+/\- *lemma* is_basis.to_dual_to_dual
 
 Modified src/linear_algebra/finite_dimensional.lean
@@ -1205,6 +1206,7 @@ Added src/geometry/manifold/smooth_manifold_with_corners.lean
 - \+ *lemma* model_with_corners.image
 - \+ *def* model_with_corners.prod
 - \+ *def* model_with_corners.tangent
+- \+ *structure* model_with_corners
 - \+ *def* model_with_corners_euclidean_half_space
 - \+ *lemma* model_with_corners_inv_fun_comp
 - \+ *lemma* model_with_corners_left_inv
@@ -1237,6 +1239,7 @@ feat(topology/topological_fiber_bundle): topological fiber bundles ([#1421](http
 #### Estimated changes
 Added src/topology/topological_fiber_bundle.lean
 - \+ *lemma* bundle_trivialization.continuous_at_proj
+- \+ *structure* bundle_trivialization
 - \+ *lemma* is_topological_fiber_bundle.continuous_proj
 - \+ *lemma* is_topological_fiber_bundle.is_open_map_proj
 - \+ *def* is_topological_fiber_bundle
@@ -1273,6 +1276,7 @@ Added src/topology/topological_fiber_bundle.lean
 - \+ *def* topological_fiber_bundle_core.proj
 - \+ *def* topological_fiber_bundle_core.total_space
 - \+ *def* topological_fiber_bundle_core.triv_change
+- \+ *structure* topological_fiber_bundle_core
 
 
 
@@ -1423,12 +1427,14 @@ Modified src/tactic/core.lean
 
 Deleted src/tactic/library_search.lean
 - \- *def* tactic.library_search.head_symbol_match.to_string
+- \- *inductive* tactic.library_search.head_symbol_match
 
 Modified src/tactic/rewrite_all/congr.lean
 
 
 Added src/tactic/suggest.lean
 - \+ *def* tactic.suggest.head_symbol_match.to_string
+- \+ *inductive* tactic.suggest.head_symbol_match
 
 Modified test/library_search/basic.lean
 
@@ -2022,6 +2028,7 @@ Modified src/topology/constructions.lean
 - \- *lemma* homeomorph.self_comp_symm
 - \- *def* homeomorph.sigma_prod_distrib
 - \- *lemma* homeomorph.symm_comp_self
+- \- *structure* homeomorph
 - \+ *lemma* inducing.prod_mk
 - \- *lemma* is_closed_diagonal
 - \- *lemma* is_closed_eq
@@ -2066,6 +2073,7 @@ Added src/topology/homeomorph.lean
 - \+ *lemma* homeomorph.self_comp_symm
 - \+ *def* homeomorph.sigma_prod_distrib
 - \+ *lemma* homeomorph.symm_comp_self
+- \+ *structure* homeomorph
 
 Modified src/topology/local_homeomorph.lean
 
@@ -2302,6 +2310,7 @@ Modified src/linear_algebra/basic.lean
 - \+/\- *theorem* linear_equiv.symm_apply_apply
 - \+/\- *lemma* linear_equiv.to_equiv_injective
 - \+/\- *def* linear_equiv.trans
+- \+/\- *structure* linear_equiv
 - \+/\- *lemma* linear_map.add_apply
 - \+/\- *def* linear_map.cod_restrict
 - \+/\- *theorem* linear_map.cod_restrict_apply
@@ -2642,6 +2651,7 @@ Modified src/linear_algebra/bilinear_form.lean
 - \+/\- *def* bilin_form.to_linear_map
 - \+/\- *lemma* bilin_form.zero_left
 - \+/\- *lemma* bilin_form.zero_right
+- \+/\- *structure* bilin_form
 - \+/\- *def* linear_map.to_bilin
 - \+/\- *lemma* refl_bilin_form.eq_zero
 - \+/\- *def* refl_bilin_form.is_refl
@@ -2800,6 +2810,7 @@ Modified src/linear_algebra/sesquilinear_form.lean
 - \+/\- *lemma* sesq_form.sub_right
 - \+/\- *lemma* sesq_form.zero_left
 - \+/\- *lemma* sesq_form.zero_right
+- \+/\- *structure* sesq_form
 - \+/\- *lemma* sym_sesq_form.is_refl
 - \+/\- *def* sym_sesq_form.is_sym
 - \+/\- *lemma* sym_sesq_form.ortho_sym
@@ -3153,6 +3164,7 @@ Added src/topology/dense_embedding.lean
 - \+ *lemma* dense_embedding.inj_iff
 - \+ *theorem* dense_embedding.mk'
 - \+ *lemma* dense_embedding.to_embedding
+- \+ *structure* dense_embedding
 - \+ *lemma* dense_inducing.closure_image_nhds_of_nhds
 - \+ *lemma* dense_inducing.closure_range
 - \+ *lemma* dense_inducing.comap_nhds_neq_bot
@@ -3166,6 +3178,7 @@ Added src/topology/dense_embedding.lean
 - \+ *lemma* dense_inducing.self_sub_closure_image_preimage_of_open
 - \+ *lemma* dense_inducing.tendsto_comap_nhds_nhds
 - \+ *lemma* dense_inducing.tendsto_extend
+- \+ *structure* dense_inducing
 - \+ *lemma* dense_range.comp
 - \+ *def* dense_range.inhabited
 - \+ *lemma* dense_range.nonempty
@@ -3176,6 +3189,7 @@ Modified src/topology/maps.lean
 - \- *lemma* dense_embedding.inj_iff
 - \- *theorem* dense_embedding.mk'
 - \- *lemma* dense_embedding.to_embedding
+- \- *structure* dense_embedding
 - \- *lemma* dense_inducing.closure_image_nhds_of_nhds
 - \- *lemma* dense_inducing.closure_range
 - \- *lemma* dense_inducing.comap_nhds_neq_bot
@@ -3189,6 +3203,7 @@ Modified src/topology/maps.lean
 - \- *lemma* dense_inducing.self_sub_closure_image_preimage_of_open
 - \- *lemma* dense_inducing.tendsto_comap_nhds_nhds
 - \- *lemma* dense_inducing.tendsto_extend
+- \- *structure* dense_inducing
 - \- *lemma* dense_range.comp
 - \- *def* dense_range.inhabited
 - \- *lemma* dense_range.nonempty
@@ -3362,6 +3377,7 @@ Added src/algebra/category/Module/basic.lean
 - \+ *lemma* Module.coe_comp
 - \+ *lemma* Module.id_apply
 - \+ *def* Module.of
+- \+ *structure* Module
 
 Modified src/algebra/punit_instances.lean
 
@@ -3789,6 +3805,7 @@ Modified src/topology/uniform_space/compare_reals.lean
 - \+/\- *def* compare_reals.Q
 
 Modified test/delta_instance.lean
+- \+ *inductive* P
 - \+ *def* S
 - \+ *def* X
 - \+ *def* id_ring

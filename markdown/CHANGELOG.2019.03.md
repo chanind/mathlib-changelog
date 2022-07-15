@@ -142,6 +142,7 @@ Added src/data/zsqrtd/basic.lean
 - \+ *def* zsqrtd.zero
 - \+ *theorem* zsqrtd.zero_im
 - \+ *theorem* zsqrtd.zero_re
+- \+ *structure* zsqrtd
 
 Renamed src/data/gaussian_int.lean to src/data/zsqrtd/gaussian_int.lean
 
@@ -231,6 +232,7 @@ Modified src/number_theory/pell.lean
 - \- *def* zsqrtd.zero
 - \- *theorem* zsqrtd.zero_im
 - \- *theorem* zsqrtd.zero_re
+- \- *structure* zsqrtd
 
 Modified src/number_theory/sum_two_squares.lean
 
@@ -360,6 +362,7 @@ Modified src/tactic/interactive.lean
 
 Added src/tactic/library_search.lean
 - \+ *def* tactic.library_search.head_symbol_match.to_string
+- \+ *inductive* tactic.library_search.head_symbol_match
 
 Added test/library_search/basic.lean
 
@@ -597,6 +600,7 @@ Modified src/analysis/normed_space/bounded_linear_maps.lean
 - \+/\- *lemma* is_bounded_linear_map.tendsto
 - \+/\- *def* is_bounded_linear_map.to_linear_map
 - \+/\- *lemma* is_bounded_linear_map.zero
+- \+/\- *structure* is_bounded_linear_map
 
 Modified src/analysis/normed_space/deriv.lean
 - \+/\- *theorem* has_fderiv_at.is_o
@@ -1040,10 +1044,12 @@ Modified src/data/equiv/algebra.lean
 - \+ *def* add_equiv.refl
 - \+ *def* add_equiv.symm
 - \+ *def* add_equiv.trans
+- \+ *structure* add_equiv
 - \+ *lemma* mul_equiv.one
 - \+ *def* mul_equiv.refl
 - \+ *def* mul_equiv.symm
 - \+ *def* mul_equiv.trans
+- \+ *structure* mul_equiv
 - \+ *def* units.map_equiv
 
 
@@ -3016,6 +3022,7 @@ Modified src/topology/basic.lean
 - \- *def* topological_space.closeds
 - \- *def* topological_space.coinduced
 - \- *def* topological_space.generate_from
+- \- *inductive* topological_space.generate_open
 - \- *def* topological_space.induced
 - \- *lemma* topological_space.is_open_Union_countable
 - \- *lemma* topological_space.is_open_generated_countable_inter
@@ -3112,6 +3119,7 @@ Renamed src/topology/continuity.lean to src/topology/constructions.lean
 - \- *lemma* dense_embedding.self_sub_closure_image_preimage_of_open
 - \- *lemma* dense_embedding.tendsto_comap_nhds_nhds
 - \- *lemma* dense_embedding.tendsto_extend
+- \- *structure* dense_embedding
 - \- *lemma* embedding.closure_eq_preimage_closure_image
 - \- *lemma* embedding.continuous
 - \- *lemma* embedding.continuous_iff
@@ -3156,6 +3164,7 @@ Added src/topology/maps.lean
 - \+ *lemma* dense_embedding.self_sub_closure_image_preimage_of_open
 - \+ *lemma* dense_embedding.tendsto_comap_nhds_nhds
 - \+ *lemma* dense_embedding.tendsto_extend
+- \+ *structure* dense_embedding
 - \+ *lemma* embedding.closure_eq_preimage_closure_image
 - \+ *lemma* embedding.continuous
 - \+ *lemma* embedding.continuous_iff
@@ -3287,6 +3296,7 @@ Added src/topology/order.lean
 - \+ *theorem* tendsto_nhds_within_iff_subtype
 - \+ *def* topological_space.coinduced
 - \+ *def* topological_space.generate_from
+- \+ *inductive* topological_space.generate_open
 - \+ *def* topological_space.induced
 - \+ *lemma* topological_space.nhds_generate_from
 - \+ *lemma* topological_space.nhds_mk_of_nhds
@@ -3647,7 +3657,7 @@ Modified src/data/zmod/quadratic_reciprocity.lean
 - \+ *lemma* zmodp.neg_one_is_square_iff_mod_four_ne_three
 
 Modified src/number_theory/pell.lean
-
+- \+/\- *structure* zsqrtd
 
 Modified src/number_theory/sum_two_squares.lean
 

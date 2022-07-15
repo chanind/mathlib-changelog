@@ -1,3 +1,38 @@
+## [2022-07-15 20:48:43](https://github.com/leanprover-community/mathlib/commit/f23205e)
+feat(data/vector/basic): make the recursor work with `induction _ using` syntax ([#15383](https://github.com/leanprover-community/mathlib/pull/15383))
+The `induction` tactic is picky about the order of its arguments, especially when the motive is dependently-typed. Attempting to use `induction v using vector.induction_on` gives the error:
+> invalid user defined recursor, type of the major premise 'v' does not contain the recursor index 'C'
+which indicates that the argument order has confused Lean into thinking that the motive is an index.
+The cause here was that the motive `C` was between the indices (`n`) and the major premise (`v`).
+#### Estimated changes
+Modified src/data/vector/basic.lean
+
+
+
+
+## [2022-07-15 20:48:42](https://github.com/leanprover-community/mathlib/commit/b560d40)
+feat(data/sum/basic): `sum.lift_rel` is a subrelation of `sum.lex` ([#15358](https://github.com/leanprover-community/mathlib/pull/15358))
+Also trivial spacing fix.
+#### Estimated changes
+Modified src/data/sum/basic.lean
+- \+/\- *lemma* sum.lex.mono_right
+- \+ *lemma* sum.lift_rel_subrelation_lex
+
+
+
+## [2022-07-15 20:48:40](https://github.com/leanprover-community/mathlib/commit/7929a63)
+feat(set_theory/zfc): more `quotient` lemmas ([#15324](https://github.com/leanprover-community/mathlib/pull/15324))
+It seems like we decided to use a custom `mk` definition for `Set` instead of `quotient.mk`. As such, we transfer the basic results on quotients to `Set`, in order to aid rewriting.
+#### Estimated changes
+Modified src/set_theory/zfc.lean
+- \+ *theorem* Set.eq
+- \+ *theorem* Set.exact
+- \+/\- *theorem* Set.mk_eq
+- \+ *theorem* Set.mk_out
+- \+ *theorem* Set.sound
+
+
+
 ## [2022-07-15 18:31:03](https://github.com/leanprover-community/mathlib/commit/15da625)
 chore(analysis/locally_convex): golf a proof ([#15323](https://github.com/leanprover-community/mathlib/pull/15323))
 #### Estimated changes
@@ -641,6 +676,7 @@ Modified src/ring_theory/local_properties.lean
 - \+ *def* ring_hom.of_localization_span_target
 - \+ *lemma* ring_hom.property_is_local.of_localization_span
 - \+ *lemma* ring_hom.property_is_local.respects_iso
+- \+ *structure* ring_hom.property_is_local
 - \+ *lemma* surjective_of_localization_span
 
 Modified src/ring_theory/localization/away.lean
@@ -737,9 +773,11 @@ Modified src/linear_algebra/projective_space/basic.lean
 - \+ *lemma* projectivization.mk_eq_mk_iff'
 
 Added src/linear_algebra/projective_space/independence.lean
+- \+ *inductive* projectivization.dependent
 - \+ *lemma* projectivization.dependent_iff
 - \+ *lemma* projectivization.dependent_iff_not_independent
 - \+ *lemma* projectivization.dependent_pair_iff_eq
+- \+ *inductive* projectivization.independent
 - \+ *lemma* projectivization.independent_iff
 - \+ *lemma* projectivization.independent_iff_complete_lattice_independent
 - \+ *lemma* projectivization.independent_iff_not_dependent
@@ -1501,6 +1539,7 @@ Modified src/topology/category/Top/basic.lean
 
 
 Modified src/topology/maps.lean
+- \+/\- *structure* embedding
 - \+ *lemma* inducing_iff_nhds
 - \+ *lemma* open_embedding.is_open_map_iff
 - \+ *lemma* open_embedding.of_comp
@@ -1886,7 +1925,7 @@ Modified src/tactic/default.lean
 
 
 Added src/tactic/polyrith.lean
-
+- \+ *inductive* polyrith.poly
 
 Added test/polyrith.lean
 
@@ -1925,6 +1964,7 @@ Modified src/representation_theory/basic.lean
 - \+ *lemma* representation.of_mul_action_def
 
 Added src/representation_theory/group_cohomology_resolution.lean
+- \+ *abbreviation* Rep.of_mul_action
 - \+ *def* group_cohomology.resolution.of_tensor
 - \+ *def* group_cohomology.resolution.of_tensor_aux
 - \+ *lemma* group_cohomology.resolution.of_tensor_aux_comm_of_mul_action
@@ -2801,10 +2841,12 @@ Modified src/category_theory/endofunctor/algebra.lean
 - \+ *def* category_theory.endofunctor.coalgebra.functor_of_nat_trans_id
 - \+ *def* category_theory.endofunctor.coalgebra.hom.comp
 - \+ *def* category_theory.endofunctor.coalgebra.hom.id
+- \+ *structure* category_theory.endofunctor.coalgebra.hom
 - \+ *lemma* category_theory.endofunctor.coalgebra.id_eq_id
 - \+ *lemma* category_theory.endofunctor.coalgebra.id_f
 - \+ *def* category_theory.endofunctor.coalgebra.iso_mk
 - \+ *lemma* category_theory.endofunctor.coalgebra.iso_of_iso
+- \+ *structure* category_theory.endofunctor.coalgebra
 
 
 
@@ -2949,6 +2991,7 @@ Modified src/order/bounded_order.lean
 - \+ *lemma* disjoint_to_dual_iff
 - \+/\- *lemma* is_compl.of_eq
 - \+/\- *lemma* is_compl.sup_eq_top
+- \+/\- *structure* is_compl
 - \+ *lemma* symmetric_codisjoint
 
 Modified src/order/compactly_generated.lean
@@ -4844,6 +4887,7 @@ Modified src/algebraic_geometry/presheafed_space.lean
 - \+/\- *lemma* algebraic_geometry.PresheafedSpace.comp_c_app
 - \+/\- *lemma* algebraic_geometry.PresheafedSpace.congr_app
 - \+/\- *def* algebraic_geometry.PresheafedSpace.forget
+- \+/\- *structure* algebraic_geometry.PresheafedSpace.hom
 - \+/\- *def* algebraic_geometry.PresheafedSpace.id
 - \+/\- *lemma* algebraic_geometry.PresheafedSpace.id_base
 - \+/\- *lemma* algebraic_geometry.PresheafedSpace.id_c
@@ -4857,7 +4901,8 @@ Modified src/algebraic_geometry/presheafed_space.lean
 - \+/\- *lemma* category_theory.functor.map_presheaf_map_f
 
 Modified src/algebraic_geometry/presheafed_space/gluing.lean
-
+- \+/\- *structure* algebraic_geometry.PresheafedSpace.glue_data
+- \+/\- *structure* algebraic_geometry.SheafedSpace.glue_data
 
 Modified src/algebraic_geometry/presheafed_space/has_colimits.lean
 - \+/\- *def* algebraic_geometry.PresheafedSpace.colimit
@@ -4882,6 +4927,7 @@ Modified src/algebraic_geometry/sheafed_space.lean
 - \+/\- *def* algebraic_geometry.SheafedSpace.forget_to_PresheafedSpace
 - \- *def* algebraic_geometry.SheafedSpace.punit
 - \+ *def* algebraic_geometry.SheafedSpace.unit
+- \+/\- *structure* algebraic_geometry.SheafedSpace
 
 Modified src/algebraic_geometry/stalks.lean
 - \+/\- *def* algebraic_geometry.PresheafedSpace.restrict_stalk_iso
@@ -5045,8 +5091,11 @@ Modified src/category_theory/limits/preserves/shapes/zero.lean
 
 Modified src/category_theory/limits/shapes/binary_products.lean
 - \+/\- *lemma* category_theory.limits.coprod.map_comp_inl_inr_codiag
+- \+/\- *abbreviation* category_theory.limits.has_binary_coproducts
+- \+/\- *abbreviation* category_theory.limits.has_binary_products
 - \+/\- *def* category_theory.limits.pair
 - \+/\- *lemma* category_theory.limits.prod.diag_map_fst_snd_comp
+- \+/\- *inductive* category_theory.limits.walking_pair
 
 Modified src/category_theory/limits/shapes/biproducts.lean
 - \+ *def* category_theory.limits.bicone.whisker
@@ -5059,8 +5108,11 @@ Modified src/category_theory/limits/shapes/comm_sq.lean
 
 
 Modified src/category_theory/limits/shapes/equalizers.lean
+- \+/\- *abbreviation* category_theory.limits.has_coequalizers
+- \+/\- *abbreviation* category_theory.limits.has_equalizers
 - \+/\- *def* category_theory.limits.parallel_pair.ext
 - \+/\- *def* category_theory.limits.parallel_pair
+- \+/\- *inductive* category_theory.limits.walking_parallel_pair
 - \+/\- *def* category_theory.limits.walking_parallel_pair_op
 - \+/\- *def* category_theory.limits.walking_parallel_pair_op_equiv
 
@@ -5079,14 +5131,22 @@ Modified src/category_theory/limits/shapes/kernels.lean
 
 
 Modified src/category_theory/limits/shapes/multiequalizer.lean
-
+- \+/\- *inductive* category_theory.limits.walking_multicospan.hom
+- \+/\- *inductive* category_theory.limits.walking_multicospan
+- \+/\- *inductive* category_theory.limits.walking_multispan
 
 Modified src/category_theory/limits/shapes/products.lean
+- \+/\- *abbreviation* category_theory.limits.has_coproducts
+- \+/\- *abbreviation* category_theory.limits.has_products
 - \+/\- *lemma* category_theory.limits.has_products_of_limit_fans
 - \+ *lemma* category_theory.limits.has_smallest_coproducts_of_has_coproducts
 - \+ *lemma* category_theory.limits.has_smallest_products_of_has_products
 
 Modified src/category_theory/limits/shapes/pullbacks.lean
+- \+/\- *abbreviation* category_theory.limits.has_pullbacks
+- \+/\- *abbreviation* category_theory.limits.has_pushouts
+- \+/\- *abbreviation* category_theory.limits.walking_cospan.hom
+- \+/\- *abbreviation* category_theory.limits.walking_cospan
 - \- *def* category_theory.limits.walking_cospan_equiv
 - \- *def* category_theory.limits.walking_cospan_functor
 - \- *lemma* category_theory.limits.walking_cospan_functor_id
@@ -5095,6 +5155,8 @@ Modified src/category_theory/limits/shapes/pullbacks.lean
 - \- *lemma* category_theory.limits.walking_cospan_functor_left
 - \- *lemma* category_theory.limits.walking_cospan_functor_one
 - \- *lemma* category_theory.limits.walking_cospan_functor_right
+- \+/\- *abbreviation* category_theory.limits.walking_span.hom
+- \+/\- *abbreviation* category_theory.limits.walking_span
 - \- *def* category_theory.limits.walking_span_equiv
 - \- *def* category_theory.limits.walking_span_functor
 - \- *lemma* category_theory.limits.walking_span_functor_fst
@@ -5110,19 +5172,30 @@ Modified src/category_theory/limits/shapes/split_coequalizer.lean
 Modified src/category_theory/limits/shapes/terminal.lean
 - \+/\- *def* category_theory.limits.as_empty_cocone
 - \+/\- *def* category_theory.limits.as_empty_cone
+- \+/\- *abbreviation* category_theory.limits.has_initial
+- \+/\- *abbreviation* category_theory.limits.has_terminal
+- \+/\- *abbreviation* category_theory.limits.initial
+- \+/\- *abbreviation* category_theory.limits.is_initial
 - \+/\- *def* category_theory.limits.is_initial_equiv_unique
+- \+/\- *abbreviation* category_theory.limits.is_terminal
 - \+/\- *def* category_theory.limits.is_terminal_equiv_unique
+- \+/\- *abbreviation* category_theory.limits.terminal
 
 Modified src/category_theory/limits/shapes/types.lean
 
 
 Modified src/category_theory/limits/shapes/wide_equalizers.lean
-
+- \+/\- *abbreviation* category_theory.limits.has_wide_coequalizers
+- \+/\- *abbreviation* category_theory.limits.has_wide_equalizers
+- \+/\- *inductive* category_theory.limits.walking_parallel_family.hom
+- \+/\- *inductive* category_theory.limits.walking_parallel_family
 
 Modified src/category_theory/limits/shapes/wide_pullbacks.lean
 - \+ *lemma* category_theory.limits.has_wide_pullbacks_shrink
 - \+ *def* category_theory.limits.wide_pullback_shape.equivalence_of_equiv
+- \+/\- *inductive* category_theory.limits.wide_pullback_shape.hom
 - \+ *def* category_theory.limits.wide_pullback_shape.ulift_equivalence
+- \+/\- *inductive* category_theory.limits.wide_pushout_shape.hom
 
 Modified src/category_theory/limits/shapes/zero_morphisms.lean
 
@@ -5148,7 +5221,7 @@ Modified src/category_theory/monoidal/preadditive.lean
 - \+/\- *lemma* category_theory.right_distributor_inv
 
 Modified src/category_theory/preadditive/Mat.lean
-
+- \+/\- *structure* category_theory.Mat_
 
 Modified src/category_theory/preadditive/biproducts.lean
 
@@ -5280,6 +5353,7 @@ In a future PR, we can remove some `unfreezingI`s caused by this.
 #### Estimated changes
 Modified src/algebra/associated.lean
 - \- *lemma* irreducible.not_unit
+- \+ *structure* irreducible
 
 Modified src/algebra/module/pid.lean
 

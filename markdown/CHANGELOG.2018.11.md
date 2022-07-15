@@ -40,6 +40,7 @@ Added category_theory/equivalence.lean
 - \+ *def* category_theory.equivalence.refl
 - \+ *def* category_theory.equivalence.symm
 - \+ *def* category_theory.equivalence.trans
+- \+ *structure* category_theory.equivalence
 - \+ *def* category_theory.functor.as_equivalence
 - \+ *def* category_theory.functor.fun_inv_id
 - \+ *def* category_theory.functor.fun_obj_preimage_iso
@@ -64,6 +65,7 @@ Added tactic/slice.lean
 feat(data/list): separate out list defs into `data.lists.defs`
 #### Estimated changes
 Modified data/list/basic.lean
+- \- *inductive* list.chain
 - \- *theorem* list.chain_cons
 - \- *def* list.choose
 - \- *def* list.choose_x
@@ -96,6 +98,7 @@ Modified data/list/basic.lean
 - \- *def* list.of_fn
 - \- *def* list.of_fn_aux
 - \- *def* list.of_fn_nth_val
+- \- *inductive* list.pairwise
 - \- *theorem* list.pairwise_cons
 - \- *def* list.permutations
 - \- *def* list.permutations_aux.rec
@@ -126,6 +129,7 @@ Modified data/list/basic.lean
 - \- *def* list.transpose_aux
 
 Added data/list/defs.lean
+- \+ *inductive* list.chain
 - \+ *theorem* list.chain_cons
 - \+ *def* list.choose
 - \+ *def* list.choose_x
@@ -158,6 +162,7 @@ Added data/list/defs.lean
 - \+ *def* list.of_fn
 - \+ *def* list.of_fn_aux
 - \+ *def* list.of_fn_nth_val
+- \+ *inductive* list.pairwise
 - \+ *theorem* list.pairwise_cons
 - \+ *def* list.permutations
 - \+ *def* list.permutations_aux.rec
@@ -284,6 +289,7 @@ Added data/finmap.lean
 - \+ *def* finmap.replace
 - \+ *theorem* finmap.replace_to_finmap
 - \+ *def* finmap.singleton
+- \+ *structure* finmap
 - \+ *theorem* multiset.coe_nodupkeys
 - \+ *def* multiset.nodupkeys
 
@@ -319,6 +325,7 @@ Added data/list/alist.lean
 - \+ *theorem* alist.perm_replace
 - \+ *def* alist.replace
 - \+ *def* alist.singleton
+- \+ *structure* alist
 
 Modified data/list/basic.lean
 - \+/\- *theorem* list.erase_append_left
@@ -475,7 +482,9 @@ Added category_theory/comma.lean
 - \+ *def* category_theory.comma.snd
 - \+ *lemma* category_theory.comma.snd_map
 - \+ *lemma* category_theory.comma.snd_obj
+- \+ *structure* category_theory.comma
 - \+ *lemma* category_theory.comma_morphism.ext
+- \+ *structure* category_theory.comma_morphism
 
 Modified category_theory/examples/monoids.lean
 - \+/\- *def* category_theory.examples.CommMon.forget_to_Mon
@@ -498,6 +507,7 @@ Renamed category_theory/embedding.lean to category_theory/fully_faithful.lean
 
 Modified category_theory/functor.lean
 - \+/\- *def* category_theory.bundled.map
+- \+/\- *structure* category_theory.functor
 
 Modified category_theory/functor_category.lean
 - \+ *lemma* category_theory.functor.flip_obj_map
@@ -653,7 +663,9 @@ Modified tactic/interactive.lean
 
 Added tactic/monotonicity/basic.lean
 - \+ *def* tactic.interactive.last_two
+- \+ *structure* tactic.interactive.mono_cfg
 - \+ *def* tactic.interactive.mono_key
+- \+ *inductive* tactic.interactive.mono_selection
 
 Added tactic/monotonicity/default.lean
 
@@ -661,6 +673,7 @@ Added tactic/monotonicity/default.lean
 Added tactic/monotonicity/interactive.lean
 - \+ *lemma* tactic.interactive.apply_rel
 - \+ *def* tactic.interactive.list.minimum_on
+- \+ *inductive* tactic.interactive.rep_arity
 
 Added tactic/monotonicity/lemmas.lean
 - \+ *lemma* gt_of_mul_lt_mul_neg_right
@@ -1331,6 +1344,7 @@ Added data/dfinsupp.lean
 - \+ *lemma* dfinsupp.mk_sub
 - \+ *lemma* dfinsupp.mk_zero
 - \+ *lemma* dfinsupp.neg_apply
+- \+ *structure* dfinsupp.pre
 - \+ *def* dfinsupp.prod
 - \+ *lemma* dfinsupp.prod_add_index
 - \+ *lemma* dfinsupp.prod_finset_sum_index
@@ -1448,6 +1462,7 @@ Added field_theory/perfect_closure.lean
 - \+ *theorem* perfect_closure.nat_cast_eq_iff
 - \+ *def* perfect_closure.of
 - \+ *theorem* perfect_closure.r.sound
+- \+ *inductive* perfect_closure.r
 - \+ *def* perfect_closure
 - \+ *theorem* pth_root_frobenius
 
@@ -1664,6 +1679,7 @@ Modified algebra/module.lean
 - \- *lemma* is_linear_map.sub
 - \- *lemma* is_linear_map.sum
 - \- *lemma* is_linear_map.zero
+- \- *structure* is_linear_map
 - \- *lemma* is_submodule.Inter_submodule
 - \- *lemma* is_submodule.add
 - \- *theorem* is_submodule.eq_univ_of_contains_unit
@@ -1686,6 +1702,8 @@ Modified algebra/module.lean
 - \+ *lemma* linear_map.map_sub
 - \+ *lemma* linear_map.map_sum
 - \+ *lemma* linear_map.map_zero
+- \+ *structure* linear_map
+- \+ *structure* module.core
 - \+ *def* module.of_core
 - \- *theorem* mul_smul'
 - \+/\- *theorem* mul_smul
@@ -1718,6 +1736,7 @@ Modified algebra/module.lean
 - \+ *theorem* submodule.subtype_apply
 - \+ *lemma* submodule.sum_mem
 - \+ *lemma* submodule.zero_mem
+- \+ *structure* submodule
 - \+/\- *def* subspace
 - \- *theorem* zero_smul'
 - \+/\- *theorem* zero_smul
@@ -1863,6 +1882,7 @@ Modified linear_algebra/basic.lean
 - \+/\- *def* linear_equiv.refl
 - \+/\- *def* linear_equiv.symm
 - \+ *theorem* linear_equiv.symm_apply_apply
+- \+/\- *structure* linear_equiv
 - \- *lemma* linear_independent.eq_0_of_span
 - \- *lemma* linear_independent.image
 - \- *lemma* linear_independent.inj_span_iff_inj
@@ -2328,6 +2348,7 @@ Deleted linear_algebra/submodule.lean
 - \- *theorem* submodule.span_union
 - \- *lemma* submodule.subset_comap_quotient
 - \- *theorem* submodule.top_set
+- \- *structure* {u
 
 Deleted linear_algebra/subtype_module.lean
 - \- *lemma* is_submodule.coe_add
@@ -2348,6 +2369,7 @@ Modified linear_algebra/tensor_product.lean
 - \- *theorem* is_bilinear_map.neg_right
 - \- *theorem* is_bilinear_map.zero_left
 - \- *theorem* is_bilinear_map.zero_right
+- \- *structure* is_bilinear_map
 - \+ *def* linear_map.compl₂
 - \+ *theorem* linear_map.compl₂_apply
 - \+ *def* linear_map.compr₂
@@ -2693,6 +2715,7 @@ Modified category_theory/examples/topological_spaces.lean
 - \- *def* category_theory.examples.open_set.map_iso_id
 - \- *def* category_theory.examples.open_set.nbhd
 - \- *def* category_theory.examples.open_set.nbhds
+- \- *structure* category_theory.examples.open_set
 
 
 

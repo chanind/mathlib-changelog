@@ -1654,6 +1654,7 @@ Modified algebra/group.lean
 - \+ *theorem* units.mul_right_inj
 - \+ *lemma* units.one_coe
 - \+ *lemma* units.val_coe
+- \+ *structure* units
 
 Modified algebra/group_power.lean
 
@@ -1722,6 +1723,7 @@ Modified algebra/ring.lean
 - \- *lemma* units.mul_inv
 - \- *lemma* units.one_coe
 - \- *lemma* units.val_coe
+- \- *structure* units
 
 
 
@@ -1743,6 +1745,7 @@ Modified tactic/ring.lean
 - \+ *theorem* tactic.ring.add_neg_eq_sub
 - \+ *theorem* tactic.ring.horner_def'
 - \+ *theorem* tactic.ring.mul_assoc_rev
+- \+ *inductive* tactic.ring.normalize_mode
 - \+ *theorem* tactic.ring.pow_add_rev
 - \+ *theorem* tactic.ring.pow_add_rev_right
 
@@ -2440,6 +2443,7 @@ Modified set_theory/zfc.lean
 - \- *def* pSet.definable.eq
 - \+/\- *def* pSet.definable.eq_mk
 - \+/\- *def* pSet.definable.resp
+- \+/\- *inductive* pSet.definable
 - \+/\- *def* pSet.embed
 - \+ *theorem* pSet.equiv.eq
 - \- *def* pSet.equiv.eq
@@ -2635,6 +2639,7 @@ Added analysis/complex.lean
 - \+ *lemma* complex.sub_re
 - \+ *lemma* complex.zero_im
 - \+ *lemma* complex.zero_re
+- \+ *structure* complex
 
 
 
@@ -3042,6 +3047,7 @@ Added set_theory/ordinal_notation.lean
 - \+ *theorem* onote.NF_below.oadd
 - \+ *theorem* onote.NF_below.repr_lt
 - \+ *theorem* onote.NF_below.snd
+- \+ *inductive* onote.NF_below
 - \+ *theorem* onote.NF_below_iff_top_below
 - \+ *theorem* onote.NF_below_of_nat
 - \+ *theorem* onote.NF_below_zero
@@ -3078,6 +3084,7 @@ Added set_theory/ordinal_notation.lean
 - \+ *def* onote.top_below
 - \+ *theorem* onote.zero_def
 - \+ *theorem* onote.zero_lt_one
+- \+ *inductive* onote
 
 Renamed theories/set_theory.lean to set_theory/zfc.lean
 

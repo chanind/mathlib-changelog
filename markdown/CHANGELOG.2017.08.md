@@ -71,6 +71,7 @@ Added topology/measurable_space.lean
 - \+ *lemma* measurable_space.map_top
 - \+ *lemma* measurable_space.monotone_comap
 - \+ *lemma* measurable_space.monotone_map
+- \+ *structure* measurable_space
 - \+ *lemma* measurable_space_eq
 
 
@@ -120,6 +121,7 @@ Added topology/ennreal.lean
 - \+ *lemma* ennreal.zero_eq_of_real_iff
 - \+ *lemma* ennreal.zero_le_of_ennreal
 - \+ *lemma* ennreal.zero_ne_infty
+- \+ *inductive* ennreal
 - \+ *lemma* zero_le_mul
 
 Modified topology/real.lean
@@ -1624,6 +1626,7 @@ Added tactic/interactive.lean
 
 Added tactic/rcases.lean
 - \+ *def* tactic.rcases_patt.name
+- \+ *inductive* tactic.rcases_patt
 
 
 
@@ -1656,6 +1659,7 @@ Deleted data/lazy_list.lean
 - \- *def* lazy_list.tail
 - \- *def* lazy_list.to_list
 - \- *def* lazy_list.zip
+- \- *inductive* lazy_list
 
 
 
@@ -2948,6 +2952,7 @@ Modified topology/continuity.lean
 - \+ *def* dense_embedding.subtype_emb
 - \+ *lemma* dense_embedding.towards_ext
 - \+ *lemma* dense_embedding.vmap_nhds_neq_bot
+- \+ *structure* dense_embedding
 - \+ *def* embedding
 - \+ *lemma* embedding_closed
 - \+ *lemma* embedding_compose
@@ -3398,6 +3403,7 @@ Modified topology/uniform_space.lean
 - \+ *lemma* uniform_embedding_subtype_emb
 - \+ *lemma* uniform_extend_subtype
 - \+ *def* uniform_space.core.to_topological_space
+- \+ *structure* uniform_space.core
 - \+ *lemma* uniform_space.core_eq
 - \+ *def* uniform_space.of_core
 - \+ *def* uniform_space.of_core_eq

@@ -1614,6 +1614,7 @@ Added archive/imo/imo1981_q3.lean
 - \+ *lemma* problem_predicate.eq_imp_1
 - \+ *lemma* problem_predicate.m_le_n
 - \+ *lemma* problem_predicate.reduction
+- \+ *structure* problem_predicate
 - \+ *lemma* solution_bound
 - \+ *theorem* solution_greatest
 - \+ *def* specified_set
@@ -1737,6 +1738,7 @@ Added src/ring_theory/valuation/integers.lean
 - \+ *lemma* valuation.integers.le_iff_dvd
 - \+ *lemma* valuation.integers.le_of_dvd
 - \+ *lemma* valuation.integers.one_of_is_unit
+- \+ *structure* valuation.integers
 
 Added src/ring_theory/valuation/integral.lean
 - \+ *lemma* valuation.integers.mem_of_integral
@@ -1897,6 +1899,7 @@ Added src/linear_algebra/affine_space/affine_map.lean
 - \+ *lemma* affine_map.vadd_apply
 - \+ *lemma* affine_map.vsub_apply
 - \+ *lemma* affine_map.zero_linear
+- \+ *structure* affine_map
 - \+ *lemma* linear_map.coe_to_affine_map
 - \+ *def* linear_map.to_affine_map
 - \+ *lemma* linear_map.to_affine_map_linear
@@ -1970,6 +1973,7 @@ Added src/linear_algebra/affine_space/affine_subspace.lean
 - \+ *lemma* affine_subspace.vsub_left_mem_direction_iff_mem
 - \+ *lemma* affine_subspace.vsub_mem_direction
 - \+ *lemma* affine_subspace.vsub_right_mem_direction_iff_mem
+- \+ *structure* affine_subspace
 - \+ *lemma* coe_affine_span
 - \+ *lemma* direction_affine_span
 - \+ *lemma* mem_affine_span
@@ -2071,6 +2075,7 @@ Modified src/linear_algebra/affine_space/basic.lean
 - \- *lemma* affine_map.vadd_apply
 - \- *lemma* affine_map.vsub_apply
 - \- *lemma* affine_map.zero_linear
+- \- *structure* affine_map
 - \- *def* affine_span
 - \- *lemma* affine_span_insert_affine_span
 - \- *lemma* affine_span_insert_eq_affine_span
@@ -2139,6 +2144,7 @@ Modified src/linear_algebra/affine_space/basic.lean
 - \- *lemma* affine_subspace.vsub_left_mem_direction_iff_mem
 - \- *lemma* affine_subspace.vsub_mem_direction
 - \- *lemma* affine_subspace.vsub_right_mem_direction_iff_mem
+- \- *structure* affine_subspace
 - \- *lemma* coe_affine_span
 - \- *lemma* direction_affine_span
 - \- *lemma* linear_map.coe_to_affine_map
@@ -2398,6 +2404,7 @@ Added src/category_theory/sites/pretopology.lean
 - \+ *def* category_theory.pretopology.to_grothendieck
 - \+ *lemma* category_theory.pretopology.to_grothendieck_bot
 - \+ *def* category_theory.pretopology.trivial
+- \+ *structure* category_theory.pretopology
 - \+ *def* category_theory.pullback_arrows
 - \+ *lemma* category_theory.pullback_arrows_comm
 - \+ *lemma* category_theory.pullback_singleton
@@ -2435,6 +2442,7 @@ Modified src/tactic/simps.lean
 Modified test/simps.lean
 - \+ *def* manual_projection_names.equiv.simps.inv_fun
 - \+ *def* manual_projection_names.equiv.symm
+- \+ *structure* manual_projection_names.equiv
 
 
 
@@ -2938,7 +2946,7 @@ Modified src/tactic/derive_fintype.lean
 
 
 Modified test/derive_fintype.lean
-
+- \+ *structure* foo4
 
 
 
@@ -3013,6 +3021,7 @@ Modified src/algebra/module/basic.lean
 - \- *lemma* is_linear_map.map_zero
 - \- *def* is_linear_map.mk'
 - \- *theorem* is_linear_map.mk'_apply
+- \- *structure* is_linear_map
 - \- *theorem* linear_map.coe_injective
 - \- *lemma* linear_map.coe_mk
 - \- *def* linear_map.comp
@@ -3035,6 +3044,8 @@ Modified src/algebra/module/basic.lean
 - \- *lemma* linear_map.to_add_monoid_hom_coe
 - \- *theorem* linear_map.to_add_monoid_hom_injective
 - \- *lemma* linear_map.to_fun_eq_coe
+- \- *structure* linear_map
+- \- *abbreviation* module.End
 
 Added src/algebra/module/linear_map.lean
 - \+ *def* add_monoid_hom.to_int_linear_map
@@ -3047,6 +3058,7 @@ Added src/algebra/module/linear_map.lean
 - \+ *lemma* is_linear_map.map_zero
 - \+ *def* is_linear_map.mk'
 - \+ *theorem* is_linear_map.mk'_apply
+- \+ *structure* is_linear_map
 - \+ *theorem* linear_equiv.apply_symm_apply
 - \+ *theorem* linear_equiv.coe_coe
 - \+ *lemma* linear_equiv.coe_to_add_equiv
@@ -3082,6 +3094,7 @@ Added src/algebra/module/linear_map.lean
 - \+ *theorem* linear_equiv.trans_apply
 - \+ *lemma* linear_equiv.trans_refl
 - \+ *lemma* linear_equiv.trans_symm
+- \+ *structure* linear_equiv
 - \+ *theorem* linear_map.coe_injective
 - \+ *lemma* linear_map.coe_mk
 - \+ *def* linear_map.comp
@@ -3105,6 +3118,8 @@ Added src/algebra/module/linear_map.lean
 - \+ *lemma* linear_map.to_add_monoid_hom_coe
 - \+ *theorem* linear_map.to_add_monoid_hom_injective
 - \+ *lemma* linear_map.to_fun_eq_coe
+- \+ *structure* linear_map
+- \+ *abbreviation* module.End
 
 Modified src/algebra/module/submodule.lean
 
@@ -3151,6 +3166,7 @@ Modified src/linear_algebra/basic.lean
 - \- *theorem* linear_equiv.trans_apply
 - \- *lemma* linear_equiv.trans_refl
 - \- *lemma* linear_equiv.trans_symm
+- \- *structure* linear_equiv
 - \- *def* linear_map.inverse
 
 
@@ -3165,10 +3181,14 @@ Modified src/tactic/simps.lean
 
 
 Modified test/simps.lean
+- \- *structure* failty_manual_coercion.equiv
+- \+ *structure* faulty_manual_coercion.equiv
 - \+ *def* faulty_universes.equiv.simps.inv_fun
 - \+ *def* faulty_universes.equiv.symm
+- \+ *structure* faulty_universes.equiv
 - \+ *def* manual_universes.equiv.simps.inv_fun
 - \+ *def* manual_universes.equiv.symm
+- \+ *structure* manual_universes.equiv
 
 
 
@@ -4251,7 +4271,9 @@ Add a formalization of the correctness of a compiler from arithmetic expressions
 Added archive/arithcc.lean
 - \+ *def* arithcc.compile
 - \+ *theorem* arithcc.compiler_correctness
+- \+ *inductive* arithcc.expr
 - \+ *def* arithcc.identifier
+- \+ *inductive* arithcc.instruction
 - \+ *def* arithcc.loc
 - \+ *def* arithcc.outcome
 - \+ *lemma* arithcc.outcome_append
@@ -4259,6 +4281,7 @@ Added archive/arithcc.lean
 - \+ *lemma* arithcc.register.le_of_lt_succ
 - \+ *lemma* arithcc.register.lt_succ_self
 - \+ *def* arithcc.register
+- \+ *structure* arithcc.state
 - \+ *def* arithcc.state_eq
 - \+ *lemma* arithcc.state_eq_implies_write_eq
 - \+ *def* arithcc.state_eq_rs
@@ -4337,6 +4360,7 @@ Added src/linear_algebra/affine_space/affine_equiv.lean
 - \+ *def* affine_equiv.vadd_const
 - \+ *lemma* affine_equiv.vadd_const_apply
 - \+ *lemma* affine_equiv.vadd_const_symm_apply
+- \+ *structure* affine_equiv
 - \+ *lemma* linear_equiv.coe_to_affine_equiv
 - \+ *def* linear_equiv.to_affine_equiv
 
@@ -4390,6 +4414,7 @@ Modified src/category_theory/sites/sieves.lean
 - \+ *def* category_theory.sieve.bind
 - \+ *lemma* category_theory.sieve.downward_closed
 - \+/\- *def* category_theory.sieve.generate
+- \- *inductive* category_theory.sieve.generate_sets
 - \+/\- *def* category_theory.sieve.gi_generate
 - \+/\- *lemma* category_theory.sieve.id_mem_iff_eq_top
 - \+ *lemma* category_theory.sieve.le_pullback_bind
@@ -4832,6 +4857,7 @@ Modified src/measure_theory/measurable_space.lean
 - \+/\- *def* measurable_space.gi_generate_from
 - \+ *lemma* measurable_space.is_pi_system_is_measurable
 - \+/\- *lemma* measurable_space.map_top
+- \+/\- *structure* measurable_space
 - \+/\- *lemma* measurable_subtype_coe
 - \+/\- *lemma* measurable_to_encodable
 - \+/\- *lemma* measurable_to_nat
@@ -4847,6 +4873,7 @@ Modified src/measure_theory/measure_space.lean
 - \+/\- *lemma* measure_theory.measure.finite_at_bot
 - \+/\- *def* measure_theory.measure.finite_at_filter
 - \+ *lemma* measure_theory.measure.finite_at_filter_of_finite
+- \+ *structure* measure_theory.measure.finite_spanning_sets_in
 - \+ *def* measure_theory.measure.to_finite_spanning_sets_in
 - \+ *def* measure_theory.sigma_finite
 - \+/\- *def* null_measurable
@@ -5135,7 +5162,7 @@ Added src/tactic/unify_equations.lean
 - \+ *lemma* tactic.unify_equations.add_add_one_ne
 
 Added test/unify_equations.lean
-
+- \+ *inductive* rose
 
 
 
@@ -5153,10 +5180,18 @@ Added archive/imo/imo1998_q2.lean
 - \+ *lemma* A_maps_to_off_diag_judge_pair
 - \+ *lemma* add_sq_add_sq_sub
 - \+ *def* agreed_contestants
+- \+ *abbreviation* agreed_triple.contestant
+- \+ *abbreviation* agreed_triple.judge_pair
+- \+ *abbreviation* agreed_triple
 - \+ *lemma* clear_denominators
 - \+ *lemma* distinct_judge_pairs_card_lower_bound
 - \+ *theorem* imo1998_q2
+- \+ *abbreviation* judge_pair.agree
 - \+ *lemma* judge_pair.agree_iff_same_rating
+- \+ *abbreviation* judge_pair.distinct
+- \+ *abbreviation* judge_pair.judge₁
+- \+ *abbreviation* judge_pair.judge₂
+- \+ *abbreviation* judge_pair
 - \+ *lemma* judge_pairs_card_lower_bound
 - \+ *lemma* norm_bound_of_odd_sum
 
@@ -6169,6 +6204,7 @@ Modified src/data/finsupp/basic.lean
 - \+/\- *lemma* finsupp.zero_apply
 - \+/\- *theorem* finsupp.zero_not_mem_frange
 - \+/\- *def* finsupp.zip_with
+- \+/\- *structure* finsupp
 - \+/\- *lemma* monoid_hom.map_finsupp_prod
 - \+/\- *lemma* mul_equiv.map_finsupp_prod
 - \+/\- *lemma* ring_hom.map_finsupp_prod
@@ -6633,6 +6669,7 @@ feat(geometry/manifold): stab at diffeomorphisms ([#4351](https://github.com/lea
 Added src/geometry/manifold/diffeomorph.lean
 - \+ *def* diffeomorph
 - \+ *lemma* times_diffeomorph.coe_eq_to_equiv
+- \+ *structure* times_diffeomorph
 
 Modified src/topology/homeomorph.lean
 
@@ -6673,6 +6710,7 @@ Added src/category_theory/sites/grothendieck.lean
 - \+ *def* category_theory.grothendieck_topology.trivial
 - \+ *lemma* category_theory.grothendieck_topology.trivial_covering
 - \+ *lemma* category_theory.grothendieck_topology.trivial_eq_bot
+- \+ *structure* category_theory.grothendieck_topology
 
 Modified src/category_theory/sites/sieves.lean
 - \+ *lemma* category_theory.sieve.pullback_eq_top_of_mem
@@ -6906,8 +6944,11 @@ The main changes in here are:
 Modified src/category_theory/abelian/non_preadditive.lean
 - \+ *lemma* category_theory.non_preadditive_abelian.diag_σ
 - \+/\- *def* category_theory.non_preadditive_abelian.is_colimit_σ
+- \+/\- *abbreviation* category_theory.non_preadditive_abelian.r
+- \- *abbreviation* category_theory.non_preadditive_abelian.Δ
 - \- *lemma* category_theory.non_preadditive_abelian.Δ_map
 - \- *lemma* category_theory.non_preadditive_abelian.Δ_σ
+- \+/\- *abbreviation* category_theory.non_preadditive_abelian.σ
 
 Modified src/category_theory/closed/cartesian.lean
 - \+/\- *def* category_theory.coev
@@ -6930,6 +6971,7 @@ Modified src/category_theory/limits/shapes/binary_products.lean
 - \+/\- *lemma* category_theory.limits.coprod.inl_map
 - \+/\- *lemma* category_theory.limits.coprod.inr_map
 - \+ *def* category_theory.limits.coprod.map
+- \- *abbreviation* category_theory.limits.coprod.map
 - \+/\- *lemma* category_theory.limits.coprod.map_codiag
 - \- *lemma* category_theory.limits.coprod.map_comp_codiag
 - \+ *lemma* category_theory.limits.coprod.map_comp_id
@@ -6939,6 +6981,7 @@ Modified src/category_theory/limits/shapes/binary_products.lean
 - \+ *lemma* category_theory.limits.coprod.map_id_id
 - \+/\- *lemma* category_theory.limits.coprod.map_inl_inr_codiag
 - \+ *def* category_theory.limits.coprod.map_iso
+- \- *abbreviation* category_theory.limits.coprod.map_iso
 - \- *lemma* category_theory.limits.coprod.map_iso_hom
 - \- *lemma* category_theory.limits.coprod.map_iso_inv
 - \+ *lemma* category_theory.limits.coprod.map_map
@@ -6961,11 +7004,13 @@ Modified src/category_theory/limits/shapes/binary_products.lean
 - \+ *lemma* category_theory.limits.prod.lift_fst_snd
 - \+/\- *lemma* category_theory.limits.prod.lift_map
 - \+ *def* category_theory.limits.prod.map
+- \- *abbreviation* category_theory.limits.prod.map
 - \+ *lemma* category_theory.limits.prod.map_comp_id
 - \+/\- *lemma* category_theory.limits.prod.map_fst
 - \+ *lemma* category_theory.limits.prod.map_id_comp
 - \+ *lemma* category_theory.limits.prod.map_id_id
 - \+ *def* category_theory.limits.prod.map_iso
+- \- *abbreviation* category_theory.limits.prod.map_iso
 - \- *lemma* category_theory.limits.prod.map_iso_hom
 - \- *lemma* category_theory.limits.prod.map_iso_inv
 - \+ *lemma* category_theory.limits.prod.map_map
@@ -7339,6 +7384,7 @@ Added src/linear_algebra/clifford_algebra.lean
 - \+ *theorem* clifford_algebra.lift_comp_ι
 - \+ *theorem* clifford_algebra.lift_unique
 - \+ *theorem* clifford_algebra.lift_ι_apply
+- \+ *inductive* clifford_algebra.rel
 - \+ *def* clifford_algebra.ι
 - \+ *theorem* clifford_algebra.ι_comp_lift
 - \+ *theorem* clifford_algebra.ι_square_scalar
@@ -8085,6 +8131,7 @@ Modified src/number_theory/arithmetic_function.lean
 - \+/\- *lemma* nat.arithmetic_function.map_zero
 - \+/\- *lemma* nat.arithmetic_function.zero_apply
 - \+ *def* nat.arithmetic_function
+- \- *structure* nat.arithmetic_function
 
 
 
@@ -8235,6 +8282,7 @@ Added archive/imo/imo1962_q1.lean
 - \+ *lemma* helper_5_digit
 - \+ *theorem* imo1962_q1
 - \+ *lemma* no_smaller_solutions
+- \+ *abbreviation* problem_predicate'
 - \+ *def* problem_predicate
 - \+ *lemma* satisfied_by_153846
 - \+ *lemma* without_digits
@@ -8350,9 +8398,11 @@ This PR provides the equivalence between the category of compact Hausdorff topol
 2. `CompHaus` is the full subcategory of `Top` consisting of topological spaces which are compact and Hausdorff.
 #### Estimated changes
 Added src/data/set/constructions.lean
+- \+ *inductive* has_finite_inter.finite_inter_closure
 - \+ *def* has_finite_inter.finite_inter_closure_has_finite_inter
 - \+ *lemma* has_finite_inter.finite_inter_closure_insert
 - \+ *lemma* has_finite_inter.finite_inter_mem
+- \+ *structure* has_finite_inter
 
 Modified src/order/filter/ultrafilter.lean
 - \+ *lemma* filter.ne_empty_of_mem_ultrafilter
@@ -8364,6 +8414,7 @@ Modified src/topology/basic.lean
 - \+ *def* filter.ultrafilter.Lim
 
 Added src/topology/category/CompHaus.lean
+- \+ *structure* CompHaus
 - \+ *def* CompHaus_to_Top
 
 Added src/topology/category/Compactum.lean
@@ -9972,6 +10023,7 @@ Modified src/number_theory/arithmetic_function.lean
 - \+ *theorem* nat.arithmetic_function.zeta_mul_apply
 - \+ *lemma* nat.arithmetic_function.zeta_mul_pow_eq_sigma
 - \+ *lemma* nat.arithmetic_function.zeta_pmul
+- \+/\- *structure* nat.arithmetic_function
 
 Modified src/number_theory/divisors.lean
 - \+/\- *def* nat.divisors
@@ -10078,6 +10130,8 @@ A massive number of lemmas here are totally uninteresting and hold for pretty mu
 This PR translates all those lemmas, but doesn't bother attempting to generalize later ones.
 #### Estimated changes
 Modified src/algebra/group/hom.lean
+- \+ *structure* add_hom
+- \+/\- *structure* add_monoid_hom
 - \+/\- *lemma* monoid_hom.cancel_left
 - \+/\- *lemma* monoid_hom.cancel_right
 - \+/\- *lemma* monoid_hom.coe_inj
@@ -10097,6 +10151,7 @@ Modified src/algebra/group/hom.lean
 - \+/\- *lemma* monoid_hom.map_one
 - \+/\- *lemma* monoid_hom.one_apply
 - \+/\- *lemma* monoid_hom.to_fun_eq_coe
+- \+/\- *structure* monoid_hom
 - \+ *lemma* mul_hom.cancel_left
 - \+ *lemma* mul_hom.cancel_right
 - \+ *lemma* mul_hom.coe_inj
@@ -10114,6 +10169,7 @@ Modified src/algebra/group/hom.lean
 - \+ *lemma* mul_hom.id_comp
 - \+ *lemma* mul_hom.map_mul
 - \+ *lemma* mul_hom.to_fun_eq_coe
+- \+ *structure* mul_hom
 - \+ *lemma* one_hom.cancel_left
 - \+ *lemma* one_hom.cancel_right
 - \+ *lemma* one_hom.coe_inj
@@ -10132,12 +10188,15 @@ Modified src/algebra/group/hom.lean
 - \+ *lemma* one_hom.map_one
 - \+ *lemma* one_hom.one_apply
 - \+ *lemma* one_hom.to_fun_eq_coe
+- \+ *structure* one_hom
+- \+ *structure* zero_hom
 
 Modified src/algebra/module/basic.lean
 
 
 Modified src/data/equiv/mul_add.lean
-
+- \+/\- *structure* add_equiv
+- \+/\- *structure* mul_equiv
 
 Modified src/linear_algebra/basic.lean
 - \- *def* linear_equiv.to_add_equiv
@@ -11003,6 +11062,7 @@ Modified src/algebra/algebra/basic.lean
 - \- *def* subalgebra.val
 - \- *lemma* subalgebra.val_apply
 - \- *theorem* subalgebra.zero_mem
+- \- *structure* subalgebra
 - \- *def* subalgebra_of_is_subring
 - \- *def* subalgebra_of_subring
 - \- *def* subalgebra_of_subsemiring
@@ -11069,6 +11129,7 @@ Added src/algebra/algebra/subalgebra.lean
 - \+ *def* subalgebra.val
 - \+ *lemma* subalgebra.val_apply
 - \+ *theorem* subalgebra.zero_mem
+- \+ *structure* subalgebra
 - \+ *def* subalgebra_of_is_subring
 - \+ *def* subalgebra_of_subring
 - \+ *def* subalgebra_of_subsemiring
@@ -12094,6 +12155,7 @@ Added src/combinatorics/partition.lean
 - \+ *lemma* partition.of_composition_surj
 - \+ *def* partition.of_multiset
 - \+ *def* partition.of_sums
+- \+ *structure* partition
 
 
 
@@ -12187,6 +12249,7 @@ Added src/number_theory/arithmetic_function.lean
 - \+ *lemma* nat.arithmetic_function.one_one
 - \+ *lemma* nat.arithmetic_function.to_fun_eq
 - \+ *lemma* nat.arithmetic_function.zero_apply
+- \+ *structure* nat.arithmetic_function
 
 Modified src/number_theory/divisors.lean
 - \+ *lemma* nat.dvd_of_mem_divisors
@@ -12755,10 +12818,12 @@ Added src/testing/slim_check/functions.lean
 - \+ *lemma* slim_check.injective_function.list.apply_id_zip_eq
 - \+ *def* slim_check.injective_function.perm.slice
 - \+ *def* slim_check.injective_function.slice_sizes
+- \+ *inductive* slim_check.injective_function
 - \+ *def* slim_check.total_function.apply
 - \+ *def* slim_check.total_function.list.to_finmap'
 - \+ *def* slim_check.total_function.repr_aux
 - \+ *def* slim_check.total_function.total.sizeof
+- \+ *inductive* slim_check.total_function
 
 Modified src/testing/slim_check/gen.lean
 - \+ *def* slim_check.gen.choose_nat'
@@ -13024,6 +13089,7 @@ Added src/ring_theory/roots_of_unity.lean
 - \+ *lemma* is_primitive_root.zmod_equiv_gpowers_symm_apply_gpow
 - \+ *lemma* is_primitive_root.zmod_equiv_gpowers_symm_apply_pow'
 - \+ *lemma* is_primitive_root.zmod_equiv_gpowers_symm_apply_pow
+- \+ *structure* is_primitive_root
 - \+ *lemma* map_roots_of_unity
 - \+ *lemma* mem_primitive_roots
 - \+ *lemma* mem_roots_of_unity
@@ -13529,6 +13595,7 @@ Added src/linear_algebra/exterior_algebra.lean
 - \+ *theorem* exterior_algebra.lift_comp_ι
 - \+ *theorem* exterior_algebra.lift_unique
 - \+ *theorem* exterior_algebra.lift_ι_apply
+- \+ *inductive* exterior_algebra.rel
 - \+ *def* exterior_algebra.ι
 - \+ *theorem* exterior_algebra.ι_comp_lift
 - \+ *theorem* exterior_algebra.ι_square_zero
@@ -13781,6 +13848,7 @@ Added src/analysis/normed_space/inner_product.lean
 - \+ *lemma* inner_neg_left
 - \+ *lemma* inner_neg_neg
 - \+ *lemma* inner_neg_right
+- \+ *structure* inner_product_space.core
 - \+ *def* inner_product_space.is_R_or_C_to_real
 - \+ *lemma* inner_product_space.of_core.abs_inner_le_norm
 - \+ *lemma* inner_product_space.of_core.inner_abs_conj_sym
@@ -13936,6 +14004,7 @@ Deleted src/analysis/normed_space/real_inner_product.lean
 - \- *lemma* inner_neg_left
 - \- *lemma* inner_neg_neg
 - \- *lemma* inner_neg_right
+- \- *structure* inner_product_space.core
 - \- *lemma* inner_product_space.of_core.abs_inner_le_norm
 - \- *lemma* inner_product_space.of_core.inner_add_add_self
 - \- *lemma* inner_product_space.of_core.inner_add_left

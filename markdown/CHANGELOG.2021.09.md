@@ -188,6 +188,7 @@ feat(monoid_algebra/grading): `add_monoid_algebra`s permit an internal grading (
 Added src/algebra/monoid_algebra/grading.lean
 - \+ *def* add_monoid_algebra.equiv_grades
 - \+ *lemma* add_monoid_algebra.grade.is_internal
+- \+ *abbreviation* add_monoid_algebra.grade
 - \+ *def* add_monoid_algebra.of_grades
 - \+ *lemma* add_monoid_algebra.of_grades_comp_to_grades
 - \+ *lemma* add_monoid_algebra.of_grades_of
@@ -954,6 +955,7 @@ Modified src/group_theory/sylow.lean
 - \+ *lemma* sylow.ext_iff
 - \+ *lemma* sylow.smul_eq_iff_mem_normalizer
 - \+ *lemma* sylow.to_subgroup_eq_coe
+- \+ *structure* sylow
 
 
 
@@ -2239,6 +2241,10 @@ Modified src/order/filter/at_top_bot.lean
 Modified src/order/filter/bases.lean
 - \- *lemma* filter.antimono_seq_of_seq
 - \+ *lemma* filter.antitone_seq_of_seq
+- \- *structure* filter.has_antimono_basis
+- \+ *structure* filter.has_antitone_basis
+- \- *structure* filter.is_antimono_basis
+- \+ *structure* filter.is_antitone_basis
 - \- *lemma* filter.is_countably_generated.exists_antimono_basis
 - \- *lemma* filter.is_countably_generated.exists_antimono_seq'
 - \- *lemma* filter.is_countably_generated.exists_antimono_subbasis
@@ -4411,6 +4417,7 @@ Modified src/algebra/module/linear_map.lean
 - \+/\- *def* linear_map.restrict_scalars
 - \+/\- *lemma* linear_map.restrict_scalars_inj
 - \+/\- *def* linear_map.to_add_monoid_hom
+- \+/\- *structure* linear_map
 
 Modified src/algebra/module/submodule_pointwise.lean
 
@@ -4464,6 +4471,7 @@ Modified src/data/equiv/module.lean
 - \+/\- *def* linear_equiv.trans
 - \+/\- *theorem* linear_equiv.trans_apply
 - \+/\- *lemma* linear_equiv.trans_refl
+- \+/\- *structure* linear_equiv
 
 Modified src/data/mv_polynomial/pderiv.lean
 
@@ -5401,24 +5409,31 @@ feat(algebra/category): Forgetful functors preserve filtered colimits ([#9101](h
 Shows that forgetful functors of various algebraic categories preserve filtered colimits.
 #### Estimated changes
 Added src/algebra/category/CommRing/filtered_colimits.lean
+- \+ *abbreviation* CommRing.filtered_colimits.R
 - \+ *def* CommRing.filtered_colimits.colimit
 - \+ *def* CommRing.filtered_colimits.colimit_cocone
 - \+ *def* CommRing.filtered_colimits.colimit_cocone_is_colimit
+- \+ *abbreviation* CommSemiRing.filtered_colimits.R
 - \+ *def* CommSemiRing.filtered_colimits.colimit
 - \+ *def* CommSemiRing.filtered_colimits.colimit_cocone
 - \+ *def* CommSemiRing.filtered_colimits.colimit_cocone_is_colimit
+- \+ *abbreviation* Ring.filtered_colimits.R
 - \+ *def* Ring.filtered_colimits.colimit
 - \+ *def* Ring.filtered_colimits.colimit_cocone
 - \+ *def* Ring.filtered_colimits.colimit_cocone_is_colimit
+- \+ *abbreviation* SemiRing.filtered_colimits.R
 - \+ *def* SemiRing.filtered_colimits.colimit
 - \+ *def* SemiRing.filtered_colimits.colimit_cocone
 - \+ *def* SemiRing.filtered_colimits.colimit_cocone_is_colimit
 
 Added src/algebra/category/Group/filtered_colimits.lean
+- \+ *abbreviation* CommGroup.filtered_colimits.G
 - \+ *def* CommGroup.filtered_colimits.colimit
 - \+ *def* CommGroup.filtered_colimits.colimit_cocone
 - \+ *def* CommGroup.filtered_colimits.colimit_cocone_is_colimit
+- \+ *abbreviation* Group.filtered_colimits.G.mk
 - \+ *lemma* Group.filtered_colimits.G.mk_eq
+- \+ *abbreviation* Group.filtered_colimits.G
 - \+ *def* Group.filtered_colimits.colimit
 - \+ *def* Group.filtered_colimits.colimit_cocone
 - \+ *def* Group.filtered_colimits.colimit_cocone_is_colimit
@@ -5427,7 +5442,9 @@ Added src/algebra/category/Group/filtered_colimits.lean
 - \+ *lemma* Group.filtered_colimits.colimit_inv_mk_eq
 
 Added src/algebra/category/Module/filtered_colimits.lean
+- \+ *abbreviation* Module.filtered_colimits.M.mk
 - \+ *lemma* Module.filtered_colimits.M.mk_eq
+- \+ *abbreviation* Module.filtered_colimits.M
 - \+ *def* Module.filtered_colimits.cocone_morphism
 - \+ *def* Module.filtered_colimits.colimit
 - \+ *def* Module.filtered_colimits.colimit_cocone
@@ -5438,10 +5455,13 @@ Added src/algebra/category/Module/filtered_colimits.lean
 - \+ *lemma* Module.filtered_colimits.colimit_smul_mk_eq
 
 Added src/algebra/category/Mon/filtered_colimits.lean
+- \+ *abbreviation* CommMon.filtered_colimits.M
 - \+ *def* CommMon.filtered_colimits.colimit
 - \+ *def* CommMon.filtered_colimits.colimit_cocone
 - \+ *def* CommMon.filtered_colimits.colimit_cocone_is_colimit
+- \+ *abbreviation* Mon.filtered_colimits.M.mk
 - \+ *lemma* Mon.filtered_colimits.M.mk_eq
+- \+ *abbreviation* Mon.filtered_colimits.M
 - \+ *def* Mon.filtered_colimits.cocone_morphism
 - \+ *lemma* Mon.filtered_colimits.cocone_naturality
 - \+ *def* Mon.filtered_colimits.colimit
@@ -5921,6 +5941,7 @@ Modified src/algebra/module/linear_map.lean
 - \- *theorem* linear_equiv.trans_apply
 - \- *lemma* linear_equiv.trans_refl
 - \- *lemma* linear_equiv.trans_symm
+- \- *structure* linear_equiv
 - \- *def* module.comp_hom.to_linear_equiv
 
 Modified src/algebra/module/opposites.lean
@@ -5983,6 +6004,7 @@ Added src/data/equiv/module.lean
 - \+ *theorem* linear_equiv.trans_apply
 - \+ *lemma* linear_equiv.trans_refl
 - \+ *lemma* linear_equiv.trans_symm
+- \+ *structure* linear_equiv
 - \+ *def* module.comp_hom.to_linear_equiv
 
 Modified src/data/finsupp/to_dfinsupp.lean
@@ -7833,6 +7855,7 @@ Modified src/data/list/basic.lean
 - \- *theorem* list.lex.ne_iff
 - \- *theorem* list.lex.not_nil_right
 - \- *theorem* list.lex.to_ne
+- \- *inductive* list.lex
 - \- *theorem* list.nil_lt_cons
 
 Added src/data/list/lex.lean
@@ -7844,6 +7867,7 @@ Added src/data/list/lex.lean
 - \+ *theorem* list.lex.ne_iff
 - \+ *theorem* list.lex.not_nil_right
 - \+ *theorem* list.lex.to_ne
+- \+ *inductive* list.lex
 - \+ *theorem* list.nil_lt_cons
 
 Modified src/data/list/pairwise.lean
@@ -8469,6 +8493,7 @@ Modified src/field_theory/algebraic_closure.lean
 - \+ *lemma* lift.subfield_with_hom.maximal_subfield_with_hom_chain_bounded
 - \+ *lemma* lift.subfield_with_hom.maximal_subfield_with_hom_eq_top
 - \+ *lemma* lift.subfield_with_hom.maximal_subfield_with_hom_is_maximal
+- \+ *structure* lift.subfield_with_hom
 
 Modified src/ring_theory/algebraic.lean
 
@@ -8589,6 +8614,7 @@ Modified src/data/mv_polynomial/funext.lean
 
 
 Modified src/data/set/finite.lean
+- \+ *inductive* set.finite
 - \- *def* set.finite
 - \+ *lemma* set.finite_def
 
@@ -9099,6 +9125,7 @@ Modified src/group_theory/free_product.lean
 - \+ *def* free_product.word.fst_idx
 - \+ *lemma* free_product.word.fst_idx_ne_iff
 - \+ *lemma* free_product.word.of_smul_def
+- \+ *structure* free_product.word.pair
 - \+ *def* free_product.word.prod
 - \+ *lemma* free_product.word.prod_nil
 - \+ *lemma* free_product.word.prod_rcons
@@ -9106,6 +9133,7 @@ Modified src/group_theory/free_product.lean
 - \+ *def* free_product.word.rcons
 - \+ *lemma* free_product.word.rcons_inj
 - \+ *lemma* free_product.word.smul_induction
+- \+ *structure* free_product.word
 
 
 
@@ -10393,6 +10421,7 @@ refactor(topology/path_connected): make `path` extend `C(I, X)` ([#9133](https:/
 #### Estimated changes
 Modified src/topology/path_connected.lean
 - \+/\- *lemma* path.coe_mk
+- \+/\- *structure* path
 
 
 
@@ -10550,6 +10579,7 @@ Modified src/combinatorics/simple_graph/adj_matrix.lean
 - \+ *lemma* matrix.is_adj_matrix.compl
 - \+ *def* matrix.is_adj_matrix.to_graph
 - \+ *lemma* matrix.is_adj_matrix.to_graph_compl_eq
+- \+ *structure* matrix.is_adj_matrix
 - \+ *lemma* matrix.is_adj_matrix_compl
 - \+ *lemma* matrix.is_symm_compl
 - \+/\- *def* simple_graph.adj_matrix
@@ -10684,6 +10714,7 @@ Added src/topology/homotopy.lean
 - \+ *lemma* continuous_map.homotopy.to_continuous_map_apply
 - \+ *def* continuous_map.homotopy.trans
 - \+ *lemma* continuous_map.homotopy.trans_apply
+- \+ *structure* continuous_map.homotopy
 
 Modified src/topology/unit_interval.lean
 - \+ *lemma* unit_interval.coe_symm_eq
@@ -10792,6 +10823,7 @@ feat(linear_algebra/matrix/transvection): matrices are generated by transvection
 One version of Gauss' pivot: any matrix can be obtained starting from a diagonal matrix and doing elementary moves on rows and columns. Phrased in terms of multiplication by transvections.
 #### Estimated changes
 Modified src/algebra/lie/classical.lean
+- \- *abbreviation* lie_algebra.special_linear.E
 - \- *lemma* lie_algebra.special_linear.E_apply_one
 - \- *lemma* lie_algebra.special_linear.E_apply_zero
 - \- *lemma* lie_algebra.special_linear.E_diag_zero
@@ -10865,6 +10897,7 @@ Added src/linear_algebra/matrix/transvection.lean
 - \+ *lemma* matrix.transvection_struct.to_matrix_reindex_equiv
 - \+ *lemma* matrix.transvection_struct.to_matrix_reindex_equiv_prod
 - \+ *lemma* matrix.transvection_struct.to_matrix_sum_inl
+- \+ *structure* matrix.transvection_struct
 - \+ *lemma* matrix.transvection_zero
 - \+ *lemma* matrix.update_row_eq_transvection
 
@@ -11968,6 +12001,7 @@ Added src/number_theory/class_number/admissible_absolute_value.lean
 - \+ *lemma* absolute_value.is_admissible.exists_approx
 - \+ *lemma* absolute_value.is_admissible.exists_approx_aux
 - \+ *lemma* absolute_value.is_admissible.exists_partition
+- \+ *structure* absolute_value.is_admissible
 
 Added src/number_theory/class_number/admissible_card_pow_degree.lean
 - \+ *lemma* polynomial.card_pow_degree_anti_archimedean
@@ -13425,6 +13459,7 @@ Modified src/algebra/absolute_value.lean
 Added src/algebra/euclidean_absolute_value.lean
 - \+ *lemma* absolute_value.is_euclidean.map_lt_map_iff
 - \+ *lemma* absolute_value.is_euclidean.sub_mod_lt
+- \+ *structure* absolute_value.is_euclidean
 
 Added src/data/polynomial/degree/card_pow_degree.lean
 - \+ *lemma* polynomial.card_pow_degree_apply
@@ -13968,6 +14003,7 @@ Modified src/algebraic_geometry/structure_sheaf.lean
 
 Added src/number_theory/function_field.lean
 - \+ *def* function_field.ring_of_integers
+- \+ *abbreviation* function_field
 
 Added src/number_theory/number_field.lean
 - \+ *lemma* number_field.ring_of_integers.is_integral_coe
@@ -14247,6 +14283,7 @@ Modified src/topology/algebra/ring.lean
 - \+ *def* ring_topology.coinduced
 - \+ *lemma* ring_topology.coinduced_continuous
 - \+ *lemma* ring_topology.ext'
+- \+ *structure* ring_topology
 
 
 

@@ -89,6 +89,7 @@ Added tactic/norm_num.lean
 - \+ *def* num.pos_le
 - \+ *lemma* num.zero_le_denote
 - \+ *def* num.znum_le
+- \+ *inductive* tactic.interactive.denotation
 - \+ *def* tactic.interactive.znum.to_neg
 - \+ *def* tactic.interactive.znum.to_pos
 
@@ -363,6 +364,7 @@ Deleted data/num/norm_num.lean
 - \- *def* num.pos_le
 - \- *lemma* num.zero_le_denote
 - \- *def* num.znum_le
+- \- *inductive* tactic.interactive.denotation
 - \- *def* tactic.interactive.znum.to_neg
 - \- *def* tactic.interactive.znum.to_pos
 
@@ -483,6 +485,7 @@ Added data/num/norm_num.lean
 - \+ *def* num.pos_le
 - \+ *lemma* num.zero_le_denote
 - \+ *def* num.znum_le
+- \+ *inductive* tactic.interactive.denotation
 - \+ *def* tactic.interactive.znum.to_neg
 - \+ *def* tactic.interactive.znum.to_pos
 
@@ -740,6 +743,7 @@ Modified data/list/basic.lean
 - \+ *theorem* list.chain.iff
 - \+ *theorem* list.chain.iff_mem
 - \+ *theorem* list.chain.imp
+- \+ *inductive* list.chain
 - \+ *theorem* list.chain_cons
 - \+ *theorem* list.chain_iff_pairwise
 - \+ *theorem* list.chain_lt_range'
@@ -1028,6 +1032,7 @@ Modified data/list/basic.lean
 - \+ *theorem* list.pairwise.iff
 - \+ *theorem* list.pairwise.iff_mem
 - \+ *theorem* list.pairwise.imp
+- \+ *inductive* list.pairwise
 - \+ *theorem* list.pairwise_app_comm
 - \+ *theorem* list.pairwise_append
 - \+ *theorem* list.pairwise_cons
@@ -1270,6 +1275,7 @@ Modified data/list/perm.lean
 - \- *theorem* list.perm.perm_union
 - \- *theorem* list.perm.perm_union_left
 - \- *theorem* list.perm.perm_union_right
+- \- *inductive* list.perm.qeq
 - \- *theorem* list.perm.qeq_app
 - \- *theorem* list.perm.qeq_of_mem
 - \- *theorem* list.perm.qeq_split
@@ -1394,6 +1400,7 @@ Deleted data/list/set.lean
 - \- *theorem* list.mem_upto_of_lt
 - \- *theorem* list.mem_upto_succ_of_mem_upto
 - \- *theorem* list.nil_union
+- \- *inductive* list.nodup
 - \- *theorem* list.nodup_app_comm
 - \- *theorem* list.nodup_append
 - \- *theorem* list.nodup_concat

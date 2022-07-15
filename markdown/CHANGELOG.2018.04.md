@@ -90,6 +90,7 @@ Modified group_theory/free_group.lean
 - \+ *lemma* free_group.red.trans
 - \- *theorem* free_group.red.trans
 - \+ *def* free_group.red
+- \- *inductive* free_group.red
 - \+/\- *theorem* free_group.reduce.not
 - \+/\- *theorem* free_group.to_group_eq_prod_map
 - \+/\- *def* free_group
@@ -106,6 +107,7 @@ Added logic/relation.lean
 - \+ *lemma* relation.join_of_equivalence
 - \+ *lemma* relation.join_of_single
 - \+ *lemma* relation.refl_gen.to_refl_trans_gen
+- \+ *inductive* relation.refl_gen
 - \+ *lemma* relation.refl_trans_gen.cases_head
 - \+ *lemma* relation.refl_trans_gen.cases_head_iff
 - \+ *lemma* relation.refl_trans_gen.cases_tail
@@ -115,6 +117,7 @@ Added logic/relation.lean
 - \+ *lemma* relation.refl_trans_gen.single
 - \+ *lemma* relation.refl_trans_gen.trans
 - \+ *lemma* relation.refl_trans_gen.trans_induction_on
+- \+ *inductive* relation.refl_trans_gen
 - \+ *lemma* relation.refl_trans_gen_iff_eq
 - \+ *lemma* relation.refl_trans_gen_lift
 - \+ *lemma* relation.refl_trans_gen_mono
@@ -210,10 +213,12 @@ Added algebra/free_group.lean
 - \+ *theorem* free_group.red.step.sound
 - \+ *theorem* free_group.red.step.sublist
 - \+ *theorem* free_group.red.step.to_group
+- \+ *inductive* free_group.red.step
 - \+ *theorem* free_group.red.sublist
 - \+ *theorem* free_group.red.to_group
 - \+ *theorem* free_group.red.trans.aux
 - \+ *theorem* free_group.red.trans
+- \+ *inductive* free_group.red
 - \+ *def* free_group.reduce.church_rosser
 - \+ *lemma* free_group.reduce.cons
 - \+ *theorem* free_group.reduce.eq_of_red
@@ -935,6 +940,7 @@ Modified group_theory/subgroup.lean
 - \+ *def* group.closure
 - \+ *theorem* group.closure_subset
 - \+ *theorem* group.gpowers_eq_closure
+- \+ *inductive* group.in_closure
 - \+ *lemma* group.mem_closure
 - \+ *theorem* group.subset_closure
 - \+ *lemma* is_subgroup.trivial_eq_closure
@@ -1182,6 +1188,7 @@ Modified group_theory/submonoid.lean
 
 Modified ring_theory/localization.lean
 - \- *def* localization.closure
+- \- *inductive* localization.in_closure
 - \- *theorem* localization.subset_closure
 
 
@@ -1194,6 +1201,7 @@ Modified group_theory/subgroup.lean
 
 Modified group_theory/submonoid.lean
 - \+ *def* monoid.closure
+- \+ *inductive* monoid.in_closure
 - \+ *lemma* monoid.is_submonoid_closure
 
 
@@ -1226,6 +1234,7 @@ Modified group_theory/subgroup.lean
 - \+ *lemma* is_subgroup.mul_mem_cancel_right
 - \+ *theorem* is_subgroup.of_div
 - \+/\- *lemma* is_subgroup.subgroup_mem_cosets
+- \- *structure* is_subgroup
 - \- *lemma* is_subgroup_range_gpow
 
 Added group_theory/submonoid.lean

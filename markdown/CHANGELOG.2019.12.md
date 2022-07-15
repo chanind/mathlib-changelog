@@ -1104,6 +1104,7 @@ Added src/geometry/manifold/basic_smooth_bundle.lean
 - \+ *lemma* basic_smooth_bundle_core.mem_chart_source_iff
 - \+ *lemma* basic_smooth_bundle_core.mem_chart_target_iff
 - \+ *def* basic_smooth_bundle_core.to_topological_fiber_bundle_core
+- \+ *structure* basic_smooth_bundle_core
 - \+ *def* tangent_bundle.proj
 - \+ *def* tangent_bundle
 - \+ *def* tangent_bundle_core
@@ -1120,6 +1121,7 @@ Modified src/topology/algebra/module.lean
 - \+ *lemma* continuous.smul
 - \- *lemma* continuous_smul'
 - \+/\- *lemma* continuous_smul
+- \+ *abbreviation* topological_vector_space
 
 Modified src/topology/topological_fiber_bundle.lean
 
@@ -1643,7 +1645,7 @@ refactor(*): make vector_space an abbreviation for module ([#1793](https://githu
 * Update src/measure_theory/bochner_integration.lean
 #### Estimated changes
 Modified src/algebra/module.lean
-
+- \+ *abbreviation* vector_space
 
 Modified src/algebra/pi_instances.lean
 
@@ -2131,7 +2133,9 @@ Added src/tactic/ring_exp.lean
 - \+ *lemma* tactic.ring_exp.add_pf_z_sum
 - \+ *lemma* tactic.ring_exp.atom_to_sum_pf
 - \+ *lemma* tactic.ring_exp.base_to_exp_pf
+- \+ *structure* tactic.ring_exp.coeff
 - \+ *lemma* tactic.ring_exp.div_pf
+- \+ *inductive* tactic.ring_exp.ex_type
 - \+ *lemma* tactic.ring_exp.exp_congr
 - \+ *lemma* tactic.ring_exp.exp_to_prod_pf
 - \+ *lemma* tactic.ring_exp.inverse_pf
@@ -2173,7 +2177,9 @@ Added test/ring_exp.lean
 - \+ *def* pow_sub_pow_factor
 
 Modified test/tactics.lean
+- \- *structure* equiv
 - \+/\- *def* eta_expansion_test2
+- \+ *structure* my_equiv
 
 
 

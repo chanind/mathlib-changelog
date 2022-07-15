@@ -340,11 +340,15 @@ Added src/geometry/manifold/manifold.lean
 - \+ *lemma* manifold_core.open_source'
 - \+ *lemma* manifold_core.open_target
 - \+ *def* manifold_core.to_manifold
+- \+ *structure* manifold_core
 - \+ *lemma* mem_groupoid_of_pregroupoid
 - \+ *lemma* model_space_atlas
+- \+ *structure* pregroupoid
 - \+ *def* structomorph.refl
 - \+ *def* structomorph.symm
 - \+ *def* structomorph.trans
+- \+ *structure* structomorph
+- \+ *structure* structure_groupoid
 
 
 
@@ -414,10 +418,13 @@ Added src/tactic/simps.lean
 
 
 Added test/simps.lean
+- \+ *structure* automorphism_plus_data
 - \+ *def* bar
 - \+ *def* baz
 - \+ *def* count_nested.nested1
 - \+ *def* count_nested.nested2
+- \+ *structure* equiv
+- \+ *structure* equiv_plus_data
 - \+ *def* foo.bar1
 - \+ *def* foo.bar2
 - \+ *def* foo.foo
@@ -426,16 +433,20 @@ Added test/simps.lean
 - \+ *def* name_clash_fst
 - \+ *def* name_clash_snd
 - \+ *def* name_clash_snd_2
+- \+ *structure* partially_applied_str
 - \+ *def* partially_applied_term
 - \+ *def* refl_with_data'
 - \+ *def* refl_with_data
 - \+ *def* test
+- \+ *structure* very_partially_applied_str
 - \+ *def* very_partially_applied_term
 
 Modified test/tactics.lean
 - \+ *def* dummy
+- \+ *structure* equiv
 - \+ *def* eta_expansion_test2
 - \+ *def* eta_expansion_test
+- \+ *structure* my_str
 - \+ *def* right_param
 - \+ *def* wrong_param
 
@@ -813,6 +824,7 @@ Modified src/data/equiv/algebra.lean
 - \- *lemma* ring_equiv.to_equiv_symm_apply
 - \- *def* ring_equiv.to_mul_equiv
 - \+ *def* ring_equiv.to_ring_hom
+- \+/\- *structure* ring_equiv
 
 Modified src/data/mv_polynomial.lean
 - \+/\- *def* mv_polynomial.option_equiv_left
@@ -1097,6 +1109,7 @@ Added src/algebra/continued_fractions/basic.lean
 - \+ *def* generalized_continued_fraction.seq.coe_to_seq
 - \+ *def* generalized_continued_fraction.terminated_at
 - \+ *def* generalized_continued_fraction.terminates
+- \+ *structure* generalized_continued_fraction
 - \+ *lemma* simple_continued_fraction.coe_to_generalized_continued_fraction
 - \+ *def* simple_continued_fraction.is_regular_continued_fraction
 - \+ *def* simple_continued_fraction
@@ -1810,14 +1823,17 @@ Modified src/algebra/category/CommRing/basic.lean
 - \- *def* CommRing.Int.cast
 - \- *def* CommRing.Int.hom_unique
 - \+ *lemma* CommRing.comp_eq
+- \- *abbreviation* CommRing.forget
 - \+ *lemma* CommRing.forget_map_eq_coe
 - \+ *lemma* CommRing.forget_obj_eq_coe
 - \- *def* CommRing.forget_to_CommMon
 - \+ *lemma* CommRing.id_eq
+- \- *abbreviation* CommRing.is_comm_ring_hom
 - \+/\- *def* CommRing.of
 - \- *def* CommRing.to_Ring
 - \+ *def* CommSemiRing.of
 - \+ *def* CommSemiRing
+- \- *abbreviation* Ring.forget
 - \+/\- *def* Ring.of
 - \+ *def* SemiRing.of
 - \+ *def* SemiRing
@@ -1841,10 +1857,12 @@ Modified src/algebra/category/Group.lean
 - \+/\- *def* Group
 
 Modified src/algebra/category/Mon/basic.lean
+- \- *abbreviation* CommMon.forget
 - \- *def* CommMon.forget_to_Mon
 - \- *def* CommMon.is_comm_monoid_hom
 - \+/\- *def* CommMon.of
 - \+/\- *def* CommMon
+- \- *abbreviation* Mon.forget
 - \- *def* Mon.hom_equiv_monoid_hom
 - \+/\- *def* Mon.of
 - \+/\- *def* Mon
@@ -1880,6 +1898,8 @@ Deleted src/category_theory/concrete_category.lean
 - \- *lemma* category_theory.bundled.concrete_category_id
 - \- *lemma* category_theory.bundled.hom_ext
 - \- *def* category_theory.bundled.map
+- \- *structure* category_theory.bundled
+- \- *structure* category_theory.concrete_category
 - \- *def* category_theory.concrete_functor
 - \- *def* category_theory.forget
 - \- *def* category_theory.mk_ob
@@ -1892,6 +1912,7 @@ Added src/category_theory/concrete_category/basic.lean
 Added src/category_theory/concrete_category/bundled.lean
 - \+ *def* category_theory.bundled.map
 - \+ *def* category_theory.bundled.of
+- \+ *structure* category_theory.bundled
 
 Added src/category_theory/concrete_category/bundled_hom.lean
 - \+ *lemma* category_theory.bundled_hom.coe_comp
@@ -1899,6 +1920,7 @@ Added src/category_theory/concrete_category/bundled_hom.lean
 - \+ *def* category_theory.bundled_hom.full_subcategory_has_forget₂
 - \+ *def* category_theory.bundled_hom.has_coe_to_fun
 - \+ *def* category_theory.bundled_hom.mk_has_forget₂
+- \+ *structure* category_theory.bundled_hom
 
 Added src/category_theory/concrete_category/default.lean
 
@@ -1940,6 +1962,7 @@ Modified src/topology/category/Top/adjunctions.lean
 - \+/\- *def* Top.adj₂
 
 Modified src/topology/category/Top/basic.lean
+- \- *abbreviation* Top.forget
 - \+ *lemma* Top.id_app
 
 Modified src/topology/category/Top/epi_mono.lean
@@ -1963,6 +1986,7 @@ Modified src/topology/category/UniformSpace.lean
 - \+ *lemma* UniformSpace.coe_id
 - \+ *lemma* UniformSpace.coe_mk
 - \+/\- *def* UniformSpace.completion_hom
+- \- *abbreviation* UniformSpace.forget
 - \- *def* UniformSpace.forget_to_Top
 - \- *def* UniformSpace.forget_to_Type_via_Top
 - \+ *lemma* UniformSpace.hom_ext
@@ -1989,11 +2013,13 @@ Modified src/topology/maps.lean
 - \+/\- *lemma* closed_embedding.closed_iff_preimage_closed
 - \+ *lemma* closed_embedding.continuous
 - \+/\- *lemma* closed_embedding.is_closed_map
+- \+ *structure* closed_embedding
 - \- *def* closed_embedding
 - \+/\- *lemma* closed_embedding_of_continuous_injective_closed
 - \+/\- *lemma* closed_embedding_of_embedding_closed
 - \+ *lemma* open_embedding.comp
 - \+ *lemma* open_embedding.continuous
+- \+ *structure* open_embedding
 - \- *def* open_embedding
 - \- *lemma* open_embedding_compose
 - \+ *lemma* subtype_val.closed_embedding
@@ -2251,7 +2277,9 @@ Added src/set_theory/pgame.lean
 - \+ *def* pgame.relabel_relabelling
 - \+ *def* pgame.relabelling.refl
 - \+ *def* pgame.relabelling.symm
+- \+ *inductive* pgame.relabelling
 - \+ *def* pgame.restricted.refl
+- \+ *inductive* pgame.restricted
 - \+ *def* pgame.restricted_of_relabelling
 - \+ *def* pgame.right_moves
 - \+ *def* pgame.right_moves_add
@@ -2262,6 +2290,7 @@ Added src/set_theory/pgame.lean
 - \+ *theorem* pgame.star_lt_zero
 - \+ *def* pgame.subsequent.left_move
 - \+ *def* pgame.subsequent.right_move
+- \+ *inductive* pgame.subsequent
 - \+ *theorem* pgame.wf_subsequent
 - \+ *def* pgame.zero_add_equiv
 - \+ *def* pgame.zero_add_relabelling
@@ -2273,6 +2302,7 @@ Added src/set_theory/pgame.lean
 - \+ *theorem* pgame.zero_lt
 - \+ *theorem* pgame.zero_lt_star
 - \+ *lemma* pgame.zero_right_moves
+- \+ *inductive* pgame
 
 Modified src/set_theory/surreal.lean
 - \- *def* pSurreal.add
@@ -2307,8 +2337,10 @@ Modified src/set_theory/surreal.lean
 - \- *def* pSurreal.ok
 - \- *theorem* pSurreal.ok_rec
 - \- *def* pSurreal.omega
+- \- *inductive* pSurreal.{u}
 - \+ *theorem* pgame.add_lt_add
 - \+ *def* pgame.inv'
+- \+ *inductive* pgame.inv_ty
 - \+ *def* pgame.inv_val
 - \+ *theorem* pgame.le_of_lt
 - \+ *theorem* pgame.lt_asymm
@@ -2332,6 +2364,7 @@ Modified src/set_theory/surreal.lean
 - \+/\- *def* surreal.lift
 - \+/\- *def* surreal.lift₂
 - \+/\- *def* surreal.mk
+- \- *inductive* {u}
 
 
 
@@ -2357,7 +2390,8 @@ Modified src/category_theory/category/Groupoid.lean
 
 
 Modified src/category_theory/category/default.lean
-
+- \+/\- *abbreviation* category_theory.large_category
+- \+/\- *abbreviation* category_theory.small_category
 
 Modified src/category_theory/comma.lean
 - \+/\- *def* category_theory.over
@@ -2383,7 +2417,8 @@ Modified src/category_theory/functor_category.lean
 
 
 Modified src/category_theory/groupoid.lean
-
+- \+/\- *abbreviation* category_theory.large_groupoid
+- \+/\- *abbreviation* category_theory.small_groupoid
 
 Modified src/category_theory/hom_functor.lean
 
@@ -2451,7 +2486,7 @@ Modified src/category_theory/monoidal/types.lean
 
 
 Modified src/category_theory/natural_transformation.lean
-
+- \+/\- *structure* category_theory.nat_trans
 
 Modified src/category_theory/pempty.lean
 - \+/\- *def* category_theory.functor.empty
@@ -2584,7 +2619,13 @@ chore(category_theory/notation): update notation for prod and coprod ([#1413](ht
 #### Estimated changes
 Modified src/category_theory/limits/shapes/binary_products.lean
 - \+/\- *def* category_theory.limits.coprod.braiding
+- \+/\- *abbreviation* category_theory.limits.coprod.desc
+- \+/\- *abbreviation* category_theory.limits.coprod.inl
+- \+/\- *abbreviation* category_theory.limits.coprod.inr
 - \+/\- *def* category_theory.limits.prod.braiding
+- \+/\- *abbreviation* category_theory.limits.prod.fst
+- \+/\- *abbreviation* category_theory.limits.prod.lift
+- \+/\- *abbreviation* category_theory.limits.prod.snd
 
 
 
@@ -3673,6 +3714,7 @@ Added src/topology/local_homeomorph.lean
 - \+ *lemma* local_homeomorph.trans_target
 - \+ *lemma* local_homeomorph.trans_to_fun
 - \+ *lemma* local_homeomorph.trans_to_local_equiv
+- \+ *structure* local_homeomorph
 
 
 
@@ -4071,6 +4113,7 @@ Added src/data/equiv/local_equiv.lean
 - \+ *lemma* local_equiv.trans_target'
 - \+ *lemma* local_equiv.trans_target
 - \+ *lemma* local_equiv.trans_to_fun
+- \+ *structure* local_equiv
 
 
 
@@ -4849,6 +4892,7 @@ Added src/topology/uniform_space/abstract_completion.lean
 - \+ *lemma* abstract_completion.uniform_continuous_extension₂
 - \+ *lemma* abstract_completion.uniform_continuous_map
 - \+ *lemma* abstract_completion.uniform_continuous_map₂
+- \+ *structure* abstract_completion
 
 Added src/topology/uniform_space/compare_reals.lean
 - \+ *def* compare_reals.Bourbaki_pkg

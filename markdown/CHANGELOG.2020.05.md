@@ -236,6 +236,7 @@ Modified src/linear_algebra/bilinear_form.lean
 
 Modified src/linear_algebra/sesquilinear_form.lean
 - \+/\- *lemma* sesq_form.ext
+- \+/\- *structure* sesq_form
 
 Modified src/measure_theory/measurable_space.lean
 
@@ -613,15 +614,21 @@ Modified src/algebra/module.lean
 - \+/\- *def* linear_map.id
 - \+/\- *lemma* linear_map.id_apply
 - \+/\- *lemma* linear_map.map_sum
+- \- *structure* module.core
 - \+/\- *lemma* module.gsmul_eq_smul_cast
 - \- *def* module.of_core
+- \+ *abbreviation* module
 - \- *def* ring_hom.to_module
+- \+ *structure* semimodule.core
 - \+ *def* semimodule.of_core
 - \+/\- *theorem* smul_neg
 - \+/\- *lemma* submodule.add_mem_iff_left
 - \+/\- *lemma* submodule.add_mem_iff_right
 - \+/\- *lemma* submodule.neg_mem_iff
+- \+/\- *structure* submodule
+- \+ *abbreviation* subspace
 - \- *def* subspace
+- \+/\- *abbreviation* vector_space
 
 Modified src/algebra/pi_instances.lean
 
@@ -775,7 +782,7 @@ Modified src/topology/bases.lean
 
 
 Modified src/topology/basic.lean
-
+- \+/\- *structure* topological_space
 
 Modified src/topology/opens.lean
 - \+/\- *def* topological_space.opens
@@ -815,7 +822,7 @@ Modified src/analysis/normed_space/real_inner_product.lean
 - \+ *def* real.inner_product_space
 
 Added src/geometry/euclidean.lean
-
+- \+ *abbreviation* euclidean_affine_space
 
 Modified src/geometry/manifold/real_instances.lean
 - \+/\- *def* euclidean_quadrant
@@ -1109,7 +1116,8 @@ Added src/tactic/protected.lean
 
 
 Added test/protec_proj.lean
-
+- \+ *structure* X
+- \+ *structure* foo
 
 
 
@@ -1135,6 +1143,7 @@ Modified src/tactic/core.lean
 
 Added src/tactic/with_local_reducibility.lean
 - \+ *def* tactic.decl_reducibility.to_attribute
+- \+ *inductive* tactic.decl_reducibility
 
 Added test/with_local_reducibility.lean
 - \+ *def* test.wlr_irred
@@ -1291,6 +1300,7 @@ Added src/ring_theory/subsemiring.lean
 - \+ *lemma* subsemiring.top_prod
 - \+ *lemma* subsemiring.top_prod_top
 - \+ *theorem* subsemiring.zero_mem
+- \+ *structure* subsemiring
 
 
 
@@ -1397,9 +1407,11 @@ feat(algebra/free) additive versions, docs. ([#2755](https://github.com/leanprov
 https://github.com/leanprover-community/mathlib/issues/930
 #### Estimated changes
 Modified src/algebra/free.lean
+- \+ *inductive* add_magma.free_add_semigroup.r
 - \+ *def* free_add_magma.length
 - \+ *def* free_add_magma.lift
 - \+ *def* free_add_magma.map
+- \+ *inductive* free_add_magma
 - \+ *def* free_add_semigroup.lift'
 - \+/\- *def* free_magma.length
 - \+/\- *def* free_magma.lift
@@ -1449,6 +1461,7 @@ Modified src/algebra/free.lean
 - \+/\- *lemma* magma.free_semigroup.map_mul
 - \+/\- *lemma* magma.free_semigroup.map_of
 - \+/\- *theorem* magma.free_semigroup.of_mul_assoc
+- \+/\- *inductive* magma.free_semigroup.r
 
 
 
@@ -1514,6 +1527,7 @@ Modified src/tactic/suggest.lean
 
 
 Modified test/library_search/basic.lean
+- \+ *inductive* test.library_search.P
 - \+ *lemma* test.library_search.lemma_with_false_in_head
 - \+ *lemma* test.library_search.lemma_with_gt_in_head
 
@@ -1810,7 +1824,10 @@ Modified docs/references.bib
 
 
 Added src/category_theory/abelian/basic.lean
+- \+ *abbreviation* category_theory.abelian.biproduct_to_pushout_is_cokernel.biproduct_to_pushout
+- \+ *abbreviation* category_theory.abelian.biproduct_to_pushout_is_cokernel.biproduct_to_pushout_cofork
 - \+ *def* category_theory.abelian.biproduct_to_pushout_is_cokernel.is_colimit_biproduct_to_pushout
+- \+ *abbreviation* category_theory.abelian.coimage_iso_image
 - \+ *def* category_theory.abelian.coimage_strong_epi_mono_factorisation
 - \+ *def* category_theory.abelian.epi_is_cokernel_of_kernel
 - \+ *lemma* category_theory.abelian.full_image_factorisation
@@ -1821,6 +1838,8 @@ Added src/category_theory/abelian/basic.lean
 - \+ *def* category_theory.abelian.is_iso_of_mono_of_epi
 - \+ *def* category_theory.abelian.mono_is_kernel_of_cokernel
 - \+ *def* category_theory.abelian.pullback_to_biproduct_is_kernel.is_limit_pullback_to_biproduct
+- \+ *abbreviation* category_theory.abelian.pullback_to_biproduct_is_kernel.pullback_to_biproduct
+- \+ *abbreviation* category_theory.abelian.pullback_to_biproduct_is_kernel.pullback_to_biproduct_fork
 - \+ *def* category_theory.abelian.strong_epi_of_epi
 
 Modified src/category_theory/limits/shapes/biproducts.lean
@@ -1858,6 +1877,7 @@ feat(algebra/continued_fractions): add computation definitions and basic transla
 Added src/algebra/continued_fractions/computation/basic.lean
 - \+ *lemma* generalized_continued_fraction.int_fract_pair.coe_to_int_fract_pair
 - \+ *lemma* generalized_continued_fraction.int_fract_pair.stream_is_seq
+- \+ *structure* generalized_continued_fraction.int_fract_pair
 
 Added src/algebra/continued_fractions/computation/default.lean
 
@@ -2048,8 +2068,10 @@ Added src/computability/tm_to_partrec.lean
 - \+ *theorem* turing.partrec_to_TM2.K'.elim_update_main
 - \+ *theorem* turing.partrec_to_TM2.K'.elim_update_rev
 - \+ *theorem* turing.partrec_to_TM2.K'.elim_update_stack
+- \+ *inductive* turing.partrec_to_TM2.K'
 - \+ *def* turing.partrec_to_TM2.cfg'
 - \+ *theorem* turing.partrec_to_TM2.clear_ok
+- \+ *inductive* turing.partrec_to_TM2.cont'
 - \+ *def* turing.partrec_to_TM2.cont_stack
 - \+ *theorem* turing.partrec_to_TM2.copy_ok
 - \+ *def* turing.partrec_to_TM2.halt
@@ -2093,7 +2115,10 @@ Added src/computability/tm_to_partrec.lean
 - \+ *theorem* turing.partrec_to_TM2.tr_ret_respects
 - \+ *def* turing.partrec_to_TM2.unrev
 - \+ *theorem* turing.partrec_to_TM2.unrev_ok
+- \+ *inductive* turing.partrec_to_TM2.Γ'
+- \+ *inductive* turing.partrec_to_TM2.Λ'
 - \+ *def* turing.to_partrec.cfg.then
+- \+ *inductive* turing.to_partrec.cfg
 - \+ *def* turing.to_partrec.code.eval
 - \+ *theorem* turing.to_partrec.code.exists_code.comp
 - \+ *theorem* turing.to_partrec.code.exists_code
@@ -2111,10 +2136,12 @@ Added src/computability/tm_to_partrec.lean
 - \+ *def* turing.to_partrec.code.rfind
 - \+ *def* turing.to_partrec.code.zero
 - \+ *theorem* turing.to_partrec.code.zero_eval
+- \+ *inductive* turing.to_partrec.code
 - \+ *theorem* turing.to_partrec.code_is_ok
 - \+ *def* turing.to_partrec.cont.eval
 - \+ *def* turing.to_partrec.cont.then
 - \+ *theorem* turing.to_partrec.cont.then_eval
+- \+ *inductive* turing.to_partrec.cont
 - \+ *theorem* turing.to_partrec.cont_eval_fix
 - \+ *def* turing.to_partrec.step
 - \+ *theorem* turing.to_partrec.step_normal.is_ret
@@ -2781,6 +2808,7 @@ Modified src/linear_algebra/quadratic_form.lean
 - \+ *def* quadratic_form.isometry.refl
 - \+ *def* quadratic_form.isometry.symm
 - \+ *def* quadratic_form.isometry.trans
+- \+ *structure* quadratic_form.isometry
 
 
 
@@ -2992,6 +3020,7 @@ Added src/analysis/calculus/implicit.lean
 - \+ *def* implicit_function_data.to_local_homeomorph
 - \+ *lemma* implicit_function_data.to_local_homeomorph_apply
 - \+ *lemma* implicit_function_data.to_local_homeomorph_coe
+- \+ *structure* implicit_function_data
 
 Modified src/analysis/normed_space/operator_norm.lean
 - \+/\- *theorem* continuous_linear_map.is_O_comp
@@ -3747,10 +3776,12 @@ Modified src/ring_theory/localization.lean
 - \+ *lemma* localization.sec_spec
 - \+ *lemma* localization.surj
 - \- *theorem* localization.symm
+- \+ *abbreviation* localization.to_map
 - \+ *lemma* localization.to_map_injective
 - \- *def* localization.to_units
 - \- *lemma* localization.to_units_coe
 - \- *theorem* localization.trans
+- \+ *structure* localization
 - \- *def* localization
 - \+ *lemma* mem_non_zero_divisors_iff_ne_zero
 - \+ *def* non_zero_divisors
@@ -7018,6 +7049,7 @@ I think I've learnt some stuff about the ```@[simp]``` linter today. Hopefully I
 *edit: I mean I haven't checked how many places I can make ```f``` implicit & remove the appropriate ```f.```'s.
 #### Estimated changes
 Modified src/group_theory/monoid_localization.lean
+- \+/\- *structure* add_submonoid.localization_map
 - \+ *def* monoid_hom.to_localization_map
 - \- *lemma* submonoid.localization_map.comp_mul_equiv_symm_comap_apply
 - \- *lemma* submonoid.localization_map.comp_mul_equiv_symm_map_apply
@@ -7069,6 +7101,7 @@ Modified src/group_theory/monoid_localization.lean
 - \- *lemma* submonoid.localization_map.symm_of_mul_equiv_apply
 - \- *lemma* submonoid.localization_map.symm_to_mul_equiv_apply
 - \- *lemma* submonoid.localization_map.to_fun_inj
+- \+ *abbreviation* submonoid.localization_map.to_map
 - \+ *lemma* submonoid.localization_map.to_map_injective
 - \- *def* submonoid.localization_map.to_mul_equiv
 - \- *lemma* submonoid.localization_map.to_mul_equiv_comp
@@ -7079,6 +7112,7 @@ Modified src/group_theory/monoid_localization.lean
 - \- *lemma* submonoid.localization_map.to_mul_equiv_of_mul_equiv_apply
 - \- *lemma* submonoid.localization_map.to_mul_equiv_of_mul_equiv_of_mul_equiv
 - \- *lemma* submonoid.localization_map.to_mul_equiv_of_mul_equiv_of_mul_equiv_apply
+- \+/\- *structure* submonoid.localization_map
 
 
 
@@ -8972,6 +9006,7 @@ Modified src/computability/turing_machine.lean
 - \- *def* turing.TM2to1.stackel.get
 - \- *def* turing.TM2to1.stackel.is_bottom
 - \- *def* turing.TM2to1.stackel.is_top
+- \- *inductive* turing.TM2to1.stackel
 - \- *def* turing.TM2to1.stackel_equiv
 - \+ *theorem* turing.TM2to1.stk_nth_val
 - \+/\- *theorem* turing.TM2to1.supports_run
@@ -9070,7 +9105,9 @@ Modified src/computability/turing_machine.lean
 - \+ *theorem* turing.tape.write_mk'
 - \+ *theorem* turing.tape.write_move_right_n
 - \+/\- *theorem* turing.tape.write_self
+- \+ *structure* turing.tape
 - \- *def* turing.tape
+- \+ *structure* turing.{u
 
 Modified src/data/list/basic.lean
 - \+ *theorem* list.head'_map
@@ -9315,6 +9352,7 @@ Modified src/ring_theory/algebra.lean
 - \+ *def* alg_equiv.symm
 - \+ *lemma* alg_equiv.symm_apply_apply
 - \+ *def* alg_equiv.trans
+- \+ *structure* alg_equiv
 
 
 
@@ -10720,6 +10758,7 @@ Modified src/order/bounded_lattice.lean
 - \+ *lemma* is_compl.sup_eq_top
 - \+ *lemma* is_compl.sup_inf
 - \+ *lemma* is_compl.to_order_dual
+- \+ *structure* is_compl
 - \+ *lemma* is_compl_bot_top
 - \+ *lemma* is_compl_top_bot
 
@@ -10787,6 +10826,7 @@ Some simple related proofs are also included such as:
 #### Estimated changes
 Added src/algebra/classical_lie_algebras.lean
 - \+ *lemma* lie_algebra.matrix_trace_commutator_zero
+- \+ *abbreviation* lie_algebra.special_linear.E
 - \+ *lemma* lie_algebra.special_linear.E_apply_one
 - \+ *lemma* lie_algebra.special_linear.E_apply_zero
 - \+ *lemma* lie_algebra.special_linear.E_diag_zero

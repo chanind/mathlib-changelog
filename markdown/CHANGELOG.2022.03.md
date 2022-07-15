@@ -25,6 +25,7 @@ Added src/order/chain.lean
 - \+ *lemma* chain_closure.succ_fixpoint
 - \+ *lemma* chain_closure.succ_fixpoint_iff
 - \+ *lemma* chain_closure.total
+- \+ *inductive* chain_closure
 - \+ *lemma* chain_closure_empty
 - \+ *lemma* chain_closure_max_chain
 - \+ *lemma* is_chain.directed_on
@@ -54,6 +55,7 @@ Modified src/order/zorn.lean
 - \- *lemma* chain_closure.is_chain
 - \- *lemma* chain_closure.succ_fixpoint
 - \- *lemma* chain_closure.succ_fixpoint_iff
+- \- *inductive* chain_closure
 - \- *lemma* chain_closure_empty
 - \- *lemma* chain_closure_max_chain
 - \- *lemma* chain_closure_total
@@ -129,6 +131,7 @@ Modified src/model_theory/basic.lean
 Modified src/model_theory/bundled.lean
 - \+ *lemma* first_order.language.Theory.Model.coe_of
 - \+ *def* first_order.language.Theory.Model.of
+- \+ *structure* first_order.language.Theory.Model
 - \+ *lemma* first_order.language.Theory.coe_of
 - \+ *def* first_order.language.Theory.model.bundled
 
@@ -151,7 +154,8 @@ feat(combinatorics/simple_graph/connectivity): walk constructor patterns with ex
 This saves a couple underscores, letting you write `walk.cons' _ v _ h p` instead of `@walk.cons _ _ _ v _ h p` when you want that middle vertex in a pattern.
 #### Estimated changes
 Modified src/combinatorics/simple_graph/connectivity.lean
-
+- \+ *abbreviation* simple_graph.walk.cons'
+- \+ *abbreviation* simple_graph.walk.nil'
 
 
 
@@ -322,12 +326,14 @@ Added src/order/category/Semilattice.lean
 - \+ *def* SemilatticeInf.dual
 - \+ *def* SemilatticeInf.iso.mk
 - \+ *def* SemilatticeInf.of
+- \+ *structure* SemilatticeInf
 - \+ *lemma* SemilatticeInf_dual_comp_forget_to_PartialOrder
 - \+ *lemma* SemilatticeSup.coe_forget_to_PartialOrder
 - \+ *lemma* SemilatticeSup.coe_of
 - \+ *def* SemilatticeSup.dual
 - \+ *def* SemilatticeSup.iso.mk
 - \+ *def* SemilatticeSup.of
+- \+ *structure* SemilatticeSup
 - \+ *lemma* SemilatticeSup_dual_comp_forget_to_PartialOrder
 - \+ *def* SemilatticeSup_equiv_SemilatticeInf
 
@@ -492,6 +498,7 @@ Added src/topology/sets/order.lean
 - \+ *lemma* clopen_upper_set.coe_top
 - \+ *def* clopen_upper_set.to_upper_set
 - \+ *lemma* clopen_upper_set.upper
+- \+ *structure* clopen_upper_set
 
 
 
@@ -738,6 +745,7 @@ Added src/ring_theory/graded_algebra/homogeneous_localization.lean
 - \+ *lemma* homogeneous_localization.num_denom_same_deg.num_pow
 - \+ *lemma* homogeneous_localization.num_denom_same_deg.num_smul
 - \+ *lemma* homogeneous_localization.num_denom_same_deg.num_zero
+- \+ *structure* homogeneous_localization.num_denom_same_deg
 - \+ *lemma* homogeneous_localization.num_mem
 - \+ *lemma* homogeneous_localization.one_eq
 - \+ *lemma* homogeneous_localization.one_val
@@ -2783,12 +2791,13 @@ Added src/algebra/star/subalgebra.lean
 - \+ *lemma* star_subalgebra.centralizer_le
 - \+ *lemma* star_subalgebra.coe_centralizer
 - \+ *lemma* star_subalgebra.mem_centralizer_iff
+- \+ *structure* star_subalgebra
 
 Modified src/analysis/inner_product_space/adjoint.lean
 
 
 Added src/analysis/von_neumann_algebra/basic.lean
-
+- \+ *structure* von_neumann_algebra
 
 Modified src/group_theory/submonoid/basic.lean
 
@@ -2838,6 +2847,7 @@ Adds to the module docs of these files.
 #### Estimated changes
 Modified src/model_theory/basic.lean
 - \- *def* first_order.language.Lequiv.add_empty_constants
+- \- *structure* first_order.language.Lequiv
 - \- *def* first_order.language.Lhom.add_constants
 - \- *def* first_order.language.Lhom.comp
 - \- *lemma* first_order.language.Lhom.comp_assoc
@@ -2852,6 +2862,7 @@ Modified src/model_theory/basic.lean
 - \- *def* first_order.language.Lhom.sum_map
 - \- *lemma* first_order.language.Lhom.sum_map_comp_inl
 - \- *lemma* first_order.language.Lhom.sum_map_comp_inr
+- \- *structure* first_order.language.Lhom
 - \- *def* first_order.language.Lhom_with_constants
 - \- *def* first_order.language.Lhom_with_constants_map
 - \- *lemma* first_order.language.coe_con
@@ -2876,6 +2887,7 @@ Modified src/model_theory/fraisse.lean
 
 Added src/model_theory/language_map.lean
 - \+ *def* first_order.language.Lequiv.add_empty_constants
+- \+ *structure* first_order.language.Lequiv
 - \+ *def* first_order.language.Lhom.add_constants
 - \+ *def* first_order.language.Lhom.comp
 - \+ *lemma* first_order.language.Lhom.comp_assoc
@@ -2890,6 +2902,7 @@ Added src/model_theory/language_map.lean
 - \+ *def* first_order.language.Lhom.sum_map
 - \+ *lemma* first_order.language.Lhom.sum_map_comp_inl
 - \+ *lemma* first_order.language.Lhom.sum_map_comp_inr
+- \+ *structure* first_order.language.Lhom
 - \+ *def* first_order.language.Lhom_with_constants
 - \+ *def* first_order.language.Lhom_with_constants_map
 - \+ *lemma* first_order.language.coe_con
@@ -3026,10 +3039,12 @@ Added src/model_theory/syntax.lean
 - \+ *lemma* first_order.language.bounded_formula.is_atomic.is_qf
 - \+ *lemma* first_order.language.bounded_formula.is_atomic.lift_at
 - \+ *lemma* first_order.language.bounded_formula.is_atomic.relabel
+- \+ *inductive* first_order.language.bounded_formula.is_atomic
 - \+ *lemma* first_order.language.bounded_formula.is_prenex.cast_le
 - \+ *lemma* first_order.language.bounded_formula.is_prenex.induction_on_all_not
 - \+ *lemma* first_order.language.bounded_formula.is_prenex.lift_at
 - \+ *lemma* first_order.language.bounded_formula.is_prenex.relabel
+- \+ *inductive* first_order.language.bounded_formula.is_prenex
 - \+ *lemma* first_order.language.bounded_formula.is_prenex_to_prenex_imp
 - \+ *lemma* first_order.language.bounded_formula.is_prenex_to_prenex_imp_right
 - \+ *lemma* first_order.language.bounded_formula.is_qf.cast_le
@@ -3039,6 +3054,7 @@ Added src/model_theory/syntax.lean
 - \+ *lemma* first_order.language.bounded_formula.is_qf.relabel
 - \+ *lemma* first_order.language.bounded_formula.is_qf.to_prenex_imp
 - \+ *lemma* first_order.language.bounded_formula.is_qf.to_prenex_imp_right
+- \+ *inductive* first_order.language.bounded_formula.is_qf
 - \+ *lemma* first_order.language.bounded_formula.is_qf_bot
 - \+ *def* first_order.language.bounded_formula.lift_at
 - \+ *lemma* first_order.language.bounded_formula.not_all_is_atomic
@@ -3052,6 +3068,7 @@ Added src/model_theory/syntax.lean
 - \+ *def* first_order.language.bounded_formula.to_prenex_imp
 - \+ *def* first_order.language.bounded_formula.to_prenex_imp_right
 - \+ *lemma* first_order.language.bounded_formula.to_prenex_is_prenex
+- \+ *inductive* first_order.language.bounded_formula
 - \+ *def* first_order.language.constants.term
 - \+ *def* first_order.language.formula.graph
 - \+ *lemma* first_order.language.formula.is_atomic_graph
@@ -3070,6 +3087,7 @@ Added src/model_theory/syntax.lean
 - \+ *def* first_order.language.term.list_encode
 - \+ *lemma* first_order.language.term.list_encode_injective
 - \+ *def* first_order.language.term.relabel
+- \+ *inductive* first_order.language.term
 
 Deleted src/model_theory/terms_and_formulas.lean
 - \- *def* first_order.language.Lequiv.on_bounded_formula
@@ -3130,10 +3148,12 @@ Deleted src/model_theory/terms_and_formulas.lean
 - \- *lemma* first_order.language.bounded_formula.is_atomic.is_qf
 - \- *lemma* first_order.language.bounded_formula.is_atomic.lift_at
 - \- *lemma* first_order.language.bounded_formula.is_atomic.relabel
+- \- *inductive* first_order.language.bounded_formula.is_atomic
 - \- *lemma* first_order.language.bounded_formula.is_prenex.cast_le
 - \- *lemma* first_order.language.bounded_formula.is_prenex.induction_on_all_not
 - \- *lemma* first_order.language.bounded_formula.is_prenex.lift_at
 - \- *lemma* first_order.language.bounded_formula.is_prenex.relabel
+- \- *inductive* first_order.language.bounded_formula.is_prenex
 - \- *lemma* first_order.language.bounded_formula.is_prenex_to_prenex_imp
 - \- *lemma* first_order.language.bounded_formula.is_prenex_to_prenex_imp_right
 - \- *lemma* first_order.language.bounded_formula.is_qf.cast_le
@@ -3145,6 +3165,7 @@ Deleted src/model_theory/terms_and_formulas.lean
 - \- *lemma* first_order.language.bounded_formula.is_qf.relabel
 - \- *lemma* first_order.language.bounded_formula.is_qf.to_prenex_imp
 - \- *lemma* first_order.language.bounded_formula.is_qf.to_prenex_imp_right
+- \- *inductive* first_order.language.bounded_formula.is_qf
 - \- *lemma* first_order.language.bounded_formula.is_qf_bot
 - \- *def* first_order.language.bounded_formula.lift_at
 - \- *lemma* first_order.language.bounded_formula.not_all_is_atomic
@@ -3185,6 +3206,7 @@ Deleted src/model_theory/terms_and_formulas.lean
 - \- *def* first_order.language.bounded_formula.to_prenex_imp
 - \- *def* first_order.language.bounded_formula.to_prenex_imp_right
 - \- *lemma* first_order.language.bounded_formula.to_prenex_is_prenex
+- \- *inductive* first_order.language.bounded_formula
 - \- *def* first_order.language.constants.term
 - \- *lemma* first_order.language.embedding.realize_term
 - \- *lemma* first_order.language.equiv.realize_bounded_formula
@@ -3230,6 +3252,7 @@ Deleted src/model_theory/terms_and_formulas.lean
 - \- *lemma* first_order.language.term.realize_lift_at
 - \- *lemma* first_order.language.term.realize_relabel
 - \- *def* first_order.language.term.relabel
+- \- *inductive* first_order.language.term
 
 Modified src/model_theory/ultraproducts.lean
 - \- *theorem* first_order.language.Theory.is_satisfiable_iff_is_finitely_satisfiable
@@ -3276,11 +3299,14 @@ once for `non_preadditive_abelian C` and once for `abelian C`.
 This duplication wasn't really necessary, and this PR unifies them.
 #### Estimated changes
 Modified src/category_theory/abelian/basic.lean
+- \+/\- *abbreviation* category_theory.abelian.coimage_iso_image'
+- \+/\- *abbreviation* category_theory.abelian.coimage_iso_image
 - \+ *def* category_theory.abelian.coimage_strong_epi_mono_factorisation
 - \- *def* category_theory.abelian.coimages.coimage_strong_epi_mono_factorisation
 - \- *lemma* category_theory.abelian.coimages.comp_coimage_π_eq_zero
 - \+ *lemma* category_theory.abelian.comp_coimage_π_eq_zero
 - \+/\- *lemma* category_theory.abelian.full_image_factorisation
+- \+/\- *abbreviation* category_theory.abelian.image_iso_image
 - \+ *def* category_theory.abelian.image_strong_epi_mono_factorisation
 - \+ *lemma* category_theory.abelian.image_ι_comp_eq_zero
 - \- *def* category_theory.abelian.images.image_strong_epi_mono_factorisation
@@ -3940,6 +3966,7 @@ Added src/topology/continuous_function/cocompact_map.lean
 - \+ *lemma* cocompact_map.ext
 - \+ *lemma* cocompact_map.id_comp
 - \+ *lemma* cocompact_map.tendsto_of_forall_preimage
+- \+ *structure* cocompact_map
 
 
 
@@ -4162,6 +4189,7 @@ Added src/order/category/FinBoolAlg.lean
 - \+ *def* FinBoolAlg.dual_equiv
 - \+ *def* FinBoolAlg.iso.mk
 - \+ *def* FinBoolAlg.of
+- \+ *structure* FinBoolAlg
 - \+ *def* Fintype_to_FinBoolAlg_op
 
 Modified src/order/category/FinPartialOrder.lean
@@ -4189,6 +4217,7 @@ feat(combinatorics/simple_graph/{connectivity,metric}): `connected` and `dist` (
 #### Estimated changes
 Modified src/combinatorics/simple_graph/connectivity.lean
 - \+ *lemma* simple_graph.connected.set_univ_walk_nonempty
+- \+ *structure* simple_graph.connected
 - \+ *lemma* simple_graph.preconnected.set_univ_walk_nonempty
 - \+ *def* simple_graph.preconnected
 - \+ *def* simple_graph.reachable
@@ -4196,8 +4225,10 @@ Modified src/combinatorics/simple_graph/connectivity.lean
 - \+ *lemma* simple_graph.reachable_iff_refl_trans_gen
 - \+ *lemma* simple_graph.reachable_is_equivalence
 - \+ *def* simple_graph.reachable_setoid
+- \+ *abbreviation* simple_graph.subgraph.connected
 - \+ *lemma* simple_graph.walk.eq_of_length_eq_zero
 - \+ *lemma* simple_graph.walk.exists_length_eq_zero_iff
+- \+/\- *structure* simple_graph.walk.is_cycle
 - \+/\- *lemma* simple_graph.walk.is_cycle_def
 
 Added src/combinatorics/simple_graph/metric.lean
@@ -4425,6 +4456,7 @@ Modified src/order/zorn.lean
 - \+ *lemma* chain_closure.is_chain
 - \+ *lemma* chain_closure.succ_fixpoint
 - \+ *lemma* chain_closure.succ_fixpoint_iff
+- \+ *inductive* chain_closure
 - \+ *lemma* chain_closure_empty
 - \+ *lemma* chain_closure_max_chain
 - \+ *lemma* chain_closure_total
@@ -4465,6 +4497,7 @@ Modified src/order/zorn.lean
 - \- *lemma* zorn.chain.total_of_refl
 - \- *def* zorn.chain
 - \- *lemma* zorn.chain_chain_closure
+- \- *inductive* zorn.chain_closure
 - \- *lemma* zorn.chain_closure_closure
 - \- *lemma* zorn.chain_closure_empty
 - \- *lemma* zorn.chain_closure_succ_fixpoint
@@ -5270,7 +5303,7 @@ feat(order/hom/*): more superclass instances for `order_iso_class` ([#12889](htt
  * Add more instances deriving specific order hom classes from `order_iso_class`
 #### Estimated changes
 Modified src/order/hom/basic.lean
-
+- \+/\- *abbreviation* order_hom_class
 
 Modified src/order/hom/bounded.lean
 
@@ -5486,6 +5519,7 @@ Defines equivalences between first-order languages
 #### Estimated changes
 Modified src/model_theory/basic.lean
 - \+ *def* first_order.language.Lequiv.add_empty_constants
+- \+ *structure* first_order.language.Lequiv
 - \+/\- *def* first_order.language.Lhom.comp
 - \+ *lemma* first_order.language.Lhom.comp_assoc
 - \+/\- *lemma* first_order.language.Lhom.comp_id
@@ -5561,6 +5595,7 @@ Added src/order/concept.lean
 - \+ *lemma* concept.swap_swap
 - \+ *lemma* concept.top_fst
 - \+ *lemma* concept.top_snd
+- \+ *structure* concept
 - \+ *def* extent_closure
 - \+ *lemma* extent_closure_Union
 - \+ *lemma* extent_closure_Union₂
@@ -5654,6 +5689,7 @@ Modified src/order/hom/complete_lattice.lean
 - \- *lemma* frame_hom.bot_apply
 - \- *lemma* frame_hom.coe_bot
 - \+/\- *def* frame_hom.to_lattice_hom
+- \+/\- *structure* frame_hom
 
 Modified src/topology/sets/opens.lean
 
@@ -5771,6 +5807,7 @@ Added src/analysis/calculus/diff_on_int_cont.lean
 - \+ *lemma* diff_on_int_cont.smul_const
 - \+ *lemma* diff_on_int_cont.sub
 - \+ *lemma* diff_on_int_cont.sub_const
+- \+ *structure* diff_on_int_cont
 - \+ *lemma* diff_on_int_cont_const
 - \+ *lemma* diff_on_int_cont_open
 - \+ *lemma* diff_on_int_cont_univ
@@ -5823,6 +5860,7 @@ Added src/topology/order/hom/esakia.lean
 - \+ *lemma* esakia_hom.id_comp
 - \+ *lemma* esakia_hom.to_fun_eq_coe
 - \+ *def* esakia_hom.to_pseudo_epimorphism
+- \+ *structure* esakia_hom
 - \+ *lemma* pseudo_epimorphism.cancel_left
 - \+ *lemma* pseudo_epimorphism.cancel_right
 - \+ *lemma* pseudo_epimorphism.coe_comp
@@ -5837,6 +5875,7 @@ Added src/topology/order/hom/esakia.lean
 - \+ *lemma* pseudo_epimorphism.id_apply
 - \+ *lemma* pseudo_epimorphism.id_comp
 - \+ *lemma* pseudo_epimorphism.to_fun_eq_coe
+- \+ *structure* pseudo_epimorphism
 
 
 
@@ -6096,6 +6135,7 @@ Modified src/analysis/locally_convex/with_seminorms.lean
 - \+ *lemma* seminorm_family.with_seminorms_eq
 - \+ *lemma* seminorm_family.with_seminorms_of_has_basis
 - \+ *lemma* seminorm_family.with_seminorms_of_nhds
+- \+ *abbreviation* seminorm_family
 - \- *def* seminorm_module_filter_basis
 - \- *lemma* with_seminorms.to_locally_convex_space
 - \- *lemma* with_seminorms_eq
@@ -7145,6 +7185,7 @@ Modified src/model_theory/definability.lean
 - \- *lemma* first_order.language.definable.preimage_comp
 - \- *lemma* first_order.language.definable.sdiff
 - \- *lemma* first_order.language.definable.union
+- \- *structure* first_order.language.definable
 - \- *lemma* first_order.language.definable_empty
 - \- *lemma* first_order.language.definable_finset_bInter
 - \- *lemma* first_order.language.definable_finset_bUnion
@@ -7238,13 +7279,16 @@ Modified src/model_theory/terms_and_formulas.lean
 - \+ *lemma* first_order.language.bounded_formula.is_atomic.is_prenex
 - \+ *lemma* first_order.language.bounded_formula.is_atomic.is_qf
 - \+ *lemma* first_order.language.bounded_formula.is_atomic.relabel
+- \+ *inductive* first_order.language.bounded_formula.is_atomic
 - \+ *lemma* first_order.language.bounded_formula.is_prenex.induction_on_all_not
 - \+ *lemma* first_order.language.bounded_formula.is_prenex.relabel
+- \+ *inductive* first_order.language.bounded_formula.is_prenex
 - \+ *lemma* first_order.language.bounded_formula.is_qf.induction_on_inf_not
 - \+ *lemma* first_order.language.bounded_formula.is_qf.induction_on_sup_not
 - \+ *lemma* first_order.language.bounded_formula.is_qf.is_prenex
 - \+ *lemma* first_order.language.bounded_formula.is_qf.not
 - \+ *lemma* first_order.language.bounded_formula.is_qf.relabel
+- \+ *inductive* first_order.language.bounded_formula.is_qf
 - \+ *lemma* first_order.language.bounded_formula.is_qf_bot
 
 
@@ -7257,6 +7301,9 @@ Modified src/category_theory/abelian/injective_resolution.lean
 - \+ *def* category_theory.InjectiveResolution.of
 - \+ *def* category_theory.InjectiveResolution.of_cocomplex
 - \+ *lemma* category_theory.exact_f_d
+- \+ *abbreviation* category_theory.injective_resolution.desc
+- \+ *abbreviation* category_theory.injective_resolution.ι
+- \+ *abbreviation* category_theory.injective_resolution
 - \+ *def* category_theory.injective_resolutions
 
 
@@ -7780,6 +7827,7 @@ feat(model_theory/basic, elementary_maps): Uses `fun_like` approach for first-or
 Introduces classes `hom_class`, `strong_hom_class` to describe classes of first-order maps.
 #### Estimated changes
 Modified src/model_theory/basic.lean
+- \+/\- *structure* first_order.language.embedding
 - \+ *lemma* first_order.language.equiv.bijective
 - \+/\- *lemma* first_order.language.equiv.coe_injective
 - \+/\- *lemma* first_order.language.equiv.injective
@@ -8094,6 +8142,7 @@ Modified src/linear_algebra/orientation.lean
 - \+/\- *lemma* orientation.map_apply
 - \+/\- *lemma* orientation.map_refl
 - \+/\- *lemma* orientation.map_symm
+- \+/\- *abbreviation* orientation
 
 Modified src/linear_algebra/ray.lean
 - \+ *lemma* eq_zero_of_same_ray_neg_smul_right
@@ -8457,6 +8506,7 @@ This pr contains the basic definitions of projective spectrum of a graded ring:
 - vanishing ideal
 #### Estimated changes
 Added src/algebraic_geometry/projective_spectrum/topology.lean
+- \+ *abbreviation* projective_spectrum.as_homogeneous_ideal
 - \+ *lemma* projective_spectrum.as_homogeneous_ideal_def
 - \+ *lemma* projective_spectrum.coe_vanishing_ideal
 - \+ *lemma* projective_spectrum.ext
@@ -8538,12 +8588,14 @@ Modified src/group_theory/subgroup/basic.lean
 
 
 Modified src/group_theory/submonoid/basic.lean
-
+- \+/\- *structure* add_submonoid
+- \+/\- *structure* submonoid
 
 Modified src/group_theory/submonoid/pointwise.lean
 
 
 Added src/group_theory/subsemigroup/basic.lean
+- \+ *structure* add_subsemigroup
 - \+ *lemma* mul_hom.coe_of_mdense
 - \+ *def* mul_hom.eq_mlocus
 - \+ *lemma* mul_hom.eq_of_eq_on_mdense
@@ -8588,6 +8640,7 @@ Added src/group_theory/subsemigroup/basic.lean
 - \+ *lemma* subsemigroup.subset_closure
 - \+ *lemma* subsemigroup.subsingleton_of_subsingleton
 - \+ *lemma* subsemigroup.supr_eq_closure
+- \+ *structure* subsemigroup
 
 Modified src/linear_algebra/finsupp.lean
 
@@ -8822,6 +8875,7 @@ Added src/topology/bornology/hom.lean
 - \+ *def* locally_bounded_map.of_map_bounded
 - \+ *lemma* locally_bounded_map.of_map_bounded_apply
 - \+ *lemma* locally_bounded_map.to_fun_eq_coe
+- \+ *structure* locally_bounded_map
 
 
 
@@ -9112,6 +9166,8 @@ Modified src/ring_theory/graded_algebra/homogeneous_ideal.lean
 - \+ *lemma* homogeneous_ideal.to_ideal_mul
 - \+ *lemma* homogeneous_ideal.to_ideal_sup
 - \+ *lemma* homogeneous_ideal.to_ideal_top
+- \+ *structure* homogeneous_ideal
+- \- *abbreviation* homogeneous_ideal
 - \- *lemma* ideal.coe_homogeneous_core_le
 - \- *lemma* ideal.coe_homogeneous_hull_eq_supr
 - \+/\- *lemma* ideal.homogeneous_core.gc
@@ -9257,6 +9313,7 @@ This pr is splitted from [#12545](https://github.com/leanprover-community/mathli
 Added src/category_theory/preadditive/injective_resolution.lean
 - \+ *def* category_theory.InjectiveResolution.self
 - \+ *lemma* category_theory.InjectiveResolution.ι_f_succ
+- \+ *structure* category_theory.InjectiveResolution
 
 
 
@@ -9275,6 +9332,7 @@ Modified src/analysis/normed_space/finite_dimension.lean
 
 
 Modified src/linear_algebra/basic.lean
+- \- *abbreviation* linear_equiv.coord
 - \- *lemma* linear_equiv.coord_self
 - \- *lemma* linear_equiv.ker_to_span_singleton
 - \- *def* linear_equiv.to_span_nonzero_singleton
@@ -9390,6 +9448,7 @@ Modified src/linear_algebra/quotient.lean
 
 
 Added src/linear_algebra/span.lean
+- \+ *abbreviation* linear_equiv.coord
 - \+ *lemma* linear_equiv.coord_self
 - \+ *def* linear_equiv.to_span_nonzero_singleton
 - \+ *lemma* linear_equiv.to_span_nonzero_singleton_one
@@ -9608,8 +9667,10 @@ Added src/data/W/constructions.lean
 - \+ *def* W_type.equiv_nat
 - \+ *lemma* W_type.left_inv_list
 - \+ *lemma* W_type.left_inv_nat
+- \+ *inductive* W_type.list_α
 - \+ *def* W_type.list_α_equiv_punit_sum
 - \+ *def* W_type.list_β
+- \+ *inductive* W_type.nat_α
 - \+ *def* W_type.nat_α_equiv_punit_sum_punit
 - \+ *def* W_type.nat_β
 - \+ *def* W_type.of_list
@@ -9628,6 +9689,7 @@ In the meantime, make sure that Lean doesn't use `subtype` instances for `unifor
 #### Estimated changes
 Modified src/analysis/complex/upper_half_plane.lean
 - \+ *def* upper_half_plane
+- \- *abbreviation* upper_half_plane
 
 
 
@@ -9891,6 +9953,8 @@ feat(category_theory/bicategory/free): define free bicategories ([#11998](https:
 #### Estimated changes
 Added src/category_theory/bicategory/free.lean
 - \+ *lemma* category_theory.free_bicategory.comp_def
+- \+ *inductive* category_theory.free_bicategory.hom
+- \+ *inductive* category_theory.free_bicategory.hom₂
 - \+ *lemma* category_theory.free_bicategory.id_def
 - \+ *def* category_theory.free_bicategory.lift
 - \+ *def* category_theory.free_bicategory.lift_hom
@@ -9909,6 +9973,7 @@ Added src/category_theory/bicategory/free.lean
 - \+ *lemma* category_theory.free_bicategory.mk_whisker_left
 - \+ *lemma* category_theory.free_bicategory.mk_whisker_right
 - \+ *def* category_theory.free_bicategory.of
+- \+ *inductive* category_theory.free_bicategory.rel
 - \+ *def* category_theory.free_bicategory
 
 
@@ -9965,6 +10030,7 @@ Added src/topology/hom/open.lean
 - \+ *lemma* continuous_open_map.id_apply
 - \+ *lemma* continuous_open_map.id_comp
 - \+ *lemma* continuous_open_map.to_fun_eq_coe
+- \+ *structure* continuous_open_map
 
 
 
@@ -10067,12 +10133,14 @@ Added src/topology/sets/closeds.lean
 - \+ *lemma* topological_space.clopens.coe_sup
 - \+ *lemma* topological_space.clopens.coe_top
 - \+ *def* topological_space.clopens.to_opens
+- \+ *structure* topological_space.clopens
 - \+ *lemma* topological_space.closeds.closed
 - \+ *lemma* topological_space.closeds.coe_bot
 - \+ *lemma* topological_space.closeds.coe_inf
 - \+ *lemma* topological_space.closeds.coe_mk
 - \+ *lemma* topological_space.closeds.coe_sup
 - \+ *lemma* topological_space.closeds.coe_top
+- \+ *structure* topological_space.closeds
 
 Renamed src/topology/compacts.lean to src/topology/sets/compacts.lean
 - \- *lemma* topological_space.clopens.clopen
@@ -10084,12 +10152,14 @@ Renamed src/topology/compacts.lean to src/topology/sets/compacts.lean
 - \- *lemma* topological_space.clopens.coe_sup
 - \- *lemma* topological_space.clopens.coe_top
 - \- *def* topological_space.clopens.to_opens
+- \- *structure* topological_space.clopens
 - \- *lemma* topological_space.closeds.closed
 - \- *lemma* topological_space.closeds.coe_bot
 - \- *lemma* topological_space.closeds.coe_inf
 - \- *lemma* topological_space.closeds.coe_mk
 - \- *lemma* topological_space.closeds.coe_sup
 - \- *lemma* topological_space.closeds.coe_top
+- \- *structure* topological_space.closeds
 
 Renamed src/topology/opens.lean to src/topology/sets/opens.lean
 
@@ -10125,6 +10195,7 @@ Added src/category_theory/endofunctor/algebra.lean
 - \+ *def* category_theory.endofunctor.algebra.functor_of_nat_trans_id
 - \+ *def* category_theory.endofunctor.algebra.hom.comp
 - \+ *def* category_theory.endofunctor.algebra.hom.id
+- \+ *structure* category_theory.endofunctor.algebra.hom
 - \+ *lemma* category_theory.endofunctor.algebra.id_eq_id
 - \+ *lemma* category_theory.endofunctor.algebra.id_f
 - \+ *lemma* category_theory.endofunctor.algebra.initial.left_inv'
@@ -10134,6 +10205,7 @@ Added src/category_theory/endofunctor/algebra.lean
 - \+ *lemma* category_theory.endofunctor.algebra.initial.str_is_iso
 - \+ *def* category_theory.endofunctor.algebra.iso_mk
 - \+ *lemma* category_theory.endofunctor.algebra.iso_of_iso
+- \+ *structure* category_theory.endofunctor.algebra
 
 
 
@@ -10491,6 +10563,7 @@ Modified src/model_theory/definability.lean
 - \+ *lemma* first_order.language.definable.preimage_comp
 - \+ *lemma* first_order.language.definable.sdiff
 - \+ *lemma* first_order.language.definable.union
+- \+ *structure* first_order.language.definable
 - \+ *lemma* first_order.language.definable_empty
 - \+ *lemma* first_order.language.definable_finset_bInter
 - \+ *lemma* first_order.language.definable_finset_bUnion
@@ -10515,6 +10588,7 @@ Modified src/model_theory/definability.lean
 - \- *lemma* first_order.language.is_definable.inter
 - \- *lemma* first_order.language.is_definable.sdiff
 - \- *lemma* first_order.language.is_definable.union
+- \- *structure* first_order.language.is_definable
 - \- *lemma* first_order.language.is_definable_empty
 - \- *lemma* first_order.language.is_definable_univ
 
@@ -10647,6 +10721,7 @@ Added src/order/upper_lower.lean
 - \+ *lemma* lower_set.compl_infi₂
 - \+ *lemma* lower_set.compl_supr₂
 - \+ *lemma* lower_set.ext
+- \+ *structure* lower_set
 - \+ *lemma* upper_set.coe_Inf
 - \+ *lemma* upper_set.coe_Sup
 - \+ *lemma* upper_set.coe_bot
@@ -10663,6 +10738,7 @@ Added src/order/upper_lower.lean
 - \+ *lemma* upper_set.compl_infi₂
 - \+ *lemma* upper_set.compl_supr₂
 - \+ *lemma* upper_set.ext
+- \+ *structure* upper_set
 
 
 
@@ -10897,8 +10973,10 @@ Added src/topology/homotopy/induced_maps.lean
 - \+ *lemma* continuous_map.homotopy.eq_diag_path
 - \+ *lemma* continuous_map.homotopy.eq_path_of_eq_image
 - \+ *lemma* continuous_map.homotopy.eval_at_eq
+- \+ *abbreviation* continuous_map.homotopy.hcast
 - \+ *lemma* continuous_map.homotopy.hcast_def
 - \+ *lemma* continuous_map.homotopy.heq_path_of_eq_image
+- \+ *abbreviation* continuous_map.homotopy.prod_to_prod_Top_I
 - \+ *lemma* continuous_map.homotopy.ulift_apply
 - \+ *def* continuous_map.homotopy.ulift_map
 - \+ *def* fundamental_groupoid_functor.equiv_of_homotopy_equiv
@@ -10960,7 +11038,7 @@ Modified src/tactic/suggest.lean
 
 
 Modified test/library_search/basic.lean
-
+- \+ *structure* test.library_search.foo
 
 
 
@@ -11006,6 +11084,7 @@ Added counterexamples/homogeneous_prime_not_prime.lean
 - \+ *lemma* counterexample_not_prime_but_homogeneous_prime.homogeneous_mem_or_mem
 - \+ *def* counterexample_not_prime_but_homogeneous_prime.submodule_o
 - \+ *def* counterexample_not_prime_but_homogeneous_prime.submodule_z
+- \+ *abbreviation* counterexample_not_prime_but_homogeneous_prime.two
 
 Modified src/ring_theory/graded_algebra/radical.lean
 
@@ -11833,6 +11912,7 @@ Added src/group_theory/double_coset.lean
 - \+ *lemma* doset.mem_doset
 - \+ *lemma* doset.mem_doset_of_not_disjoint
 - \+ *lemma* doset.mem_doset_self
+- \+ *abbreviation* doset.mk
 - \+ *lemma* doset.mk_eq_of_doset_eq
 - \+ *lemma* doset.mk_out'_eq_mul
 - \+ *lemma* doset.out_eq'
@@ -12198,6 +12278,7 @@ feat(algebra/order/hom/ring): Ordered ring isomorphisms ([#12158](https://github
 Define `order_ring_iso`, the type of ordered ring isomorphisms, along with its typeclass `order_ring_iso_class`.
 #### Estimated changes
 Modified src/algebra/order/hom/ring.lean
+- \+/\- *structure* order_ring_hom
 - \+ *lemma* order_ring_iso.coe_mk
 - \+ *lemma* order_ring_iso.coe_order_iso_refl
 - \+ *lemma* order_ring_iso.coe_ring_equiv_refl
@@ -12219,6 +12300,7 @@ Modified src/algebra/order/hom/ring.lean
 - \+ *lemma* order_ring_iso.to_order_ring_hom_eq_coe
 - \+ *lemma* order_ring_iso.to_ring_equiv_eq_coe
 - \+ *lemma* order_ring_iso.trans_apply
+- \+ *structure* order_ring_iso
 
 Modified src/order/hom/basic.lean
 - \+ *lemma* le_map_inv_iff
@@ -12979,6 +13061,8 @@ Modified src/category_theory/limits/shapes/biproducts.lean
 - \+ *def* category_theory.limits.biproduct.is_colimit_to_subtype
 - \+ *def* category_theory.limits.biproduct.is_limit_from_subtype
 - \+/\- *lemma* category_theory.limits.biproduct.lift_map
+- \+/\- *abbreviation* category_theory.limits.biproduct.map'
+- \+/\- *abbreviation* category_theory.limits.biproduct.map
 - \+/\- *lemma* category_theory.limits.biproduct.map_desc
 - \+/\- *lemma* category_theory.limits.biproduct.map_eq_map'
 - \+/\- *def* category_theory.limits.biproduct.map_iso
@@ -13405,6 +13489,7 @@ Renamed src/geometry/manifold/basic_smooth_bundle.lean to src/geometry/manifold/
 - \- *lemma* basic_smooth_bundle_core.mem_chart_source_iff
 - \- *lemma* basic_smooth_bundle_core.mem_chart_target_iff
 - \- *def* basic_smooth_bundle_core.to_topological_fiber_bundle_core
+- \- *structure* basic_smooth_bundle_core
 - \+ *lemma* basic_smooth_vector_bundle_core.base_set
 - \+ *def* basic_smooth_vector_bundle_core.chart
 - \+ *lemma* basic_smooth_vector_bundle_core.chart_source
@@ -13416,6 +13501,7 @@ Renamed src/geometry/manifold/basic_smooth_bundle.lean to src/geometry/manifold/
 - \+ *lemma* basic_smooth_vector_bundle_core.mem_chart_target_iff
 - \+ *lemma* basic_smooth_vector_bundle_core.target
 - \+ *def* basic_smooth_vector_bundle_core.to_topological_vector_bundle_core
+- \+ *structure* basic_smooth_vector_bundle_core
 - \+/\- *def* tangent_bundle
 - \+/\- *def* tangent_bundle_core
 - \+/\- *def* tangent_space
@@ -13595,15 +13681,18 @@ We provide two constructors (`mk_of_oplax` and `mk_of_oplax'`) that construct ps
 Modified src/category_theory/bicategory/functor.lean
 - \+/\- *def* category_theory.oplax_functor.comp
 - \+/\- *def* category_theory.oplax_functor.id
+- \+ *structure* category_theory.oplax_functor.pseudo_core
 - \+ *lemma* category_theory.oplax_functor.to_prelax_eq_coe
 - \+/\- *lemma* category_theory.oplax_functor.to_prelax_functor_map
 - \+/\- *lemma* category_theory.oplax_functor.to_prelax_functor_map₂
 - \+/\- *lemma* category_theory.oplax_functor.to_prelax_functor_obj
+- \+/\- *structure* category_theory.oplax_functor
 - \+/\- *def* category_theory.prelax_functor.comp
 - \+/\- *def* category_theory.prelax_functor.id
 - \+ *lemma* category_theory.prelax_functor.to_prefunctor_eq_coe
 - \+/\- *lemma* category_theory.prelax_functor.to_prefunctor_map
 - \+/\- *lemma* category_theory.prelax_functor.to_prefunctor_obj
+- \+/\- *structure* category_theory.prelax_functor
 - \+ *def* category_theory.pseudofunctor.comp
 - \+ *def* category_theory.pseudofunctor.id
 - \+ *def* category_theory.pseudofunctor.map_functor
@@ -13621,6 +13710,7 @@ Modified src/category_theory/bicategory/functor.lean
 - \+ *lemma* category_theory.pseudofunctor.to_prelax_functor_map
 - \+ *lemma* category_theory.pseudofunctor.to_prelax_functor_map₂
 - \+ *lemma* category_theory.pseudofunctor.to_prelax_functor_obj
+- \+ *structure* category_theory.pseudofunctor
 
 
 
@@ -13875,6 +13965,7 @@ feat(category_theory/preadditive/injective) : more basic properties and morphism
 This pr dualises the rest of `projective.lean`
 #### Estimated changes
 Modified src/category_theory/preadditive/injective.lean
+- \+ *abbreviation* category_theory.injective.d
 - \+ *lemma* category_theory.injective.exact.comp_desc
 - \+ *def* category_theory.injective.exact.desc
 - \+ *def* category_theory.injective.syzygies
@@ -13904,9 +13995,13 @@ Modified src/category_theory/closed/cartesian.lean
 - \- *def* category_theory.ev
 - \- *lemma* category_theory.ev_coev
 - \- *lemma* category_theory.ev_naturality
+- \+ *abbreviation* category_theory.exp.adjunction
 - \- *def* category_theory.exp.adjunction
+- \+ *abbreviation* category_theory.exp.coev
 - \+ *lemma* category_theory.exp.coev_ev
+- \+ *abbreviation* category_theory.exp.ev
 - \+ *lemma* category_theory.exp.ev_coev
+- \+ *abbreviation* category_theory.exp
 - \- *def* category_theory.exp
 - \- *lemma* category_theory.exp_adjunction_counit
 - \- *lemma* category_theory.exp_adjunction_unit
@@ -13986,6 +14081,7 @@ Modified src/topology/compacts.lean
 - \+ *lemma* topological_space.clopens.coe_sup
 - \+ *lemma* topological_space.clopens.coe_top
 - \+ *def* topological_space.clopens.to_opens
+- \+ *structure* topological_space.clopens
 - \+ *lemma* topological_space.compact_opens.coe_bot
 - \+ *lemma* topological_space.compact_opens.coe_compl
 - \+ *lemma* topological_space.compact_opens.coe_inf
@@ -13999,6 +14095,7 @@ Modified src/topology/compacts.lean
 - \+ *def* topological_space.compact_opens.to_clopens
 - \+ *def* topological_space.compact_opens.to_opens
 - \+ *lemma* topological_space.compact_opens.«open»
+- \+ *structure* topological_space.compact_opens
 
 
 
@@ -14036,6 +14133,7 @@ feat(order/category/Frame): The category of frames ([#12363](https://github.com/
 Define `Frame`, the category of frames with frame homomorphisms.
 #### Estimated changes
 Added src/order/category/Frame.lean
+- \+ *abbreviation* Frame.hom
 - \+ *def* Frame.iso.mk
 - \+ *def* Frame.of
 - \+ *def* Frame
@@ -14144,6 +14242,7 @@ Added src/order/category/BoundedDistribLattice.lean
 - \+ *def* BoundedDistribLattice.iso.mk
 - \+ *def* BoundedDistribLattice.of
 - \+ *def* BoundedDistribLattice.to_BoundedLattice
+- \+ *structure* BoundedDistribLattice
 - \+ *lemma* BoundedDistribLattice_dual_comp_forget_to_DistribLattice
 
 Modified src/order/category/DistribLattice.lean
@@ -14258,6 +14357,7 @@ Added src/category_theory/preadditive/injective.lean
 - \+ *def* category_theory.injective.factor_thru
 - \+ *lemma* category_theory.injective.iso_iff
 - \+ *lemma* category_theory.injective.of_iso
+- \+ *structure* category_theory.injective_presentation
 
 
 
@@ -14896,6 +14996,7 @@ Modified src/group_theory/free_product.lean
 - \+ *lemma* free_product.neword.to_list_last'
 - \+ *lemma* free_product.neword.to_list_ne_nil
 - \+ *def* free_product.neword.to_word
+- \+ *inductive* free_product.neword
 - \+ *lemma* free_product.word.prod_empty
 - \- *lemma* free_product.word.prod_nil
 
@@ -14956,6 +15057,8 @@ Added src/ring_theory/witt_vector/isocrystal.lean
 - \+ *def* witt_vector.fraction_ring.module
 - \+ *def* witt_vector.isocrystal.frobenius
 - \+ *theorem* witt_vector.isocrystal_classification
+- \+ *structure* witt_vector.isocrystal_equiv
+- \+ *structure* witt_vector.isocrystal_hom
 - \+ *lemma* witt_vector.standard_one_dim_isocrystal.frobenius_apply
 - \+ *def* witt_vector.standard_one_dim_isocrystal
 
@@ -15098,6 +15201,8 @@ Darts can be more convenient than edges when working with walks since they keep 
 #### Estimated changes
 Modified src/combinatorics/simple_graph/basic.lean
 - \+ *lemma* simple_graph.dart.edge_comp_symm
+- \+ *abbreviation* simple_graph.dart.fst
+- \+ *abbreviation* simple_graph.dart.snd
 - \+ *def* simple_graph.dart_adj
 - \+ *lemma* simple_graph.dart_edge_eq_mk_iff'
 - \+ *lemma* simple_graph.dart_edge_eq_mk_iff
@@ -16189,7 +16294,7 @@ Modified src/algebra/star/basic.lean
 - \+/\- *lemma* star_zpow
 
 Modified src/algebra/star/chsh.lean
-
+- \+/\- *structure* is_CHSH_tuple
 
 Modified src/algebra/star/free.lean
 
@@ -16308,6 +16413,9 @@ Modified src/group_theory/group_action/prod.lean
 feat(category_theory/abelian/homology): Adds API for homology mimicking that of (co)kernels. ([#12171](https://github.com/leanprover-community/mathlib/pull/12171))
 #### Estimated changes
 Added src/category_theory/abelian/homology.lean
+- \+ *abbreviation* category_theory.abelian.homology_c
+- \+ *abbreviation* category_theory.abelian.homology_c_to_k
+- \+ *abbreviation* category_theory.abelian.homology_k
 - \+ *lemma* homology.condition_ι
 - \+ *lemma* homology.condition_π'
 - \+ *def* homology.desc'
@@ -16449,6 +16557,7 @@ Modified src/category_theory/idempotents/functor_categories.lean
 Modified src/category_theory/idempotents/karoubi.lean
 - \+/\- *def* category_theory.idempotents.karoubi.decomp_id_i
 - \+/\- *lemma* category_theory.idempotents.karoubi.id_eq
+- \+/\- *structure* category_theory.idempotents.karoubi
 
 Modified src/category_theory/idempotents/karoubi_karoubi.lean
 

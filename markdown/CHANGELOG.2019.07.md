@@ -484,6 +484,7 @@ Modified src/algebra/group/hom.lean
 - \+ *def* add_monoid_hom.map_zero
 - \+ *def* add_monoid_hom.mk'
 - \+ *def* add_monoid_hom.neg
+- \+ *structure* add_monoid_hom
 - \+ *def* monoid_hom.comp
 - \+ *def* monoid_hom.ext
 - \+ *def* monoid_hom.id
@@ -492,6 +493,7 @@ Modified src/algebra/group/hom.lean
 - \+ *lemma* monoid_hom.map_mul
 - \+ *lemma* monoid_hom.map_one
 - \+ *def* monoid_hom.mk'
+- \+ *structure* monoid_hom
 
 
 
@@ -1047,7 +1049,9 @@ Added src/category_theory/monad/algebra.lean
 - \+ *lemma* category_theory.monad.algebra.hom.ext
 - \+ *def* category_theory.monad.algebra.hom.id
 - \+ *lemma* category_theory.monad.algebra.hom.id_f
+- \+ *structure* category_theory.monad.algebra.hom
 - \+ *lemma* category_theory.monad.algebra.id_f
+- \+ *structure* category_theory.monad.algebra
 - \+ *def* category_theory.monad.forget
 - \+ *lemma* category_theory.monad.forget_map
 - \+ *def* category_theory.monad.free
@@ -1508,6 +1512,7 @@ Added src/data/pequiv.lean
 - \+ *lemma* pequiv.trans_single_of_mem
 - \+ *lemma* pequiv.trans_symm
 - \+ *lemma* pequiv.trans_symm_eq_iff_forall_is_some
+- \+ *structure* pequiv
 
 
 
@@ -2288,6 +2293,7 @@ Modified src/topology/maps.lean
 - \- *lemma* dense_embedding.tendsto_comap_nhds_nhds
 - \- *lemma* dense_embedding.tendsto_extend
 - \+ *lemma* dense_embedding.to_embedding
+- \+/\- *structure* dense_embedding
 - \+ *lemma* dense_inducing.closure_image_nhds_of_nhds
 - \+ *lemma* dense_inducing.closure_range
 - \+ *lemma* dense_inducing.comap_nhds_neq_bot
@@ -2301,6 +2307,7 @@ Modified src/topology/maps.lean
 - \+ *lemma* dense_inducing.self_sub_closure_image_preimage_of_open
 - \+ *lemma* dense_inducing.tendsto_comap_nhds_nhds
 - \+ *lemma* dense_inducing.tendsto_extend
+- \+ *structure* dense_inducing
 - \+ *lemma* dense_range.comp
 - \+ *lemma* dense_range.inhabited
 - \+ *def* dense_range
@@ -2308,6 +2315,7 @@ Modified src/topology/maps.lean
 - \+ *lemma* embedding.comp
 - \+ *def* embedding.mk'
 - \+ *lemma* embedding.prod_mk
+- \+ *structure* embedding
 - \- *def* embedding
 - \- *lemma* embedding_compose
 - \- *lemma* embedding_prod_mk
@@ -2318,6 +2326,7 @@ Modified src/topology/maps.lean
 - \+ *lemma* inducing.nhds_eq_comap
 - \+ *lemma* inducing.prod_mk
 - \+ *lemma* inducing.tendsto_nhds_iff
+- \+ *structure* inducing
 - \+ *lemma* inducing_id
 - \+ *lemma* inducing_is_closed
 - \+ *lemma* inducing_of_inducing_compose
@@ -2375,6 +2384,7 @@ Modified src/topology/uniform_space/uniform_embedding.lean
 - \+/\- *lemma* uniform_embedding.prod
 - \- *lemma* uniform_embedding.uniform_continuous
 - \- *lemma* uniform_embedding.uniform_continuous_iff
+- \+ *structure* uniform_embedding
 - \- *def* uniform_embedding
 - \+/\- *lemma* uniform_embedding_comap
 - \+/\- *theorem* uniform_embedding_def'
@@ -2388,6 +2398,7 @@ Modified src/topology/uniform_space/uniform_embedding.lean
 - \+ *lemma* uniform_inducing.prod
 - \+ *lemma* uniform_inducing.uniform_continuous
 - \+ *lemma* uniform_inducing.uniform_continuous_iff
+- \+ *structure* uniform_inducing
 - \- *lemma* uniformly_extend_of_emb
 - \+ *lemma* uniformly_extend_of_ind
 - \+/\- *lemma* uniformly_extend_spec
@@ -2541,7 +2552,8 @@ Modified src/algebra/Mon/colimits.lean
 
 
 Modified src/category_theory/adjunction/basic.lean
-
+- \- *structure* category_theory.adjunction.is_left_adjoint
+- \- *structure* category_theory.adjunction.is_right_adjoint
 
 Modified src/category_theory/adjunction/limits.lean
 - \- *def* category_theory.adjunction.is_colimit_map_cocone
@@ -2638,6 +2650,7 @@ Co-Authored-By: Johan Commelin <johan@commelin.net>
 Modified src/algebra/CommRing/basic.lean
 - \- *lemma* CommRing.comp_val
 - \- *lemma* CommRing.id_val
+- \+ *abbreviation* CommRing.is_comm_ring_hom
 - \- *def* CommRing.is_comm_ring_hom
 
 Modified src/algebra/CommRing/colimits.lean
