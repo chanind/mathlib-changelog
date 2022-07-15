@@ -1,44 +1,24 @@
-from typing import cast
-from crawler.extract_diff_info import extract_diff_changes, extract_diff_file_info
-from crawler.stable_dedupe import stable_dedupe
-from git import Diff
+from crawler.parser.DiffParser import ItemChange, ParsedDiff
 
 
-def get_change_prefix(
-    changed_item: str, added_items: list[str], deleted_items: list[str]
-) -> str:
-    prefixes = []
-    if changed_item in added_items:
-        prefixes.append(r"\+")
-    if changed_item in deleted_items:
-        prefixes.append(r"\-")
-    return "/".join(prefixes)
+def get_change_prefix(change: ItemChange) -> str:
+    if change.change_type == "mod":
+        return r"\+/\-"
+    if change.change_type == "del":
+        return r"\-"
+    return r"\+"
 
 
-def format_git_changes_md(diffs: list[Diff]) -> str:
+def format_git_changes_md(diffs: list[ParsedDiff]) -> str:
     outputs: list[str] = []
     for diff in diffs:
-        diff_output = extract_diff_file_info(diff) + "\n"
-        changes = extract_diff_changes(cast(bytes, diff.diff).decode("utf-8"))
-        lemmas = changes.added_lemmas + changes.deleted_lemmas
-        theorems = changes.added_theorems + changes.deleted_theorems
-        defs = changes.added_defs + changes.deleted_defs
+        diff_output = diff.file_change_str + "\n"
         item_changes = []
-        for lemma in lemmas:
-            change_prefix = get_change_prefix(
-                lemma, changes.added_lemmas, changes.deleted_lemmas
+        for change in diff.changes:
+            change_prefix = get_change_prefix(change)
+            item_changes.append(
+                f"- {change_prefix} *{change.item_type}* {change.full_name}"
             )
-            item_changes.append(f"- {change_prefix} *lemma* {lemma}")
-        for theorem in theorems:
-            change_prefix = get_change_prefix(
-                theorem, changes.added_theorems, changes.deleted_theorems
-            )
-            item_changes.append(f"- {change_prefix} *theorem* {theorem}")
-        for def_str in defs:
-            change_prefix = get_change_prefix(
-                def_str, changes.added_defs, changes.deleted_defs
-            )
-            item_changes.append(f"- {change_prefix} *def* {def_str}")
-        diff_output += "\n".join(stable_dedupe(item_changes)) + "\n"
+        diff_output += "\n".join(item_changes) + "\n"
         outputs.append(diff_output)
     return "\n".join(outputs)

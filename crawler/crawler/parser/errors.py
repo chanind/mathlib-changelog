@@ -1,0 +1,2 @@
+class LeanParseError(Exception):
+    pass

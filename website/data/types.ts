@@ -13,7 +13,7 @@ export type ChangeType = "mod" | "add" | "del";
 export type ItemType = "theorem" | "lemma" | "def";
 
 export interface DiffData {
-  pathChange: string;
-  path: string;
-  changes: [ChangeType, ItemType, string][];
+  oldPath: string | null;
+  newPath: string | null;
+  changes: [ChangeType, ItemType, string, string[]][];
 }

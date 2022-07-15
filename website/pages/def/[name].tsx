@@ -29,7 +29,7 @@ const Def: NextPage<DefProps> = ({ def }) => {
         <span className="text-gray-400">Def</span> {def.name}
       </h1>
       <h4 className="text-sm mt-4">Modification history</h4>
-      <div className="max-w-md">
+      <div>
         <ItemChangeHistory item={def} />
       </div>
     </Layout>

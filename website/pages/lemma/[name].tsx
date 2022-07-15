@@ -29,7 +29,7 @@ const Lemma: NextPage<LemmaProps> = ({ lemma }) => {
         <span className="text-gray-400">Lemma</span> {lemma.name}
       </h1>
       <h4 className="text-sm mt-4">Modification history</h4>
-      <div className="max-w-md">
+      <div>
         <ItemChangeHistory item={lemma} />
       </div>
     </Layout>
