@@ -4,6 +4,7 @@ import json
 from os import mkdir
 from shutil import rmtree
 from typing import Any
+from crawler.DiffParser import DiffParser
 from crawler.formatters.format_commit_json import format_commit_json
 from git import Diff, Repo
 from git.objects import Commit  # keep mypy happy...
@@ -32,17 +33,14 @@ commits_info_md_by_month: dict[str, list[str]] = defaultdict(list)
 commits_info_txt_full: list[str] = []
 commits_info_json_full: list[dict[Any, Any]] = []
 
-
-def get_diffs(commit1: Commit, commit2: Commit) -> list[Diff]:
-    return commit2.diff(commit1, create_patch=True)
-
+diff_parser = DiffParser(mathlib_repo)
 
 commits = list(mathlib_repo.iter_commits())
 for index, commit in enumerate(commits):
     diffs = []
     if index + 1 < len(commits):
         next_commit = commits[index + 1]
-        diffs = get_diffs(commit, next_commit)
+        diffs = diff_parser.diff_commits(next_commit, commit)
     commit_md = format_commit_md(commit, diffs)
     commit_txt = format_commit_txt(commit, diffs)
     commit_json = format_commit_json(commit, diffs)
