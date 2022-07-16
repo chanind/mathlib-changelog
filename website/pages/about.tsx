@@ -22,11 +22,11 @@ const About: NextPage = () => {
           might be using, but suddenly discover is no longer available.
         </p>
         <p className="mt-4 text-base leading-relaxed text-gray-800">
-          This project is far from perfect. While it catches a lot of the
-          changes to Lean in each change, this is just an estimate based on the
-          git diff of the change, and likely it still misses a lot. If you have
-          any ideas for improvements, find any bugs, or have any other comments,
-          feel free to open a{" "}
+          This project is far from perfect. While it should catch most of the
+          changes to Mathlib in each commit, it doesn&apos;t run a full Lean and
+          Mathlib environment so there&apos;s not guarantee that everything is
+          picked up. If you have any ideas for improvements, find any bugs, or
+          have any other comments, feel free to open a{" "}
           <a
             href="https://github.com/chanind/mathlib-changelog/issues"
             className="text-blue-600 hover:underline"
