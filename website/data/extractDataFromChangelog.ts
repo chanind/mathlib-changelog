@@ -13,6 +13,7 @@ export interface ChangelogItemEvent {
   commitTimestamp: number;
   commitSha: String;
   diffPath: string;
+  diffPathSha: string;
   type: ChangeType;
 }
 
@@ -33,6 +34,7 @@ export const extractItemsData = (
           commitTimestamp: commit.timestamp,
           commitSha: commit.sha,
           diffPath: (diff.newPath || diff.oldPath) as string,
+          diffPathSha: diff.pathSha,
           type: changeType,
         };
         const fullName = [...namespace, itemName].join(".");

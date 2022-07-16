@@ -21,5 +21,6 @@ export type ItemType =
 export interface DiffData {
   oldPath: string | null;
   newPath: string | null;
+  pathSha: string;
   changes: [ChangeType, ItemType, string, string[]][];
 }

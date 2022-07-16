@@ -37,20 +37,30 @@ export const ItemChangeHistory: FC<ChangeHistoryProps> = ({ item }) => (
     <div className="py-2 flex flex-col">
       {uniqBy(item.history, (event) => `${event.commitSha}-${event.type}`).map(
         (event, i) => (
-          <Link href={`/commit/${event.commitSha}`} key={i}>
-            <a className="p-2 border border-gray-200 my-1 rounded-md hover:border-gray-400 transition text-gray-800">
-              <div className="pb-1">
-                <span className="text-blue-600">
-                  {formatTimestamp(event.commitTimestamp)}
-                </span>
-              </div>
-              <div className="text-gray-400 pb-2 text-xs">{event.diffPath}</div>
-              <div className="text-gray-800 text-sm pl-2 border-l border-right italic mb-2 truncate">
-                {event.commitHeadline}
-              </div>
-              {getLabel(event.type)} {item.name}
+          <div key={i} className="relative">
+            <Link href={`/commit/${event.commitSha}`}>
+              <a className="p-2 border border-gray-200 my-1 rounded-md hover:border-gray-400 transition-all text-gray-800 block">
+                <div className="pb-1">
+                  <span className="text-blue-600">
+                    {formatTimestamp(event.commitTimestamp)}
+                  </span>
+                </div>
+                <div className="text-gray-400 pb-2 text-xs">
+                  {event.diffPath}
+                </div>
+                <div className="text-gray-800 text-sm pl-2 border-l border-right italic mb-2 truncate">
+                  {event.commitHeadline}
+                </div>
+                {getLabel(event.type)} {item.name}
+              </a>
+            </Link>
+            <a
+              className="text-blue-600 text-xs block absolute right-1 top-2 p-2 rounded-md border hover:border-gray-200 border-white transition-all"
+              href={`https://github.com/leanprover-community/mathlib/commit/${event.commitSha}#diff-${event.diffPathSha}`}
+            >
+              View on Github →
             </a>
-          </Link>
+          </div>
         )
       )}
     </div>
