@@ -7,11 +7,12 @@ from typing import Literal
 from git import Repo
 from git.objects import Commit
 
-from .parse_lean import LeanParseError, ParsedItem, parse_lean
+from .errors import LeanParseError
+from .parse_lean import ParsedItem, parse_lean
 
 
 ChangeType = Literal["add", "del", "mod"]
-ItemType = Literal["lemma", "theorem", "def"]
+ItemType = Literal["lemma", "theorem", "def", "abbreviation", "inductive", "structure"]
 
 
 @dataclass
