@@ -101,7 +101,14 @@ const Commit: NextPage<CommitProps> = ({ commit }) => {
       <div>
         {commit.changes.map((diff, i) => (
           <div className="my-1" key={i}>
-            <div>{getFileChangeLabel(diff)}</div>
+            <div>
+              <a
+                className="text-gray-800 hover:underline"
+                href={`https://github.com/leanprover-community/mathlib/commit/${commit.sha}#diff-${diff.pathSha}`}
+              >
+                {getFileChangeLabel(diff)}
+              </a>
+            </div>
             <div className="pl-2 text-sm">
               {diff.changes.map(
                 ([changeType, itemType, itemName, namespace], j) => {

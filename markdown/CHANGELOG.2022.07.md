@@ -1,3 +1,112 @@
+## [2022-07-16 08:13:30](https://github.com/leanprover-community/mathlib/commit/45e412d)
+chore(number_theory/number_field): remove duplicate name ([#15400](https://github.com/leanprover-community/mathlib/pull/15400))
+#### Estimated changes
+Modified src/number_theory/number_field.lean
+
+
+
+
+## [2022-07-16 04:45:36](https://github.com/leanprover-community/mathlib/commit/ced1113)
+feat(order/bounded_order): two lemmas about the interaction between monotonicity and map with_bot/top ([#15341](https://github.com/leanprover-community/mathlib/pull/15341))
+Pulled out of [#15294](https://github.com/leanprover-community/mathlib/pull/15294), that I ~plan to~ closed.
+#### Estimated changes
+Modified src/order/bounded_order.lean
+- \+ *lemma* with_bot.map_le_iff
+- \+ *lemma* with_top.map_le_iff
+
+Modified src/order/hom/basic.lean
+
+
+
+
+## [2022-07-16 02:20:10](https://github.com/leanprover-community/mathlib/commit/6812328)
+feat(data/countable): add `countable` typeclass ([#15280](https://github.com/leanprover-community/mathlib/pull/15280))
+Also add a few new operations on `equiv`s.
+#### Estimated changes
+Added src/data/countable/basic.lean
+- \+ *lemma* countable_iff_nonempty_embedding
+- \+ *lemma* nonempty_embedding_nat
+
+Added src/data/countable/defs.lean
+- \+ *lemma* countable.of_equiv
+- \+ *lemma* countable_iff_exists_surjective
+- \+ *lemma* equiv.countable_iff
+- \+ *lemma* exists_surjective_nat
+
+Modified src/logic/equiv/basic.lean
+- \+ *def* equiv.pprod_congr
+- \+ *def* equiv.pprod_prod
+- \+ *def* equiv.prod_pprod
+- \+ *def* equiv.psum_congr
+- \+ *def* equiv.psum_sum
+- \+ *def* equiv.sum_psum
+
+
+
+## [2022-07-15 23:14:20](https://github.com/leanprover-community/mathlib/commit/2dbbe57)
+feat(ring_theory/power_series/basic): Add `rescale_X` ([#15397](https://github.com/leanprover-community/mathlib/pull/15397))
+#### Estimated changes
+Modified src/ring_theory/power_series/basic.lean
+- \+ *lemma* power_series.rescale_X
+- \+/\- *lemma* power_series.rescale_neg_one_X
+
+
+
+## [2022-07-15 23:14:19](https://github.com/leanprover-community/mathlib/commit/dc7ab9e)
+feat(measure_theory/measure/finite_measure_weak_convergence): Add some missing API lemmas. ([#15205](https://github.com/leanprover-community/mathlib/pull/15205))
+Add API lemmas about extentionality of `finite_measure` and `probability_measure`, about `0 : finite_measure X`, and about scalar multiplication on `finite_measure`.
+#### Estimated changes
+Modified src/data/real/ennreal.lean
+- \+ *lemma* ennreal.smul_to_nnreal
+
+Modified src/measure_theory/measure/finite_measure_weak_convergence.lean
+- \+ *lemma* measure_theory.finite_measure.coe_fn_smul_apply
+- \+ *lemma* measure_theory.finite_measure.extensionality
+- \+ *lemma* measure_theory.finite_measure.mass_zero_iff
+- \+ *lemma* measure_theory.finite_measure.smul_test_against_nn_apply
+- \+ *lemma* measure_theory.finite_measure.zero.mass
+- \+ *lemma* measure_theory.finite_measure.zero.test_against_nn
+- \+ *lemma* measure_theory.finite_measure.zero.test_against_nn_apply
+- \+ *lemma* measure_theory.probability_measure.extensionality
+
+
+
+## [2022-07-15 23:14:18](https://github.com/leanprover-community/mathlib/commit/7c54be8)
+feat(group_theory/group_action/sub_mul_action): add the pointwise monoid structure ([#15050](https://github.com/leanprover-community/mathlib/pull/15050))
+#### Estimated changes
+Modified src/algebra/algebra/operations.lean
+- \+ *lemma* sub_mul_action.algebra_map_mem
+- \+ *lemma* sub_mul_action.mem_one'
+- \+ *lemma* submodule.to_sub_mul_action_one
+
+Added src/group_theory/group_action/sub_mul_action/pointwise.lean
+- \+ *lemma* sub_mul_action.coe_mul
+- \+ *lemma* sub_mul_action.coe_one
+- \+ *lemma* sub_mul_action.coe_pow
+- \+ *lemma* sub_mul_action.mem_mul
+- \+ *lemma* sub_mul_action.mem_one
+- \+ *lemma* sub_mul_action.subset_coe_one
+- \+ *lemma* sub_mul_action.subset_coe_pow
+
+
+
+## [2022-07-15 23:14:17](https://github.com/leanprover-community/mathlib/commit/884dde3)
+feat(category_theory): (co)products and (co)separators ([#14880](https://github.com/leanprover-community/mathlib/pull/14880))
+#### Estimated changes
+Modified src/category_theory/generator.lean
+- \+ *lemma* category_theory.is_coseparator_pi
+- \+ *lemma* category_theory.is_coseparator_pi_of_is_coseparator
+- \+ *lemma* category_theory.is_coseparator_prod
+- \+ *lemma* category_theory.is_coseparator_prod_of_is_coseparator_left
+- \+ *lemma* category_theory.is_coseparator_prod_of_is_coseparator_right
+- \+ *lemma* category_theory.is_separator_coprod
+- \+ *lemma* category_theory.is_separator_coprod_of_is_separator_left
+- \+ *lemma* category_theory.is_separator_coprod_of_is_separator_right
+- \+ *lemma* category_theory.is_separator_sigma
+- \+ *lemma* category_theory.is_separator_sigma_of_is_separator
+
+
+
 ## [2022-07-15 20:48:43](https://github.com/leanprover-community/mathlib/commit/f23205e)
 feat(data/vector/basic): make the recursor work with `induction _ using` syntax ([#15383](https://github.com/leanprover-community/mathlib/pull/15383))
 The `induction` tactic is picky about the order of its arguments, especially when the motive is dependently-typed. Attempting to use `induction v using vector.induction_on` gives the error:
