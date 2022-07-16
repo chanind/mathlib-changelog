@@ -5,11 +5,10 @@ import re
 from typing import Literal, cast
 import hashlib
 
-from .errors import LeanParseError
 from .strip_lean_comments import strip_lean_comments
 
 
-ItemType = Literal["lemma", "theorem", "def"]
+ItemType = Literal["lemma", "theorem", "def", "abbreviation", "inductive", "structure"]
 BlockType = Literal["section", "namespace"]
 
 
@@ -65,7 +64,7 @@ def parse_lean(contents: str) -> list[ParsedItem]:
 
 
 OPTIONAL_DECORATOR_REGEX = r"(?:@\[[^\]]+\]\s?)"
-ITEM_REGEX = rf"^\s*{OPTIONAL_DECORATOR_REGEX}*(def|lemma|theorem)\s+([^\s]+)"
+ITEM_REGEX = rf"^\s*{OPTIONAL_DECORATOR_REGEX}*(def|lemma|theorem|abbreviation|inductive|structure)\s+([^\s]+)"
 START_BLOCK_REGEX = r"^\s*(section|namespace)\s+([^\s]+)"
 END_BLOCK_REGEX = r"^\s*end\s+([^\s]+)"
 
@@ -108,7 +107,14 @@ def build_parsed_item(
 ) -> ParsedItem:
     item_name_parts = item_name.split(".")
 
-    if item_type not in ["lemma", "theorem", "def"]:
+    if item_type not in [
+        "lemma",
+        "theorem",
+        "def",
+        "abbreviation",
+        "inductive",
+        "structure",
+    ]:
         raise Exception(f"Invalid item type found: {item_type}")
     safe_item_type = cast(ItemType, item_type)
 

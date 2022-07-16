@@ -552,6 +552,7 @@ Modified data/cardinal.lean
 - \- *theorem* cardinal.embedding.to_fun_eq_coe
 - \- *theorem* cardinal.embedding.total
 - \- *theorem* cardinal.embedding.trans_apply
+- \- *structure* cardinal.embedding
 - \+ *theorem* cardinal.lift_down
 - \+ *theorem* cardinal.lt_omega
 - \- *theorem* equiv.to_embedding_coe_fn
@@ -581,6 +582,7 @@ Modified data/ordinal.lean
 - \- *def* order_embedding.rsymm
 - \- *theorem* order_embedding.trans_apply
 - \- *theorem* order_embedding.well_founded_iff_no_descending_seq
+- \- *structure* order_embedding
 - \- *theorem* order_iso.apply_inverse_apply
 - \- *theorem* order_iso.coe_coe_fn
 - \- *theorem* order_iso.coe_fn_mk
@@ -596,6 +598,7 @@ Modified data/ordinal.lean
 - \- *theorem* order_iso.refl_apply
 - \- *theorem* order_iso.sum_lex_congr
 - \- *theorem* order_iso.trans_apply
+- \- *structure* order_iso
 - \+/\- *theorem* ordinal.card_omega
 - \+ *theorem* ordinal.cof_add
 - \+ *theorem* ordinal.cof_cof
@@ -643,6 +646,7 @@ Added logic/embedding.lean
 - \+ *theorem* function.embedding.sum_congr_apply_inr
 - \+ *theorem* function.embedding.to_fun_eq_coe
 - \+ *theorem* function.embedding.trans_apply
+- \+ *structure* function.embedding
 
 Modified logic/function.lean
 - \+/\- *def* function.injective.decidable_eq
@@ -693,6 +697,7 @@ Added order/order_iso.lean
 - \+ *def* order_embedding.rsymm
 - \+ *theorem* order_embedding.trans_apply
 - \+ *theorem* order_embedding.well_founded_iff_no_descending_seq
+- \+ *structure* order_embedding
 - \+ *theorem* order_iso.apply_inverse_apply
 - \+ *theorem* order_iso.coe_coe_fn
 - \+ *theorem* order_iso.coe_fn_mk
@@ -707,6 +712,7 @@ Added order/order_iso.lean
 - \+ *theorem* order_iso.refl_apply
 - \+ *theorem* order_iso.sum_lex_congr
 - \+ *theorem* order_iso.trans_apply
+- \+ *structure* order_iso
 - \+ *def* set_coe_embedding
 - \+ *def* subrel
 
@@ -1394,6 +1400,7 @@ Added data/sum.lean
 - \+ *theorem* sum.forall
 - \+ *theorem* sum.inl.inj_iff
 - \+ *theorem* sum.inr.inj_iff
+- \+ *inductive* sum.lex
 - \+ *theorem* sum.lex_acc_inl
 - \+ *theorem* sum.lex_acc_inr
 - \+ *theorem* sum.lex_inl_inl
@@ -1487,6 +1494,7 @@ Modified data/cardinal.lean
 - \+ *theorem* cardinal.embedding.to_fun_eq_coe
 - \+ *theorem* cardinal.embedding.total
 - \+ *theorem* cardinal.embedding.trans_apply
+- \+ *structure* cardinal.embedding
 - \- *theorem* embedding.antisymm
 - \- *def* embedding.arrow_congr_left
 - \- *def* embedding.arrow_congr_right
@@ -1499,6 +1507,7 @@ Modified data/cardinal.lean
 - \- *theorem* embedding.to_fun_eq_coe
 - \- *theorem* embedding.total
 - \- *theorem* embedding.trans_apply
+- \- *structure* embedding
 
 Modified data/ordinal.lean
 
@@ -1534,6 +1543,7 @@ Modified algebra/linear_algebra/basic.lean
 - \+ *def* linear_equiv.refl
 - \+ *def* linear_equiv.symm
 - \+ *def* linear_equiv.trans
+- \+ *structure* linear_equiv
 - \+ *lemma* linear_independent_singleton
 - \+ *lemma* mem_span_insert
 - \+ *lemma* set.diff_self
@@ -1665,6 +1675,7 @@ Modified data/nat/basic.lean
 - \+ *def* nat.foldr
 
 Added data/ordinal.lean
+- \+ *structure* Well_order
 - \+ *theorem* initial_seg.antisymm.aux
 - \+ *def* initial_seg.antisymm
 - \+ *theorem* initial_seg.antisymm_symm
@@ -1679,6 +1690,7 @@ Added data/ordinal.lean
 - \+ *theorem* initial_seg.refl_apply
 - \+ *theorem* initial_seg.trans_apply
 - \+ *def* initial_seg.unique_of_extensional
+- \+ *structure* initial_seg
 - \+ *def* is_irrefl.swap
 - \+ *def* is_irrefl_of_is_asymm
 - \+ *def* is_strict_order.swap
@@ -1698,6 +1710,7 @@ Added data/ordinal.lean
 - \+ *def* order_embedding.rsymm
 - \+ *theorem* order_embedding.trans_apply
 - \+ *theorem* order_embedding.well_founded_iff_no_descending_seq
+- \+ *structure* order_embedding
 - \+ *theorem* order_iso.apply_inverse_apply
 - \+ *theorem* order_iso.coe_coe_fn
 - \+ *theorem* order_iso.coe_fn_mk
@@ -1711,6 +1724,7 @@ Added data/ordinal.lean
 - \+ *def* order_iso.preimage
 - \+ *theorem* order_iso.refl_apply
 - \+ *theorem* order_iso.trans_apply
+- \+ *structure* order_iso
 - \+ *def* ordinal.card
 - \+ *def* ordinal.le
 - \+ *def* ordinal.lt
@@ -1730,6 +1744,7 @@ Added data/ordinal.lean
 - \+ *def* principal_seg.lt_le
 - \+ *theorem* principal_seg.lt_le_apply
 - \+ *theorem* principal_seg.trans_apply
+- \+ *structure* principal_seg
 - \+ *def* set_coe_embedding
 
 Modified data/set/basic.lean
@@ -1975,6 +1990,7 @@ Modified data/cardinal.lean
 - \- *def* embedding.option.Sup
 - \- *lemma* embedding.option.Sup_le
 - \- *lemma* embedding.option.eq_of_le_some
+- \- *inductive* embedding.option.le
 - \- *lemma* embedding.option.le_Sup
 - \- *lemma* embedding.option.mem_of_Sup_eq_some
 - \- *def* embedding.option.strict_partial_order
@@ -2719,6 +2735,7 @@ Modified algebra/module.lean
 - \+ *lemma* is_linear_map.sub
 - \+ *lemma* is_linear_map.sum
 - \+ *lemma* is_linear_map.zero
+- \+ *structure* is_linear_map
 - \+ *lemma* is_submodule.Inter_submodule
 - \+ *lemma* is_submodule.is_linear_map_subtype_mk
 - \+ *lemma* is_submodule.is_linear_map_subtype_val
@@ -2740,6 +2757,7 @@ Modified algebra/module.lean
 - \+/\- *lemma* linear_map.smul_app
 - \+/\- *lemma* linear_map.zero_app
 - \+ *def* linear_map
+- \- *structure* linear_map
 - \- *def* module.endomorphism_ring
 - \+/\- *def* module.general_linear_group
 - \+/\- *lemma* module.mul_app
@@ -3083,6 +3101,7 @@ Modified theories/number_theory/dioph.lean
 - \+/\- *theorem* poly.sumsq_nonneg
 - \+/\- *theorem* poly.zero_eval
 - \- *theorem* poly.zero_val
+- \- *inductive* vector2
 
 
 
@@ -3197,7 +3216,9 @@ Added theories/number_theory/dioph.lean
 - \+ *def* fin2.of_nat'
 - \+ *def* fin2.opt_of_nat
 - \+ *def* fin2.remap_left
+- \+ *inductive* fin2
 - \+ *lemma* int.eq_nat_abs_iff_mul
+- \+ *inductive* is_poly
 - \+ *theorem* list_all.imp
 - \+ *def* list_all
 - \+ *theorem* list_all_congr
@@ -3243,6 +3264,7 @@ Added theories/number_theory/dioph.lean
 - \+ *def* poly
 - \+ *def* sum.join
 - \+ *def* uncurry
+- \+ *inductive* vector2
 - \+ *def* vector3.append
 - \+ *def* vector3.append_add
 - \+ *def* vector3.append_cons
@@ -3435,4 +3457,5 @@ Added theories/number_theory/pell.lean
 - \+ *def* zsqrtd.zero
 - \+ *theorem* zsqrtd.zero_im
 - \+ *theorem* zsqrtd.zero_re
+- \+ *structure* zsqrtd
 

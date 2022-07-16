@@ -1576,8 +1576,11 @@ Modified src/category_theory/types.lean
 
 Modified src/computability/tm_computable.lean
 - \+/\- *def* turing.evals_to_in_time.refl
+- \+/\- *structure* turing.evals_to_in_time
 - \+/\- *def* turing.id_computable_in_poly_time
+- \+/\- *structure* turing.tm2_computable_in_poly_time
 - \+/\- *def* turing.tm2_computable_in_time.to_tm2_computable
+- \+/\- *structure* turing.tm2_computable_in_time
 - \+/\- *def* turing.tm2_outputs_in_time
 
 Modified src/data/fintype/card.lean
@@ -1813,6 +1816,7 @@ Added src/analysis/normed_space/linear_isometry.lean
 - \+ *lemma* linear_isometry.norm_map
 - \+ *def* linear_isometry.to_continuous_linear_map
 - \+ *lemma* linear_isometry.to_linear_map_injective
+- \+ *structure* linear_isometry
 - \+ *lemma* linear_isometry_equiv.apply_symm_apply
 - \+ *lemma* linear_isometry_equiv.coe_inv
 - \+ *lemma* linear_isometry_equiv.coe_mk
@@ -1852,6 +1856,7 @@ Added src/analysis/normed_space/linear_isometry.lean
 - \+ *lemma* linear_isometry_equiv.trans_assoc
 - \+ *lemma* linear_isometry_equiv.trans_refl
 - \+ *lemma* linear_isometry_equiv.trans_symm
+- \+ *structure* linear_isometry_equiv
 
 Modified src/analysis/normed_space/mazur_ulam.lean
 - \- *def* isometric.to_real_linear_equiv
@@ -3001,6 +3006,7 @@ feat(algebra/lie/basic): show `I + J` is solvable if Lie ideals `I`, `J` are sol
 The key result is `lie_algebra.is_solvable_add`
 #### Estimated changes
 Modified src/algebra/lie/basic.lean
+- \+/\- *abbreviation* lie_algebra.derived_series
 - \+/\- *def* lie_algebra.derived_series_of_ideal
 - \+/\- *lemma* lie_algebra.derived_series_of_ideal_add
 - \+ *lemma* lie_algebra.derived_series_of_ideal_add_le_add
@@ -3479,6 +3485,7 @@ algebras in their own right).
 The key definition is `lie_algebra.derived_series_of_ideal` and the key result is `lie_ideal.derived_series_eq_bot_iff`.
 #### Estimated changes
 Modified src/algebra/lie/basic.lean
+- \+ *abbreviation* lie_algebra.derived_series
 - \- *def* lie_algebra.derived_series
 - \+ *lemma* lie_algebra.derived_series_def
 - \+ *def* lie_algebra.derived_series_of_ideal
@@ -5081,6 +5088,7 @@ Added src/order/closure.lean
 - \+ *lemma* closure_operator.monotone
 - \+ *def* closure_operator.to_closed
 - \+ *lemma* closure_operator.top_mem_closed
+- \+ *structure* closure_operator
 
 
 
@@ -5452,7 +5460,7 @@ Modified src/category_theory/eq_to_hom.lean
 - \+/\- *lemma* category_theory.eq_to_hom_unop
 
 Modified src/category_theory/graded_object.lean
-
+- \+/\- *abbreviation* category_theory.graded_object_with_shift
 
 Modified src/combinatorics/pigeonhole.lean
 
@@ -7422,6 +7430,7 @@ This PR defines the tensor product of an indexed family `s : ι → Type*` of se
 Added src/linear_algebra/pi_tensor_product.lean
 - \+ *lemma* pi_tensor_product.add_tprod_coeff'
 - \+ *lemma* pi_tensor_product.add_tprod_coeff
+- \+ *inductive* pi_tensor_product.eqv
 - \+ *theorem* pi_tensor_product.ext
 - \+ *lemma* pi_tensor_product.lift.tprod
 - \+ *theorem* pi_tensor_product.lift.unique'
@@ -7844,6 +7853,7 @@ Added src/computability/regular_expressions.lean
 - \+ *lemma* regular_expression.star_rmatch_iff
 - \+ *lemma* regular_expression.zero_def
 - \+ *lemma* regular_expression.zero_rmatch
+- \+ *inductive* regular_expression
 
 
 
@@ -7876,6 +7886,9 @@ Added src/tactic/rewrite_search/explain.lean
 - \+ *def* tactic.rewrite_search.dir_pair.set
 - \+ *def* tactic.rewrite_search.dir_pair.to_list
 - \+ *def* tactic.rewrite_search.dir_pair.to_string
+- \+ *structure* tactic.rewrite_search.dir_pair
+- \+ *inductive* tactic.rewrite_search.using_conv.app_addr
+- \+ *inductive* tactic.rewrite_search.using_conv.splice_result
 
 Added src/tactic/rewrite_search/frontend.lean
 
@@ -7885,6 +7898,7 @@ Added src/tactic/rewrite_search/search.lean
 
 Added src/tactic/rewrite_search/types.lean
 - \+ *def* tactic.rewrite_search.side.to_xhs
+- \+ *inductive* tactic.rewrite_search.side
 
 Added test/rewrite_search/rewrite_search.lean
 - \+ *def* tactic.rewrite_search.testing.idf
@@ -8672,6 +8686,7 @@ Modified src/topology/sheaves/sheaf_condition/pairwise_intersections.lean
 Modified test/simps.lean
 - \- *def* foo.bar2
 - \+/\- *def* foo.rfl2
+- \+ *structure* my_type
 - \+ *def* my_type_def
 - \- *def* specify.specify5
 
@@ -8858,7 +8873,7 @@ Modified src/tactic/rcases.lean
 
 
 Modified test/rcases.lean
-
+- \+ *inductive* foo
 
 
 
@@ -9017,6 +9032,7 @@ Added src/computability/DFA.lean
 - \+ *def* DFA.accepts
 - \+ *def* DFA.eval
 - \+ *def* DFA.eval_from
+- \+ *structure* DFA
 
 Added src/computability/NFA.lean
 - \+ *def* DFA.to_NFA
@@ -9029,6 +9045,7 @@ Added src/computability/NFA.lean
 - \+ *def* NFA.step_set
 - \+ *def* NFA.to_DFA
 - \+ *lemma* NFA.to_DFA_correct
+- \+ *structure* NFA
 
 
 
@@ -9251,6 +9268,7 @@ Added src/group_theory/dihedral.lean
 - \+ *lemma* dihedral.sr_mul_r
 - \+ *lemma* dihedral.sr_mul_self
 - \+ *lemma* dihedral.sr_mul_sr
+- \+ *inductive* dihedral
 
 
 
@@ -9458,6 +9476,7 @@ Modified src/linear_algebra/basic.lean
 
 Added src/ring_theory/simple_module.lean
 - \+ *theorem* is_simple_module.nontrivial
+- \+ *abbreviation* is_simple_module
 - \+ *theorem* linear_map.bijective_of_ne_zero
 - \+ *theorem* linear_map.bijective_or_eq_zero
 - \+ *theorem* linear_map.injective_of_ne_zero
@@ -9670,6 +9689,7 @@ Modified src/analysis/normed_space/hahn_banach.lean
 
 
 Modified src/analysis/normed_space/operator_norm.lean
+- \+/\- *abbreviation* continuous_linear_equiv.coord
 - \+/\- *def* continuous_linear_equiv.to_span_nonzero_singleton
 
 Modified src/geometry/euclidean/monge_point.lean
@@ -9682,6 +9702,7 @@ Modified src/linear_algebra/affine_space/finite_dimensional.lean
 
 
 Modified src/linear_algebra/basic.lean
+- \+/\- *abbreviation* linear_equiv.coord
 - \+/\- *lemma* linear_equiv.coord_self
 - \+/\- *def* linear_equiv.to_span_nonzero_singleton
 - \+/\- *lemma* linear_map.span_singleton_eq_range

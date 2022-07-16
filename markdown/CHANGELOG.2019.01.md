@@ -697,8 +697,10 @@ Modified src/algebra/module.lean
 - \+/\- *theorem* linear_map.ext_iff
 - \+/\- *def* linear_map.id
 - \+/\- *theorem* linear_map.is_linear
+- \+/\- *structure* linear_map
 - \+/\- *theorem* one_smul
 - \+/\- *lemma* submodule.neg_mem
+- \+/\- *structure* submodule
 - \+/\- *theorem* zero_smul
 
 Modified src/algebra/pi_instances.lean
@@ -734,6 +736,7 @@ Modified src/linear_algebra/basic.lean
 - \+/\- *def* linear_equiv.symm
 - \+/\- *theorem* linear_equiv.symm_apply_apply
 - \+/\- *def* linear_equiv.trans
+- \+/\- *structure* linear_equiv
 - \+/\- *def* linear_map.cod_restrict
 - \+/\- *theorem* linear_map.cod_restrict_apply
 - \+/\- *theorem* linear_map.comap_cod_restrict
@@ -1227,6 +1230,7 @@ Modified src/ring_theory/algebra.lean
 feat(ring_theory/algebra): remove of_core
 #### Estimated changes
 Modified src/ring_theory/algebra.lean
+- \- *structure* algebra.core
 - \+ *lemma* algebra.mul_smul_comm
 - \- *def* algebra.of_core
 - \+ *def* algebra.of_ring_hom
@@ -1252,6 +1256,7 @@ Modified src/ring_theory/algebra.lean
 - \+/\- *theorem* alg_hom.id_comp
 - \+/\- *def* alg_hom.to_linear_map
 - \+/\- *theorem* alg_hom.to_linear_map_inj
+- \+/\- *structure* alg_hom
 - \+/\- *def* algebra.adjoin
 - \+/\- *def* algebra.comap
 - \+/\- *theorem* algebra.commutes
@@ -1280,6 +1285,7 @@ Modified src/ring_theory/algebra.lean
 - \+/\- *def* algebra.to_comap
 - \+/\- *theorem* algebra.to_comap_apply
 - \+/\- *def* algebra.to_top
+- \- *structure* algebra
 - \+ *def* algebra_map
 - \+/\- *def* mv_polynomial.aeval
 - \+/\- *theorem* mv_polynomial.aeval_def
@@ -1291,6 +1297,7 @@ Modified src/ring_theory/algebra.lean
 - \+/\- *theorem* subalgebra.mem_coe
 - \+/\- *def* subalgebra.to_submodule
 - \+/\- *def* subalgebra.val
+- \+/\- *structure* subalgebra
 
 
 
@@ -1316,9 +1323,11 @@ Added src/ring_theory/algebra.lean
 - \+ *def* alg_hom.to_linear_map
 - \+ *lemma* alg_hom.to_linear_map_apply
 - \+ *theorem* alg_hom.to_linear_map_inj
+- \+ *structure* alg_hom
 - \+ *def* algebra.adjoin
 - \+ *def* algebra.comap
 - \+ *theorem* algebra.commutes
+- \+ *structure* algebra.core
 - \+ *theorem* algebra.left_comm
 - \+ *def* algebra.lmul
 - \+ *lemma* algebra.lmul_apply
@@ -1346,6 +1355,7 @@ Added src/ring_theory/algebra.lean
 - \+ *def* algebra.to_comap
 - \+ *theorem* algebra.to_comap_apply
 - \+ *def* algebra.to_top
+- \+ *structure* algebra
 - \+ *def* is_ring_hom.to_ℤ_alg_hom
 - \+ *def* mv_polynomial.aeval
 - \+ *theorem* mv_polynomial.aeval_def
@@ -1360,6 +1370,7 @@ Added src/ring_theory/algebra.lean
 - \+ *def* subalgebra.to_submodule
 - \+ *def* subalgebra.under
 - \+ *def* subalgebra.val
+- \+ *structure* subalgebra
 
 
 
@@ -1393,7 +1404,9 @@ Modified src/category_theory/types.lean
 refactor(category_theory/concrete_category): move `bundled` to own file
 #### Estimated changes
 Modified src/category_theory/category.lean
+- \- *structure* category_theory.bundled
 - \- *lemma* category_theory.bundled_hom_coe
+- \- *structure* category_theory.concrete_category
 - \- *lemma* category_theory.concrete_category_comp
 - \- *lemma* category_theory.concrete_category_id
 - \- *def* category_theory.mk_ob
@@ -1403,6 +1416,8 @@ Added src/category_theory/concrete_category.lean
 - \+ *lemma* category_theory.bundled.concrete_category_comp
 - \+ *lemma* category_theory.bundled.concrete_category_id
 - \+ *def* category_theory.bundled.map
+- \+ *structure* category_theory.bundled
+- \+ *structure* category_theory.concrete_category
 - \+ *def* category_theory.concrete_functor
 - \+ *def* category_theory.forget
 - \+ *def* category_theory.mk_ob
@@ -1652,6 +1667,8 @@ Added src/category_theory/adjunction.lean
 - \+ *def* category_theory.adjunction.cones_iso
 - \+ *lemma* category_theory.adjunction.core_hom_equiv.hom_equiv_naturality_left
 - \+ *lemma* category_theory.adjunction.core_hom_equiv.hom_equiv_naturality_right_symm
+- \+ *structure* category_theory.adjunction.core_hom_equiv
+- \+ *structure* category_theory.adjunction.core_unit_counit
 - \+ *def* category_theory.adjunction.functoriality_is_left_adjoint
 - \+ *def* category_theory.adjunction.functoriality_is_right_adjoint
 - \+ *lemma* category_theory.adjunction.hom_equiv_naturality_left
@@ -1659,6 +1676,8 @@ Added src/category_theory/adjunction.lean
 - \+ *lemma* category_theory.adjunction.hom_equiv_naturality_right
 - \+ *lemma* category_theory.adjunction.hom_equiv_naturality_right_symm
 - \+ *def* category_theory.adjunction.id
+- \+ *structure* category_theory.adjunction.is_left_adjoint
+- \+ *structure* category_theory.adjunction.is_right_adjoint
 - \+ *def* category_theory.adjunction.left_adjoint_of_equiv
 - \+ *def* category_theory.adjunction.left_adjoint_preserves_colimits
 - \+ *lemma* category_theory.adjunction.left_triangle
@@ -1669,6 +1688,7 @@ Added src/category_theory/adjunction.lean
 - \+ *def* category_theory.adjunction.right_adjoint_preserves_limits
 - \+ *lemma* category_theory.adjunction.right_triangle
 - \+ *lemma* category_theory.adjunction.right_triangle_components
+- \+ *structure* category_theory.adjunction
 
 Modified src/category_theory/category.lean
 - \+/\- *lemma* category_theory.bundled_hom_coe
@@ -2201,6 +2221,7 @@ Added src/tactic/transfer.lean
 
 
 Added tests/coinductive.lean
+- \+ *inductive* all_list
 - \+ *lemma* monotonicity.all_list
 
 
@@ -2269,6 +2290,7 @@ Added src/logic/unique.lean
 - \+ *lemma* unique.default_eq
 - \+ *lemma* unique.eq_default
 - \+ *def* unique.of_surjective
+- \+ *structure* unique
 
 
 
@@ -2412,6 +2434,7 @@ Modified src/measure_theory/measurable_space.lean
 - \+ *lemma* measurable_equiv.symm_to_equiv
 - \+ *def* measurable_equiv.trans
 - \+ *lemma* measurable_equiv.trans_to_equiv
+- \+ *structure* measurable_equiv
 - \+ *lemma* measurable_inl
 - \+ *lemma* measurable_inr
 - \+ *lemma* measurable_of_measurable_union_cover
@@ -4096,6 +4119,7 @@ Modified ring_theory/unique_factorization_domain.lean
 - \+ *lemma* unique_factorization_domain.irreducible_iff_prime
 - \+ *def* unique_factorization_domain.of_unique_irreducible_factorization
 - \+ *lemma* unique_factorization_domain.unique
+- \+ *structure* unique_irreducible_factorization
 
 
 
@@ -4120,7 +4144,7 @@ Modified data/set/function.lean
 chore(tactic/monotonicity/interactive) use derive for has_reflect ([#578](https://github.com/leanprover-community/mathlib/pull/578))
 #### Estimated changes
 Modified tactic/monotonicity/interactive.lean
-
+- \+/\- *inductive* tactic.interactive.rep_arity
 
 
 

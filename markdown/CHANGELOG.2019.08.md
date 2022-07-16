@@ -209,9 +209,14 @@ Modified src/category_theory/limits/shapes/binary_products.lean
 - \+ *lemma* category_theory.limits.binary_fan.mk_π_app_right
 - \+ *def* category_theory.limits.coprod.associator
 - \+ *def* category_theory.limits.coprod.braiding
+- \+ *abbreviation* category_theory.limits.coprod.desc
+- \+ *abbreviation* category_theory.limits.coprod.inl
+- \+ *abbreviation* category_theory.limits.coprod.inr
 - \+ *def* category_theory.limits.coprod.left_unitor
+- \+ *abbreviation* category_theory.limits.coprod.map
 - \+ *def* category_theory.limits.coprod.right_unitor
 - \+ *lemma* category_theory.limits.coprod.symmetry
+- \+ *abbreviation* category_theory.limits.coprod
 - \+ *def* category_theory.limits.map_pair
 - \+ *lemma* category_theory.limits.map_pair_left
 - \+ *lemma* category_theory.limits.map_pair_right
@@ -219,16 +224,28 @@ Modified src/category_theory/limits/shapes/binary_products.lean
 - \+ *lemma* category_theory.limits.pair_obj_right
 - \+ *def* category_theory.limits.prod.associator
 - \+ *def* category_theory.limits.prod.braiding
+- \+ *abbreviation* category_theory.limits.prod.fst
 - \+ *def* category_theory.limits.prod.left_unitor
+- \+ *abbreviation* category_theory.limits.prod.lift
+- \+ *abbreviation* category_theory.limits.prod.map
 - \+ *def* category_theory.limits.prod.right_unitor
+- \+ *abbreviation* category_theory.limits.prod.snd
 - \+ *lemma* category_theory.limits.prod.symmetry
+- \+ *abbreviation* category_theory.limits.prod
+- \+/\- *inductive* category_theory.limits.walking_pair
 
 Modified src/category_theory/limits/shapes/default.lean
 
 
 Modified src/category_theory/limits/shapes/equalizers.lean
 - \+ *lemma* category_theory.limits.coequalizer.condition
+- \+ *abbreviation* category_theory.limits.coequalizer.desc
+- \+ *abbreviation* category_theory.limits.coequalizer.π
+- \+ *abbreviation* category_theory.limits.coequalizer
 - \+ *lemma* category_theory.limits.equalizer.condition
+- \+ *abbreviation* category_theory.limits.equalizer.lift
+- \+ *abbreviation* category_theory.limits.equalizer.ι
+- \+ *abbreviation* category_theory.limits.equalizer
 
 Added src/category_theory/limits/shapes/finite_limits.lean
 
@@ -239,21 +256,44 @@ Added src/category_theory/limits/shapes/finite_products.lean
 Modified src/category_theory/limits/shapes/products.lean
 - \+ *lemma* category_theory.limits.cofan.mk_π_app
 - \+ *lemma* category_theory.limits.fan.mk_π_app
+- \+ *abbreviation* category_theory.limits.pi.lift
+- \+ *abbreviation* category_theory.limits.pi.map
+- \+ *abbreviation* category_theory.limits.pi.π
+- \+ *abbreviation* category_theory.limits.pi_obj
+- \+ *abbreviation* category_theory.limits.sigma.desc
+- \+ *abbreviation* category_theory.limits.sigma.map
+- \+ *abbreviation* category_theory.limits.sigma.ι
+- \+ *abbreviation* category_theory.limits.sigma_obj
 
 Modified src/category_theory/limits/shapes/pullbacks.lean
 - \+ *lemma* category_theory.limits.pullback.condition
+- \+ *abbreviation* category_theory.limits.pullback.fst
+- \+ *abbreviation* category_theory.limits.pullback.lift
+- \+ *abbreviation* category_theory.limits.pullback.snd
+- \+ *abbreviation* category_theory.limits.pullback
 - \+/\- *lemma* category_theory.limits.pullback_cone.condition
+- \+ *abbreviation* category_theory.limits.pullback_cone.fst
 - \+/\- *def* category_theory.limits.pullback_cone.mk
+- \+ *abbreviation* category_theory.limits.pullback_cone.snd
 - \- *def* category_theory.limits.pullback_cone.π₁
 - \- *def* category_theory.limits.pullback_cone.π₂
 - \+ *lemma* category_theory.limits.pushout.condition
+- \+ *abbreviation* category_theory.limits.pushout.desc
+- \+ *abbreviation* category_theory.limits.pushout.inl
+- \+ *abbreviation* category_theory.limits.pushout.inr
+- \+ *abbreviation* category_theory.limits.pushout
 - \+/\- *lemma* category_theory.limits.pushout_cocone.condition
+- \+ *abbreviation* category_theory.limits.pushout_cocone.inl
+- \+ *abbreviation* category_theory.limits.pushout_cocone.inr
 - \+/\- *def* category_theory.limits.pushout_cocone.mk
 - \- *def* category_theory.limits.pushout_cocone.ι₁
 - \- *def* category_theory.limits.pushout_cocone.ι₂
 
 Added src/category_theory/limits/shapes/terminal.lean
-
+- \+ *abbreviation* category_theory.limits.initial.to
+- \+ *abbreviation* category_theory.limits.initial
+- \+ *abbreviation* category_theory.limits.terminal.from
+- \+ *abbreviation* category_theory.limits.terminal
 
 Modified src/category_theory/pempty.lean
 
@@ -527,6 +567,7 @@ Modified src/analysis/normed_space/bounded_linear_maps.lean
 - \+/\- *def* is_bounded_linear_map.to_continuous_linear_map
 - \+/\- *def* is_bounded_linear_map.to_linear_map
 - \+/\- *lemma* is_bounded_linear_map.zero
+- \+/\- *structure* is_bounded_linear_map
 
 Modified src/analysis/normed_space/operator_norm.lean
 - \+/\- *lemma* continuous_linear_map.bounds_bdd_below
@@ -576,6 +617,7 @@ Modified src/algebra/ring.lean
 - \+ *theorem* ring_hom.map_sub
 - \+ *lemma* ring_hom.map_zero
 - \+ *def* ring_hom.mk'
+- \+ *structure* ring_hom
 - \- *def* semiring_hom.comp
 - \- *theorem* semiring_hom.ext
 - \- *def* semiring_hom.id
@@ -586,6 +628,7 @@ Modified src/algebra/ring.lean
 - \- *theorem* semiring_hom.map_sub
 - \- *lemma* semiring_hom.map_zero
 - \- *def* semiring_hom.mk'
+- \- *structure* semiring_hom
 
 
 
@@ -878,6 +921,7 @@ Added archive/cubing_a_cube.lean
 - \+ *def* cube.to_set_subset
 - \+ *def* cube.unit_cube
 - \+ *def* cube.xm
+- \+ *structure* cube
 - \+ *def* decreasing_sequence
 - \+ *lemma* exists_mi
 - \+ *def* mi
@@ -952,7 +996,7 @@ Modified src/algebra/group/hom.lean
 - \+/\- *lemma* monoid_hom.map_one
 
 Modified src/algebra/group/to_additive.lean
-
+- \+ *structure* to_additive.value_type
 
 Modified src/algebra/group/with_one.lean
 
@@ -1036,6 +1080,7 @@ Modified src/group_theory/subgroup.lean
 - \- *theorem* add_group.gmultiples_eq_closure
 - \- *lemma* add_group.image_closure
 - \- *theorem* add_group.in_closure.rec_on
+- \+ *inductive* add_group.in_closure
 - \- *lemma* add_group.mem_closure
 - \- *theorem* add_group.mem_closure_union_iff
 - \+ *lemma* gmultiples_subset
@@ -1053,6 +1098,7 @@ Modified src/group_theory/submonoid.lean
 - \- *theorem* add_monoid.exists_list_of_mem_closure
 - \- *lemma* add_monoid.image_closure
 - \- *theorem* add_monoid.in_closure.rec_on
+- \+ *inductive* add_monoid.in_closure
 - \- *theorem* add_monoid.mem_closure_union_iff
 - \- *theorem* add_monoid.subset_closure
 - \- *lemma* is_add_submonoid_Union_of_directed
@@ -1229,6 +1275,7 @@ Added src/linear_algebra/bilinear_form.lean
 - \+ *def* bilin_form.to_linear_map
 - \+ *lemma* bilin_form.zero_left
 - \+ *lemma* bilin_form.zero_right
+- \+ *structure* bilin_form
 - \+ *def* linear_map.to_bilin
 - \+ *lemma* refl_bilin_form.eq_zero
 - \+ *def* refl_bilin_form.is_refl
@@ -1260,6 +1307,7 @@ Added src/linear_algebra/sesquilinear_form.lean
 - \+ *lemma* sesq_form.sub_right
 - \+ *lemma* sesq_form.zero_left
 - \+ *lemma* sesq_form.zero_right
+- \+ *structure* sesq_form
 - \+ *lemma* sym_sesq_form.is_refl
 - \+ *def* sym_sesq_form.is_sym
 - \+ *lemma* sym_sesq_form.ortho_sym
@@ -1282,6 +1330,7 @@ Added src/ring_theory/maps.lean
 - \+ *lemma* ring_anti_equiv.map_sub
 - \+ *lemma* ring_anti_equiv.map_zero
 - \+ *lemma* ring_anti_equiv.map_zero_iff
+- \+ *structure* ring_anti_equiv
 - \+ *lemma* ring_equiv.bijective
 - \+ *lemma* ring_equiv.map_add
 - \+ *lemma* ring_equiv.map_mul
@@ -1301,6 +1350,7 @@ Added src/ring_theory/maps.lean
 - \+ *lemma* ring_invo.map_zero
 - \+ *lemma* ring_invo.map_zero_iff
 - \+ *def* ring_invo.to_ring_anti_equiv
+- \+ *structure* ring_invo
 
 
 
@@ -1330,9 +1380,11 @@ Added src/data/tree.lean
 - \+ *def* tree.map
 - \+ *def* tree.of_rbnode
 - \+ *def* tree.repr
+- \+ *inductive* {u}
 
 Modified src/tactic/linarith.lean
 - \- *def* linarith.tree.repr
+- \- *inductive* linarith.{u}
 
 Modified src/tactic/ring2.lean
 - \- *def* tactic.ring2.horner_expr.repr
@@ -1340,6 +1392,7 @@ Modified src/tactic/ring2.lean
 - \- *def* tactic.ring2.tree.get
 - \- *def* tactic.ring2.tree.index_of
 - \- *def* tactic.ring2.tree.of_rbnode
+- \- *inductive* tactic.ring2.{u}
 
 
 
@@ -2265,6 +2318,7 @@ Modified src/algebra/ring.lean
 - \+ *theorem* semiring_hom.map_sub
 - \+ *lemma* semiring_hom.map_zero
 - \+ *def* semiring_hom.mk'
+- \+ *structure* semiring_hom
 
 
 
@@ -2352,7 +2406,7 @@ structure alg_equiv (α β γ : Type*) [comm_ring α] [ring β] [ring γ]
 * Update algebra.lean
 #### Estimated changes
 Modified src/ring_theory/algebra.lean
-
+- \+/\- *structure* alg_hom
 
 
 
@@ -2394,10 +2448,12 @@ Added src/topology/uniform_space/UniformSpace.lean
 - \+ *def* CpltSepUniformSpace.forget_to_UniformSpace
 - \+ *def* CpltSepUniformSpace.of
 - \+ *def* CpltSepUniformSpace.to_UniformSpace
+- \+ *structure* CpltSepUniformSpace
 - \+ *def* UniformSpace.completion_hom
 - \+ *lemma* UniformSpace.completion_hom_val
 - \+ *lemma* UniformSpace.extension_comp_coe
 - \+ *lemma* UniformSpace.extension_hom_val
+- \+ *abbreviation* UniformSpace.forget
 - \+ *def* UniformSpace.forget_to_Top
 - \+ *def* UniformSpace.forget_to_Type_via_Top
 - \+ *def* UniformSpace.of

@@ -330,11 +330,13 @@ Added archive/examples/prop_encodable.lean
 - \+ *def* mk_fn0
 - \+ *def* mk_fn1
 - \+ *def* mk_fn2
+- \+ *inductive* prop_form
 
 Added src/data/W.lean
 - \+ *def* W.depth
 - \+ *lemma* W.depth_lt_depth_mk
 - \+ *lemma* W.depth_pos
+- \+ *inductive* W
 
 Modified src/data/equiv/encodable.lean
 - \+ *def* encodable.encode'
@@ -371,19 +373,24 @@ Modified src/category_theory/adjunction/fully_faithful.lean
 
 Modified src/category_theory/comma.lean
 - \- *lemma* category_theory.comma_morphism.ext
+- \+/\- *structure* category_theory.comma_morphism
 
 Modified src/category_theory/limits/cones.lean
 - \- *lemma* category_theory.limits.cocone_morphism.ext
+- \+/\- *structure* category_theory.limits.cocone_morphism
 - \- *lemma* category_theory.limits.cone_morphism.ext
+- \+/\- *structure* category_theory.limits.cone_morphism
 
 Modified src/category_theory/limits/functor_category.lean
 
 
 Modified src/category_theory/monad/algebra.lean
 - \- *lemma* category_theory.monad.algebra.hom.ext
+- \+/\- *structure* category_theory.monad.algebra.hom
 
 Modified src/category_theory/natural_transformation.lean
 - \- *lemma* category_theory.nat_trans.ext
+- \+/\- *structure* category_theory.nat_trans
 
 Modified src/category_theory/whiskering.lean
 
@@ -456,7 +463,7 @@ Modified src/analysis/complex/exponential.lean
 
 
 Modified src/analysis/normed_space/basic.lean
-
+- \+/\- *structure* normed_group.core
 
 Modified src/category/fold.lean
 
@@ -761,7 +768,7 @@ Modified src/tactic/suggest.lean
 
 
 Modified src/tactic/tfae.lean
-
+- \+/\- *inductive* tactic.tfae.arrow
 
 Modified src/topology/algebra/module.lean
 
@@ -1690,13 +1697,19 @@ Modified src/algebra/lie_algebra.lean
 - \- *def* lie_algebra.bil_lie
 - \+ *lemma* lie_algebra.endo_algebra_bracket
 - \+ *lemma* lie_algebra.map_lie
+- \+ *structure* lie_algebra.morphism
 - \- *def* lie_algebra.of_endomorphism_algebra
+- \+ *abbreviation* lie_ideal
 - \+ *def* lie_ideal_subalgebra
 - \+ *lemma* lie_mem_left
 - \+ *lemma* lie_mem_right
 - \+ *def* lie_module.of_endo_morphism
+- \+ *structure* lie_subalgebra
 - \+ *lemma* lie_submodule.quotient.is_quotient_mk
+- \+ *abbreviation* lie_submodule.quotient.mk
 - \+ *lemma* lie_submodule.quotient.mk_bracket
+- \+ *abbreviation* lie_submodule.quotient
+- \+ *structure* lie_submodule
 
 Added src/linear_algebra/linear_action.lean
 - \+ *def* linear_action.of_endo_map
@@ -2807,6 +2820,7 @@ Added src/linear_algebra/multilinear.lean
 - \+ *lemma* multilinear_map.smul_apply
 - \+ *def* multilinear_map.to_linear_map
 - \+ *lemma* multilinear_map.zero_apply
+- \+ *structure* multilinear_map
 
 Modified src/logic/function.lean
 - \+ *lemma* function.update_comp
@@ -3274,6 +3288,7 @@ Modified src/topology/algebra/module.lean
 - \+ *def* continuous_linear_equiv.to_continuous_linear_map
 - \+ *def* continuous_linear_equiv.to_homeomorph
 - \+ *lemma* continuous_linear_equiv.trans_to_linear_equiv
+- \+ *structure* continuous_linear_equiv
 - \+/\- *lemma* continuous_linear_map.add_comp
 - \+/\- *lemma* continuous_linear_map.coe_add'
 - \+/\- *lemma* continuous_linear_map.coe_add
@@ -3313,6 +3328,7 @@ Modified src/topology/algebra/module.lean
 - \+/\- *lemma* is_closed_map_smul_of_unit
 - \+/\- *lemma* is_open_map_smul_of_ne_zero
 - \+/\- *lemma* is_open_map_smul_of_unit
+- \+/\- *abbreviation* topological_vector_space
 
 
 

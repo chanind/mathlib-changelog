@@ -1081,6 +1081,7 @@ Modified analysis/topology/continuity.lean
 - \+ *lemma* homeomorph.range_coe
 - \+ *lemma* homeomorph.self_comp_symm
 - \+ *lemma* homeomorph.symm_comp_self
+- \+ *structure* homeomorph
 
 Modified data/equiv/basic.lean
 - \+/\- *def* equiv.prod_congr
@@ -1582,6 +1583,7 @@ Modified analysis/measure_theory/integration.lean
 - \- *def* measure_theory.indicator.size
 - \- *def* measure_theory.indicator.to_fun
 - \- *theorem* measure_theory.indicator.to_fun_val
+- \- *structure* measure_theory.indicator
 - \+ *def* measure_theory.lintegral
 - \+ *lemma* measure_theory.lintegral_add
 - \+ *lemma* measure_theory.lintegral_eq_nnreal
@@ -1708,6 +1710,7 @@ Modified analysis/measure_theory/integration.lean
 - \- *theorem* measure_theory.upper_itg_add_le
 - \- *def* measure_theory.upper_itg_def_subtype
 - \- *theorem* measure_theory.upper_itg_simple
+- \+/\- *structure* measure_theory.{u
 - \+ *lemma* supr_eq_of_tendsto
 
 Modified analysis/measure_theory/measurable_space.lean
@@ -1764,6 +1767,7 @@ Added analysis/measure_theory/integration.lean
 - \+ *def* measure_theory.indicator.size
 - \+ *def* measure_theory.indicator.to_fun
 - \+ *theorem* measure_theory.indicator.to_fun_val
+- \+ *structure* measure_theory.indicator
 - \+ *def* measure_theory.simple_func'.bind
 - \+ *theorem* measure_theory.simple_func'.bind_apply
 - \+ *theorem* measure_theory.simple_func'.bind_const
@@ -1833,6 +1837,7 @@ Added analysis/measure_theory/integration.lean
 - \+ *theorem* measure_theory.upper_itg_add_le
 - \+ *def* measure_theory.upper_itg_def_subtype
 - \+ *theorem* measure_theory.upper_itg_simple
+- \+ *structure* measure_theory.{u
 
 Modified analysis/measure_theory/lebesgue_measure.lean
 - \- *def* measure_theory.lebesgue
@@ -2630,7 +2635,7 @@ Added tactic/scc.lean
 
 
 Added tactic/tfae.lean
-
+- \+ *inductive* tactic.tfae.arrow
 
 Modified tests/tactics.lean
 
@@ -3219,7 +3224,8 @@ Modified ring_theory/noetherian.lean
 feat(category_theory/groupoid): groupoids
 #### Estimated changes
 Added category_theory/groupoid.lean
-
+- \+ *abbreviation* category_theory.large_groupoid
+- \+ *abbreviation* category_theory.small_groupoid
 
 
 
@@ -3516,6 +3522,7 @@ Modified tactic/tidy.lean
 
 
 Modified tests/tactics.lean
+- \+ *structure* dependent_fields
 - \+ *lemma* df.ext
 
 
@@ -3596,6 +3603,8 @@ Added data/holor.lean
 - \+ *def* holor.assoc_left
 - \+ *def* holor.assoc_right
 - \+ *lemma* holor.cast_type
+- \+ *inductive* holor.cprank_max1
+- \+ *inductive* holor.cprank_max
 - \+ *lemma* holor.cprank_max_1
 - \+ *lemma* holor.cprank_max_add
 - \+ *lemma* holor.cprank_max_mul

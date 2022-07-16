@@ -354,6 +354,7 @@ Added src/order/hom/complete_lattice.lean
 - \+ *lemma* Inf_hom.id_comp
 - \+ *lemma* Inf_hom.to_fun_eq_coe
 - \+ *lemma* Inf_hom.top_apply
+- \+ *structure* Inf_hom
 - \+ *lemma* Sup_hom.bot_apply
 - \+ *lemma* Sup_hom.cancel_left
 - \+ *lemma* Sup_hom.cancel_right
@@ -368,6 +369,7 @@ Added src/order/hom/complete_lattice.lean
 - \+ *lemma* Sup_hom.id_apply
 - \+ *lemma* Sup_hom.id_comp
 - \+ *lemma* Sup_hom.to_fun_eq_coe
+- \+ *structure* Sup_hom
 - \+ *lemma* complete_lattice_hom.cancel_left
 - \+ *lemma* complete_lattice_hom.cancel_right
 - \+ *lemma* complete_lattice_hom.coe_comp
@@ -381,6 +383,7 @@ Added src/order/hom/complete_lattice.lean
 - \+ *lemma* complete_lattice_hom.id_comp
 - \+ *def* complete_lattice_hom.to_Inf_hom
 - \+ *lemma* complete_lattice_hom.to_fun_eq_coe
+- \+ *structure* complete_lattice_hom
 - \+ *lemma* frame_hom.bot_apply
 - \+ *lemma* frame_hom.cancel_left
 - \+ *lemma* frame_hom.cancel_right
@@ -396,6 +399,7 @@ Added src/order/hom/complete_lattice.lean
 - \+ *lemma* frame_hom.id_comp
 - \+ *lemma* frame_hom.to_fun_eq_coe
 - \+ *def* frame_hom.to_lattice_hom
+- \+ *structure* frame_hom
 - \+ *lemma* map_infi
 - \+ *lemma* map_infi₂
 - \+ *lemma* map_supr
@@ -1528,6 +1532,7 @@ Added src/category_theory/bicategory/natural_transformation.lean
 - \+ *def* category_theory.oplax_nat_trans.modification.vcomp
 - \+ *lemma* category_theory.oplax_nat_trans.modification.whisker_left_naturality
 - \+ *lemma* category_theory.oplax_nat_trans.modification.whisker_right_naturality
+- \+ *structure* category_theory.oplax_nat_trans.modification
 - \+ *def* category_theory.oplax_nat_trans.modification_iso.of_components
 - \+ *def* category_theory.oplax_nat_trans.vcomp
 - \+ *lemma* category_theory.oplax_nat_trans.whisker_left_naturality_comp
@@ -1536,6 +1541,7 @@ Added src/category_theory/bicategory/natural_transformation.lean
 - \+ *lemma* category_theory.oplax_nat_trans.whisker_right_naturality_comp
 - \+ *lemma* category_theory.oplax_nat_trans.whisker_right_naturality_id
 - \+ *lemma* category_theory.oplax_nat_trans.whisker_right_naturality_naturality
+- \+ *structure* category_theory.oplax_nat_trans
 
 
 
@@ -1658,11 +1664,13 @@ Added src/ring_theory/polynomial/eisenstein.lean
 - \+ *lemma* polynomial.is_eisenstein_at.coeff_mem
 - \+ *lemma* polynomial.is_eisenstein_at.irreducible
 - \+ *lemma* polynomial.is_eisenstein_at.is_weakly_eisenstein_at
+- \+ *structure* polynomial.is_eisenstein_at
 - \+ *lemma* polynomial.is_weakly_eisenstein_at.exists_mem_adjoin_mul_eq_pow_nat_degree
 - \+ *lemma* polynomial.is_weakly_eisenstein_at.exists_mem_adjoin_mul_eq_pow_nat_degree_le
 - \+ *lemma* polynomial.is_weakly_eisenstein_at.map
 - \+ *lemma* polynomial.is_weakly_eisenstein_at.pow_nat_degree_le_of_aeval_zero_of_monic_mem_map
 - \+ *lemma* polynomial.is_weakly_eisenstein_at.pow_nat_degree_le_of_root_of_monic_mem
+- \+ *structure* polynomial.is_weakly_eisenstein_at
 
 
 
@@ -2394,6 +2402,7 @@ Modified src/algebra/group/hom.lean
 
 
 Added src/algebra/order/hom/monoid.lean
+- \+ *structure* order_add_monoid_hom
 - \+ *lemma* order_monoid_hom.cancel_left
 - \+ *lemma* order_monoid_hom.cancel_right
 - \+ *lemma* order_monoid_hom.coe_comp
@@ -2425,6 +2434,7 @@ Added src/algebra/order/hom/monoid.lean
 - \+ *def* order_monoid_hom.to_order_hom
 - \+ *lemma* order_monoid_hom.to_order_hom_eq_coe
 - \+ *lemma* order_monoid_hom.to_order_hom_injective
+- \+ *structure* order_monoid_hom
 - \+ *lemma* order_monoid_with_zero_hom.cancel_left
 - \+ *lemma* order_monoid_with_zero_hom.cancel_right
 - \+ *lemma* order_monoid_with_zero_hom.coe_comp
@@ -2451,6 +2461,7 @@ Added src/algebra/order/hom/monoid.lean
 - \+ *def* order_monoid_with_zero_hom.to_order_monoid_hom
 - \+ *lemma* order_monoid_with_zero_hom.to_order_monoid_hom_eq_coe
 - \+ *lemma* order_monoid_with_zero_hom.to_order_monoid_hom_injective
+- \+ *structure* order_monoid_with_zero_hom
 
 Modified src/order/hom/basic.lean
 
@@ -2472,12 +2483,14 @@ Added src/order/hom/lattice.lean
 - \+ *lemma* bot_hom.inf_apply
 - \+ *lemma* bot_hom.sup_apply
 - \+ *lemma* bot_hom.to_fun_eq_coe
+- \+ *structure* bot_hom
 - \+ *lemma* bounded_lattice_hom.coe_id
 - \+ *lemma* bounded_lattice_hom.ext
 - \+ *lemma* bounded_lattice_hom.id_apply
 - \+ *def* bounded_lattice_hom.to_bot_hom
 - \+ *lemma* bounded_lattice_hom.to_fun_eq_coe
 - \+ *def* bounded_lattice_hom.to_top_hom
+- \+ *structure* bounded_lattice_hom
 - \+ *lemma* inf_hom.coe_const
 - \+ *lemma* inf_hom.coe_id
 - \+ *lemma* inf_hom.coe_inf
@@ -2487,11 +2500,13 @@ Added src/order/hom/lattice.lean
 - \+ *lemma* inf_hom.id_apply
 - \+ *lemma* inf_hom.inf_apply
 - \+ *lemma* inf_hom.to_fun_eq_coe
+- \+ *structure* inf_hom
 - \+ *lemma* lattice_hom.coe_id
 - \+ *lemma* lattice_hom.ext
 - \+ *lemma* lattice_hom.id_apply
 - \+ *lemma* lattice_hom.to_fun_eq_coe
 - \+ *def* lattice_hom.to_inf_hom
+- \+ *structure* lattice_hom
 - \+ *lemma* sup_hom.coe_const
 - \+ *lemma* sup_hom.coe_id
 - \+ *lemma* sup_hom.coe_sup
@@ -2501,6 +2516,7 @@ Added src/order/hom/lattice.lean
 - \+ *lemma* sup_hom.id_apply
 - \+ *lemma* sup_hom.sup_apply
 - \+ *lemma* sup_hom.to_fun_eq_coe
+- \+ *structure* sup_hom
 - \+ *lemma* top_hom.coe_id
 - \+ *lemma* top_hom.coe_inf
 - \+ *lemma* top_hom.coe_sup
@@ -2511,6 +2527,7 @@ Added src/order/hom/lattice.lean
 - \+ *lemma* top_hom.sup_apply
 - \+ *lemma* top_hom.to_fun_eq_coe
 - \+ *lemma* top_hom.top_apply
+- \+ *structure* top_hom
 
 
 
@@ -2809,6 +2826,7 @@ Modified src/ring_theory/valuation/basic.lean
 - \+/\- *lemma* valuation.coe_coe
 - \+/\- *lemma* valuation.is_equiv.map
 - \+/\- *def* valuation.map
+- \+/\- *structure* valuation
 
 
 
@@ -2874,6 +2892,7 @@ Renamed src/data/fun_like.lean to src/data/fun_like/basic.lean
 
 
 Added src/data/fun_like/embedding.lean
+- \+ *structure* cooler_embedding
 - \+ *lemma* do_something
 - \+ *lemma* embedding_like.apply_eq_iff_eq
 - \+ *lemma* embedding_like.comp_injective
@@ -2881,6 +2900,7 @@ Added src/data/fun_like/embedding.lean
 - \+ *lemma* map_op
 
 Added src/data/fun_like/equiv.lean
+- \+ *structure* cooler_iso
 - \+ *lemma* do_something
 - \+ *theorem* equiv_like.apply_eq_iff_eq
 - \+ *lemma* equiv_like.bijective_comp
@@ -2911,6 +2931,7 @@ Defines the boolean algebra of definable sets
 #### Estimated changes
 Modified src/model_theory/basic.lean
 - \+ *def* first_order.language.bd_not
+- \+ *inductive* first_order.language.bounded_formula
 - \+ *lemma* first_order.language.definable_set.coe_bot
 - \+ *lemma* first_order.language.definable_set.coe_compl
 - \+ *lemma* first_order.language.definable_set.coe_inf
@@ -2928,6 +2949,7 @@ Modified src/model_theory/basic.lean
 - \+ *lemma* first_order.language.is_definable.inter
 - \+ *lemma* first_order.language.is_definable.sdiff
 - \+ *lemma* first_order.language.is_definable.union
+- \+ *structure* first_order.language.is_definable
 - \+ *lemma* first_order.language.is_definable_empty
 - \+ *lemma* first_order.language.is_definable_univ
 - \+ *def* first_order.language.realize_bounded_formula
@@ -2936,6 +2958,7 @@ Modified src/model_theory/basic.lean
 - \+ *def* first_order.language.realize_sentence
 - \+ *def* first_order.language.realize_term
 - \+ *def* first_order.language.sentence
+- \+ *inductive* first_order.language.term
 - \+ *def* first_order.language.theory
 
 
@@ -3757,6 +3780,7 @@ Added src/algebraic_geometry/pullbacks.lean
 - \+ *lemma* algebraic_geometry.Scheme.pullback.cocycle_snd_fst_fst
 - \+ *lemma* algebraic_geometry.Scheme.pullback.cocycle_snd_fst_snd
 - \+ *lemma* algebraic_geometry.Scheme.pullback.cocycle_snd_snd
+- \+ *abbreviation* algebraic_geometry.Scheme.pullback.fV
 - \+ *def* algebraic_geometry.Scheme.pullback.glued_lift
 - \+ *lemma* algebraic_geometry.Scheme.pullback.glued_lift_p1
 - \+ *lemma* algebraic_geometry.Scheme.pullback.glued_lift_p2
@@ -4193,7 +4217,9 @@ Modified src/order/ideal.lean
 - \- *lemma* order.ideal.sup_le
 - \- *lemma* order.ideal.top_of_mem_top
 - \+ *lemma* order.ideal.top_of_top_mem
+- \+/\- *structure* order.ideal
 - \+/\- *def* order.is_ideal.to_ideal
+- \+/\- *structure* order.is_ideal
 - \+/\- *lemma* order.mem_ideal_of_cofinals
 
 
@@ -5198,6 +5224,7 @@ Modified docs/undergrad.yaml
 
 Modified src/analysis/inner_product_space/l2_space.lean
 - \+ *lemma* exists_hilbert_basis
+- \+ *structure* hilbert_basis
 - \+ *lemma* lp.inner_single_left
 - \+ *lemma* lp.inner_single_right
 - \+ *lemma* orthonormal.exists_hilbert_basis_extension
@@ -6700,6 +6727,7 @@ Modified src/analysis/normed_space/star.lean
 
 Modified src/linear_algebra/unitary_group.lean
 - \+/\- *lemma* matrix.unitary_group.star_mul_self
+- \+ *abbreviation* matrix.unitary_group
 - \- *def* matrix.unitary_group
 - \- *lemma* matrix.unitary_submonoid.star_mem
 - \- *lemma* matrix.unitary_submonoid.star_mem_iff
@@ -7617,28 +7645,39 @@ Added src/algebraic_geometry/gluing.lean
 - \+ *def* algebraic_geometry.Scheme.glue_data.V_pullback_cone
 - \+ *def* algebraic_geometry.Scheme.glue_data.V_pullback_cone_is_limit
 - \+ *lemma* algebraic_geometry.Scheme.glue_data.glue_condition
+- \+ *abbreviation* algebraic_geometry.Scheme.glue_data.glued
 - \+ *def* algebraic_geometry.Scheme.glue_data.glued_Scheme
 - \+ *lemma* algebraic_geometry.Scheme.glue_data.is_open_iff
+- \+ *abbreviation* algebraic_geometry.Scheme.glue_data.iso_LocallyRingedSpace
 - \+ *def* algebraic_geometry.Scheme.glue_data.iso_carrier
 - \+ *def* algebraic_geometry.Scheme.glue_data.rel
+- \+ *abbreviation* algebraic_geometry.Scheme.glue_data.to_LocallyRingedSpace_glue_data
+- \+ *abbreviation* algebraic_geometry.Scheme.glue_data.ι
 - \+ *lemma* algebraic_geometry.Scheme.glue_data.ι_eq_iff
 - \+ *lemma* algebraic_geometry.Scheme.glue_data.ι_iso_LocallyRingedSpace_inv
 - \+ *lemma* algebraic_geometry.Scheme.glue_data.ι_iso_carrier_inv
 - \+ *lemma* algebraic_geometry.Scheme.glue_data.ι_jointly_surjective
+- \+ *structure* algebraic_geometry.Scheme.glue_data
 
 Modified src/algebraic_geometry/presheafed_space.lean
 - \+ *lemma* algebraic_geometry.PresheafedSpace.coe_to_fun_eq
 
 Modified src/algebraic_geometry/presheafed_space/gluing.lean
 - \+ *def* algebraic_geometry.LocallyRingedSpace.glue_data.V_pullback_cone_is_limit
+- \+ *abbreviation* algebraic_geometry.LocallyRingedSpace.glue_data.iso_SheafedSpace
+- \+ *abbreviation* algebraic_geometry.LocallyRingedSpace.glue_data.to_SheafedSpace_glue_data
 - \+ *lemma* algebraic_geometry.LocallyRingedSpace.glue_data.ι_iso_SheafedSpace_inv
 - \+ *lemma* algebraic_geometry.LocallyRingedSpace.glue_data.ι_jointly_surjective
+- \+ *structure* algebraic_geometry.LocallyRingedSpace.glue_data
 - \- *lemma* algebraic_geometry.PresheafedSpace.coe_to_fun_eq
 - \+ *def* algebraic_geometry.PresheafedSpace.glue_data.V_pullback_cone_is_limit
 - \+ *lemma* algebraic_geometry.PresheafedSpace.glue_data.ι_jointly_surjective
 - \+ *def* algebraic_geometry.SheafedSpace.glue_data.V_pullback_cone_is_limit
+- \+ *abbreviation* algebraic_geometry.SheafedSpace.glue_data.iso_PresheafedSpace
+- \+ *abbreviation* algebraic_geometry.SheafedSpace.glue_data.to_PresheafedSpace_glue_data
 - \+ *lemma* algebraic_geometry.SheafedSpace.glue_data.ι_iso_PresheafedSpace_inv
 - \+ *lemma* algebraic_geometry.SheafedSpace.glue_data.ι_jointly_surjective
+- \+ *structure* algebraic_geometry.SheafedSpace.glue_data
 
 
 
@@ -7963,6 +8002,8 @@ feat(algebraic_geometry): Gluing presheafed spaces ([#10269](https://github.com/
 #### Estimated changes
 Added src/algebraic_geometry/presheafed_space/gluing.lean
 - \+ *lemma* algebraic_geometry.PresheafedSpace.coe_to_fun_eq
+- \+ *abbreviation* algebraic_geometry.PresheafedSpace.glue_data.diagram_over_open
+- \+ *abbreviation* algebraic_geometry.PresheafedSpace.glue_data.diagram_over_open_π
 - \+ *lemma* algebraic_geometry.PresheafedSpace.glue_data.f_inv_app_f_app
 - \+ *def* algebraic_geometry.PresheafedSpace.glue_data.opens_image_preimage_map
 - \+ *lemma* algebraic_geometry.PresheafedSpace.glue_data.opens_image_preimage_map_app'
@@ -7971,13 +8012,16 @@ Added src/algebraic_geometry/presheafed_space/gluing.lean
 - \+ *lemma* algebraic_geometry.PresheafedSpace.glue_data.pullback_base
 - \+ *lemma* algebraic_geometry.PresheafedSpace.glue_data.snd_inv_app_t_app'
 - \+ *lemma* algebraic_geometry.PresheafedSpace.glue_data.snd_inv_app_t_app
+- \+ *abbreviation* algebraic_geometry.PresheafedSpace.glue_data.to_Top_glue_data
 - \+ *lemma* algebraic_geometry.PresheafedSpace.glue_data.ι_image_preimage_eq
 - \+ *def* algebraic_geometry.PresheafedSpace.glue_data.ι_inv_app
 - \+ *lemma* algebraic_geometry.PresheafedSpace.glue_data.ι_inv_app_π
 - \+ *def* algebraic_geometry.PresheafedSpace.glue_data.ι_inv_app_π_app
+- \+ *abbreviation* algebraic_geometry.PresheafedSpace.glue_data.ι_inv_app_π_eq_map
 - \+ *lemma* algebraic_geometry.PresheafedSpace.glue_data.ι_open_embedding
 - \+ *lemma* algebraic_geometry.PresheafedSpace.glue_data.π_ι_inv_app_eq_id
 - \+ *lemma* algebraic_geometry.PresheafedSpace.glue_data.π_ι_inv_app_π
+- \+ *structure* algebraic_geometry.PresheafedSpace.glue_data
 
 Modified src/topology/category/Top/limits.lean
 - \+ *lemma* Top.pullback_fst_image_snd_preimage
@@ -8308,6 +8352,7 @@ Added src/data/sigma/interval.lean
 
 Modified src/data/sigma/order.lean
 - \+ *lemma* sigma.le_def
+- \+ *inductive* sigma.lt
 - \+ *lemma* sigma.lt_def
 - \+ *lemma* sigma.mk_le_mk_iff
 - \+ *lemma* sigma.mk_lt_mk_iff
@@ -8335,6 +8380,7 @@ feat(topology/algebra/continuous_monoid_hom): New file ([#11304](https://github.
 This PR defines continuous monoid homs.
 #### Estimated changes
 Added src/topology/algebra/continuous_monoid_hom.lean
+- \+ *structure* continuous_add_monoid_hom
 - \+ *def* continuous_monoid_hom.comp
 - \+ *def* continuous_monoid_hom.coprod
 - \+ *def* continuous_monoid_hom.diag
@@ -8351,6 +8397,7 @@ Added src/topology/algebra/continuous_monoid_hom.lean
 - \+ *def* continuous_monoid_hom.prod_map
 - \+ *def* continuous_monoid_hom.snd
 - \+ *def* continuous_monoid_hom.swap
+- \+ *structure* continuous_monoid_hom
 
 
 
@@ -9936,10 +9983,12 @@ Added src/category_theory/bicategory/functor.lean
 - \+ *lemma* category_theory.oplax_functor.to_prelax_functor_map
 - \+ *lemma* category_theory.oplax_functor.to_prelax_functor_map₂
 - \+ *lemma* category_theory.oplax_functor.to_prelax_functor_obj
+- \+ *structure* category_theory.oplax_functor
 - \+ *def* category_theory.prelax_functor.comp
 - \+ *def* category_theory.prelax_functor.id
 - \+ *lemma* category_theory.prelax_functor.to_prefunctor_map
 - \+ *lemma* category_theory.prelax_functor.to_prefunctor_obj
+- \+ *structure* category_theory.prelax_functor
 
 
 
@@ -11516,6 +11565,7 @@ Deleted src/combinatorics/quiver.lean
 - \- *lemma* prefunctor.map_path_comp
 - \- *lemma* prefunctor.map_path_cons
 - \- *lemma* prefunctor.map_path_nil
+- \- *structure* prefunctor
 - \- *def* quiver.empty
 - \- *lemma* quiver.empty_arrow
 - \- *def* quiver.geodesic_subtree
@@ -11532,10 +11582,12 @@ Deleted src/combinatorics/quiver.lean
 - \- *lemma* quiver.path.length_nil
 - \- *lemma* quiver.path.nil_comp
 - \- *def* quiver.path.reverse
+- \- *inductive* quiver.path
 - \- *def* quiver.reverse
 - \- *def* quiver.root
 - \- *lemma* quiver.shortest_path_spec
 - \- *def* quiver.symmetrify
+- \- *structure* quiver.total
 - \- *def* quiver.weakly_connected_component
 - \- *def* quiver.wide_subquiver_equiv_set_total
 - \- *def* quiver.wide_subquiver_symmetrify
@@ -11551,6 +11603,7 @@ Added src/combinatorics/quiver/arborescence.lean
 Added src/combinatorics/quiver/basic.lean
 - \+ *def* prefunctor.comp
 - \+ *def* prefunctor.id
+- \+ *structure* prefunctor
 - \+ *def* quiver.empty
 - \+ *lemma* quiver.empty_arrow
 - \+ *def* quiver.hom.op
@@ -11578,9 +11631,11 @@ Added src/combinatorics/quiver/path.lean
 - \+ *lemma* quiver.path.length_cons
 - \+ *lemma* quiver.path.length_nil
 - \+ *lemma* quiver.path.nil_comp
+- \+ *inductive* quiver.path
 
 Added src/combinatorics/quiver/subquiver.lean
 - \+ *def* quiver.labelling
+- \+ *structure* quiver.total
 - \+ *def* quiver.wide_subquiver_equiv_set_total
 - \+ *def* wide_subquiver.to_Type
 - \+ *def* wide_subquiver
@@ -11600,6 +11655,7 @@ Added src/algebraic_geometry/Gamma_Spec_adjunction.lean
 - \+ *lemma* algebraic_geometry.LocallyRingedSpace.is_unit_res_to_Γ_Spec_map_basic_open
 - \+ *lemma* algebraic_geometry.LocallyRingedSpace.not_mem_prime_iff_unit_in_stalk
 - \+ *lemma* algebraic_geometry.LocallyRingedSpace.to_stalk_stalk_map_to_Γ_Spec
+- \+ *abbreviation* algebraic_geometry.LocallyRingedSpace.to_to_Γ_Spec_map_basic_open
 - \+ *def* algebraic_geometry.LocallyRingedSpace.to_Γ_Spec
 - \+ *def* algebraic_geometry.LocallyRingedSpace.to_Γ_Spec_SheafedSpace
 - \+ *lemma* algebraic_geometry.LocallyRingedSpace.to_Γ_Spec_SheafedSpace_app_eq
@@ -11611,6 +11667,7 @@ Added src/algebraic_geometry/Gamma_Spec_adjunction.lean
 - \+ *def* algebraic_geometry.LocallyRingedSpace.to_Γ_Spec_c_basic_opens
 - \+ *lemma* algebraic_geometry.LocallyRingedSpace.to_Γ_Spec_continuous
 - \+ *def* algebraic_geometry.LocallyRingedSpace.to_Γ_Spec_fun
+- \+ *abbreviation* algebraic_geometry.LocallyRingedSpace.to_Γ_Spec_map_basic_open
 - \+ *lemma* algebraic_geometry.LocallyRingedSpace.to_Γ_Spec_map_basic_open_eq
 - \+ *lemma* algebraic_geometry.LocallyRingedSpace.to_Γ_Spec_preim_basic_open_eq
 - \+ *lemma* algebraic_geometry.LocallyRingedSpace.Γ_Spec_left_triangle
@@ -11797,6 +11854,7 @@ Modified src/data/sum/basic.lean
 - \+ *lemma* sum.lift_rel.mono
 - \+ *lemma* sum.lift_rel.mono_left
 - \+ *lemma* sum.lift_rel.mono_right
+- \+ *inductive* sum.lift_rel
 - \+ *lemma* sum.lift_rel_inl_inl
 - \+ *lemma* sum.lift_rel_inr_inr
 - \+ *lemma* sum.lift_rel_swap_iff
@@ -11835,10 +11893,12 @@ Added src/data/sum/order.lean
 - \+ *lemma* sum.inl_lt_inl_iff
 - \+ *lemma* sum.inl_mono
 - \+ *lemma* sum.inl_strict_mono
+- \+ *abbreviation* sum.inlₗ
 - \+ *lemma* sum.inr_le_inr_iff
 - \+ *lemma* sum.inr_lt_inr_iff
 - \+ *lemma* sum.inr_mono
 - \+ *lemma* sum.inr_strict_mono
+- \+ *abbreviation* sum.inrₗ
 - \+ *lemma* sum.le_def
 - \+ *lemma* sum.lex.inl_bot
 - \+ *lemma* sum.lex.inl_le_inl_iff
@@ -12013,6 +12073,7 @@ Added src/topology/homotopy/equiv.lean
 - \+ *lemma* continuous_map.homotopy_equiv.symm_trans
 - \+ *lemma* continuous_map.homotopy_equiv.to_fun_eq_coe
 - \+ *def* continuous_map.homotopy_equiv.trans
+- \+ *structure* continuous_map.homotopy_equiv
 - \+ *lemma* homeomorph.coe_to_homotopy_equiv
 - \+ *lemma* homeomorph.refl_to_homotopy_equiv
 - \+ *lemma* homeomorph.symm_to_homotopy_equiv
@@ -12100,6 +12161,7 @@ Added src/topology/gluing.lean
 - \+ *def* Top.glue_data.mk'
 - \+ *def* Top.glue_data.mk_core.t'
 - \+ *lemma* Top.glue_data.mk_core.t_inv
+- \+ *structure* Top.glue_data.mk_core
 - \+ *def* Top.glue_data.of_open_subsets
 - \+ *def* Top.glue_data.open_cover_glue_homeo
 - \+ *lemma* Top.glue_data.open_image_open
@@ -12115,6 +12177,7 @@ Added src/topology/gluing.lean
 - \+ *lemma* Top.glue_data.ι_jointly_surjective
 - \+ *lemma* Top.glue_data.ι_open_embedding
 - \+ *lemma* Top.glue_data.π_surjective
+- \+ *structure* Top.glue_data
 
 
 
@@ -12185,6 +12248,7 @@ This fixes a number of missing or problematic typeclasses:
 This also golfs some proofs about `free_non_unital_non_assoc_algebra`, and removes the `irreducible` attributes since these just make some obvious proofs more awkward.
 #### Estimated changes
 Modified src/algebra/free_non_unital_non_assoc_algebra.lean
+- \+ *abbreviation* free_non_unital_non_assoc_algebra
 - \- *def* free_non_unital_non_assoc_algebra
 
 Modified src/algebra/lie/free.lean
@@ -12226,6 +12290,7 @@ This defines Freiman homomorphisms, which are maps preserving products of `n` el
 This is useful in additive combinatorics.
 #### Estimated changes
 Added src/algebra/group/freiman.lean
+- \+ *structure* add_freiman_hom
 - \+ *lemma* freiman_hom.cancel_left_on
 - \+ *lemma* freiman_hom.cancel_right
 - \+ *lemma* freiman_hom.cancel_right_on
@@ -12253,6 +12318,7 @@ Added src/algebra/group/freiman.lean
 - \+ *lemma* freiman_hom.to_freiman_hom_coe
 - \+ *lemma* freiman_hom.to_freiman_hom_injective
 - \+ *lemma* freiman_hom.to_fun_eq_coe
+- \+ *structure* freiman_hom
 - \+ *lemma* map_prod_eq_map_prod
 - \+ *lemma* map_prod_eq_map_prod_of_le
 - \+ *def* monoid_hom.to_freiman_hom
@@ -13241,6 +13307,7 @@ feat(category_theory/sites/left_exact): Sheafification is left exact. ([#11252](
 #### Estimated changes
 Added src/category_theory/sites/left_exact.lean
 - \+ *def* category_theory.grothendieck_topology.cone_comp_evaluation_of_cone_comp_diagram_functor_comp_evaluation
+- \+ *abbreviation* category_theory.grothendieck_topology.lift_to_diagram_limit_obj
 - \+ *def* category_theory.grothendieck_topology.lift_to_plus_obj_limit_obj
 - \+ *lemma* category_theory.grothendieck_topology.lift_to_plus_obj_limit_obj_fac
 
@@ -13458,6 +13525,7 @@ Added src/algebra/dual_number.lean
 - \+ *lemma* dual_number.lift_eps
 - \+ *lemma* dual_number.snd_eps
 - \+ *lemma* dual_number.snd_mul
+- \+ *abbreviation* dual_number
 
 Modified src/linear_algebra/clifford_algebra/equivs.lean
 - \+ *lemma* clifford_algebra_dual_number.equiv_symm_eps
@@ -14006,6 +14074,7 @@ Modified src/algebraic_geometry/ringed_space.lean
 - \+ *lemma* algebraic_geometry.RingedSpace.mem_top_basic_open
 
 Modified src/algebraic_geometry/stalks.lean
+- \+ *abbreviation* algebraic_geometry.PresheafedSpace.stalk
 - \- *def* algebraic_geometry.PresheafedSpace.stalk
 
 Modified src/algebraic_geometry/structure_sheaf.lean
@@ -14522,6 +14591,8 @@ Modified src/algebra/field/basic.lean
 
 
 Added src/algebraic_geometry/function_field.lean
+- \+ *abbreviation* algebraic_geometry.Scheme.function_field
+- \+ *abbreviation* algebraic_geometry.Scheme.germ_to_function_field
 - \+ *lemma* algebraic_geometry.Scheme.germ_to_function_field_injective
 - \+ *lemma* algebraic_geometry.germ_injective_of_is_integral
 
@@ -14700,6 +14771,7 @@ Modified src/combinatorics/simple_graph/strongly_regular.lean
 - \+ *lemma* simple_graph.bot_strongly_regular
 - \+ *lemma* simple_graph.compl_neighbor_finset_sdiff_inter_eq
 - \- *lemma* simple_graph.complete_strongly_regular
+- \- *structure* simple_graph.is_SRG_of
 - \+ *lemma* simple_graph.is_SRG_with.card_common_neighbors_eq_of_adj_compl
 - \+ *lemma* simple_graph.is_SRG_with.card_common_neighbors_eq_of_not_adj_compl
 - \+ *lemma* simple_graph.is_SRG_with.card_neighbor_finset_union_eq
@@ -14708,6 +14780,7 @@ Modified src/combinatorics/simple_graph/strongly_regular.lean
 - \+ *lemma* simple_graph.is_SRG_with.compl
 - \+ *lemma* simple_graph.is_SRG_with.compl_is_regular
 - \+ *lemma* simple_graph.is_SRG_with.top
+- \+ *structure* simple_graph.is_SRG_with
 - \+ *lemma* simple_graph.sdiff_compl_neighbor_finset_inter_eq
 
 Modified src/data/fintype/basic.lean

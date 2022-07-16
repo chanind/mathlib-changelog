@@ -52,6 +52,7 @@ Modified src/tactic/omega/int/form.lean
 - \- *lemma* omega.int.form.sat_or
 - \- *def* omega.int.form.unsat
 - \- *def* omega.int.form.valid
+- \- *inductive* omega.int.form
 - \+ *def* omega.int.preform.equiv
 - \+ *def* omega.int.preform.fresh_index
 - \+ *def* omega.int.preform.holds
@@ -62,6 +63,7 @@ Modified src/tactic/omega/int/form.lean
 - \+ *lemma* omega.int.preform.sat_or
 - \+ *def* omega.int.preform.unsat
 - \+ *def* omega.int.preform.valid
+- \+ *inductive* omega.int.preform
 - \+/\- *def* omega.int.univ_close
 - \+/\- *lemma* omega.int.univ_close_of_valid
 - \+/\- *lemma* omega.int.valid_of_unsat_not
@@ -102,6 +104,7 @@ Modified src/tactic/omega/nat/form.lean
 - \- *def* omega.nat.form.sub_free
 - \- *def* omega.nat.form.unsat
 - \- *def* omega.nat.form.valid
+- \- *inductive* omega.nat.form
 - \+ *def* omega.nat.preform.equiv
 - \+ *def* omega.nat.preform.fresh_index
 - \+ *def* omega.nat.preform.holds
@@ -115,6 +118,7 @@ Modified src/tactic/omega/nat/form.lean
 - \+ *def* omega.nat.preform.sub_free
 - \+ *def* omega.nat.preform.unsat
 - \+ *def* omega.nat.preform.valid
+- \+ *inductive* omega.nat.preform
 - \+/\- *def* omega.nat.univ_close
 - \+/\- *lemma* omega.nat.univ_close_of_valid
 - \+/\- *lemma* omega.nat.valid_of_unsat_not
@@ -338,6 +342,7 @@ Modified src/analysis/calculus/times_cont_diff.lean
 - \+ *lemma* has_ftaylor_series_up_to.has_ftaylor_series_up_to_on
 - \+ *lemma* has_ftaylor_series_up_to.of_le
 - \+ *lemma* has_ftaylor_series_up_to.zero_eq'
+- \+ *structure* has_ftaylor_series_up_to
 - \+ *lemma* has_ftaylor_series_up_to_on.comp_continuous_linear_map
 - \+ *lemma* has_ftaylor_series_up_to_on.congr
 - \+ *lemma* has_ftaylor_series_up_to_on.continuous_linear_map_comp
@@ -349,6 +354,7 @@ Modified src/analysis/calculus/times_cont_diff.lean
 - \+ *lemma* has_ftaylor_series_up_to_on.of_le
 - \+ *lemma* has_ftaylor_series_up_to_on.prod
 - \+ *lemma* has_ftaylor_series_up_to_on.zero_eq'
+- \+ *structure* has_ftaylor_series_up_to_on
 - \+ *theorem* has_ftaylor_series_up_to_on_succ_iff_left
 - \+ *theorem* has_ftaylor_series_up_to_on_succ_iff_right
 - \+ *lemma* has_ftaylor_series_up_to_on_top_iff
@@ -594,6 +600,7 @@ feat(ring_theory/polynomial): mv_polynomial.integral_domain ([#2021](https://git
 Modified src/algebra/ring.lean
 - \+ *lemma* integral_domain.to_is_integral_domain
 - \+ *def* is_integral_domain.to_integral_domain
+- \+ *structure* is_integral_domain
 
 Modified src/data/equiv/algebra.lean
 
@@ -1549,10 +1556,16 @@ Modified src/category_theory/limits/shapes/equalizers.lean
 
 Added src/category_theory/limits/shapes/kernels.lean
 - \+ *lemma* category_theory.limits.cokernel.condition
+- \+ *abbreviation* category_theory.limits.cokernel.desc
+- \+ *abbreviation* category_theory.limits.cokernel.π
+- \+ *abbreviation* category_theory.limits.cokernel
 - \+ *lemma* category_theory.limits.kernel.condition
 - \+ *def* category_theory.limits.kernel.is_limit_cone_zero_cone
+- \+ *abbreviation* category_theory.limits.kernel.lift
 - \+ *def* category_theory.limits.kernel.zero_cone
+- \+ *abbreviation* category_theory.limits.kernel.ι
 - \+ *def* category_theory.limits.kernel.ι_zero_is_iso
+- \+ *abbreviation* category_theory.limits.kernel
 
 Modified src/category_theory/limits/shapes/terminal.lean
 - \+ *def* category_theory.limits.has_initial_of_unique
@@ -1931,6 +1944,7 @@ Added test/lint_simp_nf.lean
 - \+ *lemma* f_c
 - \+ *def* h
 - \+ *lemma* h_c
+- \+ *structure* morphism
 
 
 
@@ -3082,6 +3096,7 @@ chore(group_theory/sub*) : rename type vars ([#1982](https://github.com/leanprov
 Use `M`, `G`, `A` instead of greek letters
 #### Estimated changes
 Modified src/group_theory/subgroup.lean
+- \+/\- *inductive* add_group.in_closure
 - \+/\- *theorem* additive.normal_add_subgroup_iff
 - \+/\- *theorem* additive.simple_add_group_iff
 - \+/\- *def* gmultiples
@@ -3103,6 +3118,7 @@ Modified src/group_theory/subgroup.lean
 - \+/\- *theorem* group.exists_list_of_mem_closure
 - \+/\- *theorem* group.gpowers_eq_closure
 - \+/\- *lemma* group.image_closure
+- \+/\- *inductive* group.in_closure
 - \+/\- *theorem* group.mclosure_inv_subset
 - \+/\- *theorem* group.mclosure_subset
 - \+/\- *lemma* group.mem_closure
@@ -3157,6 +3173,7 @@ Modified src/group_theory/subgroup.lean
 
 Modified src/group_theory/submonoid.lean
 - \+/\- *theorem* add_monoid.closure'_singleton
+- \+/\- *inductive* add_monoid.in_closure
 - \+/\- *lemma* add_submonoid.coe_smul
 - \+/\- *lemma* add_submonoid.multiples.self_mem
 - \+/\- *def* add_submonoid.multiples
@@ -3164,6 +3181,7 @@ Modified src/group_theory/submonoid.lean
 - \+/\- *def* add_submonoid.of_submonoid
 - \+/\- *lemma* add_submonoid.smul_mem
 - \+/\- *def* add_submonoid.to_submonoid
+- \+/\- *structure* add_submonoid
 - \+/\- *lemma* image.is_submonoid
 - \+/\- *lemma* is_add_submonoid.multiple_subset
 - \+/\- *lemma* is_add_submonoid.smul_coe
@@ -3181,6 +3199,7 @@ Modified src/group_theory/submonoid.lean
 - \+/\- *theorem* monoid.closure_subset
 - \+/\- *theorem* monoid.exists_list_of_mem_closure
 - \+/\- *lemma* monoid.image_closure
+- \+/\- *inductive* monoid.in_closure
 - \+/\- *theorem* monoid.mem_closure_union_iff
 - \+/\- *theorem* monoid.subset_closure
 - \+/\- *lemma* multiples.add_mem
@@ -3194,6 +3213,7 @@ Modified src/group_theory/submonoid.lean
 - \+/\- *def* submonoid.add_submonoid_equiv
 - \+/\- *def* submonoid.of_add_submonoid
 - \+/\- *def* submonoid.to_add_submonoid
+- \+/\- *structure* submonoid
 
 
 
@@ -4061,6 +4081,7 @@ Co-Authored-By: Chris Hughes <33847686+ChrisHughes24@users.noreply.github.com>
 #### Estimated changes
 Added src/algebraic_geometry/prime_spectrum.lean
 - \+ *lemma* prime_spectrum.Inter_zero_locus
+- \+ *abbreviation* prime_spectrum.as_ideal
 - \+ *def* prime_spectrum.comap
 - \+ *lemma* prime_spectrum.comap_as_ideal
 - \+ *lemma* prime_spectrum.comap_comp
@@ -4670,6 +4691,7 @@ Added src/topology/algebra/multilinear.lean
 - \+ *def* continuous_multilinear_map.to_continuous_linear_map
 - \+ *def* continuous_multilinear_map.to_multilinear_map_linear
 - \+ *lemma* continuous_multilinear_map.zero_apply
+- \+ *structure* continuous_multilinear_map
 
 
 

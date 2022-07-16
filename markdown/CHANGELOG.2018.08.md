@@ -216,6 +216,7 @@ Modified tactic/basic.lean
 
 Added tactic/explode.lean
 - \+ *def* tactic.explode.head'
+- \+ *inductive* tactic.explode.status
 
 
 
@@ -326,6 +327,7 @@ Modified data/fintype.lean
 
 Modified logic/basic.lean
 - \+ *def* pempty.elim
+- \+ *inductive* {u}
 
 Modified set_theory/cardinal.lean
 
@@ -358,6 +360,7 @@ Added analysis/bounded_linear_maps.lean
 - \+ *lemma* is_bounded_linear_map.sub
 - \+ *lemma* is_bounded_linear_map.tendsto
 - \+ *lemma* is_bounded_linear_map.zero
+- \+ *structure* is_bounded_linear_map
 - \+ *lemma* is_linear_map.with_bound
 - \+ *lemma* mul_inv_eq'
 
@@ -567,7 +570,7 @@ Modified tactic/basic.lean
 
 
 Added tactic/chain.lean
-
+- \+ *inductive* tactic.tactic_script
 
 Modified tactic/interactive.lean
 
@@ -579,6 +582,10 @@ Modified tests/tactics.lean
 
 
 Added tests/tidy.lean
+- \+ *structure* tidy.test.A
+- \+ *structure* tidy.test.B
+- \+ *structure* tidy.test.C
+- \+ *structure* tidy.test.D
 - \+ *def* tidy.test.d
 - \+ *def* tidy.test.f
 - \+ *def* tidy.test.tidy_test_0
@@ -652,7 +659,7 @@ Modified tactic/restate_axiom.lean
 
 
 Added tests/restate_axiom.lean
-
+- \+ *structure* A
 
 
 
@@ -1333,6 +1340,7 @@ Modified data/real/ennreal.lean
 - \+/\- *lemma* ennreal.of_real_ne_infty
 - \+/\- *lemma* ennreal.zero_ne_infty
 - \+ *def* ennreal
+- \- *inductive* ennreal
 
 Modified data/real/nnreal.lean
 
@@ -1444,6 +1452,7 @@ Modified order/filter.lean
 - \+ *def* filter.generate
 - \+ *lemma* filter.generate_Union
 - \+ *lemma* filter.generate_empty
+- \+ *inductive* filter.generate_sets
 - \+ *lemma* filter.generate_union
 - \+ *lemma* filter.generate_univ
 - \+ *def* filter.gi_generate
@@ -1489,6 +1498,7 @@ Modified order/filter.lean
 - \- *lemma* filter.filter.ext
 - \+/\- *lemma* filter.inter_mem_sets
 - \+ *lemma* filter.mem_sets_of_superset
+- \+/\- *structure* filter
 
 Modified order/liminf_limsup.lean
 
@@ -1520,6 +1530,7 @@ Modified order/galois_connection.lean
 - \+ *def* galois_insertion.lift_order_top
 - \+ *def* galois_insertion.lift_semilattice_inf
 - \+ *def* galois_insertion.lift_semilattice_sup
+- \+ *structure* galois_insertion
 
 
 
@@ -1928,6 +1939,7 @@ Modified category/functor.lean
 - \+ *def* functor.comp.mk
 - \+ *def* functor.comp.run
 - \+ *def* functor.comp
+- \- *structure* functor.comp
 - \+ *theorem* functor.ext
 
 Modified category/traversable/basic.lean
@@ -1987,7 +1999,10 @@ Modified tactic/wlog.lean
 
 
 Modified tests/examples.lean
-
+- \+ *inductive* either
+- \+ *structure* my_struct2
+- \+ *structure* my_struct
+- \+ *inductive* rec_data3
 
 Modified tests/tactics.lean
 
@@ -2679,6 +2694,7 @@ Deleted group_theory/add_subgroup.lean
 - \- *def* add_group.closure
 - \- *theorem* add_group.closure_subset
 - \- *theorem* add_group.gmultiples_eq_closure
+- \- *inductive* add_group.in_closure
 - \- *lemma* add_group.mem_closure
 - \- *theorem* add_group.subset_closure
 - \- *def* gmultiples
@@ -2701,6 +2717,7 @@ Deleted group_theory/add_submonoid.lean
 - \- *def* add_monoid.closure
 - \- *theorem* add_monoid.closure_subset
 - \- *theorem* add_monoid.exists_list_of_mem_closure
+- \- *inductive* add_monoid.in_closure
 - \- *theorem* add_monoid.subset_closure
 - \- *lemma* is_add_submonoid.list_sum_mem
 - \- *lemma* is_add_submonoid.multiple_subset
@@ -2750,6 +2767,7 @@ Added group_theory/add_subgroup.lean
 - \+ *def* add_group.closure
 - \+ *theorem* add_group.closure_subset
 - \+ *theorem* add_group.gmultiples_eq_closure
+- \+ *inductive* add_group.in_closure
 - \+ *lemma* add_group.mem_closure
 - \+ *theorem* add_group.subset_closure
 - \+ *def* gmultiples
@@ -2772,6 +2790,7 @@ Added group_theory/add_submonoid.lean
 - \+ *def* add_monoid.closure
 - \+ *theorem* add_monoid.closure_subset
 - \+ *theorem* add_monoid.exists_list_of_mem_closure
+- \+ *inductive* add_monoid.in_closure
 - \+ *theorem* add_monoid.subset_closure
 - \+ *lemma* is_add_submonoid.list_sum_mem
 - \+ *lemma* is_add_submonoid.multiple_subset
@@ -2838,7 +2857,7 @@ Modified docs/tactics.md
 
 
 Modified tactic/interactive.lean
-
+- \- *structure* tactic.interactive.rcases_config
 
 
 
@@ -2863,11 +2882,13 @@ Modified tactic/basic.lean
 
 
 Modified tactic/interactive.lean
+- \+ *structure* tactic.interactive.rcases_config
 - \- *def* tactic.interactive.rcases_patt_inverted
 
 Modified tactic/rcases.lean
 - \+ *def* tactic.merge_list
 - \- *def* tactic.rcases_patt.name
+- \- *inductive* tactic.rcases_patt
 
 
 
@@ -3018,7 +3039,8 @@ Using `@>` per @rwbarton's suggestion.
 * fixing names
 #### Estimated changes
 Added category_theory/category.lean
-
+- \+ *abbreviation* category_theory.large_category
+- \+ *abbreviation* category_theory.small_category
 
 Added category_theory/functor.lean
 - \+ *lemma* category_theory.functor.coe_def
@@ -3026,6 +3048,7 @@ Added category_theory/functor.lean
 - \+ *lemma* category_theory.functor.comp_obj
 - \+ *lemma* category_theory.functor.id_map
 - \+ *lemma* category_theory.functor.id_obj
+- \+ *structure* category_theory.functor
 
 Added category_theory/natural_transformation.lean
 - \+ *lemma* category_theory.nat_trans.coe_def
@@ -3035,6 +3058,7 @@ Added category_theory/natural_transformation.lean
 - \+ *lemma* category_theory.nat_trans.id_app
 - \+ *lemma* category_theory.nat_trans.vcomp_app
 - \+ *lemma* category_theory.nat_trans.vcomp_assoc
+- \+ *structure* category_theory.nat_trans
 
 Added docs/theories/categories.md
 
@@ -3340,6 +3364,7 @@ Added set_theory/lists.lean
 - \+ *def* lists.to_list
 - \+ *theorem* lists.to_of_list
 - \+ *def* lists
+- \+ *inductive* {u}
 
 Modified set_theory/zfc.lean
 

@@ -814,6 +814,7 @@ Added src/representation_theory/Action.lean
 - \+ *def* Action.functor_category_equivalence_comp_evaluation
 - \+ *def* Action.hom.comp
 - \+ *def* Action.hom.id
+- \+ *structure* Action.hom
 - \+ *lemma* Action.id_hom
 - \+ *def* Action.mk_iso
 - \+ *def* Action.res
@@ -822,10 +823,12 @@ Added src/representation_theory/Action.lean
 - \+ *def* Action.trivial
 - \+ *def* Action.ρ_Aut
 - \+ *lemma* Action.ρ_one
+- \+ *structure* Action
 - \+ *def* category_theory.functor.map_Action
 
 Added src/representation_theory/Rep.lean
 - \+ *def* Rep.of
+- \+ *abbreviation* Rep
 
 
 
@@ -841,6 +844,7 @@ Modified src/group_theory/monoid_localization.lean
 - \+/\- *lemma* submonoid.localization_map.lift_left_inverse
 - \+ *lemma* submonoid.localization_map.sec_zero_fst
 - \+ *def* submonoid.localization_with_zero_map.to_monoid_with_zero_hom
+- \+ *structure* submonoid.localization_with_zero_map
 
 Modified src/ring_theory/jacobson.lean
 
@@ -851,6 +855,7 @@ Modified src/ring_theory/localization/basic.lean
 - \+/\- *lemma* is_localization.map_map
 - \+ *theorem* is_localization.mk'_add_eq_iff_add_mul_eq_mul
 - \+ *lemma* is_localization.mul_add_inv_left
+- \+ *abbreviation* is_localization.to_localization_map
 - \- *def* is_localization.to_localization_map
 - \+ *def* is_localization.to_localization_with_zero_map
 - \- *lemma* localization.lift_on_zero
@@ -1119,6 +1124,7 @@ Modified src/representation_theory/basic.lean
 - \+ *lemma* representation.tprod_apply
 - \+ *def* representation.trivial
 - \+ *lemma* representation.trivial_def
+- \+ *abbreviation* representation
 
 Modified src/representation_theory/invariants.lean
 - \+ *lemma* group_algebra.average_def
@@ -1142,6 +1148,7 @@ feat(set_theory/game/pgame): Define `is_option` relation ([#13700](https://githu
 Modified src/set_theory/game/pgame.lean
 - \+ *theorem* pgame.is_option.mk_left
 - \+ *theorem* pgame.is_option.mk_right
+- \+ *inductive* pgame.is_option
 - \+ *theorem* pgame.wf_is_option
 
 
@@ -1271,6 +1278,7 @@ Modified src/group_theory/submonoid/operations.lean
 - \- *lemma* submonoid_class.mul_def
 
 Added src/group_theory/subsemigroup/operations.lean
+- \+ *abbreviation* add_subsemigroup.to_subsemigroup'
 - \+ *lemma* add_subsemigroup.to_subsemigroup'_closure
 - \+ *def* add_subsemigroup.to_subsemigroup
 - \+ *lemma* add_subsemigroup.to_subsemigroup_closure
@@ -1370,6 +1378,7 @@ Added src/group_theory/subsemigroup/operations.lean
 - \+ *lemma* subsemigroup.range_subtype
 - \+ *lemma* subsemigroup.srange_fst
 - \+ *lemma* subsemigroup.srange_snd
+- \+ *abbreviation* subsemigroup.to_add_subsemigroup'
 - \+ *lemma* subsemigroup.to_add_subsemigroup'_closure
 - \+ *def* subsemigroup.to_add_subsemigroup
 - \+ *lemma* subsemigroup.to_add_subsemigroup_closure
@@ -2474,6 +2483,7 @@ Modified src/order/ideal.lean
 - \+ *lemma* order.ideal.to_lower_set_injective
 - \+/\- *lemma* order.ideal.top_of_top_mem
 - \+ *lemma* order.ideal.top_to_lower_set
+- \+/\- *structure* order.ideal
 
 Modified src/order/pfilter.lean
 - \+/\- *lemma* order.pfilter.ext
@@ -3023,6 +3033,7 @@ Modified src/order/chain.lean
 - \+ *lemma* flag.mem_coe_iff
 - \+ *lemma* flag.mk_coe
 - \+ *lemma* flag.top_mem
+- \+ *structure* flag
 - \+ *lemma* is_max_chain.bot_mem
 - \+ *lemma* is_max_chain.top_mem
 
@@ -3222,6 +3233,7 @@ Modified src/algebra/ring/basic.lean
 - \+ *lemma* non_unital_ring_hom.to_fun_eq_coe
 - \+ *lemma* non_unital_ring_hom.zero_apply
 - \+ *lemma* non_unital_ring_hom.zero_comp
+- \+ *structure* non_unital_ring_hom
 
 
 
@@ -4184,6 +4196,7 @@ Modified src/category_theory/limits/shapes/equalizers.lean
 - \- *lemma* category_theory.limits.cofork.left_app_one
 - \- *lemma* category_theory.limits.cofork.right_app_one
 - \+ *def* category_theory.limits.cofork.π
+- \- *abbreviation* category_theory.limits.cofork.π
 - \- *lemma* category_theory.limits.cofork.π_eq_app_one
 - \+/\- *lemma* category_theory.limits.cofork.π_of_π
 - \+/\- *def* category_theory.limits.cone_of_split_mono
@@ -4200,6 +4213,7 @@ Modified src/category_theory/limits/shapes/equalizers.lean
 - \+ *lemma* category_theory.limits.fork.is_limit.lift_comp_ι
 - \- *lemma* category_theory.limits.fork.is_limit.lift_of_ι_ι
 - \+ *def* category_theory.limits.fork.ι
+- \- *abbreviation* category_theory.limits.fork.ι
 - \- *lemma* category_theory.limits.fork.ι_eq_app_zero
 - \+/\- *lemma* category_theory.limits.fork.ι_of_ι
 - \+ *lemma* category_theory.limits.fork.π_comp_hom
@@ -4317,8 +4331,11 @@ Modified src/combinatorics/simple_graph/clique.lean
 - \+ *lemma* simple_graph.clique_free_bot
 - \+ *lemma* simple_graph.is_3_clique_iff
 - \+ *lemma* simple_graph.is_3_clique_triple_iff
+- \+ *abbreviation* simple_graph.is_clique
+- \- *structure* simple_graph.is_clique
 - \+ *lemma* simple_graph.is_clique_bot_iff
 - \+/\- *lemma* simple_graph.is_clique_iff
+- \+/\- *structure* simple_graph.is_n_clique
 - \+ *lemma* simple_graph.is_n_clique_bot_iff
 - \+ *lemma* simple_graph.mem_clique_finset_iff
 
@@ -4743,6 +4760,7 @@ Modified src/number_theory/dioph.lean
 - \- *lemma* int.eq_nat_abs_iff_mul
 - \+ *lemma* is_poly.add
 - \+ *lemma* is_poly.neg
+- \+/\- *inductive* is_poly
 - \- *theorem* list_all.imp
 - \- *def* list_all
 - \- *theorem* list_all_congr
@@ -5728,6 +5746,7 @@ Modified src/algebra/group/with_one.lean
 - \+/\- *lemma* with_one.map_map
 
 Modified src/algebra/hom/equiv.lean
+- \+/\- *structure* mul_equiv
 - \+/\- *def* mul_hom.inverse
 
 Modified src/algebra/hom/group.lean
@@ -6162,6 +6181,7 @@ Added src/category_theory/limits/shapes/zero_objects.lean
 - \+ *def* category_theory.limits.is_zero.iso_is_terminal
 - \+ *lemma* category_theory.limits.is_zero.of_iso
 - \+ *lemma* category_theory.limits.is_zero.to_eq
+- \+ *structure* category_theory.limits.is_zero
 - \+ *lemma* category_theory.limits.iso.is_zero_iff
 
 Modified src/category_theory/simple.lean
@@ -7158,7 +7178,10 @@ This pr adds the following helper functions for converting paths to and from ele
 These parallel  the similarly named functions for the fundamental group [here](https://github.com/leanprover-community/mathlib/blob/743ed5d1dd54fffd65e3a7f3522e4a4e85472964/src/algebraic_topology/fundamental_groupoid/basic.lean#L339-L355). They will prove helpful in doing computations with the fundamental group later e.g. for the disk, circle, etc.
 #### Estimated changes
 Modified src/algebraic_topology/fundamental_groupoid/fundamental_group.lean
-
+- \+ *abbreviation* fundamental_group.from_arrow
+- \+ *abbreviation* fundamental_group.from_path
+- \+ *abbreviation* fundamental_group.to_arrow
+- \+ *abbreviation* fundamental_group.to_path
 
 
 
@@ -7488,6 +7511,7 @@ Modified src/combinatorics/simple_graph/connectivity.lean
 - \+ *def* simple_graph.connected_component
 - \+ *def* simple_graph.connected_component_mk
 - \+ *lemma* simple_graph.preconnected.subsingleton_connected_component
+- \+/\- *abbreviation* simple_graph.subgraph.connected
 
 
 
@@ -7974,6 +7998,7 @@ Modified src/model_theory/fraisse.lean
 - \- *theorem* first_order.language.age_fraisse_limit
 - \+ *theorem* first_order.language.exists_countable_is_age_of_iff
 - \+ *theorem* first_order.language.is_fraisse_limit.is_fraisse
+- \+ *structure* first_order.language.is_fraisse_limit
 - \+ *lemma* first_order.language.is_ultrahomogeneous.age_is_fraisse
 - \+ *lemma* first_order.language.is_ultrahomogeneous.amalgamation_age
 - \+ *def* first_order.language.is_ultrahomogeneous
@@ -8198,6 +8223,7 @@ Added src/ring_theory/valuation/valuation_subring.lean
 - \+ *lemma* valuation_subring.valuation_le_one
 - \+ *lemma* valuation_subring.valuation_le_one_iff
 - \+ *lemma* valuation_subring.valuation_surjective
+- \+ *structure* valuation_subring
 
 
 
@@ -8734,6 +8760,7 @@ feat(model_theory/order): The theory of dense linear orders without endpoints ([
 Defines the theory of dense linear orders without endpoints
 #### Estimated changes
 Modified src/model_theory/order.lean
+- \+ *abbreviation* first_order.language.is_ordered_structure
 - \- *def* first_order.language.is_ordered_structure
 - \+ *lemma* first_order.language.is_ordered_structure_iff
 - \+ *lemma* first_order.language.order_Lhom_le_symb
@@ -9320,6 +9347,7 @@ Modified src/computability/epsilon_NFA.lean
 - \+ *lemma* ε_NFA.step_set_empty
 - \+ *lemma* ε_NFA.step_zero
 - \+ *lemma* ε_NFA.subset_ε_closure
+- \+/\- *inductive* ε_NFA.ε_closure
 - \+ *lemma* ε_NFA.ε_closure_empty
 - \+ *lemma* ε_NFA.ε_closure_univ
 
@@ -9407,10 +9435,12 @@ Added src/data/sign.lean
 - \+ *lemma* sign_type.coe_one
 - \+ *lemma* sign_type.coe_zero
 - \+ *def* sign_type.fin3_equiv
+- \+ *inductive* sign_type.le
 - \+ *def* sign_type.mul
 - \+ *lemma* sign_type.neg_eq_neg_one
 - \+ *lemma* sign_type.pos_eq_one
 - \+ *lemma* sign_type.zero_eq_zero
+- \+ *inductive* sign_type
 - \+ *lemma* sign_zero
 
 
@@ -9989,6 +10019,7 @@ Modified src/data/sym/basic.lean
 - \+ *lemma* sym.mem_attach
 - \+/\- *lemma* sym.mem_map
 - \+ *lemma* sym.mem_mk
+- \+ *abbreviation* sym.mk
 - \+/\- *def* sym.sym'
 - \+/\- *def* sym.sym_equiv_sym'
 - \+/\- *def* sym
@@ -11149,8 +11180,10 @@ Define cliques.
 Added src/combinatorics/simple_graph/clique.lean
 - \+ *lemma* simple_graph.is_clique.mono
 - \+ *lemma* simple_graph.is_clique.subset
+- \+ *structure* simple_graph.is_clique
 - \+ *lemma* simple_graph.is_clique_iff
 - \+ *lemma* simple_graph.is_n_clique.mono
+- \+ *structure* simple_graph.is_n_clique
 - \+ *lemma* simple_graph.is_n_clique_iff
 
 Modified src/data/finset/pairwise.lean
@@ -11323,6 +11356,7 @@ Modified src/analysis/calculus/diff_on_int_cont.lean
 - \+ *lemma* diff_cont_on_cl.smul_const
 - \+ *lemma* diff_cont_on_cl.sub
 - \+ *lemma* diff_cont_on_cl.sub_const
+- \+ *structure* diff_cont_on_cl
 - \+ *lemma* diff_cont_on_cl_const
 - \+ *lemma* diff_cont_on_cl_univ
 - \- *lemma* diff_on_int_cont.add
@@ -11340,6 +11374,7 @@ Modified src/analysis/calculus/diff_on_int_cont.lean
 - \- *lemma* diff_on_int_cont.smul_const
 - \- *lemma* diff_on_int_cont.sub
 - \- *lemma* diff_on_int_cont.sub_const
+- \- *structure* diff_on_int_cont
 - \- *lemma* diff_on_int_cont_const
 - \- *lemma* diff_on_int_cont_open
 - \- *lemma* diff_on_int_cont_univ
@@ -11478,7 +11513,9 @@ Modified src/computability/encoding.lean
 - \+ *lemma* computability.encoding.card_le_card_list
 - \+ *lemma* computability.encoding.card_le_omega
 - \+ *lemma* computability.encoding.encode_injective
+- \+/\- *structure* computability.encoding
 - \+ *lemma* computability.fin_encoding.card_le_omega
+- \+/\- *structure* computability.fin_encoding
 
 
 
@@ -11725,10 +11762,12 @@ Modified src/data/list/palindrome.lean
 - \+ *lemma* list.palindrome.iff_reverse_eq
 - \+ *lemma* list.palindrome.of_reverse_eq
 - \+ *lemma* list.palindrome.reverse_eq
+- \+ *inductive* list.palindrome
 - \- *lemma* palindrome.append_reverse
 - \- *lemma* palindrome.iff_reverse_eq
 - \- *lemma* palindrome.of_reverse_eq
 - \- *lemma* palindrome.reverse_eq
+- \- *inductive* palindrome
 
 Modified src/data/nat/digits.lean
 - \+/\- *lemma* nat.eleven_dvd_iff
@@ -12898,6 +12937,7 @@ Added src/topology/continuous_function/zero_at_infty.lean
 - \+ *lemma* zero_at_infty_continuous_map.to_bounded_continuous_function_injective
 - \+ *lemma* zero_at_infty_continuous_map.zero_apply
 - \+ *def* zero_at_infty_continuous_map.zero_at_infty_continuous_map_class.of_compact
+- \+ *structure* zero_at_infty_continuous_map
 
 Modified src/topology/subset_properties.lean
 - \+ *lemma* filter.cocompact_eq_bot
@@ -13038,6 +13078,7 @@ Having  `exact` be a class was very often somewhat inconvenient, so many lemmas 
 #### Estimated changes
 Modified src/algebra/homology/exact.lean
 - \+/\- *lemma* category_theory.comp_eq_zero_of_exact
+- \+ *structure* category_theory.exact
 - \+ *lemma* category_theory.exact_comp_hom_inv_comp
 - \+ *lemma* category_theory.exact_comp_inv_hom_comp
 - \+/\- *lemma* category_theory.exact_comp_mono
@@ -13602,6 +13643,7 @@ Modified src/algebra/group/to_additive.lean
 
 
 Modified src/algebra/regular/basic.lean
+- \+ *structure* is_add_regular
 - \+/\- *lemma* mul_is_left_regular_iff
 - \+/\- *lemma* mul_is_right_regular_iff
 

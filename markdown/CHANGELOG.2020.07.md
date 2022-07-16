@@ -83,6 +83,7 @@ Modified src/tactic/simps.lean
 
 
 Modified test/simps.lean
+- \+ *structure* needs_prop_class
 - \+ *def* test_prop_class
 
 
@@ -153,6 +154,10 @@ Modified src/data/equiv/local_equiv.lean
 
 
 Added src/geometry/algebra/lie_group.lean
+- \+ *structure* lie_add_group_core
+- \+ *structure* lie_add_group_morphism
+- \+ *structure* lie_group_core
+- \+ *structure* lie_group_morphism
 - \+ *lemma* smooth.inv
 - \+ *lemma* smooth.mul
 - \+ *lemma* smooth_inv
@@ -404,6 +409,7 @@ Added src/data/pfunctor/multivariate/M.lean
 - \+ *theorem* mvpfunctor.M.dest_map
 - \+ *theorem* mvpfunctor.M.map_dest
 - \+ *def* mvpfunctor.M.mk
+- \+ *inductive* mvpfunctor.M.path
 - \+ *def* mvpfunctor.M.path_dest_left
 - \+ *def* mvpfunctor.M.path_dest_right
 - \+ *def* mvpfunctor.M
@@ -423,6 +429,7 @@ Added src/data/pfunctor/multivariate/W.lean
 - \+ *def* mvpfunctor.W_mk'
 - \+ *def* mvpfunctor.W_mk
 - \+ *theorem* mvpfunctor.W_mk_eq
+- \+ *inductive* mvpfunctor.W_path
 - \+ *def* mvpfunctor.W_path_cases_on
 - \+ *theorem* mvpfunctor.W_path_cases_on_eta
 - \+ *def* mvpfunctor.W_path_dest_left
@@ -499,6 +506,7 @@ Added src/data/qpf/multivariate/constructions/fix.lean
 - \+ *theorem* mvqpf.Wequiv.abs'
 - \+ *theorem* mvqpf.Wequiv.refl
 - \+ *theorem* mvqpf.Wequiv.symm
+- \+ *inductive* mvqpf.Wequiv
 - \+ *theorem* mvqpf.Wequiv_map
 - \+ *def* mvqpf.Wrepr
 - \+ *theorem* mvqpf.Wrepr_W_mk
@@ -807,7 +815,7 @@ Modified src/tactic/lint/default.lean
 
 
 Modified src/tactic/lint/frontend.lean
-
+- \+ *inductive* lint_verbosity
 
 Modified test/lint.lean
 
@@ -1131,15 +1139,19 @@ Added src/category_theory/monoidal/internal.lean
 - \+ *def* Mod.comap
 - \+ *def* Mod.comp
 - \+ *lemma* Mod.comp_hom'
+- \+ *structure* Mod.hom
 - \+ *def* Mod.id
 - \+ *lemma* Mod.id_hom'
 - \+ *def* Mod.regular
+- \+ *structure* Mod
 - \+ *lemma* Mon_.assoc_flip
 - \+ *def* Mon_.comp
 - \+ *lemma* Mon_.comp_hom'
 - \+ *def* Mon_.forget
+- \+ *structure* Mon_.hom
 - \+ *def* Mon_.id
 - \+ *lemma* Mon_.id_hom'
+- \+ *structure* Mon_
 
 Added src/category_theory/monoidal/internal/types.lean
 - \+ *def* Mon_Type_equivalence_Mon.functor
@@ -1186,6 +1198,8 @@ general affine space context.
 Modified src/linear_algebra/affine_space.lean
 - \+ *def* affine_space.simplex.mk_of_point
 - \+ *lemma* affine_space.simplex.mk_of_point_points
+- \+ *structure* affine_space.simplex
+- \+ *abbreviation* affine_space.triangle
 
 
 
@@ -2509,22 +2523,30 @@ Modified src/tactic/simps.lean
 
 Modified test/simps.lean
 - \+ *def* coercing.Group.prod_Semigroup
+- \+ *structure* coercing.Semigroup
 - \+ *def* coercing.bar
+- \+ *structure* coercing.equiv2
 - \+ *def* coercing.foo2
 - \+ *def* coercing.foo
+- \+ *structure* coercing.foo_str
 - \+ *def* coercing.new_bar
 - \+ *def* coercing.voo2
 - \+ *def* coercing.voo
+- \+ *structure* coercing.voo_str
 - \- *def* count_nested.nested1
 - \- *def* count_nested.nested2
 - \+ *def* equiv.trans
+- \+ *structure* failty_manual_coercion.equiv
 - \+ *def* foo.rfl2
 - \+ *def* foo.rfl3
 - \+ *def* manual_coercion.equiv.simps.inv_fun
 - \+ *def* manual_coercion.equiv.symm
+- \+ *structure* manual_coercion.equiv
 - \+ *def* manual_initialize.equiv.simps.inv_fun
 - \+ *def* manual_initialize.equiv.symm
+- \+ *structure* manual_initialize.equiv
 - \+ *def* my_nat_equiv
+- \+ *structure* my_prod
 - \+ *def* myprod.map
 - \+ *def* nat_set_plus2
 - \+ *def* nat_set_plus3
@@ -2532,8 +2554,10 @@ Modified test/simps.lean
 - \+ *def* nested_non_fully_applied.equiv.symm2
 - \+ *def* nested_non_fully_applied.equiv.symm3
 - \+ *def* nested_non_fully_applied.equiv.symm
+- \+ *structure* nested_non_fully_applied.equiv
 - \+/\- *def* partially_applied_term
 - \+ *def* pprod_equiv_prod
+- \+ *structure* set_plus
 - \+/\- *def* short_name1
 - \+ *def* succeed_without_simplification_possible
 - \+ *def* test_sneaky
@@ -5016,6 +5040,7 @@ Modified src/topology/compact_open.lean
 Added src/topology/continuous_map.lean
 - \+ *def* continuous_map.const
 - \+ *theorem* continuous_map.ext
+- \+ *structure* continuous_map
 
 
 
@@ -5376,6 +5401,7 @@ Added src/data/pfunctor/multivariate/basic.lean
 - \+ *theorem* mvpfunctor.map_eq
 - \+ *def* mvpfunctor.obj
 - \+ *theorem* mvpfunctor.supp_eq
+- \+ *structure* mvpfunctor
 
 Modified src/data/pfunctor/univariate/basic.lean
 - \+ *def* pfunctor.W.children
@@ -5759,7 +5785,9 @@ Added test/unfold_cases.lean
 - \+ *def* balance_match
 - \+ *def* bar
 - \+ *def* baz
+- \+ *inductive* color
 - \+ *def* foo
+- \+ *inductive* node
 
 
 
@@ -8836,6 +8864,7 @@ Added src/geometry/manifold/local_invariant_properties.lean
 - \+ *lemma* structure_groupoid.local_invariant_prop.lift_prop_within_at_mono
 - \+ *lemma* structure_groupoid.local_invariant_prop.lift_prop_within_at_of_lift_prop_at
 - \+ *lemma* structure_groupoid.local_invariant_prop.lift_prop_within_at_of_lift_prop_at_of_mem_nhds
+- \+ *structure* structure_groupoid.local_invariant_prop
 
 Modified src/geometry/manifold/mfderiv.lean
 
@@ -9041,18 +9070,22 @@ Modified src/category_theory/limits/shapes/finite_limits.lean
 
 Modified src/category_theory/limits/shapes/wide_pullbacks.lean
 - \+ *def* category_theory.limits.wide_pullback_shape.diagram_iso_wide_cospan
+- \+ *inductive* category_theory.limits.wide_pullback_shape.hom
 - \+ *lemma* category_theory.limits.wide_pullback_shape.hom_id
 - \+ *def* category_theory.limits.wide_pullback_shape.wide_cospan
 - \+ *def* category_theory.limits.wide_pullback_shape
 - \+ *def* category_theory.limits.wide_pushout_shape.diagram_iso_wide_span
+- \+ *inductive* category_theory.limits.wide_pushout_shape.hom
 - \+ *lemma* category_theory.limits.wide_pushout_shape.hom_id
 - \+ *def* category_theory.limits.wide_pushout_shape.wide_span
 - \+ *def* category_theory.limits.wide_pushout_shape
 - \- *def* wide_pullback_shape.diagram_iso_wide_cospan
+- \- *inductive* wide_pullback_shape.hom
 - \- *lemma* wide_pullback_shape.hom_id
 - \- *def* wide_pullback_shape.wide_cospan
 - \- *def* wide_pullback_shape
 - \- *def* wide_pushout_shape.diagram_iso_wide_span
+- \- *inductive* wide_pushout_shape.hom
 - \- *lemma* wide_pushout_shape.hom_id
 - \- *def* wide_pushout_shape.wide_span
 - \- *def* wide_pushout_shape
@@ -9179,6 +9212,7 @@ Modified src/data/polynomial.lean
 
 
 Modified src/linear_algebra/tensor_product.lean
+- \+ *inductive* tensor_product.eqv
 - \- *lemma* tensor_product.lift_aux.add
 - \+/\- *lemma* tensor_product.lift_aux.smul
 - \+/\- *def* tensor_product.lift_aux
@@ -9315,6 +9349,7 @@ Added src/data/fin2.lean
 - \+ *def* fin2.opt_of_nat
 - \+ *def* fin2.remap_left
 - \+ *def* fin2.to_nat
+- \+ *inductive* fin2
 
 Added src/data/typevec.lean
 - \+ *def* typevec.append1
@@ -9412,6 +9447,7 @@ Modified src/number_theory/dioph.lean
 - \- *def* fin2.opt_of_nat
 - \- *def* fin2.remap_left
 - \- *def* fin2.to_nat
+- \- *inductive* fin2
 
 
 
@@ -9627,6 +9663,7 @@ Added src/category_theory/arrow.lean
 - \+ *lemma* category_theory.arrow.id_right
 - \+ *lemma* category_theory.arrow.lift.fac_left
 - \+ *lemma* category_theory.arrow.lift.fac_right
+- \+ *abbreviation* category_theory.arrow.lift
 - \+ *lemma* category_theory.arrow.lift_mk'_left
 - \+ *lemma* category_theory.arrow.lift_mk'_right
 - \+ *def* category_theory.arrow.mk
@@ -9640,6 +9677,7 @@ Modified src/category_theory/comma.lean
 - \- *lemma* category_theory.arrow.id_right
 - \- *lemma* category_theory.arrow.lift.fac_left
 - \- *lemma* category_theory.arrow.lift.fac_right
+- \- *abbreviation* category_theory.arrow.lift
 - \- *lemma* category_theory.arrow.lift_mk'_left
 - \- *lemma* category_theory.arrow.lift_mk'_right
 - \- *def* category_theory.arrow.mk
@@ -9875,6 +9913,7 @@ Modified src/control/functor.lean
 
 Added src/data/pfunctor/univariate/M.lean
 - \+ *lemma* pfunctor.M.R_is_bisimulation
+- \+ *inductive* pfunctor.M.agree'
 - \+ *lemma* pfunctor.M.agree'_refl
 - \+ *lemma* pfunctor.M.agree_iff_agree'
 - \+ *lemma* pfunctor.M.approx_mk
@@ -9908,6 +9947,8 @@ Added src/data/pfunctor/univariate/M.lean
 - \+ *lemma* pfunctor.M.head_succ
 - \+ *def* pfunctor.M.ichildren
 - \+ *lemma* pfunctor.M.ichildren_mk
+- \+ *structure* pfunctor.M.is_bisimulation
+- \+ *inductive* pfunctor.M.is_path
 - \+ *lemma* pfunctor.M.is_path_cons'
 - \+ *lemma* pfunctor.M.is_path_cons
 - \+ *def* pfunctor.M.iselect
@@ -9921,12 +9962,15 @@ Added src/data/pfunctor/univariate/M.lean
 - \+ *theorem* pfunctor.M.nth_of_bisim
 - \+ *lemma* pfunctor.M.truncate_approx
 - \+ *def* pfunctor.M
+- \+ *structure* pfunctor.M_intl
 - \+ *lemma* pfunctor.approx.P_corec
+- \+ *inductive* pfunctor.approx.agree
 - \+ *lemma* pfunctor.approx.agree_children
 - \+ *lemma* pfunctor.approx.agree_trival
 - \+ *def* pfunctor.approx.all_agree
 - \+ *lemma* pfunctor.approx.approx_eta
 - \+ *def* pfunctor.approx.children'
+- \+ *inductive* pfunctor.approx.cofix_a
 - \+ *lemma* pfunctor.approx.cofix_a_eq_zero
 - \+ *def* pfunctor.approx.head'
 - \+ *lemma* pfunctor.approx.head_succ'
@@ -9952,6 +9996,7 @@ Added src/data/pfunctor/univariate/basic.lean
 - \+ *def* pfunctor.map
 - \+ *def* pfunctor.obj.iget
 - \+ *def* pfunctor.obj
+- \+ *structure* pfunctor
 
 Added src/data/pfunctor/univariate/default.lean
 
@@ -9962,6 +10007,7 @@ Added src/data/qpf/univariate/basic.lean
 - \+ *theorem* qpf.Wequiv.abs'
 - \+ *theorem* qpf.Wequiv.refl
 - \+ *theorem* qpf.Wequiv.symm
+- \+ *inductive* qpf.Wequiv
 - \+ *def* qpf.Wrepr
 - \+ *theorem* qpf.Wrepr_equiv
 - \+ *theorem* qpf.cofix.bisim'
@@ -10466,20 +10512,29 @@ Modified src/algebra/homology/chain_complex.lean
 - \- *lemma* chain_complex.comm
 - \- *lemma* chain_complex.comm_at
 - \- *lemma* chain_complex.d_squared
+- \- *abbreviation* chain_complex.forget
 - \- *lemma* cochain_complex.comm
 - \- *lemma* cochain_complex.comm_at
 - \- *lemma* cochain_complex.d_squared
+- \- *abbreviation* cochain_complex.forget
 - \+ *lemma* homological_complex.comm
 - \+ *lemma* homological_complex.comm_at
 - \+ *lemma* homological_complex.d_squared
+- \+ *abbreviation* homological_complex.forget
+- \+ *abbreviation* homological_complex
 
 Modified src/algebra/homology/homology.lean
+- \+ *abbreviation* cochain_complex.cohomology
 - \- *def* cochain_complex.cohomology
 - \- *def* cochain_complex.cohomology_functor
+- \+ *abbreviation* cochain_complex.cohomology_group
+- \+ *abbreviation* cochain_complex.cohomology_map
 - \- *def* cochain_complex.cohomology_map
 - \- *lemma* cochain_complex.cohomology_map_comp
 - \- *lemma* cochain_complex.cohomology_map_condition
 - \- *lemma* cochain_complex.cohomology_map_id
+- \+ *abbreviation* cochain_complex.graded_cohomology
+- \- *abbreviation* cochain_complex.image_map
 - \- *lemma* cochain_complex.image_map_ι
 - \- *def* cochain_complex.image_to_kernel_map
 - \- *lemma* cochain_complex.image_to_kernel_map_condition
@@ -10496,6 +10551,7 @@ Modified src/algebra/homology/homology.lean
 - \+ *lemma* homological_complex.homology_map_comp
 - \+ *lemma* homological_complex.homology_map_condition
 - \+ *lemma* homological_complex.homology_map_id
+- \+ *abbreviation* homological_complex.image_map
 - \+ *lemma* homological_complex.image_map_ι
 - \+ *def* homological_complex.image_to_kernel_map
 - \+ *lemma* homological_complex.image_to_kernel_map_comp_kernel_map
@@ -11020,7 +11076,8 @@ Modified src/tactic/lint/type_classes.lean
 
 
 Modified test/lint_coe_to_fun.lean
-
+- \+ *structure* with_tc_param.equiv
+- \+ *structure* with_tc_param.sparkling_equiv
 
 
 
@@ -11898,6 +11955,7 @@ Added src/data/sym2.lean
 - \+ *lemma* sym2.rel.is_equivalence
 - \+ *lemma* sym2.rel.symm
 - \+ *lemma* sym2.rel.trans
+- \+ *inductive* sym2.rel
 - \+ *def* sym2.sym2_equiv_sym'
 - \+ *def* sym2.vmem.other
 - \+ *def* sym2.vmem
@@ -11967,6 +12025,7 @@ Modified src/algebra/ordered_ring.lean
 
 
 Modified src/algebra/ring.lean
+- \+/\- *structure* is_integral_domain
 - \- *theorem* nonzero.of_ne
 - \+/\- *lemma* pred_ne_self
 - \+/\- *lemma* succ_ne_self
@@ -12330,6 +12389,7 @@ Explanation copied from @digama0's Zulip message [here](https://leanprover.zulip
 #### Estimated changes
 Modified src/tactic/explode.lean
 - \- *def* tactic.explode.head'
+- \+/\- *inductive* tactic.explode.status
 
 
 
@@ -13221,6 +13281,7 @@ Added src/category_theory/abelian/non_preadditive.lean
 - \+ *def* category_theory.non_preadditive_abelian.preadditive
 - \+ *def* category_theory.non_preadditive_abelian.pullback_of_mono
 - \+ *def* category_theory.non_preadditive_abelian.pushout_of_epi
+- \+ *abbreviation* category_theory.non_preadditive_abelian.r
 - \+ *def* category_theory.non_preadditive_abelian.strong_epi_of_epi
 - \+ *lemma* category_theory.non_preadditive_abelian.sub_add
 - \+ *lemma* category_theory.non_preadditive_abelian.sub_comp
@@ -13230,8 +13291,10 @@ Added src/category_theory/abelian/non_preadditive.lean
 - \+ *lemma* category_theory.non_preadditive_abelian.sub_zero
 - \+ *def* category_theory.non_preadditive_abelian.zero_cokernel_of_zero_cancel
 - \+ *def* category_theory.non_preadditive_abelian.zero_kernel_of_cancel_zero
+- \+ *abbreviation* category_theory.non_preadditive_abelian.Δ
 - \+ *lemma* category_theory.non_preadditive_abelian.Δ_map
 - \+ *lemma* category_theory.non_preadditive_abelian.Δ_σ
+- \+ *abbreviation* category_theory.non_preadditive_abelian.σ
 - \+ *lemma* category_theory.non_preadditive_abelian.σ_comp
 
 Modified src/category_theory/discrete_category.lean
@@ -15386,6 +15449,7 @@ Added src/ring_theory/valuation/basic.lean
 - \+ *def* valuation.to_preorder
 - \+ *theorem* valuation.unit_map_eq
 - \+ *lemma* valuation.zero_iff
+- \+ *structure* valuation
 
 
 

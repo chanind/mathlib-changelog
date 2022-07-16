@@ -221,6 +221,7 @@ Modified data/list/basic.lean
 - \+ *theorem* list.length_eq_zero
 - \+ *theorem* list.length_sublists
 - \+ *theorem* list.lex.imp
+- \+ *inductive* list.lex
 - \+ *theorem* list.lex_append_left
 - \+ *theorem* list.lex_append_right
 - \+ *theorem* list.lex_ne_iff
@@ -385,6 +386,7 @@ Modified data/finsupp.lean
 - \+/\- *lemma* finsupp.support_zip_with
 - \+/\- *def* finsupp.zip_with
 - \+/\- *lemma* finsupp.zip_with_apply
+- \+ *structure* finsupp
 - \- *def* finsupp
 
 Modified linear_algebra/basic.lean
@@ -436,6 +438,7 @@ Added group_theory/subgroup.lean
 - \+ *lemma* is_subgroup.mul_mem
 - \+ *lemma* is_subgroup.pairwise_cosets_disjoint
 - \+ *lemma* is_subgroup.subgroup_mem_cosets
+- \+ *structure* is_subgroup
 - \+ *lemma* is_subgroup_range_gpow
 - \+ *lemma* mem_range_gpow_iff_mem_range_order_of
 - \+ *lemma* order_eq_card_range_gpow
@@ -613,6 +616,7 @@ Added ring_theory/localization.lean
 - \+ *def* localization.away
 - \+ *def* localization.closure
 - \+ *lemma* localization.eq_zero_of_ne_zero_of_mul_eq_zero
+- \+ *inductive* localization.in_closure
 - \+ *def* localization.loc
 - \+ *lemma* localization.mem_non_zero_divisors_of_ne_zero
 - \+ *lemma* localization.ne_zero_of_mem_non_zero_divisors

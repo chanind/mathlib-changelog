@@ -458,6 +458,7 @@ Added src/analysis/analytic/basic.lean
 - \+ *lemma* has_fpower_series_on_ball.sub
 - \+ *lemma* has_fpower_series_on_ball.sum
 - \+ *lemma* has_fpower_series_on_ball.uniform_limit
+- \+ *structure* has_fpower_series_on_ball
 
 Modified src/data/real/ennreal.lean
 - \+ *lemma* ennreal.lt_iff_exists_nnreal_btwn
@@ -1755,9 +1756,13 @@ Added src/algebra/homology/chain_complex.lean
 - \+ *lemma* chain_complex.comm
 - \+ *lemma* chain_complex.comm_at
 - \+ *lemma* chain_complex.d_squared
+- \+ *abbreviation* chain_complex.forget
+- \+ *abbreviation* chain_complex
 - \+ *lemma* cochain_complex.comm
 - \+ *lemma* cochain_complex.comm_at
 - \+ *lemma* cochain_complex.d_squared
+- \+ *abbreviation* cochain_complex.forget
+- \+ *abbreviation* cochain_complex
 
 Added src/algebra/homology/homology.lean
 - \+ *def* cochain_complex.cohomology
@@ -1772,7 +1777,9 @@ Added src/category_theory/differential_object.lean
 - \+ *def* category_theory.differential_object.forget
 - \+ *def* category_theory.differential_object.hom.comp
 - \+ *def* category_theory.differential_object.hom.id
+- \+ *structure* category_theory.differential_object.hom
 - \+ *lemma* category_theory.differential_object.id_f
+- \+ *structure* category_theory.differential_object
 
 Modified src/category_theory/equivalence.lean
 - \+ *def* category_theory.equivalence.pow
@@ -1792,6 +1799,7 @@ Added src/category_theory/graded_object.lean
 - \+ *lemma* category_theory.graded_object.id_apply
 - \+ *def* category_theory.graded_object.total
 - \+ *def* category_theory.graded_object
+- \+ *abbreviation* category_theory.graded_object_with_shift
 
 Modified src/category_theory/limits/shapes/zero.lean
 
@@ -2296,6 +2304,7 @@ Added src/analysis/convex/cone.lean
 - \+ *lemma* convex_cone.mem_top
 - \+ *lemma* convex_cone.smul_mem
 - \+ *lemma* convex_cone.smul_mem_iff
+- \+ *structure* convex_cone
 - \+ *lemma* convex_hull_to_cone_eq_Inf
 - \+ *lemma* convex_hull_to_cone_is_least
 - \+ *theorem* exists_extension_of_le_sublinear
@@ -2346,6 +2355,7 @@ Added src/linear_algebra/linear_pmap.lean
 - \+ *lemma* linear_pmap.sup_apply
 - \+ *lemma* linear_pmap.sup_h_of_disjoint
 - \+ *lemma* linear_pmap.to_fun_eq_coe
+- \+ *structure* linear_pmap
 - \+ *lemma* subtype.coe_prop
 
 Modified src/order/basic.lean
@@ -5062,7 +5072,9 @@ Modified src/tactic/derive_inhabited.lean
 
 
 Added src/tactic/doc_commands.lean
+- \+ *inductive* doc_category
 - \+ *def* string.hash
+- \+ *structure* tactic_doc_entry
 
 Modified src/tactic/elide.lean
 
@@ -5302,8 +5314,12 @@ feat(category_theory/limits): kernel forks ([#2156](https://github.com/leanprove
 Modified src/category_theory/limits/shapes/kernels.lean
 - \+ *lemma* category_theory.limits.cokernel_cofork.app_zero
 - \+ *lemma* category_theory.limits.cokernel_cofork.condition
+- \+ *abbreviation* category_theory.limits.cokernel_cofork.of_π
+- \+ *abbreviation* category_theory.limits.cokernel_cofork
 - \+ *lemma* category_theory.limits.kernel_fork.app_one
 - \+ *lemma* category_theory.limits.kernel_fork.condition
+- \+ *abbreviation* category_theory.limits.kernel_fork.of_ι
+- \+ *abbreviation* category_theory.limits.kernel_fork
 
 
 
@@ -5389,6 +5405,8 @@ Modified src/category_theory/monad/algebra.lean
 - \+ *def* category_theory.comonad.adj
 - \+ *def* category_theory.comonad.coalgebra.hom.comp
 - \+ *def* category_theory.comonad.coalgebra.hom.id
+- \+ *structure* category_theory.comonad.coalgebra.hom
+- \+ *structure* category_theory.comonad.coalgebra
 - \+ *def* category_theory.comonad.cofree
 - \+ *def* category_theory.comonad.forget
 
@@ -5430,6 +5448,7 @@ Modified src/algebra/category/CommRing/colimits.lean
 - \+/\- *def* CommRing.colimits.desc_morphism
 
 Renamed src/algebra/category/Group.lean to src/algebra/category/Group/basic.lean
+- \+ *abbreviation* Ab
 - \+ *lemma* CommGroup.one_apply
 - \+ *lemma* Group.one_apply
 
@@ -5446,9 +5465,11 @@ Added src/algebra/category/Group/colimits.lean
 - \+ *def* AddCommGroup.colimits.desc_fun
 - \+ *def* AddCommGroup.colimits.desc_fun_lift
 - \+ *def* AddCommGroup.colimits.desc_morphism
+- \+ *inductive* AddCommGroup.colimits.prequotient
 - \+ *lemma* AddCommGroup.colimits.quot_add
 - \+ *lemma* AddCommGroup.colimits.quot_neg
 - \+ *lemma* AddCommGroup.colimits.quot_zero
+- \+ *inductive* AddCommGroup.colimits.relation
 
 Added src/algebra/category/Group/default.lean
 
@@ -5555,6 +5576,7 @@ Modified src/category_theory/single_obj.lean
 Deleted src/data/equiv/algebra.lean
 - \- *def* add_aut.to_perm
 - \- *lemma* add_equiv.map_sub
+- \- *structure* add_equiv
 - \- *lemma* equiv.add_def
 - \- *lemma* equiv.coe_units_equiv_ne_zero
 - \- *lemma* equiv.inv_def
@@ -5582,6 +5604,7 @@ Deleted src/data/equiv/algebra.lean
 - \- *lemma* mul_equiv.to_monoid_hom_apply_symm_to_monoid_hom_apply
 - \- *def* mul_equiv.to_ring_equiv
 - \- *def* mul_equiv.trans
+- \- *structure* mul_equiv
 - \- *def* ring_aut.to_add_aut
 - \- *def* ring_aut.to_mul_aut
 - \- *def* ring_aut.to_perm
@@ -5606,14 +5629,18 @@ Deleted src/data/equiv/algebra.lean
 - \- *def* ring_equiv.of
 - \- *lemma* ring_equiv.symm_apply_apply
 - \- *lemma* ring_equiv.symm_to_ring_hom_apply_to_ring_hom_apply
+- \- *abbreviation* ring_equiv.to_add_monoid_hom
+- \- *abbreviation* ring_equiv.to_monoid_hom
 - \- *def* ring_equiv.to_ring_hom
 - \- *lemma* ring_equiv.to_ring_hom_apply_symm_to_ring_hom_apply
+- \- *structure* ring_equiv
 - \- *def* to_units
 - \- *def* units.map_equiv
 
 Added src/data/equiv/mul_add.lean
 - \+ *def* add_aut.to_perm
 - \+ *lemma* add_equiv.map_sub
+- \+ *structure* add_equiv
 - \+ *def* mul_aut.to_perm
 - \+ *def* mul_aut
 - \+ *lemma* mul_equiv.apply_symm_apply
@@ -5631,6 +5658,7 @@ Added src/data/equiv/mul_add.lean
 - \+ *def* mul_equiv.to_monoid_hom
 - \+ *lemma* mul_equiv.to_monoid_hom_apply
 - \+ *def* mul_equiv.trans
+- \+ *structure* mul_equiv
 - \+ *def* to_units
 - \+ *def* units.map_equiv
 
@@ -5662,8 +5690,11 @@ Added src/data/equiv/ring.lean
 - \+ *def* ring_equiv.of
 - \+ *lemma* ring_equiv.symm_apply_apply
 - \+ *lemma* ring_equiv.symm_to_ring_hom_apply_to_ring_hom_apply
+- \+ *abbreviation* ring_equiv.to_add_monoid_hom
+- \+ *abbreviation* ring_equiv.to_monoid_hom
 - \+ *def* ring_equiv.to_ring_hom
 - \+ *lemma* ring_equiv.to_ring_hom_apply_symm_to_ring_hom_apply
+- \+ *structure* ring_equiv
 
 Added src/data/equiv/transfer_instance.lean
 - \+ *lemma* equiv.add_def
@@ -6210,6 +6241,7 @@ Added src/category_theory/limits/shapes/constructions/equalizers.lean
 - \+ *def* category_theory.limits.has_equalizers_of_pullbacks_and_binary_products.construct_equalizer
 - \+ *def* category_theory.limits.has_equalizers_of_pullbacks_and_binary_products.equalizer_cone
 - \+ *def* category_theory.limits.has_equalizers_of_pullbacks_and_binary_products.equalizer_cone_is_limit
+- \+ *abbreviation* category_theory.limits.has_equalizers_of_pullbacks_and_binary_products.pullback_fst
 - \+ *lemma* category_theory.limits.has_equalizers_of_pullbacks_and_binary_products.pullback_fst_eq_pullback_snd
 - \+ *def* category_theory.limits.has_equalizers_of_pullbacks_and_binary_products
 
@@ -6495,8 +6527,10 @@ Added src/category_theory/limits/shapes/images.lean
 - \+ *lemma* category_theory.limits.image_mono_iso_source_inv_ι
 - \+ *def* category_theory.limits.is_image.iso_ext
 - \+ *def* category_theory.limits.is_image.self
+- \+ *structure* category_theory.limits.is_image
 - \+ *lemma* category_theory.limits.mono_factorisation.ext
 - \+ *def* category_theory.limits.mono_factorisation.self
+- \+ *structure* category_theory.limits.mono_factorisation
 
 
 
@@ -6814,6 +6848,7 @@ Modified src/algebra/group/is_unit.lean
 - \+/\- *theorem* units.is_unit_mul_units
 
 Modified src/algebra/group/units.lean
+- \+ *structure* add_units
 - \+ *theorem* nat.add_units_eq_one
 - \+/\- *lemma* units.coe_inv
 - \+/\- *lemma* units.coe_mk_of_mul_eq_one
@@ -6848,6 +6883,7 @@ Modified src/algebra/pi_instances.lean
 - \+ *def* prod.monoid_hom.inr
 
 Modified src/group_theory/monoid_localization.lean
+- \+ *structure* add_submonoid.localization_map
 - \- *lemma* add_submonoid.r'.add
 - \- *lemma* add_submonoid.r'.transitive
 - \- *def* add_submonoid.r'
@@ -6938,6 +6974,7 @@ Modified src/group_theory/monoid_localization.lean
 - \+ *lemma* submonoid.localization_map.mul_mk'_one_eq_mk'
 - \+ *lemma* submonoid.localization_map.sec_spec'
 - \+ *lemma* submonoid.localization_map.sec_spec
+- \+ *structure* submonoid.localization_map
 - \- *def* submonoid.r'
 - \- *def* submonoid.r
 - \- *theorem* submonoid.r_eq_r'
@@ -6963,6 +7000,7 @@ fix(category_theory/limits): Add some missing instances for special shapes of li
 Modified src/category_theory/limits/shapes/equalizers.lean
 - \+ *def* category_theory.limits.has_coequalizers_of_has_finite_colimits
 - \+ *def* category_theory.limits.has_equalizers_of_has_finite_limits
+- \+/\- *inductive* category_theory.limits.walking_parallel_pair_hom
 
 Modified src/category_theory/limits/shapes/kernels.lean
 - \+ *def* category_theory.limits.has_cokernels_of_has_finite_colimits
@@ -6971,6 +7009,8 @@ Modified src/category_theory/limits/shapes/kernels.lean
 Modified src/category_theory/limits/shapes/pullbacks.lean
 - \+ *def* category_theory.limits.has_pullbacks_of_has_finite_limits
 - \+ *def* category_theory.limits.has_pushouts_of_has_finite_colimits
+- \+/\- *inductive* category_theory.limits.walking_cospan.hom
+- \+/\- *inductive* category_theory.limits.walking_span.hom
 
 
 
@@ -7025,6 +7065,7 @@ Modified src/category/traversable/derive.lean
 
 Modified test/examples.lean
 - \+ *def* ex
+- \+ *inductive* my_tree
 - \+ *def* x
 
 
@@ -7190,6 +7231,7 @@ Modified src/algebra/lie_algebra.lean
 
 Modified src/algebra/module.lean
 - \+/\- *lemma* submodule.coe_sub
+- \+/\- *abbreviation* vector_space
 
 Modified src/algebra/opposites.lean
 

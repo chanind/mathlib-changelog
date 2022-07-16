@@ -794,11 +794,14 @@ Modified src/category_theory/adjunction/limits.lean
 
 Modified src/category_theory/category.lean
 - \+/\- *lemma* category_theory.category.assoc_symm
+- \+/\- *abbreviation* category_theory.large_category
+- \+/\- *abbreviation* category_theory.small_category
 
 Modified src/category_theory/comma.lean
-
+- \+/\- *structure* category_theory.comma
 
 Modified src/category_theory/concrete_category.lean
+- \+/\- *structure* category_theory.bundled
 - \+/\- *def* category_theory.forget
 - \+/\- *def* category_theory.mk_ob
 
@@ -818,7 +821,7 @@ Modified src/category_theory/eq_to_hom.lean
 
 
 Modified src/category_theory/equivalence.lean
-
+- \+/\- *structure* category_theory.equivalence
 
 Modified src/category_theory/full_subcategory.lean
 - \+/\- *def* category_theory.induced_category
@@ -827,16 +830,17 @@ Modified src/category_theory/fully_faithful.lean
 
 
 Modified src/category_theory/functor.lean
-
+- \+/\- *structure* category_theory.functor
 
 Modified src/category_theory/functor_category.lean
 
 
 Modified src/category_theory/groupoid.lean
-
+- \+/\- *abbreviation* category_theory.large_groupoid
+- \+/\- *abbreviation* category_theory.small_groupoid
 
 Modified src/category_theory/isomorphism.lean
-
+- \+/\- *structure* category_theory.iso
 
 Modified src/category_theory/limits/cones.lean
 
@@ -886,7 +890,7 @@ Modified src/category_theory/natural_isomorphism.lean
 - \+/\- *def* category_theory.iso.app
 
 Modified src/category_theory/natural_transformation.lean
-
+- \+/\- *structure* category_theory.nat_trans
 
 Modified src/category_theory/opposites.lean
 
@@ -1038,6 +1042,7 @@ Deleted src/algebra/group.lean
 - \- *theorem* units.mul_left_inj
 - \- *theorem* units.mul_right_inj
 - \- *lemma* units.val_coe
+- \- *structure* units
 - \- *lemma* with_one.coe_inj
 - \- *lemma* with_one.coe_ne_one
 - \- *lemma* with_one.mul_coe
@@ -1191,6 +1196,7 @@ Added src/algebra/group/units.lean
 - \+ *theorem* units.mul_left_inj
 - \+ *theorem* units.mul_right_inj
 - \+ *lemma* units.val_coe
+- \+ *structure* units
 
 Added src/algebra/group/units_hom.lean
 - \+ *lemma* units.coe_map
@@ -1513,6 +1519,7 @@ Added src/data/pnat/xgcd.lean
 - \+ *def* pnat.xgcd_type.vp
 - \+ *def* pnat.xgcd_type.w
 - \+ *def* pnat.xgcd_type.z
+- \+ *structure* pnat.xgcd_type
 
 Modified src/data/rat.lean
 
@@ -1552,6 +1559,7 @@ Modified src/data/mllist.lean
 Added src/tactic/rewrite_all/basic.lean
 - \+ *def* side.other
 - \+ *def* side.to_string
+- \+ *inductive* side
 
 Added src/tactic/rewrite_all/congr.lean
 
@@ -1560,7 +1568,8 @@ Added src/tactic/rewrite_all/default.lean
 
 
 Added test/rewrite_all.lean
-
+- \+ *structure* F
+- \+ *structure* cat
 
 
 
@@ -1579,11 +1588,13 @@ Modified src/analysis/normed_space/banach.lean
 
 
 Modified src/analysis/normed_space/basic.lean
+- \+ *structure* normed_group.core
 - \+ *theorem* normed_group.tendsto_nhds_zero
+- \- *structure* normed_space.core
 - \- *theorem* normed_space.tendsto_nhds_zero
 
 Modified src/analysis/normed_space/bounded_linear_maps.lean
-
+- \+/\- *structure* is_bounded_linear_map
 
 Modified src/analysis/normed_space/deriv.lean
 
@@ -1693,6 +1704,7 @@ Modified src/analysis/normed_space/operator_norm.lean
 - \- *lemma* bounded_linear_map.unit_le_op_norm
 - \- *def* bounded_linear_map.zero
 - \- *lemma* bounded_linear_map.zero_apply
+- \- *structure* bounded_linear_map
 - \+ *theorem* continuous_linear_map.bound
 - \+ *lemma* continuous_linear_map.bounds_bdd_below
 - \+ *lemma* continuous_linear_map.bounds_nonempty
@@ -1752,6 +1764,7 @@ Added src/topology/algebra/module.lean
 - \+ *lemma* continuous_linear_map.sub_apply
 - \+ *def* continuous_linear_map.zero
 - \+ *lemma* continuous_linear_map.zero_apply
+- \+ *structure* continuous_linear_map
 - \+ *lemma* continuous_smul'
 - \+ *lemma* continuous_smul
 

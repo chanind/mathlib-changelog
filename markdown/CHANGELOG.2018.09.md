@@ -909,6 +909,7 @@ Modified category_theory/examples/topological_spaces.lean
 - \+ *def* category_theory.examples.open_set.map_iso_id
 - \+/\- *def* category_theory.examples.open_set.nbhd
 - \+/\- *def* category_theory.examples.open_set.nbhds
+- \+/\- *structure* category_theory.examples.open_set
 
 Modified category_theory/natural_isomorphism.lean
 - \+ *def* category_theory.functor.assoc
@@ -1205,6 +1206,7 @@ Modified algebra/group_power.lean
 Added tactic/abel.lean
 - \+ *theorem* tactic.abel.const_add_term
 - \+ *theorem* tactic.abel.const_add_termg
+- \+ *inductive* tactic.abel.normalize_mode
 - \+ *def* tactic.abel.smul
 - \+ *def* tactic.abel.smulg
 - \+ *lemma* tactic.abel.subst_into_smul
@@ -1309,6 +1311,8 @@ Modified algebra/ring.lean
 
 
 Modified category_theory/category.lean
+- \+ *structure* category_theory.bundled
+- \+/\- *structure* category_theory.concrete_category
 - \+ *def* category_theory.mk_ob
 
 Modified category_theory/embedding.lean
@@ -1683,6 +1687,7 @@ Added linear_algebra/submodule.lean
 - \+ *def* submodule.submodule_lt_equiv
 - \+ *lemma* submodule.subset_comap_quotient
 - \+ *theorem* submodule.top_set
+- \+ *structure* {u
 
 Modified linear_algebra/subtype_module.lean
 - \- *lemma* add_val
@@ -1731,6 +1736,7 @@ Deleted ring_theory/submodule.lean
 - \- *theorem* submodule.span_subset_iff
 - \- *theorem* submodule.span_union
 - \- *theorem* submodule.top_set
+- \- *structure* {u
 
 Modified set_theory/ordinal.lean
 
@@ -1794,6 +1800,7 @@ Added ring_theory/submodule.lean
 - \+ *theorem* submodule.span_subset_iff
 - \+ *theorem* submodule.span_union
 - \+ *theorem* submodule.top_set
+- \+ *structure* {u
 
 
 
@@ -1824,9 +1831,11 @@ Modified category_theory/examples/topological_spaces.lean
 - \+ *def* category_theory.examples.Top
 - \+ *def* category_theory.examples.open_set.nbhd
 - \+ *def* category_theory.examples.open_set.nbhds
+- \+ *structure* category_theory.examples.open_set
 - \- *def* category_theory.examples.topological_spaces.Top
 - \- *def* category_theory.examples.topological_spaces.nbhd
 - \- *def* category_theory.examples.topological_spaces.nbhds
+- \- *structure* category_theory.examples.topological_spaces.open_set
 
 Modified category_theory/functor.lean
 - \+ *def* category_theory.concrete_functor
@@ -1837,6 +1846,7 @@ Modified category_theory/functor.lean
 style(category_theory): concrete categories as type class
 #### Estimated changes
 Modified category_theory/category.lean
+- \+ *structure* category_theory.concrete_category
 - \- *def* category_theory.concrete_category
 
 Modified category_theory/examples/rings.lean
@@ -1849,12 +1859,15 @@ Modified category_theory/examples/rings.lean
 - \+/\- *lemma* category_theory.examples.comm_ring_hom.map_add
 - \+/\- *lemma* category_theory.examples.comm_ring_hom.map_mul
 - \+/\- *lemma* category_theory.examples.comm_ring_hom.map_one
+- \- *structure* category_theory.examples.comm_ring_hom
 - \+ *def* category_theory.examples.is_comm_ring_hom
 - \+ *def* category_theory.examples.{u}
 
 Modified category_theory/examples/topological_spaces.lean
 - \+/\- *def* category_theory.examples.topological_spaces.Top
 - \- *lemma* category_theory.examples.topological_spaces.continuous_map.ext
+- \- *structure* category_theory.examples.topological_spaces.continuous_map
+- \+/\- *structure* category_theory.examples.topological_spaces.open_set
 
 Modified category_theory/functor.lean
 - \+/\- *lemma* category_theory.functor.comp_map
@@ -1906,12 +1919,15 @@ Added category_theory/examples/rings.lean
 - \+ *lemma* category_theory.examples.comm_ring_hom.map_add
 - \+ *lemma* category_theory.examples.comm_ring_hom.map_mul
 - \+ *lemma* category_theory.examples.comm_ring_hom.map_one
+- \+ *structure* category_theory.examples.comm_ring_hom
 
 Added category_theory/examples/topological_spaces.lean
 - \+ *def* category_theory.examples.topological_spaces.Top
 - \+ *lemma* category_theory.examples.topological_spaces.continuous_map.ext
+- \+ *structure* category_theory.examples.topological_spaces.continuous_map
 - \+ *def* category_theory.examples.topological_spaces.nbhd
 - \+ *def* category_theory.examples.topological_spaces.nbhds
+- \+ *structure* category_theory.examples.topological_spaces.open_set
 
 
 
@@ -2017,6 +2033,7 @@ Modified data/finsupp.lean
 - \+/\- *lemma* finsupp.sum_sub_index
 - \+/\- *lemma* finsupp.sum_zero
 - \+ *def* finsupp.to_multiset
+- \+/\- *structure* finsupp
 
 
 
@@ -2360,6 +2377,7 @@ Modified category_theory/natural_transformation.lean
 - \+/\- *lemma* category_theory.nat_trans.id_app
 - \+/\- *lemma* category_theory.nat_trans.mk_app
 - \+/\- *lemma* category_theory.nat_trans.naturality
+- \+/\- *structure* category_theory.nat_trans
 
 Modified category_theory/opposites.lean
 - \+/\- *lemma* category_theory.functor.opposite_map
@@ -2441,6 +2459,7 @@ Added category_theory/isomorphism.lean
 - \+ *lemma* category_theory.iso.trans_coe
 - \+ *lemma* category_theory.iso.trans_symm
 - \+ *lemma* category_theory.iso.trans_symm_coe
+- \+ *structure* category_theory.iso
 
 Modified category_theory/natural_transformation.lean
 - \+ *lemma* category_theory.nat_trans.app_eq_coe
@@ -2679,6 +2698,7 @@ Added tactic/linarith.lean
 - \+ *def* linarith.ineq.is_lt
 - \+ *def* linarith.ineq.max
 - \+ *def* linarith.ineq.to_string
+- \+ *inductive* linarith.ineq
 - \+ *lemma* linarith.le_of_eq_of_le
 - \+ *lemma* linarith.le_of_le_of_eq
 - \+ *lemma* linarith.lt_of_eq_of_lt
@@ -2692,6 +2712,7 @@ Added tactic/linarith.lean
 - \+ *lemma* linarith.sub_into_lt
 - \+ *lemma* linarith.sub_subst
 - \+ *def* linarith.tree.repr
+- \+ *inductive* linarith.{u}
 
 Added tests/linarith_tests.lean
 
@@ -2729,6 +2750,7 @@ Modified linear_algebra/tensor_product.lean
 - \+ *theorem* is_bilinear_map.zero_left
 - \- *theorem* is_bilinear_map.zero_pair
 - \+ *theorem* is_bilinear_map.zero_right
+- \+/\- *structure* is_bilinear_map
 - \+/\- *lemma* tensor_product.add_of
 - \+ *lemma* tensor_product.of.add_left
 - \+ *lemma* tensor_product.of.add_right
@@ -2793,6 +2815,7 @@ Added linear_algebra/tensor_product.lean
 - \+ *theorem* is_bilinear_map.pair_neg
 - \+ *theorem* is_bilinear_map.pair_zero
 - \+ *theorem* is_bilinear_map.zero_pair
+- \+ *structure* is_bilinear_map
 - \+ *lemma* tensor_product.add_of
 - \+ *theorem* tensor_product.bilinear
 - \+ *def* tensor_product.of

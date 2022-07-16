@@ -99,7 +99,7 @@ Modified src/algebra/lie/submodule.lean
 
 
 Modified src/algebra/module/basic.lean
-
+- \+/\- *structure* module.core
 
 Modified src/algebra/module/hom.lean
 
@@ -223,7 +223,7 @@ Modified src/analysis/convex/basic.lean
 
 
 Modified src/analysis/convex/cone.lean
-
+- \+/\- *structure* convex_cone
 
 Modified src/analysis/convex/extreme.lean
 
@@ -266,6 +266,7 @@ Modified src/analysis/seminorm.lean
 - \+/\- *lemma* seminorm.smul_apply
 - \+/\- *lemma* seminorm.smul_inf
 - \+/\- *lemma* seminorm.smul_sup
+- \+/\- *structure* seminorm
 
 Modified src/data/bracket.lean
 
@@ -411,6 +412,7 @@ Modified src/group_theory/group_action/sigma.lean
 
 Modified src/group_theory/group_action/sub_mul_action.lean
 - \+/\- *lemma* sub_mul_action.smul_mem_iff'
+- \+/\- *structure* sub_mul_action
 
 Modified src/group_theory/group_action/sum.lean
 
@@ -503,7 +505,7 @@ Modified src/measure_theory/group/arithmetic.lean
 
 
 Modified src/measure_theory/group/fundamental_domain.lean
-
+- \+/\- *structure* measure_theory.is_fundamental_domain
 
 Modified src/measure_theory/integral/lebesgue.lean
 - \+/\- *lemma* measure_theory.simple_func.coe_smul
@@ -791,6 +793,7 @@ Added src/number_theory/legendre_symbol/mul_character.lean
 - \+ *def* mul_char.to_unit_hom
 - \+ *lemma* mul_char.to_unit_hom_eq
 - \+ *def* mul_char.trivial
+- \+ *structure* mul_char
 
 
 
@@ -1708,6 +1711,7 @@ Modified src/measure_theory/integral/bochner.lean
 Modified src/topology/algebra/module/basic.lean
 - \- *lemma* continuous_linear_map.map_smul
 - \- *lemma* continuous_linear_map.map_smulₛₗ
+- \+ *abbreviation* continuous_linear_map_class
 
 Modified src/topology/algebra/module/finite_dimension.lean
 
@@ -3884,6 +3888,7 @@ Modified src/algebra/field/basic.lean
 - \+/\- *lemma* field.to_is_field
 - \+/\- *lemma* inv_add_inv
 - \+/\- *lemma* is_field.nontrivial
+- \+/\- *structure* is_field
 - \+/\- *lemma* not_is_field_of_subsingleton
 - \+/\- *lemma* one_add_div
 - \+/\- *lemma* one_div_add_one_div
@@ -4741,6 +4746,7 @@ Modified src/analysis/seminorm.lean
 - \+ *lemma* add_group_seminorm.sup_apply
 - \+ *lemma* add_group_seminorm.zero_apply
 - \+ *lemma* add_group_seminorm.zero_comp
+- \+ *structure* add_group_seminorm
 - \+ *lemma* coe_norm_add_group_seminorm
 - \+ *def* norm_add_group_seminorm
 - \+/\- *def* norm_seminorm
@@ -4750,6 +4756,7 @@ Modified src/analysis/seminorm.lean
 - \- *lemma* seminorm.comp_triangle
 - \- *lemma* seminorm.nonneg
 - \+ *def* seminorm.of
+- \+/\- *structure* seminorm
 
 
 
@@ -5630,6 +5637,7 @@ Modified src/linear_algebra/clifford_algebra/basic.lean
 - \- *def* clifford_algebra.as_exterior
 
 Modified src/linear_algebra/exterior_algebra/basic.lean
+- \- *inductive* exterior_algebra.rel
 - \+/\- *def* exterior_algebra.ι
 - \+/\- *def* exterior_algebra
 
@@ -6341,6 +6349,7 @@ Modified src/linear_algebra/quadratic_form/basic.lean
 - \+/\- *def* quadratic_form.sq
 - \+/\- *lemma* quadratic_form.to_fun_eq_coe
 - \+/\- *def* quadratic_form.weighted_sum_squares
+- \+/\- *structure* quadratic_form
 
 Modified src/linear_algebra/quadratic_form/isometry.lean
 
@@ -7436,7 +7445,7 @@ Modified src/ring_theory/trace.lean
 
 
 Modified src/tactic/ring.lean
-
+- \+ *structure* tactic.ring.ring_nf_cfg
 
 Modified test/ring.lean
 
@@ -8674,6 +8683,7 @@ Added src/topology/uniform_space/equiv.lean
 - \+ *lemma* uniform_equiv.uniform_equiv_mk_coe
 - \+ *lemma* uniform_equiv.uniform_equiv_mk_coe_symm
 - \+ *def* uniform_equiv.{u}
+- \+ *structure* uniform_equiv
 
 Modified src/topology/uniform_space/uniform_embedding.lean
 - \+ *lemma* uniform_inducing_id
@@ -11433,7 +11443,7 @@ Modified src/tactic/interactive.lean
 
 
 Modified test/set.lean
-
+- \+ *inductive* foo
 
 
 
@@ -12288,6 +12298,7 @@ Modified src/data/set/finite.lean
 - \+/\- *theorem* set.finite.of_diff
 - \+/\- *theorem* set.finite.sUnion
 - \+/\- *lemma* set.finite.sup
+- \+/\- *inductive* set.finite
 - \+/\- *lemma* set.finite_is_bot
 - \+/\- *lemma* set.finite_is_top
 - \+/\- *lemma* set.finite_le_nat

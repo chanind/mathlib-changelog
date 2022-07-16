@@ -502,6 +502,7 @@ Modified src/analysis/normed_space/operator_norm.lean
 - \- *def* bounded_linear_map.to_linear_map
 - \+ *def* bounded_linear_map.zero
 - \- *lemma* bounded_linear_map.zero_smul
+- \+ *structure* bounded_linear_map
 - \- *def* bounded_linear_map
 - \- *def* bounded_linear_map_subspace
 - \+ *lemma* exists_pos_bound_of_bound
@@ -689,7 +690,7 @@ Modified src/tactic/omega/eq_elim.lean
 
 
 Modified src/tactic/omega/find_ees.lean
-
+- \+ *structure* omega.ee_state
 
 Modified src/tactic/omega/int/dnf.lean
 
@@ -719,6 +720,7 @@ Modified src/tactic/omega/nat/form.lean
 - \+/\- *def* omega.nat.form.sat
 - \+/\- *def* omega.nat.form.sub_free
 - \+/\- *def* omega.nat.form.valid
+- \+/\- *inductive* omega.nat.form
 - \+/\- *def* omega.nat.univ_close
 - \+/\- *lemma* omega.nat.univ_close_of_valid
 - \+/\- *lemma* omega.nat.valid_of_unsat_not
@@ -805,6 +807,7 @@ Modified src/analysis/normed_space/bounded_linear_maps.lean
 - \+/\- *lemma* is_bounded_linear_map.smul
 - \+/\- *lemma* is_bounded_linear_map.sub
 - \+/\- *lemma* is_bounded_linear_map.tendsto
+- \+/\- *structure* is_bounded_linear_map
 
 Modified src/analysis/normed_space/operator_norm.lean
 - \- *lemma* bdd_above_range_norm_image_div_norm
@@ -996,6 +999,7 @@ Added src/tactic/omega/eq_elim.lean
 - \+ *def* omega.coeffs_reduce
 - \+ *lemma* omega.coeffs_reduce_correct
 - \+ *def* omega.ee.repr
+- \+ *inductive* omega.ee
 - \+ *def* omega.eq_elim
 - \+ *lemma* omega.mul_symdiv_eq
 - \+ *def* omega.rhs
@@ -1049,6 +1053,7 @@ Added src/tactic/omega/int/form.lean
 - \+ *lemma* omega.int.form.sat_or
 - \+ *def* omega.int.form.unsat
 - \+ *def* omega.int.form.valid
+- \+ *inductive* omega.int.form
 - \+ *def* omega.int.univ_close
 - \+ *lemma* omega.int.univ_close_of_valid
 - \+ *lemma* omega.int.valid_of_unsat_not
@@ -1062,6 +1067,7 @@ Added src/tactic/omega/int/preterm.lean
 - \+ *def* omega.int.preterm.fresh_index
 - \+ *def* omega.int.preterm.repr
 - \+ *def* omega.int.preterm.val
+- \+ *inductive* omega.int.preterm
 - \+ *lemma* omega.int.val_canonize
 
 Added src/tactic/omega/lin_comb.lean
@@ -1114,6 +1120,7 @@ Added src/tactic/omega/nat/form.lean
 - \+ *def* omega.nat.form.sub_free
 - \+ *def* omega.nat.form.unsat
 - \+ *def* omega.nat.form.valid
+- \+ *inductive* omega.nat.form
 - \+ *def* omega.nat.univ_close
 - \+ *lemma* omega.nat.univ_close_of_valid
 - \+ *lemma* omega.nat.valid_of_unsat_not
@@ -1149,6 +1156,7 @@ Added src/tactic/omega/nat/preterm.lean
 - \+ *def* omega.nat.preterm.val_constant
 - \+ *lemma* omega.nat.preterm.val_sub
 - \+ *lemma* omega.nat.preterm.val_var
+- \+ *inductive* omega.nat.preterm
 - \+ *lemma* omega.nat.val_canonize
 
 Added src/tactic/omega/nat/sub_elim.lean
@@ -1530,6 +1538,7 @@ Added src/algebra/free.lean
 - \+ *lemma* free_magma.traverse_mul
 - \+ *lemma* free_magma.traverse_pure'
 - \+ *lemma* free_magma.traverse_pure
+- \+ *inductive* free_magma
 - \+ *def* free_semigroup.lift'
 - \+ *def* free_semigroup.lift
 - \+ *lemma* free_semigroup.lift_mul
@@ -1568,6 +1577,7 @@ Added src/algebra/free.lean
 - \+ *theorem* magma.free_semigroup.of_mul_assoc
 - \+ *theorem* magma.free_semigroup.of_mul_assoc_left
 - \+ *theorem* magma.free_semigroup.of_mul_assoc_right
+- \+ *inductive* magma.free_semigroup.r
 - \+ *def* magma.free_semigroup
 - \+ *def* semigroup.free_monoid.lift
 - \+ *lemma* semigroup.free_monoid.lift_mul
@@ -2328,6 +2338,7 @@ Added src/topology/metric_space/gromov_hausdorff.lean
 - \+ *lemma* Gromov_Hausdorff.GH_space.to_GH_space_rep
 - \+ *lemma* Gromov_Hausdorff.Hausdorff_dist_optimal
 - \+ *def* Gromov_Hausdorff.aux_gluing
+- \+ *structure* Gromov_Hausdorff.aux_gluing_struct
 - \+ *lemma* Gromov_Hausdorff.dist_GH_dist
 - \+ *lemma* Gromov_Hausdorff.eq_to_GH_space
 - \+ *lemma* Gromov_Hausdorff.eq_to_GH_space_iff
@@ -3087,6 +3098,7 @@ Added src/tactic/local_cache.lean
 Added test/local_cache.lean
 - \+ *def* block_local.TEST_NS_1
 - \+ *def* block_local.TEST_NS_2
+- \+ *structure* block_local.dummy
 - \+ *def* block_local.my_def_1
 - \+ *def* block_local.my_def_2
 - \+ *def* block_local.my_definition'
@@ -3105,6 +3117,7 @@ Added test/local_cache.lean
 - \+ *lemma* collision.my_lemma_4
 - \+ *def* def_local.TEST_NS_1
 - \+ *def* def_local.TEST_NS_2
+- \+ *structure* def_local.dummy
 - \+ *def* def_local.my_def_1
 - \+ *def* def_local.my_def_2
 - \+ *def* def_local.my_definition'
@@ -3277,12 +3290,15 @@ Modified src/category_theory/adjunction.lean
 Modified src/category_theory/category.lean
 - \+/\- *lemma* category_theory.End.mul_def
 - \+/\- *lemma* category_theory.End.one_def
+- \+/\- *abbreviation* category_theory.large_category
+- \+/\- *abbreviation* category_theory.small_category
 
 Modified src/category_theory/comma.lean
 - \+/\- *def* category_theory.over
 - \+/\- *def* category_theory.under
 
 Modified src/category_theory/concrete_category.lean
+- \+/\- *structure* category_theory.bundled
 - \+/\- *def* category_theory.forget
 - \+/\- *def* category_theory.mk_ob
 
@@ -3296,7 +3312,7 @@ Modified src/category_theory/eq_to_hom.lean
 
 
 Modified src/category_theory/equivalence.lean
-
+- \+/\- *structure* category_theory.equivalence
 
 Modified src/category_theory/full_subcategory.lean
 - \+/\- *def* category_theory.induced_category
@@ -3305,13 +3321,14 @@ Modified src/category_theory/fully_faithful.lean
 
 
 Modified src/category_theory/functor.lean
-
+- \+/\- *structure* category_theory.functor
 
 Modified src/category_theory/functor_category.lean
 
 
 Modified src/category_theory/groupoid.lean
-
+- \+/\- *abbreviation* category_theory.large_groupoid
+- \+/\- *abbreviation* category_theory.small_groupoid
 
 Modified src/category_theory/instances/monoids.lean
 
@@ -3320,7 +3337,7 @@ Added src/category_theory/instances/rel.lean
 - \+ *def* category_theory.rel
 
 Modified src/category_theory/isomorphism.lean
-
+- \+/\- *structure* category_theory.iso
 
 Modified src/category_theory/limits/cones.lean
 - \+ *lemma* category_theory.limits.cocone.extend_ι
@@ -3347,7 +3364,7 @@ Modified src/category_theory/natural_isomorphism.lean
 
 
 Modified src/category_theory/natural_transformation.lean
-
+- \+/\- *structure* category_theory.nat_trans
 
 Modified src/category_theory/opposites.lean
 - \+/\- *lemma* category_theory.functor.hom_obj

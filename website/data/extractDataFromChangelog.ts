@@ -69,3 +69,18 @@ export const extractDefsData = (
   changelog: ChangelogData
 ): ChangelogItemData[] =>
   extractItemsData(changelog).filter((item) => item.type === "def");
+
+export const extractAbbreviationsData = (
+  changelog: ChangelogData
+): ChangelogItemData[] =>
+  extractItemsData(changelog).filter((item) => item.type === "abbreviation");
+
+export const extractStructuresData = (
+  changelog: ChangelogData
+): ChangelogItemData[] =>
+  extractItemsData(changelog).filter((item) => item.type === "structure");
+
+export const extractInductivesData = (
+  changelog: ChangelogData
+): ChangelogItemData[] =>
+  extractItemsData(changelog).filter((item) => item.type === "inductive");

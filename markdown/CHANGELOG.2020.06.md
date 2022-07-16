@@ -646,6 +646,7 @@ Modified src/algebra/homology/homology.lean
 - \+/\- *lemma* cochain_complex.cohomology_map_comp
 - \+/\- *lemma* cochain_complex.cohomology_map_condition
 - \+/\- *lemma* cochain_complex.cohomology_map_id
+- \+/\- *abbreviation* cochain_complex.image_map
 - \+/\- *lemma* cochain_complex.image_map_ι
 - \+/\- *lemma* cochain_complex.induced_maps_commute
 - \+/\- *def* cochain_complex.kernel_functor
@@ -660,6 +661,7 @@ Modified src/algebraic_geometry/presheafed_space.lean
 - \+/\- *lemma* algebraic_geometry.PresheafedSpace.ext
 - \+/\- *lemma* algebraic_geometry.PresheafedSpace.f_as_coe
 - \+/\- *def* algebraic_geometry.PresheafedSpace.forget
+- \+/\- *structure* algebraic_geometry.PresheafedSpace.hom
 - \+/\- *lemma* algebraic_geometry.PresheafedSpace.hom_mk_coe
 - \+/\- *def* algebraic_geometry.PresheafedSpace.id
 - \+/\- *lemma* algebraic_geometry.PresheafedSpace.id_c
@@ -693,6 +695,8 @@ Modified src/category_theory/category/default.lean
 
 Modified src/category_theory/closed/cartesian.lean
 - \+/\- *def* category_theory.binary_product_exponentiable
+- \+/\- *abbreviation* category_theory.cartesian_closed
+- \+/\- *abbreviation* category_theory.exponentiable
 - \+/\- *def* category_theory.mul_zero
 - \+/\- *def* category_theory.pow_zero
 - \+/\- *def* category_theory.prod_coprod_distrib
@@ -707,6 +711,7 @@ Modified src/category_theory/differential_object.lean
 - \+/\- *def* category_theory.differential_object.forget
 - \+/\- *def* category_theory.differential_object.hom.comp
 - \+/\- *def* category_theory.differential_object.hom.id
+- \+/\- *structure* category_theory.differential_object.hom
 - \+/\- *lemma* category_theory.differential_object.id_f
 - \+/\- *lemma* category_theory.differential_object.zero_f
 
@@ -756,7 +761,8 @@ Modified src/category_theory/limits/preserves.lean
 - \+/\- *def* category_theory.limits.preserves_limit_iso
 
 Modified src/category_theory/limits/shapes/binary_products.lean
-
+- \+/\- *abbreviation* category_theory.limits.coprod.map
+- \+/\- *abbreviation* category_theory.limits.prod.map
 
 Modified src/category_theory/limits/shapes/biproducts.lean
 - \+/\- *def* category_theory.limits.binary_bicone.to_cocone
@@ -767,23 +773,34 @@ Modified src/category_theory/limits/shapes/biproducts.lean
 - \+/\- *lemma* category_theory.limits.binary_bicone.to_cone_X
 - \+/\- *lemma* category_theory.limits.binary_bicone.to_cone_π_app_left
 - \+/\- *lemma* category_theory.limits.binary_bicone.to_cone_π_app_right
+- \+/\- *abbreviation* category_theory.limits.biprod.desc
+- \+/\- *abbreviation* category_theory.limits.biprod.fst
 - \+/\- *lemma* category_theory.limits.biprod.hom_ext'
 - \+/\- *lemma* category_theory.limits.biprod.hom_ext
+- \+/\- *abbreviation* category_theory.limits.biprod.inl
 - \+/\- *lemma* category_theory.limits.biprod.inl_fst
 - \+/\- *lemma* category_theory.limits.biprod.inl_map
 - \+/\- *lemma* category_theory.limits.biprod.inl_snd
+- \+/\- *abbreviation* category_theory.limits.biprod.inr
 - \+/\- *lemma* category_theory.limits.biprod.inr_fst
 - \+/\- *lemma* category_theory.limits.biprod.inr_map
 - \+/\- *lemma* category_theory.limits.biprod.inr_snd
+- \+/\- *abbreviation* category_theory.limits.biprod.lift
+- \+/\- *abbreviation* category_theory.limits.biprod.map'
+- \+/\- *abbreviation* category_theory.limits.biprod.map
 - \+/\- *lemma* category_theory.limits.biprod.map_eq
 - \+/\- *lemma* category_theory.limits.biprod.map_eq_map'
 - \+/\- *lemma* category_theory.limits.biprod.map_fst
 - \+/\- *def* category_theory.limits.biprod.map_iso
 - \+/\- *lemma* category_theory.limits.biprod.map_snd
+- \+/\- *abbreviation* category_theory.limits.biprod.snd
+- \+/\- *abbreviation* category_theory.limits.biprod
 - \+/\- *def* category_theory.limits.biprod_iso
 - \+/\- *lemma* category_theory.limits.biproduct.hom_ext'
 - \+/\- *lemma* category_theory.limits.biproduct.hom_ext
 - \+/\- *lemma* category_theory.limits.biproduct.inl_map
+- \+/\- *abbreviation* category_theory.limits.biproduct.map'
+- \+/\- *abbreviation* category_theory.limits.biproduct.map
 - \+/\- *lemma* category_theory.limits.biproduct.map_eq
 - \+/\- *lemma* category_theory.limits.biproduct.map_eq_map'
 - \+/\- *def* category_theory.limits.has_binary_biproduct.of_has_binary_coproduct
@@ -825,7 +842,7 @@ Modified src/category_theory/limits/shapes/finite_products.lean
 
 
 Modified src/category_theory/limits/shapes/images.lean
-
+- \+/\- *structure* category_theory.limits.strong_epi_mono_factorisation
 
 Modified src/category_theory/limits/shapes/kernels.lean
 - \+/\- *def* category_theory.limits.has_cokernels_of_has_finite_colimits
@@ -846,6 +863,10 @@ Modified src/category_theory/limits/shapes/regular_mono.lean
 Modified src/category_theory/limits/shapes/terminal.lean
 - \+/\- *def* category_theory.limits.has_initial_of_unique
 - \+/\- *def* category_theory.limits.has_terminal_of_unique
+- \+/\- *abbreviation* category_theory.limits.initial.to
+- \+/\- *abbreviation* category_theory.limits.initial
+- \+/\- *abbreviation* category_theory.limits.terminal.from
+- \+/\- *abbreviation* category_theory.limits.terminal
 
 Modified src/category_theory/limits/shapes/wide_pullbacks.lean
 - \+/\- *def* has_finite_wide_pullbacks_of_has_finite_limits
@@ -864,7 +885,8 @@ Modified src/category_theory/monad/adjunction.lean
 
 
 Modified src/category_theory/monad/algebra.lean
-
+- \+/\- *structure* category_theory.comonad.coalgebra
+- \+/\- *structure* category_theory.monad.algebra
 
 Modified src/category_theory/monad/limits.lean
 - \+/\- *def* category_theory.has_limits_of_reflective
@@ -1583,19 +1605,31 @@ Modified src/category_theory/abelian/basic.lean
 
 Modified src/category_theory/limits/shapes/binary_products.lean
 - \+/\- *def* category_theory.limits.coprod.desc'
+- \+/\- *abbreviation* category_theory.limits.coprod.desc
 - \+/\- *lemma* category_theory.limits.coprod.desc_comp_comp
 - \+/\- *lemma* category_theory.limits.coprod.hom_ext
+- \+/\- *abbreviation* category_theory.limits.coprod.inl
 - \+/\- *lemma* category_theory.limits.coprod.inl_desc
+- \+/\- *abbreviation* category_theory.limits.coprod.inr
 - \+/\- *lemma* category_theory.limits.coprod.inr_desc
+- \+ *abbreviation* category_theory.limits.coprod.map_iso
 - \+ *lemma* category_theory.limits.coprod.map_iso_hom
 - \+ *lemma* category_theory.limits.coprod.map_iso_inv
+- \+/\- *abbreviation* category_theory.limits.coprod
+- \+ *abbreviation* category_theory.limits.has_binary_coproduct
+- \+ *abbreviation* category_theory.limits.has_binary_product
+- \+/\- *abbreviation* category_theory.limits.prod.fst
 - \+/\- *lemma* category_theory.limits.prod.hom_ext
 - \+/\- *def* category_theory.limits.prod.lift'
+- \+/\- *abbreviation* category_theory.limits.prod.lift
 - \+/\- *lemma* category_theory.limits.prod.lift_comp_comp
 - \+/\- *lemma* category_theory.limits.prod.lift_fst
 - \+/\- *lemma* category_theory.limits.prod.lift_snd
+- \+ *abbreviation* category_theory.limits.prod.map_iso
 - \+ *lemma* category_theory.limits.prod.map_iso_hom
 - \+ *lemma* category_theory.limits.prod.map_iso_inv
+- \+/\- *abbreviation* category_theory.limits.prod.snd
+- \+/\- *abbreviation* category_theory.limits.prod
 - \+ *def* category_theory.limits.walking_pair.equiv_bool
 - \+ *lemma* category_theory.limits.walking_pair.equiv_bool_apply_left
 - \+ *lemma* category_theory.limits.walking_pair.equiv_bool_apply_right
@@ -1613,6 +1647,7 @@ Modified src/category_theory/limits/shapes/biproducts.lean
 - \+ *def* category_theory.limits.bicone.to_binary_bicone_is_limit
 - \+/\- *def* category_theory.limits.bicone.to_cocone
 - \+/\- *def* category_theory.limits.bicone.to_cone
+- \+/\- *structure* category_theory.limits.bicone
 - \+ *lemma* category_theory.limits.bicone_ι_π_ne
 - \+ *lemma* category_theory.limits.bicone_ι_π_self
 - \+ *lemma* category_theory.limits.binary_bicone.to_cocone_X
@@ -1636,6 +1671,8 @@ Modified src/category_theory/limits/shapes/biproducts.lean
 - \+ *lemma* category_theory.limits.biprod.inr_map
 - \+/\- *lemma* category_theory.limits.biprod.inr_snd
 - \+ *lemma* category_theory.limits.biprod.lift_eq
+- \+ *abbreviation* category_theory.limits.biprod.map'
+- \+/\- *abbreviation* category_theory.limits.biprod.map
 - \+ *lemma* category_theory.limits.biprod.map_eq
 - \+ *lemma* category_theory.limits.biprod.map_eq_map'
 - \+ *lemma* category_theory.limits.biprod.map_fst
@@ -1643,18 +1680,26 @@ Modified src/category_theory/limits/shapes/biproducts.lean
 - \+ *lemma* category_theory.limits.biprod.map_snd
 - \+ *lemma* category_theory.limits.biprod.symmetry'
 - \+ *lemma* category_theory.limits.biprod.symmetry
+- \+ *abbreviation* category_theory.limits.biproduct.bicone
 - \+ *lemma* category_theory.limits.biproduct.desc_eq
 - \+ *lemma* category_theory.limits.biproduct.hom_ext'
 - \+ *lemma* category_theory.limits.biproduct.hom_ext
 - \+ *lemma* category_theory.limits.biproduct.inl_map
+- \+ *abbreviation* category_theory.limits.biproduct.is_colimit
+- \+ *abbreviation* category_theory.limits.biproduct.is_limit
 - \+ *lemma* category_theory.limits.biproduct.lift_desc
 - \+ *lemma* category_theory.limits.biproduct.lift_eq
+- \+ *abbreviation* category_theory.limits.biproduct.map'
+- \+/\- *abbreviation* category_theory.limits.biproduct.map
 - \+ *lemma* category_theory.limits.biproduct.map_eq
 - \+ *lemma* category_theory.limits.biproduct.map_eq_map'
 - \+ *lemma* category_theory.limits.biproduct.total
+- \+/\- *abbreviation* category_theory.limits.biproduct.ι
 - \+ *lemma* category_theory.limits.biproduct.ι_π
 - \+ *lemma* category_theory.limits.biproduct.ι_π_ne
 - \+ *lemma* category_theory.limits.biproduct.ι_π_self
+- \+/\- *abbreviation* category_theory.limits.biproduct.π
+- \+/\- *abbreviation* category_theory.limits.biproduct
 - \+/\- *def* category_theory.limits.biproduct_iso
 - \+ *def* category_theory.limits.has_binary_biproduct.of_has_binary_coproduct
 - \+ *def* category_theory.limits.has_binary_biproduct.of_has_binary_product
@@ -1671,7 +1716,18 @@ Modified src/category_theory/limits/shapes/biproducts.lean
 - \- *def* category_theory.limits.has_preadditive_binary_biproducts_of_has_binary_products
 
 Modified src/category_theory/limits/shapes/products.lean
-
+- \+ *abbreviation* category_theory.limits.has_coproduct
+- \+ *abbreviation* category_theory.limits.has_coproducts_of_shape
+- \+ *abbreviation* category_theory.limits.has_product
+- \+ *abbreviation* category_theory.limits.has_products_of_shape
+- \+/\- *abbreviation* category_theory.limits.pi.lift
+- \+/\- *abbreviation* category_theory.limits.pi.map
+- \+/\- *abbreviation* category_theory.limits.pi.π
+- \+/\- *abbreviation* category_theory.limits.pi_obj
+- \+/\- *abbreviation* category_theory.limits.sigma.desc
+- \+/\- *abbreviation* category_theory.limits.sigma.map
+- \+/\- *abbreviation* category_theory.limits.sigma.ι
+- \+/\- *abbreviation* category_theory.limits.sigma_obj
 
 
 
@@ -1866,6 +1922,7 @@ Modified src/category_theory/limits/shapes/zero.lean
 
 Modified src/category_theory/punit.lean
 - \+ *def* category_theory.functor.equiv
+- \+ *abbreviation* category_theory.functor.from_punit
 - \+ *lemma* category_theory.functor.punit_ext'
 - \+ *def* category_theory.functor.punit_ext
 - \+/\- *def* category_theory.functor.star
@@ -1899,6 +1956,7 @@ Deleted src/group_theory/submonoid.lean
 - \- *def* add_submonoid.of_submonoid
 - \- *lemma* add_submonoid.smul_mem
 - \- *def* add_submonoid.to_submonoid
+- \- *structure* add_submonoid
 - \- *theorem* free_monoid.closure_range_of
 - \- *def* monoid_hom.cod_mrestrict
 - \- *lemma* monoid_hom.coe_mrange
@@ -2015,8 +2073,10 @@ Deleted src/group_theory/submonoid.lean
 - \- *def* submonoid.to_add_submonoid
 - \- *lemma* submonoid.top_prod
 - \- *lemma* submonoid.top_prod_top
+- \- *structure* submonoid
 
 Added src/group_theory/submonoid/basic.lean
+- \+ *structure* add_submonoid
 - \+ *lemma* monoid_hom.coe_of_mdense
 - \+ *def* monoid_hom.eq_mlocus
 - \+ *lemma* monoid_hom.eq_of_eq_on_mdense
@@ -2060,6 +2120,7 @@ Added src/group_theory/submonoid/basic.lean
 - \+ *theorem* submonoid.mul_mem
 - \+ *theorem* submonoid.one_mem
 - \+ *lemma* submonoid.subset_closure
+- \+ *structure* submonoid
 
 Added src/group_theory/submonoid/default.lean
 
@@ -2939,7 +3000,7 @@ Modified src/category_theory/natural_isomorphism.lean
 - \- *def* category_theory.functor.ulift_up_down
 
 Modified src/category_theory/natural_transformation.lean
-
+- \+/\- *structure* category_theory.nat_trans
 
 Modified src/category_theory/products/associator.lean
 - \+/\- *def* category_theory.prod.associator
@@ -3344,8 +3405,10 @@ Modified src/category_theory/closed/cartesian.lean
 
 
 Modified src/category_theory/equivalence.lean
+- \+ *abbreviation* category_theory.equivalence.counit
 - \- *def* category_theory.equivalence.counit
 - \- *lemma* category_theory.equivalence.counit_def
+- \+ *abbreviation* category_theory.equivalence.counit_inv
 - \- *def* category_theory.equivalence.counit_inv
 - \- *lemma* category_theory.equivalence.counit_inv_def
 - \+ *lemma* category_theory.equivalence.equivalence_mk'_counit
@@ -3357,8 +3420,10 @@ Modified src/category_theory/equivalence.lean
 - \+/\- *lemma* category_theory.equivalence.functor_unit_comp
 - \+ *lemma* category_theory.equivalence.inverse_as_equivalence
 - \+ *lemma* category_theory.equivalence.inverse_inv
+- \+ *abbreviation* category_theory.equivalence.unit
 - \- *def* category_theory.equivalence.unit
 - \- *lemma* category_theory.equivalence.unit_def
+- \+ *abbreviation* category_theory.equivalence.unit_inv
 - \- *def* category_theory.equivalence.unit_inv
 - \- *lemma* category_theory.equivalence.unit_inv_def
 - \+ *lemma* category_theory.functor.as_equivalence_functor
@@ -3655,13 +3720,16 @@ Modified src/tactic/core.lean
 Deleted src/tactic/linarith.lean
 - \- *lemma* linarith.add_subst
 - \- *def* linarith.comp.vars
+- \- *structure* linarith.comp
 - \- *def* linarith.comp_source.to_string
+- \- *inductive* linarith.comp_source
 - \- *lemma* linarith.div_subst
 - \- *lemma* linarith.eq_of_eq_of_eq
 - \- *lemma* linarith.eq_of_not_lt_of_not_gt
 - \- *def* linarith.ineq.cmp
 - \- *def* linarith.ineq.max
 - \- *def* linarith.ineq.to_string
+- \- *inductive* linarith.ineq
 - \- *lemma* linarith.int.coe_nat_bit0
 - \- *lemma* linarith.int.coe_nat_bit0_mul
 - \- *lemma* linarith.int.coe_nat_bit1
@@ -3700,9 +3768,11 @@ Added src/tactic/linarith/datatypes.lean
 - \+ *def* linarith.comp.coeff_of
 - \+ *def* linarith.comp.scale
 - \+ *def* linarith.comp.vars
+- \+ *structure* linarith.comp
 - \+ *def* linarith.ineq.cmp
 - \+ *def* linarith.ineq.max
 - \+ *def* linarith.ineq.to_string
+- \+ *inductive* linarith.ineq
 - \+ *def* linarith.linexp.cmp
 - \+ *def* linarith.linexp.contains
 - \+ *def* linarith.linexp.get
@@ -3716,6 +3786,7 @@ Added src/tactic/linarith/default.lean
 
 Added src/tactic/linarith/elimination.lean
 - \+ *def* linarith.comp_source.to_string
+- \+ *inductive* linarith.comp_source
 
 Added src/tactic/linarith/frontend.lean
 
@@ -4038,10 +4109,12 @@ Renamed src/geometry/manifold/manifold.lean to src/geometry/manifold/charted_spa
 - \+ *lemma* charted_space_core.open_source'
 - \+ *lemma* charted_space_core.open_target
 - \+ *def* charted_space_core.to_charted_space
+- \+ *structure* charted_space_core
 - \- *def* manifold_core.local_homeomorph
 - \- *lemma* manifold_core.open_source'
 - \- *lemma* manifold_core.open_target
 - \- *def* manifold_core.to_manifold
+- \- *structure* manifold_core
 - \+ *lemma* mem_maximal_atlas_iff
 - \+/\- *lemma* model_space_atlas
 - \+/\- *def* structomorph.refl
@@ -5626,6 +5699,9 @@ Modified src/category_theory/limits/shapes/binary_products.lean
 
 
 Modified src/category_theory/limits/shapes/biproducts.lean
+- \+/\- *abbreviation* category_theory.limits.biproduct.ι
+- \+/\- *abbreviation* category_theory.limits.biproduct.π
+- \+/\- *abbreviation* category_theory.limits.biproduct
 - \+/\- *def* category_theory.limits.biproduct_iso
 
 Modified src/category_theory/limits/shapes/constructions/binary_products.lean
@@ -5638,7 +5714,14 @@ Modified src/category_theory/limits/shapes/constructions/preserve_binary_product
 
 
 Modified src/category_theory/limits/shapes/products.lean
-
+- \+/\- *abbreviation* category_theory.limits.cofan
+- \+/\- *abbreviation* category_theory.limits.fan
+- \+/\- *abbreviation* category_theory.limits.pi.lift
+- \+/\- *abbreviation* category_theory.limits.pi.π
+- \+/\- *abbreviation* category_theory.limits.pi_obj
+- \+/\- *abbreviation* category_theory.limits.sigma.desc
+- \+/\- *abbreviation* category_theory.limits.sigma.ι
+- \+/\- *abbreviation* category_theory.limits.sigma_obj
 
 Modified src/category_theory/limits/shapes/zero.lean
 
@@ -5660,7 +5743,9 @@ Modified src/meta/rb_map.lean
 
 Modified src/tactic/linarith.lean
 - \+ *def* linarith.comp.vars
+- \+ *structure* linarith.comp
 - \+ *def* linarith.comp_source.to_string
+- \+ *inductive* linarith.comp_source
 - \+ *def* linarith.linexp.vars
 
 
@@ -6164,6 +6249,7 @@ Added src/algebra/category/Algebra/basic.lean
 - \+ *def* Algebra.of
 - \+ *lemma* Algebra.of_apply
 - \+ *def* Algebra.of_self_iso
+- \+ *structure* Algebra
 - \+ *def* alg_equiv.to_Algebra_iso
 - \+ *def* alg_equiv_iso_Algebra_iso
 - \+ *def* category_theory.iso.to_alg_equiv
@@ -6197,6 +6283,7 @@ Added src/algebra/group_action_hom.lean
 - \+ *lemma* distrib_mul_action_hom.map_smul
 - \+ *lemma* distrib_mul_action_hom.map_sub
 - \+ *lemma* distrib_mul_action_hom.map_zero
+- \+ *structure* distrib_mul_action_hom
 - \+ *def* mul_action_hom.comp
 - \+ *lemma* mul_action_hom.comp_apply
 - \+ *lemma* mul_action_hom.comp_id
@@ -6207,6 +6294,7 @@ Added src/algebra/group_action_hom.lean
 - \+ *lemma* mul_action_hom.map_smul
 - \+ *def* mul_action_hom.to_quotient
 - \+ *lemma* mul_action_hom.to_quotient_apply
+- \+ *structure* mul_action_hom
 - \+ *lemma* mul_semiring_action_hom.coe_fn_coe'
 - \+ *lemma* mul_semiring_action_hom.coe_fn_coe
 - \+ *def* mul_semiring_action_hom.comp
@@ -6223,6 +6311,7 @@ Added src/algebra/group_action_hom.lean
 - \+ *lemma* mul_semiring_action_hom.map_smul
 - \+ *lemma* mul_semiring_action_hom.map_sub
 - \+ *lemma* mul_semiring_action_hom.map_zero
+- \+ *structure* mul_semiring_action_hom
 
 
 
@@ -6450,6 +6539,7 @@ Cartesian closed categories, from my topos project.
 #### Estimated changes
 Added src/category_theory/closed/cartesian.lean
 - \+ *def* category_theory.binary_product_exponentiable
+- \+ *abbreviation* category_theory.cartesian_closed
 - \+ *def* category_theory.cartesian_closed_of_equiv
 - \+ *def* category_theory.coev
 - \+ *lemma* category_theory.coev_ev
@@ -6469,6 +6559,7 @@ Added src/category_theory/closed/cartesian.lean
 - \+ *lemma* category_theory.exp_comparison_natural_left
 - \+ *lemma* category_theory.exp_comparison_natural_right
 - \+ *def* category_theory.exp_terminal_iso_self
+- \+ *abbreviation* category_theory.exponentiable
 - \+ *def* category_theory.internal_hom
 - \+ *def* category_theory.internalize_hom
 - \+ *def* category_theory.is_cartesian_closed.curry
@@ -6862,6 +6953,7 @@ Modified src/analysis/normed_space/real_inner_product.lean
 - \+/\- *def* euclidean_space
 - \+ *lemma* findim_euclidean_space
 - \+ *lemma* findim_euclidean_space_fin
+- \+ *structure* inner_product_space.core
 - \+ *lemma* inner_product_space.of_core.abs_inner_le_norm
 - \+ *lemma* inner_product_space.of_core.inner_add_add_self
 - \+ *lemma* inner_product_space.of_core.inner_add_left
@@ -7017,6 +7109,7 @@ Modified src/analysis/normed_space/hahn_banach.lean
 - \+ *theorem* exists_dual_vector
 
 Modified src/analysis/normed_space/operator_norm.lean
+- \+ *abbreviation* continuous_linear_equiv.coord
 - \+ *lemma* continuous_linear_equiv.coord_norm
 - \+ *lemma* continuous_linear_equiv.homothety_inverse
 - \+ *def* continuous_linear_equiv.of_homothety
@@ -7029,6 +7122,7 @@ Modified src/analysis/normed_space/operator_norm.lean
 - \+ *lemma* continuous_linear_map.to_span_singleton_norm
 
 Modified src/linear_algebra/basic.lean
+- \+ *abbreviation* linear_equiv.coord
 - \+ *lemma* linear_equiv.coord_self
 - \+ *def* linear_equiv.to_span_nonzero_singleton
 - \+ *lemma* linear_equiv.to_span_nonzero_singleton_one
@@ -7260,7 +7354,7 @@ Modified test/linarith.lean
 doc(algebra/group/to_additive): add doc strings and tactic doc entry ([#3055](https://github.com/leanprover-community/mathlib/pull/3055))
 #### Estimated changes
 Modified src/algebra/group/to_additive.lean
-
+- \+/\- *structure* to_additive.value_type
 
 
 
@@ -7593,6 +7687,7 @@ Modified src/algebra/module.lean
 - \- *lemma* is_linear_map.map_add
 - \- *lemma* is_linear_map.map_smul
 - \+/\- *def* is_linear_map.mk'
+- \+ *structure* is_linear_map
 - \+/\- *theorem* linear_map.is_linear
 - \+/\- *lemma* linear_map.map_add
 - \+/\- *lemma* linear_map.map_smul
@@ -7723,6 +7818,7 @@ Modified src/topology/algebra/multilinear.lean
 
 Modified src/topology/algebra/open_subgroup.lean
 - \+/\- *lemma* ideal.is_open_of_open_subideal
+- \+ *structure* open_add_subgroup
 - \- *lemma* open_subgroup.coe_injective
 - \+ *lemma* open_subgroup.coe_subgroup_le
 - \+ *lemma* open_subgroup.coe_subset
@@ -7735,6 +7831,7 @@ Modified src/topology/algebra/open_subgroup.lean
 - \+ *lemma* open_subgroup.mem_coe
 - \+ *lemma* open_subgroup.mem_coe_opens
 - \+ *lemma* open_subgroup.mem_coe_subgroup
+- \+ *structure* open_subgroup
 - \- *def* open_subgroup
 - \+ *lemma* subgroup.is_open_mono
 - \+ *lemma* subgroup.is_open_of_mem_nhds
@@ -7954,6 +8051,7 @@ Added src/group_theory/semidirect_product.lean
 - \+ *lemma* semidirect_product.right_hom_surjective
 - \+ *lemma* semidirect_product.right_inl
 - \+ *lemma* semidirect_product.right_inr
+- \+ *structure* semidirect_product
 
 
 
@@ -8199,9 +8297,12 @@ Added src/tactic/generalizes.lean
 
 
 Added test/generalizes.lean
+- \+ *inductive* Vec.eq
 - \+ *lemma* Vec.eq_cons_inversion
+- \+ *inductive* Vec.fancy_unit
 - \+ *lemma* Vec.test₁
 - \+ *lemma* Vec.test₂
+- \+ *inductive* Vec
 - \+ *lemma* example_from_docs₁
 - \+ *lemma* example_from_docs₂
 
@@ -8833,6 +8934,7 @@ Modified src/group_theory/subgroup.lean
 - \+ *def* add_subgroup.gmultiples
 - \+ *lemma* add_subgroup.gmultiples_eq_closure
 - \+ *lemma* add_subgroup.mem_gmultiples
+- \+ *structure* add_subgroup.normal
 - \+ *lemma* group.conj_mem_conjugates_of_set
 - \+ *def* group.conjugates
 - \+ *def* group.conjugates_of_set
@@ -8859,6 +8961,7 @@ Modified src/group_theory/subgroup.lean
 - \+ *lemma* subgroup.mem_gpowers
 - \+ *lemma* subgroup.normal.comap
 - \- *lemma* subgroup.normal.conj_mem
+- \+ *structure* subgroup.normal
 - \+ *def* subgroup.normal_closure
 - \+ *theorem* subgroup.normal_closure_eq_infi
 - \+ *theorem* subgroup.normal_closure_le_normal
@@ -9516,6 +9619,7 @@ Added src/data/real/conjugate_exponents.lean
 - \+ *lemma* real.is_conjugate_exponent.one_div_pos
 - \+ *lemma* real.is_conjugate_exponent.pos
 - \+ *lemma* real.is_conjugate_exponent.sub_one_ne_zero
+- \+ *structure* real.is_conjugate_exponent
 - \+ *lemma* real.is_conjugate_exponent_conjugate_exponent
 - \+ *lemma* real.is_conjugate_exponent_iff
 
@@ -9654,8 +9758,10 @@ We define order ideals and cofinal sets, and use them to prove the (very simple)
 Added src/order/ideal.lean
 - \+ *lemma* order.cofinal.above_mem
 - \+ *lemma* order.cofinal.le_above
+- \+ *structure* order.cofinal
 - \+ *lemma* order.cofinal_meets_ideal_of_cofinals
 - \+ *def* order.ideal.principal
+- \+ *structure* order.ideal
 - \+ *def* order.ideal_of_cofinals
 - \+ *lemma* order.mem_ideal_of_cofinals
 - \+ *lemma* order.sequence_of_cofinals.encode_mem
@@ -10334,6 +10440,7 @@ Added src/dynamics/circle/rotation_number/translation_number.lean
 - \+ *lemma* circle_deg1_lift.transnum_aux_seq_dist_lt
 - \+ *lemma* circle_deg1_lift.transnum_aux_seq_zero
 - \+ *lemma* circle_deg1_lift.units_coe
+- \+ *structure* circle_deg1_lift
 
 
 
@@ -11223,6 +11330,7 @@ Modified src/linear_algebra/sesquilinear_form.lean
 - \+/\- *lemma* sesq_form.smul_right
 - \+/\- *lemma* sesq_form.zero_left
 - \+/\- *lemma* sesq_form.zero_right
+- \+/\- *structure* sesq_form
 - \+/\- *lemma* sym_sesq_form.is_refl
 - \+/\- *def* sym_sesq_form.is_sym
 - \+/\- *lemma* sym_sesq_form.sym
@@ -11244,6 +11352,7 @@ Modified src/ring_theory/maps.lean
 - \- *lemma* ring_anti_equiv.map_sub
 - \- *lemma* ring_anti_equiv.map_zero
 - \- *lemma* ring_anti_equiv.map_zero_iff
+- \- *structure* ring_anti_equiv
 - \- *lemma* ring_equiv.bijective
 - \- *lemma* ring_equiv.map_zero_iff
 - \- *lemma* ring_invo.bijective
@@ -11260,6 +11369,7 @@ Modified src/ring_theory/maps.lean
 - \+ *def* ring_invo.mk'
 - \+ *lemma* ring_invo.to_fun_eq_coe
 - \- *def* ring_invo.to_ring_anti_equiv
+- \+/\- *structure* ring_invo
 
 Modified src/topology/algebra/uniform_ring.lean
 - \+ *def* uniform_space.completion.coe_ring_hom
@@ -11398,7 +11508,9 @@ Modified src/ring_theory/localization.lean
 - \- *lemma* localization.sec_spec'
 - \- *lemma* localization.sec_spec
 - \- *lemma* localization.surj
+- \- *abbreviation* localization.to_map
 - \- *lemma* localization.to_map_injective
+- \- *structure* localization
 - \+ *def* localization_map.codomain
 - \+ *lemma* localization_map.epic_of_localization_map
 - \+ *lemma* localization_map.eq_iff_eq
@@ -11463,7 +11575,9 @@ Modified src/ring_theory/localization.lean
 - \+ *lemma* localization_map.sec_spec'
 - \+ *lemma* localization_map.sec_spec
 - \+ *lemma* localization_map.surj
+- \+ *abbreviation* localization_map.to_map
 - \+ *lemma* localization_map.to_map_injective
+- \+ *structure* localization_map
 - \- *def* ring_hom.to_localization
 - \+ *def* ring_hom.to_localization_map
 - \+ *def* submonoid.localization_map.to_ring_localization
@@ -11887,6 +12001,7 @@ Added src/analysis/normed_space/enorm.lean
 - \+ *lemma* enorm.map_zero
 - \+ *lemma* enorm.max_map
 - \+ *lemma* enorm.top_map
+- \+ *structure* enorm
 
 
 
@@ -12190,6 +12305,7 @@ chore(group_theory/sub*): move unbundled submonoids and subgroups to `deprecated
 * unbundled versions import bundled.
 #### Estimated changes
 Added src/deprecated/subgroup.lean
+- \+ *inductive* add_group.in_closure
 - \+ *lemma* additive.is_add_subgroup
 - \+ *theorem* additive.is_add_subgroup_iff
 - \+ *lemma* additive.normal_add_subgroup
@@ -12215,6 +12331,7 @@ Added src/deprecated/subgroup.lean
 - \+ *theorem* group.exists_list_of_mem_closure
 - \+ *theorem* group.gpowers_eq_closure
 - \+ *lemma* group.image_closure
+- \+ *inductive* group.in_closure
 - \+ *theorem* group.mclosure_inv_subset
 - \+ *theorem* group.mclosure_subset
 - \+ *lemma* group.mem_closure
@@ -12279,6 +12396,7 @@ Added src/deprecated/subgroup.lean
 - \+ *def* subgroup.of
 
 Added src/deprecated/submonoid.lean
+- \+ *inductive* add_monoid.in_closure
 - \+ *lemma* additive.is_add_submonoid
 - \+ *theorem* additive.is_add_submonoid_iff
 - \+ *lemma* image.is_submonoid
@@ -12300,6 +12418,7 @@ Added src/deprecated/submonoid.lean
 - \+ *theorem* monoid.closure_subset
 - \+ *theorem* monoid.exists_list_of_mem_closure
 - \+ *lemma* monoid.image_closure
+- \+ *inductive* monoid.in_closure
 - \+ *theorem* monoid.mem_closure_union_iff
 - \+ *theorem* monoid.subset_closure
 - \+ *lemma* multiples.add_mem
@@ -12319,6 +12438,7 @@ Deleted src/group_theory/bundled_subgroup.lean
 - \- *lemma* add_subgroup.mem_closure_singleton
 - \- *def* add_subgroup.of_subgroup
 - \- *def* add_subgroup.to_subgroup
+- \- *structure* add_subgroup
 - \- *lemma* monoid_hom.coe_range
 - \- *lemma* monoid_hom.comap_ker
 - \- *def* monoid_hom.eq_locus
@@ -12409,6 +12529,7 @@ Deleted src/group_theory/bundled_subgroup.lean
 - \- *def* subgroup.to_add_subgroup
 - \- *lemma* subgroup.top_prod
 - \- *lemma* subgroup.top_prod_top
+- \- *structure* subgroup
 
 Modified src/group_theory/coset.lean
 
@@ -12417,10 +12538,12 @@ Modified src/group_theory/free_group.lean
 
 
 Modified src/group_theory/subgroup.lean
+- \- *inductive* add_group.in_closure
 - \+ *lemma* add_subgroup.gsmul_mem
 - \+ *lemma* add_subgroup.mem_closure_singleton
 - \+ *def* add_subgroup.of_subgroup
 - \+ *def* add_subgroup.to_subgroup
+- \+ *structure* add_subgroup
 - \- *lemma* additive.is_add_subgroup
 - \- *theorem* additive.is_add_subgroup_iff
 - \- *lemma* additive.normal_add_subgroup
@@ -12446,6 +12569,7 @@ Modified src/group_theory/subgroup.lean
 - \- *theorem* group.exists_list_of_mem_closure
 - \- *theorem* group.gpowers_eq_closure
 - \- *lemma* group.image_closure
+- \- *inductive* group.in_closure
 - \- *theorem* group.mclosure_inv_subset
 - \- *theorem* group.mclosure_subset
 - \- *lemma* group.mem_closure
@@ -12596,8 +12720,10 @@ Modified src/group_theory/subgroup.lean
 - \+ *def* subgroup.to_add_subgroup
 - \+ *lemma* subgroup.top_prod
 - \+ *lemma* subgroup.top_prod_top
+- \+ *structure* subgroup
 
 Modified src/group_theory/submonoid.lean
+- \- *inductive* add_monoid.in_closure
 - \- *lemma* additive.is_add_submonoid
 - \- *theorem* additive.is_add_submonoid_iff
 - \- *lemma* image.is_submonoid
@@ -12619,6 +12745,7 @@ Modified src/group_theory/submonoid.lean
 - \- *theorem* monoid.closure_subset
 - \- *theorem* monoid.exists_list_of_mem_closure
 - \- *lemma* monoid.image_closure
+- \- *inductive* monoid.in_closure
 - \- *theorem* monoid.mem_closure_union_iff
 - \- *theorem* monoid.subset_closure
 - \- *lemma* multiples.add_mem
@@ -12711,6 +12838,8 @@ Modified src/category_theory/limits/shapes/kernels.lean
 - \+ *lemma* category_theory.limits.cokernel_not_mono_of_nonzero
 - \+ *lemma* category_theory.limits.eq_zero_of_epi_kernel
 - \+ *lemma* category_theory.limits.eq_zero_of_mono_cokernel
+- \+ *abbreviation* category_theory.limits.has_cokernel
+- \+ *abbreviation* category_theory.limits.has_kernel
 - \+/\- *def* category_theory.limits.kernel.iso_kernel
 - \+/\- *def* category_theory.limits.kernel.of_comp_iso
 - \+/\- *def* category_theory.limits.kernel.of_mono
@@ -12818,12 +12947,14 @@ Added src/linear_algebra/affine_space.lean
 - \+ *lemma* affine_map.map_vadd
 - \+ *lemma* affine_map.map_vsub
 - \+ *lemma* affine_map.to_fun_eq_coe
+- \+ *structure* affine_map
 - \+ *lemma* affine_space.mem_span_points
 - \+ *def* affine_space.span_points
 - \+ *lemma* affine_space.span_points_nonempty_of_nonempty
 - \+ *lemma* affine_space.vadd_mem_span_points_of_mem_span_points_of_mem_vector_span
 - \+ *def* affine_space.vector_span
 - \+ *lemma* affine_space.vsub_mem_vector_span_of_mem_span_points_of_mem_span_points
+- \+ *abbreviation* affine_space
 - \+ *def* affine_span
 - \+ *lemma* affine_span_coe
 - \+ *lemma* affine_span_mem
@@ -12831,6 +12962,7 @@ Added src/linear_algebra/affine_space.lean
 - \+ *lemma* affine_subspace.mem_univ
 - \+ *def* affine_subspace.univ
 - \+ *lemma* affine_subspace.univ_coe
+- \+ *structure* affine_subspace
 
 
 

@@ -532,6 +532,7 @@ Added src/category/monad/cont.lean
 - \+ *def* cont_t.with_cont_t
 - \+ *def* cont_t
 - \+ *def* monad_cont.goto
+- \+ *structure* monad_cont.label
 
 
 
@@ -1301,6 +1302,7 @@ Modified src/tactic/tidy.lean
 
 
 Modified test/tidy.lean
+- \+/\- *structure* tidy.test.B
 - \+/\- *def* tidy.test.d
 - \+/\- *def* tidy.test.tidy_test_0
 - \+/\- *def* tidy.test.tidy_test_1
@@ -2324,6 +2326,7 @@ Modified src/data/finmap.lean
 - \+/\- *def* finmap.replace
 - \+/\- *theorem* finmap.replace_to_finmap
 - \+/\- *def* finmap.singleton
+- \+/\- *structure* finmap
 
 Modified src/data/list/alist.lean
 - \+/\- *def* alist.erase
@@ -2356,6 +2359,7 @@ Modified src/data/list/alist.lean
 - \+/\- *theorem* alist.perm_replace
 - \+/\- *def* alist.replace
 - \+/\- *def* alist.singleton
+- \+/\- *structure* alist
 
 
 
@@ -2372,6 +2376,7 @@ Added src/topology/metric_space/isometry.lean
 - \+ *lemma* isometric.self_comp_symm
 - \+ *lemma* isometric.symm_comp_self
 - \+ *lemma* isometric.to_homeomorph_to_equiv
+- \+ *structure* isometric
 - \+ *theorem* isometry.comp
 - \+ *lemma* isometry.continuous
 - \+ *theorem* isometry.dist_eq
@@ -2498,7 +2503,7 @@ Added src/category/fold.lean
 feat(analysis/normed_space): bounded linear maps with the operator norm form a normed space (closes [#680](https://github.com/leanprover-community/mathlib/pull/680))
 #### Estimated changes
 Modified src/analysis/normed_space/basic.lean
-
+- \+ *structure* normed_space.core
 
 Added src/analysis/normed_space/operator_norm.lean
 - \+ *theorem* bounded_by_operator_norm

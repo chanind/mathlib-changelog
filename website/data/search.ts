@@ -18,6 +18,9 @@ const rehydrateExportedSearchItems = (
     d: "def",
     l: "lemma",
     t: "theorem",
+    a: "abbreviation",
+    i: "inductive",
+    s: "structure",
   };
   return exportedItems.map((item) => {
     const fullName = item.replace(/^[a-z]+:/i, "");

@@ -10,7 +10,13 @@ export interface CommitData {
 }
 
 export type ChangeType = "mod" | "add" | "del";
-export type ItemType = "theorem" | "lemma" | "def";
+export type ItemType =
+  | "theorem"
+  | "lemma"
+  | "def"
+  | "abbreviation"
+  | "inductive"
+  | "structure";
 
 export interface DiffData {
   oldPath: string | null;

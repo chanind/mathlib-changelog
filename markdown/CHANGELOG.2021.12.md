@@ -496,6 +496,7 @@ Renamed src/data/sum.lean to src/data/sum/basic.lean
 - \+ *lemma* sum.lex.mono
 - \+ *lemma* sum.lex.mono_left
 - \+ *lemma* sum.lex.mono_right
+- \+/\- *inductive* sum.lex
 - \+ *lemma* sum.lex_acc_inl
 - \- *theorem* sum.lex_acc_inl
 - \+ *lemma* sum.lex_acc_inr
@@ -743,14 +744,20 @@ Modified src/category_theory/limits/preserves/shapes/terminal.lean
 Modified src/category_theory/limits/shapes/terminal.lean
 - \+/\- *def* category_theory.limits.as_empty_cocone
 - \+/\- *def* category_theory.limits.as_empty_cone
+- \+/\- *abbreviation* category_theory.limits.has_initial
 - \+ *lemma* category_theory.limits.has_initial_change_diagram
 - \+ *lemma* category_theory.limits.has_initial_change_universe
+- \+/\- *abbreviation* category_theory.limits.has_terminal
 - \+ *lemma* category_theory.limits.has_terminal_change_diagram
 - \+ *lemma* category_theory.limits.has_terminal_change_universe
+- \+/\- *abbreviation* category_theory.limits.initial
 - \+ *def* category_theory.limits.is_colimit_change_empty_cocone
 - \+ *def* category_theory.limits.is_colimit_empty_cocone_equiv
+- \+/\- *abbreviation* category_theory.limits.is_initial
 - \+ *def* category_theory.limits.is_limit_change_empty_cone
 - \+ *def* category_theory.limits.is_limit_empty_cone_equiv
+- \+/\- *abbreviation* category_theory.limits.is_terminal
+- \+/\- *abbreviation* category_theory.limits.terminal
 
 Modified src/category_theory/monad/limits.lean
 - \+/\- *lemma* category_theory.has_colimits_of_reflective
@@ -1344,6 +1351,7 @@ Modified src/category_theory/shift.lean
 - \+ *lemma* category_theory.opaque_eq_to_iso_inv
 - \+ *lemma* category_theory.opaque_eq_to_iso_symm
 - \- *def* category_theory.shift
+- \+ *abbreviation* category_theory.shift_add
 - \+ *lemma* category_theory.shift_add_hom_comp_eq_to_hom₁
 - \+ *lemma* category_theory.shift_add_hom_comp_eq_to_hom₁₂
 - \+ *lemma* category_theory.shift_add_hom_comp_eq_to_hom₂
@@ -1353,14 +1361,23 @@ Modified src/category_theory/shift.lean
 - \+ *lemma* category_theory.shift_comm_symm
 - \+ *def* category_theory.shift_equiv
 - \+ *lemma* category_theory.shift_equiv_triangle
+- \+ *abbreviation* category_theory.shift_functor
+- \+ *abbreviation* category_theory.shift_functor_add
+- \+ *abbreviation* category_theory.shift_functor_comp_shift_functor_neg
+- \+ *abbreviation* category_theory.shift_functor_neg_comp_shift_functor
+- \+ *abbreviation* category_theory.shift_functor_zero
+- \+ *structure* category_theory.shift_mk_core
 - \+ *def* category_theory.shift_monoidal_functor
 - \+ *lemma* category_theory.shift_neg_shift'
+- \+ *abbreviation* category_theory.shift_neg_shift
 - \+ *lemma* category_theory.shift_shift'
 - \+ *lemma* category_theory.shift_shift_neg'
+- \+ *abbreviation* category_theory.shift_shift_neg
 - \+ *lemma* category_theory.shift_shift_neg_hom_shift
 - \+ *lemma* category_theory.shift_shift_neg_inv_shift
 - \+ *lemma* category_theory.shift_shift_neg_shift_eq
 - \+ *lemma* category_theory.shift_zero'
+- \+ *abbreviation* category_theory.shift_zero
 - \+/\- *lemma* category_theory.shift_zero_eq_zero
 - \+ *lemma* category_theory.μ_inv_app_eq_to_hom
 
@@ -2015,12 +2032,15 @@ Modified src/combinatorics/simple_graph/connectivity.lean
 - \+ *lemma* simple_graph.walk.edges_reverse
 - \+ *lemma* simple_graph.walk.end_mem_tail_support_of_ne
 - \+ *lemma* simple_graph.walk.exists_eq_cons_of_ne
+- \+/\- *structure* simple_graph.walk.is_circuit
+- \+/\- *structure* simple_graph.walk.is_cycle
 - \+ *lemma* simple_graph.walk.is_path.mk'
 - \+ *lemma* simple_graph.walk.is_path.nil
 - \+ *lemma* simple_graph.walk.is_path.of_append_left
 - \+ *lemma* simple_graph.walk.is_path.of_append_right
 - \+ *lemma* simple_graph.walk.is_path.of_cons
 - \+ *lemma* simple_graph.walk.is_path.reverse
+- \+/\- *structure* simple_graph.walk.is_path
 - \+/\- *lemma* simple_graph.walk.is_path_def
 - \- *lemma* simple_graph.walk.is_path_of_cons_is_path
 - \+ *lemma* simple_graph.walk.is_path_reverse_iff
@@ -2031,6 +2051,7 @@ Modified src/combinatorics/simple_graph/connectivity.lean
 - \+ *lemma* simple_graph.walk.is_trail.of_append_right
 - \+ *lemma* simple_graph.walk.is_trail.of_cons
 - \+ *lemma* simple_graph.walk.is_trail.reverse
+- \+ *structure* simple_graph.walk.is_trail
 - \- *def* simple_graph.walk.is_trail
 - \+ *lemma* simple_graph.walk.is_trail_def
 - \- *lemma* simple_graph.walk.is_trail_of_cons_is_trail
@@ -2264,6 +2285,7 @@ feat(algebraic_geometry): Results about open immersions of schemes. ([#10977](ht
 #### Estimated changes
 Modified src/algebraic_geometry/Scheme.lean
 - \- *def* algebraic_geometry.Scheme.to_LocallyRingedSpace
+- \+/\- *structure* algebraic_geometry.Scheme
 
 Modified src/algebraic_geometry/open_immersion.lean
 - \+ *def* algebraic_geometry.LocallyRingedSpace.is_open_immersion.iso_restrict
@@ -2683,6 +2705,7 @@ Modified src/algebra/continued_fractions/computation/approximations.lean
 feat(ring_theory/localization): The localization at a fg submonoid is of finite type. ([#10990](https://github.com/leanprover-community/mathlib/pull/10990))
 #### Estimated changes
 Modified src/ring_theory/localization.lean
+- \+ *abbreviation* is_localization.equiv_inv_submonoid
 - \+ *lemma* is_localization.finite_type_of_monoid_fg
 - \+ *def* is_localization.inv_submonoid
 - \+ *lemma* is_localization.mem_inv_submonoid_iff_exists_mk'
@@ -3158,7 +3181,10 @@ Added src/combinatorics/simple_graph/connectivity.lean
 - \+ *lemma* simple_graph.walk.edges_subset_edge_set
 - \+ *lemma* simple_graph.walk.end_mem_support
 - \+ *def* simple_graph.walk.get_vert
+- \+ *structure* simple_graph.walk.is_circuit
+- \+ *structure* simple_graph.walk.is_cycle
 - \+ *lemma* simple_graph.walk.is_cycle_def
+- \+ *structure* simple_graph.walk.is_path
 - \+ *lemma* simple_graph.walk.is_path_def
 - \+ *lemma* simple_graph.walk.is_path_of_cons_is_path
 - \+ *def* simple_graph.walk.is_trail
@@ -3186,6 +3212,7 @@ Added src/combinatorics/simple_graph/connectivity.lean
 - \+ *lemma* simple_graph.walk.support_eq
 - \+ *lemma* simple_graph.walk.support_ne_nil
 - \+ *lemma* simple_graph.walk.support_nil
+- \+ *inductive* simple_graph.walk
 
 
 
@@ -3359,6 +3386,7 @@ Modified src/algebraic_geometry/open_immersion.lean
 - \+ *def* algebraic_geometry.Scheme.affine_basis_cover_of_affine
 - \+ *def* algebraic_geometry.Scheme.affine_cover
 - \+ *def* algebraic_geometry.Scheme.open_cover.bind
+- \+ *structure* algebraic_geometry.Scheme.open_cover
 - \+ *lemma* algebraic_geometry.is_open_immersion.open_range
 
 
@@ -3531,6 +3559,7 @@ Modified src/analysis/seminorm.lean
 - \+/\- *lemma* seminorm.mem_ball_zero
 - \+/\- *lemma* seminorm.sub_rev
 - \+/\- *lemma* seminorm.symmetric_ball_zero
+- \+/\- *structure* seminorm
 
 
 
@@ -3913,7 +3942,7 @@ Modified src/linear_algebra/prod.lean
 - \+/\- *def* linear_map.tunnel
 
 Modified src/order/closure.lean
-
+- \+/\- *structure* closure_operator
 
 Modified src/order/fixed_points.lean
 - \+/\- *def* order_hom.gfp
@@ -4293,6 +4322,7 @@ Modified src/data/real/ennreal.lean
 refactor(*): Random lemmas and modifications from the shifting refactor. ([#10940](https://github.com/leanprover-community/mathlib/pull/10940))
 #### Estimated changes
 Modified src/algebra/homology/differential_object.lean
+- \+ *abbreviation* category_theory.differential_object.X_eq_to_hom
 - \+ *lemma* category_theory.differential_object.X_eq_to_hom_refl
 - \+ *lemma* homological_complex.d_eq_to_hom
 - \+ *lemma* homological_complex.eq_to_hom_d
@@ -4614,6 +4644,7 @@ Modified src/linear_algebra/sesquilinear_form.lean
 - \- *lemma* sesq_form.sum_right
 - \- *lemma* sesq_form.zero_left
 - \- *lemma* sesq_form.zero_right
+- \- *structure* sesq_form
 
 
 
@@ -5919,6 +5950,8 @@ Modified src/ring_theory/local_properties.lean
 
 Modified src/ring_theory/localization.lean
 - \+ *def* is_localization.away.map
+- \+ *abbreviation* localization.away_lift
+- \+ *abbreviation* localization.away_map
 
 
 
@@ -5938,6 +5971,7 @@ Modified src/order/compactly_generated.lean
 
 Modified src/order/hom/basic.lean
 - \+/\- *lemma* order_hom.ext
+- \+ *abbreviation* order_hom_class
 
 Modified src/order/rel_iso.lean
 - \+/\- *theorem* rel_embedding.coe_fn_injective
@@ -6167,6 +6201,7 @@ Added src/category_theory/glue_data.lean
 - \+ *lemma* category_theory.glue_data.t_inv
 - \+ *def* category_theory.glue_data.ι
 - \+ *def* category_theory.glue_data.π
+- \+ *structure* category_theory.glue_data
 
 
 
@@ -6458,14 +6493,19 @@ Modified src/category_theory/sites/limits.lean
 
 Modified src/category_theory/sites/sheaf.lean
 - \- *lemma* category_theory.Sheaf.comp_app
+- \+ *structure* category_theory.Sheaf.hom
 - \- *lemma* category_theory.Sheaf.id_app
+- \+ *structure* category_theory.Sheaf
 - \- *def* category_theory.Sheaf
 - \- *lemma* category_theory.Sheaf_to_presheaf_obj
 - \+ *def* category_theory.sheaf_over
+- \- *abbreviation* category_theory.sheaf_over
 
 Modified src/category_theory/sites/sheaf_of_types.lean
 - \- *lemma* category_theory.SheafOfTypes.comp_app
+- \+ *structure* category_theory.SheafOfTypes.hom
 - \- *lemma* category_theory.SheafOfTypes.id_app
+- \+ *structure* category_theory.SheafOfTypes
 - \- *def* category_theory.SheafOfTypes
 - \- *lemma* category_theory.SheafOfTypes_to_presheaf_obj
 
@@ -7796,6 +7836,7 @@ Added src/analysis/convex/simplicial_complex/basic.lean
 - \+ *def* geometry.simplicial_complex.vertices
 - \+ *lemma* geometry.simplicial_complex.vertices_eq
 - \+ *lemma* geometry.simplicial_complex.vertices_subset_space
+- \+ *structure* geometry.simplicial_complex
 
 
 
@@ -7854,6 +7895,7 @@ Added src/order/hom/basic.lean
 - \+ *def* order_embedding.of_strict_mono
 - \+ *def* order_embedding.subtype
 - \+ *def* order_embedding.to_order_hom
+- \+ *abbreviation* order_embedding
 - \+ *def* order_hom.apply
 - \+ *lemma* order_hom.apply_mono
 - \+ *def* order_hom.coe_fn_hom
@@ -7893,6 +7935,7 @@ Added src/order/hom/basic.lean
 - \+ *def* order_hom.subtype.val
 - \+ *lemma* order_hom.to_fun_eq_coe
 - \+ *def* order_hom.unique
+- \+ *structure* order_hom
 - \+ *lemma* order_iso.apply_eq_iff_eq
 - \+ *lemma* order_iso.apply_eq_iff_eq_symm_apply
 - \+ *lemma* order_iso.apply_symm_apply
@@ -7941,6 +7984,7 @@ Added src/order/hom/basic.lean
 - \+ *def* order_iso.trans
 - \+ *lemma* order_iso.trans_apply
 - \+ *lemma* order_iso.trans_refl
+- \+ *abbreviation* order_iso
 - \+ *def* pi.eval_order_hom
 - \+ *def* rel_embedding.order_embedding_of_lt_embedding
 - \+ *lemma* rel_embedding.order_embedding_of_lt_embedding_apply
@@ -8007,6 +8051,7 @@ Deleted src/order/order_hom.lean
 - \- *lemma* order_hom.supr_apply
 - \- *lemma* order_hom.to_fun_eq_coe
 - \- *def* order_hom.unique
+- \- *structure* order_hom
 - \- *def* pi.eval_order_hom
 - \- *lemma* rel_embedding.to_order_hom_injective
 - \- *def* rel_hom.to_order_hom
@@ -8035,6 +8080,7 @@ Modified src/order/rel_iso.lean
 - \- *def* order_embedding.of_map_le_iff
 - \- *def* order_embedding.of_strict_mono
 - \- *def* order_embedding.subtype
+- \- *abbreviation* order_embedding
 - \- *lemma* order_iso.apply_eq_iff_eq
 - \- *lemma* order_iso.apply_eq_iff_eq_symm_apply
 - \- *lemma* order_iso.apply_symm_apply
@@ -8083,6 +8129,7 @@ Modified src/order/rel_iso.lean
 - \- *def* order_iso.trans
 - \- *lemma* order_iso.trans_apply
 - \- *lemma* order_iso.trans_refl
+- \- *abbreviation* order_iso
 - \- *def* rel_embedding.order_embedding_of_lt_embedding
 - \- *lemma* rel_embedding.order_embedding_of_lt_embedding_apply
 
@@ -8480,6 +8527,7 @@ Modified src/order/fixed_points.lean
 Modified src/order/omega_complete_partial_order.lean
 - \+/\- *lemma* omega_complete_partial_order.chain.map_id
 - \+/\- *lemma* omega_complete_partial_order.continuous_const
+- \+/\- *structure* omega_complete_partial_order.continuous_hom
 - \+/\- *lemma* omega_complete_partial_order.continuous_id
 - \+ *def* order_hom.bind
 - \- *def* preorder_hom.bind
@@ -8533,6 +8581,7 @@ Renamed src/order/preorder_hom.lean to src/order/order_hom.lean
 - \+ *lemma* order_hom.supr_apply
 - \+ *lemma* order_hom.to_fun_eq_coe
 - \+ *def* order_hom.unique
+- \+ *structure* order_hom
 - \+ *def* pi.eval_order_hom
 - \- *def* pi.eval_preorder_hom
 - \- *lemma* preorder_hom.Inf_apply
@@ -8581,6 +8630,7 @@ Renamed src/order/preorder_hom.lean to src/order/order_hom.lean
 - \- *lemma* preorder_hom.supr_apply
 - \- *lemma* preorder_hom.to_fun_eq_coe
 - \- *def* preorder_hom.unique
+- \- *structure* preorder_hom
 - \+ *lemma* rel_embedding.to_order_hom_injective
 - \- *lemma* rel_embedding.to_preorder_hom_injective
 - \+ *def* rel_hom.to_order_hom
@@ -9168,7 +9218,9 @@ Modified src/category_theory/limits/constructions/limits_of_products_and_equaliz
 
 
 Modified src/category_theory/limits/creates.lean
+- \+ *abbreviation* category_theory.creates_colimits
 - \+/\- *def* category_theory.creates_colimits_of_nat_iso
+- \+ *abbreviation* category_theory.creates_limits
 - \+/\- *def* category_theory.creates_limits_of_nat_iso
 - \+/\- *lemma* category_theory.has_colimits_of_has_colimits_creates_colimits
 - \+/\- *lemma* category_theory.has_limits_of_has_limits_creates_limits
@@ -9179,13 +9231,17 @@ Modified src/category_theory/limits/functor_category.lean
 Modified src/category_theory/limits/preserves/basic.lean
 - \+/\- *def* category_theory.limits.fully_faithful_reflects_colimits
 - \+/\- *def* category_theory.limits.fully_faithful_reflects_limits
+- \+ *abbreviation* category_theory.limits.preserves_colimits
 - \+/\- *def* category_theory.limits.preserves_colimits_of_nat_iso
 - \+/\- *def* category_theory.limits.preserves_colimits_of_reflects_of_preserves
 - \+/\- *def* category_theory.limits.preserves_colimits_of_shape_of_equiv
+- \+ *abbreviation* category_theory.limits.preserves_limits
 - \+/\- *def* category_theory.limits.preserves_limits_of_nat_iso
 - \+/\- *def* category_theory.limits.preserves_limits_of_reflects_of_preserves
 - \+/\- *def* category_theory.limits.preserves_limits_of_shape_of_equiv
+- \+ *abbreviation* category_theory.limits.reflects_colimits
 - \+/\- *def* category_theory.limits.reflects_colimits_of_nat_iso
+- \+ *abbreviation* category_theory.limits.reflects_limits
 - \+/\- *def* category_theory.limits.reflects_limits_of_nat_iso
 
 Modified src/category_theory/limits/preserves/finite.lean
@@ -11445,7 +11501,7 @@ Modified src/order/bounded_order.lean
 
 
 Modified src/ring_theory/simple_module.lean
-
+- \+/\- *abbreviation* is_simple_module
 
 
 
@@ -11719,6 +11775,7 @@ Added src/combinatorics/simple_graph/coloring.lean
 - \+ *lemma* simple_graph.coloring.not_adj_of_mem_color_class
 - \+ *lemma* simple_graph.coloring.to_colorable
 - \+ *lemma* simple_graph.coloring.valid
+- \+ *abbreviation* simple_graph.coloring
 - \+ *def* simple_graph.coloring_of_is_empty
 - \+ *def* simple_graph.complete_bipartite_graph.bicoloring
 - \+ *lemma* simple_graph.complete_bipartite_graph.chromatic_number
@@ -11739,6 +11796,7 @@ Added src/combinatorics/simple_graph/partition.lean
 - \+ *lemma* simple_graph.partition.to_colorable
 - \+ *def* simple_graph.partition.to_coloring'
 - \+ *def* simple_graph.partition.to_coloring
+- \+ *structure* simple_graph.partition
 - \+ *def* simple_graph.partitionable
 - \+ *lemma* simple_graph.partitionable_iff_colorable
 
@@ -11798,6 +11856,8 @@ Modified src/algebra/lie/quotient.lean
 - \+/\- *def* lie_submodule.quotient.action_as_endo_map_bracket
 - \+/\- *lemma* lie_submodule.quotient.lie_module_hom_ext
 - \+/\- *def* lie_submodule.quotient.mk'
+- \+/\- *abbreviation* lie_submodule.quotient.mk
+- \- *abbreviation* lie_submodule.quotient
 
 Modified src/algebra/polynomial/group_ring_action.lean
 
@@ -11843,6 +11903,7 @@ Modified src/group_theory/coset.lean
 - \+/\- *lemma* quotient_group.forall_coe
 - \+/\- *lemma* quotient_group.induction_on'
 - \+/\- *lemma* quotient_group.induction_on
+- \+/\- *abbreviation* quotient_group.mk
 - \+/\- *lemma* quotient_group.mk_mul_of_mem
 - \+/\- *lemma* quotient_group.mk_out'_eq_mul
 - \+/\- *lemma* quotient_group.out_eq'
@@ -12247,6 +12308,7 @@ Modified src/algebraic_geometry/presheafed_space/has_colimits.lean
 feat(algebraic_geometry): Open immersions of presheafed spaces ([#10437](https://github.com/leanprover-community/mathlib/pull/10437))
 #### Estimated changes
 Added src/algebraic_geometry/open_immersion.lean
+- \+ *abbreviation* algebraic_geometry.LocallyRingedSpace.is_open_immersion
 - \+ *lemma* algebraic_geometry.PresheafedSpace.is_open_immersion.app_inv_app'
 - \+ *lemma* algebraic_geometry.PresheafedSpace.is_open_immersion.app_inv_app
 - \+ *def* algebraic_geometry.PresheafedSpace.is_open_immersion.inv_app
@@ -12256,7 +12318,10 @@ Added src/algebraic_geometry/open_immersion.lean
 - \+ *def* algebraic_geometry.PresheafedSpace.is_open_immersion.iso_restrict
 - \+ *lemma* algebraic_geometry.PresheafedSpace.is_open_immersion.iso_restrict_hom_of_restrict
 - \+ *lemma* algebraic_geometry.PresheafedSpace.is_open_immersion.iso_restrict_inv_of_restrict
+- \+ *abbreviation* algebraic_geometry.PresheafedSpace.is_open_immersion.open_functor
 - \+ *lemma* algebraic_geometry.PresheafedSpace.is_open_immersion.to_iso
+- \+ *abbreviation* algebraic_geometry.SheafedSpace.is_open_immersion
+- \+ *abbreviation* algebraic_geometry.is_open_immersion
 
 Modified src/algebraic_geometry/stalks.lean
 - \+ *lemma* algebraic_geometry.PresheafedSpace.restrict_stalk_iso_inv_eq_of_restrict
@@ -12272,7 +12337,9 @@ This gives an internal graded structure of an additive monoid algebra for the gr
 #### Estimated changes
 Modified src/algebra/monoid_algebra/grading.lean
 - \+ *def* add_monoid_algebra.equiv_grades_by
+- \+/\- *abbreviation* add_monoid_algebra.grade
 - \+ *lemma* add_monoid_algebra.grade_by.is_internal
+- \+ *abbreviation* add_monoid_algebra.grade_by
 - \+ *lemma* add_monoid_algebra.grade_by_id
 - \+ *lemma* add_monoid_algebra.grade_eq_lsingle_range
 - \+ *lemma* add_monoid_algebra.mem_grade_by_iff
@@ -12322,6 +12389,8 @@ Added src/category_theory/flat_functors.lean
 - \+ *def* category_theory.structured_arrow_cone.to_diagram
 
 Added src/category_theory/limits/bicones.lean
+- \+ *inductive* category_theory.bicone
+- \+ *inductive* category_theory.bicone_hom
 - \+ *def* category_theory.bicone_mk
 
 Modified src/category_theory/limits/constructions/limits_of_products_and_equalizers.lean
@@ -12793,9 +12862,11 @@ Added src/data/sigma/lex.lean
 - \+ *lemma* sigma.lex.mono
 - \+ *lemma* sigma.lex.mono_left
 - \+ *lemma* sigma.lex.mono_right
+- \+ *inductive* sigma.lex
 - \+ *lemma* sigma.lex_iff
 
 Added src/data/sigma/order.lean
+- \+ *inductive* sigma.le
 - \+ *def* sigma.lex.has_le
 - \+ *def* sigma.lex.has_lt
 - \+ *def* sigma.lex.linear_order
@@ -12901,9 +12972,11 @@ Modified src/category_theory/adjunction/opposites.lean
 feat(topology/algebra/group): group topologies on a given group form a complete lattice ([#10531](https://github.com/leanprover-community/mathlib/pull/10531))
 #### Estimated changes
 Modified src/topology/algebra/group.lean
+- \+ *structure* add_group_topology
 - \+ *def* group_topology.coinduced
 - \+ *lemma* group_topology.coinduced_continuous
 - \+ *lemma* group_topology.ext'
+- \+ *structure* group_topology
 
 Modified src/topology/algebra/ring.lean
 - \+ *def* ring_topology.to_add_group_topology.order_embedding
@@ -13018,6 +13091,7 @@ Added src/linear_algebra/orientation.lean
 - \+ *lemma* module.ray.some_vector_ray
 - \+ *def* module.ray
 - \+ *lemma* orientation.eq_or_eq_neg
+- \+ *abbreviation* orientation
 - \+ *lemma* ray_eq_iff
 - \+ *lemma* ray_neg
 - \+ *lemma* ray_pos_smul
@@ -13337,6 +13411,7 @@ Added src/probability_theory/stopping.lean
 - \+ *def* measure_theory.const_filtration
 - \+ *lemma* measure_theory.filtration.adapted_natural
 - \+ *def* measure_theory.filtration.natural
+- \+ *structure* measure_theory.filtration
 - \+ *lemma* measure_theory.is_stopping_time.add_const
 - \+ *lemma* measure_theory.is_stopping_time.max
 - \+ *lemma* measure_theory.is_stopping_time.measurable
@@ -13371,7 +13446,10 @@ Added src/category_theory/sites/adjunction.lean
 - \+ *lemma* category_theory.Sheaf.adjunction_to_types_hom_equiv_symm_apply'
 - \+ *lemma* category_theory.Sheaf.adjunction_to_types_unit_app
 - \+ *lemma* category_theory.Sheaf.adjunction_unit_app
+- \+ *abbreviation* category_theory.Sheaf.compose_and_sheafify
+- \+ *abbreviation* category_theory.Sheaf.compose_and_sheafify_from_types
 - \+ *def* category_theory.Sheaf.compose_equiv
+- \+ *abbreviation* category_theory.Sheaf_forget
 
 
 

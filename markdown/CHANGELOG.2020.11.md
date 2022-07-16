@@ -1165,6 +1165,7 @@ Modified src/algebra/lie/basic.lean
 - \+ *lemma* lie_module_equiv.symm_trans_apply
 - \+ *def* lie_module_equiv.trans
 - \+ *lemma* lie_module_equiv.trans_apply
+- \+ *structure* lie_module_equiv
 - \+ *lemma* lie_module_hom.coe_injective
 - \+ *lemma* lie_module_hom.coe_mk
 - \+ *lemma* lie_module_hom.coe_to_linear_map
@@ -1175,6 +1176,7 @@ Modified src/algebra/lie/basic.lean
 - \+ *lemma* lie_module_hom.ext_iff
 - \+ *def* lie_module_hom.inverse
 - \+ *lemma* lie_module_hom.map_lie'
+- \+ *structure* lie_module_hom
 
 Added src/algebra/lie/direct_sum.lean
 - \+ *lemma* direct_sum.bracket_apply
@@ -1304,6 +1306,7 @@ Modified src/linear_algebra/bilinear_form.lean
 - \+/\- *def* bilin_form.to_matrixₗ
 - \+/\- *lemma* bilin_form.zero_left
 - \+/\- *lemma* bilin_form.zero_right
+- \+/\- *structure* bilin_form
 - \+/\- *def* bilin_form_equiv_matrix
 - \+/\- *def* linear_map.to_bilin
 - \+ *def* linear_map.to_bilin_aux
@@ -1456,6 +1459,7 @@ Added src/category_theory/sigma/basic.lean
 - \+ *lemma* category_theory.sigma.sigma_hom.comp_id
 - \+ *def* category_theory.sigma.sigma_hom.id
 - \+ *lemma* category_theory.sigma.sigma_hom.id_comp
+- \+ *inductive* category_theory.sigma.sigma_hom
 
 
 
@@ -2584,6 +2588,7 @@ Modified src/topology/algebra/uniform_ring.lean
 
 
 Modified src/topology/basic.lean
+- \+ *structure* continuous
 - \- *def* continuous
 - \+ *lemma* continuous_def
 
@@ -2940,6 +2945,7 @@ Modified src/algebra/lie/basic.lean
 - \+ *def* lie_submodule.quotient.action_as_endo_map
 - \+ *def* lie_submodule.quotient.action_as_endo_map_bracket
 - \- *lemma* lie_submodule.quotient.lie_quotient_action_apply
+- \+/\- *structure* lie_submodule
 - \+/\- *lemma* lie_zero
 - \+/\- *lemma* neg_lie
 - \+/\- *lemma* smul_lie
@@ -3049,6 +3055,7 @@ Modified src/algebra/group/hom.lean
 - \+ *lemma* monoid_with_zero_hom.to_fun_eq_coe
 - \+ *lemma* monoid_with_zero_hom.to_monoid_hom_coe
 - \+ *lemma* monoid_with_zero_hom.to_zero_hom_coe
+- \+ *structure* monoid_with_zero_hom
 
 Renamed src/algebra/group_with_zero.lean to src/algebra/group_with_zero/basic.lean
 - \- *lemma* inv_zero
@@ -3121,6 +3128,7 @@ Modified src/ring_theory/valuation/basic.lean
 - \+/\- *def* valuation.map
 - \- *theorem* valuation.map_neg_one
 - \+/\- *theorem* valuation.unit_map_eq
+- \+/\- *structure* valuation
 
 Modified test/ring_exp.lean
 
@@ -3532,6 +3540,7 @@ Added src/analysis/seminorm.lean
 - \+ *lemma* seminorm.mem_ball_zero
 - \+ *lemma* seminorm.nonneg
 - \+ *lemma* seminorm.sub_rev
+- \+ *structure* seminorm
 
 
 
@@ -4966,6 +4975,7 @@ Added src/ring_theory/power_basis.lean
 - \+ *lemma* power_basis.mem_span_pow'
 - \+ *lemma* power_basis.mem_span_pow
 - \+ *lemma* power_basis.polynomial.mem_supported_range
+- \+ *structure* power_basis
 
 
 
@@ -5076,9 +5086,11 @@ Modified src/data/W.lean
 - \- *def* W.depth
 - \- *lemma* W.depth_lt_depth_mk
 - \- *lemma* W.depth_pos
+- \- *inductive* W
 - \+ *def* W_type.depth
 - \+ *lemma* W_type.depth_lt_depth_mk
 - \+ *lemma* W_type.depth_pos
+- \+ *inductive* W_type
 
 Modified src/data/pfunctor/univariate/basic.lean
 - \+/\- *def* pfunctor.W
@@ -5483,6 +5495,7 @@ Added src/data/quaternion.lean
 - \+ *lemma* quaternion_algebra.smul_im_j
 - \+ *lemma* quaternion_algebra.smul_im_k
 - \+ *lemma* quaternion_algebra.smul_re
+- \+ *structure* quaternion_algebra
 
 Modified src/number_theory/arithmetic_function.lean
 
@@ -5602,16 +5615,17 @@ feat(tactic/mk_iff_of_inductive_prop): mk_iff attribute ([#4863](https://github.
 This attribute should make `mk_iff_of_inductive_prop` easier to use.
 #### Estimated changes
 Modified archive/imo/imo1981_q3.lean
-
+- \+/\- *structure* problem_predicate
 
 Modified src/data/multiset/basic.lean
-
+- \+/\- *inductive* multiset.rel
 
 Modified src/field_theory/perfect_closure.lean
-
+- \+/\- *inductive* perfect_closure.r
 
 Modified src/logic/relation.lean
-
+- \+/\- *inductive* relation.refl_gen
+- \+/\- *inductive* relation.trans_gen
 
 Modified src/tactic/core.lean
 
@@ -5620,7 +5634,8 @@ Modified src/tactic/mk_iff_of_inductive_prop.lean
 - \+ *def* mk_iff.list_option_merge
 
 Modified test/mk_iff_of_inductive.lean
-
+- \+ *structure* foo2
+- \+ *structure* foo
 
 
 
@@ -5702,7 +5717,8 @@ Modified src/category_theory/limits/limits.lean
 - \+/\- *lemma* category_theory.limits.limit.pre_π
 
 Modified src/category_theory/limits/shapes/products.lean
-
+- \+/\- *abbreviation* category_theory.limits.pi.map
+- \+/\- *abbreviation* category_theory.limits.sigma.map
 
 Modified src/category_theory/limits/types.lean
 

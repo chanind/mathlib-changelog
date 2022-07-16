@@ -938,6 +938,7 @@ Added topology/outer_measure.lean
 - \+ *def* measure_theory.outer_measure.space
 - \+ *lemma* measure_theory.outer_measure.space_is_measurable_eq
 - \+ *lemma* measure_theory.outer_measure.subadditive
+- \+ *structure* measure_theory.outer_measure
 - \+ *lemma* sdiff_empty
 - \+ *lemma* sdiff_eq:
 - \+ *lemma* union_sdiff_left
@@ -1060,6 +1061,7 @@ Deleted topology/outer_measure.lean
 - \- *def* measure_theory.outer_measure.space
 - \- *lemma* measure_theory.outer_measure.space_is_measurable_eq
 - \- *lemma* measure_theory.outer_measure.subadditive
+- \- *structure* measure_theory.outer_measure
 - \- *lemma* sdiff_empty
 - \- *lemma* sdiff_eq:
 - \- *lemma* union_sdiff_left
@@ -1127,6 +1129,7 @@ Added topology/outer_measure.lean
 - \+ *def* measure_theory.outer_measure.space
 - \+ *lemma* measure_theory.outer_measure.space_is_measurable_eq
 - \+ *lemma* measure_theory.outer_measure.subadditive
+- \+ *structure* measure_theory.outer_measure
 - \+ *lemma* sdiff_empty
 - \+ *lemma* sdiff_eq:
 - \+ *lemma* union_sdiff_left
@@ -1827,6 +1830,7 @@ Added topology/measure.lean
 - \+ *lemma* measure_theory.measure_mono
 - \+ *lemma* measure_theory.measure_sUnion
 - \+ *def* measure_theory.measure_space.measure
+- \+ *structure* measure_theory.measure_space
 - \+ *lemma* measure_theory.measure_space_eq
 - \+ *lemma* measure_theory.measure_space_eq_of
 - \+ *lemma* measure_theory.measure_union
@@ -1886,6 +1890,7 @@ Modified topology/measurable_space.lean
 - \+ *lemma* measurable_space.dynkin_system.dynkin_system_eq
 - \+ *def* measurable_space.dynkin_system.generate
 - \+ *lemma* measurable_space.dynkin_system.generate_from_eq
+- \+ *inductive* measurable_space.dynkin_system.generate_has
 - \+ *lemma* measurable_space.dynkin_system.generate_inter
 - \+ *lemma* measurable_space.dynkin_system.generate_le
 - \+ *lemma* measurable_space.dynkin_system.has_sdiff
@@ -1896,8 +1901,10 @@ Modified topology/measurable_space.lean
 - \+ *lemma* measurable_space.dynkin_system.of_measurable_space_to_measurable_space
 - \+ *def* measurable_space.dynkin_system.restrict_on
 - \+ *def* measurable_space.dynkin_system.to_measurable_space
+- \+ *structure* measurable_space.dynkin_system
 - \+ *def* measurable_space.generate_from
 - \+ *lemma* measurable_space.generate_from_le
+- \+ *inductive* measurable_space.generate_measurable
 - \+ *lemma* measurable_space.induction_on_inter
 - \+ *lemma* measurable_space.is_measurable_generate_from
 - \+ *lemma* nat.lt_succ_iff
@@ -2178,6 +2185,7 @@ Added data/equiv.lean
 - \+ *lemma* equiv.swap_self
 - \+ *lemma* equiv.swap_swap
 - \+ *def* equiv.unit_arrow_equiv
+- \+ *structure* equiv
 - \+ *lemma* function.left_inverse.f_g_eq_id
 - \+ *lemma* function.right_inverse.g_f_eq_id
 - \+ *def* subtype.map

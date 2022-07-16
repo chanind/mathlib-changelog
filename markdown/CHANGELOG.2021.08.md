@@ -905,6 +905,7 @@ Added src/algebra/absolute_value.lean
 - \+ *lemma* absolute_value.coe_to_mul_hom
 - \+ *def* absolute_value.to_monoid_hom
 - \+ *def* absolute_value.to_monoid_with_zero_hom
+- \+ *structure* absolute_value
 - \+ *lemma* is_absolute_value.abs_abv_sub_le_abv_sub
 - \+ *theorem* is_absolute_value.abv_div
 - \+ *def* is_absolute_value.abv_hom
@@ -1588,6 +1589,7 @@ Modified src/data/pprod.lean
 - \+ *theorem* pprod.«forall»
 
 Modified src/order/filter/bases.lean
+- \+/\- *structure* filter.has_antimono_basis
 - \+ *lemma* filter.has_basis.inf'
 - \+/\- *lemma* filter.has_basis.inf
 - \+ *lemma* filter.has_basis.prod''
@@ -1597,6 +1599,7 @@ Modified src/order/filter/bases.lean
 - \+/\- *lemma* filter.has_basis_binfi_principal'
 - \+/\- *lemma* filter.has_basis_infi_principal_finite
 - \+ *lemma* filter.has_basis_supr
+- \+/\- *structure* filter.is_antimono_basis
 
 Modified src/topology/uniform_space/separation.lean
 
@@ -1837,6 +1840,7 @@ Added src/analysis/complex/upper_half_plane.lean
 - \+ *def* upper_half_plane.smul_aux'
 - \+ *lemma* upper_half_plane.smul_aux'_im
 - \+ *def* upper_half_plane.smul_aux
+- \+ *abbreviation* upper_half_plane
 
 Modified src/data/fintype/basic.lean
 - \+ *lemma* fintype.card_fin_even
@@ -3788,7 +3792,7 @@ Modified src/data/nat/digits.lean
 
 
 Modified src/data/pfunctor/univariate/M.lean
-
+- \+/\- *inductive* pfunctor.M.is_path
 
 Modified src/data/polynomial/algebra_map.lean
 
@@ -5100,6 +5104,7 @@ Added src/analysis/normed_space/affine_isometry.lean
 - \+ *lemma* affine_isometry.nndist_map
 - \+ *lemma* affine_isometry.to_affine_isometry_equiv_apply
 - \+ *lemma* affine_isometry.to_affine_map_injective
+- \+ *structure* affine_isometry
 - \+ *lemma* affine_isometry_equiv.apply_symm_apply
 - \+ *lemma* affine_isometry_equiv.coe_inv
 - \+ *lemma* affine_isometry_equiv.coe_mk'
@@ -5148,6 +5153,7 @@ Added src/analysis/normed_space/affine_isometry.lean
 - \+ *lemma* affine_isometry_equiv.trans_assoc
 - \+ *lemma* affine_isometry_equiv.trans_refl
 - \+ *lemma* affine_isometry_equiv.trans_symm
+- \+ *structure* affine_isometry_equiv
 - \+ *lemma* linear_isometry.coe_to_affine_isometry
 - \+ *def* linear_isometry.to_affine_isometry
 - \+ *lemma* linear_isometry.to_affine_isometry_linear_isometry
@@ -6661,6 +6667,7 @@ Added src/algebraic_geometry/EllipticCurve.lean
 - \+ *def* EllipticCurve.disc_aux
 - \+ *lemma* EllipticCurve.disc_is_unit
 - \+ *def* EllipticCurve.j
+- \+ *structure* EllipticCurve
 
 
 
@@ -7008,6 +7015,7 @@ Added src/measure_theory/decomposition/jordan.lean
 - \+ *lemma* measure_theory.jordan_decomposition.to_signed_measure_zero
 - \+ *lemma* measure_theory.jordan_decomposition.zero_neg_part
 - \+ *lemma* measure_theory.jordan_decomposition.zero_pos_part
+- \+ *structure* measure_theory.jordan_decomposition
 - \+ *lemma* measure_theory.signed_measure.of_diff_eq_zero_of_symm_diff_eq_zero_negative
 - \+ *lemma* measure_theory.signed_measure.of_diff_eq_zero_of_symm_diff_eq_zero_positive
 - \+ *lemma* measure_theory.signed_measure.of_inter_eq_of_symm_diff_eq_zero_negative
@@ -8045,6 +8053,7 @@ Added src/algebra/quaternion_basis.lean
 - \+ *lemma* quaternion_algebra.basis.lift_one
 - \+ *lemma* quaternion_algebra.basis.lift_smul
 - \+ *lemma* quaternion_algebra.basis.lift_zero
+- \+ *structure* quaternion_algebra.basis
 - \+ *def* quaternion_algebra.lift
 
 
@@ -8132,6 +8141,7 @@ Added src/measure_theory/measure/stieltjes.lean
 - \+ *theorem* stieltjes_function.outer_trim
 - \+ *lemma* stieltjes_function.right_continuous
 - \+ *lemma* stieltjes_function.tendsto_left_lim
+- \+ *structure* stieltjes_function
 
 Modified src/topology/algebra/ordered/basic.lean
 - \+ *lemma* monotone.tendsto_nhds_within_Iio
@@ -8215,6 +8225,7 @@ Modified src/linear_algebra/basis.lean
 Modified src/linear_algebra/free_module_pid.lean
 - \+ *lemma* basis.card_le_card_of_le
 - \+ *lemma* basis.card_le_card_of_submodule
+- \+ *structure* basis.smith_normal_form
 - \+ *lemma* dvd_generator_iff
 - \+ *lemma* eq_bot_of_generator_maximal_submodule_image_eq_zero
 - \+ *lemma* generator_maximal_submodule_image_dvd
@@ -8438,12 +8449,14 @@ Modified src/measure_theory/measure/measure_space.lean
 - \+/\- *def* measure_theory.measure.finite_at_filter
 - \+/\- *lemma* measure_theory.measure.finite_at_filter_of_finite
 - \+/\- *lemma* measure_theory.measure.finite_at_nhds_within
+- \+/\- *structure* measure_theory.measure.finite_spanning_sets_in
 - \+/\- *lemma* measure_theory.measure.le_of_add_le_add_left
 - \+/\- *lemma* measure_theory.measure.le_sum_apply
 - \+/\- *def* measure_theory.measure.lift_linear
 - \+/\- *def* measure_theory.measure.map
 - \+/\- *lemma* measure_theory.measure.map_comap_subtype_coe
 - \+/\- *def* measure_theory.measure.mutually_singular
+- \+/\- *structure* measure_theory.measure.quasi_measure_preserving
 - \+/\- *def* measure_theory.measure.restrict
 - \+/\- *lemma* measure_theory.measure.restrict_Inf_eq_Inf_restrict
 - \+/\- *lemma* measure_theory.measure.restrict_add
@@ -9635,6 +9648,7 @@ Added src/data/part.lean
 - \+ *lemma* part.some_ne_none
 - \+ *theorem* part.to_of_option
 - \+ *def* part.to_option
+- \+ *structure* {u}
 
 Modified src/data/pfun.lean
 - \+/\- *def* pfun
@@ -9709,6 +9723,7 @@ Modified src/data/pfun.lean
 - \- *lemma* roption.some_ne_none
 - \- *theorem* roption.to_of_option
 - \- *def* roption.to_option
+- \- *structure* {u}
 
 Modified src/data/polynomial/div.lean
 
@@ -9753,6 +9768,7 @@ Modified test/general_recursion.lean
 - \+ *lemma* part.examples.f91_dom
 - \+ *lemma* part.examples.f91_spec'
 - \+ *lemma* part.examples.f91_spec
+- \+ *inductive* part.examples.tree
 - \+ *theorem* part.examples.tree_map'.cont
 - \+ *theorem* part.examples.tree_map'.equations.eqn_1
 - \+ *theorem* part.examples.tree_map'.equations.eqn_2
@@ -9779,6 +9795,7 @@ Modified test/general_recursion.lean
 - \- *lemma* roption.examples.f91_dom
 - \- *lemma* roption.examples.f91_spec'
 - \- *lemma* roption.examples.f91_spec
+- \- *inductive* roption.examples.tree
 - \- *theorem* roption.examples.tree_map'.cont
 - \- *theorem* roption.examples.tree_map'.equations.eqn_1
 - \- *theorem* roption.examples.tree_map'.equations.eqn_2
@@ -9890,11 +9907,17 @@ Added src/category_theory/limits/shapes/wide_equalizers.lean
 - \+ *def* category_theory.limits.cotrident.of_cocone
 - \+ *lemma* category_theory.limits.cotrident.of_cocone_ι
 - \+ *def* category_theory.limits.cotrident.of_π
+- \+ *abbreviation* category_theory.limits.cotrident.π
 - \+ *lemma* category_theory.limits.cotrident.π_eq_app_one
 - \+ *lemma* category_theory.limits.cotrident.π_of_π
+- \+ *abbreviation* category_theory.limits.cotrident
 - \+ *def* category_theory.limits.diagram_iso_parallel_family
 - \+ *lemma* category_theory.limits.epi_of_is_colimit_parallel_family
+- \+ *abbreviation* category_theory.limits.has_wide_coequalizer
+- \+ *abbreviation* category_theory.limits.has_wide_coequalizers
 - \+ *lemma* category_theory.limits.has_wide_coequalizers_of_has_colimit_parallel_family
+- \+ *abbreviation* category_theory.limits.has_wide_equalizer
+- \+ *abbreviation* category_theory.limits.has_wide_equalizers
 - \+ *lemma* category_theory.limits.has_wide_equalizers_of_has_limit_parallel_family
 - \+ *lemma* category_theory.limits.mono_of_is_limit_parallel_family
 - \+ *def* category_theory.limits.parallel_family
@@ -9915,24 +9938,36 @@ Added src/category_theory/limits/shapes/wide_equalizers.lean
 - \+ *def* category_theory.limits.trident.of_cone
 - \+ *lemma* category_theory.limits.trident.of_cone_π
 - \+ *def* category_theory.limits.trident.of_ι
+- \+ *abbreviation* category_theory.limits.trident.ι
 - \+ *lemma* category_theory.limits.trident.ι_eq_app_zero
 - \+ *lemma* category_theory.limits.trident.ι_of_ι
+- \+ *abbreviation* category_theory.limits.trident
 - \+ *def* category_theory.limits.walking_parallel_family.hom.comp
+- \+ *inductive* category_theory.limits.walking_parallel_family.hom
 - \+ *lemma* category_theory.limits.walking_parallel_family.hom_id
+- \+ *inductive* category_theory.limits.walking_parallel_family
 - \+ *def* category_theory.limits.walking_parallel_family_equiv_walking_parallel_pair
 - \+ *lemma* category_theory.limits.wide_coequalizer.condition
+- \+ *abbreviation* category_theory.limits.wide_coequalizer.cotrident
 - \+ *lemma* category_theory.limits.wide_coequalizer.cotrident_ι_app_one
 - \+ *lemma* category_theory.limits.wide_coequalizer.cotrident_π
 - \+ *def* category_theory.limits.wide_coequalizer.desc'
+- \+ *abbreviation* category_theory.limits.wide_coequalizer.desc
 - \+ *lemma* category_theory.limits.wide_coequalizer.hom_ext
+- \+ *abbreviation* category_theory.limits.wide_coequalizer.π
 - \+ *lemma* category_theory.limits.wide_coequalizer.π_desc
+- \+ *abbreviation* category_theory.limits.wide_coequalizer
 - \+ *def* category_theory.limits.wide_coequalizer_is_wide_coequalizer
 - \+ *lemma* category_theory.limits.wide_equalizer.condition
 - \+ *lemma* category_theory.limits.wide_equalizer.hom_ext
 - \+ *def* category_theory.limits.wide_equalizer.lift'
+- \+ *abbreviation* category_theory.limits.wide_equalizer.lift
 - \+ *lemma* category_theory.limits.wide_equalizer.lift_ι
+- \+ *abbreviation* category_theory.limits.wide_equalizer.trident
 - \+ *lemma* category_theory.limits.wide_equalizer.trident_ι
 - \+ *lemma* category_theory.limits.wide_equalizer.trident_π_app_zero
+- \+ *abbreviation* category_theory.limits.wide_equalizer.ι
+- \+ *abbreviation* category_theory.limits.wide_equalizer
 - \+ *def* category_theory.limits.wide_equalizer_is_wide_equalizer
 
 
@@ -10464,6 +10499,7 @@ Modified src/geometry/manifold/partition_of_unity.lean
 - \+ *lemma* smooth_bump_covering.to_smooth_partition_of_unity_apply
 - \+ *lemma* smooth_bump_covering.to_smooth_partition_of_unity_eq_mul_prod
 - \+ *lemma* smooth_bump_covering.to_smooth_partition_of_unity_zero_of_zero
+- \+/\- *structure* smooth_bump_covering
 - \+ *lemma* smooth_partition_of_unity.exists_is_subordinate
 - \+ *def* smooth_partition_of_unity.is_subordinate
 - \+ *lemma* smooth_partition_of_unity.is_subordinate_to_partition_of_unity
@@ -10475,6 +10511,7 @@ Modified src/geometry/manifold/partition_of_unity.lean
 - \+ *lemma* smooth_partition_of_unity.sum_le_one
 - \+ *lemma* smooth_partition_of_unity.sum_nonneg
 - \+ *def* smooth_partition_of_unity.to_partition_of_unity
+- \+ *structure* smooth_partition_of_unity
 
 Modified src/geometry/manifold/times_cont_mdiff.lean
 - \+ *lemma* smooth_at_one
@@ -10529,6 +10566,7 @@ Added src/topology/partition_of_unity.lean
 - \+ *def* bump_covering.to_pou_fun
 - \+ *lemma* bump_covering.to_pou_fun_eq_mul_prod
 - \+ *lemma* bump_covering.to_pou_fun_zero_of_zero
+- \+ *structure* bump_covering
 - \+ *lemma* partition_of_unity.exists_is_subordinate
 - \+ *lemma* partition_of_unity.exists_is_subordinate_of_locally_finite
 - \+ *def* partition_of_unity.is_subordinate
@@ -10537,6 +10575,7 @@ Added src/topology/partition_of_unity.lean
 - \+ *lemma* partition_of_unity.sum_eq_one
 - \+ *lemma* partition_of_unity.sum_le_one
 - \+ *lemma* partition_of_unity.sum_nonneg
+- \+ *structure* partition_of_unity
 
 
 
@@ -11902,8 +11941,11 @@ Modified src/deprecated/group.lean
 - \+/\- *lemma* additive.is_add_group_hom
 - \+/\- *lemma* additive.is_add_hom
 - \+/\- *lemma* additive.is_add_monoid_hom
+- \+ *structure* is_add_group_hom
+- \+ *structure* is_add_hom
 - \+ *lemma* is_add_monoid_hom.is_add_monoid_hom_mul_left
 - \+ *lemma* is_add_monoid_hom.is_add_monoid_hom_mul_right
+- \+ *structure* is_add_monoid_hom
 - \+/\- *lemma* is_group_hom.comp
 - \+ *lemma* is_group_hom.id
 - \+/\- *lemma* is_group_hom.injective_iff
@@ -11912,14 +11954,17 @@ Modified src/deprecated/group.lean
 - \+ *lemma* is_group_hom.map_mul
 - \+/\- *lemma* is_group_hom.map_one
 - \+ *lemma* is_group_hom.to_is_monoid_hom
+- \+ *structure* is_group_hom
 - \+/\- *lemma* is_monoid_hom.comp
 - \+ *lemma* is_monoid_hom.id
 - \+ *lemma* is_monoid_hom.inv
 - \- *theorem* is_monoid_hom.of_mul
+- \+ *structure* is_monoid_hom
 - \+/\- *lemma* is_mul_hom.comp
 - \+ *lemma* is_mul_hom.id
 - \+/\- *lemma* is_mul_hom.inv
 - \+ *theorem* is_mul_hom.to_is_monoid_hom
+- \+ *structure* is_mul_hom
 - \+/\- *lemma* is_unit.map'
 - \+/\- *lemma* monoid_hom.coe_of
 - \+ *lemma* monoid_hom.is_group_hom
@@ -11946,10 +11991,12 @@ Modified src/deprecated/ring.lean
 - \+/\- *lemma* is_ring_hom.of_semiring
 - \+ *lemma* is_ring_hom.to_is_add_group_hom
 - \+ *lemma* is_ring_hom.to_is_semiring_hom
+- \+ *structure* is_ring_hom
 - \+/\- *lemma* is_semiring_hom.comp
 - \+ *lemma* is_semiring_hom.id
 - \+ *lemma* is_semiring_hom.to_is_add_monoid_hom
 - \+ *lemma* is_semiring_hom.to_is_monoid_hom
+- \+ *structure* is_semiring_hom
 - \+/\- *lemma* ring_hom.coe_of
 - \+/\- *def* ring_hom.of
 - \+ *lemma* ring_hom.to_is_ring_hom
@@ -11965,6 +12012,7 @@ Modified src/deprecated/subfield.lean
 - \+/\- *lemma* is_subfield.div_mem
 - \+ *lemma* is_subfield.inter
 - \+/\- *lemma* is_subfield.pow_mem
+- \+ *structure* is_subfield
 - \+ *lemma* preimage.is_subfield
 - \+ *lemma* range.is_subfield
 - \+ *lemma* univ.is_subfield
@@ -11986,6 +12034,7 @@ Modified src/deprecated/subgroup.lean
 - \+/\- *theorem* group.normal_closure_subset
 - \+/\- *lemma* group.normal_closure_subset_iff
 - \- *lemma* is_add_subgroup.gsmul_coe
+- \+ *structure* is_add_subgroup
 - \+ *lemma* is_group_hom.image_subgroup
 - \+/\- *lemma* is_group_hom.injective_iff_trivial_ker
 - \+/\- *lemma* is_group_hom.injective_of_trivial_ker
@@ -12003,6 +12052,8 @@ Modified src/deprecated/subgroup.lean
 - \+ *lemma* is_group_hom.range_subgroup
 - \+/\- *lemma* is_group_hom.trivial_ker_iff_eq_one
 - \+/\- *lemma* is_group_hom.trivial_ker_of_injective
+- \+ *structure* is_normal_add_subgroup
+- \+ *structure* is_normal_subgroup
 - \+ *lemma* is_normal_subgroup_of_comm_group
 - \+ *lemma* is_subgroup.Inter
 - \+ *lemma* is_subgroup.center_normal
@@ -12017,6 +12068,7 @@ Modified src/deprecated/subgroup.lean
 - \+/\- *lemma* is_subgroup.subset_normalizer
 - \+ *lemma* is_subgroup.trivial_normal
 - \+ *lemma* is_subgroup.univ_subgroup
+- \+ *structure* is_subgroup
 - \- *def* monoid_hom.range_factorization
 - \- *def* monoid_hom.range_subtype_val
 - \+ *lemma* multiplicative.is_normal_subgroup
@@ -12035,6 +12087,7 @@ Modified src/deprecated/submonoid.lean
 - \+/\- *lemma* is_add_submonoid.multiple_subset
 - \- *lemma* is_add_submonoid.smul_coe
 - \+/\- *lemma* is_add_submonoid.smul_mem
+- \+ *structure* is_add_submonoid
 - \+ *lemma* is_submonoid.Inter
 - \- *lemma* is_submonoid.coe_mul
 - \- *lemma* is_submonoid.coe_one
@@ -12047,6 +12100,7 @@ Modified src/deprecated/submonoid.lean
 - \+/\- *lemma* is_submonoid.pow_mem
 - \+/\- *lemma* is_submonoid.power_subset
 - \+ *lemma* is_submonoid.preimage
+- \+ *structure* is_submonoid
 - \+ *lemma* monoid.closure.is_submonoid
 - \+/\- *theorem* monoid.closure_subset
 - \+/\- *lemma* monoid.image_closure
@@ -12064,6 +12118,7 @@ Modified src/deprecated/subring.lean
 - \+ *lemma* is_subring.inter
 - \+ *def* is_subring.subring
 - \- *def* is_subring.subtype
+- \+ *structure* is_subring
 - \+ *lemma* ring.closure.is_subring
 - \+/\- *theorem* ring.closure_subset
 - \+/\- *theorem* ring.closure_subset_iff

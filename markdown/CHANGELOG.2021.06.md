@@ -27,6 +27,7 @@ Modified src/topology/vector_bundle.lean
 - \+ *def* topological_vector_bundle_core.proj
 - \+ *def* topological_vector_bundle_core.to_topological_vector_bundle_core
 - \+ *def* topological_vector_bundle_core.triv_change
+- \+ *structure* topological_vector_bundle_core
 
 
 
@@ -270,7 +271,7 @@ Modified src/algebra/category/Semigroup/basic.lean
 
 
 Modified src/algebra/group/to_additive.lean
-
+- \+/\- *structure* to_additive.value_type
 
 Modified src/category_theory/types.lean
 
@@ -441,6 +442,7 @@ Modified src/data/setoid/partition.lean
 - \+ *lemma* indexed_partition.proj_out
 - \+ *lemma* indexed_partition.proj_some_index
 - \+ *lemma* indexed_partition.some_index
+- \+ *structure* indexed_partition
 - \+ *lemma* setoid.eqv_class_mem'
 
 
@@ -1507,6 +1509,7 @@ Modified src/topology/topological_fiber_bundle.lean
 - \+ *lemma* prebundle_trivialization.proj_symm_apply
 - \+ *def* prebundle_trivialization.set_symm
 - \+ *lemma* prebundle_trivialization.symm_apply_mk_proj
+- \+ *structure* prebundle_trivialization
 - \+ *def* topological_fiber_prebundle.bundle_trivialization_at
 - \+ *lemma* topological_fiber_prebundle.continuous_proj
 - \+ *lemma* topological_fiber_prebundle.continuous_symm_trivialization_at
@@ -1514,6 +1517,7 @@ Modified src/topology/topological_fiber_bundle.lean
 - \+ *lemma* topological_fiber_prebundle.is_open_target_trivialization_at_inter
 - \+ *lemma* topological_fiber_prebundle.is_topological_fiber_bundle
 - \+ *def* topological_fiber_prebundle.total_space_topology
+- \+ *structure* topological_fiber_prebundle
 
 
 
@@ -2295,6 +2299,7 @@ Added src/algebra/non_unital_alg_hom.lean
 - \+ *lemma* non_unital_alg_hom.to_fun_eq_coe
 - \+ *lemma* non_unital_alg_hom.to_mul_hom_eq_coe
 - \+ *lemma* non_unital_alg_hom.zero_apply
+- \+ *structure* non_unital_alg_hom
 
 
 
@@ -3068,6 +3073,7 @@ Added src/measure_theory/integral_eq_improper.lean
 - \+ *lemma* measure_theory.ae_cover.lintegral_tendsto_of_nat
 - \+ *lemma* measure_theory.ae_cover.restrict
 - \+ *lemma* measure_theory.ae_cover.supr_lintegral_eq_of_countably_generated
+- \+ *structure* measure_theory.ae_cover
 - \+ *lemma* measure_theory.ae_cover_Icc
 - \+ *lemma* measure_theory.ae_cover_Ici
 - \+ *lemma* measure_theory.ae_cover_Ico
@@ -3476,6 +3482,7 @@ Modified src/model_theory/basic.lean
 - \+ *lemma* first_order.language.substructure.mem_top
 - \+ *def* first_order.language.substructure.simps.coe
 - \+ *lemma* first_order.language.substructure.subset_closure
+- \+ *structure* first_order.language.substructure
 
 
 
@@ -4290,7 +4297,11 @@ Modified src/tactic/induction.lean
 
 
 Modified test/induction.lean
+- \+ *inductive* inf_tree.all
+- \+ *inductive* inf_tree
 - \+ *def* topological_space_tests.generate_from
+- \+ *inductive* topological_space_tests.generated_filter
+- \+ *inductive* topological_space_tests.generated_open
 - \+ *def* topological_space_tests.neighbourhood
 
 
@@ -4851,7 +4862,7 @@ Modified test/fresh_names.lean
 
 
 Modified test/induction.lean
-
+- \+ *inductive* with_tests.test
 
 
 
@@ -5683,6 +5694,7 @@ Modified src/measure_theory/measurable_space.lean
 - \- *lemma* measurable_space.generate_from_le
 - \- *lemma* measurable_space.generate_from_le_iff
 - \- *lemma* measurable_space.generate_from_measurable_set
+- \- *inductive* measurable_space.generate_measurable
 - \- *def* measurable_space.gi_generate_from
 - \- *theorem* measurable_space.measurable_set_Inf
 - \- *theorem* measurable_space.measurable_set_Sup
@@ -5694,6 +5706,7 @@ Modified src/measure_theory/measurable_space.lean
 - \- *theorem* measurable_space.measurable_set_supr
 - \- *theorem* measurable_space.measurable_set_top
 - \- *lemma* measurable_space.mk_of_closure_sets
+- \- *structure* measurable_space
 - \+/\- *lemma* measurable_subtype_coe
 - \+/\- *lemma* measurable_swap
 - \+/\- *lemma* measurable_unit
@@ -5748,6 +5761,7 @@ Added src/measure_theory/measurable_space_def.lean
 - \+ *lemma* measurable_space.generate_from_le
 - \+ *lemma* measurable_space.generate_from_le_iff
 - \+ *lemma* measurable_space.generate_from_measurable_set
+- \+ *inductive* measurable_space.generate_measurable
 - \+ *def* measurable_space.gi_generate_from
 - \+ *theorem* measurable_space.measurable_set_Inf
 - \+ *theorem* measurable_space.measurable_set_Sup
@@ -5759,6 +5773,7 @@ Added src/measure_theory/measurable_space_def.lean
 - \+ *theorem* measurable_space.measurable_set_supr
 - \+ *theorem* measurable_space.measurable_set_top
 - \+ *lemma* measurable_space.mk_of_closure_sets
+- \+ *structure* measurable_space
 - \+ *lemma* nonempty_measurable_superset
 - \+ *lemma* set.countable.measurable_set
 - \+ *lemma* set.finite.measurable_set
@@ -5806,6 +5821,7 @@ Modified src/measure_theory/measure_space.lean
 - \- *def* measure_theory.measure.of_measurable
 - \- *lemma* measure_theory.measure.of_measurable_apply
 - \- *lemma* measure_theory.measure.to_outer_measure_injective
+- \- *structure* measure_theory.measure
 - \- *theorem* measure_theory.measure_Union_le
 - \- *lemma* measure_theory.measure_Union_null
 - \- *lemma* measure_theory.measure_Union_null_iff
@@ -5877,6 +5893,7 @@ Added src/measure_theory/measure_space_def.lean
 - \+ *def* measure_theory.measure.of_measurable
 - \+ *lemma* measure_theory.measure.of_measurable_apply
 - \+ *lemma* measure_theory.measure.to_outer_measure_injective
+- \+ *structure* measure_theory.measure
 - \+ *theorem* measure_theory.measure_Union_le
 - \+ *lemma* measure_theory.measure_Union_null
 - \+ *lemma* measure_theory.measure_Union_null_iff
@@ -6529,6 +6546,7 @@ Added src/model_theory/basic.lean
 - \+ *lemma* first_order.language.hom.map_fun
 - \+ *lemma* first_order.language.hom.map_rel
 - \+ *lemma* first_order.language.hom.to_fun_eq_coe
+- \+ *structure* first_order.language
 
 
 
@@ -6574,8 +6592,10 @@ Modified src/category_theory/limits/shapes/equalizers.lean
 - \+ *lemma* category_theory.limits.parallel_pair_hom_app_zero
 
 Modified src/category_theory/limits/shapes/kernels.lean
+- \+ *abbreviation* category_theory.limits.cokernel.map
 - \+ *lemma* category_theory.limits.cokernel.map_desc
 - \+ *lemma* category_theory.limits.kernel.lift_map
+- \+ *abbreviation* category_theory.limits.kernel.map
 
 
 
@@ -6742,7 +6762,7 @@ Modified src/algebra/big_operators/ring.lean
 
 
 Modified src/algebra/category/CommRing/basic.lean
-
+- \+ *abbreviation* SemiRing.assoc_ring_hom
 
 Modified src/algebra/char_p/pi.lean
 
@@ -6772,6 +6792,7 @@ Modified src/algebra/ring/basic.lean
 - \+/\- *theorem* ring_hom.injective_iff
 - \+/\- *lemma* ring_hom.is_unit_map
 - \+/\- *def* ring_hom.mk'
+- \+/\- *structure* ring_hom
 
 Modified src/algebra/ring/pi.lean
 
@@ -6841,6 +6862,7 @@ Modified src/ring_theory/subsemiring.lean
 - \+/\- *lemma* subsemiring.pow_mem
 - \+/\- *lemma* subsemiring.smul_def
 - \+/\- *lemma* subsemiring.sum_mem
+- \+/\- *structure* subsemiring
 
 Modified src/ring_theory/unique_factorization_domain.lean
 
@@ -8412,11 +8434,13 @@ Modified src/algebraic_topology/cech_nerve.lean
 - \+ *def* category_theory.arrow.cech_conerve
 - \+ *def* category_theory.cosimplicial_object.augmented_cech_conerve
 - \+ *def* category_theory.cosimplicial_object.cech_conerve
+- \+ *abbreviation* category_theory.cosimplicial_object.cech_conerve_adjunction
 - \+ *def* category_theory.cosimplicial_object.cech_conerve_equiv
 - \+ *def* category_theory.cosimplicial_object.equivalence_left_to_right
 - \+ *def* category_theory.cosimplicial_object.equivalence_right_to_left
 - \+ *def* category_theory.simplicial_object.augmented_cech_nerve
 - \+ *def* category_theory.simplicial_object.cech_nerve
+- \+ *abbreviation* category_theory.simplicial_object.cech_nerve_adjunction
 - \+ *def* category_theory.simplicial_object.cech_nerve_equiv
 - \+ *def* category_theory.simplicial_object.equivalence_left_to_right
 - \+ *def* category_theory.simplicial_object.equivalence_right_to_left

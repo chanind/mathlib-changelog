@@ -1105,7 +1105,8 @@ Modified src/group_theory/order_of_element.lean
 - \+ *lemma* inf_eq_bot_of_coprime
 
 Modified src/group_theory/subgroup.lean
-
+- \+ *structure* add_subgroup.is_commutative
+- \+ *structure* subgroup.is_commutative
 
 
 
@@ -2056,6 +2057,7 @@ Modified src/measure_theory/measure_space.lean
 - \+ *lemma* measure_theory.summable_measure_to_real
 
 Added src/measure_theory/vector_measure.lean
+- \+ *abbreviation* measure_theory.complex_measure
 - \+ *def* measure_theory.measure.sub_to_signed_measure
 - \+ *lemma* measure_theory.measure.sub_to_signed_measure_apply
 - \+ *def* measure_theory.measure.to_ennreal_vector_measure
@@ -2067,6 +2069,7 @@ Added src/measure_theory/vector_measure.lean
 - \+ *lemma* measure_theory.measure.to_signed_measure_apply_measurable
 - \+ *lemma* measure_theory.measure.to_signed_measure_smul
 - \+ *lemma* measure_theory.measure.to_signed_measure_zero
+- \+ *abbreviation* measure_theory.signed_measure
 - \+ *def* measure_theory.vector_measure.add
 - \+ *lemma* measure_theory.vector_measure.add_apply
 - \+ *lemma* measure_theory.vector_measure.coe_add
@@ -2100,6 +2103,7 @@ Added src/measure_theory/vector_measure.lean
 - \+ *def* measure_theory.vector_measure.sub
 - \+ *lemma* measure_theory.vector_measure.sub_apply
 - \+ *lemma* measure_theory.vector_measure.zero_apply
+- \+ *structure* measure_theory.vector_measure
 
 Modified src/topology/instances/ennreal.lean
 - \+ *lemma* ennreal.summable_to_real
@@ -2226,6 +2230,7 @@ Modified docs/undergrad.yaml
 
 
 Modified src/analysis/fourier.lean
+- \+ *abbreviation* fourier_Lp
 - \+/\- *lemma* orthonormal_fourier
 - \+ *lemma* span_fourier_Lp_closure_eq_top
 - \+/\- *lemma* span_fourier_closure_eq_top
@@ -2535,9 +2540,11 @@ Proves the Hales-Jewett theorem (a fundamental result in Ramsey theory on combin
 #### Estimated changes
 Added src/combinatorics/hales_jewett.lean
 - \+ *theorem* combinatorics.exists_mono_homothetic_copy
+- \+ *structure* combinatorics.line.almost_mono
 - \+ *lemma* combinatorics.line.apply
 - \+ *lemma* combinatorics.line.apply_none
 - \+ *lemma* combinatorics.line.apply_of_ne_none
+- \+ *structure* combinatorics.line.color_focused
 - \+ *def* combinatorics.line.diagonal
 - \+ *lemma* combinatorics.line.diagonal_apply
 - \+ *theorem* combinatorics.line.exists_mono_in_high_dimension
@@ -2550,6 +2557,7 @@ Added src/combinatorics/hales_jewett.lean
 - \+ *lemma* combinatorics.line.prod_apply
 - \+ *def* combinatorics.line.vertical
 - \+ *lemma* combinatorics.line.vertical_apply
+- \+ *structure* combinatorics.line
 
 Modified src/data/list/basic.lean
 
@@ -3036,6 +3044,11 @@ Modified src/algebra/lie/cartan_matrix.lean
 - \+ *def* cartan_matrix.E₈
 - \+ *def* cartan_matrix.F₄
 - \+ *def* cartan_matrix.G₂
+- \+ *abbreviation* lie_algebra.e₆
+- \+ *abbreviation* lie_algebra.e₇
+- \+ *abbreviation* lie_algebra.e₈
+- \+ *abbreviation* lie_algebra.f₄
+- \+ *abbreviation* lie_algebra.g₂
 
 
 
@@ -3216,24 +3229,37 @@ Modified src/combinatorics/simple_graph/basic.lean
 - \- *lemma* simple_graph.edge_symm
 - \+ *lemma* simple_graph.embedding.apply_mem_neighbor_set_iff
 - \+ *lemma* simple_graph.embedding.coe_comp
+- \+ *abbreviation* simple_graph.embedding.comp
 - \+ *lemma* simple_graph.embedding.map_adj_iff
 - \+ *def* simple_graph.embedding.map_edge_set
 - \+ *lemma* simple_graph.embedding.map_mem_edge_set_iff
 - \+ *def* simple_graph.embedding.map_neighbor_set
+- \+ *abbreviation* simple_graph.embedding.refl
+- \+ *abbreviation* simple_graph.embedding.to_hom
+- \+ *abbreviation* simple_graph.embedding
 - \+ *lemma* simple_graph.hom.apply_mem_neighbor_set
 - \+ *lemma* simple_graph.hom.coe_comp
+- \+ *abbreviation* simple_graph.hom.comp
+- \+ *abbreviation* simple_graph.hom.id
 - \+ *lemma* simple_graph.hom.map_adj
 - \+ *lemma* simple_graph.hom.map_edge_set.injective
 - \+ *def* simple_graph.hom.map_edge_set
 - \+ *lemma* simple_graph.hom.map_mem_edge_set
 - \+ *def* simple_graph.hom.map_neighbor_set
+- \+ *abbreviation* simple_graph.hom
 - \+ *lemma* simple_graph.iso.apply_mem_neighbor_set_iff
 - \+ *lemma* simple_graph.iso.card_eq_of_iso
 - \+ *lemma* simple_graph.iso.coe_comp
+- \+ *abbreviation* simple_graph.iso.comp
 - \+ *lemma* simple_graph.iso.map_adj_iff
 - \+ *def* simple_graph.iso.map_edge_set
 - \+ *lemma* simple_graph.iso.map_mem_edge_set_iff
 - \+ *def* simple_graph.iso.map_neighbor_set
+- \+ *abbreviation* simple_graph.iso.refl
+- \+ *abbreviation* simple_graph.iso.symm
+- \+ *abbreviation* simple_graph.iso.to_embedding
+- \+ *abbreviation* simple_graph.iso.to_hom
+- \+ *abbreviation* simple_graph.iso
 
 Added src/combinatorics/simple_graph/subgraph.lean
 - \+ *lemma* simple_graph.subgraph.adj_comm
@@ -3274,6 +3300,7 @@ Added src/combinatorics/simple_graph/subgraph.lean
 - \+ *def* simple_graph.subgraph.top_equiv
 - \+ *def* simple_graph.subgraph.union
 - \+ *def* simple_graph.subgraph.vert
+- \+ *structure* simple_graph.subgraph
 
 Modified src/data/sym2.lean
 - \+ *lemma* sym2.map.injective
@@ -3318,6 +3345,7 @@ Modified src/geometry/manifold/bump_function.lean
 - \- *lemma* smooth_bump_covering.mem_ext_chart_at_ind_source
 - \- *lemma* smooth_bump_covering.mem_ext_chart_at_source_of_eq_one
 - \- *lemma* smooth_bump_covering.mem_support_ind
+- \- *structure* smooth_bump_covering
 
 Added src/geometry/manifold/partition_of_unity.lean
 - \+ *lemma* smooth_bump_covering.apply_ind
@@ -3333,6 +3361,7 @@ Added src/geometry/manifold/partition_of_unity.lean
 - \+ *lemma* smooth_bump_covering.mem_ext_chart_at_ind_source
 - \+ *lemma* smooth_bump_covering.mem_ext_chart_at_source_of_eq_one
 - \+ *lemma* smooth_bump_covering.mem_support_ind
+- \+ *structure* smooth_bump_covering
 
 Added src/geometry/manifold/whitney_embedding.lean
 - \+ *lemma* exists_embedding_finrank_of_compact
@@ -3618,6 +3647,7 @@ Added src/group_theory/free_product.lean
 - \+ *lemma* free_product.of_apply
 - \+ *lemma* free_product.of_injective
 - \+ *lemma* free_product.of_left_inverse
+- \+ *inductive* free_product.rel
 - \+ *def* free_product
 
 
@@ -3828,6 +3858,7 @@ Modified docs/references.bib
 
 Modified src/ring_theory/dedekind_domain.lean
 - \+ *def* is_dedekind_domain_inv
+- \- *structure* is_dedekind_domain_inv
 
 
 
@@ -4039,6 +4070,7 @@ Renamed src/topology/topological_fiber_bundle.lean to src/topology/fiber_bundle.
 - \- *def* bundle_trivialization.to_prebundle_trivialization
 - \- *def* bundle_trivialization.trans_fiber_homeomorph
 - \- *lemma* bundle_trivialization.trans_fiber_homeomorph_apply
+- \- *structure* bundle_trivialization
 - \+/\- *lemma* is_topological_fiber_bundle.exists_trivialization_Icc_subset
 - \- *lemma* prebundle_trivialization.apply_symm_apply'
 - \- *lemma* prebundle_trivialization.apply_symm_apply
@@ -4055,6 +4087,7 @@ Renamed src/topology/topological_fiber_bundle.lean to src/topology/fiber_bundle.
 - \- *lemma* prebundle_trivialization.proj_symm_apply
 - \- *def* prebundle_trivialization.set_symm
 - \- *lemma* prebundle_trivialization.symm_apply_mk_proj
+- \- *structure* prebundle_trivialization
 - \+ *lemma* topological_fiber_bundle.pretrivialization.apply_symm_apply'
 - \+ *lemma* topological_fiber_bundle.pretrivialization.apply_symm_apply
 - \+ *lemma* topological_fiber_bundle.pretrivialization.coe_coe
@@ -4070,6 +4103,7 @@ Renamed src/topology/topological_fiber_bundle.lean to src/topology/fiber_bundle.
 - \+ *lemma* topological_fiber_bundle.pretrivialization.proj_symm_apply
 - \+ *def* topological_fiber_bundle.pretrivialization.set_symm
 - \+ *lemma* topological_fiber_bundle.pretrivialization.symm_apply_mk_proj
+- \+ *structure* topological_fiber_bundle.pretrivialization
 - \+ *lemma* topological_fiber_bundle.trivialization.apply_symm_apply'
 - \+ *lemma* topological_fiber_bundle.trivialization.apply_symm_apply
 - \+ *lemma* topological_fiber_bundle.trivialization.coe_coe
@@ -4105,6 +4139,7 @@ Renamed src/topology/topological_fiber_bundle.lean to src/topology/fiber_bundle.
 - \+ *def* topological_fiber_bundle.trivialization.to_pretrivialization
 - \+ *def* topological_fiber_bundle.trivialization.trans_fiber_homeomorph
 - \+ *lemma* topological_fiber_bundle.trivialization.trans_fiber_homeomorph_apply
+- \+ *structure* topological_fiber_bundle.trivialization
 - \+/\- *def* topological_fiber_bundle_core.local_triv
 - \+/\- *def* topological_fiber_bundle_core.local_triv_at
 - \- *def* topological_fiber_prebundle.bundle_trivialization_at
@@ -4123,6 +4158,7 @@ Modified src/topology/vector_bundle.lean
 - \+/\- *def* topological_vector_bundle.trivialization.continuous_linear_equiv_at
 - \+/\- *lemma* topological_vector_bundle.trivialization.continuous_linear_equiv_at_apply'
 - \+/\- *lemma* topological_vector_bundle.trivialization.continuous_linear_equiv_at_apply
+- \+/\- *structure* topological_vector_bundle.trivialization
 
 
 
@@ -5282,6 +5318,7 @@ Modified docs/references.bib
 
 
 Added src/algebra/lie/from_cartan_matrix.lean
+- \+ *inductive* cartan_matrix.generators
 - \+ *def* cartan_matrix.relations.EF
 - \+ *def* cartan_matrix.relations.HE
 - \+ *def* cartan_matrix.relations.HF
@@ -5831,6 +5868,7 @@ Added src/geometry/manifold/algebra/left_invariant_derivation.lean
 - \+ *lemma* left_invariant_derivation.map_zero
 - \+ *lemma* left_invariant_derivation.to_derivation_eq_coe
 - \+ *lemma* left_invariant_derivation.to_fun_eq_coe
+- \+ *structure* left_invariant_derivation
 
 Modified src/geometry/manifold/algebra/monoid.lean
 - \+ *lemma* smooth_left_mul_one
@@ -5980,7 +6018,7 @@ Modified src/algebra/big_operators/ring.lean
 - \- *lemma* finset.sum_powerset
 
 Modified src/algebra/group/to_additive.lean
-
+- \+/\- *structure* to_additive.value_type
 
 Modified src/algebra/group_power/basic.lean
 - \- *theorem* add_monoid_hom.map_nsmul
@@ -6298,6 +6336,7 @@ Modified src/ring_theory/localization.lean
 - \+ *lemma* is_fraction_ring.num_mul_denom_eq_num_mul_denom_iff_eq
 - \+ *def* is_fraction_ring.to_integral_domain
 - \+ *lemma* is_fraction_ring.to_map_eq_zero_iff
+- \+ *abbreviation* is_fraction_ring
 - \+ *lemma* is_localization.alg_equiv_mk'
 - \+ *lemma* is_localization.alg_equiv_symm_mk'
 - \+ *lemma* is_localization.at_prime.is_unit_mk'_iff
@@ -6307,6 +6346,7 @@ Modified src/ring_theory/localization.lean
 - \+ *lemma* is_localization.at_prime.to_map_mem_maximal_iff
 - \+ *lemma* is_localization.away.away_map.lift_comp
 - \+ *lemma* is_localization.away.away_map.lift_eq
+- \+ *abbreviation* is_localization.away
 - \+ *def* is_localization.coe_submodule
 - \+ *lemma* is_localization.coeff_integer_normalization_mem_support
 - \+ *lemma* is_localization.coeff_integer_normalization_of_not_mem_support
@@ -6524,8 +6564,10 @@ Modified src/ring_theory/localization.lean
 - \- *lemma* localization_map.sec_spec
 - \- *lemma* localization_map.surj
 - \- *lemma* localization_map.surjective_quotient_map_of_maximal_of_localization
+- \- *abbreviation* localization_map.to_map
 - \- *lemma* localization_map.to_map_eq_zero_iff
 - \- *lemma* localization_map.to_map_injective
+- \- *structure* localization_map
 - \- *lemma* map_injective_of_injective
 - \- *def* ring_hom.to_localization_map
 - \- *def* submonoid.localization_map.to_ring_localization
@@ -7180,6 +7222,7 @@ Added src/data/list/duplicate.lean
 - \+ *lemma* list.duplicate.ne_singleton
 - \+ *lemma* list.duplicate.not_nodup
 - \+ *lemma* list.duplicate.of_duplicate_cons
+- \+ *inductive* list.duplicate
 - \+ *lemma* list.duplicate_cons_iff
 - \+ *lemma* list.duplicate_cons_iff_of_ne
 - \+ *lemma* list.duplicate_cons_self_iff
@@ -7223,6 +7266,7 @@ Added src/data/lazy_list.lean
 - \+ *def* lazy_list.tail
 - \+ *def* lazy_list.to_list
 - \+ *def* lazy_list.zip
+- \+ *inductive* lazy_list
 
 Modified src/data/lazy_list/basic.lean
 
@@ -7336,6 +7380,7 @@ Added src/algebra/lie/free.lean
 - \+ *def* free_lie_algebra.of
 - \+ *lemma* free_lie_algebra.of_comp_lift
 - \+ *lemma* free_lie_algebra.rel.add_left
+- \+ *inductive* free_lie_algebra.rel
 - \+ *def* free_lie_algebra
 
 Added src/algebra/lie/non_unital_non_assoc_algebra.lean

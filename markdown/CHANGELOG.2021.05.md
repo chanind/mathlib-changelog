@@ -112,6 +112,7 @@ Modified src/order/zorn.lean
 - \- *theorem* zorn.chain.total_of_refl
 - \+ *lemma* zorn.chain_chain_closure
 - \- *theorem* zorn.chain_chain_closure
+- \+/\- *inductive* zorn.chain_closure
 - \+ *lemma* zorn.chain_closure_closure
 - \- *theorem* zorn.chain_closure_closure
 - \+ *lemma* zorn.chain_closure_empty
@@ -159,6 +160,7 @@ Added src/ring_theory/laurent_series.lean
 - \+ *lemma* laurent_series.power_series_part_eq_zero
 - \+ *lemma* laurent_series.power_series_part_zero
 - \+ *lemma* laurent_series.single_order_mul_power_series_part
+- \+ *abbreviation* laurent_series
 
 
 
@@ -249,6 +251,10 @@ Added src/category_theory/preadditive/projective_resolution.lean
 - \+ *def* category_theory.ProjectiveResolution.lift_id_homotopy
 - \+ *def* category_theory.ProjectiveResolution.self
 - \+ *lemma* category_theory.ProjectiveResolution.π_f_succ
+- \+ *structure* category_theory.ProjectiveResolution
+- \+ *abbreviation* category_theory.projective_resolution.lift
+- \+ *abbreviation* category_theory.projective_resolution.π
+- \+ *abbreviation* category_theory.projective_resolution
 - \+ *def* category_theory.projective_resolutions
 
 
@@ -1131,11 +1137,12 @@ Modified src/tactic/reserved_notation.lean
 
 
 Modified src/tactic/simps.lean
-
+- \+ *abbreviation* projection_rule
 
 Modified test/simps.lean
 - \+ *def* prefix_projection_names.equiv.simps.symm_apply
 - \+ *def* prefix_projection_names.equiv.symm
+- \+ *structure* prefix_projection_names.equiv
 - \+ *def* prefix_projection_names.foo
 - \- *def* short_name1
 
@@ -2040,6 +2047,7 @@ Modified src/order/closure.lean
 - \+/\- *def* closure_operator.gi
 - \+/\- *def* closure_operator.simps.apply
 - \+/\- *lemma* closure_operator.top_mem_closed
+- \+/\- *structure* closure_operator
 - \+/\- *lemma* closure_operator_gi_self
 - \+/\- *def* galois_connection.closure_operator
 - \+ *def* galois_connection.lower_adjoint
@@ -2077,6 +2085,7 @@ Modified src/order/closure.lean
 - \+ *def* lower_adjoint.simps.apply
 - \+ *lemma* lower_adjoint.subset_closure
 - \+ *def* lower_adjoint.to_closed
+- \+ *structure* lower_adjoint
 
 
 
@@ -2635,12 +2644,14 @@ fix(analysis/normed_space/normed_group_quotient): put lemmas inside namespace  (
 Modified src/analysis/normed_space/normed_group_quotient.lean
 - \- *lemma* add_subgroup.is_quotient.norm_le
 - \- *lemma* add_subgroup.is_quotient.norm_lift
+- \- *structure* add_subgroup.is_quotient
 - \- *lemma* add_subgroup.is_quotient_quotient
 - \- *def* add_subgroup.lift
 - \- *lemma* add_subgroup.lift_mk
 - \- *lemma* add_subgroup.lift_unique
 - \+ *lemma* normed_group_hom.is_quotient.norm_le
 - \+ *lemma* normed_group_hom.is_quotient.norm_lift
+- \+ *structure* normed_group_hom.is_quotient
 - \+ *lemma* normed_group_hom.is_quotient_quotient
 - \+ *def* normed_group_hom.lift
 - \+ *lemma* normed_group_hom.lift_mk
@@ -2708,6 +2719,7 @@ Modified src/algebra/homology/homological_complex.lean
 - \+ *lemma* cochain_complex.mk_hom_f_1
 - \+ *lemma* cochain_complex.mk_hom_f_succ_succ
 - \+ *def* cochain_complex.mk_struct.flat
+- \+ *structure* cochain_complex.mk_struct
 
 Modified src/algebra/homology/single.lean
 - \+ *def* cochain_complex.from_single₀_equiv
@@ -2886,7 +2898,8 @@ Modified src/algebra/big_operators/finprod.lean
 - \+ *lemma* finprod_of_is_empty
 
 Modified src/algebra/homology/homological_complex.lean
-
+- \+/\- *abbreviation* chain_complex
+- \+/\- *abbreviation* cochain_complex
 
 Modified src/analysis/calculus/inverse.lean
 
@@ -2997,6 +3010,7 @@ Modified src/analysis/normed_space/basic.lean
 Added src/analysis/normed_space/normed_group_quotient.lean
 - \+ *lemma* add_subgroup.is_quotient.norm_le
 - \+ *lemma* add_subgroup.is_quotient.norm_lift
+- \+ *structure* add_subgroup.is_quotient
 - \+ *lemma* add_subgroup.is_quotient_quotient
 - \+ *lemma* add_subgroup.ker_normed_mk
 - \+ *def* add_subgroup.lift
@@ -3274,6 +3288,7 @@ Modified src/measure_theory/borel_space.lean
 - \- *lemma* measure_theory.measure.regular.exists_compact_not_null
 - \- *lemma* measure_theory.measure.regular.inner_regular_eq
 - \- *lemma* measure_theory.measure.regular.outer_regular_eq
+- \- *structure* measure_theory.measure.regular
 
 Modified src/measure_theory/content.lean
 - \+ *lemma* measure_theory.content.apply_eq_coe_to_fun
@@ -3311,6 +3326,7 @@ Modified src/measure_theory/content.lean
 - \+ *lemma* measure_theory.content.outer_measure_preimage
 - \+ *lemma* measure_theory.content.sup_disjoint
 - \+ *lemma* measure_theory.content.sup_le
+- \+ *structure* measure_theory.content
 - \- *def* measure_theory.inner_content
 - \- *lemma* measure_theory.inner_content_Sup_nat
 - \- *lemma* measure_theory.inner_content_Union_nat
@@ -3559,6 +3575,7 @@ Modified src/tactic/simps.lean
 
 Modified test/simps.lean
 - \+ *def* foo_sum
+- \+ *structure* my_functor
 
 
 
@@ -3570,6 +3587,7 @@ Modified src/algebraic_topology/simplicial_object.lean
 - \+ *def* category_theory.cosimplicial_object.augmented.drop
 - \+ *def* category_theory.cosimplicial_object.augmented.point
 - \+ *def* category_theory.cosimplicial_object.augmented
+- \+ *abbreviation* category_theory.cosimplicial_object.const
 - \+ *def* category_theory.cosimplicial_object.eq_to_iso
 - \+ *lemma* category_theory.cosimplicial_object.eq_to_iso_refl
 - \+ *def* category_theory.cosimplicial_object.sk
@@ -3694,6 +3712,7 @@ Added src/counterexamples/linear_order_with_pos_mul_pos_eq_zero.lean
 - \+ *lemma* foo.aux1_inj
 - \+ *def* foo.mul
 - \+ *lemma* foo.not_mul_pos
+- \+ *inductive* foo
 
 
 
@@ -4046,6 +4065,7 @@ Modified src/linear_algebra/determinant.lean
 - \+ *lemma* linear_equiv.is_unit_det
 - \+ *def* linear_equiv.of_is_unit_det
 - \- *lemma* matrix.alg_hom.map_det
+- \- *abbreviation* matrix.det
 - \- *lemma* matrix.det_apply'
 - \- *lemma* matrix.det_apply
 - \- *lemma* matrix.det_block_diagonal
@@ -4302,6 +4322,7 @@ Added src/linear_algebra/matrix/default.lean
 
 Added src/linear_algebra/matrix/determinant.lean
 - \+ *lemma* matrix.alg_hom.map_det
+- \+ *abbreviation* matrix.det
 - \+ *lemma* matrix.det_apply'
 - \+ *lemma* matrix.det_apply
 - \+ *lemma* matrix.det_block_diagonal
@@ -4547,8 +4568,10 @@ Modified src/algebra/lie/submodule.lean
 Modified src/algebra/lie/weights.lean
 - \+ *lemma* lie_algebra.coe_root_space_weight_space_product_tmul
 - \+ *lemma* lie_algebra.coe_zero_root_subalgebra
+- \+/\- *abbreviation* lie_algebra.is_root
 - \+ *lemma* lie_algebra.le_zero_root_subalgebra
 - \+ *lemma* lie_algebra.lie_mem_weight_space_of_mem_weight_space
+- \+/\- *abbreviation* lie_algebra.root_space
 - \+ *def* lie_algebra.root_space_product
 - \+ *lemma* lie_algebra.root_space_product_def
 - \+ *lemma* lie_algebra.root_space_product_tmul
@@ -4596,6 +4619,7 @@ Added counterexamples/phillips.lean
 - \+ *lemma* phillips_1940.bounded_additive_measure.neg_apply
 - \+ *def* phillips_1940.bounded_additive_measure.restrict
 - \+ *lemma* phillips_1940.bounded_additive_measure.restrict_apply
+- \+ *structure* phillips_1940.bounded_additive_measure
 - \+ *def* phillips_1940.bounded_integrable_functions
 - \+ *def* phillips_1940.bounded_integrable_functions_integral_clm
 - \+ *lemma* phillips_1940.comp_ae_eq_const
@@ -4673,6 +4697,7 @@ Modified src/category_theory/abelian/non_preadditive.lean
 
 Modified src/category_theory/abelian/projective.lean
 - \+ *lemma* category_theory.exact_d_f
+- \- *abbreviation* category_theory.projective.d
 - \- *lemma* category_theory.projective.exact_d_f
 - \- *def* category_theory.projective.factor_thru
 - \- *lemma* category_theory.projective.factor_thru_comp
@@ -4681,6 +4706,7 @@ Modified src/category_theory/abelian/projective.lean
 - \- *lemma* category_theory.projective.of_iso
 - \- *def* category_theory.projective.over
 - \- *def* category_theory.projective.π
+- \- *structure* category_theory.projective_presentation
 
 Modified src/category_theory/closed/zero.lean
 
@@ -4706,6 +4732,7 @@ Modified src/category_theory/preadditive/default.lean
 Added src/category_theory/preadditive/projective.lean
 - \+ *def* category_theory.exact.lift
 - \+ *lemma* category_theory.exact.lift_comp
+- \+ *abbreviation* category_theory.projective.d
 - \+ *def* category_theory.projective.factor_thru
 - \+ *lemma* category_theory.projective.factor_thru_comp
 - \+ *lemma* category_theory.projective.iso_iff
@@ -4713,6 +4740,7 @@ Added src/category_theory/preadditive/projective.lean
 - \+ *def* category_theory.projective.over
 - \+ *def* category_theory.projective.syzygies
 - \+ *def* category_theory.projective.π
+- \+ *structure* category_theory.projective_presentation
 
 Modified src/category_theory/simple.lean
 
@@ -4761,9 +4789,11 @@ Added src/algebra/homology/homotopy.lean
 - \+ *lemma* homotopy.to_prev'_chain_complex
 - \+ *def* homotopy.to_prev
 - \+ *def* homotopy.trans
+- \+ *structure* homotopy
 - \+ *def* homotopy_equiv.refl
 - \+ *def* homotopy_equiv.symm
 - \+ *def* homotopy_equiv.trans
+- \+ *structure* homotopy_equiv
 - \+ *def* to_prev'
 - \+ *lemma* to_prev'_add
 - \+ *lemma* to_prev'_comp_left
@@ -5021,6 +5051,7 @@ None of these statements involve surreal numbers.
 #### Estimated changes
 Modified src/set_theory/game.lean
 - \+ *def* pgame.inv'
+- \+ *inductive* pgame.inv_ty
 - \+ *def* pgame.inv_val
 - \+ *theorem* pgame.left_distrib_equiv
 - \+ *lemma* pgame.left_distrib_equiv_aux'
@@ -5046,6 +5077,7 @@ Modified src/set_theory/game.lean
 
 Modified src/set_theory/surreal.lean
 - \- *def* pgame.inv'
+- \- *inductive* pgame.inv_ty
 - \- *def* pgame.inv_val
 - \- *theorem* pgame.left_distrib_equiv
 - \- *lemma* pgame.left_distrib_equiv_aux'
@@ -5169,6 +5201,7 @@ Modified src/linear_algebra/dual.lean
 - \+/\- *lemma* dual_pair.lc_coeffs
 - \+/\- *lemma* dual_pair.lc_def
 - \+/\- *lemma* dual_pair.mem_of_mem_span
+- \+/\- *structure* dual_pair
 
 
 
@@ -5534,11 +5567,15 @@ However after not too long we also set up `option` valued `next` and `prev` func
 Deleted src/algebra/homology/chain_complex.lean
 - \- *def* category_theory.functor.map_homological_complex
 - \- *def* category_theory.functor.pushforward_homological_complex
+- \- *abbreviation* chain_complex
+- \- *abbreviation* cochain_complex
 - \- *lemma* homological_complex.comm
 - \- *lemma* homological_complex.comm_at
 - \- *lemma* homological_complex.d_squared
 - \- *lemma* homological_complex.eq_to_hom_d
 - \- *lemma* homological_complex.eq_to_hom_f
+- \- *abbreviation* homological_complex.forget
+- \- *abbreviation* homological_complex
 
 Added src/algebra/homology/complex_shape.lean
 - \+ *def* complex_shape.down'
@@ -5553,6 +5590,7 @@ Added src/algebra/homology/complex_shape.lean
 - \+ *def* complex_shape.trans
 - \+ *def* complex_shape.up'
 - \+ *def* complex_shape.up
+- \+ *structure* complex_shape
 
 Modified src/algebra/homology/exact.lean
 - \+ *lemma* category_theory.comp_eq_zero_of_image_eq_kernel
@@ -5589,6 +5627,7 @@ Added src/algebra/homology/homological_complex.lean
 - \+ *lemma* chain_complex.mk_hom_f_1
 - \+ *lemma* chain_complex.mk_hom_f_succ_succ
 - \+ *def* chain_complex.mk_struct.flat
+- \+ *structure* chain_complex.mk_struct
 - \+ *lemma* chain_complex.next
 - \+ *lemma* chain_complex.next_nat_succ
 - \+ *lemma* chain_complex.next_nat_zero
@@ -5596,10 +5635,12 @@ Added src/algebra/homology/homological_complex.lean
 - \+ *lemma* chain_complex.of_X
 - \+ *lemma* chain_complex.of_d
 - \+ *lemma* chain_complex.prev
+- \+ *abbreviation* chain_complex
 - \+ *lemma* cochain_complex.next
 - \+ *lemma* cochain_complex.prev
 - \+ *lemma* cochain_complex.prev_nat_succ
 - \+ *lemma* cochain_complex.prev_nat_zero
+- \+ *abbreviation* cochain_complex
 - \+ *def* homological_complex.X_next
 - \+ *def* homological_complex.X_next_iso
 - \+ *def* homological_complex.X_next_iso_zero
@@ -5637,6 +5678,7 @@ Added src/algebra/homology/homological_complex.lean
 - \+ *def* homological_complex.hom.sq_to
 - \+ *lemma* homological_complex.hom.sq_to_left
 - \+ *lemma* homological_complex.hom.sq_to_right
+- \+ *structure* homological_complex.hom
 - \+ *lemma* homological_complex.hom_f_injective
 - \+ *def* homological_complex.id
 - \+ *lemma* homological_complex.id_f
@@ -5645,20 +5687,29 @@ Added src/algebra/homology/homological_complex.lean
 - \+ *lemma* homological_complex.kernel_eq_kernel
 - \+ *lemma* homological_complex.kernel_from_eq_kernel
 - \+ *lemma* homological_complex.zero_apply
+- \+ *structure* homological_complex
 
 Modified src/algebra/homology/homology.lean
 - \+ *def* boundaries_functor
+- \+ *abbreviation* boundaries_map
 - \+ *def* boundaries_to_cycles_nat_trans
 - \+ *lemma* boundaries_to_cycles_naturality
+- \- *abbreviation* cochain_complex.cohomology
+- \- *abbreviation* cochain_complex.cohomology_group
+- \- *abbreviation* cochain_complex.cohomology_map
+- \- *abbreviation* cochain_complex.graded_cohomology
 - \+ *def* cycles_functor
+- \+ *abbreviation* cycles_map
 - \+ *lemma* cycles_map_arrow
 - \+ *lemma* cycles_map_comp
 - \+ *lemma* cycles_map_id
 - \+ *def* graded_homology_functor
+- \+ *abbreviation* homological_complex.boundaries
 - \+ *lemma* homological_complex.boundaries_eq_bot
 - \+ *lemma* homological_complex.boundaries_eq_image_subobject
 - \+ *def* homological_complex.boundaries_iso_image
 - \+ *lemma* homological_complex.boundaries_le_cycles
+- \+ *abbreviation* homological_complex.boundaries_to_cycles
 - \+ *lemma* homological_complex.boundaries_to_cycles_arrow
 - \+ *def* homological_complex.cycles
 - \+ *lemma* homological_complex.cycles_arrow_d_from
@@ -5666,12 +5717,14 @@ Modified src/algebra/homology/homology.lean
 - \+ *lemma* homological_complex.cycles_eq_top
 - \+ *def* homological_complex.cycles_iso_kernel
 - \- *def* homological_complex.graded_homology
+- \+ *abbreviation* homological_complex.homology
 - \- *def* homological_complex.homology
 - \- *def* homological_complex.homology_group
 - \- *def* homological_complex.homology_map
 - \- *lemma* homological_complex.homology_map_comp
 - \- *lemma* homological_complex.homology_map_condition
 - \- *lemma* homological_complex.homology_map_id
+- \- *abbreviation* homological_complex.image_map
 - \- *lemma* homological_complex.image_map_ι
 - \+ *lemma* homological_complex.image_to_kernel_as_boundaries_to_cycles
 - \- *def* homological_complex.image_to_kernel_map
@@ -5711,6 +5764,7 @@ Added src/algebra/homology/image_to_kernel.lean
 - \+ *lemma* subobject_of_le_as_image_to_kernel
 
 Deleted src/algebra/homology/image_to_kernel_map.lean
+- \- *abbreviation* category_theory.image_to_kernel_map
 - \- *lemma* category_theory.image_to_kernel_map_comp_hom_inv_comp
 - \- *lemma* category_theory.image_to_kernel_map_comp_iso
 - \- *lemma* category_theory.image_to_kernel_map_comp_left
@@ -5740,6 +5794,7 @@ Modified src/set_theory/game.lean
 - \+ *lemma* game.quot_add
 - \+ *lemma* game.quot_neg
 - \+ *lemma* game.quot_sub
+- \+ *abbreviation* game
 - \- *def* game
 
 Modified src/set_theory/pgame.lean
@@ -5772,6 +5827,7 @@ Added src/algebraic_topology/cech_nerve.lean
 
 Modified src/algebraic_topology/simplicial_object.lean
 - \+ *def* category_theory.simplicial_object.augmented
+- \+ *abbreviation* category_theory.simplicial_object.const
 
 Modified src/category_theory/limits/shapes/wide_pullbacks.lean
 
@@ -5938,18 +5994,28 @@ feat(category_theory/limits/shapes/wide_pullbacks): Adds some wrappers around th
 This PR adds some wrappers (mostly abbreviations) around the (co)limit api specifically for wide pullbacks and wide pushouts.
 #### Estimated changes
 Modified src/category_theory/limits/shapes/wide_pullbacks.lean
+- \+ *abbreviation* category_theory.limits.has_wide_pullback
+- \+ *abbreviation* category_theory.limits.has_wide_pushout
+- \+ *abbreviation* category_theory.limits.wide_pullback.base
 - \+ *lemma* category_theory.limits.wide_pullback.eq_lift_of_comp_eq
 - \+ *lemma* category_theory.limits.wide_pullback.hom_eq_lift
 - \+ *lemma* category_theory.limits.wide_pullback.hom_ext
+- \+ *abbreviation* category_theory.limits.wide_pullback.lift
 - \+ *lemma* category_theory.limits.wide_pullback.lift_base
 - \+ *lemma* category_theory.limits.wide_pullback.lift_π
+- \+ *abbreviation* category_theory.limits.wide_pullback.π
 - \+ *lemma* category_theory.limits.wide_pullback.π_arrow
+- \+ *abbreviation* category_theory.limits.wide_pullback
 - \+ *lemma* category_theory.limits.wide_pushout.arrow_ι
+- \+ *abbreviation* category_theory.limits.wide_pushout.desc
 - \+ *lemma* category_theory.limits.wide_pushout.eq_desc_of_comp_eq
+- \+ *abbreviation* category_theory.limits.wide_pushout.head
 - \+ *lemma* category_theory.limits.wide_pushout.head_desc
 - \+ *lemma* category_theory.limits.wide_pushout.hom_eq_desc
 - \+ *lemma* category_theory.limits.wide_pushout.hom_ext
+- \+ *abbreviation* category_theory.limits.wide_pushout.ι
 - \+ *lemma* category_theory.limits.wide_pushout.ι_desc
+- \+ *abbreviation* category_theory.limits.wide_pushout
 
 
 
@@ -6305,6 +6371,7 @@ Modified src/linear_algebra/basis.lean
 - \+ *lemma* basis.sum_equiv_fun
 - \+ *lemma* basis.sum_repr
 - \+ *lemma* basis.total_repr
+- \+ *structure* basis
 - \- *lemma* constr_add
 - \- *lemma* constr_basis
 - \- *lemma* constr_eq
@@ -6778,6 +6845,7 @@ Modified src/algebra/lie/cartan_subalgebra.lean
 
 
 Added src/algebra/lie/character.lean
+- \+ *abbreviation* lie_algebra.lie_character
 - \+ *lemma* lie_algebra.lie_character_apply_lie
 - \+ *lemma* lie_algebra.lie_character_apply_of_mem_derived
 - \+ *def* lie_algebra.lie_character_equiv_linear_dual
@@ -6792,6 +6860,8 @@ Modified src/algebra/lie/submodule.lean
 - \+ *lemma* lie_submodule.subsingleton_iff
 
 Added src/algebra/lie/weights.lean
+- \+ *abbreviation* lie_algebra.is_root
+- \+ *abbreviation* lie_algebra.root_space
 - \+ *lemma* lie_algebra.zero_root_space_eq_top_of_nilpotent
 - \+ *lemma* lie_module.coe_weight_space_of_top
 - \+ *def* lie_module.is_weight
@@ -6859,6 +6929,7 @@ Added src/topology/category/Profinite/as_limit.lean
 - \+ *def* Profinite.as_limit
 - \+ *def* Profinite.as_limit_cone
 - \+ *def* Profinite.as_limit_cone_iso
+- \+ *abbreviation* Profinite.diagram
 - \+ *def* Profinite.fintype_diagram
 - \+ *def* Profinite.iso_as_limit_cone_lift
 - \+ *def* Profinite.lim
@@ -7438,6 +7509,7 @@ Modified src/data/polynomial/basic.lean
 - \+ *lemma* polynomial.to_finsupp_iso_monomial
 - \+ *lemma* polynomial.to_finsupp_iso_symm_single
 - \+ *lemma* polynomial.zero_to_finsupp
+- \+ *structure* polynomial
 - \- *def* polynomial
 
 Modified src/data/polynomial/coeff.lean
@@ -8912,6 +8984,7 @@ Added src/topology/discrete_quotient.lean
 - \+ *def* discrete_quotient.setoid
 - \+ *lemma* discrete_quotient.symm
 - \+ *lemma* discrete_quotient.trans
+- \+ *structure* discrete_quotient
 
 
 
@@ -9173,6 +9246,8 @@ Modified src/category_theory/monoidal/category.lean
 - \+/\- *lemma* category_theory.monoidal_category.triangle_assoc_comp_right_inv
 
 Added src/category_theory/monoidal/free/basic.lean
+- \+ *inductive* category_theory.free_monoidal_category.hom
+- \+ *inductive* category_theory.free_monoidal_category.hom_equiv
 - \+ *lemma* category_theory.free_monoidal_category.mk_comp
 - \+ *lemma* category_theory.free_monoidal_category.mk_id
 - \+ *lemma* category_theory.free_monoidal_category.mk_l_hom
@@ -9189,6 +9264,7 @@ Added src/category_theory/monoidal/free/basic.lean
 - \+ *def* category_theory.free_monoidal_category.setoid_hom
 - \+ *lemma* category_theory.free_monoidal_category.tensor_eq_tensor
 - \+ *lemma* category_theory.free_monoidal_category.unit_eq_unit
+- \+ *inductive* category_theory.free_monoidal_category
 
 Added src/category_theory/monoidal/free/coherence.lean
 - \+ *def* category_theory.free_monoidal_category.full_normalize
@@ -9196,6 +9272,7 @@ Added src/category_theory/monoidal/free/coherence.lean
 - \+ *def* category_theory.free_monoidal_category.inclusion
 - \+ *def* category_theory.free_monoidal_category.inclusion_obj
 - \+ *def* category_theory.free_monoidal_category.inverse_aux
+- \+ *inductive* category_theory.free_monoidal_category.normal_monoidal_object
 - \+ *def* category_theory.free_monoidal_category.normalize'
 - \+ *def* category_theory.free_monoidal_category.normalize
 - \+ *def* category_theory.free_monoidal_category.normalize_iso
@@ -9443,6 +9520,7 @@ Added src/category_theory/enriched/basic.lean
 - \+ *def* category_theory.enriched_functor.comp
 - \+ *def* category_theory.enriched_functor.forget
 - \+ *def* category_theory.enriched_functor.id
+- \+ *structure* category_theory.enriched_functor
 - \+ *def* category_theory.enriched_functor_Type_equiv_functor
 - \+ *def* category_theory.enriched_nat_trans_yoneda
 - \+ *def* category_theory.enriched_nat_trans_yoneda_Type_iso_yoneda_nat_trans
@@ -9458,6 +9536,7 @@ Added src/category_theory/enriched/basic.lean
 - \+ *lemma* category_theory.forget_enrichment_comp
 - \+ *lemma* category_theory.forget_enrichment_id'
 - \+ *lemma* category_theory.forget_enrichment_id
+- \+ *structure* category_theory.graded_nat_trans
 - \+ *def* category_theory.transport_enrichment
 
 Modified src/category_theory/monoidal/braided.lean

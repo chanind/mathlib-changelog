@@ -215,6 +215,7 @@ Added category/traversable/basic.lean
 - \+ *lemma* applicative_transformation.preserves_map
 - \+ *lemma* applicative_transformation.preserves_pure
 - \+ *lemma* applicative_transformation.preserves_seq
+- \+ *structure* applicative_transformation
 - \+ *def* sequence
 
 Added category/traversable/default.lean
@@ -368,6 +369,7 @@ Modified data/option.lean
 - \+/\- *theorem* option.map_none
 - \+/\- *theorem* option.map_some
 - \+/\- *theorem* option.none_bind
+- \+/\- *inductive* option.rel
 - \+/\- *theorem* option.seq_some
 - \+/\- *theorem* option.some_bind
 
@@ -457,6 +459,7 @@ Modified analysis/ennreal.lean
 - \- *lemma* ennreal.zero_lt_of_real_iff
 - \- *lemma* ennreal.zero_ne_infty
 - \- *lemma* ennreal.zero_sub
+- \- *inductive* ennreal
 
 Modified data/real/basic.lean
 - \+ *lemma* real.Sup_is_lub
@@ -536,6 +539,7 @@ Added data/real/ennreal.lean
 - \+ *lemma* ennreal.zero_lt_of_real_iff
 - \+ *lemma* ennreal.zero_ne_infty
 - \+ *lemma* ennreal.zero_sub
+- \+ *inductive* ennreal
 
 Modified data/set/lattice.lean
 - \+ *def* set.kern_image
@@ -716,6 +720,7 @@ Modified analysis/measure_theory/measure_space.lean
 - \+ *theorem* measure_theory.measure.to_outer_measure_le
 - \+ *theorem* measure_theory.measure.zero_apply
 - \+ *theorem* measure_theory.measure.zero_to_outer_measure
+- \+ *structure* measure_theory.measure
 - \+ *lemma* measure_theory.measure_Union
 - \+ *theorem* measure_theory.measure_Union_le
 - \- *lemma* measure_theory.measure_Union_le_tsum_nat
@@ -739,6 +744,7 @@ Modified analysis/measure_theory/measure_space.lean
 - \- *lemma* measure_theory.measure_space.map_id
 - \- *lemma* measure_theory.measure_space.map_measure
 - \- *def* measure_theory.measure_space.sum
+- \- *structure* measure_theory.measure_space
 - \- *lemma* measure_theory.measure_space_eq
 - \- *lemma* measure_theory.measure_space_eq_of
 - \+ *theorem* measure_theory.measure_union_le
@@ -1800,6 +1806,7 @@ Modified category/basic.lean
 
 Added category/functor.lean
 - \+ *lemma* functor.comp.map_mk
+- \+ *structure* functor.comp
 - \+ *lemma* functor.map_comp_map
 - \+ *lemma* functor.map_id
 - \+ *def* id.mk
@@ -2106,6 +2113,7 @@ Modified computability/turing_machine.lean
 - \+ *def* turing.TM0to1.tr
 - \+ *def* turing.TM0to1.tr_cfg
 - \+ *theorem* turing.TM0to1.tr_respects
+- \+ *inductive* turing.TM0to1.Λ'
 - \+/\- *def* turing.TM1.init
 - \+/\- *def* turing.TM1.step_aux
 - \+/\- *def* turing.TM1to0.tr_cfg
@@ -2132,6 +2140,7 @@ Modified computability/turing_machine.lean
 - \+ *theorem* turing.TM1to1.tr_tape_drop_right
 - \+ *theorem* turing.TM1to1.tr_tape_take_right
 - \+ *def* turing.TM1to1.write
+- \+ *inductive* turing.TM1to1.Λ'
 - \+/\- *def* turing.TM2.init
 - \+/\- *def* turing.TM2.step_aux
 - \+/\- *theorem* turing.TM2to1.tr_respects_aux₃

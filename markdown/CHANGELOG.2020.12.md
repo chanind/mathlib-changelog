@@ -1020,6 +1020,7 @@ This allows simp lemmas about `quotient.mk'` to apply here, which currently do n
 The definition doesn't seem interesting enough to be semireducible.
 #### Estimated changes
 Modified src/group_theory/coset.lean
+- \+ *abbreviation* quotient_group.mk
 - \- *def* quotient_group.mk
 
 
@@ -1656,6 +1657,7 @@ Added src/data/ordmap/ordnode.lean
 - \+ *def* ordnode.to_rev_list
 - \+ *def* ordnode.union
 - \+ *def* ordnode.update_with
+- \+ *inductive* ordnode
 
 Added src/data/ordmap/ordset.lean
 - \+ *theorem* ordnode.all.imp
@@ -1831,6 +1833,7 @@ Added src/data/ordmap/ordset.lean
 - \+ *theorem* ordnode.valid'.trans_left
 - \+ *theorem* ordnode.valid'.trans_right
 - \+ *theorem* ordnode.valid'.valid
+- \+ *structure* ordnode.valid'
 - \+ *theorem* ordnode.valid'_nil
 - \+ *theorem* ordnode.valid'_singleton
 - \+ *theorem* ordnode.valid.dual
@@ -1923,6 +1926,7 @@ Modified src/ring_theory/perfection.lean
 - \+ *lemma* perfection_map.id
 - \+ *lemma* perfection_map.mk'
 - \+ *lemma* perfection_map.of
+- \+ *structure* perfection_map
 - \- *def* ring.perfection.coeff
 - \- *lemma* ring.perfection.coeff_add_ne_zero
 - \- *lemma* ring.perfection.coeff_frobenius
@@ -3310,6 +3314,7 @@ Modified src/topology/metric_space/pi_Lp.lean
 feat(algebra/lie/basic): nilpotent and solvable Lie algebras ([#5382](https://github.com/leanprover-community/mathlib/pull/5382))
 #### Estimated changes
 Modified src/algebra/lie/basic.lean
+- \- *abbreviation* derived_lie_ideal
 - \- *def* derived_lie_submodule
 - \+ *def* lie_algebra.derived_series
 - \+ *lemma* lie_module.derived_series_le_lower_central_series
@@ -3791,6 +3796,7 @@ Modified src/measure_theory/lp_space.lean
 feat(algebra/lie/basic): define ideal operations for Lie modules ([#5337](https://github.com/leanprover-community/mathlib/pull/5337))
 #### Estimated changes
 Modified src/algebra/lie/basic.lean
+- \+ *abbreviation* derived_lie_ideal
 - \+ *def* derived_lie_submodule
 - \+/\- *lemma* lie_submodule.add_eq_sup
 - \+ *lemma* lie_submodule.bot_lie
@@ -3921,20 +3927,38 @@ Modified src/tactic/core.lean
 
 
 Added src/tactic/induction.lean
-
+- \+ *inductive* tactic.eliminate.generalization_mode
 
 Added test/induction.lean
+- \+ *inductive* Even
+- \+ *inductive* Fin
 - \+ *def* List.append
+- \+ *inductive* List
+- \+ *inductive* Two
+- \+ *inductive* Vec.eq
+- \+ *inductive* Vec
 - \+ *def* accufact
 - \+ *lemma* accufact_1_eq_fact
+- \+ *inductive* expressions.exp
 - \+ *def* expressions.subst
 - \+ *lemma* expressions.subst_Var
 - \+ *lemma* fraction.ext
+- \+ *structure* fraction
+- \+ *inductive* le
+- \+ *inductive* less_than.lt
 - \+ *lemma* less_than.lt_lte
+- \+ *inductive* less_than.lte
+- \+ *inductive* lt
+- \+ *inductive* nat_or_positive
 - \+ *lemma* not_even_2_mul_add_1
 - \+ *lemma* not_sorted_17_13
+- \+ *inductive* palindrome.palindrome
 - \+ *lemma* palindrome.rev_palindrome
+- \+ *inductive* rose.nonempty
 - \+ *lemma* rose.nonempty_node_elim
+- \+ *inductive* rose
+- \+ *inductive* rose₁
+- \+ *inductive* semantics.big_step
 - \+ *lemma* semantics.big_step_assign_iff
 - \+ *lemma* semantics.big_step_deterministic
 - \+ *lemma* semantics.big_step_ite_iff
@@ -3945,8 +3969,10 @@ Added test/induction.lean
 - \+ *lemma* semantics.big_step_while_false_iff
 - \+ *lemma* semantics.big_step_while_iff
 - \+ *lemma* semantics.big_step_while_true_iff
+- \+ *inductive* semantics.curried_big_step
 - \+ *lemma* semantics.not_big_step_while_true
 - \+ *lemma* semantics.not_curried_big_step_while_true
+- \+ *inductive* semantics.small_step
 - \+ *lemma* semantics.small_step_deterministic
 - \+ *lemma* semantics.small_step_final
 - \+ *lemma* semantics.small_step_if_equal_states
@@ -3961,13 +3987,19 @@ Added test/induction.lean
 - \+ *lemma* semantics.star_small_step_seq
 - \+ *def* semantics.state.update
 - \+ *def* semantics.state
+- \+ *inductive* semantics.stmt
+- \+ *inductive* sorted
 - \+ *lemma* star.head
 - \+ *lemma* star.head_induction_on
+- \+ *inductive* star
+- \+ *inductive* transitive_closure.tc
 - \+ *lemma* transitive_closure.tc_pets₁
 - \+ *lemma* transitive_closure.tc_pets₂
 - \+ *lemma* transitive_closure.tc_trans'
 - \+ *lemma* transitive_closure.tc_trans
+- \+ *inductive* ℕ'
 - \+ *def* ℕ₂.plus
+- \+ *inductive* ℕ₂
 
 
 
@@ -5101,6 +5133,7 @@ Added src/combinatorics/simple_graph/degree_sum.lean
 - \+ *lemma* simple_graph.dart.rev_involutive
 - \+ *lemma* simple_graph.dart.rev_ne
 - \+ *lemma* simple_graph.dart.rev_rev
+- \+ *structure* simple_graph.dart
 - \+ *lemma* simple_graph.dart_card_eq_sum_degrees
 - \+ *lemma* simple_graph.dart_card_eq_twice_card_edges
 - \+ *lemma* simple_graph.dart_edge_eq_iff
@@ -5253,9 +5286,11 @@ feat(category_theory/sites/sieves): change presieve operation defs ([#5295](http
 change the definitions of operations on presieves to avoid `eq_to_hom` and use inductive types instead, which makes proofs a lot nicer
 #### Estimated changes
 Modified src/category_theory/sites/pretopology.lean
+- \+ *inductive* category_theory.pullback_arrows
 - \- *def* category_theory.pullback_arrows
 
 Modified src/category_theory/sites/sieves.lean
+- \+ *inductive* category_theory.presieve.singleton
 - \- *def* category_theory.presieve.singleton
 - \+/\- *lemma* category_theory.presieve.singleton_self
 
@@ -5397,6 +5432,7 @@ Modified src/order/filter/ultrafilter.lean
 - \+ *lemma* ultrafilter.of_le
 - \+ *lemma* ultrafilter.union_mem_iff
 - \+ *lemma* ultrafilter.unique
+- \+ *structure* ultrafilter
 
 Modified src/topology/basic.lean
 - \+/\- *lemma* continuous_at_iff_ultrafilter
@@ -5873,9 +5909,11 @@ Define split pairs and `G`-split pairs.
 These definitions and constructions are useful in particular for the monadicity theorems.
 #### Estimated changes
 Added src/category_theory/limits/shapes/split_coequalizer.lean
+- \+ *abbreviation* category_theory.functor.is_split_pair
 - \+ *def* category_theory.is_split_coequalizer.as_cofork
 - \+ *def* category_theory.is_split_coequalizer.is_coequalizer
 - \+ *def* category_theory.is_split_coequalizer.map
+- \+ *structure* category_theory.is_split_coequalizer
 
 
 
@@ -6716,6 +6754,8 @@ refactor(combinatorics/simple_graph/matching): change definition of matching ([#
 Refactored definition of matching per @eric-wieser's [suggestion](https://github.com/leanprover-community/mathlib/pull/5156#discussion_r535102524) and @kmill's [suggestion](https://github.com/leanprover-community/mathlib/pull/5156#discussion_r535745112), for the purpose of using `matching.sub_edges` instead of `matching.prop.sub_edges`
 #### Estimated changes
 Modified src/combinatorics/simple_graph/matching.lean
+- \- *structure* simple_graph.is_matching
+- \+ *structure* simple_graph.matching
 - \- *def* simple_graph.matching
 
 
@@ -6808,6 +6848,7 @@ Added src/dynamics/flow.lean
 - \+ *def* flow.restrict
 - \+ *def* flow.reverse
 - \+ *def* flow.to_homeomorph
+- \+ *structure* flow
 - \+ *lemma* is_fw_invariant.is_invariant
 - \+ *def* is_fw_invariant
 - \+ *lemma* is_fw_invariant_iff_is_invariant
@@ -7085,6 +7126,7 @@ Modified scripts/copy-mod-doc-exceptions.txt
 feat(algebra/lie/basic): define missing inclusion maps ([#5207](https://github.com/leanprover-community/mathlib/pull/5207))
 #### Estimated changes
 Modified src/algebra/lie/basic.lean
+- \+ *abbreviation* is_lie_abelian
 - \+ *def* lie_ideal.incl
 - \+ *lemma* lie_ideal.incl_apply
 - \+ *lemma* lie_submodule.coe_hom_of_le
@@ -7148,6 +7190,7 @@ Modified src/topology/category/CompHaus.lean
 
 Added src/topology/category/Profinite.lean
 - \+ *lemma* Profinite.coe_to_Top
+- \+ *structure* Profinite
 - \+ *def* Profinite_to_CompHaus
 - \+ *lemma* Profinite_to_CompHaus_to_Top
 - \+ *def* Profinite_to_Top
@@ -7309,6 +7352,7 @@ Added src/group_theory/group_action/sub_mul_action.lean
 - \+ *theorem* sub_mul_action.smul_mem_iff
 - \+ *theorem* sub_mul_action.subtype_apply
 - \+ *lemma* sub_mul_action.subtype_eq_val
+- \+ *structure* sub_mul_action
 
 
 
@@ -7317,6 +7361,7 @@ feat(combinatorics/simple_graph/matching): introduce matchings and perfect match
 Introduce definitions of matchings and perfect matchings of graphs. This is with the goal of eventually proving Hall's Marriage Theorem and Tutte's Theorem.
 #### Estimated changes
 Added src/combinatorics/simple_graph/matching.lean
+- \+ *structure* simple_graph.is_matching
 - \+ *def* simple_graph.matching.is_perfect
 - \+ *lemma* simple_graph.matching.is_perfect_iff
 - \+ *def* simple_graph.matching.support
@@ -7848,6 +7893,7 @@ Added src/linear_algebra/alternating.lean
 - \+ *lemma* alternating_map.to_fun_eq_coe
 - \+ *lemma* alternating_map.to_multilinear_map_eq_coe
 - \+ *lemma* alternating_map.zero_apply
+- \+ *structure* alternating_map
 
 
 
@@ -7883,6 +7929,7 @@ Modified src/algebra/lie/basic.lean
 - \+ *lemma* lie_submodule.mem_carrier
 - \+ *lemma* lie_submodule.mem_top
 - \+ *lemma* lie_submodule.top_coe
+- \+/\- *structure* lie_submodule
 
 Modified src/algebra/module/submodule.lean
 - \+ *lemma* submodule.mem_carrier
