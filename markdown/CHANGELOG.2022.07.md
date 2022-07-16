@@ -1,3 +1,39 @@
+## [2022-07-16 08:56:04](https://github.com/leanprover-community/mathlib/commit/367714d)
+fix(tactic/solve_by_elim): apply_assumption argument parsing ([#15394](https://github.com/leanprover-community/mathlib/pull/15394))
+The optional list of expressions to `apply_assumption` should be parsed interactively. This fixes a bug where `none` would have to be provided before a config object.
+#### Estimated changes
+Modified src/tactic/solve_by_elim.lean
+
+
+Modified test/solve_by_elim.lean
+
+
+
+
+## [2022-07-16 08:56:03](https://github.com/leanprover-community/mathlib/commit/8963fcf)
+feat(data/json): helper functions for json serialization ([#15207](https://github.com/leanprover-community/mathlib/pull/15207))
+The key feature here is:
+```lean
+@[derive non_null_json_serializable]
+structure my_type (yval : bool) :=
+(x : nat)
+(f : fin x)
+(y : bool := tt)
+(h : y = yval)
+```
+which generates the obvious serialization to json and deserialization from json of the above type.
+This makes communicating with other external programs a lot easier, rather than having to manually write code to disassemble json into lean structures.
+#### Estimated changes
+Added src/data/json.lean
+
+
+Added test/json.lean
+- \+ *structure* has_default
+- \+ *structure* my_type
+- \+ *structure* no_fields
+
+
+
 ## [2022-07-16 08:13:30](https://github.com/leanprover-community/mathlib/commit/45e412d)
 chore(number_theory/number_field): remove duplicate name ([#15400](https://github.com/leanprover-community/mathlib/pull/15400))
 #### Estimated changes

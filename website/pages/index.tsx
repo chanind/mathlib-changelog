@@ -58,7 +58,7 @@ const Home: NextPage = () => {
                   </a>
                 </Link>
               )}
-              suggestions={(data ?? []).slice(0, 10)}
+              suggestions={(data ?? []).slice(0, 100)}
               onSuggestionsFetchRequested={({ value, reason }) => {
                 if (reason === "suggestion-selected") {
                   const type = value.replace(/:.*/, "");
@@ -72,7 +72,7 @@ const Home: NextPage = () => {
               alwaysRenderSuggestions={true}
               theme={{
                 suggestionsContainer: classNames(
-                  "text-left border border-gray-300 border-t-0 md:w-[500px] w-full mx-auto",
+                  "text-left border border-gray-300 border-t-0 md:w-[500px] w-full mx-auto max-h-[300px] md:max-h-[500px] overflow-y-scroll overflow-x-hidden",
                   {
                     "border-0": (data ?? []).length === 0,
                   }
@@ -80,7 +80,7 @@ const Home: NextPage = () => {
                 suggestionsList: "list-none pl-0",
                 suggestionHighlighted: "bg-blue-200",
                 suggestionFirst: "border-t-0",
-                suggestion: "border-t p-2 cursor-pointer",
+                suggestion: "border-t p-2 cursor-pointer truncate",
                 container: "w-full",
               }}
               renderInputComponent={(inputProps) => (

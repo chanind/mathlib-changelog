@@ -1,3 +1,4 @@
+import { createHash } from "crypto";
 import { get, set } from "lodash";
 import summarizeHeadline from "../util/summarizeHeadline";
 import { ChangelogData, ChangeType, ItemType } from "./types";
@@ -29,12 +30,14 @@ export const extractItemsData = (
       for (const change of diff.changes) {
         const [changeType, itemType, itemName, namespace] = change;
         const history = get(itemsHistoryMapping, [itemType, itemName], []);
+        const diffPath = (diff.newPath || diff.oldPath) as string;
+        const diffPathSha = createHash("sha256").update(diffPath).digest("hex");
         const item: ChangelogItemEvent = {
+          diffPath,
+          diffPathSha,
           commitHeadline: summarizeHeadline(commit.message),
           commitTimestamp: commit.timestamp,
           commitSha: commit.sha,
-          diffPath: (diff.newPath || diff.oldPath) as string,
-          diffPathSha: diff.pathSha,
           type: changeType,
         };
         const fullName = [...namespace, itemName].join(".");
