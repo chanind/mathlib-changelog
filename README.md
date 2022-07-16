@@ -1,6 +1,7 @@
 # mathlib-changelog
 
-[![crawl](https://img.shields.io/github/workflow/status/chanind/mathlib-changelog/crawl/main)](https://github.com/chanind/mathlib-changelog)
+[![cron](https://img.shields.io/github/workflow/status/chanind/mathlib-changelog/crawl/main?label=cron)](https://github.com/chanind/mathlib-changelog)
+[![ci](https://img.shields.io/github/workflow/status/chanind/mathlib-changelog/ci/main)](https://github.com/chanind/mathlib-changelog)
 
 ### Explore the changelog at [mathlib-changelog.org](https://mathlib-changelog.org/)
 
