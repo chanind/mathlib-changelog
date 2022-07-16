@@ -1,0 +1,38 @@
+name: CI
+on: [push]
+jobs:
+  lint_and_test_crawler:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v3
+        with:
+          python-version: "3.9"
+      - name: Install Poetry
+        uses: snok/install-poetry@v1
+      - name: Install dependencies
+        run: poetry install --no-interaction
+        working-directory: ./crawler
+      - name: flake8 linting
+        run: poetry run flake8 .
+        working-directory: ./crawler
+      - name: black code formatting
+        run: poetry run black . --check
+        working-directory: ./crawler
+      - name: mypy type checking
+        run: poetry run mypy .
+        working-directory: ./crawler
+      - name: pytest
+        run: poetry run pytest
+        working-directory: ./crawler
+  lint_and_test_website:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+      - run: yarn install
+        working-directory: ./website
+      - run: yarn build
+        working-directory: ./website
