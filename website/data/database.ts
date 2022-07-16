@@ -1,3 +1,4 @@
+import { createHash } from "crypto";
 import { get, keyBy, memoize, set } from "lodash";
 import {
   ChangelogItemData,
@@ -9,13 +10,27 @@ import {
   extractStructuresData,
   extractTheoremsData,
 } from "./extractDataFromChangelog";
-import loadCommitData from "./loadCommitData";
-import { CommitData } from "./types";
+import loadRawCommitData from "./loadRawCommitData";
+import { ChangelogData, CommitData } from "./types";
 
 /**
  * Data lookup methods
  * NOTE: These should only be called during static site generation!
  */
+
+const loadCommitData = memoize(
+  (): ChangelogData => ({
+    commits: loadRawCommitData().commits.map((rawCommit) => ({
+      ...rawCommit,
+      changes: rawCommit.changes.map((rawChange) => ({
+        ...rawChange,
+        pathSha: createHash("sha256")
+          .update(rawChange.newPath || rawChange.oldPath || "")
+          .digest("hex"),
+      })),
+    })),
+  })
+);
 
 export const getItems = memoize(() => extractItemsData(loadCommitData()));
 export const getLemmas = memoize(() => extractLemmasData(loadCommitData()));
@@ -48,7 +63,7 @@ const getItemsLookupTable: () => ItemsLookupTable = memoize(() => {
 interface CommitsLookupTable {
   [sha: string]: CommitData;
 }
-const geCommitsLookupTable: () => CommitsLookupTable = memoize(() => {
+const getCommitsLookupTable: () => CommitsLookupTable = memoize(() => {
   const commits = getCommits();
   return {
     ...keyBy(commits, "sha"),
@@ -74,4 +89,4 @@ export const getAbbreviation = (name: string) =>
 export const getInductive = (name: string) =>
   get(getItemsLookupTable(), ["inductive", name]);
 
-export const getCommit = (sha: string) => geCommitsLookupTable()[sha];
+export const getCommit = (sha: string) => getCommitsLookupTable()[sha];

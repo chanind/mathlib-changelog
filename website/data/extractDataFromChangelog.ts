@@ -31,10 +31,9 @@ export const extractItemsData = (
         const [changeType, itemType, itemName, namespace] = change;
         const history = get(itemsHistoryMapping, [itemType, itemName], []);
         const diffPath = (diff.newPath || diff.oldPath) as string;
-        const diffPathSha = createHash("sha256").update(diffPath).digest("hex");
         const item: ChangelogItemEvent = {
           diffPath,
-          diffPathSha,
+          diffPathSha: diff.pathSha,
           commitHeadline: summarizeHeadline(commit.message),
           commitTimestamp: commit.timestamp,
           commitSha: commit.sha,
