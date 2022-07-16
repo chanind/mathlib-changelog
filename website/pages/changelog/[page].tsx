@@ -25,6 +25,9 @@ interface CommitSummary {
     files: number;
     lemmas: number;
     theorems: number;
+    structures: number;
+    abbreviations: number;
+    inductives: number;
     defs: number;
   };
 }
@@ -68,6 +71,9 @@ export const getStaticProps: GetStaticProps<ChangelogProps> = (context) => {
       lemmas: countChangesOfType(commit, "lemma"),
       theorems: countChangesOfType(commit, "theorem"),
       defs: countChangesOfType(commit, "def"),
+      inductives: countChangesOfType(commit, "inductive"),
+      abbreviations: countChangesOfType(commit, "abbreviation"),
+      structures: countChangesOfType(commit, "structure"),
     },
   }));
   return {
@@ -132,6 +138,27 @@ const Changelog: NextPage<ChangelogProps> = ({
               {commit.changes.defs > 0 && (
                 <span className="mr-1">
                   <Pill color="blue">{commit.changes.defs} defs</Pill>
+                </span>
+              )}
+              {commit.changes.structures > 0 && (
+                <span className="mr-1">
+                  <Pill color="blue">
+                    {commit.changes.structures} structures
+                  </Pill>
+                </span>
+              )}
+              {commit.changes.abbreviations > 0 && (
+                <span className="mr-1">
+                  <Pill color="blue">
+                    {commit.changes.abbreviations} abbreviations
+                  </Pill>
+                </span>
+              )}
+              {commit.changes.inductives > 0 && (
+                <span className="mr-1">
+                  <Pill color="blue">
+                    {commit.changes.inductives} inductives
+                  </Pill>
                 </span>
               )}
             </div>
