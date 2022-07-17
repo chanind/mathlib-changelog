@@ -1,7 +1,7 @@
 name: crawl
 on:
   schedule:
-    - cron: "15 20 * * *"
+    - cron: "35 20 * * *"
 jobs:
   update_changelogs:
     runs-on: ubuntu-latest
@@ -19,9 +19,8 @@ jobs:
         uses: actions/cache@v3
         env:
           cache-version: 1
-        working-directory: ./crawler
         with:
-          path: parse_cache.pkl
+          path: crawler/parse_cache.pkl
           key: ${{ runner.os }}-build-${{ env.cache-version }}
       - name: crawl git repo to update changelog files
         run: poetry run python -m crawler.crawl
