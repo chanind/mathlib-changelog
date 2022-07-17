@@ -5,7 +5,7 @@ description = ""
 authors = ["David Chanin <chanindav@gmail.com>"]
 
 [tool.poetry.dependencies]
-python = "^3.9"
+python = "^3.10"
 GitPython = "^3.1.27"
 tqdm = "^4.64.0"
 

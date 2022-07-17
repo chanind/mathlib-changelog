@@ -3,7 +3,7 @@ from collections import defaultdict
 from dataclasses import dataclass
 from hashlib import md5
 import logging
-from typing import Literal
+from typing import Literal, Optional
 from git import Repo
 from git.objects import Commit
 
@@ -49,13 +49,16 @@ class ParsedDiff:
         return f"Added {path}"
 
 
+ParseCache = dict[str, list[ParsedItem]]
+
+
 class DiffParser:
-    parse_cache: dict[str, list[ParsedItem]]
+    parse_cache: ParseCache
     repo: Repo
 
-    def __init__(self, repo: Repo):
+    def __init__(self, repo: Repo, parse_cache: Optional[ParseCache] = None):
         self.repo = repo
-        self.parse_cache = {}
+        self.parse_cache = parse_cache or {}
 
     def parse_items(
         self, commit_sha: str, path: str, blob_sha: str | None
