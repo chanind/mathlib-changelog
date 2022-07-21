@@ -1,4 +1,3 @@
-import { createHash } from "crypto";
 import { get, set } from "lodash";
 import summarizeHeadline from "../util/summarizeHeadline";
 import { ChangelogData, ChangeType, ItemType } from "./types";
@@ -29,18 +28,27 @@ export const extractItemsData = (
     for (const diff of commit.changes) {
       for (const change of diff.changes) {
         const [changeType, itemType, itemName, namespace] = change;
-        const history = get(itemsHistoryMapping, [itemType, itemName], []);
         const diffPath = (diff.newPath || diff.oldPath) as string;
-        const item: ChangelogItemEvent = {
-          diffPath,
-          diffPathSha: diff.pathSha,
-          commitHeadline: summarizeHeadline(commit.message),
-          commitTimestamp: commit.timestamp,
-          commitSha: commit.sha,
-          type: changeType,
-        };
+
         const fullName = [...namespace, itemName].join(".");
-        set(itemsHistoryMapping, [itemType, fullName], [...history, item]);
+        const history = get(itemsHistoryMapping, [itemType, fullName], []);
+        const lastChange = history[history.length - 1];
+        if (lastChange && lastChange.commitSha === commit.sha) {
+          // if there are 2 different conflicting changes to the same item in the same commit, it's a modification
+          if (lastChange.type !== changeType) {
+            lastChange.type = "mod";
+          }
+        } else {
+          const item: ChangelogItemEvent = {
+            diffPath,
+            diffPathSha: diff.pathSha,
+            commitHeadline: summarizeHeadline(commit.message),
+            commitTimestamp: commit.timestamp,
+            commitSha: commit.sha,
+            type: changeType,
+          };
+          set(itemsHistoryMapping, [itemType, fullName], [...history, item]);
+        }
       }
     }
   }
