@@ -1,5 +1,5 @@
 import { createHash } from "crypto";
-import { get, keyBy, memoize, set } from "lodash";
+import { chunk, get, keyBy, memoize, set } from "lodash";
 import {
   ChangelogItemData,
   extractDefsData,
@@ -15,6 +15,8 @@ import { ChangelogData, CommitData } from "./types";
  * Data lookup methods
  * NOTE: These should only be called during static site generation!
  */
+
+const COMMITS_PAGE_SIZE = 50;
 
 const loadCommitData = memoize(
   (): ChangelogData => ({
@@ -78,3 +80,8 @@ export const getInductive = (name: string) =>
   get(getItemsLookupTable(), ["inductive", name]);
 
 export const getCommit = (sha: string) => getCommitsLookupTable()[sha];
+
+export const getCommitPages = () => {
+  const allCommits = getCommits();
+  return chunk(allCommits, COMMITS_PAGE_SIZE);
+};
