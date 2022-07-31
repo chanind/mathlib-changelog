@@ -1,11 +1,10 @@
-import { chunk } from "lodash";
 import { GetStaticPaths, GetStaticProps, NextPage } from "next";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import Layout from "../../components/Layout";
 import Pagination from "../../components/Pagination";
 import Pill from "../../components/Pill";
-import { getCommits } from "../../data/database";
+import { getCommitPages, getCommits } from "../../data/database";
 import { CommitData, ItemType } from "../../data/types";
 import formatTimestamp from "../../util/formatTimestamp";
 import summarizeHeadline from "../../util/summarizeHeadline";
@@ -56,7 +55,7 @@ export const getStaticProps: GetStaticProps<ChangelogProps> = (context) => {
     return { notFound: true };
   }
   const allCommits = getCommits();
-  const commitPages = chunk(allCommits, PER_PAGE);
+  const commitPages = getCommitPages();
   const commits = commitPages[pageNum - 1];
 
   if (!commits || commits.length === 0) return { notFound: true };
