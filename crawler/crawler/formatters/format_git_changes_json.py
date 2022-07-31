@@ -5,7 +5,7 @@ from crawler.parser.DiffParser import ParsedDiff
 
 
 ChangeType = Literal["add", "del", "mod"]
-ItemType = Literal["lemma", "theorem", "def", "abbreviation", "inductive", "structure"]
+ItemType = Literal["theorem", "def", "inductive", "structure"]
 
 
 @dataclass

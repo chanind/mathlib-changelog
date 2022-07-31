@@ -8,7 +8,7 @@ import hashlib
 from .strip_lean_comments import strip_lean_comments
 
 
-ItemType = Literal["lemma", "theorem", "def", "abbreviation", "inductive", "structure"]
+ItemType = Literal["theorem", "def", "inductive", "structure"]
 BlockType = Literal["section", "namespace"]
 
 
@@ -69,6 +69,17 @@ START_BLOCK_REGEX = r"^\s*(section|namespace)\s+([^\s]+)"
 END_BLOCK_REGEX = r"^\s*end\s+([^\s]+)"
 
 
+def remap_item_type(item_type: str) -> ItemType:
+    """
+    map lemma -> theorem, and abbreviation -> def
+    """
+    if item_type == "lemma":
+        return "theorem"
+    if item_type == "abbreviation":
+        return "def"
+    return cast(ItemType, item_type)
+
+
 def parse_line(line: str, state: ParseState) -> None:
     """
     Extract any items from the line, and track sections/namespaces.
@@ -84,7 +95,9 @@ def parse_line(line: str, state: ParseState) -> None:
         line_hash = hashlib.md5(line.encode()).hexdigest()
         [item_type, item_name] = item_match.groups()
         state.items.append(
-            build_parsed_item(item_type, item_name, state.namespace, line_hash)
+            build_parsed_item(
+                remap_item_type(item_type), item_name, state.namespace, line_hash
+            )
         )
     if start_block_match:
         [block_type, block_name] = start_block_match.groups()
@@ -106,12 +119,9 @@ def build_parsed_item(
     line_hash: str,
 ) -> ParsedItem:
     item_name_parts = item_name.split(".")
-
     if item_type not in [
-        "lemma",
         "theorem",
         "def",
-        "abbreviation",
         "inductive",
         "structure",
     ]:
