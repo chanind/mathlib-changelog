@@ -39,7 +39,7 @@ const Home: NextPage = () => {
             </p>
             <Autosuggest
               inputProps={{
-                placeholder: "Enter a lemma, theorem, def, or structure",
+                placeholder: "Enter a theorem, def, or structure",
                 className:
                   "p-2 border border-gray-800 display-block md:w-[500px] w-full rounded-sm",
                 value: query,

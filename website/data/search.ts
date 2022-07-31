@@ -16,9 +16,7 @@ const rehydrateExportedSearchItems = (
 ): SearchableItemDoc[] => {
   const itemTypesMap: { [key: string]: ItemType } = {
     d: "def",
-    l: "lemma",
     t: "theorem",
-    a: "abbreviation",
     i: "inductive",
     s: "structure",
   };

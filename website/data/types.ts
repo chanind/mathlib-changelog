@@ -16,13 +16,7 @@ export interface CommitData extends RawCommitData {
 }
 
 export type ChangeType = "mod" | "add" | "del";
-export type ItemType =
-  | "theorem"
-  | "lemma"
-  | "def"
-  | "abbreviation"
-  | "inductive"
-  | "structure";
+export type ItemType = "theorem" | "def" | "inductive" | "structure";
 
 export interface RawDiffData {
   oldPath: string | null;

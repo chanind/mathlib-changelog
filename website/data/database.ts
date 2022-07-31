@@ -2,11 +2,9 @@ import { createHash } from "crypto";
 import { get, keyBy, memoize, set } from "lodash";
 import {
   ChangelogItemData,
-  extractAbbreviationsData,
   extractDefsData,
   extractInductivesData,
   extractItemsData,
-  extractLemmasData,
   extractStructuresData,
   extractTheoremsData,
 } from "./extractDataFromChangelog";
@@ -33,7 +31,6 @@ const loadCommitData = memoize(
 );
 
 export const getItems = memoize(() => extractItemsData(loadCommitData()));
-export const getLemmas = memoize(() => extractLemmasData(loadCommitData()));
 export const getTheorems = memoize(() => extractTheoremsData(loadCommitData()));
 export const getInductives = memoize(() =>
   extractInductivesData(loadCommitData())
@@ -41,9 +38,6 @@ export const getInductives = memoize(() =>
 export const getDefs = memoize(() => extractDefsData(loadCommitData()));
 export const getStructures = memoize(() =>
   extractStructuresData(loadCommitData())
-);
-export const getAbbreviations = memoize(() =>
-  extractAbbreviationsData(loadCommitData())
 );
 export const getCommits = memoize(() => loadCommitData().commits);
 
@@ -71,9 +65,6 @@ const getCommitsLookupTable: () => CommitsLookupTable = memoize(() => {
   };
 });
 
-export const getLemma = (name: string) =>
-  get(getItemsLookupTable(), ["lemma", name]);
-
 export const getTheorem = (name: string) =>
   get(getItemsLookupTable(), ["theorem", name]);
 
@@ -82,9 +73,6 @@ export const getDef = (name: string) =>
 
 export const getStructure = (name: string) =>
   get(getItemsLookupTable(), ["structure", name]);
-
-export const getAbbreviation = (name: string) =>
-  get(getItemsLookupTable(), ["abbreviation", name]);
 
 export const getInductive = (name: string) =>
   get(getItemsLookupTable(), ["inductive", name]);
