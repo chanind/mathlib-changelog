@@ -63,7 +63,7 @@ const getCommitsLookupTable: () => CommitsLookupTable = memoize(() => {
   const commits = getCommits();
   return {
     ...keyBy(commits, "sha"),
-    ...keyBy(commits, (commit) => commit.sha.slice(0, 7)),
+    ...keyBy(commits, (commit) => commit.sha.slice(0, 8)),
   };
 });
 

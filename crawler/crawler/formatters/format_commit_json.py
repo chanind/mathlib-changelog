@@ -19,6 +19,6 @@ def format_commit_json(commit: Commit, diffs: list[ParsedDiff]) -> CommitJson:
     return CommitJson(
         timestamp=int(time.mktime(commit.committed_datetime.timetuple())),
         message=clean_commit_msg(cast(str, commit.message)),
-        sha=commit.hexsha[0:7],
+        sha=commit.hexsha[0:8],
         changes=format_git_changes_json(diffs),
     )
