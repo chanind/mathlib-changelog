@@ -65,7 +65,6 @@ with open(FULL_JSON_OUTPUT_FILE, "w") as f:
     f.write(
         json.dumps(
             {"commits": commits_info_json_full},
-            indent=2,
             ensure_ascii=False,
         )
     )
