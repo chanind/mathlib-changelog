@@ -18,7 +18,7 @@ jobs:
       - name: load parse cache
         uses: actions/cache@v3
         env:
-          cache-version: 2
+          cache-version: 3
         with:
           path: crawler/parse_cache.pkl
           key: ${{ runner.os }}-build-${{ env.cache-version }}
