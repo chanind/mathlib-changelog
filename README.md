@@ -1,7 +1,7 @@
 # mathlib-changelog
 
-[![cron](https://img.shields.io/github/workflow/status/chanind/mathlib-changelog/crawl/main?label=cron)](https://github.com/chanind/mathlib-changelog)
-[![ci](https://img.shields.io/github/workflow/status/chanind/mathlib-changelog/CI/main)](https://github.com/chanind/mathlib-changelog)
+[![cron](https://img.shields.io/github/actions/workflow/status/chanind/mathlib-changelog/crawl.yaml?label=cron&branch=main)](https://github.com/chanind/mathlib-changelog)
+[![ci](https://img.shields.io/github/actions/workflow/status/chanind/mathlib-changelog/ci.yaml?branch=main)](https://github.com/chanind/mathlib-changelog)
 [![website](https://img.shields.io/github/deployments/chanind/mathlib-changelog/production?label=website&logo=vercel)](https://mathlib-changelog.org)
 
 ### Explore the changelog at [mathlib-changelog.org](https://mathlib-changelog.org/)
