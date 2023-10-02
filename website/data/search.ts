@@ -1,8 +1,9 @@
 import { memoize } from "lodash";
 import MiniSearch, { SearchResult } from "minisearch";
-import { ItemType } from "./types";
+import { ItemType, LeanVersion } from "./types";
 
-const SEARCH_ITEMS_JSON_URL = "/searchItems.json";
+const SEARCH_ITEMS_JSON_URL_V3 = "/searchItems.v3.json";
+const SEARCH_ITEMS_JSON_URL_V4 = "/searchItems.v4.json";
 
 export interface SearchableItemDoc {
   id: string;
@@ -53,9 +54,11 @@ export const populateSearch = (
   search.addAll(docs);
 };
 
-export const loadAndPopulateSearch = memoize(async () => {
+export const loadAndPopulateSearch = memoize(async (version: LeanVersion) => {
   const search = createSearch();
-  const exportedSearchItems: string[] = await fetch(SEARCH_ITEMS_JSON_URL).then(
+  const searchItemsJsonUrl =
+    version === "v3" ? SEARCH_ITEMS_JSON_URL_V3 : SEARCH_ITEMS_JSON_URL_V4;
+  const exportedSearchItems: string[] = await fetch(searchItemsJsonUrl).then(
     (res) => res.json()
   );
   populateSearch(search, exportedSearchItems);
@@ -63,9 +66,10 @@ export const loadAndPopulateSearch = memoize(async () => {
 });
 
 export const searchForQuery = async (
-  query: string
+  query: string,
+  version: LeanVersion
 ): Promise<(SearchResult & SearchableItemDoc)[]> => {
-  const search = await loadAndPopulateSearch();
+  const search = await loadAndPopulateSearch(version);
   // need to cast to any here, since TS doesn't know about the actual docs being returned
   return search.search(query) as any[];
 };

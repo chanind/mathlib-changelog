@@ -54,8 +54,8 @@ export const getStaticProps: GetStaticProps<ChangelogProps> = (context) => {
   if (!pageNum || pageNum <= 0) {
     return { notFound: true };
   }
-  const allCommits = getCommits();
-  const commitPages = getCommitPages();
+  const allCommits = getCommits("v3");
+  const commitPages = getCommitPages("v3");
   const commits = commitPages[pageNum - 1];
 
   if (!commits || commits.length === 0) return { notFound: true };
@@ -93,7 +93,7 @@ const Changelog: NextPage<ChangelogProps> = ({
 }) => {
   const router = useRouter();
   return (
-    <Layout>
+    <Layout version="v3">
       <h1 className="text-xl">Changelog</h1>
 
       <Pagination

@@ -4,7 +4,7 @@ import Layout from "../components/Layout";
 
 const NotFound: NextPage = () => {
   return (
-    <Layout>
+    <Layout version="v3">
       <div className="text-center pt-10">
         <h1 className="text-6xl mt-20">404</h1>
         <p className="text-gray-600 mb-10">Page not found</p>

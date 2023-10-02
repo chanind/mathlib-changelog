@@ -130,10 +130,11 @@ dmypy.json
 
 # crawler
 crawler/mathlib
-crawler/parse_cache.pkl
+crawler/mathlib4
+crawler/parse_cache.*.pkl
 
 # asset generation
-website/public/searchItems.json
+website/public/searchItems.*.json
 website/public/robots.txt
 website/public/sitemap*.xml
 

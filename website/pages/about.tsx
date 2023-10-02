@@ -3,7 +3,7 @@ import Layout from "../components/Layout";
 
 const About: NextPage = () => {
   return (
-    <Layout>
+    <Layout version="v3">
       <div className="flex flex-wrap">
         <h1 className="text-xl">About</h1>
         <p className="mt-4 text-base leading-relaxed text-gray-800">

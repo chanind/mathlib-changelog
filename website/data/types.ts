@@ -26,3 +26,5 @@ export interface RawDiffData {
 export interface DiffData extends RawDiffData {
   pathSha: string;
 }
+
+export type LeanVersion = "v3" | "v4";

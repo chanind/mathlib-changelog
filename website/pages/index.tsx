@@ -11,7 +11,7 @@ import Link from "next/link";
 
 if (typeof window !== "undefined") {
   // start loading search data early, so it's ready faster
-  loadAndPopulateSearch();
+  loadAndPopulateSearch("v3");
 }
 
 const Home: NextPage = () => {
@@ -21,11 +21,11 @@ const Home: NextPage = () => {
   const hasQuery = query.trim() !== "";
   const { data, isLoading } = useQuery(query, async () => {
     if (!hasQuery) return [];
-    return searchForQuery(query);
+    return searchForQuery(query, "v3");
   });
 
   return (
-    <Layout>
+    <Layout version="v3">
       <div className="flex flex-wrap flex-col items-center text-center w-full">
         {isNavigating ? (
           <div className="w-[100px] pt-10">
