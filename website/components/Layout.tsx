@@ -6,9 +6,10 @@ import { LeanVersion } from "../data/types";
 interface LayoutProps {
   children: ReactNode;
   version: LeanVersion;
+  banner?: ReactNode;
 }
 
-const Layout: FC<LayoutProps> = ({ children, version }) => {
+const Layout: FC<LayoutProps> = ({ children, version, banner }) => {
   return (
     <div>
       <Head>
@@ -21,6 +22,7 @@ const Layout: FC<LayoutProps> = ({ children, version }) => {
       </Head>
 
       <HeaderNav version={version} />
+      {banner}
       <main className="container mt-4 mx-auto px-2">{children}</main>
     </div>
   );

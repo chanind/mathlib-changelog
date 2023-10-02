@@ -25,7 +25,15 @@ const Home: NextPage = () => {
   });
 
   return (
-    <Layout version="v3">
+    <Layout
+      version="v3"
+      banner={
+        <div className="text-center p-3 bg-gray-200">
+          Experimental Mathlib v4 support is available.{" "}
+          <Link href="/v4">Try it out</Link>
+        </div>
+      }
+    >
       <div className="flex flex-wrap flex-col items-center text-center w-full">
         {isNavigating ? (
           <div className="w-[100px] pt-10">
