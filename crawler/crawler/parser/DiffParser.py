@@ -4,11 +4,13 @@ from dataclasses import dataclass
 from hashlib import md5
 import logging
 from typing import Literal, Optional
+from crawler.parser.types import ParsedItem
 from git import Repo
 from git.objects import Commit
 
 from .errors import LeanParseError
-from .parse_lean import ParsedItem, parse_lean
+from .parse_lean_v3 import parse_lean_v3
+from .parse_lean_v4 import parse_lean_v4
 
 
 ChangeType = Literal["add", "del", "mod"]
@@ -51,13 +53,22 @@ class ParsedDiff:
 
 ParseCache = dict[str, list[ParsedItem]]
 
+LeanVersion = Literal["v3", "v4"]
+
 
 class DiffParser:
     parse_cache: ParseCache
     repo: Repo
+    lean_version: LeanVersion
 
-    def __init__(self, repo: Repo, parse_cache: Optional[ParseCache] = None):
+    def __init__(
+        self,
+        repo: Repo,
+        lean_version: LeanVersion = "v4",
+        parse_cache: Optional[ParseCache] = None,
+    ):
         self.repo = repo
+        self.lean_version = lean_version
         self.parse_cache = parse_cache or {}
 
     def parse_items(
@@ -75,7 +86,12 @@ class DiffParser:
         if contents_hash in self.parse_cache:
             return self.parse_cache[contents_hash]
         try:
-            parse_result = parse_lean(contents)
+            if self.lean_version == "v3":
+                parse_result = parse_lean_v3(contents)
+            elif self.lean_version == "v4":
+                parse_result = parse_lean_v4(contents)
+            else:
+                raise ValueError(f"Invalid lean version: {self.lean_version}")
             self.parse_cache[git_lookup_key] = parse_result
             self.parse_cache[contents_hash] = parse_result
             if blob_sha:

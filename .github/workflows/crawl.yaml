@@ -20,7 +20,7 @@ jobs:
         env:
           cache-version: 3
         with:
-          path: crawler/parse_cache.pkl
+          path: crawler/parse_cache.*.pkl
           key: ${{ runner.os }}-build-${{ env.cache-version }}
       - name: crawl git repo to update changelog files
         run: poetry run python -m crawler.crawl
@@ -28,5 +28,5 @@ jobs:
       - uses: stefanzweifel/git-auto-commit-action@v4
         with:
           commit_message: "Updating CHANGELOG"
-          file_pattern: "CHANGELOG.full.json CHANGELOG.full.txt"
+          file_pattern: "CHANGELOG.v3.full.json CHANGELOG.v3.full.txt CHANGELOG.v4.full.json CHANGELOG.v4.full.txt"
           commit_author: github-actions[bot] <actions@github.com>

@@ -17,20 +17,20 @@ export const getStaticProps: GetStaticProps<DefProps> = (context) => {
   if (!context.params?.name || Array.isArray(context.params.name)) {
     return { notFound: true };
   }
-  const def = getDef(context.params.name);
+  const def = getDef("v3", context.params.name);
   if (!def) return { notFound: true };
   return { props: { def } };
 };
 
 const Def: NextPage<DefProps> = ({ def }) => {
   return (
-    <Layout>
+    <Layout version="v3">
       <h1 className="text-xl">
         <span className="text-gray-400">Def</span> {def.name}
       </h1>
       <h4 className="text-sm mt-4">Modification history</h4>
       <div>
-        <ItemChangeHistory item={def} />
+        <ItemChangeHistory item={def} version="v3" />
       </div>
     </Layout>
   );

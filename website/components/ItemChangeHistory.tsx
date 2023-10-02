@@ -2,12 +2,14 @@ import Link from "next/link";
 import { FC } from "react";
 import { ChangelogItemData } from "../data/extractDataFromChangelog";
 import { PlusIcon, MinusIcon, CodeIcon } from "@heroicons/react/solid";
-import { ChangeType } from "../data/types";
+import { ChangeType, LeanVersion } from "../data/types";
 import formatTimestamp from "../util/formatTimestamp";
 import { uniqBy } from "lodash";
+import versionPrefix from "../util/versionPrefix";
 
 export interface ChangeHistoryProps {
   item: ChangelogItemData;
+  version: LeanVersion;
 }
 
 const getLabel = (changeType: ChangeType) => {
@@ -32,13 +34,16 @@ const getLabel = (changeType: ChangeType) => {
   );
 };
 
-export const ItemChangeHistory: FC<ChangeHistoryProps> = ({ item }) => (
+export const ItemChangeHistory: FC<ChangeHistoryProps> = ({
+  item,
+  version,
+}) => (
   <div>
     <div className="py-2 flex flex-col">
       {uniqBy(item.history, (event) => `${event.commitSha}-${event.type}`).map(
         (event, i) => (
           <div key={i} className="relative">
-            <Link href={`/commit/${event.commitSha}`}>
+            <Link href={`${versionPrefix(version)}/commit/${event.commitSha}`}>
               <a className="p-2 border border-gray-200 my-1 rounded-md hover:border-gray-400 transition-all text-gray-800 block">
                 <div className="pb-1">
                   <span className="text-blue-600">
@@ -56,7 +61,9 @@ export const ItemChangeHistory: FC<ChangeHistoryProps> = ({ item }) => (
             </Link>
             <a
               className="text-blue-600 text-xs block absolute right-1 top-2 p-2 rounded-md border hover:border-gray-200 border-white transition-all"
-              href={`https://github.com/leanprover-community/mathlib/commit/${event.commitSha}#diff-${event.diffPathSha}`}
+              href={`https://github.com/leanprover-community/${
+                version == "v3" ? "mathlib" : "mathlib4"
+              }/commit/${event.commitSha}#diff-${event.diffPathSha}`}
             >
               View on Github →
             </a>

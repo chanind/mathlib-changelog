@@ -9,7 +9,7 @@ import {
   extractTheoremsData,
 } from "./extractDataFromChangelog";
 import loadRawCommitData from "./loadRawCommitData";
-import { ChangelogData, CommitData } from "./types";
+import { ChangelogData, CommitData, LeanVersion } from "./types";
 
 /**
  * Data lookup methods
@@ -19,8 +19,8 @@ import { ChangelogData, CommitData } from "./types";
 const COMMITS_PAGE_SIZE = 50;
 
 const loadCommitData = memoize(
-  (): ChangelogData => ({
-    commits: loadRawCommitData().commits.map((rawCommit) => ({
+  (version: LeanVersion): ChangelogData => ({
+    commits: loadRawCommitData(version).commits.map((rawCommit) => ({
       ...rawCommit,
       changes: rawCommit.changes.map((rawChange) => ({
         ...rawChange,
@@ -32,56 +32,68 @@ const loadCommitData = memoize(
   })
 );
 
-export const getItems = memoize(() => extractItemsData(loadCommitData()));
-export const getTheorems = memoize(() => extractTheoremsData(loadCommitData()));
-export const getInductives = memoize(() =>
-  extractInductivesData(loadCommitData())
+export const getItems = memoize((version: LeanVersion) =>
+  extractItemsData(loadCommitData(version))
 );
-export const getDefs = memoize(() => extractDefsData(loadCommitData()));
-export const getStructures = memoize(() =>
-  extractStructuresData(loadCommitData())
+export const getTheorems = memoize((version: LeanVersion) =>
+  extractTheoremsData(loadCommitData(version))
 );
-export const getCommits = memoize(() => loadCommitData().commits);
+export const getInductives = memoize((version: LeanVersion) =>
+  extractInductivesData(loadCommitData(version))
+);
+export const getDefs = memoize((version: LeanVersion) =>
+  extractDefsData(loadCommitData(version))
+);
+export const getStructures = memoize((version: LeanVersion) =>
+  extractStructuresData(loadCommitData(version))
+);
+export const getCommits = memoize(
+  (version: LeanVersion) => loadCommitData(version).commits
+);
 
 interface ItemsLookupTable {
   [itemType: string]: { [itemName: string]: ChangelogItemData };
 }
 
-const getItemsLookupTable: () => ItemsLookupTable = memoize(() => {
-  const itemsData = extractItemsData(loadCommitData());
-  const lookupTable: ItemsLookupTable = {};
-  for (const item of itemsData) {
-    set(lookupTable, [item.type, item.name], item);
+const getItemsLookupTable: (version: LeanVersion) => ItemsLookupTable = memoize(
+  (version: LeanVersion) => {
+    const itemsData = extractItemsData(loadCommitData(version));
+    const lookupTable: ItemsLookupTable = {};
+    for (const item of itemsData) {
+      set(lookupTable, [item.type, item.name], item);
+    }
+    return lookupTable;
   }
-  return lookupTable;
-});
+);
 
 interface CommitsLookupTable {
   [sha: string]: CommitData;
 }
-const getCommitsLookupTable: () => CommitsLookupTable = memoize(() => {
-  const commits = getCommits();
-  return {
-    ...keyBy(commits, "sha"),
-    ...keyBy(commits, (commit) => commit.sha.slice(0, 8)),
-  };
-});
+const getCommitsLookupTable: (version: LeanVersion) => CommitsLookupTable =
+  memoize((version: LeanVersion) => {
+    const commits = getCommits(version);
+    return {
+      ...keyBy(commits, "sha"),
+      ...keyBy(commits, (commit) => commit.sha.slice(0, 8)),
+    };
+  });
 
-export const getTheorem = (name: string) =>
-  get(getItemsLookupTable(), ["theorem", name]);
+export const getTheorem = (version: LeanVersion, name: string) =>
+  get(getItemsLookupTable(version), ["theorem", name]);
 
-export const getDef = (name: string) =>
-  get(getItemsLookupTable(), ["def", name]);
+export const getDef = (version: LeanVersion, name: string) =>
+  get(getItemsLookupTable(version), ["def", name]);
 
-export const getStructure = (name: string) =>
-  get(getItemsLookupTable(), ["structure", name]);
+export const getStructure = (version: LeanVersion, name: string) =>
+  get(getItemsLookupTable(version), ["structure", name]);
 
-export const getInductive = (name: string) =>
-  get(getItemsLookupTable(), ["inductive", name]);
+export const getInductive = (version: LeanVersion, name: string) =>
+  get(getItemsLookupTable(version), ["inductive", name]);
 
-export const getCommit = (sha: string) => getCommitsLookupTable()[sha];
+export const getCommit = (version: LeanVersion, sha: string) =>
+  getCommitsLookupTable(version)[sha];
 
-export const getCommitPages = () => {
-  const allCommits = getCommits();
+export const getCommitPages = (version: LeanVersion) => {
+  const allCommits = getCommits(version);
   return chunk(allCommits, COMMITS_PAGE_SIZE);
 };

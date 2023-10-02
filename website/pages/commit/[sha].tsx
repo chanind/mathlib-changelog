@@ -20,7 +20,7 @@ export const getStaticProps: GetStaticProps<CommitProps> = (context) => {
   if (!context.params?.sha || Array.isArray(context.params.sha)) {
     return { notFound: true };
   }
-  const commit = getCommit(context.params.sha);
+  const commit = getCommit("v3", context.params.sha);
   if (!commit) return { notFound: true };
   return { props: { commit } };
 };
@@ -81,7 +81,7 @@ const getFileChangeLabel = (diff: DiffData) => {
 
 const Commit: NextPage<CommitProps> = ({ commit }) => {
   return (
-    <Layout>
+    <Layout version="v3">
       <h1 className="text-xl">
         <span className="text-gray-400">Commit</span>{" "}
         {formatTimestamp(commit.timestamp)}{" "}
@@ -95,7 +95,7 @@ const Commit: NextPage<CommitProps> = ({ commit }) => {
       </a>
 
       <div>
-        <MathlibGithubMarkdown contents={commit.message} />
+        <MathlibGithubMarkdown contents={commit.message} version="v3" />
       </div>
       <h4 className="mt-4 mb-2 font-bold text-sm">Estimated changes</h4>
       <div>
