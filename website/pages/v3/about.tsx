@@ -24,7 +24,7 @@ const About: NextPage = () => {
         <p className="mt-4 text-base leading-relaxed text-gray-800">
           This project is far from perfect. While it should catch most of the
           changes to Mathlib in each commit, it doesn&apos;t run a full Lean and
-          Mathlib environment so there&apos;s not guarantee that everything is
+          Mathlib environment so there&apos;s no guarantee that everything is
           picked up. If you have any ideas for improvements, find any bugs, or
           have any other comments, feel free to open a{" "}
           <a
