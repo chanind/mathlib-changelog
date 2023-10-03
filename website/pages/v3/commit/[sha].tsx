@@ -1,11 +1,11 @@
 import { CodeIcon, MinusIcon, PlusIcon } from "@heroicons/react/solid";
 import { GetStaticPaths, GetStaticProps, NextPage } from "next";
 import Link from "next/link";
-import Layout from "../../components/Layout";
-import MathlibGithubMarkdown from "../../components/MathlibGithubMarkdown";
-import { getCommit } from "../../data/database";
-import { ChangeType, CommitData, DiffData } from "../../data/types";
-import formatTimestamp from "../../util/formatTimestamp";
+import Layout from "../../../components/Layout";
+import MathlibGithubMarkdown from "../../../components/MathlibGithubMarkdown";
+import { getCommit } from "../../../data/database";
+import { ChangeType, CommitData, DiffData } from "../../../data/types";
+import formatTimestamp from "../../../util/formatTimestamp";
 
 export const getStaticPaths: GetStaticPaths = () => ({
   paths: [],
@@ -119,7 +119,7 @@ const Commit: NextPage<CommitProps> = ({ commit }) => {
                         {getLabel(changeType)}
                       </span>{" "}
                       <span className="font-semibold">{itemType}</span>{" "}
-                      <Link href={`/${itemType}/${fullName}`}>
+                      <Link href={`/v3/${itemType}/${fullName}`}>
                         <a>{fullName}</a>
                       </Link>
                     </div>

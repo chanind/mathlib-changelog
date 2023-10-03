@@ -4,9 +4,9 @@ import { useRouter } from "next/router";
 import classNames from "classnames";
 import Autosuggest from "react-autosuggest";
 import { useQuery } from "react-query";
-import Layout from "../components/Layout";
-import Spinner from "../components/Spinner";
-import { loadAndPopulateSearch, searchForQuery } from "../data/search";
+import Layout from "../../components/Layout";
+import Spinner from "../../components/Spinner";
+import { loadAndPopulateSearch, searchForQuery } from "../../data/search";
 import Link from "next/link";
 
 if (typeof window !== "undefined") {
@@ -25,15 +25,7 @@ const Home: NextPage = () => {
   });
 
   return (
-    <Layout
-      version="v3"
-      banner={
-        <div className="text-center p-3 bg-gray-200">
-          Experimental Mathlib v4 support is available.{" "}
-          <Link href="/v4">Try it out</Link>
-        </div>
-      }
-    >
+    <Layout version="v3">
       <div className="flex flex-wrap flex-col items-center text-center w-full">
         {isNavigating ? (
           <div className="w-[100px] pt-10">
@@ -57,7 +49,7 @@ const Home: NextPage = () => {
                 `${suggestion.type}:${suggestion.fullName}`
               }
               renderSuggestion={(suggestion) => (
-                <Link href={`/${suggestion.type}/${suggestion.fullName}`}>
+                <Link href={`/v3/${suggestion.type}/${suggestion.fullName}`}>
                   <a className="text-gray-800">
                     <span className="text-gray-400 min-w-[70px] inline-block text-right pr-1">
                       {suggestion.type}
@@ -71,7 +63,7 @@ const Home: NextPage = () => {
                 if (reason === "suggestion-selected") {
                   const type = value.replace(/:.*/, "");
                   const name = value.replace(/^[^:]*:/, "");
-                  router.push(`/${type}/${name}`);
+                  router.push(`/v3/${type}/${name}`);
                   setQuery("");
                   setIsNavigating(true);
                 }
