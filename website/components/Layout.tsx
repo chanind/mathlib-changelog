@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Head from "next/head";
 import { FC, ReactNode } from "react";
 import HeaderNav from "../components/HeaderNav";
@@ -6,10 +7,9 @@ import { LeanVersion } from "../data/types";
 interface LayoutProps {
   children: ReactNode;
   version: LeanVersion;
-  banner?: ReactNode;
 }
 
-const Layout: FC<LayoutProps> = ({ children, version, banner }) => {
+const Layout: FC<LayoutProps> = ({ children, version }) => {
   return (
     <div>
       <Head>
@@ -22,7 +22,11 @@ const Layout: FC<LayoutProps> = ({ children, version, banner }) => {
       </Head>
 
       <HeaderNav version={version} />
-      {banner}
+      {version == "v3" && (
+        <div className="text-center p-3 bg-gray-200">
+          Mathlib v3 is deprecated. <Link href="/v4/">Go to Mathlib v4</Link>
+        </div>
+      )}
       <main className="container mt-4 mx-auto px-2">{children}</main>
     </div>
   );

@@ -1,4 +1,5 @@
 import type { NextPage } from "next";
+import Link from "next/link";
 import Layout from "../../components/Layout";
 
 const About: NextPage = () => {
@@ -10,7 +11,7 @@ const About: NextPage = () => {
           This project is an auto-updating list of changes from{" "}
           <a href="https://leanprover.github.io/">Lean</a>&apos;s{" "}
           <a
-            href="https://github.com/leanprover-community/mathlib"
+            href="https://github.com/leanprover-community/mathlib4"
             target="blank"
           >
             Mathlib library
@@ -34,6 +35,10 @@ const About: NextPage = () => {
             Github issue
           </a>
           .
+        </p>
+        <p className="mt-4 text-base leading-relaxed text-gray-800">
+          This version of the changelog supports Mathlib v4. You can find the{" "}
+          <Link href="/v3">Mathlib v3 changelog here</Link>.
         </p>
       </div>
     </Layout>

@@ -1,13 +1,13 @@
 import { GetStaticPaths, GetStaticProps, NextPage } from "next";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import Layout from "../../components/Layout";
-import Pagination from "../../components/Pagination";
-import Pill from "../../components/Pill";
-import { getCommitPages, getCommits } from "../../data/database";
-import { CommitData, ItemType } from "../../data/types";
-import formatTimestamp from "../../util/formatTimestamp";
-import summarizeHeadline from "../../util/summarizeHeadline";
+import Layout from "../../../components/Layout";
+import Pagination from "../../../components/Pagination";
+import Pill from "../../../components/Pill";
+import { getCommitPages, getCommits } from "../../../data/database";
+import { CommitData, ItemType } from "../../../data/types";
+import formatTimestamp from "../../../util/formatTimestamp";
+import summarizeHeadline from "../../../util/summarizeHeadline";
 
 const PER_PAGE = 50;
 
@@ -102,10 +102,10 @@ const Changelog: NextPage<ChangelogProps> = ({
         totalResults={totalResults}
         pageStartItemNum={pageStartItemNum}
         pageEndItemNum={pageEndItemNum}
-        onChangePage={(newPage) => router.push(`/changelog/${newPage}`)}
+        onChangePage={(newPage) => router.push(`/v3/changelog/${newPage}`)}
       />
       {commits.map((commit) => (
-        <Link href={`/commit/${commit.sha}`} key={commit.sha}>
+        <Link href={`/v3/commit/${commit.sha}`} key={commit.sha}>
           <a className="p-2 border border-gray-200 my-1 rounded-md hover:border-gray-400 transition text-gray-800 block">
             <div className="pb-1">
               <span className="text-blue-600">
@@ -154,7 +154,7 @@ const Changelog: NextPage<ChangelogProps> = ({
         totalResults={totalResults}
         pageStartItemNum={pageStartItemNum}
         pageEndItemNum={pageEndItemNum}
-        onChangePage={(newPage) => router.push(`/changelog/${newPage}`)}
+        onChangePage={(newPage) => router.push(`/v3/changelog/${newPage}`)}
       />
     </Layout>
   );

@@ -1,8 +1,8 @@
 import { GetStaticPaths, GetStaticProps, NextPage } from "next";
-import { ItemChangeHistory } from "../../components/ItemChangeHistory";
-import Layout from "../../components/Layout";
-import { getInductive } from "../../data/database";
-import { ChangelogItemData } from "../../data/extractDataFromChangelog";
+import { ItemChangeHistory } from "../../../components/ItemChangeHistory";
+import Layout from "../../../components/Layout";
+import { getInductive } from "../../../data/database";
+import { ChangelogItemData } from "../../../data/extractDataFromChangelog";
 
 export const getStaticPaths: GetStaticPaths = () => ({
   paths: [],
