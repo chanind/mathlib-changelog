@@ -30,9 +30,7 @@ const HeaderNav: FC<HeaderNavProps> = ({ version }) => (
           </a>
         </Link>
         <a
-          href={`https://github.com/chanind/mathlib-changelog${versionPrefix(
-            version
-          )}"}`}
+          href="https://github.com/chanind/mathlib-changelog"
           className="block mt-4 inline-block mt-0 text-gray-200 hover:text-white mx-2"
         >
           Github
