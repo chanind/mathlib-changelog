@@ -16,7 +16,7 @@ The full changelog in the following formats:
 
 - JSON is available in [CHANGELOG.v3.full.json](https://raw.githubusercontent.com/chanind/mathlib-changelog/main/CHANGELOG.v3.full.json) and [CHANGELOG.v4.full.json](https://raw.githubusercontent.com/chanind/mathlib-changelog/main/CHANGELOG.v4.full.json)
 - plaintext is available in [CHANGELOG.v3.full.txt](https://raw.githubusercontent.com/chanind/mathlib-changelog/main/CHANGELOG.v3.full.txt) and [CHANGELOG.v4.full.txt](https://raw.githubusercontent.com/chanind/mathlib-changelog/main/CHANGELOG.v4.full.txt)
-- web is available at [mathlib-changelog.org/changelog/1](https://mathlib-changelog.org/changelog/1)
+- web is available at [mathlib-changelog.org/changelog](https://mathlib-changelog.org/changelog)
 
 ## Project structure
 
