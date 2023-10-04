@@ -10,6 +10,11 @@ const nextConfig = {
         permanent: false,
       },
       {
+        source: "/changelog",
+        destination: "/v4/changelog/1",
+        permanent: false,
+      },
+      {
         source: "/commit/:sha",
         destination: "/v3/commit/:sha",
         permanent: false,
