@@ -43,21 +43,23 @@ export const ItemChangeHistory: FC<ChangeHistoryProps> = ({
       {uniqBy(item.history, (event) => `${event.commitSha}-${event.type}`).map(
         (event, i) => (
           <div key={i} className="relative">
-            <Link href={`${versionPrefix(version)}/commit/${event.commitSha}`}>
-              <a className="p-2 border border-gray-200 my-1 rounded-md hover:border-gray-400 transition-all text-gray-800 block">
-                <div className="pb-1">
-                  <span className="text-blue-600">
-                    {formatTimestamp(event.commitTimestamp)}
-                  </span>
-                </div>
-                <div className="text-gray-400 pb-2 text-xs">
-                  {event.diffPath}
-                </div>
-                <div className="text-gray-800 text-sm pl-2 border-l border-right italic mb-2 truncate">
-                  {event.commitHeadline}
-                </div>
-                {getLabel(event.type)} {item.name}
-              </a>
+            <Link
+              href={`${versionPrefix(version)}/commit/${event.commitSha}`}
+              className="p-2 border border-gray-200 my-1 rounded-md hover:border-gray-400 transition-all text-gray-800 block">
+
+              <div className="pb-1">
+                <span className="text-blue-600">
+                  {formatTimestamp(event.commitTimestamp)}
+                </span>
+              </div>
+              <div className="text-gray-400 pb-2 text-xs">
+                {event.diffPath}
+              </div>
+              <div className="text-gray-800 text-sm pl-2 border-l border-right italic mb-2 truncate">
+                {event.commitHeadline}
+              </div>
+              {getLabel(event.type)} {item.name}
+
             </Link>
             <a
               className="text-blue-600 text-xs block absolute right-1 top-2 p-2 rounded-md border hover:border-gray-200 border-white transition-all"

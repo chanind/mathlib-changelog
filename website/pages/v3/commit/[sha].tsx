@@ -119,8 +119,10 @@ const Commit: NextPage<CommitProps> = ({ commit }) => {
                         {getLabel(changeType)}
                       </span>{" "}
                       <span className="font-semibold">{itemType}</span>{" "}
-                      <Link href={`/v3/${itemType}/${fullName}`}>
-                        <a>{fullName}</a>
+                      <Link
+                        href={`/v3/${itemType}/${encodeURIComponent(fullName)}`}
+                      >
+                        {fullName}
                       </Link>
                     </div>
                   );

@@ -49,13 +49,16 @@ const Home: NextPage = () => {
                 `${suggestion.type}:${suggestion.fullName}`
               }
               renderSuggestion={(suggestion) => (
-                <Link href={`/v4/${suggestion.type}/${suggestion.fullName}`}>
-                  <a className="text-gray-800">
-                    <span className="text-gray-400 min-w-[70px] inline-block text-right pr-1">
-                      {suggestion.type}
-                    </span>{" "}
-                    {suggestion.fullName}
-                  </a>
+                <Link
+                  href={`/v4/${suggestion.type}/${encodeURIComponent(
+                    suggestion.fullName
+                  )}`}
+                  className="text-gray-800"
+                >
+                  <span className="text-gray-400 min-w-[70px] inline-block text-right pr-1">
+                    {suggestion.type}
+                  </span>{" "}
+                  {suggestion.fullName}
                 </Link>
               )}
               suggestions={(data ?? []).slice(0, 100)}
