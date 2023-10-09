@@ -10,10 +10,12 @@ interface LayoutProps {
 }
 
 const Layout: FC<LayoutProps> = ({ children, version }) => {
+  // need to turn this into a string here to avoid having multiple nodes in the title element
+  const title = `Mathlib Changelog ${version}`;
   return (
     <div>
       <Head>
-        <title>Mathlib Changlelog {version}</title>
+        <title>{title}</title>
         <meta
           name="description"
           content="Mathlib Changelog - Changes List for Lean Mathlib"
