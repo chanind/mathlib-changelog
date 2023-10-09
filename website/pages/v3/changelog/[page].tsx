@@ -105,48 +105,51 @@ const Changelog: NextPage<ChangelogProps> = ({
         onChangePage={(newPage) => router.push(`/v3/changelog/${newPage}`)}
       />
       {commits.map((commit) => (
-        <Link href={`/v3/commit/${commit.sha}`} key={commit.sha}>
-          <a className="p-2 border border-gray-200 my-1 rounded-md hover:border-gray-400 transition text-gray-800 block">
-            <div className="pb-1">
-              <span className="text-blue-600">
-                {formatTimestamp(commit.timestamp)}
-              </span>{" "}
-              <span className="text-gray-400">{commit.sha}</span>
-            </div>
-            <div className="text-gray-800 text-sm pl-2 border-l border-right italic mb-2 truncate">
-              {commit.headline}
-            </div>
-            <div>
+        (<Link
+          href={`/v3/commit/${commit.sha}`}
+          key={commit.sha}
+          className="p-2 border border-gray-200 my-1 rounded-md hover:border-gray-400 transition text-gray-800 block">
+
+          <div className="pb-1">
+            <span className="text-blue-600">
+              {formatTimestamp(commit.timestamp)}
+            </span>{" "}
+            <span className="text-gray-400">{commit.sha}</span>
+          </div>
+          <div className="text-gray-800 text-sm pl-2 border-l border-right italic mb-2 truncate">
+            {commit.headline}
+          </div>
+          <div>
+            <span className="mr-1">
+              <Pill color="blue">{commit.changes.files} files</Pill>
+            </span>
+            {commit.changes.theorems > 0 && (
               <span className="mr-1">
-                <Pill color="blue">{commit.changes.files} files</Pill>
+                <Pill color="blue">{commit.changes.theorems} theorems</Pill>
               </span>
-              {commit.changes.theorems > 0 && (
-                <span className="mr-1">
-                  <Pill color="blue">{commit.changes.theorems} theorems</Pill>
-                </span>
-              )}
-              {commit.changes.defs > 0 && (
-                <span className="mr-1">
-                  <Pill color="blue">{commit.changes.defs} defs</Pill>
-                </span>
-              )}
-              {commit.changes.structures > 0 && (
-                <span className="mr-1">
-                  <Pill color="blue">
-                    {commit.changes.structures} structures
-                  </Pill>
-                </span>
-              )}
-              {commit.changes.inductives > 0 && (
-                <span className="mr-1">
-                  <Pill color="blue">
-                    {commit.changes.inductives} inductives
-                  </Pill>
-                </span>
-              )}
-            </div>
-          </a>
-        </Link>
+            )}
+            {commit.changes.defs > 0 && (
+              <span className="mr-1">
+                <Pill color="blue">{commit.changes.defs} defs</Pill>
+              </span>
+            )}
+            {commit.changes.structures > 0 && (
+              <span className="mr-1">
+                <Pill color="blue">
+                  {commit.changes.structures} structures
+                </Pill>
+              </span>
+            )}
+            {commit.changes.inductives > 0 && (
+              <span className="mr-1">
+                <Pill color="blue">
+                  {commit.changes.inductives} inductives
+                </Pill>
+              </span>
+            )}
+          </div>
+
+        </Link>)
       ))}
       <Pagination
         pageNum={pageNum}

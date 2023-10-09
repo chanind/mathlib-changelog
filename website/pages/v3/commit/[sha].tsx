@@ -120,7 +120,7 @@ const Commit: NextPage<CommitProps> = ({ commit }) => {
                       </span>{" "}
                       <span className="font-semibold">{itemType}</span>{" "}
                       <Link href={`/v3/${itemType}/${fullName}`}>
-                        <a>{fullName}</a>
+                        {fullName}
                       </Link>
                     </div>
                   );
