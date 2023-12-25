@@ -6,8 +6,6 @@
 
 ### Explore the changelog at [mathlib-changelog.org](https://mathlib-changelog.org/)
 
-**NEW** Experimental mathlib v4 version available at [mathlib-changelog.org/v4](https://mathlib-changelog.org/v4)
-
 This Repo maintains an auto-updating list of the commits to [mathlib](https://github.com/leanprover-community/mathlib) for [Lean](https://leanprover.github.io/) to have these in a searchable, indexable location.
 
 Currently this pulls in git commit messages, and attempts to parse out the changed `lemma`, `def`, `theorem`, `inductive`, `abbreviation`, and `structure` in the commit. This is just based on looking at the file in the commit, and doesn't load a full lean/mathlib environment, so it's not guaranteed to catch every change (but it should be pretty close!).
