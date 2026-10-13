@@ -1,3 +1,380 @@
+2026-10-13 00:46:59 105b9b1
+
+chore: localize some global `set_option`s (#44796)
+This PR removes some global `set_option backward.defeqAttrib.useBackward true`, replacing them with options that are localized per declaration.
+This PR is not exhaustive, but rather removes the ones that are easy to remove.
+
+ESTIMATED CHANGES
+Modified Mathlib/Algebra/Category/ModuleCat/Monoidal/Adjunction.lean
+
+Modified Mathlib/CategoryTheory/Bicategory/Grothendieck.lean
+
+Modified Mathlib/CategoryTheory/CatCommSq.lean
+
+Modified Mathlib/CategoryTheory/Enriched/EnrichedCat.lean
+
+Modified Mathlib/CategoryTheory/Equivalence/Symmetry.lean
+
+Modified Mathlib/CategoryTheory/Functor/KanExtension/Adjunction.lean
+
+Modified Mathlib/CategoryTheory/Functor/KanExtension/Basic.lean
+
+Modified Mathlib/CategoryTheory/Limits/FilteredColimitCommutesFiniteLimit.lean
+
+Modified Mathlib/CategoryTheory/Localization/Monoidal/Functor.lean
+
+Modified Mathlib/CategoryTheory/Monad/Algebra.lean
+
+Modified Mathlib/CategoryTheory/Monad/Basic.lean
+
+Modified Mathlib/CategoryTheory/Monoidal/Braided/Multifunctor.lean
+
+Modified Mathlib/CategoryTheory/Monoidal/Closed/FunctorCategory/Groupoid.lean
+
+Modified Mathlib/CategoryTheory/Monoidal/End.lean
+
+Modified Mathlib/CategoryTheory/Monoidal/Internal/FunctorCategory.lean
+
+Modified Mathlib/CategoryTheory/Monoidal/Opposite.lean
+
+Modified Mathlib/CategoryTheory/Monoidal/Transport.lean
+
+Modified Mathlib/CategoryTheory/Shift/CommShift.lean
+
+Modified Mathlib/CategoryTheory/Shift/ShiftSequence.lean
+
+Modified Mathlib/CategoryTheory/Triangulated/Rotate.lean
+
+
+
+
+2026-10-12 20:46:52 54c01c3
+
+chore(RepresentationTheory/Basic): automated extraction from #44776 (#44780)
+This PR was automatically created from PR #44776 by @keithadler via a [review comment](https://github.com/leanprover-community/mathlib4/pull/44776#discussion_r4242327037) by @grunweg.
+
+ESTIMATED CHANGES
+Modified Mathlib/RepresentationTheory/Basic.lean
++/- theorem Representation.norm_ofMulDistribMulAction_eq
+
+
+
+2026-10-12 20:02:06 9bb8be1
+
+chore(CategoryTheory/Limits/Cones): automated extraction from #44765 (#44792)
+This PR was automatically created from PR #44765 by @JovanGerb via a [review comment](https://github.com/leanprover-community/mathlib4/pull/44765#discussion_r4246799654) by @grunweg.
+
+ESTIMATED CHANGES
+Modified Mathlib/CategoryTheory/Limits/Cones.lean
+
+
+
+
+2026-10-12 20:02:03 56557d8
+
+feat(AffineSpace): exists affinely independent set of a cardinality dim + 1 (#43910)
+Currently, `exists_affineIndependent` establishes for any set `s` that there exists a subset with equal affine span that is affinely indepedent. Further refine that statement to show that for finite dimensional spaces that this set always has cardinality equal to the affine dimension + 1.
+
+ESTIMATED CHANGES
+Modified Mathlib/LinearAlgebra/AffineSpace/FiniteDimensional.lean
++ theorem AffineIndepOn.ncard_eq_succ_finDim_affineSpan
++ theorem AffineIndependent.ncard_eq_succ_finDim_affineSpan
++ theorem exists_affineIndepOn_of_finiteDimensional
++ theorem exists_affineIndependent_of_finiteDimensional
+Modified Mathlib/LinearAlgebra/AffineSpace/Independent.lean
++ theorem exists_affineIndepOn
+
+
+
+2026-10-12 20:02:01 e773223
+
+feat(Logic/Function/Basic): add `Injective.existsUnique_iff_exists` (#43795)
+We add `Injective.existsUnique_iff_exists` and use it to golf existing proofs.
+This PR was created with assistance from Codex.
+
+ESTIMATED CHANGES
+Modified Mathlib/Algebra/Field/IsField.lean
+
+Modified Mathlib/AlgebraicTopology/SimplicialSet/NonDegenerateSimplices.lean
+
+Modified Mathlib/Basic/Rel.lean
+
+Modified Mathlib/CategoryTheory/Limits/Types/Equalizers.lean
+
+Modified Mathlib/Data/Set/Image.lean
+
+Modified Mathlib/GroupTheory/ArchimedeanDensely.lean
+
+Modified Mathlib/Logic/Function/Basic.lean
++ theorem Function.Injective.existsUnique_iff_exists
+Modified Mathlib/RingTheory/Polynomial/Cyclotomic/Basic.lean
+
+
+
+
+2026-10-12 20:01:57 8018a65
+
+chore(Algebra/Group/Pointwise/Set/SelfInv): put into lemmas into Set namespace (#43792)
+Move all lemmas about self inverse sets into the `Set` namespace. This was suggested by @eric-wieser in #42611. Dot-notation is still accessible using the [DNRO](https://juliahimmel.de/blog/an-underappreciated-lean-feature/) feature.
+`to_additive` needs a hint in order to translate into the correct namespace. I also fixed the to_additive of `IsSelfInv.prod` (this used to be translated to `IsSelfInv.sum` instead of `IsSelfNeg.prod`.
+
+ESTIMATED CHANGES
+Modified Mathlib/Algebra/Group/Pointwise/Set/SelfInv.lean
++ theorem Set.isSelfInv_compl_iff
++ theorem Set.isSelfInv_iff_forall_inv_mem
++ theorem Set.isSelfInv_iff_forall_inv_mem_iff
++ theorem Set.isSelfInv_iff_inv_subset
++ theorem Set.isSelfInv_iff_subset_inv
++ theorem Set.isSelfInv_singleton_iff
+- theorem isSelfInv_compl_iff
+- theorem isSelfInv_iff_forall_inv_mem
+- theorem isSelfInv_iff_forall_inv_mem_iff
+- theorem isSelfInv_iff_inv_subset
+- theorem isSelfInv_iff_subset_inv
+- theorem isSelfInv_singleton_iff
+
+
+
+2026-10-12 19:44:43 8eccd61
+
+feat(SimpleGraph/Coloring/Constructions): `turanGraph n r` is `r`-colorable (#44232)
+This is only for nonzero `r` since `turanGraph n 0` [is](https://leanprover-community.github.io/mathlib4_docs/Mathlib/Combinatorics/SimpleGraph/Extremal/Turan.html#SimpleGraph.turanGraph_zero) the `n`-clique, which is only 0-colorable for `n = 0`.
+
+ESTIMATED CHANGES
+Modified Mathlib/Combinatorics/SimpleGraph/Coloring/Constructions.lean
+
+
+
+
+2026-10-12 19:44:40 69fa9d7
+
+feat(CategoryTheory/Limits): commutation of limits and colimits (#43977)
+This PR adds some API about the commutation of limits and colimits. For example, if `C` has colimits of shape `K'` and limits of shape `K`, we show that the limit functor `lim : (K ⥤ C) ⥤ C` commutes with colimits of shape `K'` iff the colimit functor `colim : (K' ⥤ C) ⥤ C` commutes with limits of shape `K`.
+We use this in order to prove that if `C` has exact colimits of shape `K'` then the full subcategory of `J ⥤ C` consisting of functors which commute with colimits of shape `K'` is closed under finite limits and finite colimits.
+
+ESTIMATED CHANGES
+Modified Mathlib/CategoryTheory/Limits/ColimitLimit.lean
++ theorem CategoryTheory.Limits.colimitLimToLimitColim_eq_colimit_desc
++ theorem CategoryTheory.Limits.colimitLimToLimitColim_eq_limit_lift
++ theorem CategoryTheory.Limits.isIso_colimitLimToLimitColim_iff_preservesColimit
++ theorem CategoryTheory.Limits.isIso_colimitLimToLimitColim_iff_preservesLimit
++ theorem CategoryTheory.Limits.preservesColimit_flip_lim_iff_preservesLimit_colim
++ theorem CategoryTheory.Limits.preservesColimit_lim_iff_preservesLimit_colim
++ theorem CategoryTheory.Limits.preservesColimitsOfShape_lim_iff_preservesLimitsOfShape_colim
++ theorem CategoryTheory.Limits.ι_colimitToLimit_π
+Modified Mathlib/CategoryTheory/ObjectProperty/ColimitsOfShape.lean
+
+Modified Mathlib/CategoryTheory/ObjectProperty/FunctorCategory/PreservesLimits.lean
+
+Modified Mathlib/CategoryTheory/ObjectProperty/LimitsOfShape.lean
+
+
+
+
+2026-10-12 18:45:11 b594c9e
+
+feat(SimpleGraph/Star): the star graph is the only triangle-free graph with a universal vertex (#41218)
+- `starGraph r |>.CliqueFree 3`
+- `G.IsUniversal v → G.CliqueFree 3 → G = starGraph v`
+- `G.IsUniversal v → (G.IsAcyclic ↔ G.CliqueFree 3)`
+
+ESTIMATED CHANGES
+Modified Mathlib/Combinatorics/SimpleGraph/Acyclic.lean
+- theorem SimpleGraph.IsAcyclic.cliqueFree
++ theorem SimpleGraph.IsAcyclic.cliqueFree_three
+Modified Mathlib/Combinatorics/SimpleGraph/Star.lean
++ theorem SimpleGraph.IsUniversal.isAcyclic_iff_cliqueFree_three
++ theorem SimpleGraph.cliqueFree_starGraph_three
++ theorem SimpleGraph.eq_starGraph_of_isUniversal_of_cliqueFree_three
++ theorem SimpleGraph.starGraph_le_iff
+
+
+
+2026-10-12 15:46:00 fad3406
+
+chore: replace `{a a : α}` with `{a : α}` in `variable`s (#44739)
+This doesn't impact any statements.
+Having a linter for this would be nice.
+
+ESTIMATED CHANGES
+Modified Mathlib/Algebra/BigOperators/Group/Finset/Basic.lean
+
+Modified Mathlib/Algebra/Order/Interval/Finset/SuccPred.lean
+
+Modified Mathlib/Algebra/Order/Interval/Set/SuccPred.lean
+
+Modified Mathlib/Order/Interval/Finset/SuccPred.lean
+
+
+
+
+2026-10-12 15:45:58 1afbf2a
+
+feat(Combinatorics/SimpleGraph/Hasse): more properties of Hasse graphs of linear orders (#40728)
+- two forms of an intermediate value theorem for linear orders
+- the Hasse graph of a linear order is acyclic
+- a path graph is locally finite
+
+ESTIMATED CHANGES
+Modified Mathlib/Combinatorics/SimpleGraph/Acyclic.lean
++ theorem SimpleGraph.isAcyclic_hasse_of_linearOrder
++ theorem SimpleGraph.isAcyclic_pathGraph
++ theorem SimpleGraph.isTree_pathGraph
++ theorem SimpleGraph.isTree_pathGraph_add_one
+Modified Mathlib/Combinatorics/SimpleGraph/CycleGraph.lean
++ theorem SimpleGraph.connected_cycleGraph_add_one
+- theorem SimpleGraph.cycleGraph_connected
+- theorem SimpleGraph.cycleGraph_preconnected
++ theorem SimpleGraph.preconnected_cycleGraph
+Modified Mathlib/Combinatorics/SimpleGraph/Hasse.lean
++ theorem SimpleGraph.Walk.mem_darts_hasse_of_ge_of_le_of_le
++ theorem SimpleGraph.Walk.mem_support_hasse_of_ge_of_le
++ theorem SimpleGraph.connected_pathGraph
++ theorem SimpleGraph.connected_pathGraph_add_one
+- theorem SimpleGraph.hasse_preconnected_of_pred
+- theorem SimpleGraph.hasse_preconnected_of_succ
+- theorem SimpleGraph.pathGraph_connected
+- theorem SimpleGraph.pathGraph_preconnected
++ theorem SimpleGraph.preconnected_hasse_of_predOrder
++ theorem SimpleGraph.preconnected_hasse_of_succOrder
++ theorem SimpleGraph.preconnected_pathGraph
+Modified Mathlib/Data/Fintype/Defs.lean
+
+Modified Mathlib/Order/Cover.lean
+
+
+
+
+2026-10-12 14:58:22 4e6064a
+
+feat: add alternate constructor for bases of root systems (#43555)
+
+ESTIMATED CHANGES
+Modified Mathlib/LinearAlgebra/LinearIndependent/Lemmas.lean
++ theorem LinearMap.BilinForm.exists_pos_and_pos_apply_sum_smul
+Modified Mathlib/LinearAlgebra/RootSystem/Base.lean
++ def RootPairing.Base.mkOfPairwiseLEZero
++ theorem RootPairing.Base.mkOfPairwiseLEZero_support
++ theorem RootPairing.nonneg_or_nonpos_of_sum_smul_mem_range_root
+Modified Mathlib/LinearAlgebra/RootSystem/Finite/Lemmas.lean
++ theorem RootPairing.exists_coroot_sub_coroot_eq_zsmul
++ theorem RootPairing.exists_pos_pairingIn
++ theorem RootPairing.root_sub_root_notMem_range'
++ theorem RootPairing.root_sub_root_notMem_range
+Modified Mathlib/LinearAlgebra/RootSystem/Finite/Nondegenerate.lean
+
+
+
+
+2026-10-12 12:32:27 1ce668c
+
+chore(GroupTheory/Commutator/Basic): golf some proofs (#44193)
+This PR golfs a few long proofs in `GroupTheory/Commutator/Basic.lean`.
+
+ESTIMATED CHANGES
+Modified Mathlib/Algebra/Group/Hom/Defs.lean
+
+Modified Mathlib/GroupTheory/Commutator/Basic.lean
++/- theorem map_commutator_eq
++ theorem map_commutator_of_surjective
+Modified Mathlib/GroupTheory/GroupAction/Iwasawa.lean
+
+
+
+
+2026-10-12 09:59:03 9454a4c
+
+doc(*): add missing bib entries for keys (#44767)
+We had four citation keys that didn't actually exist as references in `references.bib`. This PR fixes this by adding those references. All bib entries come from zbmath.
+Additionally, we rename the key `schneider2013` to `schneider2014` (the print version was published in 2014) and `russell1974` to `walker1974` (Walker is the author's last name).
+
+ESTIMATED CHANGES
+Modified Mathlib/Analysis/Convex/Intrinsic.lean
+
+Modified Mathlib/Topology/Separation/CompletelyRegular.lean
+
+Modified docs/references.bib
+
+
+
+
+2026-10-12 09:45:20 196a7cc
+
+feat(Monoidal): fix order of arguments (#44543)
+Fix the order of the arguments passed to `mkEvalHorizontalCompAux'OfWhisker`, which made `monoidal` build a proof term rejected by the kernel on goals of the form `f ⊗ₘ (X ◁ g)`:
+```lean4
+import Mathlib
+open CategoryTheory MonoidalCategory
+variable {C : Type u} [Category.{v} C] [MonoidalCategory C]
+variable {X Y Z W : C} (f : X ⟶ Y) (g : Y ⟶ Z)
+example (h : W ⟶ W) : (f ⊗ₘ h) ⊗ₘ (X ◁ g) = (f ⊗ₘ h) ⊗ₘ (X ◁ g) := by
+  monoidal
+```
+
+ESTIMATED CHANGES
+Modified Mathlib/Tactic/CategoryTheory/Coherence/Normalize.lean
+
+Modified MathlibTest/CategoryTheory/Monoidal/Basic.lean
+
+
+
+
+2026-10-12 08:09:44 48192e0
+
+chore(Geometry/Euclidean/Incenter): `deprecated_module` for #44772 (#44781)
+
+ESTIMATED CHANGES
+Modified Mathlib.lean
+
+Added Mathlib/Geometry/Euclidean/Incenter.lean
+
+
+
+
+2026-10-12 08:09:41 0d7500e
+
+refactor(Geometry/Euclidean/Incenter): move to Incenter/Basic (#44772)
+`Mathlib.Geometry.Euclidean.Incenter` is getting close to the 1500-line limit, especially once the changes from #31981 are in. Move to `Mathlib.Geometry.Euclidean.Incenter.Basic` in preparation for splitting up the file and adding further files within the new directory.
+
+ESTIMATED CHANGES
+Modified Mathlib.lean
+
+Modified Mathlib/Geometry/Euclidean/Angle/Incenter.lean
+
+Renamed Mathlib/Geometry/Euclidean/Incenter.lean to Mathlib/Geometry/Euclidean/Incenter/Basic.lean
+
+
+
+
+2026-10-12 07:51:37 715a03a
+
+chore: rename four lemmas named `sub` that state `+` (#44777)
+`toIcoDiv_zsmul_sub_toIcoMod` and its three variants state `x • p + y = b`, an addition, but had `sub` in the name. This renames them to `..._add_...` and keeps the old names as deprecated aliases.
+
+ESTIMATED CHANGES
+Modified Mathlib/Algebra/Order/ToIntervalMod.lean
++ theorem toIcoDiv_mul_add_toIcoMod
+- theorem toIcoDiv_mul_sub_toIcoMod
++ theorem toIcoDiv_zsmul_add_toIcoMod
+- theorem toIcoDiv_zsmul_sub_toIcoMod
++ theorem toIocDiv_mul_add_toIocMod
+- theorem toIocDiv_mul_sub_toIocMod
++ theorem toIocDiv_zsmul_add_toIocMod
+- theorem toIocDiv_zsmul_sub_toIocMod
+
+
+
+2026-10-12 06:26:08 ff78725
+
+refactor(Ideal/Cotangent): make `Ideal.Cotangent` implicit reducible (#43158)
+In this PR we make `Ideal.Cotangent` implicit reducible and remove some `set_option`s.
+
+ESTIMATED CHANGES
+Modified Mathlib/RingTheory/Ideal/Cotangent.lean
+
+
+
+
 2026-10-12 03:15:52 dde6562
 
 fix(CI): check the PR number in decls-diff against the built commit (#44505)
