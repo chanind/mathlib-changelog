@@ -1,3 +1,523 @@
+2026-10-15 03:31:02 f0b4c81
+
+doc(1000-yaml): fill in a few Euclidean geometry items we have (#44235)
+CPCTC ("Corresponding Parts of Congruent Triangles are Congruent") is from #26758 which was adopted from leanprover-community/mathlib3#18214, and intersecting chords/secants theorem is from leanprover-community/mathlib3#7139.
+
+ESTIMATED CHANGES
+Modified docs/1000.yaml
+
+
+
+
+2026-10-14 22:59:00 ef61520
+
+feat: solvability is an exact property for Lie algebras (#44818)
+Co-authored by: Gustavo Infanti, Exequiel Rivas, Paul Schwahn
+
+ESTIMATED CHANGES
+Modified Mathlib/Algebra/Lie/Quotient.lean
++ def LieIdeal.mkQ
++ theorem LieIdeal.mkQ_eq_zero
++ theorem LieIdeal.mkQ_ker
++ theorem LieIdeal.range_mkQ
++ theorem LieIdeal.surjective_mkQ
+Modified Mathlib/Algebra/Lie/Solvable.lean
++ theorem LieAlgebra.isSolvable_of_isSolvable_ideal_quotient
+
+
+
+2026-10-14 22:05:07 e2d1941
+
+feat(Order/Filter): misc filter limit lemmas (#44847)
+* If $$f(x)\to\infty$$ and $$n>0$$, then $$f(x)^n\to\infty$$
+* If $$f(x)\to m$$ along $$l$$, then $$1/f(x)\to m$$ along $$l^{-1}$$
+Split from #44338 - these were helper lemmas for a discarded approach.
+AI usage disclosure: ChatGPT 5.5 was used to split this PR from #44338. All of the changes in this PR were made by a human.
+
+ESTIMATED CHANGES
+Modified Mathlib/Order/Filter/AtTopBot/Ring.lean
++ theorem Filter.Tendsto.atTop_pow₀
+Modified Mathlib/Order/Filter/Pointwise.lean
++ theorem Filter.tendsto_comp_inv_filter_inv_iff
++ theorem Filter.tendsto_filter_inv_iff
+
+
+
+2026-10-14 22:05:04 66233bc
+
+chore(Data/Vector/Basic): remove defeq abuse (#41095)
+This PR fixes* defeq abuse in Vector/Basic mainly by rewriting certain terms more carefully (i.e. first unfolding definition).
+*All but one of the original fixes now happened automatically in #41136 (automatically), but probably my versions of the proof are still cleaner over all.
+The one still saved set_option comes from replacing Subtype.mk_eq_mk with congr for a messy subtype.
+
+ESTIMATED CHANGES
+Modified Mathlib/Data/Vector/Basic.lean
+- theorem List.Vector.head_pmap
+- theorem List.Vector.tail_pmap
+Modified Mathlib/Data/Vector/Mem.lean
++ theorem List.Vector.head_pmap
++ theorem List.Vector.tail_pmap
+
+
+
+2026-10-14 21:28:03 eaf42a3
+
+chore: unsqueeze two terminal simp only's that are no longer slow (#44866)
+These simp calls were squeezed for performance: trying them locally, they are no longer visually slow; so unsqueeze them.
+Two remaining occurrences of the tracking issues are still slow and remain.
+
+ESTIMATED CHANGES
+Modified Mathlib/Algebra/GroupWithZero/Action/Pointwise/Finset.lean
+
+Modified Mathlib/Algebra/Lie/Weights/Chain.lean
+
+
+
+
+2026-10-14 21:28:00 f1987d7
+
+feat(Basic/Rel): balls (#33077)
+Define `SetRel.ball` and redefine `UniformSpace.ball` in terms of it. Note that `SetRel.ball` is a left-ball while `UniformSpace.ball` is a right-ball.
+
+ESTIMATED CHANGES
+Modified Mathlib/Basic/Rel.lean
++ def SetRel.ball
++ theorem SetRel.ball_iInter
++ theorem SetRel.ball_inter
++ theorem SetRel.ball_mono
++ theorem SetRel.ball_subset_ball_of_comp_subset
++ theorem SetRel.mem_ball
++ theorem SetRel.mem_comp_comp
+Modified Mathlib/Basic/Rel/Cover.lean
++ theorem SetRel.isCover_iff_subset_iUnion_ball
+Modified Mathlib/Dynamics/TopologicalEntropy/CoverEntropy.lean
+
+Modified Mathlib/Dynamics/TopologicalEntropy/DynamicalEntourage.lean
+
+Modified Mathlib/Dynamics/TopologicalEntropy/NetEntropy.lean
+
+Modified Mathlib/Topology/Algebra/Module/LocallyConvex.lean
+
+Modified Mathlib/Topology/EMetricSpace/Basic.lean
+
+Modified Mathlib/Topology/MetricSpace/Pseudo/Lemmas.lean
+
+Modified Mathlib/Topology/Metrizable/Basic.lean
+
+Modified Mathlib/Topology/UniformSpace/Basic.lean
+
+Modified Mathlib/Topology/UniformSpace/Defs.lean
++/- def UniformSpace.ball
+Modified Mathlib/Topology/UniformSpace/Uniformizable.lean
+
+
+
+
+2026-10-14 20:15:19 84f896a
+
+chore: protect MDifferentiable.mfderivWithin (#44868)
+So it cannot be confused with `mfderivWithin` when the `MDifferentiable` namespace is open.
+
+ESTIMATED CHANGES
+Modified Mathlib/Geometry/Manifold/MFDeriv/Basic.lean
+- theorem MDifferentiable.mfderivWithin
+
+
+
+2026-10-14 19:42:51 e438a8a
+
+feat(AlgebraicTopology): composition of edges in quasicategories (#44775)
+This PR refactors a little bit the homotopy category of a 2-truncated quasicategory: we introduce types `Edge.HomotopyL/R` in addition to the existing `Prop`-valued versions `HomotopicL/R`. We obtain some basic results for `Edge.CompStruct` in quasicategories, which we shall use in the study of Kan complexes.
+
+ESTIMATED CHANGES
+Modified Mathlib.lean
+
+Added Mathlib/AlgebraicTopology/Quasicategory/CompStruct.lean
+
+Modified Mathlib/AlgebraicTopology/Quasicategory/TwoTruncated.lean
++/- theorem SSet.Truncated.Edge.CompStruct.comp_unique
++/- theorem SSet.Truncated.Edge.CompStruct.homotopyCategory₂_fac
++/- theorem SSet.Truncated.Edge.CompStruct.nonempty_iff
++/- theorem SSet.Truncated.HomotopicL.congr_homotopyCategory₂HomMk
++/- theorem SSet.Truncated.HomotopicL.homotopicR
++/- theorem SSet.Truncated.HomotopicL.refl
++/- theorem SSet.Truncated.HomotopicL.symm
++/- theorem SSet.Truncated.HomotopicL.trans
++/- theorem SSet.Truncated.HomotopicR.congr_homotopyCategory₂HomMk
++/- theorem SSet.Truncated.HomotopicR.homotopicL
++/- theorem SSet.Truncated.HomotopicR.refl
++/- theorem SSet.Truncated.HomotopicR.symm
++/- theorem SSet.Truncated.HomotopicR.trans
++/- def SSet.Truncated.HomotopyCategory₂.Hom
++ def SSet.Truncated.HomotopyCategory₂.desc
++ def SSet.Truncated.HomotopyCategory₂.descMap
++ theorem SSet.Truncated.HomotopyCategory₂.descMap_homMk
++ theorem SSet.Truncated.HomotopyCategory₂.desc_map_homMk
++ theorem SSet.Truncated.HomotopyCategory₂.functor_ext
++/- def SSet.Truncated.HomotopyCategory₂.homMk
++ theorem SSet.Truncated.HomotopyCategory₂.homMk_eq_iff_homotopicL
++ theorem SSet.Truncated.HomotopyCategory₂.homMk_eq_iff_homotopicR
++/- theorem SSet.Truncated.HomotopyCategory₂.homMk_id
++/- theorem SSet.Truncated.HomotopyCategory₂.homMk_surjective
++/- theorem SSet.Truncated.HomotopyCategory₂.mk_surjective
++/- structure SSet.Truncated.HomotopyCategory₂
++/- theorem SSet.Truncated.homotopicL_iff_homotopicR
+
+
+
+2026-10-14 16:51:10 8678dc2
+
+chore(LinearAlgebra/Matrix/Echelon/Basic): automated extraction from #44390 (#44870)
+This PR was automatically created from PR #44390 by @raoxiaojia via a [review comment](https://github.com/leanprover-community/mathlib4/pull/44390#discussion_r4273540848) by @ocfnash.
+
+ESTIMATED CHANGES
+Modified Mathlib/LinearAlgebra/Matrix/Echelon/Basic.lean
++ theorem Matrix.IsRowEchelon.det_eq
++ theorem Matrix.IsRowEchelon.isUpperTriangular
+
+
+
+2026-10-14 16:51:07 d1683f0
+
+chore(SetTheory/Ordinal/FundamentalSequence): remove `backward.isDefEq.respectTransparency` (#44861)
+
+ESTIMATED CHANGES
+Modified Mathlib/SetTheory/Ordinal/FundamentalSequence.lean
++/- theorem Ordinal.IsFundamentalSeq.comp_isNormal
+
+
+
+2026-10-14 16:51:03 09f0ca7
+
+chore(UniformIntegrable): rename `UnifIntegrable.mk_iff` (#44687)
+Rename `UnifIntegrable.mk_iff` in `unifIntegrable_mk_iff`, since the lemma does not benefit from the dot notation.
+PR extracted from https://github.com/leanprover-community/mathlib4/pull/42993, which I intend to cut in more manageable chunks.
+
+ESTIMATED CHANGES
+Modified Mathlib/MeasureTheory/Function/UniformIntegrable.lean
++ theorem MeasureTheory.unifIntegrable_iff_tendsto
+
+
+
+2026-10-14 16:51:00 9cc608b
+
+doc(RingTheory/Extension/Generators): remove completed TODO and clarify docstring (#42358)
+Update the docstring in light of #25085 refactoring the bundled type into an unbundled type. A fix to the docstring has been done in #39705.
+The TODO still to be removed and the docstring is clarified a bit to be clear that the type iota is now unbundled.
+
+ESTIMATED CHANGES
+Modified Mathlib/RingTheory/Extension/Generators.lean
+
+
+
+
+2026-10-14 16:25:57 6e2a148
+
+chore(LinearAlgebra/Matrix/Block): automated extraction from #44700 (#44869)
+This PR was automatically created from PR #44700 by @raoxiaojia via a [review comment](https://github.com/leanprover-community/mathlib4/pull/44700#discussion_r4273135657) by @ocfnash.
+
+ESTIMATED CHANGES
+Modified Mathlib/LinearAlgebra/Matrix/Block.lean
++ theorem Matrix.isIndecomposable_iff_reflTransGen
+
+
+
+2026-10-14 16:17:03 113454b
+
+fix(NumberTheory/ModularForms/LFunction): correct the value of `L` at `s = 0` (#44547)
+`ModularForm.L hk f s := Λ hk f s * (2 / Gammaℂ s)` is `0` at `s = 0` for every modular form, because `Gammaℂ 0 = 0`. But when `valueAtInfty f ≠ 0`, the completed function `Λ hk f` has a simple pole at `0` with residue `-valueAtInfty f` (`WeakFEPair.Λ_residue_zero`), which cancels the zero of `1 / Gammaℂ`. So the L-function has a removable singularity at `0` with value `-valueAtInfty f`, and the current `L hk f` is discontinuous there. For the normalised Eisenstein series `E₄`, `L hk E₄ 0 = 0` while `L hk E₄ s → -1` as `s → 0`; classically `L(E₄, 0) = 240 ζ(0) ζ(-3) = -1`.
+This PR follows the treatment of the same removable singularity for `hurwitzZetaEven` / `riemannZeta`:
+- `L` is now `Function.update (fun s ↦ Λ hk f s * (2 / Gammaℂ s)) 0 (-valueAtInfty f)`, and its docstring explains the value at `0`.
+- New lemmas: `ModularForm.L_of_ne_zero`, `ModularForm.L_apply_zero` (`@[simp]`), `ModularForm.tendsto_L_nhdsNE_zero`, `ModularForm.continuousAt_L_zero` (`@[fun_prop]`).
+- New lemma `Complex.Gammaℂ_residue_zero`, the analogue of `Complex.Gammaℝ_residue_zero`.
+- The proofs of `hasSum_L` (via `hasSum_L_of_hasSum_Λ`) and `CuspForm.differentiable_L` are adjusted. For cusp forms `valueAtInfty f = 0`, so `L` is pointwise unchanged; away from `0` it is unchanged for every form.
+
+ESTIMATED CHANGES
+Modified Mathlib/Analysis/SpecialFunctions/Gamma/Deligne.lean
++ theorem Complex.Gammaℂ_residue_zero
+Modified Mathlib/NumberTheory/ModularForms/LFunction.lean
++ theorem ModularForm.L_apply_of_ne_zero
++ theorem ModularForm.L_apply_zero
++ theorem ModularForm.continuousAt_L_zero
++ theorem ModularForm.tendsto_L_nhdsNE_zero
+
+
+
+2026-10-14 15:47:29 b5d0cc0
+
+feat: ContMDiff.mvfderiv and friends (#44711)
+The `mvfderiv` of a `C^n` map is `C^m`, if `m + 1 ≤ n`: mathlib already knew that the `tangentMap` of `f` was `C^n`;
+the `mvfderiv` are the fiber-wise components of the tangent map, hence also `C^n`.
+This is necessary for defining the curvature tensor: from the Riemannian geometry project.
+This can also be used for an alternative proof of smoothness of the Levi-Civita connection.
+
+ESTIMATED CHANGES
+Modified Mathlib/Geometry/Manifold/ContMDiffMFDeriv.lean
+
+
+
+
+2026-10-14 15:00:03 f816245
+
+feat(Geometry/Euclidean/Incenter/SouthPole): south / north pole of a simplex (#44794)
+Add definitions and basic API for the second intersection with the circumsphere of a simplex of a line through a vertex and the incenter or an excenter. These were suggested by two different reviewers in #32294; the reference is one Yaël gave there.
+Note: I don't know if this is useful / has any interesting properties beyond two dimensions, but the basic API works just fine for a general simplex.
+
+ESTIMATED CHANGES
+Modified Mathlib.lean
+
+Added Mathlib/Geometry/Euclidean/Incenter/SouthPole.lean
++ theorem Affine.Simplex.ExcenterExists.nsPole_erase
++ theorem Affine.Simplex.ExcenterExists.nsPole_insert
++ theorem Affine.Simplex.ExcenterExists.nsPole_map
++ theorem Affine.Simplex.ExcenterExists.nsPole_mem_affineSpan_range
++ theorem Affine.Simplex.ExcenterExists.nsPole_restrict
++ def Affine.Simplex.nsPole
++ theorem Affine.Simplex.nsPole_compl
++ theorem Affine.Simplex.nsPole_empty
++ theorem Affine.Simplex.nsPole_mem_affineSpan_pair
++ theorem Affine.Simplex.nsPole_mem_circumsphere
++ theorem Affine.Simplex.nsPole_reindex
++ theorem Affine.Simplex.nsPole_singleton_self
++ def Affine.Simplex.southPole
++ theorem Affine.Simplex.southPole_map
++ theorem Affine.Simplex.southPole_mem_affineSpan_pair
++ theorem Affine.Simplex.southPole_mem_affineSpan_range
++ theorem Affine.Simplex.southPole_mem_circumsphere
++ theorem Affine.Simplex.southPole_reindex
++ theorem Affine.Simplex.southPole_restrict
++ def Affine.Triangle.northPole
++ theorem Affine.Triangle.northPole_map
++ theorem Affine.Triangle.northPole_mem_affineSpan_pair
++ theorem Affine.Triangle.northPole_mem_affineSpan_range
++ theorem Affine.Triangle.northPole_mem_circumsphere
++ theorem Affine.Triangle.northPole_reindex
++ theorem Affine.Triangle.northPole_restrict
++ theorem Affine.Triangle.nsPole_singleton_eq_northPole
++ theorem Affine.Triangle.nsPole_singleton_of_ne
+
+
+
+2026-10-14 14:59:59 c3e6110
+
+chore(Algebra/MvPolynomial/Division): change local notation `%ᵐᵒⁿᵒᵐⁱᵃˡ` → `%ᵐ` (#44744)
+The old notation could not have possibly been more convenient to type than the function it was abbreviating.
+
+ESTIMATED CHANGES
+Modified Mathlib/Algebra/MvPolynomial/Division.lean
++/- theorem MvPolynomial.X_divMonomial
++/- theorem MvPolynomial.divMonomial_monomial
++/- theorem MvPolynomial.divMonomial_zero
++/- theorem MvPolynomial.modMonomial_X
++/- theorem MvPolynomial.monomial_modMonomial
++/- theorem MvPolynomial.zero_divMonomial
+
+
+
+2026-10-14 14:59:56 fa7e9cb
+
+fix: handle nested conditionals in to_dual (#44465)
+Before this PR, `@[to_dual]` failed with `function expected` on `nested_max` (the theorem in the issue above)
+The problem was that `updateDecl` added helper functions to the `nested_max` proof (making the comparison functions' inputs explicit), but checked the modified proof against the original `nested_max` statement (which doesn't have these helpers). The nested comparison in the original statement also needed those helpers for Lean to recognise the function's inputs.
+Fixes #42852.
+
+ESTIMATED CHANGES
+Modified Mathlib/Tactic/Translate/Core.lean
+
+Modified MathlibTest/Attribute/ToDual.lean
++ theorem nested_le_max
++ theorem nested_max
+
+
+
+2026-10-14 14:59:53 512d521
+
+chore(Combinatorics/SimpleGraph): remove `backward.isDefEq.respectTransparency.types` from `ErdosStoneSimonovits` and golf theorems (#44227)
+Removes `backward.isDefEq.respectTransparency.types` from ErdosStoneSimonovits.lean and golfs several theorems.
+
+ESTIMATED CHANGES
+Modified Mathlib/Combinatorics/SimpleGraph/CompleteMultipartite.lean
++ theorem SimpleGraph.CompleteEquipartiteSubgraph.card_filter_verts
++/- theorem SimpleGraph.CompleteEquipartiteSubgraph.disjoint
++ theorem SimpleGraph.CompleteEquipartiteSubgraph.mem_verts
++/- theorem SimpleGraph.CompleteEquipartiteSubgraph.verts_eq_biUnion
++ theorem SimpleGraph.CompleteEquipartiteSubgraph.verts_eq_disjiUnion
+Modified Mathlib/Combinatorics/SimpleGraph/Extremal/ErdosStoneSimonovits.lean
++/- theorem SimpleGraph.ErdosStone.filter_subset_compl_verts
+
+
+
+2026-10-14 14:59:50 12cf93f
+
+feat(Geometry/Euclidean): distance from vertex to nine-point circle center (#44218)
+This PR derives the formula $$|AN|^2 = (R^2+c^2+b^2-a^2) / 4$$ for triangle $ABC$, where $N$ is the nine-point circle center, and $R$ is the circumradius. The PR first introduce the formula of distance from vertex to a generic point on the Euler line, then specialize it to `ninePointCircle`, and finally specialize it to triangle.
+
+ESTIMATED CHANGES
+Modified Mathlib/Geometry/Euclidean/Circumcenter.lean
++ theorem Affine.Simplex.dist_lineMap_circumcenter_centroid_sq
++ theorem Affine.Simplex.inner_vsub_circumcenter_vsub_circumcenter
+Modified Mathlib/Geometry/Euclidean/NinePointCircle.lean
++ theorem Affine.Simplex.dist_ninePointCircle_center_sq
++ theorem Affine.Simplex.ninePointCircle_center_eq_lineMap_circumcenter_centroid
++ theorem Affine.Simplex.ninePointCircle_center_eq_point
++ theorem Affine.Triangle.dist_ninePointCircle_center_sq
+Modified Mathlib/LinearAlgebra/AffineSpace/Simplex/Centroid.lean
++ theorem Affine.Simplex.vsub_centroid_eq
+
+
+
+2026-10-14 14:59:47 f8b885a
+
+feat(AlgebraicTopology/SimplicialSet/FundamentalGroupoid): homotopic maps induce isomorphic functors (#42576)
+
+ESTIMATED CHANGES
+Modified Mathlib.lean
+
+Modified Mathlib/AlgebraicTopology/SimplicialSet/FundamentalGroupoid/Basic.lean
++ def SSet.FundamentalGroupoid.natIsoMk
++ def SSet.FundamentalGroupoid.natTransMk
+Added Mathlib/AlgebraicTopology/SimplicialSet/FundamentalGroupoid/Homotopy.lean
++ def SSet.Edge.CompStruct.ofSimplicialObjectHomotopy'
++ def SSet.Edge.CompStruct.ofSimplicialObjectHomotopy
++ def SSet.Edge.diagOfSimplicialObjectHomotopy
++ theorem SSet.Edge.diagOfSimplicialObjectHomotopy_edge'
++ theorem SSet.Edge.diagOfSimplicialObjectHomotopy_edge
++ def SSet.Edge.ofSimplicialObjectHomotopy
++ theorem SSet.Edge.ofSimplicialObjectHomotopy_edge
++ theorem SSet.FundamentalGroupoid.comm_of_ofSimplicialObjectHomotopy
++ theorem SSet.congrMapFundamentalGroupoid'_hom_app_mk
++ theorem SSet.congrMapFundamentalGroupoid_hom_app_mk
+
+
+
+2026-10-14 14:59:43 d9122c4
+
+refactor(Combinatorics/SimpleGraph/CycleGraph): golf cycleGraph_isContained_iff via getVert (#41338)
+Reopened from my fork, replacing #41268 (previously a branch on the main repo).
+This PR rewrites the reverse direction of `cycleGraph_isContained_iff` from https://github.com/leanprover-community/mathlib4/pull/35255. Building the copy on `Walk.getVert` instead of `support` indexing makes the vertex map total, dispatches both adjacency cases through a single cyclic-successor helper (no `wlog`), handles the wraparound with `adj_penultimate`, and gets injectivity directly from `IsCycle.getVert_injOn'`.
+🤖 Prepared with Claude Code
+
+ESTIMATED CHANGES
+Modified Mathlib/Combinatorics/SimpleGraph/CycleGraph.lean
+
+
+
+
+2026-10-14 14:32:09 b16cf9e
+
+feat(Algebra/CharP/Two): add basic lemmas (#44751)
+This PR builds the `CharTwo` API by adding more basic lemmas.
+
+ESTIMATED CHANGES
+Modified Mathlib/Algebra/CharP/Two.lean
++ theorem CharTwo.mul_self_inj
++ theorem CharTwo.mul_self_injective
+
+
+
+2026-10-14 12:03:25 3c58f3b
+
+chore(RingTheory/IntegralClosure/IsIntegralClosure/Basic): automated extraction from #28013 (#44862)
+This PR was automatically created from PR #28013 by @astrainfinita via a [review comment](https://github.com/leanprover-community/mathlib4/pull/28013#discussion_r4270282074) by @ocfnash.
+
+ESTIMATED CHANGES
+Modified Mathlib/RingTheory/IntegralClosure/IsIntegralClosure/Basic.lean
+
+
+
+
+2026-10-14 09:50:52 6bbb3b8
+
+chore(RingTheory/Localization/Integral): automated extraction from #28013 (#44857)
+This PR was automatically created from PR #28013 by @astrainfinita via a [review comment](https://github.com/leanprover-community/mathlib4/pull/28013#discussion_r4269061319) by @grunweg.
+
+ESTIMATED CHANGES
+Modified Mathlib/RingTheory/Localization/Integral.lean
++ theorem IsFractionRing.aroots_integerNormalization
++ theorem IsFractionRing.coeff_integerNormalization_eq_zero_iff
++ theorem IsFractionRing.exists_linearCombination_eq_zero
+
+
+
+2026-10-14 08:44:50 72e4c71
+
+feat(AlgebraicTopology): the Reedy structure on the simplex category (#44778)
+https://github.com/joelriou/reedy
+
+ESTIMATED CHANGES
+Modified Mathlib.lean
+
+Added Mathlib/AlgebraicTopology/Reedy/SimplexCategory.lean
++ def SimplexCategory.reedyStructure
+
+
+
+2026-10-14 08:34:46 5325091
+
+feat: implement OEIS attribute (#44368)
+This PR implements OEIS attribute. This allows users to link Mathlib declarations to OEIS entries.
+The implementation is copied from the Wikidata attribute.
+The OEIS (On-Line Encyclopedia of Integer Sequences) is an online database of integer sequences. (see also [wikipedia](https://en.wikipedia.org/wiki/On-Line_Encyclopedia_of_Integer_Sequences), [OEIS](https://oeis.org), [provables/sequencelib](https://github.com/provables/sequencelib)).
+This follows the same pattern as the DLMF attribute (#42899).
+
+ESTIMATED CHANGES
+Modified Mathlib/Tactic/CrossRefAttribute.lean
++ def Lean.PrettyPrinter.Formatter.oeisIdNoAntiquot.formatter
++ def Lean.PrettyPrinter.Parenthesizer.oeisIdAntiquot.parenthesizer
++ def Lean.TSyntax.getOeisId
++ def Mathlib.CrossRef.oeisIdFn
++ def Mathlib.CrossRef.oeisIdNoAntiquot
++ def Mathlib.CrossRef.oeisIdParser
+Modified MathlibTest/CrossRefAttribute.lean
++ theorem OEIS.test'
++ theorem OEIS.test
+Modified scripts/README.md
+
+Modified scripts/export_crossrefs.lean
+
+
+
+
+2026-10-14 08:02:33 e9624f9
+
+feat(Geometry/Euclidean): theorems to prove line parallel from relation between oangles (#43964)
+We have `EuclideanGeometry.two_zsmul_oangle_of_parallel` to derive relationship of oangles from parallel lines, but we do not have theorems to prove parallel of lines from relationship of oangles. This PR add theorems for that, and their iff version.
+
+ESTIMATED CHANGES
+Modified Mathlib/Geometry/Euclidean/Angle/Oriented/Affine.lean
++ theorem EuclideanGeometry.parallel_of_two_zsmul_oangle
++ theorem EuclideanGeometry.two_zsmul_oangle_iff_parallel
++ theorem EuclideanGeometry.two_zsmul_oangle_iff_vectorSpan_eq
++ theorem EuclideanGeometry.vectorSpan_eq_of_two_zsmul_oangle
+Modified Mathlib/Geometry/Euclidean/Angle/Oriented/Basic.lean
++ theorem Orientation.span_eq_of_two_zsmul_oangle_eq_zero
++ theorem Orientation.span_eq_of_two_zsmul_oangle_left
++ theorem Orientation.span_eq_of_two_zsmul_oangle_right
++ theorem Orientation.two_zsmul_oangle_eq_zero_iff_span_eq
++ theorem Orientation.two_zsmul_oangle_left_iff_span_eq
++ theorem Orientation.two_zsmul_oangle_of_span_eq
++ theorem Orientation.two_zsmul_oangle_right_iff_span_eq
+
+
+
+2026-10-14 06:34:27 a637135
+
+feat: the Cartan matrix of the root system associated to a Cartan matrix is the matrix you started with (#44837)
+
+ESTIMATED CHANGES
+Modified Mathlib/LinearAlgebra/Matrix/Cartan/Realisation.lean
++ def CartanMatrix.Realisation.baseIdx
++ theorem CartanMatrix.Realisation.baseIdx_apply
++ def CartanMatrix.Realisation.rootPairingBase
++ def CartanMatrix.Realisation.rootPairingBaseEquiv
++ theorem CartanMatrix.Realisation.rootPairingBase_cartanMatrix_eq
++ theorem CartanMatrix.Realisation.val_rootPairingBaseEquiv_apply
++ def Matrix.IsFiniteCartan.rootPairingBase
++ def Matrix.IsFiniteCartan.rootPairingBaseEquiv
++ theorem Matrix.IsFiniteCartan.rootPairingBase_cartanMatrix_eq
+
+
+
 2026-10-14 02:11:56 0740637
 
 feat(Analysis/CStarAlgebra): grind patterns for cfc junk values (#43025)
