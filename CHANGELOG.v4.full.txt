@@ -1,3 +1,173 @@
+2026-10-15 17:18:13 cfc55fc
+
+feat(Combinatorics/SimpleGraph/Connectivity): simple graph is 2-edge-connected iff it has no bridge (#42839)
+This PR proves the equivalence of a graph being 2-edge-connected iff it has no bridge resolving the relevant TODO.
+
+ESTIMATED CHANGES
+Modified Mathlib/Combinatorics/SimpleGraph/Connectivity/EdgeConnectivity.lean
+- theorem SimpleGraph.isEdgeConnected_two
++ theorem SimpleGraph.isEdgeConnected_two_iff_forall_not_isBridge
++ theorem SimpleGraph.isEdgeConnected_two_iff_forall_preconnected
+
+
+
+2026-10-15 16:52:51 772fc03
+
+feat(Analysis/Polynomial): the sign of a polynomial immediately to the right of a point (#44248)
+This PR defines `Polynomial.signRight x p : SignType`, the sign that a real polynomial `p` takes
+on a sufficiently small interval `(x, x + ε)`, as the limit of `sign (p.eval y)` as `y → x` from the right, and
+develops its basic API:
+* `eventually_sign_eq_signRight`, `signRight_eq_iff`: the defining property and its uniqueness;
+* `signRight_eq_zero_iff`: `signRight x p = 0` iff `p = 0`;
+* `signRight_mul`, `signRight_neg`, `signRight_C`: `signRight x` is multiplicative, commutes with
+  negation and agrees with `SignType.sign` on constants;
+* `signRight_of_eval_ne_zero`, `signRight_of_eval_eq_zero`: the computation rule
+  `signRight x p = sign (p.eval x)` if `p.eval x ≠ 0`, and `signRight x p = signRight x (derivative p)`
+  otherwise (via the mean value theorem).
+This is the local invariant behind Sturm's theorem: it determines the direction in which the sign
+of a Sturm sequence changes across a root, and it will be used to define the Cauchy index in the
+next PR of the series.
+This is the third PR of a series formalising the Sturm–Tarski theorem, following #43783
+(`List.signVariations`) and #43954 (`Polynomial.sturmSeq`). Everything is stated over `ℝ`; the
+statements hold over any real closed field, and the implementation notes record what is needed to
+generalise them.
+
+ESTIMATED CHANGES
+Modified Mathlib.lean
+
+Modified Mathlib/Algebra/Polynomial/FieldDivision.lean
++ theorem Polynomial.eval_mod_eq_self_of_root
+Added Mathlib/Analysis/Polynomial/SignRight.lean
++ theorem Polynomial.eventually_sign_eq_signRight
++ theorem Polynomial.exists_eventually_sign_eq
++ theorem Polynomial.signRight_C
++ theorem Polynomial.signRight_C_mul
++ theorem Polynomial.signRight_X_sub_C_pow
++ theorem Polynomial.signRight_add
++ theorem Polynomial.signRight_derivative_mul
++ theorem Polynomial.signRight_eq_iff
++ theorem Polynomial.signRight_eq_of_eventually
++ theorem Polynomial.signRight_eq_zero_iff
++ theorem Polynomial.signRight_mod
++ theorem Polynomial.signRight_mul
++ theorem Polynomial.signRight_mul_self
++ theorem Polynomial.signRight_ne_zero
++ theorem Polynomial.signRight_neg
++ theorem Polynomial.signRight_of_eval_eq_zero
++ theorem Polynomial.signRight_of_eval_ne_zero
++ theorem Polynomial.signRight_zero
+Modified Mathlib/Topology/Instances/Sign.lean
++ theorem IsPreconnected.sign_eq_of_continuousOn
+
+
+
+2026-10-15 15:34:23 6015dbb
+
+feat(Tactic/Hessenberg): reduction of a square matrix over ℚ to Hessenberg form (#44432)
+add `Mathlib.Tactic.Hessenberg.reduce` a meta function that reduces a square matrix over ℚ to upper Hessenberg form.
+
+ESTIMATED CHANGES
+Modified Mathlib.lean
+
+Modified Mathlib/Tactic.lean
+
+Added Mathlib/Tactic/Hessenberg/Reduce.lean
++ def Mathlib.Tactic.Hessenberg.Reduction.perm
++ structure Mathlib.Tactic.Hessenberg.Reduction
++ def Mathlib.Tactic.Hessenberg.reduce
+Modified docs/references.bib
+
+
+
+
+2026-10-15 13:41:48 e91b128
+
+feat(Topology/Compactness/CompactSystem): set system of finite unions of sets in a compact system is again a compact system (#36089)
+A compact system is a set system with the following property: If all finite intersections of a sequence in the set system is non-empty, the countable intersection is not empty.
+Starting with a compact system, consider the finite unions of sets in the copact system. Such sets again form a compact system (`IsCompactSystem.supClosure`).
+This was previously #25900.
+
+ESTIMATED CHANGES
+Modified Mathlib/Topology/Compactness/CompactSystem.lean
+
+
+
+
+2026-10-15 13:25:09 7e34f44
+
+feat(Topology/Compactness/CompactSystem): set system of countable intersections of sets in a compact system is again a compact system (#36225)
+A compact system is a set system with the following property: If all finite intersections of a sequence in the set system is non-empty, the countable intersection is not empty.
+Starting with a compact system, consider the countable intersections of sets in the compact system. Such sets again form a compact system.
+
+ESTIMATED CHANGES
+Modified Mathlib/Topology/Compactness/CompactSystem.lean
+
+
+
+
+2026-10-15 10:19:23 aa35a48
+
+chore: protect various declarations related to (f)derivs (#44875)
+In each case, the relevant lemma shadows a definition or a lemma in the root namespace.
+
+ESTIMATED CHANGES
+Modified Mathlib/Analysis/Calculus/ContDiff/Comp.lean
+- theorem ContDiff.fderiv_apply
+- theorem ContDiffWithinAt.fderivWithin_apply
+- theorem Continuous.fderiv
+- theorem Continuous.fderiv_one
+Modified Mathlib/Analysis/Calculus/ContDiff/FTaylorSeries.lean
+- theorem HasCompactSupport.iteratedFDeriv
+Modified Mathlib/Analysis/Calculus/FDeriv/Analytic.lean
+- theorem CPolynomialOn.fderiv
+- theorem CPolynomialOn.iteratedFDeriv
+- theorem HasFiniteFPowerSeriesOnBall.fderiv_eq
+Modified Mathlib/Analysis/Calculus/Gradient/Basic.lean
+- theorem HasGradientAt.fderiv_apply
+- theorem HasGradientWithinAt.fderivWithin_apply
+Modified Mathlib/Geometry/Manifold/ContMDiffMFDeriv.lean
+- theorem ContMDiffWithinAt.mfderivWithin_const
+
+
+
+2026-10-15 09:41:49 d758678
+
+chore: make `RingHom` argument explicit in `Polynomial.IsRoot.map` (#44884)
+Make the argument `f : R →+* S` explicit in `Polynomial.IsRoot.map`. This matches other theorems like `IsUnit.map`.
+
+ESTIMATED CHANGES
+Modified Mathlib/Algebra/Polynomial/Eval/Coeff.lean
++/- theorem Polynomial.IsRoot.map
+
+
+
+2026-10-15 08:49:23 f014e73
+
+feat(Topology/Compactness/CompactSystem): closed and compact square cylinders form a compact system (#36160)
+feat (Topology/Compactness/CompactSystem): Closed and compact square cylinders form a
+  compact system
+A square cylinder is a set of the form `s.pi t` in a product space. A closed compact square cylinder has `IsClosed (t i)` and `IsCompact (t i)` for all `i ∈ s`. This set system is a compact system (as introduced in PR #36013).  
+Streamline the definition of square cylinders in MeasureTheory/Constructions/Cylinders on the way. 
+Co-authors: Rémy Degenne remy.degenne@inria.fr
+
+ESTIMATED CHANGES
+Modified Mathlib/Data/Set/Lattice/Bounded.lean
++ theorem Set.biInter_univ_pi_eq_empty_iff
++ theorem Set.iInter_pi
++ theorem Set.iInter_pi_eq_empty_iff
++ theorem Set.iInter_univ_pi_eq_empty_iff
+Modified Mathlib/Data/Set/Lattice/Image.lean
++ theorem Set.iInter_prod_iInter
+Modified Mathlib/Data/Set/Prod.lean
++ theorem Set.pi_image_pi_of_subset
+Modified Mathlib/MeasureTheory/Constructions/Cylinders.lean
++ theorem MeasureTheory.squareCylinders_eq_iUnion_image'
+Modified Mathlib/Topology/Compactness/CompactSystem.lean
++ def compactClosedSquareCylinders
++ theorem isCompactSystem_compactClosedSquareCylinders
+
+
+
 2026-10-15 03:31:02 f0b4c81
 
 doc(1000-yaml): fill in a few Euclidean geometry items we have (#44235)
