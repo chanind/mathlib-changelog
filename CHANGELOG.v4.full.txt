@@ -1,3 +1,773 @@
+2026-10-17 01:01:01 fbc1661
+
+feat(ClickSuggestions): use the tactic as the button text (#44894)
+This PR updates the front end of `#click_suggestions`.
+- Instead of using `[apply]` for each suggestion button, we use the name of the used tactic, so either `[apply]`, `[rw]` or `[grw]` (and `[exact]` instead of `[apply]` if the application closes the goal).
+- The title of each section of results now displays e.g. `Pattern ?n + ?m` instead of `rw (?n + ?m)`, which makes it clearer that the shown expression is a pattern.
+- Instead of displaying `[done]` for suggestions that solve the goal, we add a `🎉️` emoji in front of it.
+- The list of tactic suggestions that close the goal still uses the `[done]` button text. It doesn't need to say the tactic in the button text because the tactic is already shown next to the button.
+
+ESTIMATED CHANGES
+Modified Mathlib/Tactic/ClickSuggestions/Apply.lean
+
+Modified Mathlib/Tactic/ClickSuggestions/ApplyAt.lean
+
+Modified Mathlib/Tactic/ClickSuggestions/GRewrite.lean
+
+Modified Mathlib/Tactic/ClickSuggestions/Rewrite.lean
+
+Modified Mathlib/Tactic/ClickSuggestions/SectionState.lean
++/- def Mathlib.Tactic.ClickSuggestions.renderSection
+Modified Mathlib/Tactic/ClickSuggestions/TryPremises.lean
+
+Modified Mathlib/Tactic/ClickSuggestions/Unfold.lean
+
+Modified Mathlib/Tactic/ClickSuggestions/Util.lean
+- def Mathlib.Tactic.ClickSuggestions.addSolvedSuggestion
++ def Mathlib.Tactic.ClickSuggestions.addSolvingSuggestion
++/- def Mathlib.Tactic.ClickSuggestions.mkSuggestion
+Modified MathlibTest/ClickSuggestions/Test.lean
+
+
+
+
+2026-10-16 19:45:49 2f3c7c8
+
+feat(Data/Fin/Tuple/Sort): add descending sort `Tuple.sortDesc` (#43741)
+Add `Tuple.sortDesc`, the permutation sorting a tuple `f : Fin n → α` into decreasing order, as the antitone counterpart of `Tuple.sort`. Along with it:
+  * `Tuple.antitone_sortDesc`: `f ∘ Tuple.sortDesc f` is `Antitone` (mirrors `Tuple.monotone_sort`);
+  * `Tuple.comp_perm_comp_sortDesc_eq_comp_sortDesc`: the descending sorts of `f` and of any permutation of `f` agree (mirrors `comp_perm_comp_sort_eq_comp_sort`).
+Split out of #41898 (majorization), which needs the decreasing rearrangement of a tuple; these are general-purpose additions to the tuple-sorting API and belong next to `Tuple.sort`.
+
+ESTIMATED CHANGES
+Modified Mathlib/Analysis/InnerProductSpace/Spectrum.lean
+
+Modified Mathlib/Data/Fin/Tuple/Sort.lean
++ theorem Tuple.antitone_sortDesc
++ theorem Tuple.comp_perm_comp_sortDesc_eq_comp_sortDesc
++ theorem Tuple.comp_sortDesc_comp_rev_eq_comp_sort
++ theorem Tuple.comp_sort_comp_rev_eq_comp_sortDesc
++ theorem Tuple.eq_sortDesc_iff
++/- theorem Tuple.eq_sort_iff
++ theorem Tuple.isStable_iff
++ theorem Tuple.isStable_iff_imp
++ theorem Tuple.isStable_sort
++ theorem Tuple.isStable_sortDesc
++ theorem Tuple.isStable_sort_comp_rev_iff
++ def Tuple.sortDesc
++ theorem Tuple.sortDesc_comp_rev_eq_sort_of_injective
++ theorem Tuple.sort_comp_rev_eq_sortDesc_of_injective
+Modified Mathlib/Order/Monotone/Basic.lean
++ theorem isStable_toDual_comp_iff
+Modified Mathlib/Order/Monotone/Defs.lean
++ def IsStable
+
+
+
+2026-10-16 18:26:42 625d891
+
+chore: bump toolchain to v4.36.0-rc1 (#44879)
+
+ESTIMATED CHANGES
+Modified Mathlib/Algebra/Group/Action/Defs.lean
+
+Modified Mathlib/AlgebraicGeometry/Cover/MorphismProperty.lean
+
+Modified Mathlib/Data/List/Nodup.lean
+
+Modified Mathlib/Data/String/Basic.lean
+
+Modified Mathlib/Lean/Meta/RefinedDiscrTree.lean
+
+Modified Mathlib/Order/Monotone/Basic.lean
+
+Modified Mathlib/Tactic/AdaptationNote.lean
+
+Modified Mathlib/Tactic/ClickSuggestions.lean
+
+Modified Mathlib/Tactic/ClickSuggestions/Apply.lean
+
+Modified Mathlib/Tactic/ClickSuggestions/ApplyAt.lean
+
+Modified Mathlib/Tactic/ClickSuggestions/GRewrite.lean
+
+Modified Mathlib/Tactic/ClickSuggestions/Rewrite.lean
+
+Modified Mathlib/Tactic/ClickSuggestions/SectionState.lean
+
+Modified Mathlib/Tactic/ClickSuggestions/TryPremises.lean
+
+Modified Mathlib/Tactic/ClickSuggestions/Unfold.lean
+
+Modified Mathlib/Tactic/ClickSuggestions/Util.lean
+
+Modified Mathlib/Tactic/Linter/DocPrime.lean
+
+Modified Mathlib/Tactic/Linter/DocString.lean
+
+Modified Mathlib/Tactic/SudoSetOption.lean
+
+Modified Mathlib/Tactic/Widget/CommDiag.lean
+
+Modified Mathlib/Tactic/Widget/LibraryRewrite.lean
+
+Modified Mathlib/Tactic/Widget/SelectPanelUtils.lean
+
+Modified Mathlib/Tactic/Widget/StringDiagram.lean
+
+Modified MathlibTest/Linter/DocString.lean
+
+Modified MathlibTest/Tactic/Push/Basic.lean
+
+Modified MathlibTest/willRoundTrip.lean
+
+Modified lake-manifest.json
+
+Modified lakefile.lean
+
+Modified lean-toolchain
+
+
+
+
+2026-10-16 16:32:07 1e75e9d
+
+feat(Analysis/Polynomial): the real numbers form a real closed field (#41868)
+prove that the real numbers form a real closed field, providing the `IsRealClosed ℝ` instance. this completes the "real numbers" part of a todo in `Mathlib/FieldTheory/IsRealClosed/Basic.lean`.
+the nontrivial ingredient is that every odd-degree real polynomial has a real root (`Real.exists_isRoot_of_odd_natDegree`), deduced from the intermediate value theorem via the eventual-sign lemmas in `Mathlib/Analysis/Polynomial/Order.lean`: if such a polynomial had no root, those lemmas would force its value at `0` to be simultaneously positive and negative.
+
+ESTIMATED CHANGES
+Modified Mathlib.lean
+
+Modified Mathlib/FieldTheory/IsRealClosed/Basic.lean
+
+Added Mathlib/FieldTheory/IsRealClosed/Real.lean
+
+
+
+
+2026-10-16 16:32:05 08b00df
+
+chore(Translate): let linter options start with `linter.translate` (#40968)
+This PR renames the linter options used by `to_additive`/`to_dual` so that they start with `linter.translate.`.
+
+ESTIMATED CHANGES
+Modified Mathlib/CategoryTheory/Monoidal/Mod.lean
+
+Modified Mathlib/CategoryTheory/Monoidal/Mon.lean
+
+Modified Mathlib/GroupTheory/FreeGroup/Basic.lean
+
+Modified Mathlib/GroupTheory/GroupAction/Hom.lean
+
+Modified Mathlib/GroupTheory/MonoidLocalization/Basic.lean
+
+Modified Mathlib/Order/Notation.lean
+
+Modified Mathlib/Tactic/Translate/Core.lean
+
+Modified MathlibTest/Attribute/ToAdditive/Basic.lean
+
+Modified MathlibTest/Attribute/ToDual.lean
+
+Modified MathlibTest/DeprecateTo.lean
+
+Modified MathlibTest/Linter/DupNamespace.lean
+
+
+
+
+2026-10-16 16:32:02 3517a15
+
+feat(by_contra,contrapose): warn if the push_neg step does nothing (#37907)
+
+ESTIMATED CHANGES
+Modified Mathlib/Data/Set/Card.lean
+
+Modified Mathlib/FieldTheory/Galois/Infinite.lean
+
+Modified Mathlib/FieldTheory/IntermediateField/Adjoin/Basic.lean
+
+Modified Mathlib/Geometry/Euclidean/Angle/Oriented/Basic.lean
+
+Modified Mathlib/MeasureTheory/Function/LpSeminorm/SMul.lean
+
+Modified Mathlib/Tactic/ByCases.lean
+
+Modified Mathlib/Tactic/ByContra.lean
+
+Modified Mathlib/Tactic/Contrapose.lean
+
+Modified Mathlib/Tactic/Order.lean
+
+Modified MathlibTest/Tactic/ByContra.lean
+
+Modified MathlibTest/Tactic/Contrapose.lean
+
+Modified MathlibTest/Tactic/Order.lean
+
+
+
+
+2026-10-16 13:27:38 ccbef15
+
+feat(Tactic/Determinant): add a `norm_det` evaluation path via echelon decomposition (#44390)
+This PR adds a fast path for `norm_det` that evaluates the determinant of a matrix via the echelon decomposition. The existing Bird determinant is used as a fallback when the echelon decomposition is unavailable.
+
+ESTIMATED CHANGES
+Modified Mathlib.lean
+
+Modified Mathlib/Tactic.lean
+
+Added Mathlib/Tactic/Determinant/Echelon/Cert.lean
++ def Mathlib.Tactic.Determinant.certifyDiagProd
++ def Mathlib.Tactic.Determinant.certifyDiagProdList
++ def Mathlib.Tactic.Determinant.certifyPermSign
++ def Mathlib.Tactic.Determinant.detValue
++ def Mathlib.Tactic.Determinant.proveEchelonDet
+Added Mathlib/Tactic/Determinant/Echelon/Reflection.lean
++ theorem Mathlib.Tactic.Determinant.det_eq_of_decomposition
++ def Mathlib.Tactic.Determinant.diagProd
++ theorem Mathlib.Tactic.Determinant.diagProd_add_one_cons
++ theorem Mathlib.Tactic.Determinant.diagProd_eq
++ theorem Mathlib.Tactic.Determinant.diagProd_zero
++ theorem Mathlib.Tactic.Determinant.prod_diag_ofLists
+Modified Mathlib/Tactic/Echelon/Cert.lean
+- def Mathlib.Tactic.Echelon.mkPerm
++ def Mathlib.Tactic.Echelon.mkSwapsLitQ
+Modified Mathlib/Tactic/Echelon/Reflection.lean
++ theorem Mathlib.Tactic.Echelon.intCast_sign_permOfSwaps
++ def Mathlib.Tactic.Echelon.permOfSwaps
+Modified Mathlib/Tactic/NormDet.lean
+
+Modified MathlibTest/matrix.lean
+
+
+
+
+2026-10-16 13:16:50 673cf2a
+
+chore(Geometry/Manifold/VectorBundle/Hom): small tweaks (#44937)
+noticed while comparing with #43234
+
+ESTIMATED CHANGES
+Modified Mathlib/Geometry/Manifold/VectorBundle/Hom.lean
++ theorem chartAt_hom
+- theorem hom_chart
+Modified Mathlib/Geometry/Manifold/VectorBundle/MDifferentiable.lean
+
+
+
+
+2026-10-16 13:06:36 551c9d6
+
+refactor(MeasureTheory/Measure/Typeclasses/ZeroOne): reduce imports (#44931)
+We move out the single theorem about standard Borel spaces to the file about standard Borel spaces.
+
+ESTIMATED CHANGES
+Modified Mathlib/MeasureTheory/Constructions/Polish/Basic.lean
++ theorem MeasureTheory.IsZeroOneMeasure.exists_eq_dirac
+Modified Mathlib/MeasureTheory/Measure/Typeclasses/ZeroOne.lean
+- theorem MeasureTheory.IsZeroOneMeasure.exists_eq_dirac
+
+
+
+2026-10-16 13:06:33 f9442ae
+
+feat(Tactic): add an indecomposability decision simproc (#44700)
+This PR adds a `reduceIsIndecomposable` simproc that decides whether `IsIndecomposable` or the negation of it holds for a matrix literal.
+
+ESTIMATED CHANGES
+Modified Mathlib.lean
+
+Modified Mathlib/LinearAlgebra/Matrix/Cartan/Basic.lean
++ theorem CartanMatrix.isIndecomposable_E_eight
++ theorem CartanMatrix.isIndecomposable_E_seven
++ theorem CartanMatrix.isIndecomposable_E_six
++ theorem CartanMatrix.isIndecomposable_F₄
++ theorem CartanMatrix.isIndecomposable_G₂
+Modified Mathlib/Tactic.lean
+
+Added Mathlib/Tactic/Simproc/IsIndecomposable.lean
++ theorem Mathlib.Tactic.Matrix.IsIndecomposable.SpansFrom.reflTransGen
++ inductive Mathlib.Tactic.Matrix.IsIndecomposable.StrongConnectivityResult
++ def Mathlib.Tactic.Matrix.IsIndecomposable.bfs
++ def Mathlib.Tactic.Matrix.IsIndecomposable.certifyIsIndecomposable
++ def Mathlib.Tactic.Matrix.IsIndecomposable.certifyNotIsIndecomposable
++ def Mathlib.Tactic.Matrix.IsIndecomposable.decideStronglyConnected
++ def Mathlib.Tactic.Matrix.IsIndecomposable.evalAdjMatrix?
++ def Mathlib.Tactic.Matrix.IsIndecomposable.isClosed
++ def Mathlib.Tactic.Matrix.IsIndecomposable.isClosedPacked
++ theorem Mathlib.Tactic.Matrix.IsIndecomposable.isClosed_of_isClosedPacked
++ theorem Mathlib.Tactic.Matrix.IsIndecomposable.isIndecomposable_of_spansFrom
++ def Mathlib.Tactic.Matrix.IsIndecomposable.mkEdgeListLitQ
++ theorem Mathlib.Tactic.Matrix.IsIndecomposable.not_isIndecomposable_of_isClosed
++ def Mathlib.Tactic.Matrix.IsIndecomposable.packRow
++ def Mathlib.Tactic.Matrix.IsIndecomposable.packRows
++ def Mathlib.Tactic.Matrix.IsIndecomposable.packedAdj
++ theorem Mathlib.Tactic.Matrix.IsIndecomposable.packedAdj_packRows_iff
++ def Mathlib.Tactic.Matrix.IsIndecomposable.reached
++ def Mathlib.Tactic.Matrix.IsIndecomposable.reduceIsIndecomposableCore
++ theorem Mathlib.Tactic.Matrix.IsIndecomposable.reflTransGen_of_testBit_reached
++ theorem Mathlib.Tactic.Matrix.IsIndecomposable.testBit_packRow
++ theorem Mathlib.Tactic.Matrix.IsIndecomposable.testBit_packRows
+Added MathlibTest/Simproc/IsIndecomposable.lean
+
+
+
+
+2026-10-16 12:29:41 c36e75a
+
+doc: fix mismatched parentheses in docstring (#44483)
+This PR fixes a typo in docstring of `AddSubgroup.quotientiInfAddSubgroupOfEmbedding` in `Mathlib/GroupTheory/Coset/Basic.lean`.
+
+ESTIMATED CHANGES
+Modified Mathlib/GroupTheory/Coset/Basic.lean
+
+
+
+
+2026-10-16 11:18:45 13e84ec
+
+refactor(Translate/Core): do not pass the `ref` around explicitly (#44835)
+Instead, we use `withRef` and `getRef` to pass around the syntax that is used for warnings and error messages. This is more ergonomic.
+
+ESTIMATED CHANGES
+Modified Mathlib/Tactic/Translate/Core.lean
++/- def Mathlib.Tactic.Translate.addTranslationFor
++/- def Mathlib.Tactic.Translate.warnAttr
++/- def Mathlib.Tactic.Translate.warnAttrCore
++/- def Mathlib.Tactic.Translate.warnParametricAttr
+Modified Mathlib/Tactic/Translate/ToDual.lean
+
+
+
+
+2026-10-16 10:34:00 84ae864
+
+chore(LinearAlgebra/Matrix/Echelon/Decomposition): automated extraction from #44390 (#44932)
+This PR was automatically created from PR #44390 by @raoxiaojia via a [review comment](https://github.com/leanprover-community/mathlib4/pull/44390#discussion_r4293539114) by @ocfnash.
+
+ESTIMATED CHANGES
+Modified Mathlib/LinearAlgebra/Matrix/Echelon/Decomposition.lean
++ theorem Echelon.Decomposition.prod_diag_mul_det
+
+
+
+2026-10-16 09:50:11 77f5727
+
+feat(Data/Nat/Digits): add digitsAppend API lemmas and List.mapIdx_replicate (#40302)
+Adds some lemmas about `Nat.digitsAppend` and `List.mapIdx_replicate`:
+These complete the basic API around `Nat.digitsAppend` (already in Mathlib) that is needed downstream to relate it to `Nat.digits` and to sums indexed via `List.mapIdx`.
+:robot: This PR was extracted from the [SKW project](https://github.com/xroblot/SKW) by Claude.
+
+ESTIMATED CHANGES
+Modified Mathlib/Data/List/Indexes.lean
++ theorem List.mapIdx_replicate
+Modified Mathlib/Data/Nat/Digits/Lemmas.lean
++ theorem Nat.digitsAppend_eq_digits_iff
++ theorem Nat.digitsAppend_eq_digits_iff_le
++ theorem Nat.digitsAppend_eq_nil_iff
++ theorem Nat.digitsAppend_ne_nil_of_ne_zero
++ theorem Nat.digitsAppend_sum_eq_digits_sum
++ theorem Nat.eq_mapIdx_digits_sum
++ theorem Nat.mapIdx_digitsAppend_sum_eq
++ theorem Nat.mem_digitsAppend_of_mem_digits
+
+
+
+2026-10-16 09:07:03 cb387c2
+
+chore(FieldTheory/Finite/Basic): remove `set_option` (#44911)
+...and golf the associated theorem.
+
+ESTIMATED CHANGES
+Modified Mathlib/FieldTheory/Finite/Basic.lean
+
+
+
+
+2026-10-16 09:07:00 57a1e13
+
+fix(Translate): support `@[deprecated +typeChanged]` (#44423)
+Previously, `to_additive (deprecated +typeChanged)` didn't work because the syntax match used by `to_additive` did not account for the `+typeChanged` syntax (because at the time this was written, `+typeChanged` did not exist). This PR fixes that.
+Reported by Aaron Liu.
+
+ESTIMATED CHANGES
+Modified Mathlib/Tactic/Translate/Core.lean
+
+Modified MathlibTest/Attribute/ToAdditive/Basic.lean
++/- theorem old_mul_comm
+
+
+
+2026-10-16 09:06:57 9b18f35
+
+feat(RingTheory): prove `comap_ringConGen_equiv` (`proof_wanted`) (#43418)
+Prove that `(ringConGen r).comap f = ringConGen (r on f)` for an EquivLike as stated in proof_wanted.
+I rearranged the parameter order (and dropped `[FunLike F R' R]`) from the original proof_wanted statement, since EquivLike already gives a FunLike and having repeated FunLike (that are not definitionally equal) makes instance resolution impossible.
+This is essentially the same proof as the previous ring equivalence version (pulling back the RingCon by f inverse and then by f), with comap spelled out explicitly.
+AI usage: Everything is proved by hand. I then worked with AI to review and simplify the code.
+Thanks to @pepamontero for suggesting a better formulation!
+
+ESTIMATED CHANGES
+Modified Mathlib/LinearAlgebra/FreeProduct/Basic.lean
+
+Modified Mathlib/RingTheory/Congruence/Basic.lean
++ theorem RingCon.comap_ringConGen_equiv
+Modified Wanted.lean
+
+Deleted Wanted/RingTheory/Congruence/Basic.lean
+
+
+
+
+2026-10-16 07:34:14 ce44de8
+
+chore: remove declarations deprecated between 2026-04-01 and 2026-04-15 (#44903)
+This robot \[dubious – discuss\] is happy to remove some deprecated declarations for you!
+Please check if there are any remaining stray comments or other issues before merging.
+This PR is #44886 plus some manual fixes.
+
+ESTIMATED CHANGES
+Modified Mathlib/Algebra/Algebra/Equiv.lean
+- theorem AlgEquiv.toRingEquiv_eq_coe
+Modified Mathlib/Algebra/Algebra/Subalgebra/Operations.lean
+
+Modified Mathlib/Algebra/BigOperators/Associated.lean
+
+Modified Mathlib/Algebra/BigOperators/Fin.lean
+
+Modified Mathlib/Algebra/BigOperators/Finprod.lean
+
+Modified Mathlib/Algebra/BigOperators/Finsupp/Basic.lean
+
+Modified Mathlib/Algebra/BigOperators/Group/Finset/Defs.lean
+
+Modified Mathlib/Algebra/BigOperators/Group/Finset/Lemmas.lean
+
+Modified Mathlib/Algebra/Category/ModuleCat/ProjectiveDimension.lean
+
+Modified Mathlib/Algebra/Category/ModuleCat/Sheaf/Quasicoherent.lean
+- theorem SheafOfModules.Presentation.IsFinite.finite_relations
+Modified Mathlib/Algebra/Group/EvenFunction.lean
+
+Modified Mathlib/Algebra/Group/ForwardDiff.lean
+
+Modified Mathlib/Algebra/Group/Pointwise/Set/BigOperators.lean
+
+Modified Mathlib/Algebra/Group/Subgroup/Defs.lean
+- theorem Subgroup.commGroup_isMulCommutative
+Modified Mathlib/Algebra/Group/Subgroup/Finite.lean
+
+Modified Mathlib/Algebra/Group/Submonoid/BigOperators.lean
+
+Modified Mathlib/Algebra/Lie/Abelian.lean
+
+Modified Mathlib/Algebra/MonoidAlgebra/Degree.lean
+
+Modified Mathlib/Algebra/MvPolynomial/Degrees.lean
+
+Modified Mathlib/Algebra/MvPolynomial/Equiv.lean
+- theorem MvPolynomial.eval₂_const_pUnitAlgEquiv
+- theorem MvPolynomial.eval₂_const_pUnitAlgEquiv_symm
+- theorem MvPolynomial.eval₂_pUnitAlgEquiv
+- theorem MvPolynomial.eval₂_pUnitAlgEquiv_symm
+- theorem MvPolynomial.pUnitAlgEquiv_monomial
+- theorem MvPolynomial.pUnitAlgEquiv_symm_monomial
+Modified Mathlib/Algebra/Order/BigOperators/Group/Finset.lean
+
+Modified Mathlib/Algebra/Order/Hom/Ring.lean
+- theorem OrderRingIso.toRingEquiv_eq_coe
+Modified Mathlib/Algebra/Polynomial/BigOperators.lean
+
+Modified Mathlib/Algebra/Polynomial/Bivariate.lean
+
+Modified Mathlib/Algebra/Polynomial/Coeff.lean
+
+Modified Mathlib/Algebra/Polynomial/Eval/Defs.lean
+
+Modified Mathlib/Algebra/Polynomial/Homogenize.lean
+
+Modified Mathlib/Algebra/Star/StarRingHom.lean
+- theorem StarRingEquiv.toRingEquiv_eq_coe
+Modified Mathlib/AlgebraicTopology/SimplicialSet/Dimension.lean
+
+Modified Mathlib/AlgebraicTopology/SimplicialSet/Homology/Basic.lean
+
+Modified Mathlib/AlgebraicTopology/SimplicialSet/Homology/HomotopyInvariance.lean
+
+Modified Mathlib/Analysis/Calculus/Deriv/Mul.lean
+
+Modified Mathlib/Analysis/Calculus/FDeriv/Mul.lean
+
+Modified Mathlib/Analysis/Complex/Basic.lean
+- theorem Complex.conjCLE_coe_toLinearMap
+Modified Mathlib/Analysis/LocallyConvex/WeakOperatorTopology.lean
+
+Modified Mathlib/Analysis/Normed/Group/Ultra.lean
+
+Modified Mathlib/Analysis/Normed/Lp/lpSpace.lean
+
+Modified Mathlib/Analysis/SpecialFunctions/ContinuousFunctionalCalculus/Rpow/IntegralRepresentation.lean
+
+Modified Mathlib/Analysis/SpecialFunctions/Log/Monotone.lean
+- theorem Real.log_mul_self_monotoneOn
+Modified Mathlib/Analysis/SpecialFunctions/Log/Summable.lean
+
+Modified Mathlib/Analysis/SpecialFunctions/Pow/NNReal.lean
+
+Modified Mathlib/Basic/ENNReal/BigOperators.lean
+
+Modified Mathlib/CategoryTheory/Adjunction/Opposites.lean
+- def CategoryTheory.Adjunction.leftAdjointsCoyonedaEquiv
+Modified Mathlib/CategoryTheory/ConcreteCategory/Basic.lean
+
+Modified Mathlib/CategoryTheory/ConcreteCategory/Forget.lean
+
+Modified Mathlib/CategoryTheory/Limits/Shapes/Images.lean
+
+Modified Mathlib/CategoryTheory/Limits/Types/Yoneda.lean
+
+Modified Mathlib/CategoryTheory/Monoidal/Closed/FunctorToTypes.lean
+
+Modified Mathlib/CategoryTheory/ObjectProperty/Retract.lean
+- theorem CategoryTheory.ObjectProperty.IsStableUnderRetracts.containsZero
+Modified Mathlib/Combinatorics/Graph/Basic.lean
+
+Modified Mathlib/Combinatorics/Hindman.lean
+
+Modified Mathlib/Combinatorics/SimpleGraph/Connectivity/EdgeConnectivity.lean
+- theorem SimpleGraph.Walk.IsTrail.not_mem_edges_of_not_isEdgeReachable_two
+Modified Mathlib/Condensed/Basic.lean
+- theorem Condensed.comp_hom
+- theorem Condensed.id_hom
+Modified Mathlib/Condensed/Light/Basic.lean
+- theorem LightCondensed.comp_hom
+- theorem LightCondensed.id_hom
+Modified Mathlib/Data/DFinsupp/BigOperators.lean
+
+Modified Mathlib/Data/Finsupp/Basic.lean
+
+Modified Mathlib/Data/List/Fold.lean
+
+Modified Mathlib/Data/String/Basic.lean
+- theorem String.toList_nonempty
+Modified Mathlib/FieldTheory/Galois/Basic.lean
+- theorem Algebra.IsQuadraticExtension.isMulCommutative_galoisGroup
+Modified Mathlib/Geometry/Convex/ConvexSpace/Module.lean
+
+Modified Mathlib/Geometry/Manifold/Algebra/Monoid.lean
+
+Modified Mathlib/Geometry/Manifold/Sheaf/LocallyRingedSpace.lean
+
+Modified Mathlib/Geometry/Manifold/Sheaf/Smooth.lean
+
+Modified Mathlib/GroupTheory/Congruence/BigOperators.lean
+
+Modified Mathlib/GroupTheory/DoubleCoset.lean
+
+Modified Mathlib/GroupTheory/FreeGroup/Basic.lean
+- theorem FreeGroup.Red.sizeof_of_step
+Modified Mathlib/GroupTheory/SpecificGroups/Cyclic/Basic.lean
+
+Modified Mathlib/LinearAlgebra/DFinsupp.lean
+
+Modified Mathlib/LinearAlgebra/Dimension/Finite.lean
+
+Modified Mathlib/LinearAlgebra/Dimension/LinearMap.lean
+
+Modified Mathlib/LinearAlgebra/Dual/Defs.lean
+- def Module.dualPairing
+- theorem Module.dualPairing_apply
+Modified Mathlib/LinearAlgebra/Dual/Lemmas.lean
+
+Modified Mathlib/LinearAlgebra/LinearIndependent/Basic.lean
+
+Modified Mathlib/LinearAlgebra/LinearIndependent/Lemmas.lean
+
+Modified Mathlib/LinearAlgebra/Matrix/Charpoly/LinearMap.lean
+
+Modified Mathlib/MeasureTheory/Function/ConditionalExpectation/Basic.lean
+
+Modified Mathlib/MeasureTheory/Function/ConditionalLExpectation.lean
+
+Modified Mathlib/MeasureTheory/Function/L1Space/Integrable.lean
+
+Modified Mathlib/MeasureTheory/Function/LocallyIntegrable.lean
+
+Modified Mathlib/MeasureTheory/Function/LpSeminorm/TriangleInequality.lean
+
+Modified Mathlib/MeasureTheory/Function/SimpleFunc.lean
+
+Modified Mathlib/MeasureTheory/Integral/Bochner/Basic.lean
+
+Modified Mathlib/MeasureTheory/Integral/IntervalIntegral/Basic.lean
+
+Modified Mathlib/MeasureTheory/Integral/Lebesgue/Add.lean
+
+Modified Mathlib/MeasureTheory/Integral/Lebesgue/Basic.lean
+
+Modified Mathlib/MeasureTheory/Integral/SetToL1/Function.lean
+
+Modified Mathlib/MeasureTheory/Measure/Module.lean
+
+Modified Mathlib/NumberTheory/ArithmeticFunction/Carmichael.lean
+
+Modified Mathlib/NumberTheory/FunctionField.lean
+
+Modified Mathlib/Order/ConditionallyCompleteLattice/Indexed.lean
+
+Modified Mathlib/Order/Filter/AtTopBot/BigOperators.lean
+
+Modified Mathlib/Order/Filter/AtTopBot/Prod.lean
+
+Modified Mathlib/Order/GaloisConnection/Basic.lean
+
+Modified Mathlib/Order/Ideal.lean
+
+Modified Mathlib/Order/Interval/Set/InitialSeg.lean
+
+Modified Mathlib/Order/Minimal.lean
+
+Modified Mathlib/Order/OrdContinuous.lean
+
+Modified Mathlib/Order/OrderDual.lean
+- def LinearOrder.swap
+Modified Mathlib/Order/Preorder/Finite.lean
+- theorem LinearOrder.strong_induction_of_finite
+Modified Mathlib/Order/SuccPred/CompleteLinearOrder.lean
+
+Modified Mathlib/Probability/Independence/Basic.lean
+
+Modified Mathlib/Probability/Independence/CharacteristicFunction.lean
+
+Modified Mathlib/Probability/Independence/Conditional.lean
+
+Modified Mathlib/Probability/Independence/Kernel/IndepFun.lean
+
+Modified Mathlib/Probability/Kernel/Defs.lean
+
+Modified Mathlib/Probability/ProbabilityMassFunction/Binomial.lean
+
+Modified Mathlib/Probability/ProbabilityMassFunction/Constructions.lean
+
+Modified Mathlib/Probability/ProbabilityMassFunction/Integrals.lean
+- theorem PMF.bernoulli_expectation
+Modified Mathlib/Probability/Process/Adapted.lean
+
+Modified Mathlib/RingTheory/Bialgebra/Equiv.lean
+- theorem BialgEquiv.toAlgEquiv_eq_coe
+Modified Mathlib/RingTheory/Coalgebra/Equiv.lean
+- theorem CoalgEquiv.toLinearEquiv_eq_coe
+Modified Mathlib/RingTheory/DedekindDomain/Factorization.lean
+
+Modified Mathlib/RingTheory/Ideal/Height.lean
+
+Modified Mathlib/RingTheory/Ideal/KrullsHeightTheorem.lean
+
+Modified Mathlib/RingTheory/Ideal/MinimalPrime/Localization.lean
+
+Modified Mathlib/RingTheory/Localization/AtPrime/Basic.lean
+
+Modified Mathlib/RingTheory/Localization/Basic.lean
+
+Modified Mathlib/RingTheory/Localization/Ideal.lean
+
+Modified Mathlib/RingTheory/Regular/Category.lean
+
+Modified Mathlib/RingTheory/Valuation/Discrete/Basic.lean
+- theorem Valuation.IsRankOneDiscrete.generator_eq_neg_exp_one_of_surjective
+Modified Mathlib/SetTheory/Cardinal/Basic.lean
+- theorem Cardinal.bddAbove_range
+- theorem Cardinal.exists_eq_natCast_of_iSup_eq
+Modified Mathlib/SetTheory/Cardinal/Order.lean
+- theorem Cardinal.exists_eq_of_iSup_eq_of_not_isSuccLimit
+- theorem Cardinal.exists_eq_of_iSup_eq_of_not_isSuccPrelimit
+Modified Mathlib/SetTheory/Ordinal/Arithmetic.lean
+- theorem Ordinal.has_succ_of_type_succ_lt
+- theorem Ordinal.toType_noMax_of_succ_lt
+Modified Mathlib/SetTheory/Ordinal/Basic.lean
+- theorem Cardinal.mk_Iio_toType_ord_lt
+- theorem Ordinal.add_one_ne_zero
+- theorem Ordinal.enum_zero_eq_bot
+- theorem Ordinal.succ_pos
+Modified Mathlib/SetTheory/Ordinal/Family.lean
+- theorem Ordinal.IsNormal.bsup
+- theorem Ordinal.bddAbove_range
+- def Ordinal.bfamilyOfFamily'
+- theorem Ordinal.bfamilyOfFamily'_typein
+- def Ordinal.bfamilyOfFamily
+- theorem Ordinal.bfamilyOfFamily_typein
+- def Ordinal.brange
+- theorem Ordinal.brange_bfamilyOfFamily'
+- theorem Ordinal.brange_bfamilyOfFamily
+- theorem Ordinal.brange_const
+- theorem Ordinal.bsup'_eq_iSup
+- def Ordinal.bsup
+- theorem Ordinal.bsup_congr
+- theorem Ordinal.bsup_const
+- theorem Ordinal.bsup_eq_bsup
+- theorem Ordinal.bsup_eq_iSup
+- theorem Ordinal.bsup_eq_of_brange_eq
+- theorem Ordinal.bsup_eq_zero_iff
+- theorem Ordinal.bsup_le
+- theorem Ordinal.bsup_le_iff
+- theorem Ordinal.bsup_le_of_brange_subset
+- theorem Ordinal.bsup_not_succ_of_ne_bsup
+- theorem Ordinal.bsup_one
+- theorem Ordinal.bsup_succ_of_mono
+- theorem Ordinal.bsup_zero
+- theorem Ordinal.comp_bfamilyOfFamily'
+- theorem Ordinal.comp_bfamilyOfFamily
+- theorem Ordinal.comp_familyOfBFamily'
+- theorem Ordinal.comp_familyOfBFamily
+- def Ordinal.familyOfBFamily'
+- theorem Ordinal.familyOfBFamily'_enum
+- def Ordinal.familyOfBFamily
+- theorem Ordinal.familyOfBFamily_enum
+- theorem Ordinal.iSup'_eq_bsup
+- theorem Ordinal.iSup_Iio_eq_bsup
+- theorem Ordinal.iSup_eq_bsup
+- theorem Ordinal.iSup_eq_iSup
+- theorem Ordinal.le_bsup
+- theorem Ordinal.lt_bsup
+- theorem Ordinal.lt_bsup_of_limit
+- theorem Ordinal.lt_bsup_of_ne_bsup
+- theorem Ordinal.mem_brange
+- theorem Ordinal.mem_brange_self
+- theorem Ordinal.range_familyOfBFamily'
+- theorem Ordinal.range_familyOfBFamily
+- theorem Ordinal.sSup_eq_bsup
+Modified Mathlib/SetTheory/Ordinal/Topology.lean
+- theorem Ordinal.isClosed_iff_bsup
+- theorem Ordinal.mem_closed_iff_bsup
+- theorem Ordinal.mem_closure_iff_bsup
+Modified Mathlib/Topology/Algebra/Module/ContinuousLinearMap/Basic.lean
+
+Modified Mathlib/Topology/Algebra/Monoid.lean
+
+Modified Mathlib/Topology/Algebra/RestrictedProduct/Units.lean
+
+Modified Mathlib/Topology/Connected/Clopen.lean
+- theorem preimage_connectedComponent_connected
+Modified Mathlib/Topology/EMetricSpace/Basic.lean
+- theorem EMetric.controlled_of_isUniformEmbedding
+Modified Mathlib/Topology/Instances/ENNReal/Lemmas.lean
+
+Modified Mathlib/Topology/Instances/Int.lean
+
+Modified Mathlib/Topology/Instances/Real/Lemmas.lean
+
+Modified Mathlib/Topology/MetricSpace/Pseudo/Basic.lean
+- theorem Metric.controlled_of_isUniformEmbedding
+Modified Mathlib/Topology/Order/OrderClosed.lean
+
+Modified Mathlib/Topology/Separation/Basic.lean
+
+
+
+
 2026-10-15 17:18:13 cfc55fc
 
 feat(Combinatorics/SimpleGraph/Connectivity): simple graph is 2-edge-connected iff it has no bridge (#42839)
