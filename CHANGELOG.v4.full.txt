@@ -1,3 +1,1594 @@
+2026-10-18 00:43:37 44f0a20
+
+feat(Algebra/BigOperators): add theorems about prod of rotate of list (#44953)
+This PR add a theorem to handle List.prod of List.rotate, when we are working in a CommMonoid, and another one for the case that member in the list is pairwise commute.
+
+ESTIMATED CHANGES
+Modified Mathlib/Algebra/BigOperators/Group/List/Lemmas.lean
++ theorem List.prod_rotate
++ theorem List.prod_rotate_of_pairwise_commute
+
+
+
+2026-10-18 00:25:48 9d68c2a
+
+chore(scripts): update nolints.json (#44984)
+I am happy to remove some nolints for you!
+
+ESTIMATED CHANGES
+Modified scripts/nolints.json
+
+
+
+
+2026-10-17 22:47:08 4ed598f
+
+chore(CategoryTheory/Monad): use `to_dual` (#44628)
+This PR uses `to_dual` for `Monad`/`Comonad`, and for the Kleisli and Eilenberg Moore categories.
+
+ESTIMATED CHANGES
+Modified Mathlib/CategoryTheory/Monad/Algebra.lean
+- def CategoryTheory.Comonad.Coalgebra.Hom.comp
+- theorem CategoryTheory.Comonad.Coalgebra.Hom.ext'
+- def CategoryTheory.Comonad.Coalgebra.Hom.id
++/- structure CategoryTheory.Comonad.Coalgebra.Hom
+- theorem CategoryTheory.Comonad.Coalgebra.comp_eq_comp
+- theorem CategoryTheory.Comonad.Coalgebra.comp_f
+- theorem CategoryTheory.Comonad.Coalgebra.id_eq_id
+- theorem CategoryTheory.Comonad.Coalgebra.id_f
++/- def CategoryTheory.Comonad.Coalgebra.isoMk
++/- structure CategoryTheory.Comonad.Coalgebra
++/- def CategoryTheory.Comonad.adj
+- theorem CategoryTheory.Comonad.algebra_epi_of_epi
+- theorem CategoryTheory.Comonad.algebra_mono_of_mono
+- theorem CategoryTheory.Comonad.coalgebra_iso_of_iso
+- def CategoryTheory.Comonad.cofree
+- def CategoryTheory.Comonad.forget
++/- structure CategoryTheory.Monad.Algebra.Hom
++ def CategoryTheory.Monad.Algebra.adj
++ def CategoryTheory.Monad.Algebra.algebraEquivOfIsoMonads
++ def CategoryTheory.Monad.Algebra.algebraFunctorOfMonadHom
++ def CategoryTheory.Monad.Algebra.algebraFunctorOfMonadHomComp
++ def CategoryTheory.Monad.Algebra.algebraFunctorOfMonadHomEq
++ def CategoryTheory.Monad.Algebra.algebraFunctorOfMonadHomId
++ theorem CategoryTheory.Monad.Algebra.algebra_epi_of_epi
++ theorem CategoryTheory.Monad.Algebra.algebra_equiv_of_iso_monads_comp_forget
++ theorem CategoryTheory.Monad.Algebra.algebra_iso_of_iso
++ theorem CategoryTheory.Monad.Algebra.algebra_mono_of_mono
++ def CategoryTheory.Monad.Algebra.forget
++ def CategoryTheory.Monad.Algebra.free
++/- structure CategoryTheory.Monad.Algebra
+- def CategoryTheory.Monad.adj
+- def CategoryTheory.Monad.algebraEquivOfIsoMonads
+- def CategoryTheory.Monad.algebraFunctorOfMonadHom
+- def CategoryTheory.Monad.algebraFunctorOfMonadHomComp
+- def CategoryTheory.Monad.algebraFunctorOfMonadHomEq
+- def CategoryTheory.Monad.algebraFunctorOfMonadHomId
+- theorem CategoryTheory.Monad.algebra_epi_of_epi
+- theorem CategoryTheory.Monad.algebra_equiv_of_iso_monads_comp_forget
+- theorem CategoryTheory.Monad.algebra_iso_of_iso
+- theorem CategoryTheory.Monad.algebra_mono_of_mono
+- def CategoryTheory.Monad.forget
+- def CategoryTheory.Monad.free
+Modified Mathlib/CategoryTheory/Monad/Basic.lean
+- def CategoryTheory.Comonad.id
+- theorem CategoryTheory.Comonad.isSplitEpi_iff_isIso_counit
+- theorem CategoryTheory.Comonad.map_counit_app
+- def CategoryTheory.Comonad.transport
+- theorem CategoryTheory.ComonadHom.ext'
+- theorem CategoryTheory.ComonadHom.id_toNatTrans
+- def CategoryTheory.ComonadIso.toNatIso
+- def CategoryTheory.comonadToFunctor
+- theorem CategoryTheory.comp_toNatTrans
+Modified Mathlib/CategoryTheory/Monad/Kleisli.lean
++/- def CategoryTheory.Cokleisli.Adjunction.adj
+- def CategoryTheory.Cokleisli.Adjunction.fromCokleisli
+- def CategoryTheory.Cokleisli.Adjunction.toCokleisli
+- def CategoryTheory.Cokleisli.Adjunction.toCokleisliCompFromCokleisliIsoSelf
++/- structure CategoryTheory.Cokleisli.Hom
+- theorem CategoryTheory.Cokleisli.hom_ext
+- theorem CategoryTheory.Cokleisli.mk_of
+- theorem CategoryTheory.Cokleisli.of_mk
++/- theorem CategoryTheory.Kleisli.mk_of
++/- theorem CategoryTheory.Kleisli.of_mk
+Modified Mathlib/Tactic/Translate/ToDual.lean
+
+
+
+
+2026-10-17 19:24:11 3dfb8e2
+
+chore: remove `WittVector.mk'` (#43374)
+Override the structure constructor transparencies so that duplicating a `WittVector.mk'` is no longer necessary.
+
+ESTIMATED CHANGES
+Modified Mathlib/RingTheory/WittVector/Defs.lean
++ def WittVector.mk'
+- def WittVector.mk
++/- structure WittVector
+Modified Mathlib/RingTheory/WittVector/DiscreteValuationRing.lean
+
+Modified Mathlib/RingTheory/WittVector/Domain.lean
+
+Modified Mathlib/RingTheory/WittVector/Frobenius.lean
+
+Modified Mathlib/RingTheory/WittVector/FrobeniusFractionField.lean
+
+Modified Mathlib/RingTheory/WittVector/InitTail.lean
+
+Modified Mathlib/RingTheory/WittVector/IsPoly.lean
+
+Modified Mathlib/RingTheory/WittVector/Teichmuller.lean
+
+Modified Mathlib/RingTheory/WittVector/Truncated.lean
+
+Modified Mathlib/RingTheory/WittVector/Verschiebung.lean
+
+
+
+
+2026-10-17 18:35:57 d70b73b
+
+feat: lemmas for subgroups of finite index (#44957)
+
+ESTIMATED CHANGES
+Modified Mathlib/GroupTheory/Index.lean
++ theorem Subgroup.finiteIndex_bot_iff
++ theorem Subgroup.index_ne_zero
++ theorem Subgroup.index_pos
++/- theorem Subgroup.relIndex_ne_zero
++ theorem Subgroup.relIndex_pos
+Modified Mathlib/GroupTheory/IndexNSmul.lean
+
+Modified Mathlib/GroupTheory/Nilpotent.lean
+
+Modified Mathlib/GroupTheory/Schreier.lean
+
+Modified Mathlib/NumberTheory/NumberField/Units/Regulator.lean
+
+
+
+
+2026-10-17 18:35:55 a7545fd
+
+feat: add QuotientGroup.instHasUniqueRoots (#44838)
+Replace a `IsMulTorsionFree` instance by a `HasUniqueRoots` instance, that is stronger.
+
+ESTIMATED CHANGES
+Modified Mathlib/Algebra/Group/Torsion.lean
++ theorem IsMulTorsionFree.hasUniqueRoots
+Modified Mathlib/GroupTheory/Torsion.lean
+
+
+
+
+2026-10-17 17:39:39 74e558e
+
+chore(Order/DirSupClosed): fix badly named theorems (#44974)
+I made a copy-paste error on the name of a deprecation in #44929. And back in #37670, I accidentally opened a `namespace` instead of a `section`...
+I haven't deprecated any of these badly named theorems. I want to believe that if anyone were using them downstream, they would have caught this already!
+
+ESTIMATED CHANGES
+Modified Mathlib/Order/DirSupClosed.lean
+- theorem PartialOrder.dirSupClosedOn_singleton
+- theorem PartialOrder.dirSupClosed_singleton
++ theorem dirSupClosedOn_singleton
++ theorem dirSupClosed_singleton
+
+
+
+2026-10-17 17:39:37 acf3981
+
+feat(Combinatorics/SimpleGraph/Metric): add distance lemmas for graph maps (#44872)
+Graph homomorphisms map walks to walks of the same length, so they do not increase extended graph distance. For natural-valued distance, the corresponding bound requires source reachability because unreachable pairs use the junk value `0`.
+Add:
+- `SimpleGraph.Hom.edist_le`
+- `SimpleGraph.Iso.edist_eq`
+- `SimpleGraph.Hom.dist_le`
+- `SimpleGraph.Iso.dist_eq`
+Mark both isomorphism equalities as `@[simp]`. Refactor the existing distance-antitonicity results for graph inclusions through `Hom.ofLE`, making them special cases of the homomorphism bounds.
+Discussed on Zulip: [distance and balls under graph maps](https://leanprover.zulipchat.com/#narrow/channel/252551-graph-theory/topic/distance.20and.20balls.20under.20graph.20maps/with/631709959).
+
+ESTIMATED CHANGES
+Modified Mathlib/Combinatorics/SimpleGraph/Metric.lean
++ theorem SimpleGraph.Hom.dist_le
++ theorem SimpleGraph.Hom.edist_le
++ theorem SimpleGraph.Iso.dist_eq
++ theorem SimpleGraph.Iso.edist_eq
+
+
+
+2026-10-17 17:39:34 3d02143
+
+chore: link bors's dashboard at bors.mathlib.org (#44805)
+This PR points the README's bors badge at bors's new address, https://bors.mathlib.org/repositories/16. It shows the same dashboard as the old address.
+
+ESTIMATED CHANGES
+Modified README.md
+
+
+
+
+2026-10-17 17:39:32 bac53ec
+
+feat(Linter/Style): lint against `∀ᵉ`/`∃ᵉ` (#44544)
+The `∀ᵉ`/`∃ᵉ` notation is used rarely in mathlib, so to many users it is an unfamiliar notation. Therefore, it would be better to simply not use it.
+This PR adds a linter against the notation, which comes with a `Try this` suggestions that replaces the notation with uses of plain `∀`/`∃`
+- The adaptations have been generated fully automatically using these `Try this` suggestions. So, it is easiest to review this PR commit by commit.
+- The `∃ᵉ` notation is still used in one place, namely in the macro that defines the `{_ | _}` notation for sets. The linter explicitly does not flag this.
+- This linter would fit in very nicely into the framework of #44496. That can be done in a follow-up PR after that is merged, and will remove the slowdown that this PR adds.
+https://leanprover.zulipchat.com/#narrow/channel/287929-mathlib4/topic/.E2.88.80.E1.B5.89.2F.E2.88.83.E1.B5.89.20notation/with/629610458
+
+ESTIMATED CHANGES
+Modified Mathlib/Algebra/Group/Irreducible/Indecomposable.lean
+
+Modified Mathlib/Algebra/Group/Subgroup/Defs.lean
++/- def Subgroup.ofDiv
+Modified Mathlib/Algebra/Group/Subgroup/Pointwise.lean
+
+Modified Mathlib/Algebra/Lie/Abelian.lean
+
+Modified Mathlib/Algebra/Lie/Basis/Basic.lean
+
+Modified Mathlib/Algebra/Lie/Subalgebra.lean
+
+Modified Mathlib/Algebra/Lie/Weights/Cartan.lean
++/- theorem LieAlgebra.mem_biSup_genWeightSpace_of
+Modified Mathlib/Algebra/Lie/Weights/Chain.lean
+
+Modified Mathlib/Algebra/Module/Submodule/Union.lean
+
+Modified Mathlib/Analysis/Analytic/Basic.lean
+
+Modified Mathlib/Analysis/BoxIntegral/DivergenceTheorem.lean
+
+Modified Mathlib/Analysis/Calculus/Deriv/MeanValue.lean
+
+Modified Mathlib/Analysis/Calculus/FDeriv/Measurable.lean
+
+Modified Mathlib/Analysis/ConstantSpeed.lean
+
+Modified Mathlib/Analysis/Convex/Extreme.lean
+
+Modified Mathlib/Analysis/Convex/Side.lean
+
+Modified Mathlib/Analysis/Convex/SimplicialComplex/Basic.lean
+
+Modified Mathlib/Combinatorics/Quiver/Path/Decomposition.lean
+
+Modified Mathlib/Combinatorics/SimpleGraph/CompleteMultipartite.lean
+
+Modified Mathlib/Combinatorics/SimpleGraph/Matching.lean
+
+Modified Mathlib/Computability/Partrec.lean
+
+Modified Mathlib/Data/Finset/Lattice/Fold.lean
++/- theorem Finset.sup'_mem
++/- theorem Finset.sup_mem
+Modified Mathlib/Data/Finset/Max.lean
+
+Modified Mathlib/Data/List/Chain.lean
+
+Modified Mathlib/Data/List/Sort.lean
+
+Modified Mathlib/Data/Set/Card.lean
+
+Modified Mathlib/Data/Set/Finite/Range.lean
+
+Modified Mathlib/Data/Set/Order.lean
+
+Modified Mathlib/Data/Set/Subsingleton.lean
++/- theorem Set.Nontrivial.exists_lt
+Modified Mathlib/FieldTheory/Minpoly/ConjRootClass.lean
+
+Modified Mathlib/Geometry/Manifold/VectorBundle/Basic.lean
+
+Modified Mathlib/Init.lean
+
+Modified Mathlib/LinearAlgebra/Dual/Lemmas.lean
+
+Modified Mathlib/LinearAlgebra/JordanChevalley.lean
+
+Modified Mathlib/LinearAlgebra/PerfectPairing/Restrict.lean
+
+Modified Mathlib/LinearAlgebra/RootSystem/BaseExists.lean
+
+Modified Mathlib/LinearAlgebra/RootSystem/Chain.lean
+
+Modified Mathlib/LinearAlgebra/RootSystem/Finite/Nondegenerate.lean
+
+Modified Mathlib/MeasureTheory/Covering/Differentiation.lean
+
+Modified Mathlib/MeasureTheory/Integral/FinMeasAdditive.lean
+
+Modified Mathlib/MeasureTheory/PiSystem.lean
+
+Modified Mathlib/MeasureTheory/SetAlgebra.lean
+
+Modified Mathlib/Order/CompactlyGenerated/Basic.lean
+
+Modified Mathlib/Order/DirectedInverseSystem.lean
+
+Modified Mathlib/Order/Filter/Interval.lean
+
+Modified Mathlib/Order/Hom/Set.lean
+
+Modified Mathlib/Order/Interval/Set/OrdConnectedLinear.lean
+
+Modified Mathlib/Order/Interval/Set/UnorderedInterval.lean
+
+Modified Mathlib/RingTheory/Algebraic/Basic.lean
+
+Modified Mathlib/RingTheory/DedekindDomain/Ideal/Lemmas.lean
+
+Modified Mathlib/RingTheory/UniqueFactorizationDomain/Multiplicative.lean
+
+Modified Mathlib/RingTheory/UniqueFactorizationDomain/NormalizedFactors.lean
+
+Modified Mathlib/RingTheory/WittVector/FrobeniusFractionField.lean
+
+Modified Mathlib/Tactic/Linter/Style.lean
++ def Mathlib.Linter.Style.extendedBinder.extendedBinderLinter
+Modified Mathlib/Topology/Algebra/Semigroup.lean
+
+Modified Mathlib/Topology/Algebra/UniformFilterBasis.lean
+
+Modified Mathlib/Topology/Algebra/ValuativeRel/ValuativeTopology.lean
+
+Modified Mathlib/Topology/Algebra/Valued/ValuationTopology.lean
+
+Modified Mathlib/Topology/Connected/PathConnected.lean
+
+Modified Mathlib/Topology/ContinuousMap/StoneWeierstrass.lean
+
+Modified Mathlib/Topology/VectorBundle/Basic.lean
+
+Added MathlibTest/Linter/ExtendedBinder.lean
+
+
+
+
+2026-10-17 17:39:30 d268775
+
+feat(NumberTheory/EllipticDivisibilitySequence): prove that a normalised elliptic divisibility sequence is an elliptic sequence (#42453)
+This is the updated version of #13155 and contains the proof that a sequence satisfying the even and odd elliptic relations (with mild additional conditions) is an elliptic net and hence an elliptic sequence. This is the main argument in [Section 2 of Junyan's paper](https://arxiv.org/pdf/2604.05280). Previously it was broken down into hundreds of lines of multiple lemmas but I was able to condense it into a single lemma with multiple `wlog`s that are hopefully self-explanatory.
+
+ESTIMATED CHANGES
+Modified Mathlib/Algebra/Polynomial/AlgebraMap.lean
+- theorem Polynomial.X_mem_nonZeroDivisors
+Modified Mathlib/Algebra/Polynomial/Coeff.lean
++ theorem Polynomial.X_mem_nonZeroDivisors
+Modified Mathlib/NumberTheory/EllipticDivisibilitySequence.lean
++ theorem IsEllipticNet.atomRel_of_even_odd
++ theorem IsEllipticNet.atomRel_perm
++ theorem IsEllipticNet.atom_mul_atomRel
++ theorem IsEllipticNet.normEDS
++ theorem IsEllipticNet.of_even_odd
++ theorem IsEllipticSequence.normEDS
++ theorem IsEllipticSequence.of_even_odd
++ theorem normEDS_rel_even
++ theorem normEDS_rel_odd
+Modified docs/references.bib
+
+
+
+
+2026-10-17 17:39:27 f5517aa
+
+feat(Geometry/Euclidean/Angle/Incenter): distance from second intersection with circumcircle (#32294)
+Add the following lemma: given a triangle ABC, suppose an angle bisector from A through the incenter or excenter I meets the circumcircle again at X (including the case of an external bisector at A tangent to the circle, in which case X = A). Then XB = XI (= XC, by applying this lemma again). This is a standard configuration: https://en.wikipedia.org/wiki/Incenter%E2%80%93excenter_lemma
+
+ESTIMATED CHANGES
+Modified Mathlib/Geometry/Euclidean/Angle/Incenter.lean
++ theorem Affine.Triangle.dist_northPole_point_eq_dist_northPole_excenter
++ theorem Affine.Triangle.dist_nsPole_point_eq_dist_nsPole_excenter
++ theorem Affine.Triangle.dist_southPole_point_eq_dist_southPole_excenter
++ theorem Affine.Triangle.dist_southPole_point_eq_dist_southPole_incenter
+
+
+
+2026-10-17 16:48:10 db2a608
+
+chore: reorder mvfderiv lemmas (#43987)
+Previously, there was a section of lemmas about mvfderivWithin, then a corresponding section about mvfderiv. Ensuring these sections matched was a bit cumbersome, as one had to scroll back and forth all the time.
+Instead, move a lemma mvfderiv_foo right after its counterpart mvfderivWithin_foo. (Usually, this matches how it is proved also.) This matches the structure in e.g. the file about mfderiv.
+
+ESTIMATED CHANGES
+Modified Mathlib/Geometry/Manifold/MFDeriv/NormedSpace.lean
++/- theorem mvfderivWithin_zero
++/- theorem mvfderiv_zero
+
+
+
+2026-10-17 16:48:07 0678668
+
+feat(Combinatorics/SimpleGraph/Acyclic): a graph is a tree iff it's acyclic and has exactly `n - 1` edges (#34910)
+
+ESTIMATED CHANGES
+Modified Mathlib/Combinatorics/SimpleGraph/Acyclic.lean
++ theorem SimpleGraph.IsAcyclic.ncard_edgeSet_add_card_connectedComponent
++ theorem SimpleGraph.IsAcyclic.ncard_edgeSet_add_one_le_card
++ theorem SimpleGraph.IsTree.ncard_edgeSet_add_one
++ theorem SimpleGraph.exists_isCycle_of_card_le
++ theorem SimpleGraph.isAcyclic_iff_forall_not_isCycle
++ theorem SimpleGraph.isTree_iff_isAcyclic_and_ncard_edgeSet_add_one_eq_card
++ theorem SimpleGraph.not_isAcyclic_iff_exists_isCycle
+Modified Mathlib/Combinatorics/SimpleGraph/Connectivity/Connected.lean
++ theorem SimpleGraph.ConnectedComponent.encard_supp
++ theorem SimpleGraph.ConnectedComponent.ncard_supp
+- theorem SimpleGraph.Preconnected.subsingleton_connectedComponent
++ theorem SimpleGraph.card_connectedComponent_eq_one_iff
++ def SimpleGraph.edgeSetEquivSigmaConnectedComponent
++ theorem SimpleGraph.isEmpty_connectedComponent_iff
++ theorem SimpleGraph.nonempty_connectedComponent_iff
++ theorem SimpleGraph.subsingleton_connectedComponent_iff
++ theorem SimpleGraph.sum_connectedComponent_ncard_edgeSet
++ theorem SimpleGraph.sum_connectedComponent_ncard_supp
++ def SimpleGraph.verticesEquivSigmaConnectedComponent
+Modified Mathlib/Order/RelIso/Basic.lean
+
+
+
+
+2026-10-17 16:39:39 6fbfede
+
+chore: rename `smooth_barycentric_coord` to `contDiff_barycentric_coord` (#44960)
+This lemma used to be spelled with `Smooth`, but mathlib has hence removed this
+definition in favour of just `ContDiff`: adjust the name accordingly.
+
+ESTIMATED CHANGES
+Modified Mathlib/Analysis/Calculus/AddTorsor/Coord.lean
++ theorem contDiff_barycentric_coord
+- theorem smooth_barycentric_coord
+
+
+
+2026-10-17 13:58:27 4c71e7e
+
+ci: add `--add-public-downstream` to `shake` options (#44962)
+https://github.com/leanprover/lean4/pull/15630 added the `lake shake --add-public-downstream` and `--add-downstream` options, which allow specifying a single module that should be imported in every other module that would not create an import cycle. This should probably replace the text-based `linter.checkInitImports`, but I think it is better to leave this to a separate PR. For now I just add this option to the workflow that opens `shake` PRs.
+
+ESTIMATED CHANGES
+Modified .github/workflows/shake.yaml
+
+
+
+
+2026-10-17 13:25:16 a368e22
+
+chore(GroupTheory/Solvable): to_additivize file (#43108)
+This PR to_additivizes `GroupTheory/Solvable.lean`.
+
+ESTIMATED CHANGES
+Modified Mathlib/GroupTheory/Abelianization/Defs.lean
++ theorem Abelianization.commutator_le_ker
+- theorem Abelianization.commutator_subset_ker
+Modified Mathlib/GroupTheory/Commutator/Basic.lean
+
+Modified Mathlib/GroupTheory/Focal.lean
+
+Modified Mathlib/GroupTheory/IsPerfect.lean
++/- theorem Group.IsPerfect.derivedSeries_eq_top
+Modified Mathlib/GroupTheory/Schreier.lean
+
+Modified Mathlib/GroupTheory/Solvable.lean
++ def AddSubgroup.derivedSeries
++ theorem Group.not_isSolvable_of_mem_derivedSeries
++/- theorem IsSimpleGroup.derivedSeries_succ
++ def Subgroup.derivedSeries
++ theorem Subgroup.derivedSeries_antitone
++ theorem Subgroup.derivedSeries_le_map_derivedSeries
++ theorem Subgroup.derivedSeries_normal
++ theorem Subgroup.derivedSeries_one
++ theorem Subgroup.derivedSeries_succ
++ theorem Subgroup.derivedSeries_zero
++ theorem Subgroup.map_derivedSeries_eq
++ theorem Subgroup.map_derivedSeries_le_derivedSeries
+- def derivedSeries
+- theorem derivedSeries_antitone
+- theorem derivedSeries_le_map_derivedSeries
+- theorem derivedSeries_normal
+- theorem derivedSeries_one
+- theorem derivedSeries_succ
+- theorem derivedSeries_zero
+- theorem map_derivedSeries_eq
+- theorem map_derivedSeries_le_derivedSeries
+- theorem not_isSolvable_of_mem_derivedSeries
+Modified Mathlib/GroupTheory/SpecificGroups/ZGroup.lean
+
+
+
+
+2026-10-17 13:25:14 f2e1ddd
+
+feat(Algebra/Order/Floor): floor-of-sum dichotomy via fractional parts (#41861)
+This PR adds four lemmas  in Mathlib/Algebra/Order/Floor/Ring.lean, placed in the fractional-part section, complementing the existing one-sided bounds le_floor_add and le_floor_add_floor.
+Here are the lemmas:
+ 
+* floor_add_eq — writes ⌊a + b⌋ exactly as ⌊a⌋ + ⌊b⌋ + ⌊fract a + fract b⌋
+* floor_add_eq_add_iff — the floors add exactly ⟺ the fractional parts sum below 1
+* floor_add_eq_add_add_one_iff — the +1 case ⟺ the fractional parts sum to at least 1
+* floor_add_eq_or — the dichotomy: it's always one or the other
+The library has the two inequalities but not the exact case analysis, and this closes that small gap. In addition, these are the lemmas for the mechanical/Beatty-word development proposed here --https://leanprover.zulipchat.com/#narrow/channel/287929-mathlib4/topic/Sturmian.20.28mechanical.29.20words/near/610836902.
+Claude helped draft the Lean code; I reviewed the code, built the module locally, and it compiled.
+
+ESTIMATED CHANGES
+Modified Mathlib/Algebra/Order/Floor/Ring.lean
++ theorem Int.floor_add_eq
++ theorem Int.floor_add_eq_add_add_one_iff
++ theorem Int.floor_add_eq_add_iff
++ theorem Int.floor_add_eq_or
++ theorem Int.fract_add_eq
++ theorem Int.fract_add_eq_add_iff
++ theorem Int.fract_add_eq_add_sub_one_iff
++ theorem Int.fract_add_eq_or
+
+
+
+2026-10-17 12:44:21 1e2bb27
+
+feat: `Finset.exists_mem_cons` (#44919)
+We already have `Finset.exists_mem_insert` and `Finset.forall_mem_cons`, so add a lemma `Finset.exists_mem_cons` as well.
+
+ESTIMATED CHANGES
+Modified Mathlib/Data/Finset/Insert.lean
++ theorem Finset.exists_mem_cons
+
+
+
+2026-10-17 12:44:18 55b6538
+
+chore(RingTheory/IntegralClosure/IsIntegralClosure): fix instance name capitalization (#44753)
+`integralClosure.AlgebraIsIntegral`
+
+ESTIMATED CHANGES
+Modified Mathlib/RingTheory/IntegralClosure/IsIntegralClosure/Basic.lean
+
+
+
+
+2026-10-17 12:17:46 e055050
+
+refactor(Analysis/Convex/Caratheodory): refactor Caratheodory's theorem using strong induction (#44863)
+`convexHull_eq_union` (Caratheodory's theorem) was proved using `Caratheodory.minCardFinsetOfMemConvexHull`, a chosen finest of minimal cardinality whose convex hull contains `x`. I replace this with a direct proof using `Finset.strongInduction`. This makes `Caratheodory.minCardFinsetOfMemConvexHull` no longer necessary, hence it can become deprecated.
+This does lose the functionality of getting a finest of minimal cardinality, but I don't think that should be needed anyway. The important point of the Caratheodory's theorem is that there exists an affinely independent subset.
+I'm also doing a small golf in the proof of `eq_pos_convex_span_of_mem_convexHull` and replace `Sort (u + 1)` with `Type u`.
+
+ESTIMATED CHANGES
+Modified Mathlib/Analysis/Convex/Caratheodory.lean
+
+
+
+
+2026-10-17 12:17:43 e96b733
+
+feat(Data/Nat/ModEq): add congruence mod lcm lemma (#44839)
+The new lemma is just a version of `modEq_and_modEq_iff_modEq_mul` without the coprimality assumption. As a bonus, the proof of `modEq_and_modEq_iff_modEq_mul` is simplified as well.
+
+ESTIMATED CHANGES
+Modified Mathlib/Data/Nat/ModEq.lean
++ theorem Nat.modEq_and_modEq_iff_modEq_lcm
+
+
+
+2026-10-17 12:17:40 64cd4aa
+
+chore(MathlibTest/Linter/DupNamespace): use the module system (#44622)
+Because this is a good practice in general.
+
+ESTIMATED CHANGES
+Modified MathlibTest/Linter/DupNamespace.lean
+
+
+
+
+2026-10-17 12:17:38 d49d3da
+
+feat(Geometry/Euclidean): dist with affineCombination on one side (#44102)
+Supplementing existing theorems about `dist affineCombination affineCombination`, this one calculates `dist affineCombination Q` with `affineCombination` only on one side.
+I intentionally did not follow the existing style in the file, and wrote `x ^ 2` instead of `x * x`. The latter results in unnecessary duplication and is not `ring`-normal form. The `x * x` style seems to appear a lot in old Euclidean geometry code. We should refactor them but that can be later.
+
+ESTIMATED CHANGES
+Modified Mathlib/Geometry/Euclidean/Basic.lean
++ theorem EuclideanGeometry.dist_affineCombination_const_sq
+
+
+
+2026-10-17 12:17:35 bf4d31d
+
+chore(RingTheory/Pochhammer): fix the type of ascPochhammer_eval_succ (#42827)
+The existing two theorems have the following signature
+```lean4
+theorem ascPochhammer_nat_eval_succ (r n : ℕ) : 
+    n * Polynomial.eval (n + 1) (ascPochhammer ℕ r) = (n + r) * Polynomial.eval n (ascPochhammer ℕ r)
+theorem ascPochhammer_eval_succ (S : Type*) [Semiring S] (r n : ℕ) : 
+    ↑n * Polynomial.eval (↑n + 1) (ascPochhammer S r) = (↑n + ↑r) * Polynomial.eval (↑n) (ascPochhammer S r)
+```
+However what's more useful in practice is the following
+```lean4
+theorem ascPochhammer_eval_succ {S : Type*} [Semiring S] (r : ℕ) (n : S) : 
+    n * Polynomial.eval (n + 1) (ascPochhammer S r) =  Polynomial.eval n (ascPochhammer S r) * (n + ↑r)
+```
+which this PR proves. Note that the multiplication order is changed so it doesn't require commutativity on S.
+The old `ascPochhammer_nat_eval_succ` is now a specialization of the new `ascPochhammer_eval_succ` with `S = ℕ` & mul_comm, so it is redundant, thus deprecated.
+
+ESTIMATED CHANGES
+Modified Mathlib/RingTheory/Polynomial/Bernstein.lean
+
+Modified Mathlib/RingTheory/Polynomial/Pochhammer.lean
++/- theorem ascPochhammer_eval_succ
++/- theorem ascPochhammer_nat_eval_succ
+
+
+
+2026-10-17 12:17:30 7a4ff2c
+
+chore(RingTheory): delete outdated `proof_wanted` (#42649)
+[`MvPolynomial.ringKrullDim_of_isNoetherianRing`](https://leanprover-community.github.io/mathlib4_docs/Mathlib/RingTheory/KrullDimension/Polynomial.html#MvPolynomial.ringKrullDim_of_isNoetherianRing) was added two years after this `proof_wanted` and is nearly identical. The difference is that it is defined for arbitrary index sets instead of `Fin` and for `CommRing` instead of `CommSemiring`. This is an artifact of `Ideal.height` being defined for `CommRing`s and `ringKrullDim` for `CommSemiring`s. Otherwise I think the original intention of this `proof_wanted` has already been satisfied.
+
+ESTIMATED CHANGES
+Modified Wanted.lean
+
+Deleted Wanted/RingTheory/KrullDimension/Basic.lean
+
+
+
+
+2026-10-17 12:17:27 39cb444
+
+feat(RingTheory/QuadraticAlgebra): trace, norm and discriminant as `Algebra` invariants (#42297)
+Add a `RingTheory`-level file for `QuadraticAlgebra R a b`, identifying its elementary trace, norm and discriminant with the general `Algebra` ones on the standard basis `{1, ω}`.
+Kept in a separate file so those stay free of the heavy `RingTheory.Discriminant` import.
+
+ESTIMATED CHANGES
+Modified Mathlib.lean
+
+Added Mathlib/RingTheory/QuadraticAlgebra.lean
++ theorem Algebra.discr_quadraticAlgebra
++ theorem Algebra.leftMulMatrix_quadraticAlgebra
++ theorem Algebra.norm_quadraticAlgebra_apply
++ theorem Algebra.trace_quadraticAlgebra_apply
++ theorem QuadraticAlgebra.polynomial_discr_eq_discr
+
+
+
+2026-10-17 12:17:24 bc0953a
+
+feat(SimpleGraph): reduce CycleGraph imports (#41306)
+Reduce the imports for CycleGraph.lean and re-prove and move a few lemmas around as a result.
+
+ESTIMATED CHANGES
+Modified Mathlib/Combinatorics/SimpleGraph/Acyclic.lean
+
+Modified Mathlib/Combinatorics/SimpleGraph/Connectivity/Connected.lean
++ theorem SimpleGraph.Walk.reachable_of_mem_support
+Modified Mathlib/Combinatorics/SimpleGraph/CycleGraph.lean
++/- theorem SimpleGraph.connected_cycleGraph_add_one
++ theorem SimpleGraph.cycleGraph.mem_support_cycle
++ theorem SimpleGraph.cycleGraph_eq_top_iff
++/- theorem SimpleGraph.cycleGraph_three_eq_top
++/- theorem SimpleGraph.cycleGraph_two_eq_top
+- theorem SimpleGraph.pathGraph_le_cycleGraph
++/- theorem SimpleGraph.preconnected_cycleGraph
+Modified Mathlib/Combinatorics/SimpleGraph/Hasse.lean
++ theorem SimpleGraph.pathGraph_le_cycleGraph
+
+
+
+2026-10-17 11:31:26 11b5200
+
+chore(LinearAlgebra/AffineSpace/Homogenization): use `inferInstanceAs` (#44947)
+This PR redefines the instances of `Homogenization` using `inferInstanceAs`, which now handles non-exposed definitions correctly. This avoids leaking the implementation (which uses choice), and also fixes diamonds involving `NSMul` and `ZSMul`.
+
+ESTIMATED CHANGES
+Modified Mathlib/LinearAlgebra/AffineSpace/Homogenization.lean
+- def Homogenization.equivProdAux
+
+
+
+2026-10-17 11:31:23 d192224
+
+chore: rename HomeomorphClass.toHomeomorph projection (#44907)
+to Homeomorph.ofClass, in line with #31365.
+
+ESTIMATED CHANGES
+Modified Mathlib/Topology/Homeomorph/Defs.lean
++ def Homeomorph.ofClass
++ theorem Homeomorph.ofClass_injective
+- theorem HomeomorphClass.coe_coe
+- def HomeomorphClass.toHomeomorph
+- theorem HomeomorphClass.toHomeomorph_injective
+Modified Mathlib/Topology/Order/MonotoneContinuity.lean
+
+
+
+
+2026-10-17 11:31:21 6f48dc0
+
+feat(Analysis/Matrix/GelfandRadius): prove `gelfandRadius (A * B) = gelfandRadius (B * A)` for matrices (#44891)
+This PR proves `gelfandRadius (A * B) = gelfandRadius (B * A)` for matrices. This is used in #42985 to compute the Gelfand radius of left-multiplication in a finite extension of a normed field.
+
+ESTIMATED CHANGES
+Modified Mathlib.lean
+
+Added Mathlib/Analysis/Matrix/GelfandRadius.lean
++ theorem Matrix.gelfandRadius_mul_comm
+Modified Mathlib/Analysis/Normed/Algebra/GelfandRadius.lean
++ theorem gelfandRadius_of_norm_nonpos
+Modified Mathlib/Data/Matrix/Mul.lean
+
+
+
+
+2026-10-17 11:31:17 abb44da
+
+feat: every element is between two others in a club set (#44793)
+As well as further lemmas about normal functions and club sets.
+Used in the CGT repo.
+
+ESTIMATED CHANGES
+Modified Mathlib/Order/Cofinal.lean
++ theorem IsCofinal.noMaxOrder
+Modified Mathlib/Order/IsNormal.lean
++/- theorem Order.IsNormal.dirSupClosed_range
++ theorem Order.IsNormal.dirSupClosed_range_of_isCofinal
++ theorem Order.IsNormal.of_dirSupClosed_range
++ theorem Order.isNormal_iff_dirSupClosed_range
++ theorem Order.isNormal_iff_dirSupClosed_range_of_isCofinal
+Modified Mathlib/Order/WellFounded.lean
++ theorem StrictMono.isCofinal_range_of_wellFoundedLT
+Modified Mathlib/SetTheory/Cardinal/Cofinality/Club.lean
++ theorem IsClub.exists_between
++ theorem IsClub.isNormal_subtypeVal
++ theorem Order.isNormal_iff_isClub_range
+Modified Mathlib/SetTheory/Cardinal/Cofinality/Enum.lean
++/- theorem Order.isNormal_enum_iff_dirSupClosed
+
+
+
+2026-10-17 11:31:14 9d4de8d
+
+feat(Data/List): add `List.IsChain.iterate` and `List.getLast_iterate` (#44661)
+Add two basic lemmas about `List.iterate`:
+- `List.IsChain.iterate`: if `r a (f a)` holds for every `a`, then `List.iterate f a n` is an `r`-chain.
+- `List.getLast_iterate` (`@[simp]`): the last element of a nonempty `List.iterate f a n` is `f^[n - 1] a`, complementing the existing `getElem_iterate`.
+
+ESTIMATED CHANGES
+Modified Mathlib/Data/List/Chain.lean
+
+Modified Mathlib/Data/List/Iterate.lean
++ theorem List.getLast_iterate
+
+
+
+2026-10-17 11:31:11 953b504
+
+feat(SetTheory/Ordinal): classify exponential principal ordinals (#43633)
+Complete `` TODO: Prove that the exponential principal ordinals are `0`, `1`, `2`, `ω`, or `ε_ x` `` in [Mathlib/SetTheory/Ordinal/Principal.lean](https://github.com/leanprover-community/mathlib4/compare/master...Jun2028:mathlib4:feat/exponential-principal-classification?expand=1#diff-c700a68af59d576bafeeeac5211181f9ce129bdead444df6c9747344817103bd)
+By the way, the original TODO was wrong because `1` is not an exponential principal ordinal (it requires $0^0=1<1$ which is false).
+
+ESTIMATED CHANGES
+Modified Mathlib/SetTheory/Ordinal/Principal.lean
++ theorem Ordinal.IsPrincipal.mul_of_opow
++ theorem Ordinal.isPrincipal_opow_iff_omega0_opow_eq_self
++ theorem Ordinal.isPrincipal_opow_iff_zero_or_two_or_omega0_or_omega0_opow_eq
++ theorem Ordinal.isPrincipal_opow_two
++ theorem Ordinal.isSuccLimit_of_isPrincipal_opow
++ theorem Ordinal.omega0_lt_and_isPrincipal_opow_iff
++ theorem Ordinal.omega0_lt_of_omega0_opow_eq_self
+Modified Mathlib/SetTheory/Ordinal/Veblen.lean
++ theorem Ordinal.isPrincipal_opow_epsilon
++ theorem Ordinal.isPrincipal_opow_iff_zero_or_two_or_omega0_or_epsilon
++ theorem Ordinal.mem_range_epsilon
+
+
+
+2026-10-17 11:31:08 cbfcfd8
+
+feat(FreeGroup): characterize commutative/cyclic free groups (#41988)
+Characterize cyclic/commutative free groups as being those on ≤ 1 generators. I generalize and move around some instances along the way to avoid new imports.
+
+ESTIMATED CHANGES
+Modified Mathlib/Basic/Unique.lean
++ theorem subsingleton_iff_isEmpty_or_unique
+Modified Mathlib/GroupTheory/FreeGroup/Basic.lean
+
+Modified Mathlib/GroupTheory/FreeGroup/Reduce.lean
++ theorem FreeGroup.eq_of_commute_of_of
++ theorem FreeGroup.isCyclic_iff_subsingleton
++ theorem FreeGroup.isMulCommutative_iff_subsingleton
+
+
+
+2026-10-17 10:55:32 6e2da03
+
+refactor: `isUpperSet_Ixi` → `IsUpperSet.Ixi` (#44929)
+
+ESTIMATED CHANGES
+Modified Mathlib/Data/Nat/Cast/SetInterval.lean
+
+Modified Mathlib/Order/DirSupClosed.lean
+- theorem dirSupClosedOn_Iic
+- theorem dirSupClosed_Iic
+- theorem dirSupInaccOn_Iic
+- theorem dirSupInacc_Iic
+Modified Mathlib/Order/DirectedInverseSystem.lean
+
+Modified Mathlib/Order/IsNormal.lean
+
+Modified Mathlib/Order/UpperLower/Basic.lean
+- theorem isUpperSet_Ici
+- theorem isUpperSet_Ioi
+Modified Mathlib/Order/UpperLower/Fibration.lean
+
+Modified Mathlib/Order/UpperLower/Principal.lean
+
+Modified Mathlib/RingTheory/MvPolynomial/Ideal.lean
+
+Modified Mathlib/Topology/Order/IsNormal.lean
+
+Modified Mathlib/Topology/Order/LowerUpperTopology.lean
+
+Modified Mathlib/Topology/Order/ScottTopology.lean
+
+
+
+
+2026-10-17 10:55:30 0f906b6
+
+feat(Algebra/Field/Subfield): `Subfield.isMulCommutative_closure` (#44921)
+Prove that the subfield closure of commuting elements is commutative. Also rename the motive argument of `Subfield.closure_induction` to `motive`.
+
+ESTIMATED CHANGES
+Modified Mathlib/Algebra/Field/Subfield/Basic.lean
++/- theorem Subfield.closure_induction
++ theorem Subfield.isMulCommutative_closure
+
+
+
+2026-10-17 10:55:27 035a871
+
+chore: rename `toContinuousMap` to `ContinuousMap.ofClass` (#44877)
+This is in line with #31365, and avoids shadowing names of concrete projections `FooClass.toContinuousMap`.
+
+ESTIMATED CHANGES
+Modified Mathlib/AlgebraicGeometry/IdealSheaf/Subscheme.lean
+
+Modified Mathlib/Topology/Algebra/ContinuousAffineEquiv.lean
+
+Modified Mathlib/Topology/ContinuousMap/Defs.lean
++ def ContinuousMap.ofClass
+- def toContinuousMap
+Modified Mathlib/Topology/ContinuousMap/Ideals.lean
+
+Modified Mathlib/Topology/ContinuousMap/StarOrdered.lean
+
+Modified Mathlib/Topology/ContinuousMap/StoneWeierstrass.lean
+
+Modified Mathlib/Topology/Homotopy/HomotopyGroup.lean
+
+Modified Mathlib/Topology/Homotopy/Lifting.lean
+
+Modified Mathlib/Topology/Homotopy/TopCat/Path.lean
+
+Modified Mathlib/Topology/Homotopy/TopCat/ZerothHomotopy.lean
+
+Modified Mathlib/Topology/UniformSpace/Path.lean
+
+
+
+
+2026-10-17 10:55:24 1bcf70f
+
+chore(SetTheory/Cardinal/Aleph): fix some theorem names (#44859)
+The preferred form for `succ x` over the ordinals is `x + 1`.
+
+ESTIMATED CHANGES
+Modified Mathlib/SetTheory/Cardinal/Aleph.lean
+- theorem Cardinal.preBeth_nat
++ theorem Cardinal.preBeth_natCast
++ theorem Ordinal.isInitial_add_one
+Modified Mathlib/SetTheory/Cardinal/Continuum.lean
++/- theorem Cardinal.beth_one
+
+
+
+2026-10-17 10:55:21 f361c86
+
+feat: generalize `not_strictAnti_of_wellFoundedLT` (#44854)
+We prove versions where the domain is any ordered type without maximums/minimums.
+
+ESTIMATED CHANGES
+Modified Mathlib/Order/OrderIsoNat.lean
++/- theorem not_strictAnti_of_wellFoundedLT
+- theorem not_strictMono_of_wellFoundedGT
++ theorem not_strictMono_of_wellFoundedLT
+
+
+
+2026-10-17 10:55:19 cbeb9f3
+
+feat(Analysis/ENNReal): iSup of rpow (#44849)
+These make it easier to rw.
+
+ESTIMATED CHANGES
+Modified Mathlib/Analysis/SpecialFunctions/Pow/NNReal.lean
++ theorem ENNReal.iInf_rpow_of_nonneg
++ theorem ENNReal.iInf_rpow_of_pos
++ theorem ENNReal.iSup_rpow_of_nonneg
++ theorem ENNReal.iSup_rpow_of_pos
+
+
+
+2026-10-17 10:55:15 aeb6c78
+
+chore(GroupTheory/Generators,Presentation): use short names inside namespace (#44808)
+* Use `Generators` instead of `Group.Generators` and `Presentation` instead of `Group.Presentation`. 
+* Add the `Group` namespace so that `Group.fg_iff_nonempty_finite_generators` becomes `fg_iff_nonempty_finite_generators`.
+
+ESTIMATED CHANGES
+Modified Mathlib/GroupTheory/Generators.lean
++/- theorem Group.Generators.fg
++/- theorem Group.Generators.map_val
++/- def Group.Generators.ofSet
++/- def Group.Generators.reindex
++/- theorem Group.Generators.reindex_val
++/- structure Group.Generators
++/- theorem Group.fg_iff_nonempty_finite_generators
+Modified Mathlib/GroupTheory/Presentation.lean
++/- structure Group.Presentation
+
+
+
+2026-10-17 10:25:51 7bb03b4
+
+feat(Algebra/Ring/Subsemiring): `Subsemiring.coe_natCast` (#44922)
+Prove the theorem `Subsemiring.coe_natCast`, which states `((n : s) : R) = (n : R)` for `n : Nat` and `s : Subsemiring R`.
+
+ESTIMATED CHANGES
+Modified Mathlib/Algebra/Ring/Subsemiring/Defs.lean
++ theorem Subsemiring.coe_natCast
+
+
+
+2026-10-17 10:25:48 9fa1113
+
+doc(LinearAlgebra/ExteriorPower/Basic): fix typo in docstring (#44908)
+Fix a small typo in the docstring of `exteriorPower.ιMulti`.
+easy
+
+ESTIMATED CHANGES
+Modified Mathlib/LinearAlgebra/ExteriorPower/Basic.lean
+
+
+
+
+2026-10-17 10:25:45 e22e264
+
+chore(LinearAlgebra/RootSystem/WeylGroup): prove the three range lemmas from one (#44801)
+`range_weylGroup_weightHom`, `range_weylGroup_coweightHom` and `range_weylGroupToPerm` each proved the same fact with their own ~20-line `Subgroup.closure_induction''` argument, differing only in the homomorphism and the simp lemma. This adds `range_weylGroup_domRestrict`, which says the image of the Weyl group under any homomorphism sending each reflection `i` to `g i` is `Subgroup.closure (range g)`, and proves the three from it. Their statements are unchanged and nothing else in Mathlib uses them. The file is 56 lines shorter, and `set_option backward.isDefEq.respectTransparency false` is no longer needed.
+
+ESTIMATED CHANGES
+Modified Mathlib/LinearAlgebra/RootSystem/WeylGroup.lean
++ theorem RootPairing.range_domRestrict_weylGroup
+
+
+
+2026-10-17 10:25:42 c1e8c68
+
+chore: use `Type*` in a few more places (#44776)
+`Representation.norm_ofMulDistribMulAction_eq`, `Matrix.dualNumberEquiv` and `ValuativeRel.trivialRel` (with the lemmas about it) were stated for `Type`, although the definitions they use work in any universe. This uses `Type*`.
+
+ESTIMATED CHANGES
+Modified Mathlib/RingTheory/Valuation/ValuativeRel/Trivial.lean
++/- def ValuativeRel.trivialRel
+
+
+
+2026-10-17 10:25:39 5c18609
+
+fix(Algebra/Category/MonCat): state the `CommMonCat` limit instances for `CommMonCat` (#44704)
+`CommMonCat.forget_createsLimits*` (and the additive versions) were stated for `forget MonCat`, copied from the `MonCat` section, so `CommMonCat` had no such instances. This states them for `forget CommMonCat`, which needs `[UnivLE.{v, u}]` as for `forget_preservesLimitsOfSize`.
+
+ESTIMATED CHANGES
+Modified Mathlib/Algebra/Category/MonCat/Limits.lean
+
+
+
+
+2026-10-17 10:25:37 58f2f21
+
+refactor: move results about polynomial degrees outside of the `FiniteField` namespace (#44691)
+They don't depend on the polynomial being over a finite field, at all.
+
+ESTIMATED CHANGES
+Modified Mathlib/Algebra/Polynomial/Degree/Operations.lean
++ theorem FiniteField.X_pow_card_pow_sub_X_natDegree_eq
++ theorem FiniteField.X_pow_card_pow_sub_X_ne_zero
++ theorem Polynomial.X_pow_sub_X_ne_zero
++/- theorem Polynomial.degree_X_pow_sub_C
++ theorem Polynomial.degree_X_pow_sub_X
++/- theorem Polynomial.natDegree_X_pow_sub_C
++ theorem Polynomial.natDegree_X_pow_sub_X
+Modified Mathlib/FieldTheory/Finite/Basic.lean
+- theorem FiniteField.X_pow_card_pow_sub_X_natDegree_eq
+- theorem FiniteField.X_pow_card_pow_sub_X_ne_zero
+- theorem FiniteField.X_pow_card_sub_X_natDegree_eq
+- theorem FiniteField.X_pow_card_sub_X_ne_zero
+Modified Mathlib/FieldTheory/Finite/Extension.lean
++/- theorem Irreducible.natDegree_dvd_of_dvd_X_pow_card_pow_sub_X
+Modified Mathlib/FieldTheory/Finite/GaloisField.lean
+
+Modified Mathlib/FieldTheory/Galois/NormalBasis.lean
+
+Modified Mathlib/FieldTheory/KummerPolynomial.lean
+
+Modified Mathlib/RingTheory/Polynomial/Cyclotomic/Basic.lean
+
+
+
+
+2026-10-17 10:25:34 8dbe5f0
+
+feat: the bundle of continuous alternating maps is `C^n` (#43234)
+We show that, in characteristic 0, the bundle of continuous alternating maps between C^n vector bundles is C^n.
+We also show that applying a C^n family of alternating maps to C^n vector fields gives a C^n result.
+The API is mimicked on the one for hom vector bundles.
+
+ESTIMATED CHANGES
+Modified Mathlib.lean
+
+Added Mathlib/Geometry/Manifold/VectorBundle/ContinuousAlternatingMap.lean
++ theorem ContMDiff.continuousAlternatingMap_bundle_apply
++ theorem ContMDiffAt.continuousAlternatingMap_apply_of_inCoordinates
++ theorem ContMDiffAt.continuousAlternatingMap_bundle_apply
++ theorem ContMDiffOn.continuousAlternatingMap_bundle_apply
++ theorem ContMDiffWithinAt.continuousAlternatingMap_apply_of_inCoordinates
++ theorem ContMDiffWithinAt.continuousAlternatingMap_bundle_apply
++ theorem MDifferentiable.continuousAlternatingMap_bundle_apply
++ theorem MDifferentiableAt.continuousAlternatingMap_apply_of_inCoordinates
++ theorem MDifferentiableAt.continuousAlternatingMap_bundle_apply
++ theorem MDifferentiableOn.continuousAlternatingMap_bundle_apply
++ theorem MDifferentiableWithinAt.continuousAlternatingMap_apply_of_inCoordinates
++ theorem MDifferentiableWithinAt.continuousAlternatingMap_bundle_apply
++ theorem chartAt_continuousAlternatingMap
++ theorem contMDiffAt_continuousAlternatingMap_bundle
++ theorem contMDiffOn_continuousAlternatingMapCoordChange
++ theorem contMDiffWithinAt_continuousAlternatingMap_bundle
++ theorem mdifferentiableAt_continuousAlternatingMap_bundle
++ theorem mdifferentiableOn_continuousAlternatingMapCoordChange
++ theorem mdifferentiableWithinAt_continuousAlternatingMap_bundle
+Modified Mathlib/Topology/VectorBundle/ContinuousAlternatingMap.lean
++ theorem ContinuousAlternatingMap.inCoordinates_eq_of_mem_baseSet₂
+
+
+
+2026-10-17 09:16:51 5e997a0
+
+doc(LinearAlgebra/Contraction): fix typo in docstring for dualDistribEquiv (#44828)
+Fix a small typo in the docstring of `dualDistribEquiv`.
+
+ESTIMATED CHANGES
+Modified Mathlib/LinearAlgebra/Contraction.lean
+
+
+
+
+2026-10-17 09:16:48 c868eeb
+
+feat(RepresentationTheory/Character): remove `FiniteDimensional` assumption (#44763)
+Provide an instance that the vector space of an irreducible representation is finite dimensional, and use that to remove some `FiniteDimensional` assumptions. Split off from #43899.
+
+ESTIMATED CHANGES
+Modified Mathlib/RepresentationTheory/Character.lean
+
+Modified Mathlib/RepresentationTheory/Irreducible.lean
+
+
+
+
+2026-10-17 09:16:45 187d438
+
+doc(SetTheory/Cardinality/Cofinality/Club): improve documentation (#44745)
+We add tags to the file, and specify the uncountability condition in the docstring for Fodor's lemma.
+
+ESTIMATED CHANGES
+Modified Mathlib/SetTheory/Cardinal/Cofinality/Club.lean
+
+
+
+
+2026-10-17 09:16:41 99d54ff
+
+refactor(RingTheory/Ideal/Norm): give `Ideal.absNorm` the junk value `0` at `⊥` (#44698)
+The absolute norm of an ideal is now given the junk value `0` at the zero ideal. It is therefore no longer assumed that the ring is infinite, an assumption that was there to get `absNorm ⊥ = 0`.
+Three lemmas unfold the norm: `Ideal.absNorm_of_ne_bot` for a nonzero ideal, with no further assumption, `Ideal.absNorm_apply` for every ideal of an infinite ring, both stated using `Submodule.cardQuot`, and `Ideal.absNorm_eq_natCard`, which is new, giving the same equality in the form `absNorm I = Nat.card (S ⧸ I)`.
+The results of the file are restated for a ring with finite quotients in #42790, and the results downstream lose their infiniteness assumption in #44646.
+Prepared with Claude Code 🤖
+
+ESTIMATED CHANGES
+Modified Mathlib/NumberTheory/NumberField/ClassNumber.lean
+
+Modified Mathlib/NumberTheory/NumberField/Cyclotomic/Ideal.lean
+
+Modified Mathlib/NumberTheory/NumberField/Discriminant/Different.lean
+
+Modified Mathlib/NumberTheory/NumberField/Ideal/Basic.lean
+
+Modified Mathlib/RingTheory/Ideal/Norm/AbsNorm.lean
++/- theorem Ideal.absNorm_apply
++/- theorem Ideal.absNorm_bot
++/- theorem Ideal.absNorm_dvd_absNorm_of_le
++/- theorem Ideal.absNorm_eq_index
++ theorem Ideal.absNorm_eq_natCard
++/- theorem Ideal.absNorm_ne_zero_iff
++ theorem Ideal.absNorm_of_ne_bot
++/- theorem Ideal.absNorm_top
+Modified Mathlib/RingTheory/RamificationInertia/Inertia.lean
+
+
+
+
+2026-10-17 09:16:38 8c6a03c
+
+chore: split `RingTheory/DedekindDomain/AdicValuation.lean` into `AdicValuation/Valuation.lean` and `AdicValuation/Completion.lean` (#44666)
+- The file has grown quite large so split the `HeightOneSpectrum.valuation` material away from the completion material
+- Provides a more natural home for `NumberTheory/RamificationInertia/Valuation.lean`
+
+ESTIMATED CHANGES
+Modified Mathlib.lean
+
+Modified Mathlib/FieldTheory/RatFunc/AsPolynomial.lean
+
+Modified Mathlib/NumberTheory/NumberField/Completion/FinitePlace.lean
+
+Modified Mathlib/NumberTheory/Padics/HeightOneSpectrum.lean
+
+Modified Mathlib/NumberTheory/RamificationInertia/Valuation.lean
+- theorem IsDedekindDomain.HeightOneSpectrum.intValuation_liesOver
+- theorem IsDedekindDomain.HeightOneSpectrum.uniformContinuous_algebraMap_liesOver
+- theorem IsDedekindDomain.HeightOneSpectrum.valuation_liesOver
+Modified Mathlib/RingTheory/DedekindDomain/AdicValuation.lean
+- def IsDedekindDomain.HeightOneSpectrum.adicAbv
+- def IsDedekindDomain.HeightOneSpectrum.adicAbvDef
+- theorem IsDedekindDomain.HeightOneSpectrum.adicAbv_coe_eq_one_iff
+- theorem IsDedekindDomain.HeightOneSpectrum.adicAbv_coe_le_one
+- theorem IsDedekindDomain.HeightOneSpectrum.adicAbv_coe_lt_one_iff
+- theorem IsDedekindDomain.HeightOneSpectrum.adicAbv_of_algebraMap
+- theorem IsDedekindDomain.HeightOneSpectrum.adicAbv_of_mk'
+- theorem IsDedekindDomain.HeightOneSpectrum.adicCompletion.coe_add
+- theorem IsDedekindDomain.HeightOneSpectrum.adicCompletion.coe_mul
+- theorem IsDedekindDomain.HeightOneSpectrum.adicCompletion.coe_one
+- theorem IsDedekindDomain.HeightOneSpectrum.adicCompletion.coe_toCompletion
+- theorem IsDedekindDomain.HeightOneSpectrum.adicCompletion.coe_valueGroupMulEquiv
+- theorem IsDedekindDomain.HeightOneSpectrum.adicCompletion.coe_zero
+- theorem IsDedekindDomain.HeightOneSpectrum.adicCompletion.continuous_ofCompletion
+- theorem IsDedekindDomain.HeightOneSpectrum.adicCompletion.continuous_toCompletion
+- theorem IsDedekindDomain.HeightOneSpectrum.adicCompletion.embedding_valueGroupOrderMonoidIso
+- def IsDedekindDomain.HeightOneSpectrum.adicCompletion.equiv
+- def IsDedekindDomain.HeightOneSpectrum.adicCompletion.equivCompletion
+- theorem IsDedekindDomain.HeightOneSpectrum.adicCompletion.ext
+- theorem IsDedekindDomain.HeightOneSpectrum.adicCompletion.extension_apply_eq_valued
+- theorem IsDedekindDomain.HeightOneSpectrum.adicCompletion.isUniformInducing_toCompletion
+- theorem IsDedekindDomain.HeightOneSpectrum.adicCompletion.mul_nonZeroDivisor_mem_adicCompletionIntegers
+- theorem IsDedekindDomain.HeightOneSpectrum.adicCompletion.ofCompletion_surjective
+- theorem IsDedekindDomain.HeightOneSpectrum.adicCompletion.ofCompletion_toCompletion
+- theorem IsDedekindDomain.HeightOneSpectrum.adicCompletion.toCompletion_add
+- theorem IsDedekindDomain.HeightOneSpectrum.adicCompletion.toCompletion_mul
+- theorem IsDedekindDomain.HeightOneSpectrum.adicCompletion.toCompletion_ofCompletion
+- theorem IsDedekindDomain.HeightOneSpectrum.adicCompletion.toCompletion_one
+- theorem IsDedekindDomain.HeightOneSpectrum.adicCompletion.toCompletion_surjective
+- theorem IsDedekindDomain.HeightOneSpectrum.adicCompletion.toCompletion_zero
+- def IsDedekindDomain.HeightOneSpectrum.adicCompletion.uniformEquiv
+- theorem IsDedekindDomain.HeightOneSpectrum.adicCompletion.valuationExtension_toCompletion
+- theorem IsDedekindDomain.HeightOneSpectrum.adicCompletion.valuation_ofCompletion
+- def IsDedekindDomain.HeightOneSpectrum.adicCompletion.valueGroupMulEquiv
+- theorem IsDedekindDomain.HeightOneSpectrum.adicCompletion.valueGroupOrderMonoidIso_coe
+- theorem IsDedekindDomain.HeightOneSpectrum.adicCompletion.valueGroupOrderMonoidIso_restrict
+- theorem IsDedekindDomain.HeightOneSpectrum.adicCompletion.valueGroup_eq
+- theorem IsDedekindDomain.HeightOneSpectrum.adicCompletion.valuedAdicCompletion_apply
+- theorem IsDedekindDomain.HeightOneSpectrum.adicCompletion.valued_coe
+- theorem IsDedekindDomain.HeightOneSpectrum.adicCompletion.valued_ofCompletion_apply
+- theorem IsDedekindDomain.HeightOneSpectrum.adicCompletion.valued_toCompletion_apply
+- structure IsDedekindDomain.HeightOneSpectrum.adicCompletion
+- theorem IsDedekindDomain.HeightOneSpectrum.adicCompletionIntegers.integers
+- theorem IsDedekindDomain.HeightOneSpectrum.adicCompletionIntegers.isUnit_iff_valued_eq_one
+- theorem IsDedekindDomain.HeightOneSpectrum.adicCompletionIntegers.mem_units_iff_valued_eq_one
+- def IsDedekindDomain.HeightOneSpectrum.adicCompletionIntegers
+- theorem IsDedekindDomain.HeightOneSpectrum.adicCompletion_valueGroup_eq
+- def IsDedekindDomain.HeightOneSpectrum.adicValued
+- theorem IsDedekindDomain.HeightOneSpectrum.adicValued_apply
+- theorem IsDedekindDomain.HeightOneSpectrum.algebraMap_adicCompletion
+- theorem IsDedekindDomain.HeightOneSpectrum.algebraMap_adicCompletionIntegers_apply
+- theorem IsDedekindDomain.HeightOneSpectrum.algebraMap_adicCompletion_toCompletion
+- theorem IsDedekindDomain.HeightOneSpectrum.coe_algebraMap_mem
+- theorem IsDedekindDomain.HeightOneSpectrum.coe_mem_adicCompletionIntegers
+- theorem IsDedekindDomain.HeightOneSpectrum.coe_smul_adicCompletion
+- theorem IsDedekindDomain.HeightOneSpectrum.coe_smul_adicCompletionIntegers
+- theorem IsDedekindDomain.HeightOneSpectrum.denseRange_algebraMap
+- theorem IsDedekindDomain.HeightOneSpectrum.eq_of_valuation_isEquiv_valuation
+- theorem IsDedekindDomain.HeightOneSpectrum.exists_intValuation_mul_sub_lt
+- theorem IsDedekindDomain.HeightOneSpectrum.exists_primeCompl_mul_eq_of_integer
+- theorem IsDedekindDomain.HeightOneSpectrum.exists_primeCompl_mul_eq_or_mul_eq
+- theorem IsDedekindDomain.HeightOneSpectrum.exists_valuation_sub_lt_of_integer
+- theorem IsDedekindDomain.HeightOneSpectrum.exp_le_intValuation_iff_emultiplicity_le
+- def IsDedekindDomain.HeightOneSpectrum.intAdicAbv
+- def IsDedekindDomain.HeightOneSpectrum.intAdicAbvDef
+- theorem IsDedekindDomain.HeightOneSpectrum.intAdicAbv_eq_one_iff
+- theorem IsDedekindDomain.HeightOneSpectrum.intAdicAbv_le_one
+- theorem IsDedekindDomain.HeightOneSpectrum.intAdicAbv_lt_one_iff
+- theorem IsDedekindDomain.HeightOneSpectrum.intValuation.le_max_iff_min_le
+- theorem IsDedekindDomain.HeightOneSpectrum.intValuation.map_add_le_max'
+- theorem IsDedekindDomain.HeightOneSpectrum.intValuation.map_mul'
+- theorem IsDedekindDomain.HeightOneSpectrum.intValuation.map_one'
+- theorem IsDedekindDomain.HeightOneSpectrum.intValuation.map_zero'
+- def IsDedekindDomain.HeightOneSpectrum.intValuation
+- def IsDedekindDomain.HeightOneSpectrum.intValuationDef
+- theorem IsDedekindDomain.HeightOneSpectrum.intValuationDef_if_neg
+- theorem IsDedekindDomain.HeightOneSpectrum.intValuationDef_if_pos
+- theorem IsDedekindDomain.HeightOneSpectrum.intValuationDef_zero
+- theorem IsDedekindDomain.HeightOneSpectrum.intValuation_apply
+- theorem IsDedekindDomain.HeightOneSpectrum.intValuation_def
+- theorem IsDedekindDomain.HeightOneSpectrum.intValuation_eq_exp_neg_multiplicity
+- theorem IsDedekindDomain.HeightOneSpectrum.intValuation_eq_one_iff
+- theorem IsDedekindDomain.HeightOneSpectrum.intValuation_eq_one_iff_mem_primeCompl
+- theorem IsDedekindDomain.HeightOneSpectrum.intValuation_exists_uniformizer
+- theorem IsDedekindDomain.HeightOneSpectrum.intValuation_if_neg
+- theorem IsDedekindDomain.HeightOneSpectrum.intValuation_le_exp_iff_le_emultiplicity
+- theorem IsDedekindDomain.HeightOneSpectrum.intValuation_le_one
+- theorem IsDedekindDomain.HeightOneSpectrum.intValuation_le_pow_iff_dvd
+- theorem IsDedekindDomain.HeightOneSpectrum.intValuation_le_pow_iff_mem
+- theorem IsDedekindDomain.HeightOneSpectrum.intValuation_lt_one_iff_dvd
+- theorem IsDedekindDomain.HeightOneSpectrum.intValuation_lt_one_iff_mem
+- theorem IsDedekindDomain.HeightOneSpectrum.intValuation_ne_zero'
+- theorem IsDedekindDomain.HeightOneSpectrum.intValuation_ne_zero
+- theorem IsDedekindDomain.HeightOneSpectrum.intValuation_singleton
+- theorem IsDedekindDomain.HeightOneSpectrum.intValuation_uniformizer
+- theorem IsDedekindDomain.HeightOneSpectrum.intValuation_zero_lt
+- theorem IsDedekindDomain.HeightOneSpectrum.isNonarchimedean_adicAbv
+- theorem IsDedekindDomain.HeightOneSpectrum.isNonarchimedean_adicAbvDef
+- theorem IsDedekindDomain.HeightOneSpectrum.isNonarchimedean_intAdicAbv
+- theorem IsDedekindDomain.HeightOneSpectrum.isNonarchimedean_intAdicAbvDef
+- theorem IsDedekindDomain.HeightOneSpectrum.mem_adicCompletionIntegers
+- theorem IsDedekindDomain.HeightOneSpectrum.mem_integers_of_valuation_le_one
+- theorem IsDedekindDomain.HeightOneSpectrum.notMem_adicCompletionIntegers
+- def IsDedekindDomain.HeightOneSpectrum.valuation
+- def IsDedekindDomain.HeightOneSpectrum.valuationSubringAtPrime
+- theorem IsDedekindDomain.HeightOneSpectrum.valuationSubringAtPrime_eq_valuationSubring
+- theorem IsDedekindDomain.HeightOneSpectrum.valuationSubringAtPrime_le_valuation
+- theorem IsDedekindDomain.HeightOneSpectrum.valuationSubringAtPrime_toSubring
+- theorem IsDedekindDomain.HeightOneSpectrum.valuationSubring_valuation_injective
+- theorem IsDedekindDomain.HeightOneSpectrum.valuation_def
+- theorem IsDedekindDomain.HeightOneSpectrum.valuation_div_le_one_iff
+- theorem IsDedekindDomain.HeightOneSpectrum.valuation_eq_one_iff_notMem
+- theorem IsDedekindDomain.HeightOneSpectrum.valuation_exists_uniformizer'
+- theorem IsDedekindDomain.HeightOneSpectrum.valuation_exists_uniformizer
+- theorem IsDedekindDomain.HeightOneSpectrum.valuation_injective
+- theorem IsDedekindDomain.HeightOneSpectrum.valuation_le_one
+- theorem IsDedekindDomain.HeightOneSpectrum.valuation_lt_one_iff_dvd
+- theorem IsDedekindDomain.HeightOneSpectrum.valuation_lt_one_iff_mem
+- theorem IsDedekindDomain.HeightOneSpectrum.valuation_of_algebraMap
+- theorem IsDedekindDomain.HeightOneSpectrum.valuation_of_mk'
+- theorem IsDedekindDomain.HeightOneSpectrum.valuation_surjective
+- theorem IsDedekindDomain.HeightOneSpectrum.valuation_uniformizer_ne_zero
+- theorem IsDedekindDomain.HeightOneSpectrum.valuedAdicCompletion_eq_valuation'
+- theorem IsDedekindDomain.HeightOneSpectrum.valuedAdicCompletion_eq_valuation
+- theorem IsDedekindDomain.HeightOneSpectrum.valuedAdicCompletion_surjective
+- theorem Rat.valuation_le_one_iff_den
+Added Mathlib/RingTheory/DedekindDomain/AdicValuation/Completion.lean
++ theorem IsDedekindDomain.HeightOneSpectrum.adicCompletion.coe_add
++ theorem IsDedekindDomain.HeightOneSpectrum.adicCompletion.coe_mul
++ theorem IsDedekindDomain.HeightOneSpectrum.adicCompletion.coe_one
++ theorem IsDedekindDomain.HeightOneSpectrum.adicCompletion.coe_toCompletion
++ theorem IsDedekindDomain.HeightOneSpectrum.adicCompletion.coe_valueGroupMulEquiv
++ theorem IsDedekindDomain.HeightOneSpectrum.adicCompletion.coe_zero
++ theorem IsDedekindDomain.HeightOneSpectrum.adicCompletion.continuous_ofCompletion
++ theorem IsDedekindDomain.HeightOneSpectrum.adicCompletion.continuous_toCompletion
++ theorem IsDedekindDomain.HeightOneSpectrum.adicCompletion.embedding_valueGroupOrderMonoidIso
++ def IsDedekindDomain.HeightOneSpectrum.adicCompletion.equiv
++ def IsDedekindDomain.HeightOneSpectrum.adicCompletion.equivCompletion
++ theorem IsDedekindDomain.HeightOneSpectrum.adicCompletion.ext
++ theorem IsDedekindDomain.HeightOneSpectrum.adicCompletion.extension_apply_eq_valued
++ theorem IsDedekindDomain.HeightOneSpectrum.adicCompletion.isUniformInducing_toCompletion
++ theorem IsDedekindDomain.HeightOneSpectrum.adicCompletion.mul_nonZeroDivisor_mem_adicCompletionIntegers
++ theorem IsDedekindDomain.HeightOneSpectrum.adicCompletion.ofCompletion_surjective
++ theorem IsDedekindDomain.HeightOneSpectrum.adicCompletion.ofCompletion_toCompletion
++ theorem IsDedekindDomain.HeightOneSpectrum.adicCompletion.toCompletion_add
++ theorem IsDedekindDomain.HeightOneSpectrum.adicCompletion.toCompletion_mul
++ theorem IsDedekindDomain.HeightOneSpectrum.adicCompletion.toCompletion_ofCompletion
++ theorem IsDedekindDomain.HeightOneSpectrum.adicCompletion.toCompletion_one
++ theorem IsDedekindDomain.HeightOneSpectrum.adicCompletion.toCompletion_surjective
++ theorem IsDedekindDomain.HeightOneSpectrum.adicCompletion.toCompletion_zero
++ def IsDedekindDomain.HeightOneSpectrum.adicCompletion.uniformEquiv
++ theorem IsDedekindDomain.HeightOneSpectrum.adicCompletion.valuationExtension_toCompletion
++ theorem IsDedekindDomain.HeightOneSpectrum.adicCompletion.valuation_ofCompletion
++ def IsDedekindDomain.HeightOneSpectrum.adicCompletion.valueGroupMulEquiv
++ theorem IsDedekindDomain.HeightOneSpectrum.adicCompletion.valueGroupOrderMonoidIso_coe
++ theorem IsDedekindDomain.HeightOneSpectrum.adicCompletion.valueGroupOrderMonoidIso_restrict
++ theorem IsDedekindDomain.HeightOneSpectrum.adicCompletion.valueGroup_eq
++ theorem IsDedekindDomain.HeightOneSpectrum.adicCompletion.valuedAdicCompletion_apply
++ theorem IsDedekindDomain.HeightOneSpectrum.adicCompletion.valued_coe
++ theorem IsDedekindDomain.HeightOneSpectrum.adicCompletion.valued_ofCompletion_apply
++ theorem IsDedekindDomain.HeightOneSpectrum.adicCompletion.valued_toCompletion_apply
++ structure IsDedekindDomain.HeightOneSpectrum.adicCompletion
++ theorem IsDedekindDomain.HeightOneSpectrum.adicCompletionIntegers.integers
++ theorem IsDedekindDomain.HeightOneSpectrum.adicCompletionIntegers.isUnit_iff_valued_eq_one
++ theorem IsDedekindDomain.HeightOneSpectrum.adicCompletionIntegers.mem_units_iff_valued_eq_one
++ def IsDedekindDomain.HeightOneSpectrum.adicCompletionIntegers
++ theorem IsDedekindDomain.HeightOneSpectrum.adicCompletion_valueGroup_eq
++ def IsDedekindDomain.HeightOneSpectrum.adicValued
++ theorem IsDedekindDomain.HeightOneSpectrum.adicValued_apply
++ theorem IsDedekindDomain.HeightOneSpectrum.algebraMap_adicCompletion
++ theorem IsDedekindDomain.HeightOneSpectrum.algebraMap_adicCompletionIntegers_apply
++ theorem IsDedekindDomain.HeightOneSpectrum.algebraMap_adicCompletion_toCompletion
++ theorem IsDedekindDomain.HeightOneSpectrum.coe_algebraMap_mem
++ theorem IsDedekindDomain.HeightOneSpectrum.coe_mem_adicCompletionIntegers
++ theorem IsDedekindDomain.HeightOneSpectrum.coe_smul_adicCompletion
++ theorem IsDedekindDomain.HeightOneSpectrum.coe_smul_adicCompletionIntegers
++ theorem IsDedekindDomain.HeightOneSpectrum.denseRange_algebraMap
++ theorem IsDedekindDomain.HeightOneSpectrum.mem_adicCompletionIntegers
++ theorem IsDedekindDomain.HeightOneSpectrum.notMem_adicCompletionIntegers
++ theorem IsDedekindDomain.HeightOneSpectrum.valuedAdicCompletion_eq_valuation'
++ theorem IsDedekindDomain.HeightOneSpectrum.valuedAdicCompletion_eq_valuation
++ theorem IsDedekindDomain.HeightOneSpectrum.valuedAdicCompletion_surjective
+Added Mathlib/RingTheory/DedekindDomain/AdicValuation/Ramification.lean
++ theorem IsDedekindDomain.HeightOneSpectrum.intValuation_liesOver
++ theorem IsDedekindDomain.HeightOneSpectrum.uniformContinuous_algebraMap_liesOver
++ theorem IsDedekindDomain.HeightOneSpectrum.valuation_liesOver
+Added Mathlib/RingTheory/DedekindDomain/AdicValuation/Valuation.lean
++ def IsDedekindDomain.HeightOneSpectrum.adicAbv
++ def IsDedekindDomain.HeightOneSpectrum.adicAbvDef
++ theorem IsDedekindDomain.HeightOneSpectrum.adicAbv_coe_eq_one_iff
++ theorem IsDedekindDomain.HeightOneSpectrum.adicAbv_coe_le_one
++ theorem IsDedekindDomain.HeightOneSpectrum.adicAbv_coe_lt_one_iff
++ theorem IsDedekindDomain.HeightOneSpectrum.adicAbv_of_algebraMap
++ theorem IsDedekindDomain.HeightOneSpectrum.adicAbv_of_mk'
++ theorem IsDedekindDomain.HeightOneSpectrum.eq_of_valuation_isEquiv_valuation
++ theorem IsDedekindDomain.HeightOneSpectrum.exists_intValuation_mul_sub_lt
++ theorem IsDedekindDomain.HeightOneSpectrum.exists_primeCompl_mul_eq_of_integer
++ theorem IsDedekindDomain.HeightOneSpectrum.exists_primeCompl_mul_eq_or_mul_eq
++ theorem IsDedekindDomain.HeightOneSpectrum.exists_valuation_sub_lt_of_integer
++ theorem IsDedekindDomain.HeightOneSpectrum.exp_le_intValuation_iff_emultiplicity_le
++ def IsDedekindDomain.HeightOneSpectrum.intAdicAbv
++ def IsDedekindDomain.HeightOneSpectrum.intAdicAbvDef
++ theorem IsDedekindDomain.HeightOneSpectrum.intAdicAbv_eq_one_iff
++ theorem IsDedekindDomain.HeightOneSpectrum.intAdicAbv_le_one
++ theorem IsDedekindDomain.HeightOneSpectrum.intAdicAbv_lt_one_iff
++ theorem IsDedekindDomain.HeightOneSpectrum.intValuation.le_max_iff_min_le
++ theorem IsDedekindDomain.HeightOneSpectrum.intValuation.map_add_le_max'
++ theorem IsDedekindDomain.HeightOneSpectrum.intValuation.map_mul'
++ theorem IsDedekindDomain.HeightOneSpectrum.intValuation.map_one'
++ theorem IsDedekindDomain.HeightOneSpectrum.intValuation.map_zero'
++ def IsDedekindDomain.HeightOneSpectrum.intValuation
++ def IsDedekindDomain.HeightOneSpectrum.intValuationDef
++ theorem IsDedekindDomain.HeightOneSpectrum.intValuationDef_if_neg
++ theorem IsDedekindDomain.HeightOneSpectrum.intValuationDef_if_pos
++ theorem IsDedekindDomain.HeightOneSpectrum.intValuationDef_zero
++ theorem IsDedekindDomain.HeightOneSpectrum.intValuation_apply
++ theorem IsDedekindDomain.HeightOneSpectrum.intValuation_def
++ theorem IsDedekindDomain.HeightOneSpectrum.intValuation_eq_exp_neg_multiplicity
++ theorem IsDedekindDomain.HeightOneSpectrum.intValuation_eq_one_iff
++ theorem IsDedekindDomain.HeightOneSpectrum.intValuation_eq_one_iff_mem_primeCompl
++ theorem IsDedekindDomain.HeightOneSpectrum.intValuation_exists_uniformizer
++ theorem IsDedekindDomain.HeightOneSpectrum.intValuation_if_neg
++ theorem IsDedekindDomain.HeightOneSpectrum.intValuation_le_exp_iff_le_emultiplicity
++ theorem IsDedekindDomain.HeightOneSpectrum.intValuation_le_one
++ theorem IsDedekindDomain.HeightOneSpectrum.intValuation_le_pow_iff_dvd
++ theorem IsDedekindDomain.HeightOneSpectrum.intValuation_le_pow_iff_mem
++ theorem IsDedekindDomain.HeightOneSpectrum.intValuation_lt_one_iff_dvd
++ theorem IsDedekindDomain.HeightOneSpectrum.intValuation_lt_one_iff_mem
++ theorem IsDedekindDomain.HeightOneSpectrum.intValuation_ne_zero'
++ theorem IsDedekindDomain.HeightOneSpectrum.intValuation_ne_zero
++ theorem IsDedekindDomain.HeightOneSpectrum.intValuation_singleton
++ theorem IsDedekindDomain.HeightOneSpectrum.intValuation_uniformizer
++ theorem IsDedekindDomain.HeightOneSpectrum.intValuation_zero_lt
++ theorem IsDedekindDomain.HeightOneSpectrum.isNonarchimedean_adicAbv
++ theorem IsDedekindDomain.HeightOneSpectrum.isNonarchimedean_adicAbvDef
++ theorem IsDedekindDomain.HeightOneSpectrum.isNonarchimedean_intAdicAbv
++ theorem IsDedekindDomain.HeightOneSpectrum.isNonarchimedean_intAdicAbvDef
++ theorem IsDedekindDomain.HeightOneSpectrum.mem_integers_of_valuation_le_one
++ def IsDedekindDomain.HeightOneSpectrum.valuation
++ def IsDedekindDomain.HeightOneSpectrum.valuationSubringAtPrime
++ theorem IsDedekindDomain.HeightOneSpectrum.valuationSubringAtPrime_eq_valuationSubring
++ theorem IsDedekindDomain.HeightOneSpectrum.valuationSubringAtPrime_le_valuation
++ theorem IsDedekindDomain.HeightOneSpectrum.valuationSubringAtPrime_toSubring
++ theorem IsDedekindDomain.HeightOneSpectrum.valuationSubring_valuation_injective
++ theorem IsDedekindDomain.HeightOneSpectrum.valuation_def
++ theorem IsDedekindDomain.HeightOneSpectrum.valuation_div_le_one_iff
++ theorem IsDedekindDomain.HeightOneSpectrum.valuation_eq_one_iff_notMem
++ theorem IsDedekindDomain.HeightOneSpectrum.valuation_exists_uniformizer'
++ theorem IsDedekindDomain.HeightOneSpectrum.valuation_exists_uniformizer
++ theorem IsDedekindDomain.HeightOneSpectrum.valuation_injective
++ theorem IsDedekindDomain.HeightOneSpectrum.valuation_le_one
++ theorem IsDedekindDomain.HeightOneSpectrum.valuation_lt_one_iff_dvd
++ theorem IsDedekindDomain.HeightOneSpectrum.valuation_lt_one_iff_mem
++ theorem IsDedekindDomain.HeightOneSpectrum.valuation_of_algebraMap
++ theorem IsDedekindDomain.HeightOneSpectrum.valuation_of_mk'
++ theorem IsDedekindDomain.HeightOneSpectrum.valuation_surjective
++ theorem IsDedekindDomain.HeightOneSpectrum.valuation_uniformizer_ne_zero
++ theorem Rat.valuation_le_one_iff_den
+Modified Mathlib/RingTheory/DedekindDomain/FiniteAdeleRing.lean
+
+Modified Mathlib/RingTheory/DedekindDomain/GaussLemma.lean
+
+Modified Mathlib/RingTheory/DedekindDomain/SInteger.lean
+
+Modified Mathlib/RingTheory/DedekindDomain/SelmerGroup.lean
+
+Modified Mathlib/RingTheory/Valuation/Discrete/IsDiscreteValuationRing.lean
+
+
+
+
+2026-10-17 09:16:35 ac190ff
+
+chore(NumberTheory/NumberField): remove a redundant Finite instance (#44594)
+The instance giving `Finite (𝓞 K ⧸ I)` for `I` maximal is now found automatically, through `RingOfIntegers.instNeZeroIdealOfIsMaximal` and the instance of `Ring.HasFiniteQuotients` saying that a quotient by a nonzero ideal is finite.
+
+ESTIMATED CHANGES
+Modified Mathlib/NumberTheory/NumberField/Ideal/Basic.lean
+
+
+
+
+2026-10-17 09:16:32 3b8786d
+
+feat(LinearAlgebra/LinearIndependent/Basic): scaling by right-regular elements preserves linear independence (#44442)
+Add `LinearIndependent.smul_of_isRightRegular` which says that a linearly independent family stays linearly independent when scaling with right regular elements.
+This generalizes `LinearIndependent.units_smul` which is the same statement for units instead of right-regular elements. The proof of `LinearIndependent.units_smul` is updated using the right-regular version.
+
+ESTIMATED CHANGES
+Modified Mathlib/LinearAlgebra/LinearIndependent/Basic.lean
++ theorem LinearIndependent.smul_of_isRightRegular
+
+
+
+2026-10-17 09:16:30 493f1f1
+
+feat(FieldTheory/Galois): intermediate fields corresponding to Sylow subgroups (#44299)
+* Prove existence of intermediate fields of prime power index in a Galois extension using Sylow's first theorem
+* Add missing versions of Sylow's first theorem and the Galois correspondence
+* Rename some lemmas for clarity and consistency
+
+ESTIMATED CHANGES
+Modified Mathlib.lean
+
+Modified Mathlib/FieldTheory/Galois/Basic.lean
++ theorem IntermediateField.le_fixedField_iff_le_fixingSubgroup
+- theorem IntermediateField.le_iff_le
++ theorem IsGalois.fixedField_le_iff_fixingSubgroup_le
+Modified Mathlib/FieldTheory/Galois/Infinite.lean
+
+Added Mathlib/FieldTheory/Galois/Sylow.lean
++ theorem IsGalois.exists_intermediateField_finrank_pow_prime
++ theorem IsGalois.exists_intermediateField_finrank_pow_prime_ge
++ theorem IsGalois.exists_intermediateField_finrank_pow_prime_le
++ theorem IsGalois.exists_intermediateField_finrank_pow_prime_le_le
+Modified Mathlib/GroupTheory/Nilpotent.lean
+
+Modified Mathlib/GroupTheory/Sylow.lean
++ theorem Sylow.exists_subgroup_card_pow_prime_ge
++/- theorem Sylow.exists_subgroup_card_pow_prime_le
+
+
+
+2026-10-17 09:16:27 6f274f9
+
+chore(Algebra/Group): use normal typeclass syntax for `Normal` (#44286)
+Use the normal syntax to make `Normal` a typeclass instead of `attribute [class] Normal`.
+This affects the proofs depending on this typeclass by making the member accessor `conj_mem` taking the `Normal` instance as an instance-implicit argument instead of an explicit one. They were refactored by simply letting the compiler infer the instance, which it always succeeds for the cases found in mathlib.
+
+ESTIMATED CHANGES
+Modified Mathlib/Algebra/Group/Subgroup/Defs.lean
+- structure AddSubgroup.Normal
+- structure Subgroup.Normal
+Modified Mathlib/CategoryTheory/Action/Concrete.lean
+
+Modified Mathlib/CategoryTheory/Galois/EssSurj.lean
+
+Modified Mathlib/GroupTheory/Nilpotent.lean
+
+Modified Mathlib/RepresentationTheory/Coinvariants.lean
+
+Modified Mathlib/Topology/Algebra/Group/Subgroup.lean
+
+
+
+
+2026-10-17 09:16:25 a51df88
+
+feat(Analysis/Complex/Arg): add `normalize_mul_star` (#43757)
+Add `Complex.normalize_mul_star`: multiplying `normalize z` (the unit complex number in the direction of `z`) by `star z` gives `‖z‖`.
+
+ESTIMATED CHANGES
+Modified Mathlib/Analysis/Complex/Arg.lean
++ theorem Complex.normalize_mul_star
+
+
+
+2026-10-17 09:16:22 f940227
+
+feat(Data/Nat/Init): dvd_div_of_mul_dvd_right (#43363)
+This PR adds `Nat.dvd_div_of_mul_dvd_right`, a version of `Nat.dvd_div_of_mul_dvd` with symmetry applied to the multiplication (we also make an alias of the latter to `dvd_div_of_mul_dvd_left` to mirror the API).
+This PR was made with the assistance of Claude code, but I have reviewed it myself.
+
+ESTIMATED CHANGES
+Modified Mathlib/Data/Nat/Init.lean
++ theorem Nat.dvd_div_of_mul_dvd_right
+
+
+
+2026-10-17 09:16:19 dd555de
+
+feat(Algebra/FreeAbelianGroup/Finsupp): add api for the coeff of a single element (#43349)
+Add three API lemmas computing  the coefficent of the elements `of x` for `x : X`  in the FreeAbelianGroup.
+
+ESTIMATED CHANGES
+Modified Mathlib/Algebra/FreeAbelianGroup/Finsupp.lean
++ theorem FreeAbelianGroup.coeff_of
++ theorem FreeAbelianGroup.coeff_of_of_ne
++ theorem FreeAbelianGroup.coeff_of_self
+
+
+
+2026-10-17 09:16:17 96bc85d
+
+feat(Algebra): add zpow_right_injective (#42914)
+Add `IsMulTorsionFree.zpow_right_injective_iff`, its injectivity alias, and the _inj version, together with their additive counterparts via to_additive.
+Move the natural power injectivity lemmas from `Mathlib.Algebra.Ring.NonZeroDivisors` to `Mathlib.Algebra.Group.Torsion` and add their additive counterparts via to_additive.
+Use natural scalar injectivity to move `CharZero.of_hasUniqueDiv` and its deprecated alias `CharZero.of_isAddTorsionFree` from `Mathlib.Algebra.Module.Torsion.Free` to `Mathlib.Algebra.Module.NatInt`, weakening `AddCommGroup M` to `AddCancelCommMonoid M`.
+
+ESTIMATED CHANGES
+Modified Mathlib/Algebra/Group/Torsion.lean
++ theorem IsMulTorsionFree.pow_right_inj
++ theorem IsMulTorsionFree.pow_right_injective
++ theorem IsMulTorsionFree.pow_right_injective_iff
++ theorem IsMulTorsionFree.zpow_right_inj
++ theorem IsMulTorsionFree.zpow_right_injective_iff
+Modified Mathlib/Algebra/Module/NatInt.lean
++ theorem CharZero.of_hasUniqueDiv
+Modified Mathlib/Algebra/Module/Torsion/Free.lean
+- theorem CharZero.of_hasUniqueDiv
+Modified Mathlib/Algebra/Ring/NonZeroDivisors.lean
+- theorem IsMulTorsionFree.pow_right_inj
+- theorem IsMulTorsionFree.pow_right_injective
+
+
+
+2026-10-17 09:16:15 c6f03d2
+
+feat(NielsenSchreier): add `to_additive` to Nielsen-Schreier theorem (#42675)
+The proof of the Nielsen-Schreier theorem is not currently `to_additive`ized because it relies on category theory infrastructure like `End`/`IsFreeGroupoid`/`Quiver` that are not `to_additive` and don't appear to be very amenable to adding it.
+Instead, `to_additive`ize Nielsen-Schreier by directly going across the isomorphism between `FreeGroup` and `Multiplicative (FreeAddGroup)`.
+
+ESTIMATED CHANGES
+Modified Mathlib/GroupTheory/FreeGroup/Basic.lean
++ def FreeAddGroup.freeAddGroupEquivAdditive
++ def FreeGroup.freeGroupEquivMultiplicative
+Modified Mathlib/GroupTheory/FreeGroup/IsFreeGroup.lean
++ theorem AddSubgroup.isFreeGroup_toSubgroup_iff
++ def FreeAddGroupBasis.freeGroupBasis
++ def FreeGroupBasis.freeAddGroupBasis
++ theorem Subgroup.isFreeAddGroup_toAddSubgroup_iff
++ theorem isFreeAddGroup_additive_iff
++ theorem isFreeGroup_multiplicative_iff
+Modified Mathlib/GroupTheory/FreeGroup/NielsenSchreier.lean
+
+Modified docs/1000.yaml
+
+
+
+
+2026-10-17 08:34:59 2e318fa
+
+chore(GroupTheory/Commutator/Basic): golf `map_commutator_eq` (#44951)
+
+ESTIMATED CHANGES
+Modified Mathlib/GroupTheory/Commutator/Basic.lean
+
+
+
+
 2026-10-17 01:01:01 fbc1661
 
 feat(ClickSuggestions): use the tactic as the button text (#44894)
