@@ -1,3 +1,385 @@
+2026-10-19 02:37:08 388bcfe
+
+doc: add oeis attributes (#44370)
+This PR adds a batch of 61 `@[oeis]` attributes.
+| # | OEIS link | Mathlib doc link | description | OEIS terms | note |
+|--:|:--|:--|:--|:--|:--|
+| 1 | [A000290](https://oeis.org/A000290) | [`IsSquare`](https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Group/Even.html#IsSquare) | squares | 0, 1, 4, 9, 16, 25, 36, 49, … | general monoid predicate; take `α = ℕ` |
+| 2 | [A005843](https://oeis.org/A005843) | [`Even`](https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Group/Even.html#Even) | nonnegative even numbers | 0, 2, 4, 6, 8, 10, 12, 14, … | `to_additive` sibling of `IsSquare`; take `α = ℕ` |
+| 3 | [A005408](https://oeis.org/A005408) | [`Odd`](https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Ring/Parity.html#Odd) | odd numbers | 1, 3, 5, 7, 9, 11, 13, 15, … | general semiring predicate; take `α = ℕ` |
+| 4 | [A005117](https://oeis.org/A005117) | [`Squarefree`](https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Squarefree/Basic.html#Squarefree) | squarefree numbers | 1, 2, 3, 5, 6, 7, 10, 11, … | general monoid predicate; take `R = ℕ` |
+| 5 | [A000796](https://oeis.org/A000796) | [`Real.pi`](https://leanprover-community.github.io/mathlib4_docs/Mathlib/Analysis/SpecialFunctions/Trigonometric/Basic.html#Real.pi) | decimal digits of pi | 3, 1, 4, 1, 5, 9, 2, 6, … | decimal expansion |
+| 6 | [A000166](https://oeis.org/A000166) | [`numDerangements`](https://leanprover-community.github.io/mathlib4_docs/Mathlib/Combinatorics/Derangements/Finite.html#numDerangements) | derangements (subfactorials) | 1, 0, 1, 2, 9, 44, 265, 1854, … |  |
+| 7 | [A000110](https://oeis.org/A000110) | [`Nat.bell`](https://leanprover-community.github.io/mathlib4_docs/Mathlib/Combinatorics/Enumerative/Bell.html#Nat.bell) | Bell numbers | 1, 1, 2, 5, 15, 52, 203, 877, … |  |
+| 8 | [A000108](https://oeis.org/A000108) | [`catalan`](https://leanprover-community.github.io/mathlib4_docs/Mathlib/Combinatorics/Enumerative/Catalan/Basic.html#catalan) | Catalan numbers | 1, 1, 2, 5, 14, 42, 132, 429, … |  |
+| 9 | [A000009](https://oeis.org/A000009) | [`Nat.Partition.odds`](https://leanprover-community.github.io/mathlib4_docs/Mathlib/Combinatorics/Enumerative/Partition/Basic.html#Nat.Partition.odds) | partitions into odd parts | 1, 1, 1, 2, 2, 3, 4, 5, … |  |
+| 10 | [A000009](https://oeis.org/A000009) | [`Nat.Partition.distincts`](https://leanprover-community.github.io/mathlib4_docs/Mathlib/Combinatorics/Enumerative/Partition/Basic.html#Nat.Partition.distincts) | partitions into distinct parts | 1, 1, 1, 2, 2, 3, 4, 5, … |  |
+| 11 | [A001318](https://oeis.org/A001318) | [`pentagonal`](https://leanprover-community.github.io/mathlib4_docs/Mathlib/Combinatorics/Enumerative/Pentagonal/Basic.html#pentagonal) | generalized pentagonal numbers | 0, 1, 2, 5, 7, 12, 15, 22, … | to match oeis, one can use this [#MWE](https://live.lean-lang.org/#codez=JYWwDg9gTgLgBAWQIYwBYBtgCM4FpdwBuALAHQDMArKQAwBQd%2BcA9EwAoCmAdjEgOYQuSdHC4BXEFg5QAznAAkAawAU5RbgCMASmYAmeXABm0OMB4c%2B0hYvmk8zRgQACAbQgdgcgII0aG8hoAHAA0cO6ecD6%2B5LoAbAC6jnAAJhyGcGDcvAJCIsqKcABccIAkhFpFcICohEUAvHD5cABU9eRNcAUE2ixwulqkMBAAcigMTMZQkb7%2BQXQAxByEwnAAMp4wpFBIXJY9GnAAPgB8pCBIYPWGYlyiFdU1h%2FXXnTQVZVpzC0urMuub2xy7A7HU7nZSXa7XYp3B7KJ5wDQvYpvIEnM4ZLL8QTCOYAY1QHBxBQAogBHMTAQikMwwUnkwjDGAfRYib6%2FLY7BEokFwWkUqk8Xn0lCkGQATxAICZXzWG3ZAM5R1R50F%2FJpZIpDJF4pAXLRygIAHb3vNmSsZX8OS9FdyVdTBZqxRLdaDDeVrWjMjxMbkkjIOADhDIIHBUDAYGAZIVmMwwFAIIssOgODJSNA%2BMw%2FWTuDiOJgsMxkhAcTJmABlDhZrg5vNl0U8fEwYA45hRDQtqYBQKkUMgdCzcuVnOkVud0YEcaTaJxKUs81y%2BF7d2gz3ZLEiQAYRPVAImEWneTD9AfQQZDYYjUZjcYTSZTaYzFbE2dz2ALRZLA4fVaf%2BdLdbQHEbzZRDQ7ZTrE3YwL2%2Fb3o%2Bw6%2BDQMSxEAA) |
+| 12 | [A000326](https://oeis.org/A000326) | [`pentagonal`](https://leanprover-community.github.io/mathlib4_docs/Mathlib/Combinatorics/Enumerative/Pentagonal/Basic.html#pentagonal) | pentagonal numbers | 0, 1, 5, 12, 22, 35, 51, 70, … | matched with oeis when `k ≥ 0` |
+| 13 | [A006318](https://oeis.org/A006318) | [`Nat.largeSchroder`](https://leanprover-community.github.io/mathlib4_docs/Mathlib/Combinatorics/Enumerative/Schroder.html#Nat.largeSchroder) | large Schroeder numbers | 1, 2, 6, 22, 90, 394, 1806, 8558, … |  |
+| 14 | [A001003](https://oeis.org/A001003) | [`Nat.smallSchroder`](https://leanprover-community.github.io/mathlib4_docs/Mathlib/Combinatorics/Enumerative/Schroder.html#Nat.smallSchroder) | little Schroeder numbers | 1, 1, 3, 11, 45, 197, 903, 4279, … |  |
+| 15 | [A132393](https://oeis.org/A132393) | [`Nat.stirlingFirst`](https://leanprover-community.github.io/mathlib4_docs/Mathlib/Combinatorics/Enumerative/Stirling.html#Nat.stirlingFirst) | unsigned Stirling numbers, first kind | 1, 0, 1, 0, 1, 1, 0, 2, … | triangle, read by rows |
+| 16 | [A048993](https://oeis.org/A048993) | [`Nat.stirlingSecond`](https://leanprover-community.github.io/mathlib4_docs/Mathlib/Combinatorics/Enumerative/Stirling.html#Nat.stirlingSecond) | Stirling numbers, second kind | 1, 0, 1, 0, 1, 1, 0, 1, … | triangle, read by rows |
+| 17 | [A000045](https://oeis.org/A000045) | [`Int.fib`](https://leanprover-community.github.io/mathlib4_docs/Mathlib/Data/Int/Fib/Basic.html#Int.fib) | Fibonacci numbers | 0, 1, 1, 2, 3, 5, 8, 13, … | `ℤ`-valued version |
+| 18 | [A007318](https://oeis.org/A007318) | [`Nat.choose`](https://leanprover-community.github.io/mathlib4_docs/Mathlib/Data/Nat/Choose/Basic.html#Nat.choose) | Pascal's triangle | 1, 1, 1, 1, 2, 1, 1, 3, … | triangle, read by rows |
+| 19 | [A059481](https://oeis.org/A059481) | [`Nat.multichoose`](https://leanprover-community.github.io/mathlib4_docs/Mathlib/Data/Nat/Choose/Basic.html#Nat.multichoose) | multiset coefficients | 1, 1, 1, 1, 2, 3, 1, 3, … | triangle, read by rows |
+| 20 | [A000984](https://oeis.org/A000984) | [`Nat.centralBinom`](https://leanprover-community.github.io/mathlib4_docs/Mathlib/Data/Nat/Choose/Central.html#Nat.centralBinom) | central binomial coefficients | 1, 2, 6, 20, 70, 252, 924, 3432, … |  |
+| 21 | [A000142](https://oeis.org/A000142) | [`Nat.factorial`](https://leanprover-community.github.io/mathlib4_docs/Mathlib/Data/Nat/Factorial/Basic.html#Nat.factorial) | factorials | 1, 1, 2, 6, 24, 120, 720, 5040, … |  |
+| 22 | [A006882](https://oeis.org/A006882) | [`Nat.doubleFactorial`](https://leanprover-community.github.io/mathlib4_docs/Mathlib/Data/Nat/Factorial/DoubleFactorial.html#Nat.doubleFactorial) | double factorials | 1, 1, 2, 3, 8, 15, 48, 105, … |  |
+| 23 | [A000178](https://oeis.org/A000178) | [`Nat.superFactorial`](https://leanprover-community.github.io/mathlib4_docs/Mathlib/Data/Nat/Factorial/SuperFactorial.html#Nat.superFactorial) | superfactorials | 1, 1, 2, 12, 288, 34560, 24883200, 125411328000, … |  |
+| 24 | [A027746](https://oeis.org/A027746) | [`Nat.primeFactorsList`](https://leanprover-community.github.io/mathlib4_docs/Mathlib/Data/Nat/Factors.html#Nat.primeFactorsList) | prime factors with multiplicity | 1, 2, 3, 2, 2, 5, 2, 3, … | irregular triangle, read by rows |
+| 25 | [A000045](https://oeis.org/A000045) | [`Nat.fib`](https://leanprover-community.github.io/mathlib4_docs/Mathlib/Data/Nat/Fib/Basic.html#Nat.fib) | Fibonacci numbers | 0, 1, 1, 2, 3, 5, 8, 13, … |  |
+| 26 | [A006530](https://oeis.org/A006530) | [`Nat.maxPrimeFac`](https://leanprover-community.github.io/mathlib4_docs/Mathlib/Data/Nat/MaxPrimeFac.html#Nat.maxPrimeFac) | greatest prime factor | 1, 2, 3, 2, 5, 3, 7, 2, … | `a(1) = 1` convention |
+| 27 | [A000040](https://oeis.org/A000040) | [`Nat.Prime`](https://leanprover-community.github.io/mathlib4_docs/Mathlib/Data/Nat/Prime/Defs.html#Nat.Prime) | the primes | 2, 3, 5, 7, 11, 13, 17, 19, … |  |
+| 28 | [A020639](https://oeis.org/A020639) | [`Nat.minFac`](https://leanprover-community.github.io/mathlib4_docs/Mathlib/Data/Nat/Prime/Defs.html#Nat.minFac) | least prime factor | 1, 2, 3, 2, 5, 2, 7, 2, … | `a(1) = 1` convention |
+| 29 | [A027748](https://oeis.org/A027748) | [`Nat.primeFactors`](https://leanprover-community.github.io/mathlib4_docs/Mathlib/Data/Nat/PrimeFin.html#Nat.primeFactors) | distinct prime factors | 1, 2, 3, 2, 5, 2, 3, 7, … | irregular triangle, read by rows |
+| 30 | [A000010](https://oeis.org/A000010) | [`Nat.totient`](https://leanprover-community.github.io/mathlib4_docs/Mathlib/Data/Nat/Totient.html#Nat.totient) | Euler totient | 1, 1, 2, 2, 4, 2, 6, 4, … |  |
+| 31 | [A001358](https://oeis.org/A001358) | [`Nat.IsSemiprime`](https://leanprover-community.github.io/mathlib4_docs/Mathlib/NumberTheory/AlmostPrime.html#Nat.IsSemiprime) | semiprimes | 4, 6, 9, 10, 14, 15, 21, 22, … | predicate |
+| 32 | [A002322](https://oeis.org/A002322) | [`ArithmeticFunction.carmichael`](https://leanprover-community.github.io/mathlib4_docs/Mathlib/NumberTheory/ArithmeticFunction/Carmichael.html#ArithmeticFunction.carmichael) | Carmichael lambda | 1, 1, 2, 2, 4, 2, 6, 2, … |  |
+| 33 | [A008836](https://oeis.org/A008836) | [`ArithmeticFunction.liouville`](https://leanprover-community.github.io/mathlib4_docs/Mathlib/NumberTheory/ArithmeticFunction/Liouville.html#ArithmeticFunction.liouville) | Liouville lambda | 1, -1, -1, 1, -1, 1, -1, -1, … | matched with oeis when `z ≥ 1` |
+| 34 | [A001477](https://oeis.org/A001477) | [`ArithmeticFunction.id`](https://leanprover-community.github.io/mathlib4_docs/Mathlib/NumberTheory/ArithmeticFunction/Misc.html#ArithmeticFunction.id) | the nonnegative integers | 0, 1, 2, 3, 4, 5, 6, 7, … | |
+| 35 | [A001222](https://oeis.org/A001222) | [`ArithmeticFunction.cardFactors`](https://leanprover-community.github.io/mathlib4_docs/Mathlib/NumberTheory/ArithmeticFunction/Misc.html#ArithmeticFunction.cardFactors) | Omega(n): prime factors with multiplicity | 0, 1, 1, 2, 1, 2, 1, 3, … | |
+| 36 | [A001221](https://oeis.org/A001221) | [`ArithmeticFunction.cardDistinctFactors`](https://leanprover-community.github.io/mathlib4_docs/Mathlib/NumberTheory/ArithmeticFunction/Misc.html#ArithmeticFunction.cardDistinctFactors) | omega(n): distinct prime factors | 0, 1, 1, 1, 1, 2, 1, 1, … | |
+| 37 | [A008683](https://oeis.org/A008683) | [`ArithmeticFunction.moebius`](https://leanprover-community.github.io/mathlib4_docs/Mathlib/NumberTheory/ArithmeticFunction/Moebius.html#ArithmeticFunction.moebius) | Moebius mu | 1, -1, -1, 0, -1, 1, -1, 0, … | matched with oeis when `z ≥ 1` |
+| 38 | [A057427](https://oeis.org/A057427) | [`ArithmeticFunction.zeta`](https://leanprover-community.github.io/mathlib4_docs/Mathlib/NumberTheory/ArithmeticFunction/Zeta.html#ArithmeticFunction.zeta) | 1 for `n >= 1`, 0 at `n = 0` | 0, 1, 1, 1, 1, 1, 1, 1, … | |
+| 39 | [A164555](https://oeis.org/A164555) | [`bernoulli'`](https://leanprover-community.github.io/mathlib4_docs/Mathlib/NumberTheory/Bernoulli.html#bernoulli') | numerators of the "original" Bernoulli numbers | 1, 1, 1, 0, -1, 0, 1, 0, … | numerator |
+| 40 | [A027642](https://oeis.org/A027642) | [`bernoulli'`](https://leanprover-community.github.io/mathlib4_docs/Mathlib/NumberTheory/Bernoulli.html#bernoulli') | denominators of Bernoulli numbers | 1, 2, 6, 1, 30, 1, 42, 1, … | denominator |
+| 41 | [A027641](https://oeis.org/A027641) | [`bernoulli`](https://leanprover-community.github.io/mathlib4_docs/Mathlib/NumberTheory/Bernoulli.html#bernoulli) | numerators of Bernoulli numbers | 1, -1, 1, 0, -1, 0, 1, 0, … | numerator |
+| 42 | [A027642](https://oeis.org/A027642) | [`bernoulli`](https://leanprover-community.github.io/mathlib4_docs/Mathlib/NumberTheory/Bernoulli.html#bernoulli) | denominators of Bernoulli numbers | 1, 2, 6, 1, 30, 1, 42, 1, … | denominator |
+| 43 | [A002997](https://oeis.org/A002997) | [`Nat.IsCarmichael`](https://leanprover-community.github.io/mathlib4_docs/Mathlib/NumberTheory/CarmichaelNumber.html#Nat.IsCarmichael) | Carmichael numbers | 561, 1105, 1729, 2465, 2821, 6601, 8911, 10585, … | predicate |
+| 44 | [A003418](https://oeis.org/A003418) | [`Nat.lcmUpto`](https://leanprover-community.github.io/mathlib4_docs/Mathlib/NumberTheory/Chebyshev.html#Nat.lcmUpto) | lcm of `{1, ..., n}` | 1, 1, 2, 6, 12, 60, 60, 420, … |  |
+| 45 | [A027750](https://oeis.org/A027750) | [`Nat.divisors`](https://leanprover-community.github.io/mathlib4_docs/Mathlib/NumberTheory/Divisors.html#Nat.divisors) | divisors | 1, 1, 2, 1, 3, 1, 2, 4, … | triangle, read by rows |
+| 46 | [A027751](https://oeis.org/A027751) | [`Nat.properDivisors`](https://leanprover-community.github.io/mathlib4_docs/Mathlib/NumberTheory/Divisors.html#Nat.properDivisors) | proper divisors | 1, 1, 1, 1, 2, 1, 1, 2, … | irregular triangle, read by rows |
+| 47 | [A000396](https://oeis.org/A000396) | [`Nat.Perfect`](https://leanprover-community.github.io/mathlib4_docs/Mathlib/NumberTheory/Divisors.html#Nat.Perfect) | perfect numbers | 6, 28, 496, 8128, `33550336`, … |  |
+| 48 | [A005101](https://oeis.org/A005101) | [`Nat.Abundant`](https://leanprover-community.github.io/mathlib4_docs/Mathlib/NumberTheory/FactorisationProperties.html#Nat.Abundant) | abundant numbers | 12, 18, 20, 24, 30, 36, 40, 42, … |  |
+| 49 | [A005100](https://oeis.org/A005100) | [`Nat.Deficient`](https://leanprover-community.github.io/mathlib4_docs/Mathlib/NumberTheory/FactorisationProperties.html#Nat.Deficient) | deficient numbers | 1, 2, 3, 4, 5, 7, 8, 9, … |  |
+| 50 | [A005835](https://oeis.org/A005835) | [`Nat.Pseudoperfect`](https://leanprover-community.github.io/mathlib4_docs/Mathlib/NumberTheory/FactorisationProperties.html#Nat.Pseudoperfect) | pseudoperfect numbers | 6, 12, 18, 20, 24, 28, 30, 36, … |  |
+| 51 | [A006037](https://oeis.org/A006037) | [`Nat.Weird`](https://leanprover-community.github.io/mathlib4_docs/Mathlib/NumberTheory/FactorisationProperties.html#Nat.Weird) | weird numbers | 70, 836, 4030, 5830, 7192, 7912, 9272, 10430, … |  |
+| 52 | [A000215](https://oeis.org/A000215) | [`Nat.fermatNumber`](https://leanprover-community.github.io/mathlib4_docs/Mathlib/NumberTheory/Fermat.html#Nat.fermatNumber) | Fermat numbers | 3, 5, 17, 257, 65537, … |  |
+| 53 | [A001008](https://oeis.org/A001008) | [`harmonic`](https://leanprover-community.github.io/mathlib4_docs/Mathlib/NumberTheory/Harmonic/Defs.html#harmonic) | numerators of `H(n)` | 1, 3, 11, 25, 137, 49, 363, 761, … | numerator |
+| 54 | [A002805](https://oeis.org/A002805) | [`harmonic`](https://leanprover-community.github.io/mathlib4_docs/Mathlib/NumberTheory/Harmonic/Defs.html#harmonic) | denominators of `H(n)` | 1, 2, 6, 12, 60, 20, 140, 280, … | denominator |
+| 55 | [A001620](https://oeis.org/A001620) | [`Real.eulerMascheroniConstant`](https://leanprover-community.github.io/mathlib4_docs/Mathlib/NumberTheory/Harmonic/EulerMascheroni.html#Real.eulerMascheroniConstant) | decimal digits of the Euler-Mascheroni constant | 5, 7, 7, 2, 1, 5, 6, 6, … | decimal expansion |
+| 56 | [A000225](https://oeis.org/A000225) | [`mersenne`](https://leanprover-community.github.io/mathlib4_docs/Mathlib/NumberTheory/LucasLehmer.html#mersenne) | Mersenne numbers `2^n - 1` | 0, 1, 3, 7, 15, 31, 63, 127, … |  |
+| 57 | [A003010](https://oeis.org/A003010) | [`LucasLehmer.s`](https://leanprover-community.github.io/mathlib4_docs/Mathlib/NumberTheory/LucasLehmer.html#LucasLehmer.s) | Lucas-Lehmer sequence | 4, 14, 194, 37634, 1416317954, … |  |
+| 58 | [A230980](https://oeis.org/A230980) | [`Nat.primeCounting`](https://leanprover-community.github.io/mathlib4_docs/Mathlib/NumberTheory/PrimeCounting.html#Nat.primeCounting) | prime-counting `pi(n)` | 0, 0, 1, 2, 2, 3, 3, 4, 4, … |  |
+| 59 | [A034386](https://oeis.org/A034386) | [`primorial`](https://leanprover-community.github.io/mathlib4_docs/Mathlib/NumberTheory/Primorial.html#primorial) | primorials `n#` | 1, 1, 2, 6, 6, 30, 30, 210, … |  |
+| 60 | [A001622](https://oeis.org/A001622) | [`Real.goldenRatio`](https://leanprover-community.github.io/mathlib4_docs/Mathlib/NumberTheory/Real/GoldenRatio.html#Real.goldenRatio) | decimal digits of the golden ratio | 1, 6, 1, 8, 0, 3, 3, 9, … | decimal expansion |
+| 61 | [A000005](https://oeis.org/A000005) | [`ArithmeticFunction.sigma`](https://leanprover-community.github.io/mathlib4_docs/Mathlib/NumberTheory/ArithmeticFunction/Misc.html#ArithmeticFunction.sigma) | sum of `k`th powers of divisors | 1, 2, 2, 3, 2, 4, 2, 4, … | values for `k = 0`, `n > 0` |
+
+ESTIMATED CHANGES
+Modified Mathlib/Algebra/Group/Even.lean
+
+Modified Mathlib/Algebra/Ring/Parity.lean
+
+Modified Mathlib/Algebra/Squarefree/Basic.lean
+
+Modified Mathlib/Analysis/SpecialFunctions/Trigonometric/Basic.lean
+
+Modified Mathlib/Combinatorics/Derangements/Finite.lean
+
+Modified Mathlib/Combinatorics/Enumerative/Bell.lean
+
+Modified Mathlib/Combinatorics/Enumerative/Catalan/Basic.lean
+
+Modified Mathlib/Combinatorics/Enumerative/Partition/Basic.lean
+
+Modified Mathlib/Combinatorics/Enumerative/Pentagonal/Basic.lean
+
+Modified Mathlib/Combinatorics/Enumerative/Schroder.lean
+
+Modified Mathlib/Combinatorics/Enumerative/Stirling.lean
+
+Modified Mathlib/Data/Int/Fib/Basic.lean
+
+Modified Mathlib/Data/Nat/Choose/Basic.lean
+
+Modified Mathlib/Data/Nat/Choose/Central.lean
+
+Modified Mathlib/Data/Nat/Factorial/Basic.lean
+
+Modified Mathlib/Data/Nat/Factorial/DoubleFactorial.lean
+
+Modified Mathlib/Data/Nat/Factorial/SuperFactorial.lean
+
+Modified Mathlib/Data/Nat/Factors.lean
+
+Modified Mathlib/Data/Nat/Fib/Basic.lean
+
+Modified Mathlib/Data/Nat/MaxPrimeFac.lean
+
+Modified Mathlib/Data/Nat/Prime/Defs.lean
+
+Modified Mathlib/Data/Nat/PrimeFin.lean
+
+Modified Mathlib/Data/Nat/Totient.lean
+
+Modified Mathlib/NumberTheory/AlmostPrime.lean
+
+Modified Mathlib/NumberTheory/ArithmeticFunction/Carmichael.lean
+
+Modified Mathlib/NumberTheory/ArithmeticFunction/Liouville.lean
+
+Modified Mathlib/NumberTheory/ArithmeticFunction/Misc.lean
+
+Modified Mathlib/NumberTheory/ArithmeticFunction/Moebius.lean
+
+Modified Mathlib/NumberTheory/ArithmeticFunction/Zeta.lean
+
+Modified Mathlib/NumberTheory/Bernoulli.lean
+
+Modified Mathlib/NumberTheory/CarmichaelNumber.lean
+
+Modified Mathlib/NumberTheory/Chebyshev.lean
+
+Modified Mathlib/NumberTheory/Divisors.lean
+
+Modified Mathlib/NumberTheory/FactorisationProperties.lean
+
+Modified Mathlib/NumberTheory/Fermat.lean
+
+Modified Mathlib/NumberTheory/Harmonic/Defs.lean
+
+Modified Mathlib/NumberTheory/Harmonic/EulerMascheroni.lean
+
+Modified Mathlib/NumberTheory/LucasLehmer.lean
+
+Modified Mathlib/NumberTheory/PrimeCounting.lean
+
+Modified Mathlib/NumberTheory/Primorial.lean
+
+Modified Mathlib/NumberTheory/Real/GoldenRatio.lean
+
+
+
+
+2026-10-19 01:27:14 a0173d2
+
+chore: remove unnecessary set_option lines (#45012)
+I removed 41 unnecessary `set_option` line(s) across 24 file(s).
+
+ESTIMATED CHANGES
+Modified Mathlib/Algebra/Group/End.lean
+
+Modified Mathlib/Algebra/Homology/DerivedCategory/Ext/Map.lean
+
+Modified Mathlib/Algebra/Homology/DerivedCategory/ShortExact.lean
+
+Modified Mathlib/Algebra/Homology/Embedding/ExtendHomotopy.lean
+
+Modified Mathlib/Algebra/Homology/HomotopyCategory/DegreewiseSplit.lean
+
+Modified Mathlib/Algebra/Homology/HomotopyCategory/Pretriangulated.lean
+
+Modified Mathlib/Algebra/Homology/HomotopyCategory/Triangulated.lean
+
+Modified Mathlib/Analysis/Calculus/ContDiff/Basic.lean
+
+Modified Mathlib/CategoryTheory/Monad/Adjunction.lean
+
+Modified Mathlib/CategoryTheory/Monad/Coequalizer.lean
+
+Modified Mathlib/CategoryTheory/Monad/Limits.lean
+
+Modified Mathlib/Combinatorics/SimpleGraph/Walk/Maps.lean
+
+Modified Mathlib/Computability/Reduce.lean
+
+Modified Mathlib/Geometry/RingedSpace/PresheafedSpace/Gluing.lean
+
+Modified Mathlib/MeasureTheory/OuterMeasure/AE.lean
+
+Modified Mathlib/NumberTheory/NumberField/InfiniteAdeleRing.lean
+
+Modified Mathlib/Order/Filter/Prod.lean
+
+Modified Mathlib/Order/Filter/Ultrafilter/Basic.lean
+
+Modified Mathlib/Order/Int/ConditionallyCompleteOrder.lean
+
+Modified Mathlib/SetTheory/Cardinal/HasCardinalLT.lean
+
+Modified Mathlib/Topology/CompactOpen.lean
+
+Modified Mathlib/Topology/Constructions.lean
+
+Modified Mathlib/Topology/Homeomorph/Lemmas.lean
+
+Modified Mathlib/Topology/OmegaCompletePartialOrder.lean
+
+
+
+
+2026-10-18 20:50:08 5b040b8
+
+fix(Tactic/CategoryTheory/Slice): do not generate redundant goals (#44569)
+This PR fixes the `slice`/`slice_lhs`/`slice_rhs` tactics to not generate goals other than the intended one. The fix to use the `lhs` and `rhs` conv mode tactics instead of `congr` (which generates multiple goals).
+This is a step towards supporting the multiGoal linter in `conv` mode, but is also a nice fix on its own.
+
+ESTIMATED CHANGES
+Modified Mathlib/Tactic/CategoryTheory/Slice.lean
+
+Modified MathlibTest/CategoryTheory/Slice.lean
+
+
+
+
+2026-10-18 20:09:45 809ed2c
+
+feat(RingTheory/Ideal/Colon): add `colon_eq_top_iff_le` (#44965)
+This PR adds `colon_eq_top_iff_le`, a submodule version of the already existing `colon_eq_top_iff_subset`.
+
+ESTIMATED CHANGES
+Modified Mathlib/RingTheory/Ideal/Colon.lean
++ theorem Submodule.colon_eq_top_iff_le
++/- theorem Submodule.colon_eq_top_iff_subset
+
+
+
+2026-10-18 11:37:35 bbeef91
+
+feat(MvPolynomial): ideal generated by indeterminates in a polynomial ring over a domain is prime (#41399)
+
+ESTIMATED CHANGES
+Modified Mathlib/Algebra/MvPolynomial/Variables.lean
++ theorem MvPolynomial.aeval_ite_mem_eq
+Modified Mathlib/RingTheory/AdicCompletion/Completeness.lean
+
+Modified Mathlib/RingTheory/Ideal/Maps.lean
++/- theorem RingHom.ker_isPrime
+Modified Mathlib/RingTheory/MvPolynomial/Ideal.lean
++ theorem MvPolynomial.fg_idealOfVars
+- theorem MvPolynomial.idealOfVars_fg
++ theorem MvPolynomial.isPrime_idealOfVars
++ theorem MvPolynomial.span_X_image_eq_ker_aeval_ite_mem
++ theorem MvPolynomial.span_X_image_isPrime
+
+
+
+2026-10-18 09:48:47 8ca2200
+
+chore(Translate/Core): remove `allowAutoName` configuration option (#44977)
+The `allowAutoName` configuration option is never used, so we remove it. The behaviour can still be controlled via `set_option linter.translate.generateName false`
+
+ESTIMATED CHANGES
+Modified Mathlib/Tactic/Translate/Core.lean
+
+
+
+
+2026-10-18 09:39:11 d6b1910
+
+chore(MathlibTest): remove `mkDocComment` (#44972)
+Remove `mkDocComment` from `MathlibTest/willRoundTrip.lean`, which is unused since #44879.
+
+ESTIMATED CHANGES
+Modified MathlibTest/willRoundTrip.lean
+- def mkDocComment
+
+
+
+2026-10-18 08:52:36 278a6ff
+
+feat(ModularForms/SlashActions): more theorems for slash actions (sub,pow,zpow,inv) (#44356)
+
+ESTIMATED CHANGES
+Modified Mathlib/NumberTheory/ModularForms/SlashActions.lean
++ theorem ModularForm.inv_slash
++ theorem ModularForm.inv_slash_SL2
++ theorem ModularForm.pow_slash
++ theorem ModularForm.pow_slash_SL2
++ theorem ModularForm.zpow_slash
++ theorem ModularForm.zpow_slash_SL2
++ theorem SlashAction.sub_slash
+
+
+
+2026-10-18 08:25:53 84f0bff
+
+doc(Topology): update documentation to match variable name in code (#44987)
+
+ESTIMATED CHANGES
+Modified Mathlib/Topology/UniformSpace/Compact.lean
+
+
+
+
+2026-10-18 08:25:50 f0320d9
+
+feat(RingTheory/FractionalIdeal): add HasUniqueRoots instance (#40636)
+- The monoid of fractional ideals with respect to `S ≤ R⁰` is the localization of the monoid of ideals of `R` at the principal ideals generated by an element of `S`.
+- The target of a localization map of a monoid with unique roots has unique roots.
+- As a consequence, the monoid of fractional ideals has unique roots when the monoid of ideals does.
+A comment also records that the monoid of ideals of a Dedekind domain has unique roots only once `Mathlib.Algebra.GroupWithZero.Torsion` is imported.
+:robot: This PR was extracted from the [SKW project](https://github.com/xroblot/SKW) by Claude.
+
+ESTIMATED CHANGES
+Modified Mathlib/GroupTheory/MonoidLocalization/Basic.lean
++ theorem Submonoid.IsLocalizationMap.hasUniqueRoots
+Modified Mathlib/RingTheory/FractionalIdeal/Operations.lean
++ theorem FractionalIdeal.isLocalizationMap_coeIdealHom
+Modified Mathlib/RingTheory/Ideal/IsPrincipal.lean
++ theorem Ideal.mem_spanSubmonoid_iff
++ def Ideal.spanSubmonoid
++ theorem Ideal.spanSubmonoid_le_isPrincipalSubmonoid
++ theorem Ideal.spanSubmonoid_top
++ theorem Ideal.span_singleton_mem_spanSubmonoid
+
+
+
+2026-10-18 08:13:31 911003d
+
+feat(RingTheory/Valuation): valuation of an algebraic element (#40197)
+We prove that if `x` is algebraic over `K` then there exists some `n ≠ 0` such that the valuation of `x` raised to the `n`-th power is equal to the valuation of some element of `K`.
+
+ESTIMATED CHANGES
+Modified Mathlib.lean
+
+Added Mathlib/RingTheory/Valuation/Algebraic.lean
+
+Modified Mathlib/RingTheory/Valuation/Basic.lean
++ theorem Valuation.exists_map_eq_of_map_sum_eq_zero
+
+
+
+2026-10-18 07:19:10 f039e1b
+
+feat(Category/Abelian/Injective): interaction between `InjectiveResolution.extMk` and the connecting morphism (#43224)
+Given a short exact sequence `0 → X₁ → X₂ → X₃ → 0` and an injective resolution `R` of an object `Y`, we give a concrete computation of the connecting homomorphism $$Ext^n(X_1, Y) \to Ext^{n + 1}(X_3, Y)$$.
+
+ESTIMATED CHANGES
+Modified Mathlib/Algebra/Homology/DerivedCategory/Ext/Map.lean
+
+Modified Mathlib/Algebra/Homology/DerivedCategory/SingleTriangle.lean
++ theorem CategoryTheory.ShortComplex.ShortExact.descShortComplex_singleδ
+Modified Mathlib/Algebra/Homology/DerivedCategory/SmallShiftedHom.lean
++ theorem CochainComplex.HomComplex.CohomologyClass.toShiftedHom_mk
+Modified Mathlib/Algebra/Homology/HomotopyCategory/HomComplex.lean
++ def CochainComplex.HomComplex.Cocycle.comp
+Modified Mathlib/Algebra/Homology/HomotopyCategory/HomComplexShift.lean
++ theorem CochainComplex.HomComplex.Cocycle.shiftedHomComp_equivHomShift_symm
+Modified Mathlib/Algebra/Homology/HomotopyCategory/HomComplexSingle.lean
+
+Modified Mathlib/Algebra/Homology/HomotopyCategory/Pretriangulated.lean
+
+Modified Mathlib/Algebra/Homology/ShortComplex/Basic.lean
+
+Modified Mathlib/CategoryTheory/Abelian/Injective/Ext.lean
++/- theorem CategoryTheory.InjectiveResolution.add_extMk
++ theorem CategoryTheory.InjectiveResolution.extClass_comp_extMk
++/- theorem CategoryTheory.InjectiveResolution.extEquivCohomologyClass_extMk
++/- theorem CategoryTheory.InjectiveResolution.extMk_comp_mk₀
++/- theorem CategoryTheory.InjectiveResolution.extMk_zero
++/- theorem CategoryTheory.InjectiveResolution.mk₀_comp_extMk
++/- theorem CategoryTheory.InjectiveResolution.neg_extMk
++/- theorem CategoryTheory.InjectiveResolution.sub_extMk
++ theorem CategoryTheory.InjectiveResolution.δ_extMk
+Modified Mathlib/CategoryTheory/Shift/Basic.lean
++ theorem CategoryTheory.shiftFunctorZero'_eq_shiftFunctorZero
+Modified Mathlib/CategoryTheory/Shift/ShiftedHom.lean
+
+
+
+
 2026-10-18 00:43:37 44f0a20
 
 feat(Algebra/BigOperators): add theorems about prod of rotate of list (#44953)
