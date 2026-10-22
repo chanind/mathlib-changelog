@@ -1,3 +1,511 @@
+2026-10-22 02:32:44 d888143
+
+chore(deps): bump the actions-version-updates group across 1 directory with 11 updates (#45153)
+Bumps the actions-version-updates group with 11 updates in the /.github/workflows directory:
+| Package | From | To |
+| --- | --- | --- |
+| [reviewdog/action-actionlint](https://github.com/reviewdog/action-actionlint) | `1.73.0` | `1.80.4` |
+| [leanprover/lean-action](https://github.com/leanprover/lean-action) | `1.6.1` | `1.6.2` |
+| [actions/upload-artifact](https://github.com/actions/upload-artifact) | `7.0.1` | `7.0.2` |
+| [actions/download-artifact](https://github.com/actions/download-artifact) | `8.0.1` | `8.0.2` |
+| [actions/create-github-app-token](https://github.com/actions/create-github-app-token) | `3.2.0` | `3.3.0` |
+| [docker/build-push-action](https://github.com/docker/build-push-action) | `7.3.0` | `7.4.0` |
+| [actions/attest-build-provenance](https://github.com/actions/attest-build-provenance) | `4.1.1` | `4.2.2` |
+| [corentinmusard/otel-cicd-action](https://github.com/corentinmusard/otel-cicd-action) | `4.1.0` | `4.2.0` |
+| [actions/cache](https://github.com/actions/cache) | `5.1.0` | `6.1.0` |
+| [pre-commit-ci/lite-action](https://github.com/pre-commit-ci/lite-action) | `1.1.0` | `1.2.0` |
+| [softprops/action-gh-release](https://github.com/softprops/action-gh-release) | `3.0.2` | `3.0.3` |
+
+ESTIMATED CHANGES
+Modified .github/workflows/actionlint.yml
+
+Modified .github/workflows/add_label_from_diff.yaml
+
+Modified .github/workflows/build_template.yml
+
+Modified .github/workflows/cache_test.yml
+
+Modified .github/workflows/check_pr_titles.yaml
+
+Modified .github/workflows/daily.yml
+
+Modified .github/workflows/decls-diff.yml
+
+Modified .github/workflows/docker_build.yml
+
+Modified .github/workflows/export_crossrefs.yml
+
+Modified .github/workflows/export_telemetry.yaml
+
+Modified .github/workflows/lake_cache_shadow.yml
+
+Modified .github/workflows/latest_import.yml
+
+Modified .github/workflows/nightly_merge_master.yml
+
+Modified .github/workflows/nolints.yml
+
+Modified .github/workflows/olean_report.yaml
+
+Modified .github/workflows/pre-commit.yml
+
+Modified .github/workflows/publish_tools.yml
+
+Modified .github/workflows/release.yml
+
+Modified .github/workflows/remove_deprecated_decls.yml
+
+Modified .github/workflows/rm_set_option.yml
+
+Modified .github/workflows/shake.yaml
+
+Modified .github/workflows/splice_bot_wf_run.yaml
+
+Modified .github/workflows/update_dependencies.yml
+
+Modified .github/workflows/weekly-lints.yml
+
+
+
+
+2026-10-21 23:30:03 6ea1739
+
+fix(Cache): retry uploads and report missing transfers (#44940)
+The cache retries failed uploads and reports missing transfers. `MATHLIB_CACHE_PARALLEL_MAX` controls parallel uploads and downloads.
+Uploads require curl 8.20 or later. CI installs a pinned binary from `leanprover-community/static-curl` in the jobs that run the tool on a GitHub runner. On Linux x86_64 and aarch64, downloads use the static binary 8.23.0 when the system curl is older than 7.84; other platforms run serial downloads in that case. On curl 8.18 and 8.19, which hang on parallel retries, downloads run in parallel without curl's retry flags.
+Cache uploads have a 20-minute timeout. Post-build checks have a 30-minute timeout.
+The cache tests workflow gains a `cache-get` job. It runs `lake exe cache get` on Ubuntu 26.04, whose curl 8.18 the tool runs without retries, and on Windows.
+The cache tests and the [CI upload check](https://github.com/leanprover-community/mathlib4/actions/runs/39428504802) pass.
+🤖
+
+ESTIMATED CHANGES
+Modified .github/actionlint.yml
+
+Modified .github/workflows/build_template.yml
+
+Modified .github/workflows/cache_test.yml
+
+Modified Cache/CI.md
+
+Modified Cache/IO.lean
++ structure Cache.IO.CurlMode
++/- def Cache.IO.getCurl
++/- def Cache.IO.runCurl
++/- def Cache.IO.validateCurl
+Modified Cache/Main.lean
+
+Modified Cache/README.md
+
+Modified Cache/Requests.lean
+
+Modified Cache/Test.lean
++ def Cache.Test.test_monitorCurl_counts_unreported_transfers
+Modified Cache/Upload/Curl.lean
+
+Modified docs/workflows.md
+
+
+
+
+2026-10-21 22:40:54 9aeb63f
+
+doc: add external proofs to the 100 theorems list (#44489)
+Adds attribution and links to Lean proofs for nine entries in docs/100.yaml: Feuerbach, Four Color, Fermat’s Last Theorem, Puiseux, the classification of Platonic solids, transcendence of π, Hermite–Lindemann, Morley and Pick.
+Updates Fermat’s note to distinguish the external proof from the separate mathlib-based FLT project.
+
+ESTIMATED CHANGES
+Modified docs/100.yaml
+
+
+
+
+2026-10-21 21:54:06 cc1ab32
+
+ci: pin ensure-sha-pinned-actions to the leanprover-community fork (#45143)
+This PR moves the SHA-pin check in `actionlint.yml` from kim-em's fork to [leanprover-community/github-actions-ensure-sha-pinned-actions](https://github.com/leanprover-community/github-actions-ensure-sha-pinned-actions), pinned to the head of its `improve-error-reporting` branch.
+- The new commit also checks the steps inside `parallel` step groups (leanprover-community/github-actions-ensure-sha-pinned-actions#1). Before, an unpinned action inside a group passed silently. #44603 adds the first such groups.
+- The old pin, `00f51cdb`, is no longer on any branch. The branch was rebased in April with the same error-reporting change.
+- zgosalvez/github-actions-ensure-sha-pinned-actions#288 was closed without being merged, so this PR drops the TODO to switch back to upstream.
+Run locally against master, the new commit passes all 59 workflow and composite-action files. actionlint passes on the edited file.
+🤖 Generated with [Claude Code](https://claude.com/claude-code)
+
+ESTIMATED CHANGES
+Modified .github/workflows/actionlint.yml
+
+
+
+
+2026-10-21 19:58:14 5f7b419
+
+feat(Algebra/QuadraticAlgebra): classify quadratic algebras over ℚ (#42393)
+Every `QuadraticAlgebra ℚ a b` with nonzero discriminant is isomorphic to a standard form `QuadraticAlgebra ℚ d 0` for a squarefree integer `d`, and this `d` is a complete invariant. Thus quadratic algebras over `ℚ` are classified by squarefree integers.
+
+ESTIMATED CHANGES
+Modified Mathlib.lean
+
+Added Mathlib/Algebra/QuadraticAlgebra/Rat.lean
++ theorem QuadraticAlgebra.Rat.exists_squarefree_algEquiv
++ theorem QuadraticAlgebra.Rat.nonempty_algEquiv_iff
+Modified Mathlib/Algebra/Squarefree/Basic.lean
++ theorem IsSquare.of_mul_right
+Added Mathlib/Data/Rat/Squarefree.lean
++ theorem Rat.sq_mul_squarefree_unique
+Modified Mathlib/RingTheory/Int/Basic.lean
++ theorem Int.eq_of_squarefree_of_isSquare_mul
+Modified Mathlib/RingTheory/Localization/NumDen.lean
++ theorem IsFractionRing.exists_sq_mul_squarefree
+
+
+
+2026-10-21 16:49:02 94d4e1d
+
+chore(LinearAlgebra/Matrix/Rank): remove unnecessary `nontriviality`s (#45117)
+
+ESTIMATED CHANGES
+Modified Mathlib/LinearAlgebra/Matrix/Rank.lean
+
+
+
+
+2026-10-21 16:48:59 4e006b9
+
+feat(Analysis/Matrix/Normed): prove `‖A i j‖ ≤ ‖A‖` for the operator norm (#44969)
+This PR proves the bound `‖A i j‖ ≤ ‖A‖` for the operator norm.
+
+ESTIMATED CHANGES
+Modified Mathlib/Analysis/CStarAlgebra/CStarMatrix.lean
+
+Modified Mathlib/Analysis/Matrix/Normed.lean
++ theorem Matrix.nnnorm_apply_le_frobenius_nnnorm
++ theorem Matrix.nnnorm_apply_le_linfty_opNNNorm
++ theorem Matrix.nnnorm_apply_le_nnnorm
+- theorem Matrix.nnnorm_entry_le_entrywise_sup_nnnorm
++ theorem Matrix.norm_apply_le_frobenius_norm
++ theorem Matrix.norm_apply_le_linfty_opNorm
++ theorem Matrix.norm_apply_le_norm
+- theorem Matrix.norm_entry_le_entrywise_sup_norm
+Modified Mathlib/NumberTheory/NumberField/House.lean
+
+Modified Mathlib/NumberTheory/SiegelsLemma.lean
+
+
+
+
+2026-10-21 16:48:56 cfc1b3d
+
+chore: more filter generalizations in tsum/tprod lemmas (#44511)
+The new statements are syntactically more general than the old ones.
+
+ESTIMATED CHANGES
+Modified Mathlib/MeasureTheory/Function/SimpleFunc.lean
+
+Modified Mathlib/MeasureTheory/Integral/Lebesgue/Basic.lean
+
+Modified Mathlib/MeasureTheory/Integral/Lebesgue/Countable.lean
+
+Modified Mathlib/Topology/Algebra/InfiniteSum/Basic.lean
++/- theorem Finset.tprod_subtype'
++/- theorem Finset.tprod_subtype
++/- theorem tprod_singleton
+
+
+
+2026-10-21 16:48:52 91cc66b
+
+chore: deprecate `FP.Float` (#44425)
+This PR deprecates `FP.Float`. This definition is very poorly documented, has not been touched since the port, and says it is experimental. Nowadays, lean core has a `Float` type with the ability to prove things about it, so I think it's better to remove `FP.Float`.
+This PR is motivated by a new concrete instances linter. The parameter `[C : FloatCfg]` appearing in this file causes this linter to warn.
+
+ESTIMATED CHANGES
+Modified Mathlib/Algebra/Order/Interval/Basic.lean
+
+Modified Mathlib/Data/FP/Basic.lean
+
+
+
+
+2026-10-21 16:48:49 7f647dd
+
+chore: fix a non-reducible diamond in `MvPowerSeries` (#44400)
+The following fails before the PR, succeeds after it:
+```
+example : ((MvPowerSeries.instCommRingRestricted
+    c).toNonUnitalSemiring : NonUnitalSemiring (MvPowerSeries.Restricted S c)) =
+    NonUnitalCommRing.toNonUnitalCommSemiring.toNonUnitalSemiring := by
+  with_implicit rfl
+```
+
+ESTIMATED CHANGES
+Modified Mathlib/RingTheory/MvPowerSeries/Restricted.lean
+
+
+
+
+2026-10-21 16:48:46 573535a
+
+feat(Analysis/Normed/Ring/WithAbs): more API for `AbsoluteValue.under` (#43841)
+This PR adds more API for `AbsoluteValue.under`, following the analogous API for `Ideal.under`.
+
+ESTIMATED CHANGES
+Modified Mathlib/Analysis/Normed/Ring/WithAbs.lean
++ theorem AbsoluteValue.LiesOver.trans
++ theorem AbsoluteValue.over_def
++ theorem AbsoluteValue.under_apply
++ theorem AbsoluteValue.under_liesOver_iff
++ theorem AbsoluteValue.under_under
+
+
+
+2026-10-21 15:52:19 80dabc7
+
+chore: whitespace fixes (#45125)
+This PR fixes a small number of whitespace issues that the whitespace linter missed because of a bug in the Lean core pretty printer.
+The bug was fixed in https://github.com/leanprover/lean4/pull/15811, so starting from today's nightly, the whitespace linter finds them. The present PR backports the fixes from https://github.com/leanprover/downstream-lean4/pull/186 to mainline mathlib.
+
+ESTIMATED CHANGES
+Modified Mathlib/Algebra/Colimit/DirectLimit.lean
++/- theorem DirectLimit.NonUnitalRing.hom_ext
+Modified Mathlib/CategoryTheory/Comma/StructuredArrow/Basic.lean
+
+Modified Mathlib/Geometry/Manifold/VectorBundle/CovariantDerivative/LeviCivita.lean
+
+Modified Mathlib/LinearAlgebra/Span/Basic.lean
+
+Modified Mathlib/RingTheory/Flat/FaithfullyFlat/Basic.lean
++/- theorem Module.FaithfullyFlat.zero_iff_rTensor_zero
+Modified Mathlib/Tactic/Algebra/Basic.lean
++/- def Mathlib.Tactic.Algebra.evalCast
+Modified Mathlib/Tactic/Ring/Common.lean
+
+
+
+
+2026-10-21 15:52:15 88ae511
+
+chore(Analysis/Calculus/FDeriv/Analytic): tag more @[fun_prop] (#45102)
+
+ESTIMATED CHANGES
+Modified Mathlib/Analysis/Calculus/FDeriv/Analytic.lean
+
+
+
+
+2026-10-21 14:10:38 a2f40e9
+
+chore: bump ProofWidgets to v0.0.118 (#45113)
+This PR bumps ProofWidgets and adjusts usages of `ProofWidgets.Html` which is now `protected`.
+
+ESTIMATED CHANGES
+Modified Mathlib/Tactic/ClickSuggestions.lean
+
+Modified Mathlib/Tactic/ClickSuggestions/SectionState.lean
++/- def Mathlib.Tactic.ClickSuggestions.renderSection
+Modified Mathlib/Tactic/ClickSuggestions/TryPremises.lean
+
+Modified Mathlib/Tactic/ClickSuggestions/Unfold.lean
+
+Modified Mathlib/Tactic/ClickSuggestions/Util.lean
++/- def Mathlib.Tactic.ClickSuggestions.Premise.toHtml
++/- def Mathlib.Tactic.ClickSuggestions.constToHtml
++/- def Mathlib.Tactic.ClickSuggestions.exprToHtml
++/- def Mathlib.Tactic.ClickSuggestions.formatToHtmlWithDoc
++/- def Mathlib.Tactic.ClickSuggestions.mkSuggestion
++/- def Mathlib.Tactic.ClickSuggestions.tacticToHtml
+Modified Mathlib/Tactic/Widget/CommDiag.lean
++/- def Mathlib.Tactic.Widget.commSquareM?
++/- def Mathlib.Tactic.Widget.commTriangleM?
++/- def Mathlib.Tactic.Widget.mkCommDiag
+Modified Mathlib/Tactic/Widget/LibraryRewrite.lean
++/- def Mathlib.Tactic.LibraryRewrite.rpc
+Modified Mathlib/Tactic/Widget/SelectPanelUtils.lean
+
+Modified Mathlib/Tactic/Widget/StringDiagram.lean
++/- def Mathlib.Tactic.Widget.StringDiagram.mkEqHtml
++/- def Mathlib.Tactic.Widget.StringDiagram.rpc
++/- def Mathlib.Tactic.Widget.StringDiagram.stringEqM?
++/- def Mathlib.Tactic.Widget.StringDiagram.stringM?
++/- def Mathlib.Tactic.Widget.StringDiagram.stringMorOrEqM?
+Modified MathlibTest/ClickSuggestions/TestImpl.lean
+
+Modified lake-manifest.json
+
+
+
+
+2026-10-21 12:46:02 e83c9ea
+
+feat: use `IsApply` for `FiniteMeasure` (#45123)
+
+ESTIMATED CHANGES
+Modified Mathlib/MeasureTheory/Measure/FiniteMeasure.lean
+- theorem MeasureTheory.FiniteMeasure.coeFn_add
+- theorem MeasureTheory.FiniteMeasure.coeFn_smul
+- theorem MeasureTheory.FiniteMeasure.coeFn_zero
+Modified Mathlib/MeasureTheory/Measure/ProbabilityMeasure.lean
+
+
+
+
+2026-10-21 11:53:41 903930a
+
+feat: use `IsApply` for `BoundedContinuousFunction` (#45087)
+
+ESTIMATED CHANGES
+Modified Mathlib/Analysis/Fourier/FourierTransform.lean
+
+Modified Mathlib/Analysis/SpecialFunctions/MulExpNegMulSqIntegral.lean
+
+Modified Mathlib/MeasureTheory/Integral/BoundedContinuousFunction.lean
+
+Modified Mathlib/MeasureTheory/Measure/FiniteMeasure.lean
+- theorem MeasureTheory.FiniteMeasure.smul_apply
+Modified Mathlib/MeasureTheory/Measure/HasOuterApproxClosed.lean
+
+Modified Mathlib/MeasureTheory/Measure/ProbabilityMeasure.lean
+
+Modified Mathlib/Topology/ContinuousMap/Bounded/Basic.lean
+- def BoundedContinuousFunction.coeFnMonoidHom
+- theorem BoundedContinuousFunction.coe_mul
+- theorem BoundedContinuousFunction.coe_one
+- theorem BoundedContinuousFunction.coe_pow
+- theorem BoundedContinuousFunction.coe_prod
+- theorem BoundedContinuousFunction.coe_smul
+- theorem BoundedContinuousFunction.coe_sub
+- theorem BoundedContinuousFunction.intCast_apply
+- theorem BoundedContinuousFunction.mul_apply
+- theorem BoundedContinuousFunction.natCast_apply
+- theorem BoundedContinuousFunction.pow_apply
+- theorem BoundedContinuousFunction.prod_apply
+- theorem BoundedContinuousFunction.smul_apply
+- theorem BoundedContinuousFunction.sub_apply
+Modified Mathlib/Topology/ContinuousMap/Bounded/Normed.lean
+- theorem BoundedContinuousFunction.coe_intCast
+- theorem BoundedContinuousFunction.coe_natCast
+- theorem BoundedContinuousFunction.coe_neg
+- theorem BoundedContinuousFunction.coe_zsmul
+- theorem BoundedContinuousFunction.neg_apply
+- theorem BoundedContinuousFunction.zsmul_apply
+Modified Mathlib/Topology/ContinuousMap/BoundedCompactlySupported.lean
+
+Modified Mathlib/Topology/ContinuousMap/StoneWeierstrass.lean
+
+Modified Mathlib/Topology/UrysohnsBounded.lean
+
+
+
+
+2026-10-21 09:51:07 c31114f
+
+feat: use `IsApply` for `SimpleFunc` (#45077)
+
+ESTIMATED CHANGES
+Modified Mathlib/Analysis/Fourier/PoissonSummation.lean
+
+Modified Mathlib/Analysis/SpecialFunctions/MulExpNegMulSqIntegral.lean
+
+Modified Mathlib/Geometry/Euclidean/Volume/Measure.lean
+
+Modified Mathlib/MeasureTheory/Function/ConditionalExpectation/PullOut.lean
+
+Modified Mathlib/MeasureTheory/Function/SimpleFunc.lean
+- theorem MeasureTheory.SimpleFunc.coe_div
+- theorem MeasureTheory.SimpleFunc.coe_intCast
+- theorem MeasureTheory.SimpleFunc.coe_inv
+- theorem MeasureTheory.SimpleFunc.coe_mul
+- theorem MeasureTheory.SimpleFunc.coe_natCast
+- theorem MeasureTheory.SimpleFunc.coe_one
+- theorem MeasureTheory.SimpleFunc.coe_pow
+- theorem MeasureTheory.SimpleFunc.coe_smul
+- theorem MeasureTheory.SimpleFunc.coe_zpow
+- theorem MeasureTheory.SimpleFunc.div_apply
+- theorem MeasureTheory.SimpleFunc.inv_apply
+- theorem MeasureTheory.SimpleFunc.mul_apply
+- theorem MeasureTheory.SimpleFunc.pow_apply
+- theorem MeasureTheory.SimpleFunc.smul_apply
+- theorem MeasureTheory.SimpleFunc.zpow_apply
+Modified Mathlib/MeasureTheory/Function/SimpleFuncDenseLp.lean
+
+Modified Mathlib/MeasureTheory/Function/StronglyMeasurable/Basic.lean
+
+Modified Mathlib/MeasureTheory/Integral/Bochner/L1.lean
+
+Modified Mathlib/MeasureTheory/Integral/Bochner/Set.lean
+
+Modified Mathlib/MeasureTheory/Integral/Bochner/VitaliCaratheodory.lean
+
+Modified Mathlib/MeasureTheory/Integral/FinMeasAdditive.lean
+
+Modified Mathlib/MeasureTheory/Integral/Lebesgue/Add.lean
+
+Modified Mathlib/MeasureTheory/Integral/Lebesgue/Basic.lean
+
+Modified Mathlib/MeasureTheory/Integral/Lebesgue/Countable.lean
+
+Modified Mathlib/NumberTheory/NumberField/CanonicalEmbedding/Basic.lean
+
+Modified Mathlib/NumberTheory/NumberField/CanonicalEmbedding/NormLeOne.lean
+
+Modified Mathlib/Probability/Kernel/Composition/CompProd.lean
+
+Modified Mathlib/Probability/Kernel/MeasurableLIntegral.lean
+
+Modified Mathlib/Probability/StrongLaw.lean
+
+
+
+
+2026-10-21 09:23:15 b575e0b
+
+chore: generalize lemmas about measurability of biUnion (#45097)
+Zulip discussion at [#mathlib4 > Set is a one-field structure @ 💬](https://leanprover.zulipchat.com/#narrow/channel/287929-mathlib4/topic/Set.20is.20a.20one-field.20structure/near/633036296)
+
+ESTIMATED CHANGES
+Modified Mathlib/MeasureTheory/MeasurableSpace/Defs.lean
++/- theorem MeasurableSet.biInter
++/- theorem Set.Finite.measurableSet_biInter
++/- theorem Set.Finite.measurableSet_biUnion
+Modified Mathlib/MeasureTheory/Measure/Continuity.lean
+
+Modified Mathlib/MeasureTheory/Measure/NullMeasurable.lean
++/- theorem Set.Finite.nullMeasurableSet_biInter
++/- theorem Set.Finite.nullMeasurableSet_biUnion
+Modified Mathlib/MeasureTheory/VectorMeasure/SetIntegral.lean
+
+Modified Mathlib/Probability/Process/Stopping.lean
+
+
+
+
+2026-10-21 08:47:19 7e47a88
+
+refactor: `Cardinal.card_le_iff` → `Ordinal.card_le_iff` (#45105)
+The declaration is `Ordinal.card`, not `Cardinal.card`.
+
+ESTIMATED CHANGES
+Modified Mathlib/SetTheory/Ordinal/Basic.lean
+- theorem Cardinal.card_le_iff
+- theorem Cardinal.card_le_of_le_ord
++ theorem Ordinal.card_le_iff
++ theorem Ordinal.card_le_of_le_ord
+
+
+
+2026-10-21 08:37:51 eb6d361
+
+chore: modulize `docs` (#45107)
+This PR turns `docs.lean` and the two `docs/` files (which only contain module docstrings, for inclusion in the docs page) into `module`s. 
+Note that building `docs` warns that non-modules are not allowed due to `mathlib`'s `requiresModuleSystem := true` lakefile setting. This only escapes CI because `docs` is never actually built by (mathlib) CI.
+
+ESTIMATED CHANGES
+Modified docs.lean
+
+Modified docs/Conv/Guide.lean
+
+Modified docs/Conv/Introduction.lean
+
+
+
+
 2026-10-21 00:36:40 1015608
 
 feat(Tactic/Linter/Header): access library root without cwd (#45061)
