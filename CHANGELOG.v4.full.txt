@@ -1,3 +1,214 @@
+2026-10-23 00:56:26 3d14fd9
+
+ci: retry an empty issue list in the new contributor check (#45179)
+The new contributor check sometimes gets an empty issues listing for an author who has many merged PRs. The workflow then adds the `new-contributor` label and posts the welcome comment by mistake, as on #45171 and #45173.
+This PR lists the closed issues again when the listing is empty, up to 3 attempts with 5 seconds between them. For an author with no closed issues, the check takes 10 seconds longer.
+In the last 200 runs of the check (17 to 22 October), 16 runs got an empty listing. In 13 of them (6.5% of all runs), the author had no closed issues, so these runs only get the 10-second delay. The other 3 runs got the incorrect empty listing. This PR adds the retry for these runs.
+🤖
+
+ESTIMATED CHANGES
+Modified .github/workflows/label_new_contributor.yml
+
+
+
+
+2026-10-22 22:25:50 d79fa7b
+
+chore(Algebra/FreeMonoid): deprecate `freeMonoidCongr_symm_of` (#45114)
+It is a syntactic specialisation of `freeMonoidCongr_of`. Add the lemma that is missing instead to prove `(freeMonoidCongr e).symm (of b) = of (e.symm b)` by simp.
+
+ESTIMATED CHANGES
+Modified Mathlib/Algebra/FreeMonoid/Basic.lean
++ theorem FreeMonoid.symm_freeMonoidCongr
+
+
+
+2026-10-22 21:38:44 d414f23
+
+feat(Algebra/Module/Submodule/Range): add `restrictScalars_comap` (#45180)
+This PR adds `restrictScalars_comap`, directly analogous to `restrictScalars_map` immediately above.
+
+ESTIMATED CHANGES
+Modified Mathlib/Algebra/Module/Submodule/Range.lean
++ theorem Submodule.restrictScalars_comap
+
+
+
+2026-10-22 19:46:43 ce51fd2
+
+ci: run the PR summary on the latest Python 3 (#45188)
+The PR summary job gets the latest Python 3 release from setup-python. The summary scripts use only the Python standard library, so the job installs no Python packages.
+🤖
+
+ESTIMATED CHANGES
+Modified .github/workflows/PR_summary.yml
+
+
+
+
+2026-10-22 14:38:27 0db93bb
+
+refactor(Tactic/Matrix): add shared Cert and Swaps modules for matrix tactics (#45127)
+Move matrix certificate helpers for matrix literals from the Echelon tactic namespace to a common module so they can be reused in other tactics.
+Two new modules are added:
+* `Tactic.Matrix.Cert` containing helpers for certifying matrix literal computations (e.g `certifyProductEq`)
+* `Tactic.Matrix.Swaps`: certifying row permutations (e.g `certifyPermEq`) of matrix literals.
+
+ESTIMATED CHANGES
+Modified Mathlib.lean
+
+Modified Mathlib/Tactic.lean
+
+Modified Mathlib/Tactic/Determinant/Echelon/Cert.lean
+- def Mathlib.Tactic.Determinant.certifyPermSign
+Modified Mathlib/Tactic/Echelon/Cert.lean
+- def Mathlib.Tactic.Echelon.ListMatrixLit.ofArray
+- structure Mathlib.Tactic.Echelon.ListMatrixLit
+- def Mathlib.Tactic.Echelon.certifyPermEq
+- def Mathlib.Tactic.Echelon.certifyProductEq
+- def Mathlib.Tactic.Echelon.certifyRowsEq
+- def Mathlib.Tactic.Echelon.decideCertifier
+- def Mathlib.Tactic.Echelon.mkSwapsLitQ
+Modified Mathlib/Tactic/Echelon/Core.lean
+- structure Mathlib.Tactic.Echelon.EntryCertifier
+Modified Mathlib/Tactic/Echelon/Rat.lean
+
+Modified Mathlib/Tactic/Echelon/Reflection.lean
+- theorem Mathlib.Tactic.Echelon.intCast_sign_permOfSwaps
+- def Mathlib.Tactic.Echelon.permOfSwaps
+Added Mathlib/Tactic/Matrix/Cert.lean
++ structure Mathlib.Tactic.Matrix.EntryCertifier
++ def Mathlib.Tactic.Matrix.ListMatrixLit.ofArray
++ structure Mathlib.Tactic.Matrix.ListMatrixLit
++ def Mathlib.Tactic.Matrix.certifyProductEq
++ def Mathlib.Tactic.Matrix.certifyRowsEq
++ def Mathlib.Tactic.Matrix.decideCertifier
+Added Mathlib/Tactic/Matrix/Swaps.lean
++ def Mathlib.Tactic.Matrix.certifyPermEq
++ def Mathlib.Tactic.Matrix.certifyPermSign
++ theorem Mathlib.Tactic.Matrix.intCast_sign_permOfSwaps
++ def Mathlib.Tactic.Matrix.mkSwapsLitQ
++ def Mathlib.Tactic.Matrix.permOfSwaps
+
+
+
+2026-10-22 14:38:24 cedbee5
+
+fix(tactic): skip implementation-detail declarations in `specialize_all` (#44379)
+This commit fixes a bug in the `specialize_all` tactic that causes incorrect behavior in `specialize_all; assumption`.
+In the original implementation of `specialize_all`, the statement `for h in ← getLCtx do` iterates over the entire local context without filtering out auxiliary declarations, particularly the theorem currently being proved. This allows the subsequent `assumption` tactic to directly use the local hypothesis produced by specializing that declaration, recursively “proving” the current theorem. This issue makes `tauto_set` unusable in many cases where it successfully executes `specialize_all` internally.
+Here are some examples of the bug in `specialize_all` (before the fix):
+```lean
+import Mathlib.Tactic.TautoSet
+/-- error: fail to show termination for
+  _example
+with errors
+failed to infer structural recursion:
+Cannot use parameter x:
+  failed to eliminate recursive application
+    _example x✝ rfl -/
+#guard_msgs (substring := true) in
+example (x : ℕ) : {x} ⊆ Set.univ := by tauto_set
+/-- error: fail to show termination for
+  _example -/
+#guard_msgs (substring := true) in
+example {α : Type} : α → False := by
+  intro x
+  specialize_all x
+  assumption
+```
+This issue does not cause Lean to accept the invalid proof, because it is rejected by the termination checker.
+I fixed this issue by adding
+```lean
+unless h.isImplementationDetail do
+```
+after the loop statement above to filter out all implementation-detail hypotheses, including the auxiliary declaration for the current theorem. I also added three regression tests in `MathlibTest/Tactic/TautoSet.lean`. All three compile successfully now, but fail with `error: fail to show termination for ...` before the fix.
+GPT-6-Astra was used to help locate the bug and translate the PR description to English.
+
+ESTIMATED CHANGES
+Modified Mathlib/Tactic/TautoSet.lean
+
+Modified MathlibTest/Tactic/TautoSet.lean
+
+
+
+
+2026-10-22 13:29:36 ba5499e
+
+feat(Algebra/Group/Even): a unit is a square iff its underlying element is a square (#45025)
+Added a simple but useful lemma (needed in our Hasse Principle project):
+```isSquare_coe_units_iff``` saying that an element in the units of a monoid is a square
+if and only if its underlying element in the monoid is a square.
+
+ESTIMATED CHANGES
+Modified Mathlib/Algebra/Ring/Parity.lean
++ theorem Units.isSquare_coe_iff
+
+
+
+2026-10-22 11:10:00 4530ed7
+
+doc: add remaining external proofs to the 100 theorems list (#45151)
+Add the remaining external formalizations to `docs/100.yaml`: independence of the parallel postulate, Euler’s polyhedron formula, Green’s theorem, Pascal’s hexagon theorem, the isoperimetric theorem, and Desargues’s theorem. Together with #44489, every entry now has an internal declaration or an external proof link.
+Also add Weiyi Wang’s Feuerbach proof and Chris Emery’s Four Color proof alongside the existing alternatives, pin the Compass statements, update the π and Hermite–Lindemann links, and incorporate the supplied credits and AI provenance. AI systems appear only in notes, never in author fields. CLT, Ceva, and Puiseux already have the supplied coverage.
+The changes from #44489 have landed on `master`; this PR contains the remaining additions and targets `master`.
+:robot: prepared with Codex
+
+ESTIMATED CHANGES
+Modified docs/100.yaml
+
+
+
+
+2026-10-22 10:42:31 5287c96
+
+feat(Algebra/CommRingCat): colimit of local ring via local hom (#39075)
+In this PR, we deal with filtered colimit of local ring via local homomorphisms, proving it is
+again local, with maximal ideal equal to the union of images of maximal ideals.
+Further more, we proved their residue field is colimit too (in category of local ring, residue field functor preserve colimit).
+
+ESTIMATED CHANGES
+Modified Mathlib.lean
+
+Modified Mathlib/Algebra/Category/Ring/FilteredColimits.lean
+
+Added Mathlib/Algebra/Category/Ring/FilteredColimitsLocal.lean
++ theorem CommRingCat.FilteredColimit.isLocalHom_desc
++ theorem CommRingCat.FilteredColimit.isLocalHom_ι
++ theorem CommRingCat.FilteredColimit.isLocalRing_of_isColimit
++ theorem CommRingCat.FilteredColimit.maximalIdeal_eq_iSup_of_isColimit
++ theorem CommRingCat.FilteredColimit.maximalIdeal_eq_iUnion_of_isColimit
++ theorem CommRingCat.FilteredColimit.nonunits_eq_iUnion_of_isColimit
++ theorem CommRingCat.FilteredColimit.residueField_eq_iUnion_fieldRange_of_isColimit
++ theorem CommRingCat.FilteredColimit.residueField_exists_rep
++ theorem CommRingCat.FilteredColimit.residueField_map_desc_eq_isColimitResidueFieldCocone_desc'
++ theorem CommRingCat.FilteredColimit.residueField_map_desc_eq_isColimitResidueFieldCocone_desc
+Modified Mathlib/AlgebraicGeometry/AffineTransitionLimit.lean
+
+
+
+
+2026-10-22 08:51:29 6fcf84e
+
+feat(Analysis/Matrix/GelfandRadius): the Gelfand radius of a block diagonal matrix (#44973)
+This PR computes the Gelfand radius of a block diagonal matrix. This is needed for #44983, and ultimately for #42985.
+
+ESTIMATED CHANGES
+Modified Mathlib/Analysis/Matrix/GelfandRadius.lean
++ theorem Matrix.gelfandRadius_blockDiagonal
+Modified Mathlib/Analysis/Matrix/Normed.lean
++ theorem Matrix.linfty_opNorm_isometry_blockDiagonal
+Modified Mathlib/Analysis/Normed/Algebra/GelfandRadius.lean
++ theorem Isometry.gelfandRadius_map
++ theorem MulOpposite.gelfandRadius_op
++ theorem MulOpposite.gelfandRadius_unop
++ theorem Pi.gelfandRadius_eq
++ theorem gelfandRadius_eq_of_norm_pow_eq
++ theorem gelfandRadius_le_of_norm_pow_le
++ theorem gelfandRadius_star
+
+
+
 2026-10-22 02:32:44 d888143
 
 chore(deps): bump the actions-version-updates group across 1 directory with 11 updates (#45153)
