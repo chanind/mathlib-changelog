@@ -1,3 +1,817 @@
+2026-10-23 17:08:42 4dc4384
+
+feat(NumberTheory/RamificationInertia): degrees of decomposition and inertia rings (#44283)
+Let `B` be an extension of a ring `A` with Galois group `G`, let `P` be a prime ideal of `B` lying over a prime ideal `p` of `A`, and let `R`, `R'` be a decomposition ring and an inertia ring of `P`. This PR computes the degrees in the tower `A ⊆ R ⊆ R' ⊆ B` in terms of the ramification index of `p` in `B`, its inertia degree and the number of prime ideals of `B` lying over `p`.
+Prepared with Claude Code 🤖
+
+ESTIMATED CHANGES
+Modified Mathlib/NumberTheory/RamificationInertia/HilbertTheory.lean
++ theorem Ideal.IsDecompositionRing.finrank_bot
++ theorem Ideal.IsDecompositionRing.finrank_top
++ theorem Ideal.IsInertiaRing.finrank_bot
++ theorem Ideal.IsInertiaRing.finrank_decompositionRing
++ theorem Ideal.IsInertiaRing.finrank_top
+
+
+
+2026-10-23 16:22:18 acd4f1e
+
+chore(Algebra/Module/Submodule/Map): automated extraction from #45221 (#45222)
+This PR was automatically created from PR #45221 by @Nicola9Falciola via a [review comment](https://github.com/leanprover-community/mathlib4/pull/45221#discussion_r4361223240) by @ocfnash.
+
+ESTIMATED CHANGES
+Modified Mathlib/Algebra/Module/Submodule/Map.lean
++ theorem Submodule.comp_mem_compatibleMaps
++ theorem Submodule.mem_compatibleMaps
++ theorem Submodule.one_mem_compatibleMaps
+
+
+
+2026-10-23 16:22:14 5e9fd0e
+
+chore(RingTheory/Ideal): drop the infiniteness assumption from the results using `Ideal.absNorm` (#44646)
+Now that the absolute norm of an ideal has the junk value `0` at the zero ideal, the results using it no longer need the ring to be infinite. This assumption is dropped from `Ideal.absNorm_under_dvd_absNorm` and from the results on finite places and adeles of a Dedekind domain with finite quotients.
+Prepared with Claude Code 🤖
+
+ESTIMATED CHANGES
+Modified Mathlib/NumberTheory/NumberField/AdeleRing.lean
+
+Modified Mathlib/NumberTheory/NumberField/Completion/FinitePlace.lean
+
+Modified Mathlib/NumberTheory/NumberField/FiniteAdeleRing.lean
+
+Modified Mathlib/RingTheory/FractionalIdeal/Norm.lean
+
+Modified Mathlib/RingTheory/Ideal/Int.lean
++/- theorem Int.absNorm_under_dvd_absNorm
+
+
+
+2026-10-23 15:44:04 64fa0ec
+
+chore: rename `coe_nat`/`nat_cast` lemmas to `natCast` (#44825)
+This renames Lean 3 style `coe_nat` and `nat_cast` in lemma names about `Nat.cast` to `natCast`.
+🤖 Generated with [Claude Code](https://claude.com/claude-code)
+
+ESTIMATED CHANGES
+Modified Mathlib/Algebra/GCDMonoid/Nat.lean
+- theorem Int.normalize_coe_nat
++ theorem Int.normalize_natCast
+Modified Mathlib/Algebra/Group/Int/Even.lean
+- theorem Int.even_coe_nat
++ theorem Int.even_natCast
+Modified Mathlib/Algebra/MvPolynomial/Basic.lean
+- theorem MvPolynomial.C_eq_coe_nat
++ theorem MvPolynomial.C_eq_natCast
+Modified Mathlib/Algebra/MvPolynomial/Coeff.lean
+
+Modified Mathlib/Algebra/Order/Field/Power.lean
+
+Modified Mathlib/Algebra/Ring/Int/Parity.lean
+- theorem Int.coe_nat_two_pow_pred
++ theorem Int.natCast_two_pow_pred
+- theorem Int.odd_coe_nat
++ theorem Int.odd_natCast
+Modified Mathlib/Algebra/SkewPolynomial/Basic.lean
++ theorem SkewPolynomial.natCast_mul
+- theorem SkewPolynomial.nat_cast_mul
+Modified Mathlib/AlgebraicGeometry/EllipticCurve/DivisionPolynomial/Degree.lean
+
+Modified Mathlib/Analysis/RCLike/Basic.lean
++ theorem RCLike.conj_natCast
+- theorem RCLike.conj_nat_cast
+Modified Mathlib/Analysis/SpecialFunctions/Pochhammer.lean
+
+Modified Mathlib/Analysis/SpecialFunctions/Trigonometric/Chebyshev/RootsExtrema.lean
+
+Modified Mathlib/Basic/ENNReal/Basic.lean
+- theorem ENNReal.iInter_Ici_coe_nat
++ theorem ENNReal.iInter_Ici_natCast
+- theorem ENNReal.iInter_Ioi_coe_nat
++ theorem ENNReal.iInter_Ioi_natCast
+- theorem ENNReal.iUnion_Icc_coe_nat
++ theorem ENNReal.iUnion_Icc_natCast
+- theorem ENNReal.iUnion_Ico_coe_nat
++ theorem ENNReal.iUnion_Ico_natCast
+- theorem ENNReal.iUnion_Iic_coe_nat
++ theorem ENNReal.iUnion_Iic_natCast
+- theorem ENNReal.iUnion_Iio_coe_nat
++ theorem ENNReal.iUnion_Iio_natCast
+- theorem ENNReal.iUnion_Ioc_coe_nat
++ theorem ENNReal.iUnion_Ioc_natCast
+- theorem ENNReal.iUnion_Ioo_coe_nat
++ theorem ENNReal.iUnion_Ioo_natCast
+Modified Mathlib/Basic/NNReal/Defs.lean
++ theorem Real.natCast_le_toNNReal'
+- theorem Real.natCastle_toNNReal'
+Modified Mathlib/Data/Int/Bitwise.lean
+- theorem Int.bit_coe_nat
++ theorem Int.bit_natCast
+Modified Mathlib/Data/NNRat/Defs.lean
+- theorem NNRat.toNNRat_coe_nat
++ theorem NNRat.toNNRat_natCast
+Modified Mathlib/GroupTheory/Coxeter/Basic.lean
+
+Modified Mathlib/MeasureTheory/Constructions/Polish/EmbeddingReal.lean
+- theorem MeasureTheory.measurableEquiv_range_coe_nat_of_infinite_of_countable
++ theorem MeasureTheory.measurableEquiv_range_natCast_of_infinite_of_countable
+Modified Mathlib/NumberTheory/EllipticDivisibilitySequence.lean
+
+Modified Mathlib/NumberTheory/Height/NumberField.lean
+
+Modified Mathlib/NumberTheory/LucasLehmer.lean
+
+Modified Mathlib/NumberTheory/Real/GoldenRatio.lean
+
+Modified Mathlib/RingTheory/Binomial.lean
++ theorem Ring.smeval_ascPochhammer_natCast
+- theorem Ring.smeval_ascPochhammer_nat_cast
+Modified Mathlib/RingTheory/MvPolynomial/Basic.lean
+
+Modified Mathlib/RingTheory/Polynomial/Pochhammer.lean
+- theorem ascPochhammer_eval_neg_coe_nat_of_lt
++ theorem ascPochhammer_eval_neg_natCast_of_lt
+- theorem descPochhammer_eval_coe_nat_of_lt
++ theorem descPochhammer_eval_natCast_of_lt
+Modified Mathlib/RingTheory/RootsOfUnity/PrimitiveRoots.lean
+- theorem IsPrimitiveRoot.zmodEquivZPowers_apply_coe_nat
++ theorem IsPrimitiveRoot.zmodEquivZPowers_apply_natCast
+Modified Mathlib/RingTheory/WittVector/Frobenius.lean
+
+Modified Mathlib/RingTheory/WittVector/StructurePolynomial.lean
+
+Modified Mathlib/SetTheory/Cardinal/Divisibility.lean
++ theorem Cardinal.natCast_dvd_natCast
+- theorem Cardinal.nat_coe_dvd_iff
+
+
+
+2026-10-23 14:37:29 fbe7760
+
+refactor(Tactic/Matrix): refactored some generic certifier functions to move out of the shared cert file (#45213)
+This PR refactored the `entryCertifier` specific to echelon's model extension away from the shared certifier file for matrices.
+
+ESTIMATED CHANGES
+Modified Mathlib/Tactic/Echelon/Cert.lean
++ def Mathlib.Tactic.Echelon.decideCertifier
+Modified Mathlib/Tactic/Echelon/Core.lean
++ structure Mathlib.Tactic.Echelon.EntryCertifier
+Modified Mathlib/Tactic/Echelon/Rat.lean
+
+Modified Mathlib/Tactic/Matrix/Cert.lean
+- structure Mathlib.Tactic.Matrix.EntryCertifier
++/- def Mathlib.Tactic.Matrix.certifyRowsEq
+- def Mathlib.Tactic.Matrix.decideCertifier
+
+
+
+2026-10-23 14:37:24 45505bb
+
+chore(NumberTheory/Cyclotomic/Gal): remove simp lemmas for `autEquivPow` (#45078)
+The simp lemmas `IsCyclotomicExtension.autEquivPow_apply` and `IsCyclotomicExtension.autEquivPow_symm_apply` generated by `@[simps]` unfold `autEquivPow` to `autToPow` and `PowerBasis.equivOfMinpoly`, which are not useful normal forms. They are replaced by the following non-simp lemmas:
+- `IsCyclotomicExtension.autEquivPow_apply`: `autEquivPow L h f` is `(zeta_spec n K L).autToPow K f`.
+- `IsCyclotomicExtension.autEquivPow_spec`: `f (zeta n K L) = zeta n K L ^ (autEquivPow L h f : ZMod n).val`.
+- `IsCyclotomicExtension.autEquivPow_apply_of_pow_eq_one`: if `x ^ n = 1`, then `f x = x ^ (autEquivPow L h f : ZMod n).val`.
+- `IsCyclotomicExtension.autEquivPow_symm_apply_zeta`: `(autEquivPow L h).symm t (zeta n K L) = zeta n K L ^ (t : ZMod n).val`.
+The lemma `autEquivPow_symm_apply` is deprecated.
+Prepared with Claude Code 🤖
+
+ESTIMATED CHANGES
+Modified Mathlib/NumberTheory/Cyclotomic/Gal.lean
++ theorem IsCyclotomicExtension.autEquivPow_apply
++ theorem IsCyclotomicExtension.autEquivPow_apply_of_pow_eq_one
++ theorem IsCyclotomicExtension.autEquivPow_spec
++ theorem IsCyclotomicExtension.autEquivPow_symm_apply
++ theorem IsCyclotomicExtension.autEquivPow_symm_apply_zeta
+Modified Mathlib/NumberTheory/NumberField/Cyclotomic/Galois.lean
+
+
+
+
+2026-10-23 13:54:04 94cf27e
+
+feat(Algebra/QuadraticAlgebra): integral elements of quadratic algebras (#44774)
+We characterize the elements of a quadratic algebra `QuadraticAlgebra K a b` that are integral over a subring `R` of `K` in which `R` is integrally closed: they are exactly the elements whose trace and norm lie in `R`. 
+Along the way, we add conjugation as an algebra automorphism.
+Prepared with Claude Code 🤖
+
+ESTIMATED CHANGES
+Modified Mathlib.lean
+
+Modified Mathlib/Algebra/QuadraticAlgebra/Basic.lean
++ def QuadraticAlgebra.starAlgEquiv
++ theorem QuadraticAlgebra.starAlgEquiv_apply
++ theorem QuadraticAlgebra.starAlgEquiv_symm_apply
+Added Mathlib/Algebra/QuadraticAlgebra/Integral.lean
++ theorem QuadraticAlgebra.isIntegral_iff
++ theorem QuadraticAlgebra.isIntegral_of_trace_mem_range_of_norm_mem_range
++ theorem QuadraticAlgebra.isIntegral_omega
++ theorem QuadraticAlgebra.isIntegral_star_iff
++ theorem QuadraticAlgebra.norm_mem_range_of_isIntegral
++ theorem QuadraticAlgebra.re_mem_range_of_im_mem_range
++ theorem QuadraticAlgebra.trace_mem_range_of_isIntegral
+
+
+
+2026-10-23 13:54:01 1a88f03
+
+refactor(Algebra/Polynomial): improve characterisation of `p.roots = 0` (#44237)
+* Change statements of `Polynomial.roots_eq_zero_iff_*` to be more usable
+* Add versions for `p.roots ≠ 0` (+ an analogue for bare multisets)
+* Make use of these characterisations downstream (+ incidental golfs)
+The old lemmas have been deprecated without direct replacement. This is because the new lemmas are more usable and because the old lemmas were not used anywhere in Mathlib. The old lemmas had `p.IsRoot = ⊥` on the RHS, which uses the lattice instance on Pi types and is difficult to rewrite with.
+
+ESTIMATED CHANGES
+Modified Mathlib/Algebra/Polynomial/Div.lean
+
+Modified Mathlib/Algebra/Polynomial/Roots.lean
++ theorem Polynomial.exists_isRoot_of_roots_ne_zero
++ theorem Polynomial.roots_eq_zero_iff_eq_zero_or_not_isRoot
++ theorem Polynomial.roots_eq_zero_iff_not_isRoot
++ theorem Polynomial.roots_ne_zero_iff_exists_isRoot
++ theorem Polynomial.roots_ne_zero_iff_ne_zero_and_exists_isRoot
+Modified Mathlib/Algebra/Polynomial/SpecificDegree.lean
+
+Modified Mathlib/Data/Multiset/ZeroCons.lean
+- theorem Multiset.exists_mem_of_ne_zero
++ theorem Multiset.ne_zero_iff_exists_mem
+Modified Mathlib/FieldTheory/IsAlgClosed/Basic.lean
+
+Modified Mathlib/FieldTheory/IsSepClosed.lean
+
+
+
+
+2026-10-23 13:15:39 c85646e
+
+chore(LinearAlgebra/TensorProduct/Lift): rename `LinearMap.liftBaseChange_comp` (#45158)
+The lemma `liftBaseChange_comp` really should be called `comp_liftBaseChange`, and `liftBaseChange_comp` should be reserved for the lemma `(l.comp l').liftBaseChange A = (l.liftBaseChange A).comp (l'.baseChange A)`.
+
+ESTIMATED CHANGES
+Modified Mathlib/LinearAlgebra/TensorProduct/Lift.lean
++ theorem LinearMap.comp_liftBaseChange
++/- theorem LinearMap.liftBaseChange_comp
+Modified Mathlib/RingTheory/Kaehler/JacobiZariski.lean
+
+
+
+
+2026-10-23 12:20:09 07f9fbb
+
+chore(Algebra/Homology/HasNoLoop): use `to_dual` (#43549)
+
+ESTIMATED CHANGES
+Modified Mathlib/Algebra/Homology/HasNoLoop.lean
+- theorem ComplexShape.exists_distinct_next_or
+- theorem ComplexShape.hasNoLoop_down'
+- theorem ComplexShape.hasNoLoop_down
+
+
+
+2026-10-23 12:20:04 e24da5a
+
+feat: `2 ^ n ≤ lcmUpto n` for `7 ≤ n` (#43373)
+This proof is even more elementary than Nair's proof (_American Mathematical Monthly_ **89** (2), February 1982, 126–129). Inspired by [this Zulip discussion](https://leanprover.zulipchat.com/#narrow/channel/287929-mathlib4/topic/Bounds.20of.20Chebyshev.20Functions/with/621120558).
+The original Aristotle run is [here](https://aristotle.harmonic.fun/dashboard/requests/9fd88021-f5b1-4e7f-99fc-450d5edc9590).
+We also add a slightly stronger lower bound on the prime-counting function based on the new result as `pi_ge_of_four_le`.
+
+ESTIMATED CHANGES
+Modified Mathlib/Data/Nat/Choose/Central.lean
++ theorem Nat.four_pow_le_add_one_mul_choose
+Modified Mathlib/Data/Nat/Choose/Factorization.lean
++ theorem Nat.factorization_add_factorization_choose_le_log
++/- theorem Nat.factorization_choose_le_log
++/- theorem Nat.factorization_choose_prime_pow
+Modified Mathlib/NumberTheory/Chebyshev.lean
++ theorem Chebyshev.mul_choose_dvd_lcmUpto
++ theorem Chebyshev.mul_four_pow_le_lcmUpto
++ theorem Chebyshev.mul_mul_choose_dvd_lcmUpto
++ theorem Chebyshev.pi_ge_of_four_le
++ theorem Chebyshev.psi_ge_of_seven_le
++ theorem Chebyshev.two_pow_le_lcmUpto
++ theorem Nat.lcmUpto_dvd_lcmUpto
+
+
+
+2026-10-23 11:32:03 a4a8c22
+
+fix(Tactic/Linarith): carry `!` and the configuration into `linarith?… (#43183)
+`linarith?` uses the same configuration as `linarith`,
+but previously printed a bare `linarith only [...]` suggestion regardless
+of the configuration.
+Now all config options except `minimize` are carried into the suggestion.
+
+ESTIMATED CHANGES
+Modified Mathlib/Tactic/Linarith/Frontend.lean
+
+Modified MathlibTest/Tactic/Linarith/Basic.lean
+
+
+
+
+2026-10-23 11:31:59 2570713
+
+chore(RingTheory/Ideal/Norm): restate the `Ideal.absNorm` API for rings with finite quotients (#42790)
+Most results about `absNorm` that assumed `[Module.Finite ℤ S]` are restated for a ring with finite quotients under a primed name, the original version is kept and proved using the new one. The plan is to eventually keep only the primed versions, under their unprimed names. This is not done here because `Ring.HasFiniteQuotients S` does not follow by instance search from `[Module.Finite ℤ S]`, so it seems better to do that separately.
+A few results no longer need the ring to be infinite either, now that the norm has the junk value `0` at the zero ideal.
+The body of the file is reorganized accordingly, in four blocks: the results needing no finiteness assumption, those over an infinite ring, those over a ring with finite quotients, and those over a ring finite over `ℤ`.
+Prepared with Claude Code 🤖
+
+ESTIMATED CHANGES
+Modified Mathlib/NumberTheory/NumberField/DedekindZeta.lean
+
+Modified Mathlib/NumberTheory/NumberField/DirichletDensity.lean
+
+Modified Mathlib/RingTheory/Ideal/Norm/AbsNorm.lean
++/- theorem Ideal.absNorm_dvd_absNorm_of_le
++ theorem Ideal.absNorm_eq_zero_iff'
++/- theorem Ideal.absNorm_eq_zero_iff
++ theorem Ideal.absNorm_ne_zero_iff_mem_nonZeroDivisors'
++ theorem Ideal.absNorm_ne_zero_of_nonZeroDivisors'
++ theorem Ideal.absNorm_pos_iff_mem_nonZeroDivisors'
++ theorem Ideal.absNorm_pos_of_nonZeroDivisors'
++ theorem Ideal.card_norm_le_eq_card_norm_le_add_one'
++/- theorem Ideal.finiteIndex
++ theorem Ring.HasFiniteQuotients.finite_absNorm_eq
++/- theorem Ring.HasFiniteQuotients.finite_absNorm_heightOneSpectrum_le
++/- theorem Ring.HasFiniteQuotients.finite_absNorm_le
++ theorem Ring.HasFiniteQuotients.finite_absNorm_le₀
+Modified Mathlib/RingTheory/Ideal/Quotient/HasFiniteQuotients/Basic.lean
++ theorem Ideal.finiteIndex'
++ theorem Ideal.isFiniteRelIndex'
+Modified Mathlib/RingTheory/Ideal/Quotient/HasFiniteQuotients/Norm.lean
+
+
+
+
+2026-10-23 11:31:55 9c4ce97
+
+fix(NormNum): error if remaining at locations are unused (#42355)
+`norm_num at h1 h2 ...` (and other tactics built on `Lean.Elab.Tactic.withNondepPropLocation`) unconditionally processed every hypothesis in the location list, then the target. If an earlier hypothesis closed the goal (e.g. `norm_num` found `h1` to already be `False`), processing continued against an already-closed goal instead of stopping.
+Unused `at` locations now error if an earlier location closed the goal.
+Closes #28703.
+
+ESTIMATED CHANGES
+Modified Mathlib/Util/AtLocation.lean
+
+Modified MathlibTest/Tactic/NormNum/Basic.lean
+
+
+
+
+2026-10-23 11:07:12 da43ae1
+
+chore: modulize most of MathlibTest (#45134)
+(This is split off to cover the easy parts of #45122 that ought to be unproblematic)
+This PR modulize ~90% of all remaining unmodulized test files, this was done mostly using the Modulize.lean script from core.
+Some things beyond are changed (note all changes are in the test files!):
+- Adapt some guard_msg (i.e. since line count changes) (4 files)
+- sometimes meta for def/import is added, so #eval etc works (41 files)
+- sometimes public keyword was added to defs instead of public section
+
+ESTIMATED CHANGES
+Modified Cache/Test.lean
+- def main
+Modified MathlibTest/AesopUnusedTactic.lean
+
+Modified MathlibTest/Algebra/Polynomial.lean
+
+Modified MathlibTest/ArithMult.lean
+
+Modified MathlibTest/AssertExists.lean
+
+Modified MathlibTest/AtLocation.lean
+
+Modified MathlibTest/Attribute/ToAdditive/IrredDef.lean
+
+Modified MathlibTest/BigOps.lean
+
+Modified MathlibTest/BinPow.lean
+
+Modified MathlibTest/BinaryRec.lean
+
+Modified MathlibTest/CategoryTheory/Bicategory/Normalize.lean
+
+Modified MathlibTest/CategoryTheory/CancelIso.lean
+
+Modified MathlibTest/CategoryTheory/Elementwise.lean
+
+Modified MathlibTest/CategoryTheory/FunctorAssoc.lean
+
+Modified MathlibTest/CategoryTheory/Monoidal/Normalize.lean
+
+Modified MathlibTest/CategoryTheory/ProfunctorBicategory.lean
+
+Modified MathlibTest/CategoryTheory/SubstHomLift.lean
+
+Modified MathlibTest/CategoryTheory/ToApp.lean
+
+Modified MathlibTest/CategoryTheory/TransfiniteComposition.lean
+
+Modified MathlibTest/Chudnovsky.lean
+
+Modified MathlibTest/Complex.lean
+
+Modified MathlibTest/CrossRefAttribute.lean
+- def captureException
+Modified MathlibTest/DSimpPercent.lean
+
+Modified MathlibTest/Data/DFinsupp/DFinsuppMultiLinear.lean
+
+Modified MathlibTest/Data/DFinsupp/Notation.lean
+
+Modified MathlibTest/Data/Fin/VecNotation.lean
+
+Modified MathlibTest/Delab/Abs.lean
+
+Modified MathlibTest/Delab/ConcreteCategories.lean
+
+Modified MathlibTest/Delab/FinsetBuilder.lean
+
+Modified MathlibTest/Delab/Scheme.lean
+
+Modified MathlibTest/Delab/TopologicalSpace.lean
+
+Modified MathlibTest/DeprecateTo.lean
+
+Modified MathlibTest/DeriveCountable.lean
+
+Modified MathlibTest/DeriveToExpr.lean
+
+Modified MathlibTest/DifferentialGeometry/Notation/Advanced.lean
+
+Modified MathlibTest/DifferentialGeometry/Notation/Basic.lean
+
+Modified MathlibTest/DifferentialGeometry/Notation/Delaborators.lean
+
+Modified MathlibTest/DifferentialGeometry/Notation/MVFDeriv.lean
+
+Modified MathlibTest/DifferentialGeometry/Notation/PR40447.lean
+
+Modified MathlibTest/DifferentialGeometry/Notation/Sphere.lean
+
+Modified MathlibTest/DualNumber.lean
+
+Modified MathlibTest/EllipticCurve.lean
+
+Modified MathlibTest/EuclideanSpace.lean
+
+Modified MathlibTest/EvalElab.lean
+
+Modified MathlibTest/FastInstance.lean
+
+Modified MathlibTest/Find.lean
+
+Modified MathlibTest/FindDeprecations.lean
+
+Modified MathlibTest/FinsetBuilder.lean
+
+Modified MathlibTest/FinsuppNotation.lean
+
+Modified MathlibTest/FormatTable.lean
+
+Modified MathlibTest/FunProp.lean
+
+Modified MathlibTest/FunPropMinimal.lean
+
+Modified MathlibTest/HigherOrder.lean
+
+Modified MathlibTest/InferInstanceAsPercent.lean
+
+Modified MathlibTest/InstanceDiamonds.lean
+
+Modified MathlibTest/InstanceDiamonds/Algebra/Algebra/Rat.lean
+
+Modified MathlibTest/InstanceDiamonds/Analysis/Normed/Field/WithAbs.lean
+
+Modified MathlibTest/InstanceDiamonds/Data/Complex/Module.lean
+
+Modified MathlibTest/InstanceDiamonds/FieldTheory/IsAlgClosed/AlgebraicClosure.lean
+
+Modified MathlibTest/InstanceDiamonds/FieldTheory/SplittingField/Construction.lean
+
+Modified MathlibTest/InstanceDiamonds/Normed.lean
+
+Modified MathlibTest/JacobiSymbol.lean
+
+Modified MathlibTest/LibraryRewrite.lean
+
+Modified MathlibTest/LibrarySearch/IsCompact.lean
+
+Modified MathlibTest/LibrarySearch/observe.lean
+
+Modified MathlibTest/LibrarySuggestions/sineQuaNon.lean
+
+Modified MathlibTest/Linter/DeprecatedModule/Basic.lean
+
+Modified MathlibTest/Linter/DeprecatedSyntax.lean
+
+Modified MathlibTest/Linter/DocPrime.lean
+
+Modified MathlibTest/Linter/DocString.lean
+
+Modified MathlibTest/Linter/DoubleUnderscore.lean
+
+Modified MathlibTest/Linter/Flexible/ImportHeavy.lean
+
+Modified MathlibTest/Linter/HashCommand.lean
+
+Modified MathlibTest/Linter/HaveLet.lean
+
+Modified MathlibTest/Linter/Header/Verso.lean
+
+Modified MathlibTest/Linter/LongFile.lean
+
+Modified MathlibTest/Linter/Multigoal.lean
+
+Modified MathlibTest/Linter/OldObtain.lean
+
+Modified MathlibTest/Linter/TacticDoc.lean
+
+Modified MathlibTest/MaxPowDiv.lean
+
+Modified MathlibTest/MessageDataForExprs.lean
+
+Modified MathlibTest/MfldSetTac.lean
+
+Modified MathlibTest/MinImports.lean
+
+Modified MathlibTest/MkIffOfInductive.lean
+
+Modified MathlibTest/MonCat.lean
+
+Modified MathlibTest/Nat/log.lean
+
+Modified MathlibTest/NonemptyIntervalLex.lean
+
+Modified MathlibTest/Quaternion.lean
+
+Modified MathlibTest/RefinedDiscrTree.lean
+
+Modified MathlibTest/RegisterTryTactic.lean
+
+Modified MathlibTest/RegularMeasure.lean
+
+Modified MathlibTest/RingTheory/CoassocSimps.lean
+
+Modified MathlibTest/Simproc/Divisors.lean
+
+Modified MathlibTest/Simproc/ExistsAndEq.lean
+
+Modified MathlibTest/Simproc/IPow.lean
+
+Modified MathlibTest/Simproc/ProdUnivMany.lean
+
+Modified MathlibTest/Simps.lean
+- def hasSimpAttribute
+Modified MathlibTest/SlimCheck.lean
+
+Modified MathlibTest/StringDiagram.lean
+
+Modified MathlibTest/Tactic/AesopCat.lean
+
+Modified MathlibTest/Tactic/Algebraize.lean
+
+Modified MathlibTest/Tactic/ApplyAt.lean
+
+Modified MathlibTest/Tactic/Bound/Attribute.lean
+
+Modified MathlibTest/Tactic/Check.lean
+
+Modified MathlibTest/Tactic/Continuity.lean
+
+Modified MathlibTest/Tactic/Convert/Instances.lean
+
+Modified MathlibTest/Tactic/DuplicateDeclsAux.lean
+
+Modified MathlibTest/Tactic/FieldSimp.lean
+
+Modified MathlibTest/Tactic/FinCases.lean
+
+Modified MathlibTest/Tactic/Finiteness.lean
+
+Modified MathlibTest/Tactic/GCongr/Basic.lean
+
+Modified MathlibTest/Tactic/GCongr/Core.lean
+
+Modified MathlibTest/Tactic/GCongr/Implications.lean
+
+Modified MathlibTest/Tactic/GCongr/Inequalities.lean
+
+Modified MathlibTest/Tactic/GCongr/Mod.lean
+
+Modified MathlibTest/Tactic/GRewrite.lean
+
+Modified MathlibTest/Tactic/Grind/AC.lean
+
+Modified MathlibTest/Tactic/Grind/CC.lean
+
+Modified MathlibTest/Tactic/Grind/Field.lean
+
+Modified MathlibTest/Tactic/Grind/FieldInstance.lean
+
+Modified MathlibTest/Tactic/Grind/Grobner.lean
+
+Modified MathlibTest/Tactic/Grind/Linarith.lean
+
+Modified MathlibTest/Tactic/Grind/NatCastInstance.lean
+
+Modified MathlibTest/Tactic/Grind/OrderedRing.lean
+
+Modified MathlibTest/Tactic/Grind/PairwiseDisjoint.lean
+
+Modified MathlibTest/Tactic/Grind/Panic.lean
+
+Modified MathlibTest/Tactic/Grind/Ring.lean
+
+Modified MathlibTest/Tactic/Grind/Set.lean
+
+Modified MathlibTest/Tactic/Grind/Trig.lean
+
+Modified MathlibTest/Tactic/GuardGoalNums.lean
+
+Modified MathlibTest/Tactic/GuardHypNums.lean
+
+Modified MathlibTest/Tactic/Hint/All.lean
+
+Modified MathlibTest/Tactic/Hint/Basic.lean
+
+Modified MathlibTest/Tactic/IntervalCases.lean
+
+Modified MathlibTest/Tactic/Lift.lean
+
+Modified MathlibTest/Tactic/Nontriviality.lean
+
+Modified MathlibTest/Tactic/NormCast.lean
+
+Modified MathlibTest/Tactic/Observe.lean
+
+Modified MathlibTest/Tactic/Positivity.lean
+
+Modified MathlibTest/Tactic/Recover.lean
+
+Modified MathlibTest/Tactic/Ring/Compare.lean
+
+Modified MathlibTest/Tactic/Ring/Ring.lean
+- theorem test_axioms
+Modified MathlibTest/Tactic/RwQuestionMark.lean
+- theorem six_eq_seven
+Modified MathlibTest/Tactic/Says/Basic.lean
+
+Modified MathlibTest/Tactic/Says/Whitespace.lean
+
+Modified MathlibTest/Tactic/Set.lean
+
+Modified MathlibTest/Tactic/SimpIntro.lean
+
+Modified MathlibTest/Tactic/SolveByElim/Basic.lean
+
+Modified MathlibTest/Tactic/SolveByElim/DummyLabelAttr.lean
+
+Modified MathlibTest/Tactic/SolveByElim/Instances.lean
+
+Modified MathlibTest/Tactic/SplitIfs.lean
+
+Modified MathlibTest/Tactic/SuccessIfFailWithMsg.lean
+- def alwaysFails
+- def doesntFail
+Modified MathlibTest/TacticAnalysis.lean
+- def foo
+- def leaky
+- def unknownTacticTest
+- def verifyFakeRfl
+Modified MathlibTest/TacticCheckInstancesReassoc.lean
+
+Modified MathlibTest/TacticCheckInstancesSimps.lean
+
+Modified MathlibTest/TacticTimeout.lean
+- def Meta.tryCatchAll
+- def Tactic.tryCatchAll
+- def Tactic.withTimeout
+- def Term.tryCatchAll
+Modified MathlibTest/TermReduce.lean
+
+Modified MathlibTest/ToFun.lean
+
+Modified MathlibTest/TransImports.lean
+
+Modified MathlibTest/UnsetOption.lean
+
+Modified MathlibTest/Util/CompileInductive.lean
+- def tryToCompileAllInductives
+Modified MathlibTest/Util/CountHeartbeats.lean
+
+Modified MathlibTest/Util/Notation3.lean
+- def Test.findWithTag
+- def Test.testTagAppFns
+Modified MathlibTest/Util/PrintSorries.lean
+
+Modified MathlibTest/Util/Qq.lean
+
+Modified MathlibTest/ValidatePRTitle.lean
+
+Modified MathlibTest/ValuedCSP.lean
+
+Modified MathlibTest/Variable.lean
+
+Modified MathlibTest/Widget/CommDiag.lean
+
+Modified MathlibTest/Widget/Conv.lean
+
+Modified MathlibTest/antidiagonal.lean
+
+Modified MathlibTest/delabLinearIndependent.lean
+
+Modified MathlibTest/delaborators.lean
+
+Modified MathlibTest/depRewrite.lean
+
+Modified MathlibTest/eqns.lean
+
+Modified MathlibTest/factorial.lean
+
+Modified MathlibTest/factors.lean
+
+Modified MathlibTest/irreducibleDef.lean
+
+Modified MathlibTest/measurability.lean
+
+Modified MathlibTest/meta.lean
+
+Modified MathlibTest/random.lean
+
+Modified MathlibTest/runCmd.lean
+
+Modified MathlibTest/sqrt.lean
+
+Modified MathlibTest/superscript.lean
+
+Modified MathlibTest/symm.lean
+
+Modified MathlibTest/trace.lean
+
+Modified MathlibTest/tryAtEachStep.lean
+
+Modified MathlibTest/willRoundTrip.lean
+- def mkTestLambda
+
+
+
+2026-10-23 11:07:09 d868575
+
+feat(Topology/Algebra): quotient topology on projective space and open quotient map (#44117)
+This gives `ℙ K V` the quotient topology and shows `Projectivization.mk'` is an open quotient map when the units of `K` act continuously on `V`. It also adds the two instances the proof needs to `Topology/Algebra/MulAction.lean`. A `SubMulAction` inherits `ContinuousConstSMul`, and `Kˣ` acts continuously on the nonzero vectors.
+This is the first step towards the Fubini-Study metric and measure on `ℂℙⁿ`. I discussed it on Zulip here https://leanprover.zulipchat.com/#narrow/id/617154981 and here https://leanprover.zulipchat.com/#narrow/id/625402419
+I used Claude to draft the Lean against the existing Mathlib API. I've reworked and checked every line myself and can explain all of it.
+
+ESTIMATED CHANGES
+Modified Mathlib.lean
+
+Modified Mathlib/LinearAlgebra/Projectivization/Basic.lean
++ theorem Projectivization.mk'_eq_mk'_iff
++ theorem Projectivization.preimage_image_mk'
+Modified Mathlib/Topology/Algebra/MulAction.lean
+
+Added Mathlib/Topology/Algebra/Projectivization.lean
++ theorem Projectivization.continuous_iff
++ theorem Projectivization.continuous_map
++ theorem Projectivization.continuous_mk'
++ theorem Projectivization.continuous_mk
++ theorem Projectivization.isOpenMap_mk'
++ theorem Projectivization.isOpenQuotientMap_mk'
++ theorem Projectivization.isQuotientMap_mk'
+
+
+
+2026-10-23 10:55:32 f4b4bb4
+
+doc(AlgebraicGeometry/Birational/*): improve stacks tags (#44278)
+
+ESTIMATED CHANGES
+Modified Mathlib/AlgebraicGeometry/Birational/Birational.lean
+
+Modified Mathlib/AlgebraicGeometry/Birational/RationalMap.lean
+
+
+
+
+2026-10-23 10:23:32 f20b756
+
+ci: rely on new bors functionality to block dependent PRs instead of label (#44572)
+Currently, PRs that are labeled with `blocked-by-other-PR` cannot be merged, due to it being in `block_labels` in `bors.toml`. This is an issue for PRs that have been bundled using `bors stack` or `bors link` since if they list their dependencies in the PR, the dependent-issues workflow comes and adds that label. (cf. https://github.com/leanprover-community/mathlib4/pull/42976#issuecomment-5356848581 and [this zulip message](https://leanprover.zulipchat.com/#narrow/channel/287929-mathlib4/topic/Stacked.20pull.20requests/near/629173087)).
+A new bors feature that should solve this has been deployed (https://github.com/leanprover-community/bors-ng/pull/67). The new `[dependencies]` settings in `bors.toml` tell bors to read dependencies from the PR body with the same keywords as the dependent-issues action, and then bors will ensure that the listed PRs are all merged, closed, or in the same bundle before putting the PR on the queue. This PR contains the adaptations necessary to make use of this feature.
+It also includes a bump to the leanprover-community/dependent-issues action to include some parsing fixes: https://github.com/leanprover-community/dependent-issues/pull/1.
+
+ESTIMATED CHANGES
+Modified .github/workflows/dependent-issues.yml
+
+Modified bors.toml
+
+Modified docs/workflows.md
+
+
+
+
 2026-10-23 00:56:26 3d14fd9
 
 ci: retry an empty issue list in the new contributor check (#45179)
